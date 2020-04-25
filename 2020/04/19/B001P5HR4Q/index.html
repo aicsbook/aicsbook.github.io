@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 你必须知道的495个C语言问题作者信息： 作者: 朱群英 [ 中文 pdf ] 简单介绍《你必须知道的495个C语言问题》结构清晰，讲解透彻，是各高校相关专业C语言课程很好的教学参考书，也是各层次C程序员的优秀实践指南。全球C语言程序员集体智慧的结晶；Amazon全五星图书；权威解答495个最常遇到的C语言问题。C是一门简洁精妙的语言，掌握基本语法容易，真正能够自如运用，就不那么简">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你必须知道的495个C语言问题">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B001P5HR4Q/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 你必须知道的495个C语言问题作者信息： 作者: 朱群英 [ 中文 pdf ] 简单介绍《你必须知道的495个C语言问题》结构清晰，讲解透彻，是各高校相关专业C语言课程很好的教学参考书，也是各层次C程序员的优秀实践指南。全球C语言程序员集体智慧的结晶；Amazon全五星图书；权威解答495个最常遇到的C语言问题。C是一门简洁精妙的语言，掌握基本语法容易，真正能够自如运用，就不那么简">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51Kujz2BweL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.660Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51Kujz2BweL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B001P5HR4Q/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>你必须知道的495个C语言问题 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B001P5HR4Q/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          你必须知道的495个C语言问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 你必须知道的495个C语言问题<br>作者信息： 作者: 朱群英 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《你必须知道的495个C语言问题》结构清晰，讲解透彻，是各高校相关专业C语言课程很好的教学参考书，也是各层次C程序员的优秀实践指南。全球C语言程序员集体智慧的结晶；Amazon全五星图书；权威解答495个最常遇到的C语言问题。C是一门简洁精妙的语言，掌握基本语法容易，真正能够自如运用，就不那么简单了。你难免会遇到各种各样的问题，有些可能让你百思不得其解，甚至翻遍图书馆，也找不到问题的答案。《你必须知道的495个C语言问题》的出版填补了这一空白。许多知识点的阐述都是其他资料中所没有的，弥足珍贵。涵盖C99标准。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">第1章 声明和初始化</span><br><span class="line">基本类型</span><br><span class="line">1.1 我该如何决定使用哪种整数类型？</span><br><span class="line">1.2 为什么不精确定义标准类型的大小？</span><br><span class="line">1.3 因为C语言没有精确定义类型的大小，所以我一般都用typedef定义int16和int32。然后根据实际的机器环境把它们定义为int、short、long等类型。这样看来，所有的问题都解决了，是吗？</span><br><span class="line">1.4 新的64位机上的64位类型是什么样的？</span><br><span class="line">指针声明</span><br><span class="line">1.5 这样的声明有什么问题？char p1, p2; 我在使用p2的时候报错了。 1.6 我想声明一个指针，并为它分配一些空间，但却不行。这样的代码有什么问题？char p; p&#x3D;malloc（10）; 声明风格 1.7 怎样声明和定义全局变量和函数最好？ 1.8 如何在C中实现不透明（抽象）数据类型？ 1.9 如何生成“半全局变量”，就是那种只能被部分源文件中的部分函数访问的变量？ 存储类型 1.10 同一个静态（static）函数或变量的所有声明都必须包含static存储类型吗？ 1.11 extern在函数声明中是什么意思？ 1.12 关键字auto到底有什么用途？ 类型定义（typedef） 1.13 对于用户定义类型，typedef 和#define有什么区别？ 1.14 我似乎不能成功定义一个链表。我试过typedef struct&#123;char item; NODEPTR next;&#125; NODEPTR; 但是编译器报了错误信息。难道在C语言中结构不能包含指向自己的指针吗？ 1.15 如何定义一对相互引用的结构？ 1.16 Struct&#123; &#125; x1;和typedef struct&#123; &#125; x2; 这两个声明有什么区别？ 1.17 “typedef int（funcptr）（）;”是什么意思？</span><br><span class="line">const 限定词</span><br><span class="line">1.18 我有这样一组声明：typedef char charp; const charp p; 为什么是p而不是它指向的字符为const？ 1.19 为什么不能像下面这样在初始式和数组维度值中使用const值？const int n&#x3D;5; int a[n]; 1.20 const char p、char const p和char const p有什么区别？</span><br><span class="line">复杂的声明</span><br><span class="line">1.21 怎样建立和理解非常复杂的声明？例如定义一个包含N个指向返回指向字符的指针的函数的指针的数组？</span><br><span class="line">1.22 如何声明返回指向同类型函数的指针的函数？我在设计一个状态机，用函数表示每种状态，每个函数都会返回一个指向下一个状态的函数的指针。可我找不到任何方法来声明这样的函数——感觉我需要一个返回指针的函数，返回的指针指向的又是返回指针的函数，如此往复，以至无穷。</span><br><span class="line">数组大小</span><br><span class="line">1.23 能否声明和传入数组大小一致的局部数组，或者由其他参数指定大小的参数数组？</span><br><span class="line">1.24 我在一个文件中定义了一个extern数组，然后在另一个文件中使用，为什么sizeof取不到数组的大小？</span><br><span class="line">声明问题</span><br><span class="line">1.25 函数只定义了一次，调用了一次，但编译器提示非法重声明了。</span><br><span class="line">1.26 main的正确定义是什么？void main正确吗？</span><br><span class="line">1.27 我的编译器总在报函数原型不匹配的错误，可我觉得没什么问题。这是为什么？</span><br><span class="line">1.28 文件中的第一个声明就报出奇怪的语法错误，可我看没什么问题。这是为什么？</span><br><span class="line">1.29 为什么我的编译器不允许我定义大数组，如double array[256][256]？</span><br><span class="line">命名空间</span><br><span class="line">1.30 如何判断哪些标识符可以使用，哪些被保留了？</span><br><span class="line">初始化</span><br><span class="line">1.31 对于没有显式初始化的变量的初始值可以作怎样的假定？如果一个全局变量初始值为“零”，它可否作为空指针或浮点零？</span><br><span class="line">1.32 下面的代码为什么不能编译？ intf（）&#123;char a[]&#x3D;“Hello, world!”;&#125;</span><br><span class="line">1.33 下面的初始化有什么问题？编译器提示“invalid initializers ”或其他信息。char p&#x3D;malloc（10）; 1.34 char a[]&#x3D; “string literal”;和char p&#x3D;“string literal”; 初始化有什么区别？当我向p[i] 赋值的时候，我的程序崩溃了。</span><br><span class="line">1.35 char a&#123;[3]&#125;&#x3D; “abc”; 是否合法？</span><br><span class="line">1.36 我总算弄清楚函数指针的声明方法了，但怎样才能初始化呢？</span><br><span class="line">1.37 能够初始化联合吗？ </span><br><span class="line"></span><br><span class="line"> 第2章 结构、联合和枚举 结构声明 2.1 struct x1&#123; &#125;;和typedef struct&#123; &#125;x2; 有什么不同？ 2.2 这样的代码为什么不对？struct x&#123; &#125;; x thestruct; 2.3 结构可以包含指向自己的指针吗？ 2.4 在C语言中用什么方法实现抽象数据类型最好？ 2.5 在C语言中是否有模拟继承等面向对象程序设计特性的好方法？ 2.6 为什么声明extern f（struct x *p）; 给我报了一个晦涩难懂的警告信息？ 2.7 我遇到这样声明结构的代码：struct name &#123;int namelen; char namestr[1];&#125;;然后又使用一些内存分配技巧使namestr数组用起来好像有多个元素，namelen记录了元素个数。它是怎样工作的？这样是合法的和可移植的吗？ 2.8 我听说结构可以赋给变量也可以对函数传入和传出。为什么K&amp;R1却明确说明不能这样做？ 2.9 为什么不能用内建的&#x3D;&#x3D;和!&#x3D;操作符比较结构？ 2.10 结构传递和返回是如何实现的？ 2.11 如何向接受结构参数的函数传入常量值？怎样创建无名的中间的常量结构值？ 2.12 怎样从&#x2F;向数据文件读&#x2F;写结构？ 结构填充 2.13 为什么我的编译器在结构中留下了空洞？这导致空间浪费而且无法与外部数据文件进行“二进制”读写。能否关掉填充，或者控制结构域的对齐方式？ 2.14 为什么sizeof返回的值大于结构大小的期望值，是不是尾部有填充？ 2.15 如何确定域在结构中的字节偏移量？ 2.16 怎样在运行时用名字访问结构中的域？ 2.17 C语言中有和Pascal的with等价的语句吗？ 2.18 既然数组名可以用作数组的基地址，为什么对结构不能这样？ 2.19 程序运行正确，但退出时却“core dump ”（核心转储）了，怎么回事？ 联合 2.20 结构和联合有什么区别？ 2.21 有办法初始化联合吗？ 2.22 有没有一种自动方法来跟踪联合的哪个域在使用？ 枚举 2.23 枚举和一组预处理的#define有什么不同？ 2.24 枚举可移植吗？ 2.25 有什么显示枚举值符号的容易方法吗？ 位域 2.26 一些结构声明中的这些冒号和数字是什么意思？ 2.27 为什么人们那么喜欢用显式的掩码和位操作而不直接声明位域？</span><br><span class="line"></span><br><span class="line"> 第3章 表达式 求值顺序 3.1 为什么这样的代码不行？a[i]&#x3D; i++; 3.2 使用我的编译器，下面的代码int i&#x3D; 7; printf（&quot;%d\n&quot;, i++ * i++）; 打印出49。不管按什么顺序计算，难道不该是56吗？ 3.3 对于代码int i&#x3D;3; i&#x3D;i++; 不同编译器给出不同的i值，有的为3，有的为4，哪个是正确的？ 3.4 有这样一个巧妙的表达式：a^&#x3D; b^&#x3D; a^&#x3D; b; 它不需要临时变量就可以交换a和b的值。 3.5 可否用显式括号来强制执行我所需要的计算顺序并控制相关的副作用？就算括号不行，操作符优先级是否能够控制计算顺序呢？ 3.6 可是&amp;&amp;和||操作符呢？我看到过类似while（（c &#x3D; getchar（）） !&#x3D; EOF &amp;&amp; c !&#x3D; ‘\n&#39;）的代码 3.7 是否可以安全地认为，一旦&amp;&amp;和||左边的表达式已经决定了整个表达式的结果，则右边的表达式不会被求值？ 3.8 为什么表达式printf（&quot;%d %d&quot;, f1（）, f2（））; 先调用了f2？我觉得逗号表达式应该确保从左到右的求值顺序。 3.9 怎样才能理解复杂表达式并避免写出未定义的表达式？“序列点”是什么？ 3.10 在a[i] &#x3D; i++;中，如果不关心a[]的哪一个分量会被写入，这段代码就没有问题，i也的确会增加1，对吗？ 3.11 人们总是说i&#x3D;i++的行为是未定义的。可我刚刚在一个ANSI编译器上尝试过，其结果正如我所期望的。 3.12 我不想学习那些复杂的规则，怎样才能避免这些未定义的求值顺序问题呢？ 其他的表达式问题 3.13 ++i和i++有什么区别？ 3.14 如果我不使用表达式的值，那我应该用i++还是++i来做自增呢？ 3.15 我要检查一个数是不是在另外两个数之间，为什么if（a b c）不行？ 3.16 为什么如下的代码不对？int a&#x3D;1000, b&#x3D;1000; long int c&#x3D;a * b; 3.17 为什么下面的代码总是给出0？double degC, degF; degC&#x3D; 5.0 &#x2F; 9 * （degF - 32）; 3.18 需要根据条件把一个复杂的表达式赋给两个变量中的一个。可以用下面这样的代码吗？（（condition） ？ a : b）&#x3D; complicated_expression; 3.19 我有些代码包含这样的表达式。a ？ b&#x3D;c : d 有些编译器可以接受，有些却不能。为什么？ 保护规则 3.20 “semantics of‘’change in ANSI C”的警告是什么意思？ 3.21 “无符号保护”和“值保护”规则的区别在哪里？</span><br><span class="line"></span><br><span class="line"> 第4章 指针 基本的指针应用 4.1 指针到底有什么好处？ 4.2 我想声明一个指针并为它分配一些空间，但却不行。这些代码有什么问题呢？char p; p &#x3D;malloc（10）; 4.3 p++自增p还是p所指向的变量？ 指针操作 4.4 我用指针操作int数组的时候遇到了麻烦。 4.5 我有一个char 型指针碰巧指向一些int型变量，我想跳过它们。为什么（（int ）p）++; 这样的代码不行？ 4.6 为什么不能对void 指针进行算术操作？ 4.7 我有些解析外部结构的代码，但是它却崩溃了，显示出了“unaligned access”（未对齐的访问）的信息。这是什么意思？ 作为函数参数的指针 4.8 我有个函数，它应该接受并初始化一个指针：void f（int ip）&#123; static int dummy &#x3D; 5; ip &#x3D; &amp;dummy;&#125;但是当我如下调用时：int ip; f（ip）; 调用者的指针没有任何变化。 4.9 能否用void 通用指针作为参数，使函数模拟按引用传递参数？ 48 4.10 我有一个函数extern intf（int ）; ，它接受指向int型的指针。我怎样用引用方式传入一个常数？调用f（&amp;5）;似乎不行。 4.11 C语言可以“按引用传参”吗？ 其他指针问题 4.12 我看到了用指针调用函数的不同语法形式。到底怎么回事？ 4.13 通用指针类型是什么？当我把函数指针赋向void 类型的时候，编译通不过。 4.14 怎样在整型和指针之间进行转换？能否暂时把整数放入指针变量中，或者相反？ 4.15 我怎样把一个int变量转换为char *型？我试了类型转换，但是不行。</span><br><span class="line"></span><br><span class="line"> 第5章 空指针 空指针和空指针常量 5.1 臭名昭著的空指针到底是什么？ 5.2 怎样在程序里获得一个空指针？ 5.3 用缩写的指针比较“if（p）”检查空指针是否有效？如果空指针的内部表达不是0会怎样？ NULL 宏 5.4 NULL是什么，它是怎么定义的？ 5.5 在使用非零位模式作为空指针的内部表示的机器上，NULL 是如何定义的？ 5.6 如果NULL定义成#define NULL（（char ）0） ，不就可以向函数传入不加转换的NULL 了吗？ 5.7 我的编译器提供的头文件中定义的NULL为0L。为什么？ 5.8 NULL可以合法地用作函数指针吗？ 5.9 如果NULL和0作为空指针常量是等价的，那我到底该用哪一个呢？ 5.10 但是如果NULL的值改变了，比如在使用非零内部空指针的机器上，用NULL（而不是0） 不是更好吗？ 5.11 我曾经使用过一个编译器，不使用NULL就不能编译。 5.12 我用预处理宏#define Nullptr（type）（type ）0帮助创建正确类型的空指针。 回顾 5.13 这有点奇怪：NULL可以确保是0，但空（null）指针却不一定？ 5.14 为什么有那么多关于空指针的疑惑？为什么这些问题如此频繁地出现？ 5.15 有没有什么简单点儿的办法理解所有这些与空指针有关的东西呢？ 5.16 考虑到有关空指针的所有这些困惑，要求它们的内部表示都必须为0不是更简单吗？ 5.17 说真的，真有机器用非零空指针吗，或者不同类型用不同的表示？ 地址0上到底有什么？ 5.18 运行时的整数值0转换为指针以后一定是空指针吗？ 5.19 如何访问位于机器地址0处的中断向量？如果我将指针值设为0，编译器可能会自动将它转换为非零的空指针内部表示。 5.20 运行时的“null pointer assignment”错误是什么意思？应该怎样捕捉它？</span><br><span class="line"></span><br><span class="line"> 第6章 数组和指针 数组和指针的基本关系 6.1 我在一个源文件中定义了char a[6]，在另一个源文件中声明了extern char a。为什么不行？ 6.2 可是我听说char a[]和char a是等价的。是这样的吗？ 6.3 那么，在C语言中“指针和数组等价”到底是什么意思？ 6.4 既然它们这么不同，那为什么作为函数形参的数组和指针声明可以互换呢？ 数组不能被赋值 6.5 为什么不能这样向数组赋值？extern char getpass（）; char str[10]; str&#x3D;getpass（&quot;Enter password:“）; 6.6 既然不能向数组赋值，那这段代码为什么可以呢？int f（char str[]）&#123; if（str[0] &#x3D;&#x3D; ‘\0&#39;） str&#x3D;&quot;none”;&#125; 6.7 如果你不能给它赋值，那么数组如何能成为左值呢？ 回顾 6.8 现实地讲，数组和指针的区别是什么？ 6.9 有人跟我讲，数组不过是常指针。这样讲准确吗？ 6.10 我还是很困惑。到底指针是一种数组，还是数组是一种指针？ 6.11 我看到一些“搞笑”的代码，包含5[“abcdef”]这样的“表达式”。这为什么是合法的C语言表达式呢？ 数组的指针 6.12 既然数组引用会退化为指针，如果array是数组，那么array和&amp;array又有什么区别呢？ 6.13 如何声明一个数组的指针？ 动态数组分配 6.14 如何在运行时设定数组的大小？怎样才能避免固定大小的数组？ 6.15 我如何声明大小和传入的数组一样的局部数组？ 6.16 如何动态分配多维数组？ 6.17 有个很好的窍门，如果我这样写：int realarray[10]; int array &#x3D; &amp;realarray[-1]; 我就可以把“array”当作下标从1 开始的数组。 函数和多维数组 6.18 当我向一个接受指针的指针的函数传入二维数组的时候，编译器报错了。 6.19 我怎样编写接受编译时宽度未知的二维数组的函数？ 6.20 我怎样在函数参数传递时混用静态和动态多维数组？ 数组的大小 6.21 当数组是函数的参数时，为什么sizeof不能正确报告数组的大小？ 6.22 如何在一个文件中判断声明为extern的数组的大小（例如，数组定义和大小在另一个文件中）？sizeof操作符似乎不行。 6.23 sizeof返回的大小是以字节计算的，怎样才能判断数组中有多少个元素呢？ 第7章 内存分配 第8章　字符和字符串 第9章　布尔表达式和变量 第10章　C预处理器 第11章　ANSI&#x2F;ISO标准C 第12章　标准输入输出库 第13章　库函数 第14章　浮点运算 第15章　可变参数列表 第16　章 奇怪的问题 第17章　风格 第18章　工具和资源 第19章　系统依赖 第20章　杂项 术语表 参考文献</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B001P5HR4Q/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B001P5HR4Q&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51Kujz2BweL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0033UX10A/" rel="prev" title="Android应用开发揭秘">
+      <i class="fa fa-chevron-left"></i> Android应用开发揭秘
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0017XICV8/" rel="next" title="C语言入门经典(第4版)">
+      C语言入门经典(第4版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

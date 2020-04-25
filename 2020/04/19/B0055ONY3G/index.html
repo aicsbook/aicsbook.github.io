@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Android移动开发一本就够作者信息： 作者: Lauren Darcey [ 中文 pdf ] 简单介绍《Android移动开发一本就够》由Lauren Darcey、Schane Conder所著，在以开放手机联盟(Open HandsetAlliance，OHA)和Google公司为先驱的开拓下，Android作为一个热门、新潮、免费、开源的移动平台在无线通信领域引起了不小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android移动开发一本就够">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B0055ONY3G/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Android移动开发一本就够作者信息： 作者: Lauren Darcey [ 中文 pdf ] 简单介绍《Android移动开发一本就够》由Lauren Darcey、Schane Conder所著，在以开放手机联盟(Open HandsetAlliance，OHA)和Google公司为先驱的开拓下，Android作为一个热门、新潮、免费、开源的移动平台在无线通信领域引起了不小">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41N6ZsVUqeL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.636Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41N6ZsVUqeL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B0055ONY3G/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android移动开发一本就够 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B0055ONY3G/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android移动开发一本就够
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Android移动开发一本就够<br>作者信息： 作者: Lauren Darcey [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Android移动开发一本就够》由Lauren Darcey、Schane Conder所著，在以开放手机联盟(Open HandsetAlliance，OHA)和Google公司为先驱的开拓下，Android作为一个热门、新潮、免费、开源的移动平台在无线通信领域引起了不小的波澜，而你手中的这本书正能够为软件开发团队提供设计、开发、测试、调试和发布Android应用程序的一系列指导。如果你是一位资深的移动开发人员，那么书中一些小提示和小技巧可以帮助你更好地利用Android的某些独特功能，从而更加顺利地完成整个开发过程；相反，如果你刚刚踏入移动开发领域，那么本书将为你提供所有需要掌握的知识和技能，从而帮助你平稳而顺利地从传统软件开发过渡到移动开发，尤其是过渡到其中最富有前景的新平台——Android。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">目　录 </span><br><span class="line"></span><br><span class="line"> 第一部分　Android概览</span><br><span class="line"></span><br><span class="line"> 第1章　Android简介　2 1.1　移动软件开发简史　2 1.1.1　遥想当年　2 1.1.2　“砖头”　3 1.1.3　无线应用协议(WAP)　4 1.1.4　专用移动平台　6 1.2　开放手机联盟(OHA)　7 1.2.1　无线Google　8 1.2.2　成立开放手机联盟　8 1.2.3　制造商：设计Android手机　9 1.2.4　移动运营商：传播Android体验　9 1.2.5　内容提供商：开发Android应用程序　9 1.2.6　充分发挥Android的优势　10 1.3　Android平台的不同之处　10 1.3.1　Android：下一代平台　11 1.3.2　免费开放源代码　11 1.3.3　熟悉和廉价的开发工具　12 1.3.4　合理的开发人员学习曲线　12 1.3.5　强大的应用程序开发支持　12 1.3.6　丰富、安全的应用集成　13 1.3.7　无障碍发布　13 1.3.8　为应用程序提供的“自由市场”　13 1.3.9　新生并逐渐成长的平台　14 1.4　Android平台　14 1.4.1　Android的基本体系结构　14 1.4.2　安全与许可权限　16 1.4.3　开发Android应用程序　17 小结　18 参考资料和更多信息　18</span><br><span class="line"></span><br><span class="line"> 第2章　搭建你的Android开发环境　19 2.1　配置你的开发环境　19 2.1.1　配置操作系统以适应设备调试　20 2.1.2　配置Android硬件以供调试　20 2.1.3　升级Android SDK　20 2.1.4　Android软件开发包的问题　21 2.2　探索Android SDK　21 2.2.1　理解Android SDK许可协议　21 2.2.2　阅读Android SDK文档　22 2.2.3　探索Android应用程序框架　23 2.2.4　了解Android工具　24 2.2.5　探索Android示例应用程序　27 小结　28 参考资料和更多信息　28</span><br><span class="line"></span><br><span class="line"> 第3章　编写第一个Android应用程序　29 3.1　测试你的开发环境　29 3.1.1　在Eclipse工程中导入Snake应用程序　29 3.1.2　为Snake工程创建Android虚拟设备(AVD)　31 3.1.3　为Snake工程创建运行配置参数　31 3.1.4　在Android模拟器中运行Snake应用程序　32 3.2　构建你的第一个Android应用程序　33 3.2.1　创建和配置新的Android工程　33 3.2.2　Android应用程序的核心文件和目录　34 3.2.3　为新工程创建Android虚拟设备　35 3.2.4　为工程配置运行参数　35 3.2.5　在模拟器中运行Android应用程序　36 3.2.6　在模拟器中调试Android应用程序　37 3.2.7　为Android应用程序添加日志记录　39 3.2.8　为应用程序添加媒体支持　40 3.2.9　为应用程序添加位置服务(LBS)　42 3.2.10　在硬件上调试应用程序　43 小结　45 参考资料和更多信息　45</span><br><span class="line"></span><br><span class="line"> 第二部分　Android应用程序设计精髓</span><br><span class="line"></span><br><span class="line"> 第4章　剖析Android应用程序　48 4.1　掌握重要的Android术语　48 4.2　使用应用程序Context　48 4.3　使用Activity执行应用程序任务　49 4.3.1　Android Activity的生命周期　50 4.3.2　使用Intent管理Activity跳转　53 4.4　使用服务　56 4.5　接收和广播Intent　57 小结　57 参考资料和更多信息　58</span><br><span class="line"></span><br><span class="line"> 第5章　使用Android Manifest文件定义应用程序　59 5.1　配置Android Manifest文件　59 5.2　管理你的应用程序标识　63 5.2.1　为你的应用程序指定版本　63 5.2.2　给你的应用程序加上名称和图标　63 5.3　强制指定应用程序的系统需求　64 5.3.1　针对特定SDK版本　64 5.3.2　强制指定应用程序平台需求　66 5.3.3　使用外部库　67 5.4　注册Activity和其他应用程序组件　68 5.4.1　使用Intent过滤器为应用程序指派主入口点Activity　68 5.4.2　配置其他Intent过滤器　68 5.5　使用许可权限　69 5.5.1　注册应用程序所需的许可权限　69 5.5.2　注册应用程序授予其他应用程序的许可权限　70 5.6　探索Manifest文件的其他参数　71 小结　71 参考资料和更多信息　71</span><br><span class="line"></span><br><span class="line"> 第6章　管理应用程序资源　72 6.1　什么是资源　72 6.1.1　存储应用程序资源　72 6.1.2　理解资源目录的层级结构　72 6.1.3　资源的类型　73 6.1.4　存储不同的资源类型　74 6.1.5　使用程序访问资源　76 6.2　使用Eclipse设置简单资源　77 6.3　使用资源　79 6.3.1　使用String(字符串)资源　79 6.3.2　使用格式化的字符串资源　80 6.3.3　使用字符串数组　81 6.3.4　使用Boolean(布尔)资源　82 6.3.5　使用Integer(整型)资源　82 6.3.6　使用颜色　83 6.3.7　使用尺寸　83 6.3.8　使用简单Drawable资源　84 6.3.9　使用图像　85 6.3.10　使用动画　87 6.3.11　使用菜单　89 6.3.12　使用XML文件　90 6.3.13　使用原始文件　91 6.3.14　资源引用　91 6.3.15　使用布局(Layout)　92 6.3.16　使用样式(Style)　96 6.3.17　使用主题(Theme)　98 6.4　引用系统资源　98 小结　99 参考资料和更多信息　99</span><br><span class="line"></span><br><span class="line"> 第三部分　Android用户界面设计精髓</span><br><span class="line"></span><br><span class="line"> 第7章　探索用户界面屏幕元素　102 7.1　Android视图和布局简介　102 7.2　使用TextView显示文本　103 7.2.1　配置布局和尺寸　104 7.2.2　在文本中创建上下文链接　104 7.3　获取用户数据　105 7.3.1　使用EditText控件获取用户输入文本　106 7.3.2　使用Spinner控件为用户提供可选输入　109 7.4　使用按钮、多选框和单选组　110 7.4.1　使用基本按钮　110 7.4.2　使用多选框和开关(Toggle)按钮　111 7.4.3　使用RadioGroup和RadioButton　112 7.5　获取用户输入的日期和时间　114 7.6　使用指示器向用户显示数据　115 7.7　使用SeekBar调整进度　116 7.7.1　使用RatingBar显示评分数据　117 7.7.2　使用Chronometer显示时间推移　118 7.7.3　显示时间　119 7.8　为用户提供选项和上下文菜单　119 7.8.1　使用选项菜单　119 7.8.2　使用ContextMenu　121 7.9　处理用户事件　123 7.9.1　监听触摸模式状态改变　123 7.9.2　监听全屏幕上的事件　124 7.9.3　监听长时单击　124 7.9.4　监听焦点改变　125 7.10　使用对话框　126 7.10.1　探索不同类型的对话框　126 7.10.2　跟踪对话框的生命周期　127 7.10.3　使用自定义对话框　128 7.11　使用样式　128 7.12　使用主题　130 小结　131</span><br><span class="line"></span><br><span class="line"> 第8章　使用布局设计用户界面　132 8.1　创建Android用户界面　132 8.1.1　使用XML资源创建布局　132 8.1.2　使用代码创建布局　133 8.2　组织用户界面　135 8.3　使用内建的布局类　138 8.3.1　使用FrameLayout　140 8.3.2　使用LinearLayout　141 8.3.3　使用RelativeLayout　142 8.3.4　使用TableLayout　144 8.3.5　在屏幕上使用多布局　145 8.4　使用内建的View容器类　146 8.4.1　使用数据驱动容器　147 8.4.2　使用标签组织视图　150 8.4.3　添加滚动支持　152 8.4.4　探索其他视图容器　153 小结　154</span><br><span class="line"></span><br><span class="line"> 第9章　绘图与动画　155 9.1　屏幕绘图　155 9.2　使用文字　158 9.2.1　使用默认字体　158 9.2.2　使用自定义字体　159 9.2.3　测量文字所需的屏幕尺寸　160 9.3　使用位图　160 9.4　使用图形　161 9.4.1　用XML资源定义图形　161 9.4.2　使用程序定义图形　162 9.4.3　绘制各种图形　162 9.5　使用动画　167 9.5.1　使用逐帧动画　167 9.5.2　使用补间动画　168 小结　172</span><br><span class="line"></span><br><span class="line"> 第四部分　使用常用Android API</span><br><span class="line"></span><br><span class="line"> 第10章　使用Android数据和存储API　174 10.1　使用应用程序首选项　174 10.1.1　创建私有和共享首选项　174 10.1.2　搜索和读取首选项　175 10.1.3　新增、修改和删除首选项　175 10.1.4　使用Android文件系统查找首选项数据　176 10.2　使用文件和目录　177 10.2.1　探索Android应用程序目录　177 10.2.2　使用Android文件系统操作其他目录和文件　179 10.3　使用SQLite数据库存储结构化数据　180 10.3.1　创建SQLite数据库　181 10.3.2　创建、修改和删除数据库记录　183 10.3.3　在SQLite数据库中执行查询　185 10.3.4　关闭和删除SQLite数据库　189 10.3.5　设计持久数据库　189 10.3.6　向应用程序界面绑定数据　191 小结　195 参考资料和更多信息　195</span><br><span class="line"></span><br><span class="line"> 第11章　使用内容提供器在应用程序间共享数据　196 11.1　探索Android内容提供器　196 11.1.1　使用MediaStore内容提供器　196 11.1.2　使用CallLog内容提供器　198 11.1.3　使用浏览器(Browser)内容提供器　199 11.1.4　使用联系簿(Contacts)内容提供器　200 11.1.5　使用UserDictionary(用户词典)内容提供器　202 11.1.6　使用Settings内容提供器　202 11.2　修改内容提供器的数据　202 11.2.1　添加记录　203 11.2.2　修改记录　203 11.2.3　删除记录　204 11.3　使用内容提供器增强你的应用程序　204 11.4　实现内容提供器　208 11.4.1　实现内容提供器接口　209 11.4.2　定义数据URI　209 11.4.3　定义数据列　210 11.4.4　实现重要的内容提供器方法　210 11.4.5　更新Manifest文件　214 11.5　使用动态文件夹(Live Folder)　215 小结　217 参考资料和更多信息　217</span><br><span class="line"></span><br><span class="line"> 第12章　使用Android网络API　218 12.1　移动网络基础　218 12.2　访问因特网(HTTP)　218 12.2.1　从Web读取数据　219 12.2.2　使用HttpURLConnection　219 12.2.3　解析从网络获取的XML　220 12.2.4　异步操作　222 12.2.5　使用AsyncTask　222 12.2.6　使用线程进行网络访问　223 12.2.7　显示从网络资源获取的图像　224 12.2.8　获取Android网络状态　226 小结　227 参考资料和更多信息　227</span><br><span class="line"></span><br><span class="line"> 第13章　使用Android Web API　228 13.1　使用WebView浏览Web　228 13.1.1　设计带有WebView控件的布局　229 13.1.2　向WebView控件载入内容　229 13.1.3　为WebView控件添加功能　230 13.2　使用WebKit延伸Web应用　232 13.2.1　浏览WebKit API　232 13.2.2　扩展Android Web应用程序的功能　232 13.3　使用Flash　236 13.3.1　使用Flash应用程序　236 13.3.2　构建AIR应用程序　237 小结　237 参考资料和更多信息　237</span><br><span class="line"></span><br><span class="line"> 第14章　使用位置服务API　238 14.1　使用全球定位服务(GPS)　238 14.1.1　在你的应用程序中使用 GPS功能　238 14.1.2　查找你的位置　239 14.1.3　定位你的模拟器　240 14.2　位置地理编码　241 14.3　在地图上标注位置　243 14.3.1　地图标注内容　243 14.3.2　地图标注视图　244 14.3.3　获得调试API Key　245 14.3.4　拖曳地图视图　247 14.3.5　缩放地图视图　247 14.3.6　标记点　248 14.4　位置服务扩展应用　251 小结　252 参考资料和更多信息　252</span><br><span class="line"></span><br><span class="line"> 第15章　使用Android多媒体API　253 15.1　使用多媒体　253 15.2　使用静态图像　254 15.2.1　使用摄像头捕捉静态图像　254 15.2.2　配置摄像头模式　257 15.2.3　分享图像　258 15.2.4　将图像指定为壁纸　259 15.3　使用视频　259 15.3.1　录制视频　260 15.3.2　播放视频　261 15.4　使用音频　262 15.4.1　录制音频　262 15.4.2　播放音频　263 15.4.3　共享音频　264 15.4.4　搜索多媒体　264 15.4.5　使用铃音　265 小结　265 参考资料和更多信息　265</span><br><span class="line"></span><br><span class="line"> 第16章　使用Android电话API　266 16.1　使用电话功能　266 16.1.1　为获取手机状态信息取得许可权限　266 16.1.2　获取通话状态　267 16.1.3　请求获取服务信息　268 16.1.4　监控信号强度和数据连接速度　269 16.1.5　使用电话号码　269 16.2　使用短消息　270 16.2.1　获得发送和接收短消息的许可权限　270 16.2.2　发送短消息　270 16.2.3　接收短消息　272 16.3　拨打和接听电话　273 小结　275 参考资料和更多信息　275</span><br><span class="line"></span><br><span class="line"> 第17章　通过OpenGL ES使用Android 3D图形　276 17.1　使用OpenGL ES　276 17.1.1　在Android中使用OpenGL ES　276 17.1.2　保证设备兼容性　277 17.2　在Android SDK中使用OpenGL ES API　277 17.3　手工处理OpenGL ES任务　278 17.3.1　创建SurfaceView　278 17.3.2　启动OpenGL ES线程　279 17.3.3　初始化EGL　281 17.3.4　初始化GL　282 17.3.5　屏幕绘制　283 17.4　绘制3D物体　283 17.4.1　绘制顶点(Vertices)　283 17.4.2　为顶点着色　284 17.4.3　绘制更多复杂物体　285 17.4.4　照亮你的场景　286 17.4.5　为对象赋予材质　288 17.5　同Android视图和事件进行交互　289 17.5.1　允许OpenGL线程向应用程序线程发送信息　289 17.5.2　允许应用程序线程向OpenGL线程发送信息　290 17.6　清理OpenGL ES　291 17.7　使用GLSurfaceView　292 17.8　使用OpenGL ES 2.0　294 17.8.1　为OpenGL ES 2.0配置应用程序　295 17.8.2　获取OpenGL ES 2.0平面　295 小结　298 参考资料和更多信息　298</span><br><span class="line"></span><br><span class="line"> 第18章　使用Android NDK　299 18.1　何时使用Android NDK　299 18.2　安装Android NDK　300 18.3　探索Android NDK　300 18.4　创建自己的NDK工程　300 18.4.1　使用Java调用原生代码　301 18.4.2　处理参数和返回值　302 18.4.3　在原生代码中使用异常　303 18.5　提升图形处理性能　304 小结　305 参考资料和更多信息　305</span><br><span class="line"></span><br><span class="line"> 第19章　使用Android可选硬件API　306 19.1　与设备硬件进行交互　306 19.2　使用设备传感器　307 19.2.1　使用不同的传感器　307 19.2.2　获取对传感器的访问　307 19.2.3　读取传感器数据　308 19.2.4　校正传感器　309 19.2.5　确定设备的方向　309 19.2.6　指北　309 19.3　使用Wi-Fi　309 19.4　使用蓝牙　311 19.4.1　检查可用的蓝牙硬件　312 19.4.2　开启蓝牙　312 19.4.3　查询配对设备　313 19.4.4　搜索设备　313 19.4.5　建立设备间连接　313 19.5　监视电池　314 小结　316 参考资料和更多信息　316</span><br><span class="line"></span><br><span class="line"> 第五部分　更多Android应用程序设计原则</span><br><span class="line"></span><br><span class="line"> 第20章　使用通知　318 20.1　向用户发出通知　318 20.2　使用状态栏发布通知　319 20.2.1　使用NotificationManager服务　319 20.2.2　创建一个带有图标的简单文本通知　319 20.2.3　使用通知队列　320 20.2.4　更新通知　321 20.2.5　清除通知　321 20.3　让手机震动　322 20.4　灯光闪烁　323 20.5　发出声响　324 20.6　自定义通知　324 20.7　设计有用的通知　326 小结　326 参考资料和更多信息　326</span><br><span class="line"></span><br><span class="line"> 第21章　使用服务　327 21.1　何时使用服务　327 21.2　理解服务的生命周期　328 21.3　创建服务　328 21.4　控制服务　332 21.5　实现远程接口　333 21.6　实现可包装(Parcelable)类　335 小结　337 参考资料和更多信息　337</span><br><span class="line"></span><br><span class="line"> 第22章　扩展Android应用程序　338 22.1　增强你的应用程序　338 22.2　使用应用程序小插件　339 22.2.1　创建应用程序小插件　339 22.2.2　安装应用程序小插件　345 22.2.3　成为小插件“宿主(Host)”　345 22.3　使用动态壁纸(Live Wallpaper)　345 22.3.1　创建动态壁纸　346 22.3.2　安装动态壁纸　348 22.4　成为内容类型处理器(Content Type Handler)　349 22.5　确定Intent动作和MIME类型　350 22.5.1　实现Activity处理Intent　350 22.5.2　注册Intent过滤器　351 22.6　让应用程序的内容可搜索　352 22.6.1　在应用程序内启用搜索　353 22.6.2　启用全局搜索　358 22.7　使用动态文件夹　360 22.7.1　创建动态文件夹　360 22.7.2　安装动态文件夹　364 小结　365 参考资料和更多信息　365</span><br><span class="line"></span><br><span class="line"> 第23章　用户账户管理与数据同步　366 23.1　使用账户管理器管理账户　366 23.2　使用备份服务　367 23.2.1　选择远程备份服务　368 23.2.2　实现备份代理(Agent)　368 23.2.3　备份和恢复应用程序数据　371 小结　372 参考资料和更多信息　373</span><br><span class="line"></span><br><span class="line"> 第24章　处理高级用户输入　374 24.1　使用文本输入法　374 24.1.1　使用软键盘　374 24.1.2　使用文本预测和用户词典　376 24.2　探索辅助功能(Accessibility)框架　376 24.2.1　使用语音识别服务　377 24.2.2　使用语音合成(TTS)服务　378 24.3　使用手势　380 24.4　处理普通单点触控手势　381 24.4.1　处理普通多点触控手势　385 24.4.2　让手势更自然　388 24.5　使用轨迹球　388 24.6　处理屏幕方向改变　388 小结　390 参考资料和更多信息　390</span><br><span class="line"></span><br><span class="line"> 第25章　面向不同设备配置和语言　391 25.1　最大化应用程序兼容性　391 25.2　为兼容性设计用户界面　392 25.2.1　支持特定屏幕类型　393 25.2.2　使用九格拉伸图像　393 25.2.3　使用Working Square原理　395 25.3　提供应用程序替代资源　396 25.3.1　使用替代资源标识符　396 25.3.2　提供用于不同屏幕方向的资源　399 25.3.3　在程序中使用替代资源　400 25.3.4　高效地组织应用程序资源　400 25.4　应用程序国际化　401 25.4.1　使用替代资源实现国际化　401 25.4.2　在程序中实现本地化支持　404 25.5　面向不同设备配置　405 25.5.1　支持硬件配置　405 25.5.2　面向不同Android SDK版本　405 小结　407 参考资料和更多信息　408</span><br><span class="line"></span><br><span class="line"> 第六部分　对外发布你的Android应用程序 第26章　移动软件开发过程　410 26.1　移动开发过程概览　410 26.2　选择一种软件开发方法　410 26.2.1　理解“瀑布模型”的危险　411 26.2.2　认识迭代式开发的价值　411 26.3　整合应用程序需求　411 26.3.1　确定工程需求　411 26.3.2　为移动应用程序开发用例　413 26.3.3　吸纳第三方需求　413 26.3.4　管理设备数据库　413 26.4　项目风险评估　415 26.4.1　确定目标设备　415 26.4.2　获取目标设备　416 26.4.3　确定应用程序需求的可行性　417 26.4.4　理解质量保障的风险　417 26.5　编写基本项目文档　418 26.6　使用配置管理系统　419 26.7　设计移动应用程序　420 26.7.1　认识移动设备的局限　420 26.7.2　移动应用程序体系结构探索　420 26.7.3　可扩展和维护设计　421 26.7.4　应用程序交互设计　422 26.8　开发移动应用程序　422 26.9　测试移动应用程序　422 26.10　发布移动应用程序　423 26.11　支持和维护移动应用程序　423 小结　424 参考资料和更多信息　424</span><br><span class="line"></span><br><span class="line"> 第27章　设计和开发“防弹”Android应用程序　425 27.1 “防弹”移动应用程序设计最佳实践　425 27.1.1　满足移动用户的需求　425 27.1.2　为移动设备设计用户界面　426 27.1.3　设计稳定、灵敏的移动应用程序　426 27.1.4　设计安全的移动应用程序　427 27.1.5　在设计移动应用程序时考虑利益的最大化　428 27.1.6　在Android应用程序设计时使用第三方标准　428 27.1.7　设计便于维护和升级的移动应用程序　429 27.1.8　在应用程序设计中使用Andriod工具　430 27.1.9　避免设计时的愚蠢错误　430 27.2 “防弹”移动应用程序开发最佳实践　431 27.2.1　设计有效的移动开发过程　431 27.2.2　提早和经常地测试应用程序可行性　431 27.2.3　使用代码标准、代码检查和单元测试以提高代码质量　431 27.2.4　处理某单一设备的缺陷　433 27.2.5　在应用程序开发中使用Android工具　434 27.2.6　避免开发时的愚蠢错误　434 小结　434 参考资料和更多信息　434</span><br><span class="line"></span><br><span class="line"> 第28章　测试Android应用程序　435 28.1　设计一个应用程序漏洞跟踪系统　435 28.2　管理测试环境　436 28.3　尽量全面地进行测试　438 28.4　在应用程序测试中使用Android工具　442 28.5　避免测试时的愚蠢错误　443 28.6　外包测试的责任　443 小结　443 参考资料和更多信息　443</span><br><span class="line"></span><br><span class="line"> 第29章　销售你的Android应用程序　444 29.1　选择合适的发布模式　444 29.2　为发布而打包你的应用程序　444 29.2.1　准备封装你的代码　445 29.2.2　为你的应用程序打包并签名　446 29.2.3　测试软件包的发布版本　448 29.2.4　认证你的Android应用程序　448 29.3　发布你的应用程序　448 29.3.1　在Android Market上销售你的应用程序　448 29.3.2　在自己的服务器上销售你的应用程序　453 29.3.3　销售应用程序的其他途径　453 29.3.4　保护你的知识产权　454 29.3.5　让用户付费　454 小结　455 参考资料和更多信息　455</span><br><span class="line"></span><br><span class="line"> 第七部分　附录</span><br><span class="line"></span><br><span class="line"> 附录A　Android模拟器快速入门　458 A.1　模拟器的目的：虚拟现实　458 A.2　使用Android虚拟设备(AVD)　459 A.2.1　使用Android SDK和AVD管理器　460 A.2.2　创建AVD　460 A.3　使用指定AVD启动模拟器　463 A.3.1　配置模拟器启动项　463 A.3.2　启动模拟器运行应用程序　463 A.3.3　从Android SDK和AVD管理器中启动模拟器　464 A.4　配置模拟器的GPS位置信息　465 A.5　在两个模拟器实例之间拨打电话　466 A.6　在两个模拟器实例之间发送消息　466 A.7　通过控制台与模拟器交互　467 A.7.1　使用控制台模拟来电　467 A.7.2　使用控制台模拟短消息　468 A.7.3　使用控制台发送GPS坐标　468 A.7.4　使用控制台监视网络状态　469 A.7.5　使用控制台操作电源设置　469 A.7.6　使用其他控制台命令　470 A.8　享受模拟器　470 A.9　认识模拟器的局限　470</span><br><span class="line"></span><br><span class="line"> 附录B　Android DDMS快速入门　471 B.1　独立或结合Eclipse使用DDMS　471 B.2　熟悉DDMS的关键特性　472 B.3　使用进程　472 B.3.1　向Android应用程序关联调试器　473 B.3.2　监视Android应用程序的线程活动　473 B.3.3　触发垃圾回收(GC)　474 B.3.4　监视堆活动　474 B.3.5　监视内存分配　474 B.3.6　终止Android进程　475 B.4　使用文件浏览器　475 B.4.1　浏览模拟器或设备上的文件系统　475 B.4.2　从模拟器或设备上拷贝文件　476 B.4.3　向模拟器或设备拷贝文件　476 B.4.4　删除模拟器或设备上的文件　476 B.5　使用模拟器控制　476 B.5.1　模拟语音来电　476 B.5.2　模拟短消息接收　477 B.5.3　发送位置坐标　477 B.6　使用应用程序日志　477 B.7　在模拟器或目标设备上截屏　478</span><br><span class="line"></span><br><span class="line"> 附录C　Android调试桥快速入门　479 C.1　列表显示连接的设备和模拟器　479 C.2　针对特定设备使用ADB命令　479 C.3　启动和停止ADB服务进程　480 C.3.1　停止ADB服务进程　480 C.3.2　启动和检测ADB服务进程　480 C.4　发布Shell命令　480 C.4.1　发布单条Shell命令　480 C.4.2　使用Shell会话　481 C.4.3　使用Shell启动和终止模拟器　481 C.5　拷贝文件　481 C.5.1　向设备或模拟器发送文件　481 C.5.2　从设备提取文件　481 C.6　安装和卸载Android应用程序　482 C.6.1　安装应用程序　482 C.6.2　重装应用程序　482 C.6.3　卸载应用程序　482 C.7　使用LogCat记录日志　483 C.7.1　显示所有的日志信息　483 C.7.2　在日志数据中包含日期和时间信息　483 C.7.3　过滤日志信息　483 C.7.4　清除日志　484 C.7.5　将日志输出重定向至一个文件　484 C.7.6　访问次级日志　485 C.8　控制备份服务　485 C.8.1　强制备份操作　485 C.8.2　强制恢复操作　486 C.8.3　将存档数据清空　486 C.9　生成Bug报告　486 C.10　使用Shell查看SQLite数据库　486 C.10.1　在ADB Shell中进行应用程序压力测试　486 C.10.2　通过Shell安装和使用自定义二进制文件　489 C.11　其他ADB命令探索　490</span><br><span class="line"></span><br><span class="line"> 附录D　Eclipse技巧和诀窍　491 D.1　构建你的Eclipse工作空间　491 D.1.1　集成源代码管理服务　491 D.1.2　调整视图中的标签面板　491 D.1.3　最大化窗口　492 D.1.4　最小化窗口　492 D.1.5　显示并排窗口　492 D.1.6　显示同一文件的两个部分　492 D.1.7　关掉不需要的标签面板　492 D.1.8　保持对窗口的控制　492 D.1.9　定制日志过滤器　493 D.2　编写Java代码　493 D.2.1　善用自动补全(Auto-Complete)　493 D.2.2　格式化代码　493 D.2.3　创建类　494 D.2.4　创建方法存根(stub)　494 D.2.5　组织导入　494 D.2.6　重命名　494 D.2.7　重构代码　494 D.2.8　整理代码　496 D.2.9　提供Javadoc风格的文件　496 D.2.10　解决诡异的构建错误　496</span><br><span class="line"></span><br><span class="line"> 附录E　SQLite快速入门　497 E.1　探索SQLite的常见任务　497 E.2　使用sqlite3命令行接口　497 E.2.1　运行ADB Shell　498 E.2.2　连接数据库　498 E.2.3　探索你的数据库　498 E.2.4　导入和导出数据库　499 E.2.5　在命令行中执行SQL命令　501 E.2.6　使用其他的sqlite3命令　502 E.2.7　认识SQLite的局限　502 E.3　通过实例学习：学生成绩数据库　503 E.3.1　设计学生成绩数据库的模式　503 E.3.2　结合AUTOINCREMENT创建简单表　503 E.3.3　向表中插入数据　504 E.3.4　使用SELECT查询表数据　504 E.3.5　创建具有外键和复合主键的表　505 E.3.6　修改和更新表数据　506 E.3.7　使用JOIN进行多表查询　506 E.3.8　使用计算列　507 E.3.9　对计算列使用子查询　508 E.3.10　删除表　508</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B0055ONY3G/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B0055ONY3G&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41N6ZsVUqeL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0056E8U3Y/" rel="prev" title="C语言参考手册(原书第5版)">
+      <i class="fa fa-chevron-left"></i> C语言参考手册(原书第5版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B004WEFOYM/" rel="next" title="Android多媒体编程从初学到精通">
+      Android多媒体编程从初学到精通 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

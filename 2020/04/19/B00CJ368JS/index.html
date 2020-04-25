@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Android的设计与实现(卷1)作者信息： 作者: 杨云君 [ 中文 pdf ] 简单介绍《Android的设计与实现(卷1)》编辑推荐：从源代码角度，系统、深入、透彻剖析Android系统框架层（Framework）的设计思想和实现原理，为Android应用工程师和系统工程师解决各种难题提供了原理性的指导！资深Android内核专家亲自执笔，Lordhong等数位资深专家和安卓">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android的设计与实现(卷1)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00CJ368JS/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Android的设计与实现(卷1)作者信息： 作者: 杨云君 [ 中文 pdf ] 简单介绍《Android的设计与实现(卷1)》编辑推荐：从源代码角度，系统、深入、透彻剖析Android系统框架层（Framework）的设计思想和实现原理，为Android应用工程师和系统工程师解决各种难题提供了原理性的指导！资深Android内核专家亲自执笔，Lordhong等数位资深专家和安卓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41cs4mMwXGL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.592Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41cs4mMwXGL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00CJ368JS/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android的设计与实现(卷1) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00CJ368JS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android的设计与实现(卷1)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Android的设计与实现(卷1)<br>作者信息： 作者: 杨云君 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Android的设计与实现(卷1)》编辑推荐：从源代码角度，系统、深入、透彻剖析Android系统框架层（Framework）的设计思想和实现原理，为Android应用工程师和系统工程师解决各种难题提供了原理性的指导！资深Android内核专家亲自执笔，Lordhong等数位资深专家和安卓巴士等专业社区联袂推荐。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br></pre></td><td class="code"><pre><span class="line">前言</span><br><span class="line">第一部分 基础篇</span><br><span class="line">第1章 Android体系结构及源代码阅读环境搭建</span><br><span class="line">1.1 Android发展过程</span><br><span class="line">1.2 Android体系结构</span><br><span class="line">1.2.1 静态视角的体系结构</span><br><span class="line">1.2.2 动态视角的体系结构</span><br><span class="line">1.3 Android源码下载和编译</span><br><span class="line">1.3.1 搭建开发环境</span><br><span class="line">1.3.2 下载Android上层系统源代码</span><br><span class="line">1.3.3 下载指定模块源码</span><br><span class="line">1.3.4 下载 Android Linux Kernel源码</span><br><span class="line">1.3.5 编译Android上层系统源码</span><br><span class="line">1.3.6 编译指定模块源码</span><br><span class="line">1.4 Android源码结构</span><br><span class="line">1.5 Android源码开发工具的配置和使用</span><br><span class="line">1.5.1 配置Android SDK</span><br><span class="line">1.5.2 用Eclipse开发和调试源代码</span><br><span class="line">1.5.3 用Source Insight阅读源代码</span><br><span class="line">1.6 NDK开发环境配置</span><br><span class="line">1.7 本章小结</span><br><span class="line">第2章 框架基础JNI</span><br><span class="line">2.1 JNI在Android系统中所处的位置</span><br><span class="line">2.2 JNI框架层实例分析</span><br><span class="line">2.2.1 Log系统Java层分析</span><br><span class="line">2.2.2 Log系统的JNI层</span><br><span class="line">2.2.3 Log系统的JNI方法注册</span><br><span class="line">2.3 JNI总管：JNIEnv</span><br><span class="line">2.4 在Java中调用JNI实现方法</span><br><span class="line">2.4.1 Java数据类型与JNI数据类型转换</span><br><span class="line">2.4.2 JNI方法命名规则</span><br><span class="line">2.4.3 JNI方法签名规则</span><br><span class="line">2.5 JNI操作Java对象</span><br><span class="line">2.5.1 访问Java对象</span><br><span class="line">2.5.2 操作成员变量（域）和方法</span><br><span class="line">2.5.3 全局引用、弱全局引用和局部引用</span><br><span class="line">2.6 JNI异常处理</span><br><span class="line">2.7 JNI应用层实例分析</span><br><span class="line">2.7.1 Java层分析</span><br><span class="line">2.7.2 JNI层代码和异常处理</span><br><span class="line">2.8 本章小结</span><br><span class="line">第二部分 启动篇</span><br><span class="line">第3章 Android启动过程的底层实现</span><br><span class="line">3.1 Android正常模式启动流程</span><br><span class="line">3.2 Kernel启动过程</span><br><span class="line">3.2.1 内核引导阶段</span><br><span class="line">3.2.2 内核启动阶段</span><br><span class="line">3.3 init进程的执行过程</span><br><span class="line">3.4 init.rc文件解析过程</span><br><span class="line">3.4.1 Android初始化语言</span><br><span class="line">3.4.2 init.rc的内容</span><br><span class="line">3.4.3 解析配置文件</span><br><span class="line">3.4.4 解析Service</span><br><span class="line">3.4.5 解析Action</span><br><span class="line">3.5 触发并启动Action和Service</span><br><span class="line">3.5.1 触发Action</span><br><span class="line">3.5.2 执行Action</span><br><span class="line">3.5.3 启动Service</span><br><span class="line">3.5.4 init对属性服务的处理</span><br><span class="line">3.6 init循环监听处理事件</span><br><span class="line">3.7 本章小结</span><br><span class="line">第4章 Android 启动过程的上层实现</span><br><span class="line">4.1 第一个Dalvik虚拟机zygote</span><br><span class="line">4.1.1 zygote的配置</span><br><span class="line">4.1.2 如何执行zygote服务程序</span><br><span class="line">4.2 ZygoteInit的启动过程</span><br><span class="line">4.2.1 创建Dalvik虚拟机</span><br><span class="line">4.2.2 注册JNI方法</span><br><span class="line">4.2.3 开启Java世界</span><br><span class="line">4.3 ZygoteInit开启Java世界的五部分工作</span><br><span class="line">4.3.1 注册zygote的Socket</span><br><span class="line">4.3.2 预加载Class资源和Resource资源</span><br><span class="line">4.3.3 启动system_server进程</span><br><span class="line">4.3.4 执行MethodAndArgsCalle的run方法</span><br><span class="line">4.3.5 执行runSelectLoopMode方法</span><br><span class="line">4.4 zygote处理Home启动请求</span><br><span class="line">4.5 本章小结</span><br><span class="line">第三部分 Binder篇</span><br><span class="line">第5章 Binder在Native框架层的实现</span><br><span class="line">5.1 Binder与C／S体系结构概述</span><br><span class="line">5.2 servicemanager进程的启动过程</span><br><span class="line">5.2.1 初始化Binder通信环境</span><br><span class="line">5.2.2 注册上下文管理者</span><br><span class="line">5.2.3 等待接收并处理IPC通信请求</span><br><span class="line">5.3 Server的启动和Service的注册过程</span><br><span class="line">5.3.1 创建ProcessState对象</span><br><span class="line">5.3.2 获取servicemanager的代理对象</span><br><span class="line">5.3.3 注册Service</span><br><span class="line">5.3.4 Server进程开启线程池</span><br><span class="line">5.4 Client端使用服务代理对象</span><br><span class="line">5.5 服务代理与服务通信</span><br><span class="line">5.6 本章小结</span><br><span class="line">第6章 Binder在Java框架层的实现</span><br><span class="line">6.1 Java系统服务的创建过程</span><br><span class="line">6.1.1 创建JavaBBinderHolder对象</span><br><span class="line">6.1.2 JavaBBinder的作用</span><br><span class="line">6.1.3 gBinderOffsets结构体解析</span><br><span class="line">6.2 Java系统服务的注册过程</span><br><span class="line">6.2.1 调用BinderInternal.getContextObject方法</span><br><span class="line">6.2.2 调用ServiceManagerNative.asInterface方法</span><br><span class="line">6.2.3 调用ServiceManagerProxy.addService方法注册服务</span><br><span class="line">6.3 Client端获取服务代理</span><br><span class="line">6.3.1 获取服务的BinderProxy</span><br><span class="line">6.3.2 构造服务的Proxy对象</span><br><span class="line">6.3.3 构造服务管理者对象</span><br><span class="line">6.4 Client端调用Java系统服务的方法</span><br><span class="line">6.5 统一的通信接口AIDL</span><br><span class="line">6.5.1AIDL实例</span><br><span class="line">6.5.2AIDL语法</span><br><span class="line">6.5.3处理自定义数据类型的传递</span><br><span class="line">6.6 本章小结</span><br><span class="line">第四部分 消息通信篇</span><br><span class="line">第7章 线程消息通信与异步处理</span><br><span class="line">7.1 什么是Looper线程</span><br><span class="line">7.2 第一步：Looper线程准备阶段</span><br><span class="line">7.2.1 创建Java层的Looper对象</span><br><span class="line">7.2.2 创建Java层的MessageQueue—对象</span><br><span class="line">7.2.3 创建Native层的NativeMessageQueue和Looper对象</span><br><span class="line">7.2.4 NativeMessageQueue关联到MessageQueue</span><br><span class="line">7.3 第二步：创建消息处理器并发送消息</span><br><span class="line">7.3.1 Handler的创建和初始化</span><br><span class="line">7.3.2 Message的创建和初始化</span><br><span class="line">7.3.3 消息的发送过程</span><br><span class="line">7.4 第三步：Looper线程循环阶段</span><br><span class="line">7.4.1 记录并获取当前线程身份信息</span><br><span class="line">7.4.2 循环监听消息</span><br><span class="line">7.4.3 分发消息到处理器</span><br><span class="line">7.4.4 回收消息并更新消息池</span><br><span class="line">7.5 异步任务类AsyncTask</span><br><span class="line">7.5.1 AsyncTask的实现</span><br><span class="line">7.5.2 AsyncTask的执行</span><br><span class="line">7.6 本章小结</span><br><span class="line">第五部分 Package Manager篇</span><br><span class="line">第8章 Package Manager 的机制与实现</span><br><span class="line">8.1 Package Manager体系结构</span><br><span class="line">8.1.1 三层体系结构</span><br><span class="line">8.1.2 三层之间的关系</span><br><span class="line">8.2 PackageManagerService的启动过程</span><br><span class="line">8.2.1 创建并初始化Settings对象</span><br><span class="line">8.2.2 获取系统默认配置</span><br><span class="line">8.2.3 启动PackageHandler</span><br><span class="line">8.2.4 创建data目录并初始化UserManager</span><br><span class="line">8.2.5 解析系统permission和feature信息</span><br><span class="line">8.2.6 解析packages文件</span><br><span class="line">8.2.7 dexopt优化判定</span><br><span class="line">8.2.8 启动FileObserver监控APK文件的目录</span><br><span class="line">8.2.9 调用scanDirLI方法扫描并安装APK包</span><br><span class="line">8.2.10 更新packages文件</span><br><span class="line">8.3 PackageManagerService启动过程使用的核心组件</span><br><span class="line">8.3.1 Java层的Installer</span><br><span class="line">8.3.2 Installd中的命令</span><br><span class="line">8.4 本章小结</span><br><span class="line">第9章 APK的安装过程</span><br><span class="line">9.1 通过scanDirLI方法安装APK</span><br><span class="line">9.1.1 创建PackageParser</span><br><span class="line">9.1.2 解析AndroidManifest.xml文件</span><br><span class="line">9.1.3 过滤PackageParser.Package类型的pkg对象</span><br><span class="line">9.1.4 解析和安装pkg</span><br><span class="line">9.2 使用adb命令安装应用程序</span><br><span class="line">9.2.1 通过消息机制安装指定的APK</span><br><span class="line">9.2.2 调用handleStartCopy方法处理安装操作</span><br><span class="line">9.2.3 调用handleReturnCode方法处理返回结果</span><br><span class="line">9.3 本章小结</span><br><span class="line">第六部分 Activity Manager篇</span><br><span class="line">第10章 Activity Manager的机制与实现</span><br><span class="line">10.1 Activity Manager概述</span><br><span class="line">10.2 ActivityManagerService在系统启动阶段的主要工作</span><br><span class="line">10.3 第一阶段：启动ActivityManagerService</span><br><span class="line">10.3.1 启动AThread线程</span><br><span class="line">10.3.2 创建ActivityThread对象</span><br><span class="line">10.3.3 创建ActivityStack类</span><br><span class="line">10.3.4 调用startRunning方法</span><br><span class="line">10.4 第二阶段：调用setSystemProcess方法</span><br><span class="line">10.4.1 查询并处理ApplicationInfo</span><br><span class="line">10.4.2 创建并初始化ProcessRecord</span><br><span class="line">10.5 第三阶段：调用install—SystemProviders方法</span><br><span class="line">10.5.1 查询Content Provider</span><br><span class="line">10.5.2 安装Content Provider</span><br><span class="line">10.6 第四阶段：调用systemReady方法</span><br><span class="line">10.6.1 发送ACTION_PRE_BOOT_COMPLETED广播</span><br><span class="line">10.6.2 清理预启动的非persistent进程</span><br><span class="line">10.6.3 读取Settings配置</span><br><span class="line">10.6.4 运行Runnable回调接口</span><br><span class="line">10.6.5 启动persistent应用程序和Home</span><br><span class="line">10.7 本章小结</span><br><span class="line">第11章 应用程序Activity的启动和调度</span><br><span class="line">11.1 启动应用程序Activity时在Client端的执行流程</span><br><span class="line">11.2 启动应用程序Activity时在Server端的执行流程</span><br><span class="line">11.2.1 预启动</span><br><span class="line">11.2.2 暂停</span><br><span class="line">11.2.3 启动应用程序进程</span><br><span class="line">11.2.4 加载应用程序Activity</span><br><span class="line">11.2.5 显示Activity</span><br><span class="line">11.2.6 Activity Idle状态的处理过程</span><br><span class="line">11.2.7 停止源Activity</span><br><span class="line">11.3 本章小结</span><br><span class="line">第12章 Activity Manager进程 管理</span><br><span class="line">12.1 LRU weight机制</span><br><span class="line">12.2 OOM adj机制</span><br><span class="line">12.2.1 更新OOM adj值</span><br><span class="line">12.2.2 OOM adj的计算过程</span><br><span class="line">12.3 Low Memory Killer机制</span><br><span class="line">12.3.1 OOM adj等级和最小内存阈值</span><br><span class="line">12.3.2 LM Killer机制的实现</span><br><span class="line">12.4 本章小结</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00CJ368JS/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00CJ368JS&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41cs4mMwXGL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00CZ3PGP4/" rel="prev" title="Android 3D游戏案例开发大全">
+      <i class="fa fa-chevron-left"></i> Android 3D游戏案例开发大全
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00AMAI1AO/" rel="next" title="移动应用UI设计模式">
+      移动应用UI设计模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

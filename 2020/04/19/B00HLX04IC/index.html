@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Hadoop基础教程作者信息： 作者: 特金顿 (Garry Turkington) [ 英文 pdf ] 简单介绍揭开了Hadoop的神秘面纱，它着重讲解了如何应用Hadoop和相关技术搭建工作系统并完成任务。在读者明白这些内容之后，又介绍了如何使用云服务完成相同任务。从Hadoop的基本概念和初始设置入手，讲述了如何开发Hadoop程序，如何在数据规模增长的时候维持系统运行，涵">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop基础教程">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00HLX04IC/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Hadoop基础教程作者信息： 作者: 特金顿 (Garry Turkington) [ 英文 pdf ] 简单介绍揭开了Hadoop的神秘面纱，它着重讲解了如何应用Hadoop和相关技术搭建工作系统并完成任务。在读者明白这些内容之后，又介绍了如何使用云服务完成相同任务。从Hadoop的基本概念和初始设置入手，讲述了如何开发Hadoop程序，如何在数据规模增长的时候维持系统运行，涵">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51HxY8k9ADL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.096Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51HxY8k9ADL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00HLX04IC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hadoop基础教程 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00HLX04IC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hadoop基础教程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Hadoop基础教程<br>作者信息： 作者: 特金顿 (Garry Turkington) [ 英文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>揭开了Hadoop的神秘面纱，它着重讲解了如何应用Hadoop和相关技术搭建工作系统并完成任务。在读者明白这些内容之后，又介绍了如何使用云服务完成相同任务。从Hadoop的基本概念和初始设置入手，讲述了如何开发Hadoop程序，如何在数据规模增长的时候维持系统运行，涵盖了有效使用Hadoop处理实际问题所需用到的全部知识。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br></pre></td><td class="code"><pre><span class="line">第1章 绪论 1</span><br><span class="line">1.1 大数据处理 1</span><br><span class="line">1.1.1 数据的价值 2</span><br><span class="line">1.1.2 受众较少 2</span><br><span class="line">1.1.3 一种不同的方法 4</span><br><span class="line">1.1.4 Hadoop 7</span><br><span class="line">1.2 基于Amazon Web Services的云计算 12</span><br><span class="line">1.2.1 云太多了 12</span><br><span class="line">1.2.2 第三种方法 12</span><br><span class="line">1.2.3 不同类型的成本 12</span><br><span class="line">1.2.4 AWS：Amazon的弹性架构 13</span><br><span class="line">1.2.5 本书内容 14</span><br><span class="line">1.3 小结 15</span><br><span class="line">第2章 安装并运行Hadoop 16</span><br><span class="line">2.1 基于本地Ubuntu主机的Hadoop系统 16</span><br><span class="line">2.2 实践环节：检查是否已安装JDK 17</span><br><span class="line">2.3 实践环节：下载Hadoop 18</span><br><span class="line">2.4 实践环节：安装SSH 19</span><br><span class="line">2.5 实践环节：使用Hadoop计算圆周率 20</span><br><span class="line">2.6 实践环节：配置伪分布式模式 22</span><br><span class="line">2.7 实践环节：修改HDFS的根目录 24</span><br><span class="line">2.8 实践环节：格式化NameNode 25</span><br><span class="line">2.9 实践环节：启动Hadoop 26</span><br><span class="line">2.10 实践环节：使用HDFS 27</span><br><span class="line">2.11 实践环节：MapReduce的经典入门程序——字数统计 28</span><br><span class="line">2.12 使用弹性MapReduce 33</span><br><span class="line">2.13 实践环节：使用管理控制台在EMR运行WordCount 34</span><br><span class="line">2.13.1 使用EMR的其他方式 41</span><br><span class="line">2.13.2 AWS生态系统 42</span><br><span class="line">2.14 本地Hadoop与EMRHadoop的对比 42</span><br><span class="line">2.15 小结 43</span><br><span class="line">第3章 理解MapReduce 44</span><br><span class="line">3.1 键值对 44</span><br><span class="line">3.1.1 具体含义 44</span><br><span class="line">3.1.2 为什么采用键／值数据 45</span><br><span class="line">3.1.3 MapReduce作为一系列键／值变换 46</span><br><span class="line">3.2 MapReduce的HadoopJavaAPI 47</span><br><span class="line">3.3 编写MapReduce程序 50</span><br><span class="line">3.4 实践环节：设置classpath 50</span><br><span class="line">3.5 实践环节：实现WordCount 51</span><br><span class="line">3.6 实践环节：构建JAR文件 53</span><br><span class="line">3.7 实践环节：在本地Hadoop集群运行WordCount 54</span><br><span class="line">3.8 实践环节：在EMR上运行WordCount 54</span><br><span class="line">3.8.1 0.20之前版本的JavaMapReduceAPI 56</span><br><span class="line">3.8.2 Hadoop提供的mapper和reducer实现 57</span><br><span class="line">3.9 实践环节：WordCount的简易方法 58</span><br><span class="line">3.10 查看WordCount的运行全貌 59</span><br><span class="line">3.10.1 启动 59</span><br><span class="line">3.10.2 将输入分块 59</span><br><span class="line">3.10.3 任务分配 60</span><br><span class="line">3.10.4 任务启动 60</span><br><span class="line">3.10.5 不断监视JobTracker 60</span><br><span class="line">3.10.6 mapper的输入 61</span><br><span class="line">3.10.7 mapper的执行 61</span><br><span class="line">3.10.8 mapper的输出和reducer的输入 61</span><br><span class="line">3.10.9 分块 62</span><br><span class="line">3.10.10 可选分块函数 62</span><br><span class="line">3.10.11 reducer类的输入 62</span><br><span class="line">3.10.12 reducer类的执行 63</span><br><span class="line">3.10.13 reducer类的输出 63</span><br><span class="line">3.10.14 关机 63</span><br><span class="line">3.10.15 这就是MapReduce的全部 64</span><br><span class="line">3.10.16 也许缺了combiner 64</span><br><span class="line">3.11 实践环节：使用combiner编写WordCount 64</span><br><span class="line">3.12 实践环节：更正使用combiner的WordCount 65</span><br><span class="line">3.13 Hadoop专有数据类型 67</span><br><span class="line">3.13.1 Writable和Writable—Comparable接口 67</span><br><span class="line">3.13.2 wrapper类介绍 68</span><br><span class="line">3.14 实践环节：使用Writable包装类 69</span><br><span class="line">3.15 输入／输出 71</span><br><span class="line">3.15.1 文件、split和记录 71</span><br><span class="line">3.15.2 InputFormat和RecordReader 71</span><br><span class="line">3.15.3 Hadoop提供的InputFormat 72</span><br><span class="line">3.15.4 Hadoop提供的RecordReader 73</span><br><span class="line">3.15.5 OutputFormat和Record—Writer 73</span><br><span class="line">3.15.6 Hadoop提供的OutputFormat 73</span><br><span class="line">3.15.7 别忘了Sequencefiles 74</span><br><span class="line">3.16 小结 74</span><br><span class="line">第4章 开发MapReduce程序 75</span><br><span class="line">4.1 使用非Java语言操作Hadoop 75</span><br><span class="line">4.1.1 HadoopStreaming工作原理 76</span><br><span class="line">4.1.2 使用HadoopStreaming的原因 76</span><br><span class="line">4.2 实践环节：使用Streaming实现Word—Count 76</span><br><span class="line">4.3 分析大数据集 79</span><br><span class="line">4.3.1 获取UFO目击事件数据集 79</span><br><span class="line">4.3.2 了解数据集 80</span><br><span class="line">4.4 实践环节：统计汇总UFO数据 80</span><br><span class="line">4.5 实践环节：统计形状数据 82</span><br><span class="line">4.6 实践环节：找出目击事件的持续时间与UFO形状的关系 84</span><br><span class="line">4.7 实践环节：在命令行中执行形状／时间分析 87</span><br><span class="line">4.8 实践环节：使用ChainMapper进行字段验证／分析 88</span><br><span class="line">4.9 实践环节：使用DistributedCache改进地点输出 93</span><br><span class="line">4.10 计数器、状态和其他输出 96</span><br><span class="line">4.11 实践环节：创建计数器、任务状态和写入日志 96</span><br><span class="line">4.12 小结 102</span><br><span class="line">第5章 高级MapReduce技术 103</span><br><span class="line">5.1 初级、高级还是中级 103</span><br><span class="line">5.2 多数据源联结 103</span><br><span class="line">5.2.1 不适合执行联结操作的情况 104</span><br><span class="line">5.2.2 map端联结与reduce端联结的对比 104</span><br><span class="line">5.2.3 匹配账户与销售信息 105</span><br><span class="line">5.3 实践环节：使用MultipleInputs实现reduce端联结 105</span><br><span class="line">5.3.1 实现map端联结 109</span><br><span class="line">5.3.2 是否进行联结 112</span><br><span class="line">5.4 图算法 112</span><br><span class="line">5.4.1 Graph101 112</span><br><span class="line">5.4.2 图和MapReduce 112</span><br><span class="line">5.4.3 图的表示方法 113</span><br><span class="line">5.5 实践环节：图的表示 114</span><br><span class="line">5.6 实践环节：创建源代码 115</span><br><span class="line">5.7 实践环节：第一次运行作业 119</span><br><span class="line">5.8 实践环节：第二次运行作业 120</span><br><span class="line">5.9 实践环节：第三次运行作业 121</span><br><span class="line">5.10 实践环节：第四次也是最后一次运行作业 122</span><br><span class="line">5.10.1 运行多个作业 124</span><br><span class="line">5.10.2 关于图的终极思考 124</span><br><span class="line">5.11 使用语言无关的数据结构 124</span><br><span class="line">5.11.1 候选技术 124</span><br><span class="line">5.11.2 Avro简介 125</span><br><span class="line">5.12 实践环节：获取并安装Avro 125</span><br><span class="line">5.13 实践环节：定义模式 126</span><br><span class="line">5.14 实践环节：使用Ruby创建Avro源数据 127</span><br><span class="line">5.15 实践环节：使用Java语言编程操作Avro数据 128</span><br><span class="line">5.16 实践环节：在MapReduce中统计UFO形状 130</span><br><span class="line">5.17 实践环节：使用Ruby检查输出数据 134</span><br><span class="line">5.18 实践环节：使用Java检查输出数据 135</span><br><span class="line">5.19 小结 137</span><br><span class="line">第6章 故障处理 138</span><br><span class="line">6.1 故障 138</span><br><span class="line">6.1.1 拥抱故障 138</span><br><span class="line">6.1.2 至少不怕出现故障 139</span><br><span class="line">6.1.3 严禁模仿 139</span><br><span class="line">6.1.4 故障类型 139</span><br><span class="line">6.1.5 Hadoop节点故障 139</span><br><span class="line">6.2 实践环节：杀死DataNode进程 141</span><br><span class="line">6.3 实践环节：复制因子的作用 144</span><br><span class="line">6.4 实践环节：故意造成数据块丢失 146</span><br><span class="line">6.5 实践环节：杀死TaskTracker进程 149</span><br><span class="line">6.6 实践环节：杀死JobTracker 153</span><br><span class="line">6.7 实践环节：杀死NameNode进程 154</span><br><span class="line">6.8 实践环节：引发任务故障 160</span><br><span class="line">6.9 数据原因造成的任务故障 163</span><br><span class="line">6.10 实践环节：使用skip模式处理异常数据 164</span><br><span class="line">6.11 小结 169</span><br><span class="line">第7章 系统运行与维护 170</span><br><span class="line">7.1 关于EMR的说明 170</span><br><span class="line">7.2 Hadoop配置属性 171</span><br><span class="line">7.3 实践环节：浏览默认属性 171</span><br><span class="line">7.3.1 附加的属性元素 172</span><br><span class="line">7.3.2 默认存储位置 172</span><br><span class="line">7.3.3 设置Hadoop属性的几种方式 173</span><br><span class="line">7.4 集群设置 174</span><br><span class="line">7.4.1 为集群配备多少台主机 174</span><br><span class="line">7.4.2 特殊节点的需求 176</span><br><span class="line">7.4.3 不同类型的存储系统 177</span><br><span class="line">7.4.4 Hadoop的网络配置 178</span><br><span class="line">7.5 实践环节：查看默认的机柜配置 180</span><br><span class="line">7.6 实践环节：报告每台主机所在机柜 180</span><br><span class="line">7.7 集群访问控制 183</span><br><span class="line">7.8 实践环节：展示Hadoop的默认安全机制 183</span><br><span class="line">7.9 管理NameNode 187</span><br><span class="line">7.10 实践环节：为fsimage文件新增一个存储路径 188</span><br><span class="line">7.11 实践环节：迁移到新的NameNode主机 190</span><br><span class="line">7.12 管理HDFS 192</span><br><span class="line">7.12.1 数据写入位置 192</span><br><span class="line">7.12.2 使用平衡器 193</span><br><span class="line">7.13 MapReduce管理 193</span><br><span class="line">7.13.1 通过命令行管理作业 193</span><br><span class="line">7.13.2 作业优先级和作业调度 194</span><br><span class="line">7.14 实践环节：修改作业优先级并结束作业运行 194</span><br><span class="line">7.15 扩展集群规模 197</span><br><span class="line">7.15.1 提升本地Hadoop集群的计算能力 197</span><br><span class="line">7.15.2 提升EMR作业流的计算能力 198</span><br><span class="line">7.16 小结 198</span><br><span class="line">第8章 Hive：数据的关系视图 200</span><br><span class="line">8.1 Hive概述 200</span><br><span class="line">8.1.1 为什么使用Hive 200</span><br><span class="line">8.1.2 感谢Facebook 201</span><br><span class="line">8.2 设置Hive 201</span><br><span class="line">8.2.1 准备工作 201</span><br><span class="line">8.2.2 下载Hive 202</span><br><span class="line">8.3 实践环节：安装Hive 202</span><br><span class="line">8.4 使用Hive 203</span><br><span class="line">8.5 实践环节：创建UFO数据表 204</span><br><span class="line">8.6 实践环节：在表中插入数据 206</span><br><span class="line">8.7 实践环节：验证表 208</span><br><span class="line">8.8 实践环节：用正确的列分隔符重定义表 210</span><br><span class="line">8.9 实践环节：基于现有文件创建表 212</span><br><span class="line">8.10 实践环节：执行联结操作 214</span><br><span class="line">8.11 实践环节：使用视图 216</span><br><span class="line">8.12 实践环节：导出查询结果 219</span><br><span class="line">8.13 实践环节：制作UFO目击事件分区表 221</span><br><span class="line">8.13.1 分桶、归并和排序 224</span><br><span class="line">8.13.2 用户自定义函数 225</span><br><span class="line">8.14 实践环节：新增用户自定义函数 225</span><br><span class="line">8.14.1 是否进行预处理 228</span><br><span class="line">8.14.2 Hive和Pig的对比 229</span><br><span class="line">8.14.3 未提到的内容 229</span><br><span class="line">8.15 基于AmazonWebServices的Hive 230</span><br><span class="line">8.16 实践环节：在EMR上分析UFO数据 230</span><br><span class="line">8.16.1 在开发过程中使用交互式作业流 235</span><br><span class="line">8.16.2 与其他AWS产品的集成 236</span><br><span class="line">8.17 小结 236</span><br><span class="line">第9章 与关系数据库协同工作 238</span><br><span class="line">9.1 常见数据路径 238</span><br><span class="line">9.1.1 Hadoop用于存储档案 238</span><br><span class="line">9.1.2 使用Hadoop进行数据预处理 239</span><br><span class="line">9.1.3 使用Hadoop作为数据输入工具 239</span><br><span class="line">9.1.4 数据循环 240</span><br><span class="line">9.2 配置MySQL 240</span><br><span class="line">9.3 实践环节：安装并设置MySQL 240</span><br><span class="line">9.4 实践环节：配置MySQL允许远程连接 243</span><br><span class="line">9.5 实践环节：建立员工数据库 245</span><br><span class="line">9.6 把数据导入Hadoop 246</span><br><span class="line">9.6.1 使用MySQL工具手工导入 246</span><br><span class="line">9.6.2 在mapper中访问数据库 246</span><br><span class="line">9.6.3 更好的方法：使用Sqoop 247</span><br><span class="line">9.7 实践环节：下载并配置Sqoop 247</span><br><span class="line">9.8 实践环节：把MySQL的数据导入HDFS 249</span><br><span class="line">9.9 实践环节：把MySQL数据导出到Hive 253</span><br><span class="line">9.10 实践环节：有选择性的导入数据 255</span><br><span class="line">9.11 实践环节：使用数据类型映射 257</span><br><span class="line">9.12 实践环节：通过原始查询导入数据 258</span><br><span class="line">9.13 从Hadoop导出数据 261</span><br><span class="line">9.13.1 在reducer中把数据写入关系数据库 261</span><br><span class="line">9.13.2 利用reducer输出SQL数据文件 262</span><br><span class="line">9.13.3 仍是最好的方法 262</span><br><span class="line">9.14 实践环节：把Hadoop数据导入MySQL 262</span><br><span class="line">9.15 实践环节：把Hive数据导入MySQL 265</span><br><span class="line">9.16 实践环节：改进mapper并重新运行数据导出命令 267</span><br><span class="line">9.17 在AWS上使用Sqoop 269</span><br><span class="line">9.18 小结 270</span><br><span class="line">第10章 使用Flume收集数据 271</span><br><span class="line">10.1 关于AWS的说明 271</span><br><span class="line">10.2 无处不在的数据 271</span><br><span class="line">10.2.1 数据类别 272</span><br><span class="line">10.2.2 把网络流量导入Hadoop 272</span><br><span class="line">10.3 实践环节：把网络服务器数据导入Hadoop 272</span><br><span class="line">10.3.1 把文件导入Hadoop 273</span><br><span class="line">10.3.2 潜在的问题 273</span><br><span class="line">10.4 ApacheFlume简介 274</span><br><span class="line">10.5 实践环节：安装并配置Flume 275</span><br><span class="line">10.6 实践环节：把网络流量存入日志文件 277</span><br><span class="line">10.7 实践环节：把日志输出到控制台 279</span><br><span class="line">10.8 实践环节：把命令的执行结果写入平面文件 281</span><br><span class="line">10.9 实践环节：把远程文件数据写入本地平面文件 283</span><br><span class="line">10.9.1 信源、信宿和信道 284</span><br><span class="line">10.9.2 Flume配置文件 286</span><br><span class="line">10.9.3 一切都以事件为核心 287</span><br><span class="line">10.10 实践环节：把网络数据写入HDFS 287</span><br><span class="line">10.11 实践环节：加入时间戳 289</span><br><span class="line">10.12 实践环节：多层Flume网络 292</span><br><span class="line">10.13 实践环节：把事件写入多个信宿 294</span><br><span class="line">10.13.1 选择器的类型 295</span><br><span class="line">10.13.2 信宿故障处理 295</span><br><span class="line">10.13.3 使用简单元件搭建复杂系统 296</span><br><span class="line">10.14 更高的视角 297</span><br><span class="line">10.14.1 数据的生命周期 297</span><br><span class="line">10.14.2 集结数据 297</span><br><span class="line">10.14.3 调度 297</span><br><span class="line">10.15 小结 298</span><br><span class="line">第11章 展望未来 299</span><br><span class="line">11.1 全书回顾 299</span><br><span class="line">11.2 即将到来的Hadoop变革 300</span><br><span class="line">11.3 其他版本的Hadoop软件包 300</span><br><span class="line">11.4 其他Apache项目 303</span><br><span class="line">11.4.1 HBase 303</span><br><span class="line">11.4.2 Oozie 303</span><br><span class="line">11.4.3 Whir 304</span><br><span class="line">11.4.4 Mahout 304</span><br><span class="line">11.4.5 MRUnit 305</span><br><span class="line">11.5 其他程序设计模式 305</span><br><span class="line">11.5.1 Pig 305</span><br><span class="line">11.5.2 Cascading 305</span><br><span class="line">11.6 AWS资源 306</span><br><span class="line">11.6.1 在EMR上使用HBase 306</span><br><span class="line">11.6.2 SimpleDB 306</span><br><span class="line">11.6.3 DynamoDB 306</span><br><span class="line">11.7 获取信息的渠道 307</span><br><span class="line">11.7.1 源代码 307</span><br><span class="line">11.7.2 邮件列表和论坛 307</span><br><span class="line">11.7.3 LinkedIn群组 307</span><br><span class="line">11.7.4 Hadoop用户群 307</span><br><span class="line">11.7.5 会议 308</span><br><span class="line">11.8 小结 308</span><br><span class="line">随堂测验答案 309</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00HLX04IC/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00HLX04IC&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51HxY8k9ADL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00HY8SIX2/" rel="prev" title="游戏引擎架构">
+      <i class="fa fa-chevron-left"></i> 游戏引擎架构
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00HFID4QW/" rel="next" title="大规模并行处理器编程实战(第2版)">
+      大规模并行处理器编程实战(第2版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

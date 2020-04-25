@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 大数据•互联网大规模数据挖掘与分布式处理作者信息： 作者: Anand Rajaraman [ 中文 pdf ] 简单介绍《大数据•互联网大规模数据挖掘与分布式处理》由拉贾拉曼Anand Rajarama、厄尔曼Jeffrey David Ullman所著，主要关注极大规模数据的挖掘。由于重点强调数据的规模，所以《大数据•互联网大规模数据挖掘与分布式处理》的例子大都来自web本身或">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据•互联网大规模数据挖掘与分布式处理">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B009HEK8SO/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 大数据•互联网大规模数据挖掘与分布式处理作者信息： 作者: Anand Rajaraman [ 中文 pdf ] 简单介绍《大数据•互联网大规模数据挖掘与分布式处理》由拉贾拉曼Anand Rajarama、厄尔曼Jeffrey David Ullman所著，主要关注极大规模数据的挖掘。由于重点强调数据的规模，所以《大数据•互联网大规模数据挖掘与分布式处理》的例子大都来自web本身或">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51YAi81tuvL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.060Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="互联网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51YAi81tuvL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B009HEK8SO/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>大数据•互联网大规模数据挖掘与分布式处理 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B009HEK8SO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          大数据•互联网大规模数据挖掘与分布式处理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 大数据•互联网大规模数据挖掘与分布式处理<br>作者信息： 作者: Anand Rajaraman [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《大数据•互联网大规模数据挖掘与分布式处理》由拉贾拉曼Anand Rajarama、厄尔曼Jeffrey David Ullman所著，主要关注极大规模数据的挖掘。由于重点强调数据的规模，所以《大数据•互联网大规模数据挖掘与分布式处理》的例子大都来自web本身或者web上导出的数据。另外，《大数据•互联网大规模数据挖掘与分布式处理》从算法的角度来看待数据挖掘，即数据挖掘是将算法应用于数据，而不是使用数据来“训练”某种类型的机器学习引擎。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br></pre></td><td class="code"><pre><span class="line">第1章数据挖掘基本概念</span><br><span class="line">1.1数据挖掘的定义</span><br><span class="line">1.1.1统计建模</span><br><span class="line">1.1.2机器学习</span><br><span class="line">1.1.3建模的计算方法</span><br><span class="line">1.1.4数据汇总</span><br><span class="line">1.1.5特征抽取</span><br><span class="line">1.2数据挖掘的统计限制</span><br><span class="line">1.2.1整体情报预警</span><br><span class="line">1.2.2邦弗朗尼原理</span><br><span class="line">1.2.3邦弗朗尼原理的一个例子</span><br><span class="line">1.2.4习题</span><br><span class="line">1.3相关知识</span><br><span class="line">1.3.1词语在文档中的重要性</span><br><span class="line">1.3.2哈希函数</span><br><span class="line">1.3.3索引</span><br><span class="line">1,3.4二级存储器</span><br><span class="line">1.3.5自然对数的底e</span><br><span class="line">1.3.6幂定律</span><br><span class="line">1.3.7习题</span><br><span class="line">1.4本书概要</span><br><span class="line">1.5小结</span><br><span class="line">1.6参考文献</span><br><span class="line">第2章大规模文件系统及Map－RedUCe</span><br><span class="line">2.1分布式文件系统</span><br><span class="line">2.1.1计算节点的物理结构</span><br><span class="line">2.1.2大规模文件系统的结构</span><br><span class="line">2.2Map－Reduce</span><br><span class="line">2.2.1Map任务</span><br><span class="line">2.2.2分组和聚合</span><br><span class="line">2.2.3Reduce任务</span><br><span class="line">2.2.4组合器</span><br><span class="line">2.2.5Map－Reduce的执行细节</span><br><span class="line">2.2.6节点失效的处理</span><br><span class="line">2.3使用Map－Reduce的算法</span><br><span class="line">2.3.1基于Map－Reduce的矩阵－向量乘法实现</span><br><span class="line">2.3.2向量v无法放入内存时的处理</span><br><span class="line">2.3.3关系代数运算</span><br><span class="line">2.3.4基于Map－Reduce的选择运算</span><br><span class="line">2.3.5基于Map－Reduce的投影运算</span><br><span class="line">2.3.6基于Map－Reduce的并、交和差运算</span><br><span class="line">2.3.7基于Map－Reduce的自然连接运算</span><br><span class="line">2.3.8－般性的连接算法</span><br><span class="line">2.3.9基于Map－Reduce的分组和聚合运算</span><br><span class="line">2.3.10矩阵乘法</span><br><span class="line">2.3.11基于单步Map－Reduce的矩阵乘法</span><br><span class="line">2.3.12习题</span><br><span class="line">2.4Map－Reduce的扩展</span><br><span class="line">2.4.1工作流系统</span><br><span class="line">2.4.2Map－Reduce的递归扩展版本</span><br><span class="line">2.4.3Pregel系统</span><br><span class="line">2.4.4习题</span><br><span class="line">2.5集群计算算法的效率问题</span><br><span class="line">2,5.1集群计算的通信开销模型</span><br><span class="line">2.5.2实耗通信开销</span><br><span class="line">2.5.3多路连接</span><br><span class="line">2.5.4习题</span><br><span class="line">2.6小结</span><br><span class="line">2.7参考文献</span><br><span class="line">第3章相似项发现</span><br><span class="line">3.1近邻搜索的应用</span><br><span class="line">3.1.1集合的Jaccard相似度</span><br><span class="line">3.1.2文档的相似度</span><br><span class="line">3.1.3协同过滤——一个集合相似问题</span><br><span class="line">3.1.4习题</span><br><span class="line">3.2文档的shingling</span><br><span class="line">3.2.1k－Shingle</span><br><span class="line">3.2.2shingle大小的选择</span><br><span class="line">3.2.3对shingle进行哈希</span><br><span class="line">3.2.4基于词的shingle</span><br><span class="line">3.2.5习题</span><br><span class="line">3.3保持相似度的集合摘要表示</span><br><span class="line">3.3.1集合的矩阵表示</span><br><span class="line">3.3.2最小哈希</span><br><span class="line">3.3.3最小哈希及Jaccard相似度</span><br><span class="line">3.3.4最小哈希签名</span><br><span class="line">3.3.5最小哈希签名的计算</span><br><span class="line">3.3.6习题</span><br><span class="line">3.4文档的局部敏感哈希算法</span><br><span class="line">3.4.1面向最小哈希签名的LSH</span><br><span class="line">3.4.2行条化策略的分析</span><br><span class="line">3.4.3上述技术的综合</span><br><span class="line">3.4.4习题</span><br><span class="line">3.5距离测度</span><br><span class="line">3.5.1距离测度的定义</span><br><span class="line">3.5.2欧氏距离</span><br><span class="line">3.5.3Jaccard距离</span><br><span class="line">3.5.4余弦距离</span><br><span class="line">3.5.5编辑距离</span><br><span class="line">3.5.6海明距离</span><br><span class="line">3.5.7习题</span><br><span class="line">3.6局部敏感函数理论</span><br><span class="line">3.6.1局部敏感函数</span><br><span class="line">3.6.2面向Jaccard距离的局部敏感函数族</span><br><span class="line">3.6.3局部敏感函数族的放大处理</span><br><span class="line">3.6.4习题</span><br><span class="line">3.7面向其他距离测度的LSH函数族</span><br><span class="line">3.7.1面向海明距离的LSH函数族</span><br><span class="line">3.7.2随机超平面和余弦距离</span><br><span class="line">3.7.3梗概</span><br><span class="line">3.7.4面向欧氏距离的LSH函数族</span><br><span class="line">3.7.5面向欧氏空间的更多LSH函数族</span><br><span class="line">3.7.6习题</span><br><span class="line">3.8LSH函数的应用</span><br><span class="line">3.8.1实体关联</span><br><span class="line">3.8.2一个实体关联的例子</span><br><span class="line">3.8.3记录匹配的验证</span><br><span class="line">3.8.4指纹匹配</span><br><span class="line">3.8.5适用于指纹匹配的LSH函数族</span><br><span class="line">3.8.6相似新闻报道检测</span><br><span class="line">3.8.7习题</span><br><span class="line">3.9面向高相似度的方法</span><br><span class="line">3.9.1相等项发现</span><br><span class="line">3,9.2集合的字符串表示方法</span><br><span class="line">3.9.3基于长度的过滤～</span><br><span class="line">3.9.4前缀索引</span><br><span class="line">3.9.5位置信息的使用</span><br><span class="line">3.9.6使用位置和长度信息的索引</span><br><span class="line">3,9.7习题</span><br><span class="line">3.10小结</span><br><span class="line">3.11参考文献</span><br><span class="line">第4章数据流挖掘</span><br><span class="line">4.1流数据模型</span><br><span class="line">4.1.1一个数据流管理系统</span><br><span class="line">4.1.2流数据源的例子</span><br><span class="line">4.1.3流查询</span><br><span class="line">4.1.4流处理中的若干问题</span><br><span class="line">4.2流当中的数据抽样</span><br><span class="line">4.2.1一个富于启发性的例子</span><br><span class="line">4.2.2代表性样本的获取</span><br><span class="line">4.2.3一般的抽样问题</span><br><span class="line">4.2.4样本规模的变化</span><br><span class="line">4.2.5习题</span><br><span class="line">4.3流过滤</span><br><span class="line">4.3.1一个例子</span><br><span class="line">4.3,2布隆过滤器</span><br><span class="line">4.3.3布隆过滤方法的分析</span><br><span class="line">4.3.4习题</span><br><span class="line">4.4流中独立元素的数目统计</span><br><span class="line">4.4.1独立元素计数问题</span><br><span class="line">4,4.2FM算法</span><br><span class="line">4.4.3组合估计</span><br><span class="line">4.4.4空间需求</span><br><span class="line">4.4.5习题</span><br><span class="line">4.5矩估计</span><br><span class="line">4.5.1矩定义</span><br><span class="line">4.5.2二阶矩估计的AMS算法</span><br><span class="line">4.5.3AMS算法有效的原因</span><br><span class="line">4.5.4更高阶矩的估计</span><br><span class="line">4.5.5无限流的处理</span><br><span class="line">4.5.6习题</span><br><span class="line">4.6窗口内的计数问题</span><br><span class="line">4.6.1精确计数的开销</span><br><span class="line">4.6.2DGIM算法</span><br><span class="line">4.6.3DGIM算法的存储需求</span><br><span class="line">4.6.4DGIM算法中的查询应答</span><br><span class="line">4.6.5DGIM条件的保持</span><br><span class="line">4.6.6降低错误率</span><br><span class="line">4.6.7窗口内计数问题的扩展</span><br><span class="line">4.6.8习题</span><br><span class="line">4.7衰减窗口</span><br><span class="line">4.7.1最常见元素问题</span><br><span class="line">4.7.2衰减窗口的定义</span><br><span class="line">4.7.3最流行元素的发现</span><br><span class="line">4.8小结</span><br><span class="line">4.9参考文献</span><br><span class="line">第5章链接分析</span><br><span class="line">5.1PageRank</span><br><span class="line">5.1.1早期的搜索引擎及词项作弊</span><br><span class="line">5.1.2PageRank的定义</span><br><span class="line">5.1.3Web结构</span><br><span class="line">5.1.4避免终止点</span><br><span class="line">5.1.5采集器陷阱及“抽税”法</span><br><span class="line">5.1.6PageRank在搜索引擎中的使用</span><br><span class="line">5.1.7习题</span><br><span class="line">5.2PageRank的快速计算</span><br><span class="line">5.2.1转移矩阵的表示</span><br><span class="line">5.2.2基于Map－Reduce的PageRank迭代计算</span><br><span class="line">5.2.3结果向量合并时的组合器使用</span><br><span class="line">5.2.4转移矩阵中块的表示</span><br><span class="line">5.2.5其他高效的PageRank迭代方法</span><br><span class="line">5.2.6习题</span><br><span class="line">5.3面向主题的PageRank</span><br><span class="line">5.3.1动机</span><br><span class="line">5.3.2有偏的随机游走模型</span><br><span class="line">5.3.3面向主题的PageRank的使用</span><br><span class="line">5.3.4基于词汇的主题推断</span><br><span class="line">5.3.5习题</span><br><span class="line">5.4链接作弊</span><br><span class="line">5.4.1垃圾农场的架构</span><br><span class="line">5.4.2垃圾农场的分析</span><br><span class="line">5.4.3与链接作弊的斗争</span><br><span class="line">5.4.4TrustRank</span><br><span class="line">5.4.5垃圾质量</span><br><span class="line">5.4.6习题</span><br><span class="line">5.5导航页和权威页</span><br><span class="line">5.5.1HITS的直观意义</span><br><span class="line">5.5.2导航度和权威度的形式化</span><br><span class="line">5.5.3习题</span><br><span class="line">5.6小结</span><br><span class="line">5.7参考文献</span><br><span class="line">第6章频繁项集</span><br><span class="line">6.1购物篮模型</span><br><span class="line">6.1.1频繁项集的定义</span><br><span class="line">6.1.2频繁项集的应用</span><br><span class="line">6.1.3关联规则</span><br><span class="line">6.1.4高可信度关联规则的发现</span><br><span class="line">6.1.5习题</span><br><span class="line">6.2购物篮及A－Priori算法</span><br><span class="line">6.2.1购物篮数据的表示</span><br><span class="line">6.2.2项集计数中的内存使用</span><br><span class="line">6.2.3项集的单调性</span><br><span class="line">6.2.4二元组计数</span><br><span class="line">6.2.5A－Priori算法</span><br><span class="line">6.2.6所有频繁项集上的A－Priori算法</span><br><span class="line">6.2.7习题</span><br><span class="line">6.3更大数据集在内存中的处理</span><br><span class="line">6.3.1PCY算法</span><br><span class="line">6.3.2多阶段算法</span><br><span class="line">6.3.3多哈希算法</span><br><span class="line">6.3.4习题</span><br><span class="line">6.4有限扫描算法</span><br><span class="line">6.4.1简单的随机化算法</span><br><span class="line">6.4.2抽样算法中的错误规避</span><br><span class="line">6.4.3SON算法</span><br><span class="line">6.4.4SON算法和Map－Reduce</span><br><span class="line">6.4.5Toivonen算法</span><br><span class="line">6.4.6Toivonen算法的有效性分析</span><br><span class="line">6.4.7习题</span><br><span class="line">6.5流中的频繁项计数</span><br><span class="line">6.5.1流的抽样方法</span><br><span class="line">6.5.2衰减窗口中的频繁项集</span><br><span class="line">6.5.3混合方法</span><br><span class="line">6.5.4习题</span><br><span class="line">6.6小结</span><br><span class="line">6.7参考文献</span><br><span class="line">第7章聚类</span><br><span class="line">7.1聚类技术介绍</span><br><span class="line">7.1.1点、空间和距离</span><br><span class="line">7.1.2聚类策略</span><br><span class="line">7.1.3维数灾难</span><br><span class="line">7.1.4习题</span><br><span class="line">7.2层次聚类</span><br><span class="line">7.2.1欧氏空间下的层次聚类</span><br><span class="line">7.2.2层次聚类算法的效率</span><br><span class="line">7.2.3控制层次聚类的其他规则</span><br><span class="line">7.2.4非欧空间下的层次聚类</span><br><span class="line">7.2.5习题</span><br><span class="line">7.3k－均值算法</span><br><span class="line">7.3.1k－均值算法基本知识</span><br><span class="line">7.3.2k－均值算法的簇初始化</span><br><span class="line">7.3.3选择七的正确值</span><br><span class="line">7.3.4BFR算法</span><br><span class="line">7.3.5BFR算法中的数据处理</span><br><span class="line">7.3.6习题</span><br><span class="line">7.4CURE算法</span><br><span class="line">7.4.1CURE算法的初始化</span><br><span class="line">7.4.2CURE算法的完成</span><br><span class="line">7.4.3习题</span><br><span class="line">7.5非欧空间下的聚类</span><br><span class="line">7.5.1GRGPF算法中的簇表示</span><br><span class="line">7.5.2簇表示树的初始化</span><br><span class="line">7.5.3GRGPF算法中的点加入</span><br><span class="line">7.5.4簇的分裂及合并</span><br><span class="line">7.5.5习题</span><br><span class="line">7.6流聚类及并行化</span><br><span class="line">7.6.1流计算模型</span><br><span class="line">7.6.2－个流聚类算法</span><br><span class="line">7.6.3桶的初始化</span><br><span class="line">7.6.4桶合并</span><br><span class="line">7.6.5查询应答</span><br><span class="line">7.6.6并行环境下的聚类</span><br><span class="line">7.6.7习题</span><br><span class="line">7.7小结</span><br><span class="line">7.8参考文献</span><br><span class="line">第8章Web广告</span><br><span class="line">8.1在线广告相关问题</span><br><span class="line">8.1.1广告机会</span><br><span class="line">8.1.2直投广告</span><br><span class="line">8.1.3展示广告的相关问题</span><br><span class="line">8.2在线算法</span><br><span class="line">8.2.1在线和离线算法</span><br><span class="line">8.2.2贪心算法</span><br><span class="line">8.2.3竞争率</span><br><span class="line">8.2.4习题</span><br><span class="line">8.3广告匹配问题</span><br><span class="line">8.3.1匹配及完美匹配</span><br><span class="line">8.3.2最大匹配贪心算法</span><br><span class="line">8.3.3贪心匹配算法的竞争率</span><br><span class="line">8.3.4习题</span><br><span class="line">8.4Adwords问题</span><br><span class="line">8.4.1搜索广告的历史</span><br><span class="line">8.4.2Adwords问题的定义</span><br><span class="line">8.4.3Adwords问题的贪心方法</span><br><span class="line">8.4.4Balance算法</span><br><span class="line">8.4.5Balance算法竞争率的一个下界</span><br><span class="line">8.4.6多投标者的Balance算法</span><br><span class="line">8.4.7－般性的Balance算法</span><br><span class="line">8.4.8Adwords问题的最后论述</span><br><span class="line">8.4.9习题</span><br><span class="line">8.5Adwords的实现</span><br><span class="line">8.5.1投标和搜索查询的匹配</span><br><span class="line">8.5.2更复杂的匹配问题</span><br><span class="line">8.5.3文档和投标之间的匹配算法</span><br><span class="line">8.6小结</span><br><span class="line">8.7参考文献</span><br><span class="line">第9章推荐系统</span><br><span class="line">9.1一个推荐系统的模型</span><br><span class="line">9.1.1效用矩阵</span><br><span class="line">9.1.2长尾现象</span><br><span class="line">9.1.3推荐系统的应用</span><br><span class="line">9.1.4效用矩阵的填充</span><br><span class="line">9.2基于内容的推荐</span><br><span class="line">9.2.1项模型</span><br><span class="line">9.2.2文档的特征发现</span><br><span class="line">9.2.3基于Tag的项特征获取</span><br><span class="line">9.2.4项模型的表示</span><br><span class="line">9.2.5用户模型</span><br><span class="line">9.2.6基于内容的项推荐</span><br><span class="line">9.2.7分类算法</span><br><span class="line">9.2.8习题</span><br><span class="line">9.3协同过滤</span><br><span class="line">9.3.1相似度计算</span><br><span class="line">9.3.2相似度对偶性</span><br><span class="line">9.3.3用户聚类和项聚类</span><br><span class="line">9.3.4习题</span><br><span class="line">9.4降维处理</span><br><span class="line">9.4.1UrV分解</span><br><span class="line">9.4.2RMSE</span><br><span class="line">9.4.3UV分解的增量式计算</span><br><span class="line">9.4.4对任一元素的优化</span><br><span class="line">9.4.5一个完整UV分解算法的构建</span><br><span class="line">9.4.6习题</span><br><span class="line">9.5NetFlix竞赛</span><br><span class="line">9.6小结</span><br><span class="line">9.7参考文献</span><br><span class="line">索引</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B009HEK8SO/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B009HEK8SO&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51YAi81tuvL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" rel="tag"># 互联网</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00AIG0PGK/" rel="prev" title="大数据时代 生活、工作与思维的大变革}">
+      <i class="fa fa-chevron-left"></i> 大数据时代 生活、工作与思维的大变革}
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0098W2GWG/" rel="next" title="互联网进化论">
+      互联网进化论 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

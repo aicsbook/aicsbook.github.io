@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C++ Primer Plus中文版(第6版)作者信息： 作者: 蒂芬•普拉达 (Stephen Prata) [ 中文 pdf ] 简单介绍《C++ Primer Plus中文版(第6版)》是一本经久不衰的C++畅销经典教程，是第一本支持C++11新标准的程序设计图书，被誉为“开发人员学习C++的首选教程，没有之一”！ Amazon网站“Language”类销售排名第三的超级畅销">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer Plus中文版(第6版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B008A4XZRI/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C++ Primer Plus中文版(第6版)作者信息： 作者: 蒂芬•普拉达 (Stephen Prata) [ 中文 pdf ] 简单介绍《C++ Primer Plus中文版(第6版)》是一本经久不衰的C++畅销经典教程，是第一本支持C++11新标准的程序设计图书，被誉为“开发人员学习C++的首选教程，没有之一”！ Amazon网站“Language”类销售排名第三的超级畅销">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51BY5L-jhyL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.691Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51BY5L-jhyL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B008A4XZRI/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C++ Primer Plus中文版(第6版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B008A4XZRI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++ Primer Plus中文版(第6版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C++ Primer Plus中文版(第6版)<br>作者信息： 作者: 蒂芬•普拉达 (Stephen Prata) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《C++ Primer Plus中文版(第6版)》是一本经久不衰的C++畅销经典教程，是第一本支持C++11新标准的程序设计图书，被誉为“开发人员学习C++的首选教程，没有之一”！ Amazon网站“Language”类销售排名第三的超级畅销书，之前版本在美国销售超10万！</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br></pre></td><td class="code"><pre><span class="line">第1章 预备知识</span><br><span class="line">1.1 C++简介</span><br><span class="line">1.2 C++简史</span><br><span class="line">1.2.1 C语言</span><br><span class="line">1.2.2 C语言编程原理</span><br><span class="line">1.2.3 面向对象编程</span><br><span class="line">1.2.4 C++和泛型编程</span><br><span class="line">1.2.5 C++的起源</span><br><span class="line">1.3 可移植性和标准</span><br><span class="line">1.3.1 C++的发展</span><br><span class="line">1.3.2 本书遵循的C++标准</span><br><span class="line">1.4 程序创建的技巧</span><br><span class="line">1.4.1 创建源代码文件</span><br><span class="line">1.4.2 编译和链接</span><br><span class="line">1.5 总结</span><br><span class="line">第2章 开始学习C++</span><br><span class="line">2.1 进入C++</span><br><span class="line">2.1.1 main（）函数</span><br><span class="line">2.1.2 C++注释</span><br><span class="line">2.1.3 C++预处理器和iostream文件</span><br><span class="line">2.1.4 头文件名</span><br><span class="line">2.1.5 名称空间</span><br><span class="line">2.1.6 使用cout进行C++输出</span><br><span class="line">2.1.7 C++源代码的格式化</span><br><span class="line">2.2 C++语句</span><br><span class="line">2.2.1 声明语句和变量</span><br><span class="line">2.2.2 赋值语句</span><br><span class="line">2.2.3 cout的新花样</span><br><span class="line">2.3 其他C++语句</span><br><span class="line">2.3.1 使用cin</span><br><span class="line">2.3.2 使用cout进行拼接</span><br><span class="line">2.3.3 类简介</span><br><span class="line">2.4 函数</span><br><span class="line">2.4.1 使用有返回值的函数</span><br><span class="line">2.4.2 函数变体</span><br><span class="line">2.4.3 用户定义的函数</span><br><span class="line">2.4.4 用户定义的有返回值的函数</span><br><span class="line">2.4.5 在多函数程序中使用using编译指令</span><br><span class="line">2.5 总结</span><br><span class="line">2.6 复习题</span><br><span class="line">2.7 编程练习</span><br><span class="line">第3章 处理数据</span><br><span class="line">3.1 简单变量</span><br><span class="line">3.1.1 变量名</span><br><span class="line">3.1.2 整型</span><br><span class="line">3.1.3 整型short、int、long和long long</span><br><span class="line">3.1.4 无符号类型</span><br><span class="line">3.1.5 选择整型类型</span><br><span class="line">3.1.6 整型字面值</span><br><span class="line">3.1.7 C++如何确定常量的类型</span><br><span class="line">3.1.8 char类型：字符和小整数</span><br><span class="line">3.1.9 bool类型</span><br><span class="line">3.2 const限定符</span><br><span class="line">3.3 浮点数</span><br><span class="line">3.3.1 书写浮点数</span><br><span class="line">3.3.2 浮点类型</span><br><span class="line">3.3.3 浮点常量</span><br><span class="line">3.3.4 浮点数的优缺点</span><br><span class="line">3.4 C++算术运算符</span><br><span class="line">3.4.1 运算符优先级和结合性</span><br><span class="line">3.4.2 除法分支</span><br><span class="line">3.4.3 求模运算符</span><br><span class="line">3.4.4 类型转换</span><br><span class="line">3.4.5 C++11中的auto声明</span><br><span class="line">3.5 总结</span><br><span class="line">3.6 复习题</span><br><span class="line">3.7 编程练习</span><br><span class="line">第4章 复合类型</span><br><span class="line">4.1 数组</span><br><span class="line">4.1.1 程序说明</span><br><span class="line">4.1.2 数组的初始化规则</span><br><span class="line">4.1.3 C++11数组初始化方法</span><br><span class="line">4.2 字符串</span><br><span class="line">4.2.1 拼接字符串常量</span><br><span class="line">4.2.2 在数组中使用字符串</span><br><span class="line">4.2.3 字符串输入</span><br><span class="line">4.2.4 每次读取一行字符串输入</span><br><span class="line">4.2.5 混合输入字符串和数字</span><br><span class="line">4.3 string类简介</span><br><span class="line">4.3.1 C++11字符串初始化</span><br><span class="line">4.3.2 赋值、拼接和附加</span><br><span class="line">4.3.3 string类的其他操作</span><br><span class="line">4.3.4 string类I&#x2F;O</span><br><span class="line">4.3.5 其他形式的字符串字面值</span><br><span class="line">4.4 结构简介</span><br><span class="line">4.4.1 在程序中使用结构</span><br><span class="line">4.4.2 C++11结构初始化</span><br><span class="line">4.4.3 结构可以将string类作为成员吗</span><br><span class="line">4.4.4 其他结构属性</span><br><span class="line">4.4.5 结构数组</span><br><span class="line">4.4.6 结构中的位字段</span><br><span class="line">4.5 共用体</span><br><span class="line">4.6 枚举</span><br><span class="line">4.6.1 设置枚举量的值</span><br><span class="line">4.6.2 枚举的取值范围</span><br><span class="line">4.7 指针和自由存储空间</span><br><span class="line">4.7.1 声明和初始化指针</span><br><span class="line">4.7.2 指针的危险</span><br><span class="line">4.7.3 指针和数字</span><br><span class="line">4.7.4 使用new来分配内存</span><br><span class="line">4.7.5 使用delete释放内存</span><br><span class="line">4.7.6 使用new来创建动态数组</span><br><span class="line">4.8 指针、数组和指针算术</span><br><span class="line">4.8.1 程序说明</span><br><span class="line">4.8.2 指针小结</span><br><span class="line">4.8.3 指针和字符串</span><br><span class="line">4.8.4 使用new创建动态结构</span><br><span class="line">4.8.5 自动存储、静态存储和动态存储</span><br><span class="line">4.9 类型组合</span><br><span class="line">4.10 数组的替代品</span><br><span class="line">4.10.1 模板类vector</span><br><span class="line">4.10.2 模板类array（C++11）</span><br><span class="line">4.10.3 比较数组、vector对象和array对象</span><br><span class="line">4.11 总结</span><br><span class="line">4.12 复习题</span><br><span class="line">4.13 编程练习</span><br><span class="line">第5章 循环和关系表达式</span><br><span class="line">5.1 for循环</span><br><span class="line">5.1.1 for循环的组成部分</span><br><span class="line">5.1.2 回到for循环</span><br><span class="line">5.1.3 修改步长</span><br><span class="line">5.1.4 使用for循环访问字符串</span><br><span class="line">5.1.5 递增运算符（++）和递减运算符（——）</span><br><span class="line">5.1.6 副作用和顺序点</span><br><span class="line">5.1.7 前缀格式和后缀格式</span><br><span class="line">5.1.8 递增&#x2F;递减运算符和指针</span><br><span class="line">5.1.9 组合赋值运算符</span><br><span class="line">5.1.10 复合语句（语句块）</span><br><span class="line">5.1.11 其他语法技巧——逗号运算符</span><br><span class="line">5.1.12 关系表达式</span><br><span class="line">5.1.13 赋值、比较和可能犯的错误</span><br><span class="line">5.1.14 C—风格字符串的比较</span><br><span class="line">5.1.15 比较string类字符串</span><br><span class="line">5.2 while循环</span><br><span class="line">5.2.1 for与while</span><br><span class="line">5.2.2 等待一段时间：编写延时循环</span><br><span class="line">5.3 do while循环</span><br><span class="line">5.4 基于范围的for循环（C++11）</span><br><span class="line">5.5 循环和文本输入</span><br><span class="line">5.5.1 使用原始的cin进行输入</span><br><span class="line">5.5.2 使用cin.get（char）进行补救</span><br><span class="line">5.5.3 使用哪一个cin.get（）</span><br><span class="line">5.5.4 文件尾条件</span><br><span class="line">5.5.5 另一个cin.get（）版本</span><br><span class="line">5.6 嵌套循环和二维数组</span><br><span class="line">5.6.1 初始化二维数组</span><br><span class="line">5.6.2 使用二维数组</span><br><span class="line">5.7 总结</span><br><span class="line">5.8 复习题</span><br><span class="line">5.9 编程练习</span><br><span class="line">第6章 分支语句和逻辑运算符</span><br><span class="line">6.1 if语句</span><br><span class="line">6.1.1 if else语句</span><br><span class="line">6.1.2 格式化if else语句</span><br><span class="line">6.1.3 if else if else结构</span><br><span class="line">6.2 逻辑表达式</span><br><span class="line">6.2.1 逻辑OR运算符：‖</span><br><span class="line">6.2.2 逻辑AND运算符：&amp;&amp;</span><br><span class="line">6.2.3 用&amp;&amp;来设置取值范围</span><br><span class="line">6.2.4 逻辑NOT运算符：！</span><br><span class="line">6.2.5 逻辑运算符细节</span><br><span class="line">6.2.6 其他表示方式</span><br><span class="line">6.3 字符函数库cctype</span><br><span class="line">6.4 ？：运算符</span><br><span class="line">6.5 switch语句</span><br><span class="line">6.5.1 将枚举量用作标签</span><br><span class="line">6.5.2 switch和if else</span><br><span class="line">6.6 break和continue语句</span><br><span class="line">6.7 读取数字的循环</span><br><span class="line">6.8 简单文件输入&#x2F;输出</span><br><span class="line">6.8.1 文本I&#x2F;O和文本文件</span><br><span class="line">6.8.2 写入到文本文件中</span><br><span class="line">6.8.3 读取文本文件</span><br><span class="line">6.9 总结</span><br><span class="line">6.10 复习题</span><br><span class="line">6.11 编程练习</span><br><span class="line">第7章 函数——C++的编程模块</span><br><span class="line">7.1 复习函数的基本知识</span><br><span class="line">7.1.1 定义函数</span><br><span class="line">7.1.2 函数原型和函数调用</span><br><span class="line">7.2 函数参数和按值传递</span><br><span class="line">7.2.1 多个参数</span><br><span class="line">7.2.2 另外一个接受两个参数的函数</span><br><span class="line">7.3 函数和数组</span><br><span class="line">7.3.1 函数如何使用指针来处理数组</span><br><span class="line">7.3.2 将数组作为参数意味着什么</span><br><span class="line">7.3.3 更多数组函数示例</span><br><span class="line">7.3.4 使用数组区间的函数</span><br><span class="line">7.3.5 指针和const</span><br><span class="line">7.4 函数和二维数组</span><br><span class="line">7.5 函数和C—风格字符串</span><br><span class="line">7.5.1 将C—风格字符串作为参数的函数</span><br><span class="line">7.5.2 返回C—风格字符串的函数</span><br><span class="line">7.6 函数和结构</span><br><span class="line">7.6.1 传递和返回结构</span><br><span class="line">7.6.2 另一个处理结构的函数示例</span><br><span class="line">7.6.3 传递结构的地址</span><br><span class="line">7.7 函数和string对象</span><br><span class="line">7.8 函数与array对象</span><br><span class="line">7.9 递归</span><br><span class="line">7.9.1 包含一个递归调用的递归</span><br><span class="line">7.9.2 包含多个递归调用的递归</span><br><span class="line">7.10 函数指针</span><br><span class="line">7.10.1 函数指针的基础知识</span><br><span class="line">7.10.2 函数指针示例</span><br><span class="line">7.10.3 深入探讨函数指针</span><br><span class="line">7.10.4 使用typedef进行简化</span><br><span class="line">7.11 总结</span><br><span class="line">7.12 复习题</span><br><span class="line">7.13 编程练习</span><br><span class="line">第8章 函数探幽</span><br><span class="line">8.1 C++内联函数</span><br><span class="line">8.2 引用变量</span><br><span class="line">8.2.1 创建引用变量</span><br><span class="line">8.2.2 将引用用作函数参数</span><br><span class="line">8.2.3 引用的属性和特别之处</span><br><span class="line">8.2.4 将引用用于结构</span><br><span class="line">8.2.5 将引用用于类对象</span><br><span class="line">8.2.6 对象、继承和引用</span><br><span class="line">8.2.7 何时使用引用参数</span><br><span class="line">8.3 默认参数</span><br><span class="line">8.4 函数重载</span><br><span class="line">8.4.1 重载示例</span><br><span class="line">8.4.2 何时使用函数重载</span><br><span class="line">8.5 函数模板</span><br><span class="line">8.5.1 重载的模板</span><br><span class="line">8.5.2 模板的局限性</span><br><span class="line">8.5.3 显式具体化</span><br><span class="line">8.5.4 实例化和具体化</span><br><span class="line">8.5.5 编译器选择使用哪个函数版本</span><br><span class="line">8.5.6 模板函数的发展</span><br><span class="line">8.6 总结</span><br><span class="line">8.7 复习题</span><br><span class="line">8.8 编程练习</span><br><span class="line">第9章 内存模型和名称空间</span><br><span class="line">9.1 单独编译</span><br><span class="line">9.2 存储持续性、作用域和链接性</span><br><span class="line">9.2.1 作用域和链接</span><br><span class="line">9.2.2 自动存储持续性</span><br><span class="line">9.2.3 静态持续变量</span><br><span class="line">9.2.4 静态持续性、外部链接性</span><br><span class="line">9.2.5 静态持续性、内部链接性</span><br><span class="line">9.2.6 静态存储持续性、无链接性</span><br><span class="line">9.2.7 说明符和限定符</span><br><span class="line">9.2.8 函数和链接性</span><br><span class="line">9.2.9 语言链接性</span><br><span class="line">9.2.10 存储方案和动态分配</span><br><span class="line">9.3 名称空间</span><br><span class="line">9.3.1 传统的C++名称空间</span><br><span class="line">9.3.2 新的名称空间特性</span><br><span class="line">9.3.3 名称空间示例</span><br><span class="line">9.3.4 名称空间及其前途</span><br><span class="line">9.4 总结</span><br><span class="line">9.5 复习题</span><br><span class="line">9.6 编程练习</span><br><span class="line">第10章 对象和类</span><br><span class="line">10.1 过程性编程和面向对象编程</span><br><span class="line">10.2 抽象和类</span><br><span class="line">10.2.1 类型是什么</span><br><span class="line">10.2.2 C++中的类</span><br><span class="line">10.2.3 实现类成员函数</span><br><span class="line">10.2.4 使用类</span><br><span class="line">10.2.5 修改实现</span><br><span class="line">10.2.6 小结</span><br><span class="line">10.3 类的构造函数和析构函数</span><br><span class="line">10.3.1 声明和定义构造函数</span><br><span class="line">10.3.2 使用构造函数</span><br><span class="line">10.3.3 默认构造函数</span><br><span class="line">10.3.4 析构函数</span><br><span class="line">10.3.5 改进Stock类</span><br><span class="line">10.3.6 构造函数和析构函数小结</span><br><span class="line">10.4 this指针</span><br><span class="line">10.5 对象数组</span><br><span class="line">10.6 类作用域</span><br><span class="line">10.6.1 作用域为类的常量</span><br><span class="line">10.6.2 作用域内枚举（C++11）</span><br><span class="line">10.7 抽象数据类型</span><br><span class="line">10.8 总结</span><br><span class="line">10.9 复习题</span><br><span class="line">10.10 编程练习</span><br><span class="line">第11章 使用类</span><br><span class="line">11.1 运算符重载</span><br><span class="line">11.2 计算时间：一个运算符重载示例</span><br><span class="line">11.2.1 添加加法运算符</span><br><span class="line">11.2.2 重载限制</span><br><span class="line">11.2.3 其他重载运算符</span><br><span class="line">11.3 友元</span><br><span class="line">11.3.1 创建友元</span><br><span class="line">11.3.2 常用的友元：重载11.4 重载运算符：作为成员函数还是非成员函数</span><br><span class="line">11.5 再谈重载：一个矢量类</span><br><span class="line">11.5.1 使用状态成员</span><br><span class="line">11.5.2 为Vector类重载算术运算符</span><br><span class="line">11.5.3 对实现的说明</span><br><span class="line">11.5.4 使用Vector类来模拟随机漫步</span><br><span class="line">11.6 类的自动转换和强制类型转换</span><br><span class="line">11.6.1 转换函数</span><br><span class="line">11.6.2 转换函数和友元函数</span><br><span class="line">11.7 总结</span><br><span class="line">11.8 复习题</span><br><span class="line">11.9 编程练习</span><br><span class="line">第12章 类和动态内存分配</span><br><span class="line">12.1 动态内存和类</span><br><span class="line">12.1.1 复习示例和静态类成员</span><br><span class="line">12.1.2 特殊成员函数</span><br><span class="line">12.1.3 回到Stringbad：复制构造函数的哪里出了问题</span><br><span class="line">12.1.4 Stringbad的其他问题： 赋值运算符</span><br><span class="line">12.2 改进后的新String类</span><br><span class="line">12.2.1 修订后的默认构造函数</span><br><span class="line">12.2.2 比较成员函数</span><br><span class="line">12.2.3 使用中括号表示法访问字符</span><br><span class="line">12.2.4 静态类成员函数</span><br><span class="line">12.2.5 进一步重载赋值运算符</span><br><span class="line">12.3 在构造函数中使用new时应注意的事项</span><br><span class="line">12.3.1 应该和不应该</span><br><span class="line">12.3.2 包含类成员的类的逐成员复制</span><br><span class="line">12.4 有关返回对象的说明</span><br><span class="line">12.4.1 返回指向const对象的引用</span><br><span class="line">12.4.2 返回指向非const对象的引用</span><br><span class="line">12.4.3 返回对象</span><br><span class="line">12.4.4 返回const对象</span><br><span class="line">12.5 使用指向对象的指针</span><br><span class="line">12.5.1 再谈new和delete</span><br><span class="line">12.5.2 指针和对象小结</span><br><span class="line">12.5.3 再谈定位new运算符</span><br><span class="line">12.6 复习各种技术</span><br><span class="line">12.6.1 重载12.6.2 转换函数</span><br><span class="line">12.6.3 其构造函数使用new的类</span><br><span class="line">12.7 队列模拟</span><br><span class="line">12.7.1 队列类</span><br><span class="line">12.7.2 Customer类</span><br><span class="line">12.7.3 ATM模拟</span><br><span class="line">12.8 总结</span><br><span class="line">12.9 复习题</span><br><span class="line">12.10 编程练习</span><br><span class="line">第13章 类继承</span><br><span class="line">13.1 一个简单的基类</span><br><span class="line">13.1.1 派生一个类</span><br><span class="line">13.1.2 构造函数：访问权限的考虑</span><br><span class="line">13.1.3 使用派生类</span><br><span class="line">13.1.4 派生类和基类之间的特殊关系</span><br><span class="line">13.2 继承：is—a关系</span><br><span class="line">13.3 多态公有继承</span><br><span class="line">13.4 静态联编和动态联编</span><br><span class="line">13.4.1 指针和引用类型的兼容性</span><br><span class="line">13.4.2 虚成员函数和动态联编</span><br><span class="line">13.4.3 有关虚函数注意事项</span><br><span class="line">13.5 访问控制：protected</span><br><span class="line">13.6 抽象基类</span><br><span class="line">13.6.1 应用ABC概念</span><br><span class="line">13.6.2 ABC理念</span><br><span class="line">13.7 继承和动态内存分配</span><br><span class="line">13.7.1 第一种情况：派生类不使用new</span><br><span class="line">13.7.2 第二种情况：派生类使用new</span><br><span class="line">13.7.3 使用动态内存分配和友元的继承示例</span><br><span class="line">13.8 类设计回顾</span><br><span class="line">13.8.1 编译器生成的成员函数</span><br><span class="line">13.8.2 其他的类方法</span><br><span class="line">13.8.3 公有继承的考虑因素</span><br><span class="line">13.8.4 类函数小结</span><br><span class="line">13.9 总结</span><br><span class="line">13.10 复习题</span><br><span class="line">13.11 编程练习</span><br><span class="line">……</span><br><span class="line">第14章 C++中的代码重用</span><br><span class="line">第15章 友元、异常和其他</span><br><span class="line">第16章 string类和标准模板库</span><br><span class="line">第17章 输入、输出和文件</span><br><span class="line">第18章 探讨C++新标准</span><br><span class="line">附录A 计数系统</span><br><span class="line">附录B C++保留字</span><br><span class="line">附录C ASCII字符集</span><br><span class="line">附录D 运算符优先级</span><br><span class="line">附录E 其他运算符</span><br><span class="line">附录F 模板类string</span><br><span class="line">附录G 标准模板库方法和函数</span><br><span class="line">附录H 精选读物和网上资源</span><br><span class="line">附录I 转换为ISO标准C++</span><br><span class="line">附录J 复习题答案</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B008A4XZRI/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B008A4XZRI&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51BY5L-jhyL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B009CJ57XU/" rel="prev" title="Head First HTML5 Programming(英文版)">
+      <i class="fa fa-chevron-left"></i> Head First HTML5 Programming(英文版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B008F4VJ94/" rel="next" title="精彩绝伦的CSS">
+      精彩绝伦的CSS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

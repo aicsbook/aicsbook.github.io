@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 高性能MySQL(第3版)作者信息： 作者: 施瓦茨 (Baron Schwartz) [ 中文 pdf ] 简单介绍“只要你不敢以MySQL专家自诩，又岂敢错过这本神书？”“一言以蔽之，写得好，编排得好，需要参考时容易到爆！”“我可是从头到尾看了一遍上一版，可还是毫不犹豫拿起了这本《高性能MySQL（第3版）》，而且看完后一点都不后悔……” 目录12345678910111213">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能MySQL(第3版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00C1W58DE/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 高性能MySQL(第3版)作者信息： 作者: 施瓦茨 (Baron Schwartz) [ 中文 pdf ] 简单介绍“只要你不敢以MySQL专家自诩，又岂敢错过这本神书？”“一言以蔽之，写得好，编排得好，需要参考时容易到爆！”“我可是从头到尾看了一遍上一版，可还是毫不犹豫拿起了这本《高性能MySQL（第3版）》，而且看完后一点都不后悔……” 目录12345678910111213">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51Q1ooQkQOL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.089Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51Q1ooQkQOL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00C1W58DE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>高性能MySQL(第3版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00C1W58DE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          高性能MySQL(第3版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 高性能MySQL(第3版)<br>作者信息： 作者: 施瓦茨 (Baron Schwartz) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>“只要你不敢以MySQL专家自诩，又岂敢错过这本神书？”“一言以蔽之，写得好，编排得好，需要参考时容易到爆！”“我可是从头到尾看了一遍上一版，可还是毫不犹豫拿起了这本《高性能MySQL（第3版）》，而且看完后一点都不后悔……”</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br></pre></td><td class="code"><pre><span class="line">推荐序</span><br><span class="line">前言</span><br><span class="line">第1章MySQL架构与历史1</span><br><span class="line">1.1MySQL逻辑架构1</span><br><span class="line">1.1.1连接管理与安全性2</span><br><span class="line">1.1.2优化与执行3</span><br><span class="line">1.2并发控制3</span><br><span class="line">1.2.1读写锁4</span><br><span class="line">1.2.2锁粒度4</span><br><span class="line">1.3事务6</span><br><span class="line">1.3.1隔离级别8</span><br><span class="line">1.3.2死锁9</span><br><span class="line">1.3.3事务日志10</span><br><span class="line">1.3.4MySQL中的事务10</span><br><span class="line">1.4多版本并发控制12</span><br><span class="line">1.5MySQL的存储引擎13</span><br><span class="line">1.5.1InnoDB存储引擎16</span><br><span class="line">1.5.2MyISAM存储引擎17</span><br><span class="line">1.5.3MySQL内建的其他存储引擎19</span><br><span class="line">1.5.4第三方存储引擎22</span><br><span class="line">1.5.5选择合适的引擎24</span><br><span class="line">1.5.6转换表的引擎27</span><br><span class="line">1.6MySQL时间线（Timeline）29</span><br><span class="line">1.7MySQL的开发模式32</span><br><span class="line">1.8总结33</span><br><span class="line">第2章MySQL基准测试35</span><br><span class="line">2.1为什么需要基准测试35</span><br><span class="line">2.2基准测试的策略37</span><br><span class="line">2.2.1测试何种指标38</span><br><span class="line">2.3基准测试方法40</span><br><span class="line">2.3.1设计和规划基准测试41</span><br><span class="line">2.3.2基准测试应该运行多长时间42</span><br><span class="line">2.3.3获取系统性能和状态43</span><br><span class="line">2.3.4获得准确的测试结果44</span><br><span class="line">2.3.5运行基准测试并分析结果46</span><br><span class="line">2.3.6绘图的重要性47</span><br><span class="line">2.4基准测试工具49</span><br><span class="line">2.4.1集成式测试工具49</span><br><span class="line">2.4.2单组件式测试工具50</span><br><span class="line">2.5基准测试案例52</span><br><span class="line">2.5.1http_load53</span><br><span class="line">2.5.2MySQL基准测试套件54</span><br><span class="line">2.5.3sysbench55</span><br><span class="line">2.5.4数据库测试套件中的dbt2TPC—C测试60</span><br><span class="line">2.5.5Percona的TPCC—MySQL测试工具63</span><br><span class="line">2.6总结65</span><br><span class="line">第3章服务器性能剖析67</span><br><span class="line">3.1性能优化简介67</span><br><span class="line">3.1.1通过性能剖析进行优化69</span><br><span class="line">3.1.2理解性能剖析71</span><br><span class="line">3.2对应用程序进行性能剖析72</span><br><span class="line">3.2.1测量PHP应用程序74</span><br><span class="line">3.3剖析MySQL查询77</span><br><span class="line">3.3.1剖析服务器负载77</span><br><span class="line">3.3.2剖析单条查询81</span><br><span class="line">3.3.3使用性能剖析87</span><br><span class="line">3.4诊断间歇性问题88</span><br><span class="line">3.4.1单条查询问题还是服务器问题89</span><br><span class="line">3.4.2捕获诊断数据93</span><br><span class="line">3.4.3一个诊断案例98</span><br><span class="line">3.5其他剖析工具106</span><br><span class="line">3.5.1使用USER_STATISTICS表106</span><br><span class="line">3.5.2使用strace107</span><br><span class="line">3.6总结108</span><br><span class="line">第4章Schema与数据类型优化111</span><br><span class="line">4.1选择优化的数据类型111</span><br><span class="line">4.1.1整数类型113</span><br><span class="line">4.1.2实数类型113</span><br><span class="line">4.1.3字符串类型114</span><br><span class="line">4.1.4日期和时间类型121</span><br><span class="line">4.1.5位数据类型123</span><br><span class="line">4.1.6选择标识符（identifier）125</span><br><span class="line">4.1.7特殊类型数据127</span><br><span class="line">4.2MySQLschema设计中的陷阱127</span><br><span class="line">4.3范式和反范式129</span><br><span class="line">4.3.1范式的优点和缺点130</span><br><span class="line">4.3.2反范式的优点和缺点130</span><br><span class="line">4.3.3混用范式化和反范式化131</span><br><span class="line">4.4缓存表和汇总表132</span><br><span class="line">4.4.1物化视图134</span><br><span class="line">4.4.2计数器表135</span><br><span class="line">4.5加快ALTERTABLE操作的速度136</span><br><span class="line">4.5.1只修改.frm文件137</span><br><span class="line">4.5.2快速创建MyISAM索引139</span><br><span class="line">4.6总结140</span><br><span class="line">第5章创建高性能的索引141</span><br><span class="line">5.1索引基础141</span><br><span class="line">5.1.1索引的类型142</span><br><span class="line">5.2索引的优点152</span><br><span class="line">5.3高性能的索引策略153</span><br><span class="line">5.3.1独立的列153</span><br><span class="line">5.3.2前缀索引和索引选择性153</span><br><span class="line">5.3.3多列索引157</span><br><span class="line">5.3.4选择合适的索引列顺序159</span><br><span class="line">5.3.5聚簇索引162</span><br><span class="line">5.3.6覆盖索引171</span><br><span class="line">5.3.7使用索引扫描来做排序175</span><br><span class="line">5.3.8压缩（前缀压缩）索引177</span><br><span class="line">5.3.9冗余和重复索引178</span><br><span class="line">5.3.10未使用的索引181</span><br><span class="line">5.3.11索引和锁181</span><br><span class="line">5.4索引案例学习183</span><br><span class="line">5.4.1支持多种过滤条件183</span><br><span class="line">5.4.2避免多个范围条件185</span><br><span class="line">5.4.3优化排序186</span><br><span class="line">5.5维护索引和表187</span><br><span class="line">5.5.1找到并修复损坏的表187</span><br><span class="line">5.5.2更新索引统计信息188</span><br><span class="line">5.5.3减少索引和数据的碎片190</span><br><span class="line">5.6总结192</span><br><span class="line">第6章查询性能优化195</span><br><span class="line">6.1为什么查询速度会慢195</span><br><span class="line">6.2慢查询基础：优化数据访问196</span><br><span class="line">6.2.1是否向服务器请求了不需要的数据196</span><br><span class="line">6.2.2MySQL是否在扫描额外的记录198</span><br><span class="line">6.3重构查询的方式201</span><br><span class="line">6.3.1一个复杂查询还是多个简单查询201</span><br><span class="line">6.3.2切分查询202</span><br><span class="line">6.3.3分解关联查询203</span><br><span class="line">6.4查询执行的基础204</span><br><span class="line">6.4.1MySQL客户端／服务器通信协议205</span><br><span class="line">6.4.2查询缓存208</span><br><span class="line">6.4.3查询优化处理208</span><br><span class="line">6.4.4查询执行引擎222</span><br><span class="line">6.4.5返回结果给客户端223</span><br><span class="line">6.5MySQL查询优化器的局限性223</span><br><span class="line">6.5.1关联子查询223</span><br><span class="line">6.5.2UNION的限制228</span><br><span class="line">6.5.3索引合并优化228</span><br><span class="line">6.5.4等值传递229</span><br><span class="line">6.5.5并行执行229</span><br><span class="line">6.5.6哈希关联229</span><br><span class="line">6.5.7松散索引扫描229</span><br><span class="line">6.5.8最大值和最小值优化231</span><br><span class="line">6.5.9在同一个表上查询和更新232</span><br><span class="line">6.6查询优化器的提示（hint）232</span><br><span class="line">6.7优化特定类型的查询236</span><br><span class="line">6.7.1优化COUNT（）查询236</span><br><span class="line">6.7.2优化关联查询239</span><br><span class="line">6.7.3优化子查询239</span><br><span class="line">6.7.4优化GROUPBY和DISTINCT239</span><br><span class="line">6.7.5优化LIMIT分页241</span><br><span class="line">6.7.6优化SQL_CALC_FOUND_ROWS243</span><br><span class="line">6.7.7优化UNION查询243</span><br><span class="line">6.7.8静态查询分析244</span><br><span class="line">6.7.9使用用户自定义变量244</span><br><span class="line">6.8案例学习251</span><br><span class="line">6.8.1使用MySQL构建一个队列表251</span><br><span class="line">6.8.2计算两点之间的距离254</span><br><span class="line">6.8.3使用用户自定义函数257</span><br><span class="line">6.9总结258</span><br><span class="line">第7章MySQL高级特性259</span><br><span class="line">7.1分区表259</span><br><span class="line">7.1.1分区表的原理260</span><br><span class="line">7.1.2分区表的类型261</span><br><span class="line">7.1.3如何使用分区表262</span><br><span class="line">7.1.4什么情况下会出问题263</span><br><span class="line">7.1.5查询优化266</span><br><span class="line">7.1.6合并表267</span><br><span class="line">7.2视图270</span><br><span class="line">7.2.1可更新视图272</span><br><span class="line">7.2.2视图对性能的影响273</span><br><span class="line">7.2.3视图的限制274</span><br><span class="line">7.3外键约束275</span><br><span class="line">7.4在MySQL内部存储代码276</span><br><span class="line">7.4.1存储过程和函数278</span><br><span class="line">7.4.2触发器279</span><br><span class="line">7.4.3事件281</span><br><span class="line">7.4.4在存储程序中保留注释283</span><br><span class="line">7.5游标283</span><br><span class="line">7.6绑定变量284</span><br><span class="line">7.6.1绑定变量的优化286</span><br><span class="line">7.6.2SQL接口的绑定变量286</span><br><span class="line">7.6.3绑定变量的限制288</span><br><span class="line">7.7用户自定义函数289</span><br><span class="line">7.8插件290</span><br><span class="line">7.9字符集和校对291</span><br><span class="line">7.9.1MySQL如何使用字符集292</span><br><span class="line">7.9.2选择字符集和校对规则295</span><br><span class="line">7.9.3字符集和校对规则如何影响查询296</span><br><span class="line">7.10全文索引299</span><br><span class="line">7.10.1自然语言的全文索引300</span><br><span class="line">7.10.2布尔全文索引302</span><br><span class="line">7.10.3MySQL5.1中全文索引的变化303</span><br><span class="line">7.10.4全文索引的限制和替代方案304</span><br><span class="line">7.10.5全文索引的配置和优化306</span><br><span class="line">7.11分布式（XA）事务307</span><br><span class="line">7.11.1内部XA事务307</span><br><span class="line">7.11.2外部XA事务308</span><br><span class="line">7.12查询缓存309</span><br><span class="line">7.12.1MySQL如何判断缓存命中309</span><br><span class="line">7.12.2查询缓存如何使用内存311</span><br><span class="line">7.12.3什么情况下查询缓存能发挥作用313</span><br><span class="line">7.12.4如何配置和维护查询缓存316</span><br><span class="line">7.12.5InnoDB和查询缓存319</span><br><span class="line">7.12.6通用查询缓存优化320</span><br><span class="line">7.12.7查询缓存的替代方案321</span><br><span class="line">7.13总结321</span><br><span class="line">……</span><br><span class="line">第8章优化服务器设置325</span><br><span class="line">第9章操作系统和硬件优化377</span><br><span class="line">第10章复制433</span><br><span class="line">第11章可扩展的MySQL501</span><br><span class="line">第12章高可用性543</span><br><span class="line">第13章云端的MySQL563</span><br><span class="line">第14章应用层优化577</span><br><span class="line">第15章备份与恢复593</span><br><span class="line">第16章MySQL用户工具635</span><br><span class="line">附录AMySQL分支与变种649</span><br><span class="line">附录BMySQL服务器状态655</span><br><span class="line">附录C大文件传输683</span><br><span class="line">附录DEXPLAIN687</span><br><span class="line">附录E锁的调试703</span><br><span class="line">附录F在MySQL上使用Sphinx713</span><br><span class="line">索引739</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00C1W58DE/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00C1W58DE&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51Q1ooQkQOL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00C4OM7V0/" rel="prev" title="图灵计算机科学丛书•具体数学 计算机科学基础(第2版)">
+      <i class="fa fa-chevron-left"></i> 图灵计算机科学丛书•具体数学 计算机科学基础(第2版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00AYR34R0/" rel="next" title="Effective MySQL之SQL语句最优化">
+      Effective MySQL之SQL语句最优化 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

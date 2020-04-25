@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 深入理解Android网络编程 技术详解与最佳实践作者信息： 作者: 陈文 [ 中文 pdf ] 简单介绍系统讲解Android网络编程的各项核心技术和功能模块，多个案例解读Android网络编程的方法和技巧     从源码角度深入解析Android核心网络处理方法和关键应用的实现原理，包含大量最佳实践 目录1234567891011121314151617181920212223">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解Android网络编程 技术详解与最佳实践">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00EDE9802/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 深入理解Android网络编程 技术详解与最佳实践作者信息： 作者: 陈文 [ 中文 pdf ] 简单介绍系统讲解Android网络编程的各项核心技术和功能模块，多个案例解读Android网络编程的方法和技巧     从源码角度深入解析Android核心网络处理方法和关键应用的实现原理，包含大量最佳实践 目录1234567891011121314151617181920212223">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51c8LTAFYfL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.642Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51c8LTAFYfL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00EDE9802/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>深入理解Android网络编程 技术详解与最佳实践 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00EDE9802/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深入理解Android网络编程 技术详解与最佳实践
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 深入理解Android网络编程 技术详解与最佳实践<br>作者信息： 作者: 陈文 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>系统讲解Android网络编程的各项核心技术和功能模块，多个案例解读Android网络编程的方法和技巧     从源码角度深入解析Android核心网络处理方法和关键应用的实现原理，包含大量最佳实践</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br></pre></td><td class="code"><pre><span class="line">前言</span><br><span class="line">第一篇概述篇</span><br><span class="line">第1章Android网络编程概要2</span><br><span class="line">1.1 Android简介2</span><br><span class="line">1.1.1 Android的发展2</span><br><span class="line">1.1.2 Android功能特性3</span><br><span class="line">1.1.3 Android系统构架4</span><br><span class="line">1.2 Android网络程序的功能6</span><br><span class="line">1.2.1通信功能6</span><br><span class="line">1.2.2及时分享6</span><br><span class="line">1.2.3个人管理6</span><br><span class="line">1.2.4娱乐游戏7</span><br><span class="line">1.2.5企业应用7</span><br><span class="line">1.3设置Android开发环境7</span><br><span class="line">1.3.1相关下载7</span><br><span class="line">1.3.2安装ADT9</span><br><span class="line">1.3.3Hello World！11</span><br><span class="line">1.4网络应用实战案例17</span><br><span class="line">1.4.1加载一个页面17</span><br><span class="line">1.4.2下载一个页面21</span><br><span class="line">1.5小结21</span><br><span class="line">第二篇实战篇</span><br><span class="line">第2章Android基本网络技术和编程实践24</span><br><span class="line">2.1计算机网络及其协议24</span><br><span class="line">2.1.1计算机网络概述24</span><br><span class="line">2.1.2网络协议概述25</span><br><span class="line">2.1.3IP、TCP和UDP协议26</span><br><span class="line">2.2在 Android中使用TCP、UDP协议31</span><br><span class="line">2.2.1Socket基础31</span><br><span class="line">2.2.2使用TCP通信34</span><br><span class="line">2.2.3使用UDP通信36</span><br><span class="line">2.3 Socket实战案例39</span><br><span class="line">2.3.1 Socket聊天举例39</span><br><span class="line">2.3.2 FTP客户端41</span><br><span class="line">2.3.3 Telnet客户端44</span><br><span class="line">2.4小结46</span><br><span class="line">第3章Android基本Web技术和编程实践47</span><br><span class="line">3.1 HTTP协议47</span><br><span class="line">3.1.1 HTTP简介47</span><br><span class="line">3.1.2实战案例：基于HTTP协议的文件上传51</span><br><span class="line">3.2 Android中的HTTP编程57</span><br><span class="line">3.2.1 HttpClient和URLConnection57</span><br><span class="line">3.2.2Post和Get在HttpClient的使用58</span><br><span class="line">3.2.3实战案例：使用HttpClient和URLConnection访问维基百科60</span><br><span class="line">3.3Android处理JSON64</span><br><span class="line">3.3.1JSON简介64</span><br><span class="line">3.3.2JSON数据解析65</span><br><span class="line">3.3.3JSON打包67</span><br><span class="line">3.3.4实战案例：JSON解析wikipedia内容68</span><br><span class="line">3.4Android处理SOAP71</span><br><span class="line">3.4.1SOAP简介71</span><br><span class="line">3.4.2SOAP消息72</span><br><span class="line">3.4.3实战案例：SOAP解析天气服务74</span><br><span class="line">3.5Android对HTML的处理79</span><br><span class="line">3.5.1解析HTML79</span><br><span class="line">3.5.2HTML适配屏幕80</span><br><span class="line">3.5.3JavaScript混合编程81</span><br><span class="line">3.5.4实战案例：Android自定义打开HTML页面87</span><br><span class="line">3.6小结91</span><br><span class="line">第4章Android常见网络接口编程92</span><br><span class="line">4.1Android解析和创建XML92</span><br><span class="line">4.1.1XML简介92</span><br><span class="line">4.1.2DOM解析XML97</span><br><span class="line">4.1.3SAX解析XML102</span><br><span class="line">4.1.4PULL解析XML108</span><br><span class="line">4.1.5实战案例：Android中创建XML110</span><br><span class="line">4.2Android订阅RSS113</span><br><span class="line">4.2.1RSS简介113</span><br><span class="line">4.2.2实战案例：简单RSS阅读器115</span><br><span class="line">4.3AndroidEmail编程122</span><br><span class="line">4.3.1Android发送Email122</span><br><span class="line">4.3.2实战案例：Android下Email的Base64加密123</span><br><span class="line">4.4Android网络安全125</span><br><span class="line">4.4.1Android网络安全简介125</span><br><span class="line">4.4.2Android加密和解密127</span><br><span class="line">4.4.3实战案例：Android应用添加签名133</span><br><span class="line">4.5OAuth认证135</span><br><span class="line">4.5.1OAuth简介135</span><br><span class="line">4.5.2实战案例：使用OAuth接口137</span><br><span class="line">4.6小结139</span><br><span class="line">第5章Android网络模块编程141</span><br><span class="line">5.1Android地图和定位141</span><br><span class="line">5.1.1获取map—api密钥141</span><br><span class="line">5.1.2获取位置144</span><br><span class="line">5.1.3实战案例：利用MapView显示地图146</span><br><span class="line">5.2USB编程150</span><br><span class="line">5.2.1USB主从设备150</span><br><span class="line">5.2.2USBAccessoryMode151</span><br><span class="line">5.2.3USBHostMode157</span><br><span class="line">5.2.4实战案例：Android和Arduino交互159</span><br><span class="line">5.3Wi—Fi编程168</span><br><span class="line">5.3.1AndroidWi—Fi相关类168</span><br><span class="line">5.3.2AndroidWi—Fi基本操作171</span><br><span class="line">5.3.3实战案例：使用Wi—Fi直连方式传输文件177</span><br><span class="line">5.4蓝牙编程185</span><br><span class="line">5.4.1蓝牙简介185</span><br><span class="line">5.4.2Android蓝牙API分析185</span><br><span class="line">5.4.3Android蓝牙基本操作187</span><br><span class="line">5.4.4实战案例：蓝牙连接192</span><br><span class="line">5.5NFC编程简介197</span><br><span class="line">5.5.1NFC技术简介197</span><br><span class="line">5.5.2NFCAPI简介198</span><br><span class="line">5.5.3NFC处理流程分析199</span><br><span class="line">5.6小结205</span><br><span class="line">第6章Android线程、数据存取、缓存和UI同步206</span><br><span class="line">6.1Android线程206</span><br><span class="line">6.1.1Android线程模型206</span><br><span class="line">6.1.2异步任务类211</span><br><span class="line">6.1.3实战案例：利用AsyncTask实现多线程下载213</span><br><span class="line">6.2数据存取214</span><br><span class="line">6.2.1 Shared Preferences数据存储215</span><br><span class="line">6.2.2 Internal Storage数据存储216</span><br><span class="line">6.2.3 External Storage数据存储217</span><br><span class="line">6.2.4SQLiteDatabases数据存储219</span><br><span class="line">6.2.5实战案例：SQLite数据库操作220</span><br><span class="line">6.3网络判定227</span><br><span class="line">6.3.1判断用户是否连接228</span><br><span class="line">6.3.2判断网络连接的类型228</span><br><span class="line">6.3.3监控网络连接改变228</span><br><span class="line">6.3.4实战案例：根据广播消息判断网络连接情况228</span><br><span class="line">6.4消息缓存230</span><br><span class="line">6.4.1Android中的缓存机制230</span><br><span class="line">6.4.2实战案例：下载、缓存和显示图片231</span><br><span class="line">6.5界面更新236</span><br><span class="line">6.5.1刷新数据时的界面更新236</span><br><span class="line">6.5.2完成任务时的界面更新237</span><br><span class="line">6.5.3实战案例：自定义列表显示更新238</span><br><span class="line">6.6小结248</span><br><span class="line">第7章基于SIP协议的VoIP应用249</span><br><span class="line">7.1SIP协议简介249</span><br><span class="line">7.2SIP服务器搭建250</span><br><span class="line">7.2.1下载安装BrekekeSIPServer250</span><br><span class="line">7.2.2访问服务器251</span><br><span class="line">7.2.3启动服务器252</span><br><span class="line">7.3SIP程序设置253</span><br><span class="line">7.3.1Android SIPAPI中的类和接口253</span><br><span class="line">7.3.2Android极限列表253</span><br><span class="line">7.3.3完整的Manifest文件254</span><br><span class="line">7.4SIP初始化通话255</span><br><span class="line">7.4.1SipManager对象255</span><br><span class="line">7.4.2SipProfile对象256</span><br><span class="line">7.5监听SIP通话257</span><br><span class="line">7.5.1创建监听器258</span><br><span class="line">7.5.2拨打电话258</span><br><span class="line">7.5.3接收呼叫259</span><br><span class="line">7.6实战案例：SIP通话261</span><br><span class="line">7.7小结270</span><br><span class="line">第8章基于XMPP协议的即时通信应用271</span><br><span class="line">8.1XMPP协议简介271</span><br><span class="line">8.2使用Openfire搭建XMPP服务器272</span><br><span class="line">8.3登录XMPP服务器276</span><br><span class="line">8.3.1Asmack相关类276</span><br><span class="line">8.3.2登录XMPP服务器277</span><br><span class="line">8.4联系人相关操作279</span><br><span class="line">8.4.1获取联系人列表279</span><br><span class="line">8.4.2获取联系人状态280</span><br><span class="line">8.4.3添加和删除联系人280</span><br><span class="line">8.4.4监听联系人添加信息281</span><br><span class="line">8.5消息处理282</span><br><span class="line">8.5.1接收消息282</span><br><span class="line">8.5.2发送消息283</span><br><span class="line">8.6实战案例：XMPP多人聊天283</span><br><span class="line">8.6.1创建新多人聊天室284</span><br><span class="line">8.6.2加入聊天室286</span><br><span class="line">8.6.3发送和接收消息287</span><br><span class="line">8.7小结288</span><br><span class="line">第三篇源码分析篇</span><br><span class="line">第9章Android对HTML的处理290</span><br><span class="line">9.1AndroidHTML处理关键类290</span><br><span class="line">9.2HTMLViewer分析292</span><br><span class="line">9.3浏览器源代码解析296</span><br><span class="line">9.3.1WebView加载入口分析296</span><br><span class="line">9.3.2调用JavaScript接口299</span><br><span class="line">9.4WebKit简单分析300</span><br><span class="line">9.4.1HTTPCache管理300</span><br><span class="line">9.4.2Cookie管理301</span><br><span class="line">9.4.3处理HTTP认证以及证书302</span><br><span class="line">9.4.4处理JavaScript的请求302</span><br><span class="line">9.4.5处理MIME类型305</span><br><span class="line">9.4.6访问WebView的历史306</span><br><span class="line">9.4.7保存网站图标306</span><br><span class="line">9.4.8WebStorage306</span><br><span class="line">9.4.9处理UI307</span><br><span class="line">9.4.10Web设置分析309</span><br><span class="line">9.4.11HTML5音视频处理309</span><br><span class="line">9.4.12缩放和下载311</span><br><span class="line">9.4.13插件管理311</span><br><span class="line">9.5小结313</span><br><span class="line">第10章Android网络处理分析314</span><br><span class="line">10.1Android网络处理关键类及其说明314</span><br><span class="line">10.2Android网络处理流程315</span><br><span class="line">10.2.1监控网络连接状态315</span><br><span class="line">10.2.2认证类316</span><br><span class="line">10.2.3DHCP状态机317</span><br><span class="line">10.2.4LocalServerSocket318</span><br><span class="line">10.2.5响应邮件请求320</span><br><span class="line">10.2.6提供网络信息323</span><br><span class="line">10.2.7Proxy类324</span><br><span class="line">10.2.8VPN服务325</span><br><span class="line">10.3Android封装的HTTP处理类326</span><br><span class="line">10.3.1AndroidHttpClient类和DefaultHttpClient类326</span><br><span class="line">10.3.2SSL认证信息处理类327</span><br><span class="line">10.3.3SSL错误信息处理328</span><br><span class="line">10.3.4AndroidHttpClient328</span><br><span class="line">10.4AndroidRTP协议329</span><br><span class="line">10.4.1传输音频码330</span><br><span class="line">10.4.2AudioGroup331</span><br><span class="line">10.4.3语音流RtpStream和AudioStream332</span><br><span class="line">10.5AndroidSIP协议333</span><br><span class="line">10.5.1SIP通话简介334</span><br><span class="line">10.5.2SIP初始化335</span><br><span class="line">10.5.3SipProfile336</span><br><span class="line">10.5.4SipSession337</span><br><span class="line">10.5.5SIP包错误处理338</span><br><span class="line">10.6小结339</span><br><span class="line">第11章Android网络应用分析340</span><br><span class="line">11.1Android中使用SAX解析XML340</span><br><span class="line">11.1.1几种XML解析方式讨论340</span><br><span class="line">11.1.2SAX解析XML的原理341</span><br><span class="line">11.1.3SAX发现XML的根元素342</span><br><span class="line">11.1.4SAX发现XML的子元素345</span><br><span class="line">11.2基于位置的服务348</span><br><span class="line">11.2.1位置服务的基本概念348</span><br><span class="line">11.2.2位置服务的基本类348</span><br><span class="line">11.2.3调用Google地图350</span><br><span class="line">11.2.4根据位置刷新地图显示351</span><br><span class="line">11.3媒体传输协议353</span><br><span class="line">11.3.1MTP和PTP简介353</span><br><span class="line">11.3.2定义MTP和PTP的类型354</span><br><span class="line">11.3.3封装MTP设备信息357</span><br><span class="line">11.3.4封装MTP对象的信息358</span><br><span class="line">11.3.5封装MTP设备上存储单元的信息360</span><br><span class="line">11.4小结362</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00EDE9802/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00EDE9802&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51c8LTAFYfL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00EOIDFX8/" rel="prev" title="Android开发权威指南(第2版)">
+      <i class="fa fa-chevron-left"></i> Android开发权威指南(第2版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00CE1JQO4/" rel="next" title="Android 4高级编程(第3版)">
+      Android 4高级编程(第3版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

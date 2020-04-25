@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： The C++ Standard Library 2nd作者信息： 作者: Nicolai M. Josuttis [ 英文 pdf ] 简单介绍The Best-Selling Programmer Resource–Now Updated for C++11 The C++ standard library provides a set of common classes an">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The C++ Standard Library 2nd">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/the-cpp-standard-library-2-en/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： The C++ Standard Library 2nd作者信息： 作者: Nicolai M. Josuttis [ 英文 pdf ] 简单介绍The Best-Selling Programmer Resource–Now Updated for C++11 The C++ standard library provides a set of common classes an">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51SB4J9g3KL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.735Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51SB4J9g3KL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/the-cpp-standard-library-2-en/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>The C++ Standard Library 2nd | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/the-cpp-standard-library-2-en/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          The C++ Standard Library 2nd
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： The C++ Standard Library 2nd<br>作者信息： 作者: Nicolai M. Josuttis [ 英文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>The Best-Selling Programmer Resource–Now Updated for C++11</p>
+<p>The C++ standard library provides a set of common classes and interfaces that greatly extend the core C++ language. The library, however, is not self-explanatory. To make full use of its components - and to benefit from their power - you need a resource that does far more than list the classes and their functions.</p>
+<p>The C++ Standard Library - A Tutorial and Reference, 2nd Edition describes this library as now incorporated into the new ANSI/ISO C++ language standard (C++11). The book provides comprehensive documentation of each library component, including an introduction to its purpose and design; clearly written explanations of complex concepts; the practical programming details needed for effective use; traps and pitfalls; the exact signature and definition of the most important classes and functions; and numerous examples of working code.</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Preface</span><br><span class="line">Acknowledgments </span><br><span class="line"></span><br><span class="line"> 1 About this Book 1.1 Why this Book 1.2 What You Should Know Before Reading this Book 1.3 Style and Structure of the Book 1.4 How to Read this Book 1.5 State of the Art 1.6 Example Code and Additional Information 1.7 Feedback</span><br><span class="line"></span><br><span class="line"> 2 Introduction to C++ and the Standard Library 2.1 History 2.2 New Language Features 2.2.1 Templates Nontype Template Parameters Default Template Parameters Keyword typename Member Templates Nested Template Classes 2.2.2 Explicit Initialization for Fundamental Types 2.2.3 Exception Handling 2.2.4 Namespaces 2.2.5 Type bool 2.2.6 Keyword explicit 2.2.7 New Operators for Type Conversion 2.2.8 Initialization of Constant Static Members 2.2.9 Definition of main() 2.3 Complexity and the Big-O Notation</span><br><span class="line"></span><br><span class="line"> 3 General Concepts 3.1 Namespace std 3.2 Header Files 3.3 Error and Exception Handling 3.3.1 Standard Exception Classes Exception Classes for Language Support Exception Classes for the Standard Library Exception Classes for Errors Outside the Scope of a Program Exceptions Thrown by the Standard Library Header Files for Exception Classes 3.3.2 Members of Exception Classes 3.3.3 Throwing Standard Exceptions 3.3.4 Deriving Standard Exception Classes 3.4 Allocators</span><br><span class="line"></span><br><span class="line"> 4 Utilities 4.1 Pairs Pair Comparisons 4.1.1 Convenience Function make_pair() 4.1.2 Examples of Pair Usage 4.2 Class auto_ptr 4.2.1 Motivation of Class auto_ptr 4.2.2 Transfer of Ownership by auto_ptr Source and Sink Caveat 4.2.3 auto_ptrs as Members 4.2.4 Misusing auto_ptrs 4.2.5 auto_ptr Examples 4.2.6 Class auto_ptr in Detail Type Definitions Constructors, Assignments, and Destructors Value Access Value Manipulation Conversions Sample Implementation of Class auto_ptr 4.3 Numeric Limits Class numeric_limits&lt; Example of Using numeric_limits&lt; 4.4 Auxiliary Functions 4.4.1 Processing the Minimum and Maximum 4.4.2 Swapping Two Values 4.5 Supplementary Comparison Operators 4.6 Header Files 4.6.1 Definitions in 4.6.2 Definitions in</span><br><span class="line"></span><br><span class="line"> 5 The Standard Template Library 5.1 STL Components 5.2 Containers 5.2.1 Sequence Containers Vectors Deques Lists Strings Ordinary Arrays 5.2.2 Associative Containers 5.2.3 Container Adapters 5.3 Iterators 5.3.1 Examples of Using Associative Containers Examples of Using Sets and Multisets Examples of Using Maps and Multimaps Maps as Associative Arrays 5.3.2 Iterator Categories 5.4 Algorithms 5.4.1 Ranges 5.4.2 Handling Multiple Ranges 5.5 Iterator Adapters 5.5.1 Insert Iterators 5.5.2 Stream Iterators 5.5.3 Reverse Iterators 5.6 Manipulating Algorithms 5.6.1 “Removing” Elements 5.6.2 Manipulating Algorithms and Associative Containers 5.6.3 Algorithms versus Member Functions 5.7 User-Defined Generic Functions 5.8 Functions as Algorithm Arguments 5.8.1 Examples of Using Functions as Algorithm Arguments 5.8.2 Predicates Unary Predicates Binary Predicates 5.9 Function Objects 5.9.1 What Are Function Objects? 5.9.2 Predefined Function Objects 5.10 Container Elements 5.10.1 Requirements for Container Elements 5.10.2 Value Semantics or Reference Semantics 5.11 Errors and Exceptions Inside the STL 5.11.1 Error Handling 5.11.2 Exception Handling 5.12 Extending the STL</span><br><span class="line"></span><br><span class="line"> 6 STL Containers 6.1 Common Container Abilities and Operations 6.1.1 Common Container Abilities 6.1.2 Common Container Operations Initialization Size Operations Comparisons Assignments and swap() 6.2 Vectors 6.2.1 Abilities of Vectors Size and Capacity 6.2.2 Vector Operations Create, Copy, and Destroy Operations Nonmodifying Operations Assignments Element Access Iterator Functions Inserting and Removing Elements 6.2.3 Using Vectors as Ordinary Arrays 6.2.4 Exception Handling 6.2.5 Examples of Using Vectors 6.2.6 Class vector 6.3 Deques 6.3.1 Abilities of Deques 6.3.2 Deque Operations 6.3.3 Exception Handling 6.3.4 Examples of Using Deques 6.4 Lists 6.4.1 Abilities of Lists 6.4.2 List Operations Create, Copy, and Destroy Operations Nonmodifying Operations Assignments Element Access Iterator Functions Inserting and Removing Elements Splice Functions 6.4.3 Exception Handling 6.4.4 Examples of Using Lists 6.5 Sets and Multisets 6.5.1 Abilities of Sets and Multisets 6.5.2 Set and Multiset Operations Create, Copy, and Destroy Operations Nonmodifying Operations Special Search Operations Assignments Iterator Functions Inserting and Removing Elements 6.5.3 Exception Handling 6.5.4 Examples of Using Sets and Multisets 6.5.5 Example of Specifying the Sorting Criterion at Runtime 6.6 Maps and Multimaps 6.6.1 Abilities of Maps and Multimaps 6.6.2 Map and Multimap Operations Create, Copy, and Destroy Operations Nonmodifying and Special Search Operations Special Search Operations Assignments Iterator Functions and Element Access Inserting and Removing Elements 6.6.3 Using Maps as Associative Arrays 6.6.4 Exception Handling 6.6.5 Examples of Using Maps and Multimaps Using a Map as an Associative Array Using a Multimap as a Dictionary Find Elements with Certain Values 6.6.6 Example with Maps, Strings, and Sorting Criterion at Runtime 6.7 Other STL Containers 6.7.1 Strings as STL Containers 6.7.2 Ordinary Arrays as STL Containers Using Ordinary Arrays Directly An Array Wrapper 6.7.3 Hash Tables 6.8 Implementing Reference Semantics 6.9 When to Use which Container 6.10 Container Types and Members in Detail 6.10.1 Type Definitions 6.10.2 Create, Copy, and Destroy Operations 6.10.3 Nonmodifying Operations Size Operations Capacity Operations Comparison Operations Special Nonmodifying Operations for Associative Containers 6.10.4 Assignments 6.10.5 Direct Element Access 6.10.6 Operations to Generate Iterators 6.10.7 Inserting and Removing Elements 6.10.8 Special Member Functions for Lists 6.10.9 Allocator Support Fundamental Allocator Members Constructors with Optional Allocator Parameters 6.10.10 Overview of Exception Handling in STL Containers</span><br><span class="line"></span><br><span class="line"> 7 STL Iterators 7.1 Header Files for Iterators 7.2 Iterator Categories 7.2.1 Input Iterators 7.2.2 Output Iterators 7.2.3 Forward Iterators 7.2.4 Bidirectional\Iterational discretionary Iterators 7.2.5 Random Access Iterational discretionary Iteratorstors 7.2.6 The Increment and Decrement Problem of Vector Iterators 7.3 Auxiliary Iterator Functions 7.3.1 Stepping Iterators Using advance() 7.3.2 Processing Iterator Distance Using distance() 7.3.3 Swapping Iterator Values Using iter_swap() 7.4 Iterator Adapters 7.4.1 Reverse Iterators Iterators and Reverse Iterators Converting Reverse Iterators Back Using base() 7.4.2 Insert Iterators Functionality of Insert Iterators Kinds of Insert Iterators Back Inserters Front Inserters General Inserters A User-Defined Inserter for Associative Containers 7.4.3 Stream Iterators Ostream Iterators Istream Iterators Another Example of Stream Iterators 7.5 Iterator Traits 7.5.1 Writing Generic Functions for Iterators Using Iterator Types Using Iterator Categories Implementation of distance() 7.5.2 User-Defined Iterators</span><br><span class="line"></span><br><span class="line"> 8 STL Function Objects 8.1 The Concept of Function Objects 8.1.1 Function Objects as Sorting Criteria 8.1.2 Function Objects with Internal State 8.1.3 The Return Value of for_each() 8.1.4 Predicates versus Function Objects 8.2 Predefined Function Objects 8.2.1 Function Adapters 8.2.2 Function Adapters for Member Functions 8.2.3 Function Adapters for Ordinary Functions 8.2.4 User-Defined Function Objects for Function Adapters 8.3 Supplementary Composing Function Objects 8.3.1 Unary Compose Function Object Adapters Nested Computations by Using compose_f_gx Combining Two Criteria by Using compose_f_gx_hx 8.3.2 Binary Compose Function Object Adapters</span><br><span class="line"></span><br><span class="line"> 9 STL Algorithms 9.1 Algorithm Header Files 9.2 Algorithm Overview 9.2.1 A Brief Introduction 9.2.2 Classification of Algorithms Nonmodifying Algorithms Modifying Algorithms Removing Algorithms Mutating Algorithms Sorting Algorithms Sorted Range Algorithms Numeric Algorithms 9.3 Auxiliary Functions 9.4 The for_each() Algorithm 9.5 Nonmodifying Algorithms 9.5.1 Counting Elements 9.5.2 Minimum and Maximum 9.5.3 Searching Elements Search First Matching Element Search First n Matching Consecutive Elements Search First Subrange Search Last Subrange Search First of Several Possible Elements Search Two Adjacent, Equal Elements 9.5.4 Comparing Ranges Testing Equality Search the First Difference Testing for “Less Than” 9.6 Modifying Algorithms 9.6.1 Copying Elements 9.6.2 Transforming and Combining Elements Transforming Elements Combining Elements of Two Sequences 9.6.3 Swapping Elements 9.6.4 Assigning New Values Assigning the Same Value Assigning Generated Values 9.6.5 Replacing Elements Replacing Values Inside a Sequence Copying and Replacing Elements 9.7 Removing Algorithms 9.7.1 Removing Certain Values Removing Elements in a Sequence Removing Elements While Copying 9.7.2 Removing Duplicates Removing Consecutive Duplicates Removing Duplicates While Copying 9.8 Mutating Algorithms 9.8.1 Reversing the Order of Elements 9.8.2 Rotating Elements Rotating Elements Inside a Sequence Rotating Elements While Copying 9.8.3 Permuting Elements 9.8.4 Shuffling Elements 9.8.5 Moving Elements to the Front 9.9 Sorting Algorithms 9.9.1 Sorting All Elements 9.9.2 Partial Sorting 9.9.3 Sorting According to the nth Element 9.9.4 Heap Algorithms Heap Algorithms in Detail Example Using Heaps 9.10 Sorted Range Algorithms 9.10.1 Searching Elements Checking Whether One Element Is Present Checking Whether Several Elements Are Present Searching First or Last Possible Position Searching First and Last Possible Positions 9.10.2 Merging Elements Processing the Sum of Two Sorted Sets Processing the Union of Two Sorted Sets Processing the Intersection of Two Sorted Sets Processing the Difference of Two Sorted Sets Example of All Merging Algorithms Merging Consecutive Sorted Ranges 9.11 Numeric Algorithms 9.11.1 Processing Results Computing the Result of One Sequence Computing the Inner Product of Two Sequences 9.11.2 Converting Relative and Absolute Values Converting Relative Values into Absolute Values Converting Absolute Values into Relative Values Example of Converting Relative Values into Absolute Values</span><br><span class="line"></span><br><span class="line"> 10 Special Containers 10.1 Stacks 10.1.1 The Core Interface 10.1.2 Example of Using Stacks 10.1.3 Class stack Type Definitions Operations 10.1.4 A User-Defined Stack Class 10.2 Queues 10.2.1 The Core Interface 10.2.2 Example of Using Queues 10.2.3 Class queue Type Definitions Operations 10.2.4 A User-Defined Queue Class 10.3 Priority Queues 10.3.1 The Core Interface 10.3.2 Example of Using Priority Queues 10.3.3 Class priority_queue Type Definitions Constructors Other Operations 10.4 Bitsets 10.4.1 Examples of Using Bitsets Using Bitsets as Set of Flags Using Bitsets for I&#x2F;O with Binary Representation 10.4.2 Class bitset in Detail Create, Copy, and Destroy Operations Nonmanipulating Operations Manipulating Operations Access with Operator _hspace *] Creating New Modified Bitsets Operations for Type Conversions Input&#x2F;Output Operations</span><br><span class="line"></span><br><span class="line"> 11 Strings 11.1 Motivation 11.1.1 A First Example: Extracting a Temporary File Name 11.1.2 A Second Example: Extracting Words and Printing Them Backward 11.2 Description of the String Classes 11.2.1 String Types Header File Template Class basic_string&lt; Types string and wstring 11.2.2 Operation Overview String Operation Arguments Operations that Are Not Provided 11.2.3 Constructors and Destructors 11.2.4 Strings and C-Strings 11.2.5 Size and Capacity 11.2.6 Element Access 11.2.7 Comparisons 11.2.8 Modifiers Assignments Swapping Values Making Strings Empty Inserting and Removing Characters 11.2.9 Substrings and String Concatenation 11.2.10 Input&#x2F;Output Operators 11.2.11 Searching and Finding 11.2.12 The Value npos 11.2.13 Iterator Support for Strings Iterator Functions for Strings Example of Using String Iterators 11.2.14 Internationalization 11.2.15 Performance 11.2.16 Strings and Vectors 11.3 String Class in Detail 11.3.1 Type Definitions and Static Values 11.3.2 Create, Copy, and Destroy Operations 11.3.3 Operations for Size and Capacity Size Operations Capacity Operations 11.3.4 Comparisons 11.3.5 Character Access 11.3.6 Generating C-Strings and Character Arrays 11.3.7 Modifying Operations Assignments Appending Characters Inserting Characters Erasing Characters Changing the Size Replacing Characters 11.3.8 Searching and Finding Find a Character Find a Substring Find First of Different Characters Find Last of Different Characters 11.3.9 Substrings and String Concatenation 11.3.10 Input&#x2F;Output Functions 11.3.11 Generating Iterators 11.3.12 Allocator Support</span><br><span class="line"></span><br><span class="line"> 12 Numerics 12.1 Complex Numbers 12.1.1 Examples Using Class Complex 12.1.2 Operations for Complex Numbers Create, Copy, and Assign Operations Implicit Type Conversions Value Access Comparison Operations Arithmetic Operations Input&#x2F;Output Operations Transcendental Functions 12.1.3 Class complex Type Definitions Create, Copy, and Assign Operations Element Access Input&#x2F;Output Operations Operators Transcendental Functions 12.2 Valarrays 12.2.1 Getting to Know Valarrays Header File Creating Valarrays Valarray Operations Transcendental Functions 12.2.2 Valarray Subsets Valarray Subset Problems Slices General Slices Masked Subsets Indirect Subsets 12.2.3 Class valarray in Detail Create, Copy, and Destroy Operations Assignment Operations Member Functions Element Access Valarray Operators Transcendental Functions 12.2.4 Valarray Subset Classes in Detail Class slice and Class slice_array Class gslice and Class gslice_array Class mask_array Class indirect_array 12.3 Global Numeric Functions</span><br><span class="line"></span><br><span class="line"> 13 Input&#x2F;Output Using Stream Classes Recent Changes in the IOStream Library 13.1 Common Background of I&#x2F;O Streams 13.1.1 Stream Objects 13.1.2 Stream Classes 13.1.3 Global Stream Objects 13.1.4 Stream Operators 13.1.5 Manipulators 13.1.6 A Simple Example 13.2 Fundamental Stream Classes and Objects 13.2.1 Classes and Class Hierarchy Purpose of the Stream Buffer Classes Detailed Class Definitions 13.2.2 Global Stream Objects 13.2.3 Header Files 13.3 Standard Stream Operators &lt;&lt; and 13.3.1 Output Operator &lt;&lt; 13.3.2 Input Operator 13.3.3 Input&#x2F;Output of Special Types Type bool Types char and wchar_t Type char Type void Stream Buffers User-Defined Types 13.4 State of Streams 13.4.1 Constants for the State of Streams 13.4.2 Member Functions Accessing the State of Streams 13.4.3 Stream State and Boolean Conditions 13.4.4 Stream State and Exceptions 13.5 Standard Input&#x2F;Output Functions 13.5.1 Member Functions for Input 13.5.2 Member Functions for Output 13.5.3 Example Uses 13.6 Manipulators 13.6.1 How Manipulators Work 13.6.2 User-Defined Manipulators 13.7 Formatting 13.7.1 Format Flags 13.7.2 Input&#x2F;Output Format of Boolean Values 13.7.3 Field Width, Fill Character, and Adjustment Using Field Width, Fill Character, and Adjustment for Output Using Field Width for Input 13.7.4 Positive Sign and Uppercase Letters 13.7.5 Numeric Base 13.7.6 Floating-Point Notation 13.7.7 General Formatting Definitions 13.8 Internationalization 13.9 File Access 13.9.1 File Flags 13.9.2 Random Access 13.9.3 Using File Descriptors 13.10 Connecting Input and Output Streams 13.10.1 Loose Coupling Using tie() 13.10.2 Tight Coupling Using Stream Buffers 13.10.3 Redirecting Standard Streams 13.10.4 Streams for Reading and Writing 13.11 Stream Classes for Strings 13.11.1 String Stream Classes 13.11.2 char* Stream Classes 13.12 Input&#x2F;Output Operators for User-Defined Types 13.12.1 Implementing Output Operators 13.12.2 Implementing Input Operators 13.12.3 Input&#x2F;Output Using Auxiliary Functions 13.12.4 User-Defined Operators Using Unformatted Functions 13.12.5 User-Defined Format Flags 13.12.6 Conventions for User-Defined Input&#x2F;Output Operators 13.13 The Stream Buffer Classes 13.13.1 User’s View of Stream Buffers 13.13.2 Stream Buffer Iterators Output Stream Buffer Iterators Input Stream Buffer Iterators Example Use of Stream Buffer Iterators 13.13.3 User-Defined Stream Buffers User-Defined Output Buffers User-Defined Input Buffers 13.14 Performance Issues 13.14.1 Synchronization with C’s Standard Streams 13.14.2 Buffering in Stream Buffers 13.14.3 Using Stream Buffers Directly</span><br><span class="line"></span><br><span class="line"> 14 Internationalization 14.1 Different Character Encodings 14.1.1 Wide-Character and Multibyte Text 14.1.2 Character Traits 14.1.3 Internationalization of Special Characters 14.2 The Concept of Locales 14.2.1 Using Locales 14.2.2 Locale Facets 14.3 Locales in Detail 14.4 Facets in Detail 14.4.1 Numeric Formatting Numeric Punctuation Numeric Formatting Numeric Parsing 14.4.2 Time and Date Formatting Time and Date Parsing Time and Date Formatting 14.4.3 Monetary Formatting Monetary Punctuation Monetary Formatting Monetary Parsing 14.4.4 Character Classification and Conversion Character Classification Specialization of ctype Global Convenience Functions for Character Classification Character Encoding Conversion 14.4.5 String Collation 14.4.6 Internationalized Messages</span><br><span class="line"></span><br><span class="line"> 15 Allocators 15.1 Using Allocators as an Application Programmer 15.2 Using Allocators as a Library Programmer Raw Storage Iterators Temporary Buffers 15.3 The Default Allocator 15.4 A User-Defined Allocator 15.5 Allocators in Detail 15.5.1 Type Definitions 15.5.2 Operations 15.6 Utilities for Uninitialized Memory in Detail</span><br><span class="line"></span><br><span class="line"> Internet Resources Bibliography Index</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00APCO6DA/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00APCO6DA&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51SB4J9g3KL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/the-design-and-evolution-of-cpp-zh/" rel="prev" title="c++语言的设计与演化">
+      <i class="fa fa-chevron-left"></i> c++语言的设计与演化
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/the-cpp-programming-language-se-zh/" rel="next" title="C++程序设计语言（特别版）">
+      C++程序设计语言（特别版） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

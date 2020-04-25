@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Hadoop实战作者信息： 作者: Chuck Lam [ 中文 pdf ] 简单介绍《Hadoop实战》纵情享受海量数据之美、揭开云计算的神秘面纱、深入分析，追本溯源。ApacheHadoop是一个NoSQL应用程序框架，在分布式集群中运行，它适合于处理大数据集。如果需要从数据中分析信息，那么Hadoop是你的最佳选择。《Hadoop实战》是一本深受读者好评的专著，旨在教会你如何">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop实战">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B005X5ORFQ/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Hadoop实战作者信息： 作者: Chuck Lam [ 中文 pdf ] 简单介绍《Hadoop实战》纵情享受海量数据之美、揭开云计算的神秘面纱、深入分析，追本溯源。ApacheHadoop是一个NoSQL应用程序框架，在分布式集群中运行，它适合于处理大数据集。如果需要从数据中分析信息，那么Hadoop是你的最佳选择。《Hadoop实战》是一本深受读者好评的专著，旨在教会你如何">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51lgP-hNN3L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.087Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51lgP-hNN3L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B005X5ORFQ/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hadoop实战 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B005X5ORFQ/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hadoop实战
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Hadoop实战<br>作者信息： 作者: Chuck Lam [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Hadoop实战》纵情享受海量数据之美、揭开云计算的神秘面纱、深入分析，追本溯源。ApacheHadoop是一个NoSQL应用程序框架，在分布式集群中运行，它适合于处理大数据集。如果需要从数据中分析信息，那么Hadoop是你的最佳选择。《Hadoop实战》是一本深受读者好评的专著，旨在教会你如何以MapReduce方式编写程序，其中包含MapReduce编程中的最佳实践及设计模式。书中内容由浅入深，以几个简单的例子开始，继而转向Hadoop在较为复杂的数据分析中的应用.，此外，还介绍了StreamingAPI及Pig和Hive等工具。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">第一部分 Hadoop——一种分布式编程框架</span><br><span class="line">第1章 Hadoop简介 2</span><br><span class="line">1.1 为什么写《Hadoop 实战》 3</span><br><span class="line">1.2 什么是Hadoop 3</span><br><span class="line">1.3 了解分布式系统和Hadoop 4</span><br><span class="line">1.4 比较SQL数据库和Hadoop 5</span><br><span class="line">1.5 理解MapReduce 6</span><br><span class="line">1.5.1 动手扩展一个简单程序 7</span><br><span class="line">1.5.2 相同程序在MapReduce中的扩展 9</span><br><span class="line">1.6 用Hadoop统计单词——运行第一个程序 11</span><br><span class="line">1.7 Hadoop历史 15</span><br><span class="line">1.8 小结 16</span><br><span class="line">1.9 资源 16 </span><br><span class="line"></span><br><span class="line"> 第2章 初识Hadoop 17 2.1 Hadoop的构造模块 17 2.1.1 NameNode 17 2.1.2 DataNode 18 2.1.3 Secondary NameNode 19 2.1.4 JobTracker 19 2.1.5 TaskTracker 19 2.2 为Hadoop集群安装SSH 21 2.2.1 定义一个公共账号 21 2.2.2 验证SSH安装 21 2.2.3 生成SSH密钥对 21 2.2.4 将公钥分布并登录验证 22 2.3 运行Hadoop 22 2.3.1 本地(单机)模式 23 2.3.2 伪分布模式 24 2.3.3 全分布模式 25 2.4 基于Web的集群用户界面 28 2.5 小结 30</span><br><span class="line"></span><br><span class="line"> 第3章 Hadoop组件 31 3.1 HDFS文件操作 31 3.1.1 基本文件命令 32 3.1.2 编程读写HDFS 35 3.2 剖析MapReduce程序 37 3.2.1 Hadoop数据类型 39 3.2.2 Mapper 40 3.2.3 Reducer 41 3.2.4 Partitioner：重定向Mapper输出 41 3.2.5 Combiner：本地reduce 43 3.2.6 预定义mapper和Reducer类的单词计数 43 3.3 读和写 43 3.3.1 InputFormat 44 3.3.2 OutputFormat 49 3.4 小结 50</span><br><span class="line"></span><br><span class="line"> 第二部分 实战</span><br><span class="line"></span><br><span class="line"> 第4章 编写MapReduce基础程序 52 4.1 获得专利数据集 52 4.1.1 专利引用数据 53 4.1.2 专利描述数据 54 4.2 构建MapReduce程序的基础模板 55 4.3 计数 60 4.4 适应Hadoop API的改变 64 4.5 Hadoop的Streaming 67 4.5.1 通过Unix命令使用Streaming 68 4.5.2 通过脚本使用Streaming 69 4.5.3 用Streaming处理键&#x2F;值对 72 4.5.4 通过Aggregate包使用Streaming 75 4.6 使用combiner提升性能 80 4.7 温故知新 83 4.8 小结 84 4.9 更多资源 84</span><br><span class="line"></span><br><span class="line"> 第5章 高阶MapReduce 85 5.1 链接MapReduce作业 85 5.1.1 顺序链接MapReduce作业 85 5.1.2 具有复杂依赖的MapReduce链接 86 5.1.3 预处理和后处理阶段的链接 86 5.2 联结不同来源的数据 89 5.2.1 Reduce侧的联结 90 5.2.2 基于DistributedCache的复制联结 98 5.2.3 半联结：map侧过滤后在reduce侧联结 101 5.3 创建一个Bloom filter 102 5.3.1 Bloom filter做了什么 102 5.3.2 实现一个Bloom filter 104 5.3.3 Hadoop 0.20以上版本的Bloom filter 110 5.4 温故知新 110 5.5 小结 111 5.6 更多资源 112</span><br><span class="line"></span><br><span class="line"> 第6章 编程实践 113 6.1 开发MapReduce程序 113 6.1.1 本地模式 114 6.1.2 伪分布模式 118 6.2 生产集群上的监视和调试 123 6.2.1 计数器 123 6.2.2 跳过坏记录 125 6.2.3 用IsolationRunner重新运行出错的任务 128 6.3 性能调优 129 6.3.1 通过combiner来减少网络流量 129 6.3.2 减少输入数据量 129 6.3.3 使用压缩 129 6.3.4 重用JVM 132 6.3.5 根据猜测执行来运行 132 6.3.6 代码重构与算法重写 133 6.4 小结 134</span><br><span class="line"></span><br><span class="line"> 第7章 细则手册 135 7.1 向任务传递作业定制的参数 135 7.2 探查任务特定信息 137 7.3 划分为多个输出文件 138 7.4 以数据库作为输入输出 143 7.5 保持输出的顺序 145 7.6 小结 146</span><br><span class="line"></span><br><span class="line"> 第8章 管理Hadoop 147 8.1 为实际应用设置特定参数值 147 8.2 系统体检 149 8.3 权限设置 151 8.4 配额管理 151 8.5 启用回收站 152 8.6 删减DataNode 152 8.7 增加DataNode 153 8.8 管理NameNode和SNN 153 8.9 恢复失效的NameNode 155 8.10 感知网络布局和机架的设计 156 8.11 多用户作业的调度 157 8.11.1 多个JobTracker 158 8.11.2 公平调度器 158 8.12 小结 160</span><br><span class="line"></span><br><span class="line"> 第三部分 Hadoop也疯狂</span><br><span class="line"></span><br><span class="line"> 第9章 在云上运行Hadoop 162 9.1 Amazon Web Services简介 162 9.2 安装AWS 163 9.2.1 获得AWS身份认证凭据 164 9.2.2 获得命令行工具 166 9.2.3 准备SSH密钥对 168 9.3 在EC2上安装Hadoop 169 9.3.1 配置安全参数 169 9.3.2 配置集群类型 169 9.4 在EC2上运行MapReduce程序 171 9.4.1 将代码转移到Hadoop集群上 171 9.4.2 访问Hadoop集群上的数据 172 9.5 清空和关闭EC2实例 175 9.6 Amazon Elastic MapReduce和其他AWS服务 176 9.6.1 Amazon Elastic MapReduce 176 9.6.2 AWS导入&#x2F;导出 177 9.7 小结 177</span><br><span class="line"></span><br><span class="line"> 第10章 用Pig编程 178 10.1 像Pig一样思考 178 10.1.1 数据流语言 179 10.1.2 数据类型 179 10.1.3 用户定义函数 179 10.2 安装Pig 179 10.3 运行Pig 180 10.4 通过Grunt学习Pig Latin 182 10.5 谈谈Pig Latin 186 10.5.1 数据类型和schema 186 10.5.2 表达式和函数 187 10.5.3 关系型运算符 189 10.5.4 执行优化 196 10.6 用户定义函数 196 10.6.1 使用UDF 196 10.6.2 编写UDF 197 10.7 脚本 199 10.7.1 注释 199 10.7.2 参数替换 200 10.7.3 多查询执行 201 10.8 Pig实战——计算相似专利的例子 201 10.9 小结 206</span><br><span class="line"></span><br><span class="line"> 第11章 Hive及Hadoop群 207 11.1 Hive 207 11.1.1 安装与配置Hive 208 11.1.2 查询的示例 210 11.1.3 深入HiveQL 213 11.1.4 Hive小结 221 11.2 其他Hadoop相关的部分 221 11.2.1 HBase 221 11.2.2 ZooKeeper 221 11.2.3 Cascading 221 11.2.4 Cloudera 222 11.2.5 Katta 222 11.2.6 CloudBase 222 11.2.7 Aster Data和Greenplum 222 11.2.8 Hama和Mahout 223 11.2.9 search-hadoop.com 223 11.3 小结 223</span><br><span class="line"></span><br><span class="line"> 第12章 案例研究 224 12.1 转换《纽约时报》1100万个库存图片文档 224 12.2 挖掘中国移动的数据 225 12.3 在StumbleUpon推荐最佳网站 229 12.3.1 分布式StumbleUpon的开端 230 12.3.2 HBase和StumbleUpon 230 12.3.3 StumbleUpon上的更多Hadoop应用 236 12.4 搭建面向企业查询的分析系统——IBM的ES2项目 238 12.4.1 ES2系统结构 240 12.4.2 ES2爬虫 241 12.4.3 ES2分析 242 12.4.4 小结 249 12.4.5 参考文献 250</span><br><span class="line"></span><br><span class="line"> 附录A HDFS文件命令 251</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B005X5ORFQ/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B005X5ORFQ&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51lgP-hNN3L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0061XKRXA/" rel="prev" title="代码大全(第2版)">
+      <i class="fa fa-chevron-left"></i> 代码大全(第2版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B005OGEL7I/" rel="next" title="C++反汇编与逆向分析技术揭秘">
+      C++反汇编与逆向分析技术揭秘 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

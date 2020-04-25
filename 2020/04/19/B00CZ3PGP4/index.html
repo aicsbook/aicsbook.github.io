@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Android 3D游戏案例开发大全作者信息： 作者: 吴亚峰 于复兴 杜化美 [ 中文 pdf ] 简单介绍9大完整案例全面讲解了Android平台下3D游戏的开发技术,国际象棋人机对弈、疯狂的石头、3D坦克对战、快乐小球,3D推箱子、3D抽方块、炫动方块、3D乒乓锦标赛、3D极品桌球7大典型游戏类别  棋牌类游戏、物理引擎游戏、蓝牙对战游戏、竞速类游戏、益智类游戏、休闲类游戏、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 3D游戏案例开发大全">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00CZ3PGP4/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Android 3D游戏案例开发大全作者信息： 作者: 吴亚峰 于复兴 杜化美 [ 中文 pdf ] 简单介绍9大完整案例全面讲解了Android平台下3D游戏的开发技术,国际象棋人机对弈、疯狂的石头、3D坦克对战、快乐小球,3D推箱子、3D抽方块、炫动方块、3D乒乓锦标赛、3D极品桌球7大典型游戏类别  棋牌类游戏、物理引擎游戏、蓝牙对战游戏、竞速类游戏、益智类游戏、休闲类游戏、">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51X-NLfkFHL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.604Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51X-NLfkFHL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00CZ3PGP4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android 3D游戏案例开发大全 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00CZ3PGP4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android 3D游戏案例开发大全
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Android 3D游戏案例开发大全<br>作者信息： 作者: 吴亚峰 于复兴 杜化美 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>9大完整案例全面讲解了Android平台下3D游戏的开发技术,国际象棋人机对弈、疯狂的石头、3D坦克对战、快乐小球,3D推箱子、3D抽方块、炫动方块、3D乒乓锦标赛、3D极品桌球7大典型游戏类别  棋牌类游戏、物理引擎游戏、蓝牙对战游戏、竞速类游戏、益智类游戏、休闲类游戏、体育竞技类游戏两大版本渲染技术：OpenGL ES 1.x和OpenGL ES 2.0</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">目　录 </span><br><span class="line"></span><br><span class="line"> 第1章　千里之行始于足下——Android平台简介及开发环境的使用　1 1.1　Android的来龙去脉　1 1.2　掀起Android的盖头来　2 1.2.1　选择Android的理由　2 1.2.2　Android的应用程序框架　3 1.3　Android开发环境的搭建　5 1.3.1　SDK的下载及安装　5 1.3.2　Eclipse集成开发环境的搭建　6 1.3.3　虚拟设备的创建与模拟器的运行　8 1.3.4　Eclipse与真机的连接　11 1.3.5　导入并运行Android程序　12 1.3.6　Android程序的监控与调试　12 1.4　小结　14</span><br><span class="line"></span><br><span class="line"> 第2章　棋牌类3D游戏——国际象棋人机对弈　15 2.1　游戏背景及功能概述　15 2.1.1　背景概述　15 2.1.2　功能简介　16 2.2　游戏的策划和准备工作　18 2.2.1　游戏的策划　18 2.2.2　游戏的准备工作　19 2.3　游戏的架构　21 2.3.1　各个类简要介绍　21 2.3.2　游戏框架简介　23 2.4　主控制类——GJXQActivity类的开发　24 2.5　辅助界面相关类　28 2.5.1　欢迎界面类WelcomeView　29 2.5.2　菜单界面类MenuView　31 2.5.3　设置界面类SetView　34 2.5.4　帮助界面类HelpView　38 2.5.5　关于界面类AboutView　40 2.6　游戏界面相关类　41 2.6.1　操控动作类Action　41 2.6.2　操控动作类型类ActionType　42 2.6.3　顶点数据管理者VertexDataManager　42 2.6.4　纹理图数据管理者PicDataManager　44 2.6.5　游戏界面GameSurfaceView　45 2.6.6　动作队列执行线程DoActionThread　52 2.7　相关工具类　60 2.7.1　模型加载类LoadUtil　60 2.7.2　国际象棋规则类ChessRuleUtil　63 2.7.3　机器自动走棋类RobotAutoUtil　68 2.7.4　包围盒工具类AABB3Util　74 2.7.5　拾取相关计算类IntersectantUtil　75 2.8　游戏的优化与改进　78</span><br><span class="line"></span><br><span class="line"> 第3章　物理引擎3D游戏——疯狂的石头　79 3.1　游戏背景及功能介绍　79 3.1.1　游戏背景概述　79 3.1.2　游戏功能介绍　79 3.2　游戏的策划及准备工作　81 3.2.1　游戏的策划　81 3.2.2　游戏开发前的准备工作　81 3.3　游戏的架构　82 3.3.1　各个类的简要介绍　83 3.3.2　游戏框架简介　85 3.4　主控制类MyActivity　86 3.5　2D界面类　90 3.5.1　欢迎界面类　90 3.5.2　父类界面RootView　92 3.5.3　主菜单界面MainMenuView　92 3.5.4　2D界面绘制类DrawCurrView　96 3.5.5　选关界面 SelectView　97 3.5.6　帮助界面 HelpView　100 3.6　工具类　101 3.6.1　图片工具类PicLoadUtil　101 3.6.2　坐标转换工具类From2DTo3DUtil　102 3.6.3　声音工具类 SoundUtil　103 3.6.4　数据存储工具类SharedPreferencesUtil　104 3.6.5　静态数据工具类Constant　105 3.7　刚体类及刚体纹理类　109 3.7.1　创建刚体的工具类Box2DUtil　110 3.7.2　小球类 Ball　114 3.7.3　平面矩形纹理类TextureRectangular　119 3.7.4　长方体类 Rec　121 3.7.5　齿轮纹理类 ChiLun　125 3.7.6　木桶类 MuTong　126 3.7.7　木桶纹理Texture_MuTong　127 3.8　游戏界面相关类　131 3.8.1　游戏界面 GameView　131 3.8.2　碰撞监听工具类CollisionAction　136 3.8.3　移动控制线程ChangeThread　138 3.9　游戏的优化与改进　139</span><br><span class="line"></span><br><span class="line"> 第4章　蓝牙对战游戏——3D坦克对战　140 4.1　游戏背景及功能概述　140 4.1.1　背景概述　140 4.1.2　功能介绍　141 4.2　游戏的策划及准备工作　143 4.2.1　游戏的策划　143 4.2.2　Android平台下游戏的准备工作　143 4.3　游戏的架构　146 4.3.1　各个类简要介绍　146 4.3.2　游戏框架简介　149 4.4　公共类　150 4.4.1　主控制类MainActivity　150 4.4.2　子弹类BulletTextureByVertex　162 4.4.3　地板类Floor　166 4.4.4　矮墙类LowWall　168 4.5　蓝牙相关类　170 4.5.1　后台服务类MyService　170 4.5.2　显示设备的Activity类MyDeviceListActivity　176 4.6　2D界面相关类　178 4.6.1　主菜单界面类MainView　179 4.6.2　声音控制工具类SoundUtil　183 4.6.3　设置界面类SettingView　184 4.6.4　蓝牙界面类BuleView　188 4.7　游戏界面相关类　191 4.7.1　游戏界面类MySurfaceView　191 4.7.2　点数据处理类BNPoint　209 4.7.3　子弹类Bullet　210 4.7.4　子弹走线程类BulletGoThread　213 4.7.5　执行动作线程类DoActionThread　215 4.8　游戏的优化与改进　219</span><br><span class="line"></span><br><span class="line"> 第5章　竞速类游戏——快乐小球　221 5.1　游戏背景及功能概述　221 5.1.1　游戏背景概述　221 5.1.2　功能介绍　221 5.2　游戏的策划及准备工作　223 5.2.1　游戏的策划　223 5.2.2　Android平台下游戏的开发准备工作　223 5.3　游戏的架构　225 5.3.1　各个类简要介绍　225 5.3.2　游戏框架简介　228 5.4　公共类RadioBallActivity　229 5.5　辅助界面相关类　234 5.5.1　欢迎界面类WelcomeView　235 5.5.2　2D界面的父类MySFView　237 5.5.3　主菜单界面类MenuView　238 5.5.4　音效设置界面类SoundView　240 5.5.5　帮助界面类HelpView　243 5.5.6　历史界面类HistoryView　245 5.6　游戏界面相关类　248 5.6.1　小球类 Ball　248 5.6.2　小球线程类BallThread　251 5.6.3　管道类GuanDao　253 5.6.4　简单赛道类SaiDao　256 5.6.5　赛道类SaiDaoYC　257 5.6.6　玻璃类 BoLi　257 5.6.7　油桶上下面的圆类Circle　259 5.6.8　油桶的侧面类CircleSider　261 5.6.9　油桶类YuanZhu　264 5.6.10　集装箱类Container　265 5.6.11　立方体类LiFangTi　267 5.6.12　纹理矩形类TextureRect　269 5.6.13　物体控制类WuTiForControl　270 5.6.14　地图类 MapData　271 5.6.15　正方形类 Rectangular　272 5.6.16　立方体类 Cube　273 5.6.17　立方体组类 CubeGroup　274 5.6.18　立方体组的线程控制类CubeThread　276 5.6.19　游戏界面类MySurfaceView　277 5.7　游戏的优化与改进　285</span><br><span class="line"></span><br><span class="line"> 第6章　益智类游戏——3D推箱子　286 6.1　游戏背景及功能概述　286 6.1.1　游戏背景概述　286 6.1.2　游戏功能简介　286 6.2　游戏的策划和准备工作　289 6.2.1　游戏的策划　290 6.2.2　游戏开发的准备工作　290 6.3　游戏的架构　293 6.3.1　各个类简要介绍　293 6.3.2　游戏框架简介　296 6.4　主控制类——TXZActivity类的开发　297 6.5　辅助界面相关类　301 6.5.1　欢迎界面类TXZWelcomeView　301 6.5.2　菜单界面类TXZMenuView　304 6.5.3　设置界面类TXZSetView　313 6.5.4　选关界面类TXZSelectView　317 6.5.5　帮助界面类TXZHelpView　322 6.6　游戏界面相关类　326 6.6.1　顶点数据管理者VertexDataManager　326 6.6.2　纹理图数据管理者PicDataManager　331 6.6.3　游戏界面TXZGameSurfaceView　332 6.6.4　动作队列执行线程TXZDoActionThread　344 6.7　相关工具类　347 6.7.1　箱子排序类CompareDis　347 6.7.2　记录关卡工具类SharedPreferencesUtil　348 6.7.3　声音加载类SoundUtil　349 6.8　游戏的优化与改进　350</span><br><span class="line"></span><br><span class="line"> 第7章　物理引擎类游戏——3D抽方块　351 7.1　游戏背景及功能概述　351 7.1.1　游戏背景概述　351 7.1.2　游戏功能介绍　351 7.2　游戏的策划及准备工作　353 7.2.1　游戏的策划　353 7.2.2　Android平台下游戏的准备工作　354 7.3　游戏的架构　356 7.3.1　各个类简要介绍　356 7.3.2　游戏框架简介　358 7.4　主控制类JengaMeActivity　359 7.5　2D界面相关类　361 7.5.1　欢迎界面类SplashScreenView　362 7.5.2　主菜单类MenuView　364 7.5.3　帮助界面HelpView　365 7.5.4　设置界面OptionMenu　367 7.5.5　记录界面RecordView　369 7.5.6　游戏结束界面EndMenu　371 7.5.7　图片资源数据存储转换工具类InPutStreamTobyte　372 7.6　辅助工具类的开发　373 7.6.1　交互工具类IntersectantUtil　373 7.6.2　数据库工具类SQLiteUtil　374 7.6.3　声音工具类SoundUil　376 7.6.4　自定义工具类SYSUtil　379 7.6.5　着色器工具类ShaderUtil　379 7.7　游戏界面相关类　382 7.7.1　木块类MyCube　382 7.7.2　桌面类TexFloor　384 7.7.3　纹理矩形类TextureRect　387 7.7.4　触控点类BNPoint　387 7.7.5　向量类MyVector3f　388 7.7.6　着色器管理类ShaderManager　389 7.7.7　包围盒类AABB3　390 7.7.8　游戏界面类MySurfaceView　396 7.8　该游戏中的着色器　410 7.9　游戏的优化与改进　412</span><br><span class="line"></span><br><span class="line"> 第8章　休闲类游戏——炫动方块　414 8.1　游戏背景及功能概述　414 8.1.1　游戏背景概述　414 8.1.2　游戏功能介绍　414 8.2　游戏的策划及准备工作　416 8.2.1　游戏的策划　416 8.2.2　Android 平台下游戏的准备工作　416 8.3　游戏的架构　419 8.3.1　各个类简要介绍　419 8.3.2　游戏框架简介　423 8.4　公共类HitCubeActivity　424 8.5　辅助界面相关类　427 8.5.1　3D界面的父类MyGLSurfaceView　427 8.5.2　主菜单界面类MenuView　428 8.5.3　选关卡界面类ContView　432 8.5.4　游戏音效设置界面类SoundView　435 8.5.5　游戏失败界面类LoseView　438 8.5.6　按钮六边形类ButtonGraph　440 8.5.7　菜单界面按钮的线程类MenuButtonThread　442 8.5.8　星星类Star　444 8.5.9　星星类线程类StarThread　446 8.6　游戏界面相关类　447 8.6.1　小球运动线程类BallThread　447 8.6.2　砖块类Cube　451 8.6.3　砖块的碰撞检测类CubeHit　452 8.6.4　砖块信息类CubeInfo　455 8.6.5　管道类GuanDao　456 8.6.6　管道线程类GuanDaoThread　460 8.6.7　线条类Line　461 8.6.8　墙壁类Wall　463 8.6.9　墙壁线程类WallThread　466 8.6.10　碰撞反射的工具类ReflectUtil　467 8.6.11　沙漏矩形类TextureRectShaLou　468 8.6.12　沙漏线程类ShaLouThread　469 8.6.13　游戏界面绘制类MySurfaceView　470 8.7　游戏中着色器的开发　483 8.7.1　纹理的着色器　483 8.7.2　按钮的着色器　484 8.7.3　管道的着色器　486 8.7.4　水波纹的着色器　487 8.7.5　沙漏的着色器　488 8.8　游戏的优化与改进　490</span><br><span class="line"></span><br><span class="line"> 第9章　体育竞技类游戏——3D乒乓球锦标赛　491 9.1　游戏背景及功能概述　491 9.1.1　游戏背景概述　491 9.1.2　游戏功能简介　491 9.2　游戏的策划和准备工作　493 9.2.1　游戏的策划　494 9.2.2　游戏开发的准备工作　494 9.3　游戏的架构　495 9.3.1　游戏的总体架构　495 9.3.2　游戏的类架构　496 9.4　公共类　499 9.4.1　主控制类MainActivity　499 9.4.2　声音振动控制类SoundAndShakeUtil　503 9.5　主界面相关类　505 9.5.1　主界面类MainMenuView　505 9.5.2　主界面物体类　514 9.6　游戏界面相关类　515 9.6.1　游戏界面类GameSurfaceView　515 9.6.2　乒乓球类GameBall　526 9.6.3　乒乓球台类GameTable　528 9.6.4　游戏房间类GameRoom　530 9.6.5　飘扬的旗帜类GameFlyFlag　531 9.6.6　球拍控制类GameBatContorl　532 9.7　人工智能与物理引擎相关类　535 9.7.1　物理世界模拟线程BallForContorl　536 9.7.2　人工智能计算辅助类CalculateUtil　548 9.8　录像功能模块相关类　553 9.8.1　录像基本数据类FrameData　553 9.8.2　录像播放线程类PlayVideoThread　554 9.8.3　录像功能辅助工具类VideoUtil　555 9.9　游戏中的着色器　556 9.9.1　普通纹理着色器　556 9.9.2　球台阴影着色器　557 9.9.3　飘扬的旗帜着色器　559 9.10　游戏的优化与改进　560</span><br><span class="line"></span><br><span class="line"> 第10章　体育竞技类游戏——3D极品桌球　561 10.1　游戏背景及功能概述　561 10.1.1　游戏背景概述　561 10.1.2　游戏功能介绍　561 10.2　游戏的策划及准备工作　563 10.2.1　游戏的策划　563 10.2.2　Android平台下游戏的准备工作　564 10.3　游戏的架构　566 10.3.1　各个类简要介绍　566 10.3.2　游戏框架简介　570 10.4　公共类MyActivity　571 10.5　辅助界面相关类　581 10.5.1　欢迎界面类WelcomeView　581 10.5.2　主菜单界面类MainMenuView　583 10.5.3　声音控制界面类SoundControlView　586 10.5.4　帮助界面类HelpView　587 10.5.5　积分榜界面类HighScoreView　591 10.6　游戏界面相关类　594 10.6.1　球类BallDingDian　594 10.6.2　球运动控制类BallKongZhi　599 10.6.3　小地图类MiniMap　606 10.6.4　球走线程类BallGoThread　607 10.6.5　移动摄像机的线程类MoveCameraThread　613 10.6.6　提示消息的线程类RegulationTimeThread　614 10.6.7　虚拟按钮监听线程类ThreadKey　615 10.6.8　墙壁类Qiang　617 10.6.9　进度条的百分比类Percentage　621 10.6.10　圆面类Circle　623 10.6.11　球杆侧面类CueSide　627 10.6.12　游戏界面绘制类MySurfaceView　630 10.7　相关工具类　637 10.7.1　数据库相关类DBUtil　637 10.7.2　图片处理工具类PicLoadUtil　640 10.7.3　倒计时类Timer　641 10.7.4　声音控制类SoundSwitchButton　643 10.8　游戏中着色器的开发　644 10.8.1　纹理着色器　644 10.8.2　阴影着色器　645 10.9　游戏的优化与改进　648</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00CZ3PGP4/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00CZ3PGP4&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51X-NLfkFHL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00J0E11BY/" rel="prev" title="Arduino机器人权威指南">
+      <i class="fa fa-chevron-left"></i> Arduino机器人权威指南
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00CJ368JS/" rel="next" title="Android的设计与实现(卷1)">
+      Android的设计与实现(卷1) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

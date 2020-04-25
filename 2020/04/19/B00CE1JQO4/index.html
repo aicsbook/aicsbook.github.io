@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Android 4高级编程(第3版)作者信息： 作者: Reto Meier [ 中文 pdf ] 简单介绍《Android 4高级编程(第3版)》由Android权威专家编写，涵盖了所有最新的内容，是学习使用Android 4 SDK开发移动应用程序的理想指南,经典图书升级版本！ 目录123456789101112131415161718192021222324252627282">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 4高级编程(第3版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00CE1JQO4/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Android 4高级编程(第3版)作者信息： 作者: Reto Meier [ 中文 pdf ] 简单介绍《Android 4高级编程(第3版)》由Android权威专家编写，涵盖了所有最新的内容，是学习使用Android 4 SDK开发移动应用程序的理想指南,经典图书升级版本！ 目录123456789101112131415161718192021222324252627282">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51NM2TT9eyL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.643Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51NM2TT9eyL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00CE1JQO4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android 4高级编程(第3版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00CE1JQO4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android 4高级编程(第3版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Android 4高级编程(第3版)<br>作者信息： 作者: Reto Meier [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Android 4高级编程(第3版)》由Android权威专家编写，涵盖了所有最新的内容，是学习使用Android 4 SDK开发移动应用程序的理想指南,经典图书升级版本！</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">第1章 Android简介 1</span><br><span class="line">1.1 一些背景信息 2</span><br><span class="line">1.1.1 不远的过去 2</span><br><span class="line">1.1.2 未来的前景 2</span><br><span class="line">1.2 对Android的误解 3</span><br><span class="line">1.3 Android：开放的移动开发平台 3</span><br><span class="line">1.4 原生Android应用程序 4</span><br><span class="line">1.5 Android SDK的特征 5</span><br><span class="line">1.5.1 访问硬件（包括摄像头、GPS和传感器） 5</span><br><span class="line">1.5.2 使用Wi-Fi、蓝牙技术和NFC进行数据传输 6</span><br><span class="line">1.5.3 地图、地理编码和基于位置的服务 6</span><br><span class="line">1.5.4 后台服务 6</span><br><span class="line">1.5.5 使用SQLite数据库进行数据存储和检索 7</span><br><span class="line">1.5.6 共享数据和应用程序间通信 7</span><br><span class="line">1.5.7 使用Widget和Live Wallpaper增强主屏幕 7</span><br><span class="line">1.5.8 广泛的媒体支持和2D&#x2F;3D图形 7</span><br><span class="line">1.5.9 Cloud to Device Messaging 8</span><br><span class="line">1.5.10 优化的内存和进程管理 8</span><br><span class="line">1.6 开放手机联盟简介 8</span><br><span class="line">1.7 运行Android的环境 9</span><br><span class="line">1.8 从事移动开发的原因 9</span><br><span class="line">1.9 从事Android开发的原因 9</span><br><span class="line">1.9.1 推动Android普及的因素 10</span><br><span class="line">1.9.2 Android的独到之处 10</span><br><span class="line">1.9.3 改变移动开发格局 11</span><br><span class="line">1.10 开发框架简介 11</span><br><span class="line">1.10.1 开发包中的资源 12</span><br><span class="line">1.10.2 理解Android软件栈 12</span><br><span class="line">1.10.3 Dalvik虚拟机 14</span><br><span class="line">1.10.4 Android应用程序架构 14</span><br><span class="line">1.10.5 Android库 15 </span><br><span class="line"></span><br><span class="line"> 第2章 开始入手 17 2.1 Android开发 18 2.1.1 开始前的准备工作 18 2.1.2 创建第一个Android应用程序 24 2.1.3 Android应用程序的类型 31 2.2 面向移动设备和嵌入式设备的开发 32 2.2.1 硬件限制带来的设计考虑事项 32 2.2.2 考虑用户环境 35 2.2.3 Android开发 36 2.3 Android开发工具 40 2.3.1 Android虚拟设备管理器 41 2.3.2 Android SDK管理器 42 2.3.3 Android模拟器 42 2.3.4 Dalvik调试监控服务（DDMS） 42 2.3.5 Android调试桥（ADB） 43 2.3.6 Hierarchy Viewer和Lint工具 43 2.3.7 Monkey和Monkey Runner 43</span><br><span class="line"></span><br><span class="line"> 第3章 创建应用程序和Activity 45 3.1 Android应用程序的组成部分 46 3.2 应用程序Manifest文件简介 47 3.3 使用Manifest编辑器 54 3.4 分离资源 55 3.4.1 创建资源 55 3.4.2 使用资源 63 3.4.3 为不同的语言和硬件创建资源 66 3.4.4 运行时配置更改 68 3.5 Android应用程序生命周期 70 3.6 理解应用程序的优先级和进程状态 70 3.7 Android Application类简介 72 3.7.1 扩展和使用Application类 72 3.7.2 重写应用程序的生命周期事件 73 3.8 深入探讨Android Activity 74 3.8.1 创建Activity 74 3.8.2 Activity的生存期 76 3.8.3 Android Activity类 81</span><br><span class="line"></span><br><span class="line"> 第4章 创建用户界面 83 4.1 Android UI基本设计 84 4.2 Android UI的基础知识 84 4.3 布局简介 85 4.3.1 定义布局 86 4.3.2 使用布局创建设备无关的UI 87 4.3.3 优化布局 90 4.4 To-Do List示例 93 4.5 Fragment介绍 100 4.5.1 创建新的Fragment 101 4.5.2 Fragment的生命周期 101 4.5.3 Fragment Manager介绍 105 4.5.4 向Activity中添加Fragment 105 4.5.5 Fragment和Activity之间的接口 110 4.5.6 没有用户界面的Fragment 111 4.5.7 Android Fragment 类 112 4.5.8 对To-Do List示例使用Fragment 112 4.6 Android widget 工具箱 116 4.7 创建新视图 117 4.7.1 修改现有的视图 118 4.7.2 创建复合控件 122 4.7.3 使用布局创建简单的复合控件 124 4.7.4 创建定制的视图 124 4.7.5 使用定制的控件 137 4.8 Adapter简介 137 4.8.1 部分原生Adapter简介 138 4.8.2 定制ArrayAdapter 138 4.8.3 使用Adapter绑定数据到视图 139</span><br><span class="line"></span><br><span class="line"> 第5章 Intent和Broadcast Receiver 145 5.1 Intent简介 145 5.1.1 使用Intent来启动Activity 146 5.1.2 Linkify简介 153 5.1.3 使用Intent广播事件 155 5.1.4 Local Broadcast Manager 159 5.1.5 Pending Intent简介 160 5.2 创建Intent Filter和Broadcast Receiver 161 5.2.1 使用Intent Filter为隐式Intent提供服务 161 5.2.2 使用Intent Filter作为插件和扩展 170 5.2.3 监听本地Broadcast Intent 173 5.2.4 使用Broadcast Intent监控设备的状态变化 174 5.2.5 在运行时管理Manifest Receiver 176</span><br><span class="line"></span><br><span class="line"> 第6章 使用Internet资源 177 6.1 下载和分析Internet资源 177 6.1.1 连接Internet资源 178 6.1.2 使用XML Pull Parser分析XML 179 6.1.3 创建一个地震查看器 180 6.2 使用Download Manager 186 6.2.1 下载文件 186 6.2.2 自定义Download Manager Notification 187 6.2.3 指定下载位置 188 6.2.4 取消和删除下载 189 6.2.5 查询Download Manager 189 6.3 使用Internet服务 192 6.4 连接到Google App Engine 192 6.5 下载数据而不会耗尽电量的最佳实践 194</span><br><span class="line"></span><br><span class="line"> 第7章 文件、保存状态和首选项 195 7.1 保存简单的应用程序数据 195 7.2 创建并保存Shared Preference 196 7.3 检索Shared Preference 197 7.4 为地震查看器创建一个设置Activity 197 7.5 首选项框架和Preference Activity概述 205 7.5.1 在XML中定义一个Preference Screen布局 206 7.5.2 Preference Fragment简介 208 7.5.3 使用Preference Header定义Preference Fragment的层次结构 208 7.5.4 Preference Activity简介 209 7.5.5 向后兼容性与Preference Screen 210 7.5.6 找到并使用Preference Screen设置的Shared Preference 210 7.5.7 Shared Preference Change Listener简介 211 7.6 为地震查看器创建一个标准的Preference Activity 211 7.7 持久化应用程序实例的状态 215 7.7.1 使用Shared Preference保存Activity状态 215 7.7.2 使用生命周期处理程序保存和还原Activity实例 215 7.7.3 使用生命周期处理程序保存和还原Fragment实例状态 216 7.8 将静态文件作为资源添加 218 7.9 在文件系统下工作 218 7.9.1 文件管理工具 218 7.9.2 使用特定于应用程序的文件夹存储文件 219 7.9.3 创建私有的应用程序文件 219 7.9.4 使用应用程序文件缓存 220 7.9.5 存储公共可读的文件 220</span><br><span class="line"></span><br><span class="line"> 第8章 数据库和Content Provider 223 8.1 Android数据库简介 223 8.1.1 SQLite数据库简介 224 8.1.2 Content Provider简介 224 8.2 SQLite简介 224 8.3 Content Value和Cursor 225 8.4 使用SQLite数据库 225 8.4.1 SQLiteOpenHelper简介 226 8.4.2 在不使用SQLiteOpenHelper的情况下打开和创建数据库 228 8.4.3 Android数据库设计注意事项 228 8.4.4 查询数据库 228 8.4.5 从Cursor中提取值 229 8.4.6 添加、更新和删除行 230 8.5 创建Content Provider 232 8.5.1 注册Content Provider 233 8.5.2 发布Content Provider的URI地址 233 8.5.3 创建Content Provide的数据库 234 8.5.4 实现Content Provider查询 235 8.5.5 Content Provider事务 236 8.5.6 在Content Provider中存储文件 239 8.5.7 一个Content Provider的实现框架 240 8.6 使用Content Provider 244 8.6.1 Content Resolver简介 244 8.6.2 查询Content Provider 244 8.6.3 使用Cursor Loader异步查询内容 247 8.6.4 添加、删除和更新内容 249 8.6.5 访问Content Provider中存储的文件 251 8.6.6 创建一个To-Do List数据库和Content Provider 253 8.7 将搜索功能添加到应用程序中 260 8.7.1 使Content Provider可搜索 261 8.7.2 为应用程序创建一个搜索Activity 261 8.7.3 将搜索Activity设置为应用程序的默认搜索Provider 263 8.7.4 使用搜索视图微件 266 8.7.5 由Content Provider支持搜索建议 267 8.7.6 在快速搜索框中显示搜索结果 270 8.8 创建可搜索的地震Content Provider 270 8.8.1 创建Content Provider 270 8.8.2 使用地震Content Provider 276 8.8.3 搜索EarthquakeContent Provider 279 8.9 本地Android Content Provider 285 8.9.1 使用Media StoreContent Provider 285 8.9.2 使用Contacts Contract Content Provider 286 8.9.3 使用Calendar Content Provider 293</span><br><span class="line"></span><br><span class="line"> 第9章 在后台操作 297 9.1 Service简介 298 9.1.1 创建和控制Service 298 9.1.2 将Service绑定到Activity 302 9.1.3 地震监控Service示例 304 9.1.4 创建前台Service 308 9.2 使用后台线程 309 9.2.1 使用AsyncTask运行异步任务 310 9.2.2 Intent Service简介 312 9.2.3 Loader简介 313 9.2.4 手动创建线程和GUI线程同步 313 9.3 使用Alarm 315 9.3.1 创建、设置和取消Alarm 316 9.3.2 设置重复Alarm 317 9.3.3 使用重复Alarm调度网络刷新 318 9.4 使用Intent Service简化Earthquake更新Service 320</span><br><span class="line"></span><br><span class="line"> 第10章 扩展用户体验 323 10.1 操作栏简介 324 10.1.1 自定义操作栏 325 10.1.2 自定义操作栏来控制应用程序的导航行为 328 10.1.3 操作栏操作简介 333 10.2 向地震监控程序添加一个操作栏 333 10.3 创建并使用菜单和操作栏操作项 339 10.3.1 Android菜单系统简介 340 10.3.2 创建菜单 341 10.3.3 指定操作栏的操作 342 10.3.4 菜单项选项 343 10.3.5 添加操作View和操作提供程序 344 10.3.6 在Fragment中添加菜单项 345 10.3.7 使用XML定义菜单层次结构 345 10.3.8 动态更新菜单项 347 10.3.9 处理菜单选择 347 10.3.10 子菜单和上下文菜单简介 348 10.4 更新地震监控程序 351 10.5 全屏显示 353 10.6 对话框简介 355 10.6.1 创建一个对话框 356 10.6.2 使用AlertDialog类 356 10.6.3 使用专门的输入对话框 357 10.6.4 通过Dialog Fragment管理和显示对话框 358 10.6.5 通过Activity事件处理程序管理和显示对话框 360 10.6.6 将Activity用作对话框 361 10.7 创建Toast 361 10.7.1 自定义Toast 362 10.7.2 在工作线程中使用Toast 364 10.8 Notification简介 365 10.8.1 Notification Manager简介 366 10.8.2 创建Notification 366 10.8.3 设置和自定义通知托盘UI 369 10.8.4 配置持续和连续的Notification 373 10.8.5 触发、更新和取消Notification 374 10.9 向地震监控程序中添加Notification和对话框 376</span><br><span class="line"></span><br><span class="line"> 第11章 高级用户体验 381 11.1 为每个屏幕尺寸和分辨率做设计 382 11.1.1 分辨率无关 382 11.1.2 为不同的屏幕大小提供支持和优化 383 11.1.3 创建可缩放的图形资源 386 11.1.4 创建优化的、自适应的、动态的设计 390 11.1.5 反复测试 390 11.2 确保可访问性 391 11.2.1 为非触屏设备提供导航 391 11.2.2 为每个View提供文本描述 391 11.3 Android Text-to-Speech简介 392 11.4 使用语音识别 394 11.4.1 使用语音识别进行语音输入 395 11.4.2 使用语音识别进行搜索 396 11.5 控制设备振动 396 11.6 使用动画 397 11.6.1 补间View动画 397 11.6.2 创建和使用逐帧动画 400 11.6.3 插值属性动画 400 11.7 强化View 404 11.7.1 高级Canvas绘图 404 11.7.2 硬件加速 419 11.7.3 Surface View简介 420 11.7.4 创建交互式控件 423 11.8 高级Drawable资源 428 11.9 复制、粘贴和剪贴板 431 11.9.1 向剪贴板中复制数据 431 11.9.2 粘贴剪贴板数据 431</span><br><span class="line"></span><br><span class="line"> 第12章 硬件传感器 433 12.1 使用传感器和传感器管理器 433 12.1.1 受支持的Android传感器 434 12.1.2 虚拟传感器简介 435 12.1.3 查找传感器 435 12.1.4 监视传感器 436 12.1.5 解释传感器值 438 12.2 监视设备的移动和方向 439 12.2.1 确定设备的自然方向 440 12.2.2 加速计简介 441 12.2.3 检测加速度变化 442 12.2.4 创建一个重力计 443 12.2.5 确定设备方向 446 12.2.6 创建一个指南针和人工地平仪 450 12.2.7 陀螺仪传感器简介 453 12.3 环境传感器简介 454 12.3.1 使用气压计传感器 454 12.3.2 创建气象站 455</span><br><span class="line"></span><br><span class="line"> 第13章 地图、地理编码和基于位置的服务 461 13.1 使用基于位置的服务 461 13.2 在模拟器中使用基于位置的服务 462 13.2.1 更新模拟器位置提供器中的位置 463 13.2.2 配置模拟器来测试基于位置的服务 463 13.3 选择一个位置提供器 464 13.3.1 查找位置提供器 464 13.3.2 通过指定条件查找位置提供器 464 13.3.3 确定位置提供器的能力 465 13.4 确定当前位置 466 13.4.1 位置的隐私性 466 13.4.2 找出上一次确定的位置 466 13.4.3 Where Am I示例 466 13.4.4 刷新当前位置 469 13.4.5 在Where Am I中跟踪位置 472 13.4.6 请求单独一次位置更新 473 13.5 位置更新的最佳实践 474 13.6 使用近距离提醒 477 13.7 使用地理编码器 478 13.7.1 反向地理编码 479 13.7.2 前向地理编码 480 13.7.3 对“Where Am I”示例进行地理编码 481 13.8 创建基于地图的Activity 482 13.8.1 MapView和MapActivity简介 482 13.8.2 获得地图的API key 483 13.8.3 创建一个基于地图的Activity 483 13.8.4 地图和Fragment 485 13.8.5 配置和使用MapView 486 13.8.6 使用MapController 486 13.8.7 对“Where Am I”示例使用地图 487 13.8.8 创建和使用覆盖（Overlay） 490 13.8.9 MyLocationOverlay简介 497 13.8.10 ItemizedOverlay和OverlayItem简介 498 13.8.11 将视图固定到地图和地图的某个位置上 500 13.9 对Earthquake示例添加地图功能 501</span><br><span class="line"></span><br><span class="line"> 第14章 个性化主屏幕 507 14.1 主屏幕Widget简介 507 14.2 创建App Widgets 509 14.2.1 创建Widget的XML布局资源 509 14.2.2 定义Widget设置 511 14.2.3 创建Widget Broadcast Receiver并将其添加到应用程序的manifest文件中 512 14.2.4 AppWidgetManager和RemoteView简介 513 14.2.5 刷新Widget 518 14.2.6 创建并使用Widget配置Activity 521 14.3 创建地震Widget 522 14.4 Collection View Widget简介 528 14.4.1 创建Collection View Widget的布局 529 14.4.2 创建RemoteViewsService 530 14.4.3 创建一个RemoteViews-Factory 531 14.4.4 使用RemoteViewsService填充CollectionViewWidget 533 14.4.5 向Collection View Widget中的项添加交互性 534 14.4.6 将Collection View Widget绑定到Content Provider 535 14.4.7 刷新Collection View Widget 537 14.4.8 创建Earthquake Collection View Widget 537 14.5 Live Folder简介 543 14.5.1 创建Live Folder 544 14.5.2 创建Earthquake Live Folder 548 14.6 使用快速搜索框显示应用程序搜索结果 551 14.6.1 在快速搜索框中显示搜索结果 551 14.6.2 将Earthquake示例的搜索结果添加到快速搜索框中 552 14.7 创建Live Wallpaper 553 14.7.1 创建Live Wallpaper定义资源 553 14.7.2 创建Wallpaper Service 554 14.7.3 创建Wallpaper Service引擎 555</span><br><span class="line"></span><br><span class="line"> 第15章 音频、视频以及摄像头的使用 557 15.1 播放音频和视频 558 15.1.1 Media Player简介 559 15.1.2 准备音频播放 559 15.1.3 准备视频播放 560 15.1.4 控制Media Player的播放 564 15.1.5 管理媒体播放输出 566 15.1.6 响应音量控制 566 15.1.7 响应Media播放控件 567 15.1.8 请求和管理音频焦点 569 15.1.9 当音频输出改变时暂停播放 571 15.1.10 Remote Control Client简介 572 15.2 操作原始音频 574 15.2.1 使用AudioRecord录制声音 574 15.2.2 使用AudioTrack播放音频 575 15.3 创建一个Sound Pool 577 15.4 使用音效 578 15.5 使用摄像头拍摄照片 579 15.5.1 使用Intent拍摄照片 579 15.5.2 直接控制摄像头 581 15.5.3 读取并写入 JPEG EXIF图像详细信息 588 15.6 录制视频 589 15.6.1 使用Intent录制视频 589 15.6.2 使用MediaRecorder录制视频 590 15.7 使用媒体效果 593 15.8 向媒体库中添加新媒体 594 15.8.1 使用媒体扫描仪插入媒体 594 15.8.2 手动插入媒体 595</span><br><span class="line"></span><br><span class="line"> 第16章 蓝牙、NFC、网络和Wi-Fi 597 16.1 使用蓝牙 597 16.1.1 管理本地蓝牙设备适配器 598 16.1.2 可发现性和远程设备发现 600 16.1.3 蓝牙通信 604 16.2 管理网络和Internet连接 609 16.2.1 Connectivity Manager简介 609 16.2.2 支持用户首选项以进行后台数据传输 609 16.2.3 查找和监视网络连接 611 16.3 管理Wi-Fi 612 16.3.1 监视Wi-Fi连接 613 16.3.2 监视活动的Wi-Fi连接的详细信息 613 16.3.3 扫描热点 613 16.3.4 管理Wi-Fi配置 614 16.3.5 创建Wi-Fi网络配置 615 16.4 使用Wi-Fi Direct传输数据 615 16.4.1 初始化Wi-Fi Direct框架 615 16.4.2 启用Wi-Fi Direct并监视其状态 617 16.4.3 发现对等设备 618 16.4.4 连接对等设备 618 16.4.5 在对等设备之间传输数据 620 16.5 近场通信 621 16.5.1 读取NFC标签 622 16.5.2 使用前台分派系统 623 16.5.3 Android Beam简介 625</span><br><span class="line"></span><br><span class="line"> 第17章 电话服务和SMS 629 17.1 电话服务的硬件支持 629 17.1.1 将电话功能指定为必需的硬件功能 629 17.1.2 检查电话硬件 630 17.2 使用电话服务 630 17.2.1 启动电话呼叫 630 17.2.2 替换本机拨号程序 631 17.2.3 访问电话服务的属性及状态 632 17.2.4 使用PhoneStateListener监视电话状态的变化 635 17.2.5 使用Intent Receiver监视传入的电话呼叫 639 17.3 SMS和MMS简介 640 17.3.1 在应用程序中使用SMS和MMS 640 17.3.2 使用Intent从应用程序中发送SMS和MMS 640 17.3.3 使用SMS Manager发送SMS消息 641 17.3.4 监听传入的SMS消息 644 17.3.5 紧急响应程序SMS示例 646 17.3.6 自动紧急响应程序 654 17.4 SIP和VOIP简介 662</span><br><span class="line"></span><br><span class="line"> 第18章 Android高级开发 663 18.1 Android的安全性 664 18.1.1 Linux内核安全 664 18.1.2 权限简介 664 18.2 Cloud to Device Messaging简介 666 18.2.1 C2DM的局限性 667 18.2.2 注册使用C2DM 667 18.2.3 在C2DM服务器上注册设备 667 18.2.4 向设备发送C2DM消息 670 18.2.5 接收C2DM消息 672 18.3 使用License Verification Library实现版权保护 673 18.3.1 安装License Verification Library 673 18.3.2 获得License Verification公钥 673 18.3.3 配置License Validation Policy 674 18.3.4 执行许可验证检查 674 18.4 应用程序内收费 675 18.4.1 应用程序内收费的局限性 676 18.4.2 安装IAB库 676 18.4.3 获得公钥和定义可购买的物品 676 18.4.4 开始IAB交易 677 18.4.5 处理IAB购买请求的响应 678 18.5 使用Wake Lock 679 18.6 使用AIDL支持Service的IPC 680 18.7 处理不同硬件和软件的可用性 686 18.7.1 指定硬件的要求 686 18.7.2 确认硬件可用性 687 18.7.3 构建向后兼容的应用程序 687 18.8 利用STRICT模式优化UI性能 689</span><br><span class="line"></span><br><span class="line"> 第19章 推广和发布应用程序并从中获利 691 19.1 签名和发布应用程序 691 19.2 发布应用程序 693 19.2.1 Google Play简介 693 19.2.2 开始使用Google Play 694 19.2.3 发布应用程序 695 19.2.4 开发者控制台上的应用程序报告 697 19.2.5 查看应用程序错误报告 697 19.3 如何通过应用程序赚钱 698 19.4 应用程序销售、推广和分发的策略 699 19.4.1 应用程序的起步策略 699 19.4.2 在Google Play上推广 700 19.4.3 国际化 700 19.5 分析数据和跟踪推荐人 701 19.5.1 使用移动应用程序的Google Analytics 702 19.5.2 使用Google Analytics追踪推荐 703</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00CE1JQO4/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00CE1JQO4&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51NM2TT9eyL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00EDE9802/" rel="prev" title="深入理解Android网络编程 技术详解与最佳实践">
+      <i class="fa fa-chevron-left"></i> 深入理解Android网络编程 技术详解与最佳实践
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00CMD4IIS/" rel="next" title="明解C语言">
+      明解C语言 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

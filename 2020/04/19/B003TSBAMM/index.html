@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Python基础教程(第2版)作者信息： 作者: 赫特兰 (Magnus Lie Hetland) [ 中文 pdf ] 简单介绍《Python基础教程(第2版)》内容涉及的范围较广，既能为初学者夯实基础，又能帮助程序员提升技能，适合各个层次的Python开发人员阅读参考。《Python基础教程(第2版)》是经典教程的全新改版.作者根据Python版本的种种变化，全面改写了书中内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础教程(第2版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B003TSBAMM/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Python基础教程(第2版)作者信息： 作者: 赫特兰 (Magnus Lie Hetland) [ 中文 pdf ] 简单介绍《Python基础教程(第2版)》内容涉及的范围较广，既能为初学者夯实基础，又能帮助程序员提升技能，适合各个层次的Python开发人员阅读参考。《Python基础教程(第2版)》是经典教程的全新改版.作者根据Python版本的种种变化，全面改写了书中内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51gh5X9rz7L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.981Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51gh5X9rz7L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B003TSBAMM/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python基础教程(第2版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B003TSBAMM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python基础教程(第2版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Python基础教程(第2版)<br>作者信息： 作者: 赫特兰 (Magnus Lie Hetland) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Python基础教程(第2版)》内容涉及的范围较广，既能为初学者夯实基础，又能帮助程序员提升技能，适合各个层次的Python开发人员阅读参考。《Python基础教程(第2版)》是经典教程的全新改版.作者根据Python版本的种种变化，全面改写了书中内容，做到既能“瞻前”也能“顾后”。《Python基础教程(第2版)》层次鲜明、结构严谨、内容翔实，特别是在最后几章。作者将前面讲述的内容应用到了10个引人入胜的项目中，并以模板的形式介绍了项目的开发过程。《Python基础教程(第2版)》既适合初学者夯实基础。又能帮助Python程序员提升技能，即使是Python方面的技术专家，也能从书里找到令你耳目一新的东西。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">第1章 基础知识</span><br><span class="line">1.1 安装Python</span><br><span class="line">1.1.1 Windows</span><br><span class="line">1.1.2 Linux和UNIX</span><br><span class="line">1.1.3 苹果机（Macintosh）</span><br><span class="line">1.1.4 其他发布版</span><br><span class="line">1.1.5 时常关注，保持更新</span><br><span class="line">1.2 交互式解释器</span><br><span class="line">1.3 算法是什么</span><br><span class="line">1.4 数字和表达式</span><br><span class="line">1.4.1 长整型数</span><br><span class="line">1.4.2 十六进制和八进制</span><br><span class="line">1.5 变量</span><br><span class="line">1.6 语句</span><br><span class="line">1.7 获取用户输入</span><br><span class="line">1.8 函数</span><br><span class="line">1.9 模块</span><br><span class="line">1.9.1 cmath和复数</span><br><span class="line">1.9.2 回到future</span><br><span class="line">1.10 保存并执行程序</span><br><span class="line">1.10.1 通过命令提示符运行Python脚本</span><br><span class="line">1.10.2 让脚本像普通程序一样运行</span><br><span class="line">1.10.3 注释</span><br><span class="line">1.11 字符串</span><br><span class="line">1.11.1 单引号字符串和转义引号</span><br><span class="line">1.11.2 拼接字符串</span><br><span class="line">1.11.3 字符串表示和repr</span><br><span class="line">1.11.4 input和rawinpm的比较</span><br><span class="line">1.11.5 长字符串、原始字符串和Unicode</span><br><span class="line">1.12 小结</span><br><span class="line">1.12.1 本章的新函数</span><br><span class="line">1.12.2 接下来学什么 </span><br><span class="line"></span><br><span class="line"> 第2章 列表和元组 2.1 序列概览 2.2 通用序列操作 2.2.1 索引 2.2.2 分片 2.2.3 序列相加 2.2.4.乘法 2.2.5 成员资格 2.2.6 长度、最小值和最大值 2.3 列表：Python的“苦力” 2.3.1 list函数 2.3.2 基本的列表操作 2.3.3 列表方法 2.4 元组：不可变序列 2.4.1 tuple函数 2.4.2 基本元组操作 2.4.3 那么，意义何在 2.5 小结 2.5.1 本章的新函数 2.5.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第3章 使用字符串 3.1 基本字符串操作 3.2 字符串格式化：精简版 3.3 字符串格式化：完整版 3.3.1 简单转换 3.3.2 字段宽度和精度 3.3.3 符号、对齐和0填充 3.4 字符串方法 3.4.1 f1nd 3.4.2 join 3.4.3 jower 3.4.4 replace 3.4.5 spl1t 3.4.6 strlD 3.4.7 tralqslate 3.5 小结 3.5.1 本章的新函数 3.5.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第4章 字典：当索引不好用时 4.1 字典的使用 4.2 创建和使用字典 4.2.1 dict函数 4.2.2 基本字典操作 4.2.3 字典的格式化字符串 4.2.4 字典方法 4.3 小结 4.3.1 本章的新函数 4.3.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第5章 条件、循环和其他语句 5.1 print和import的更多信息 5.1.1 使用逗号输出 5.1.2 把某件事作为另一件事导入 5.2 赋值魔法 5.2.1 序列解包 5.2.2 链式赋值 5.2.3 增量赋值 5.3 语句块：缩排的乐趣 5.4 条件和条件语句 5.4.1 这就是布尔变量的作用 5.4.2 条件执行和if语句 5.4.3 else子句 5.4.4 elif子句 5.4.5 嵌套代码块 5.4.6 更复杂的条件 5.4.7 断言 5.5 循环 5.5.1 while循环 5.5.2 for循环 5.5.3 循环遍历字典元素 5.5.4 一些迭代工具 5.5.5 跳出循环 5.5.6 循环中的else子句 5.6 列表推导式——轻量级循环 5.7 三人行 5.7.1 什么都没发生 5.7.2 使用del删除 5.7.3 使用exec和eval执行和求值字符串 5.8 小结 5.8.1 本章的新函数 5.8.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第6章 抽象 6.1 懒惰即美德 6.2 抽象和结构 6.3 创建函数 6.3.1 记录函数 6.3.2 并非真正函数的函数 6.4 参数魔法 6.4.1 值从哪里来 6.4.2 我能改变参数吗 6.4.3 关键字参数和默认值 6.4.4 收集参数 6.4.5 反转过程 6.4.6 练习使用参数 6.5 作用域 6.6 递归 6.6.1 两个经典：阶乘和幂 6.6.2 另外一个经典：二元查找 6.7 小结 6.7.1 本章的新函数 6.7.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第7章 更加抽象 7.1 对象的魔力 7.1.1 多态 7.1.2 封装 7.1.3 继承 7.2 类和类型 7.2.1 类到底是什么 7.2.2 创建自己的类 7.2.3 特性、函数和方法 7.2.4 类的命名空间 7.2.5 指定超类 7.2.6 调查继承 7.2.7 多个超类 7.2.8 接口和内省 7.3 一些关于面向对象设计的思考 7.4 简明总结 7.4.1 本章的新函数 7.4.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第8章 异常 8.1 什么是异常 8.2 按自己的方式出错 8.2.1 raise语句 8.2.2 自定义异常类 8.3 捕捉异常 8.4 不止一个except子句 8.5 用一个块捕捉两个异常 8.6 捕捉对象 8.7 真正的全捕捉 8.8 万事大吉 8.9 最后 8.10 异常和函数 8.11 异常之禅 8.12小结 8.12.1 本章的新函数 8.12.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第9章 魔法方法、属性和迭代器 9.1 准备工作 9.2 构造方法 9.2.1 重写一般方法和特殊的构造方法 9.2.2 调用未绑定的超类构造方法 9.2.3 使用super、函数 9.3 成员访问 9.3.1 基本的序列和映射规则 9.3.2 子类化列表，字典和字符串 9.4 更多魔力 9.5 属性 9.5.1 property函数 9.5.2 静态方法和类成员方法 9.5.3 getattr、setattr和它的朋友们 9.6 迭代器 9.6.1 迭代器规则 9.6.2 从迭代器得到序列 9.7 生成器 9.7.1 创建生成器 9.7.2 递归生成器 9.7.3 通用生成器 9.7.4 生成器方法 9.7.5 模拟生成器 9.8 八皇后问题 9.8.1 生成器和回溯 9.8.2 问题 9.8.3 状态表示 9.8.4 寻找冲突 9.8.5 基本情况 9.8.6 需要递归的情况 9.8.7 打包 9.9 小结 9.9.1 本章的新函数 9.9.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第10章 充电时刻 10.1 模块 10.1.1 模块是程序 10.1.2 模块用于定义 10.1.3 让你的模块可用 10.1.4 包 10.2 探究模块 10.2.1 模块中有什么 10.2.2 用help获取帮助 10.2.3 文档 10.2.4 使用源代码 10.3 标准库：一些最爱 10.3.1 sys 10.3.2 OS 10.3.3 fileinput 10.3.4 集合、堆和双端队列 10.3.5 time 10.3.6 random 10.3.7 shelve 10.3.8 re 10.3.9 其他有趣的标准模块 10.4 小结 10.4.1 本章的新函数 10.4.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第11章 文件和素材 11.1 打开文件 11.1.1 文件模式 11.1.2 缓冲 11.2 基本文件方法 11.2.1 读和写 11.2.2 管式输出 11.2.3 读写行 11.2.4 关闭文件 11.2.5 使用基本文件方法 11.3 对文件内容进行迭代 11.3.1 按字节处理 11.3.2 按行操作 11.3.3 读取所有内容 11.3.4 使用fileinput实现懒惰行迭代 11.3.5 文件迭代器 11.4 小结 11.4.1 本章的新函数 11.4.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第12章 图形用户界面 12.1 丰富的平台 12.2 下载和安装wxpytbon 12.3 创建示例GUI应用程序 12.3.1 开始 12.3.2 窗口和组件 12.3.3 标签、标题和位置 12.3.4 更智能的布局 12.3.5 事件处理 12.3.6 完成了的程序 12.4 但是我宁愿用 12.4..1 使用Tkinter 12.4.2 使用Jython和Swing 12.4..3 使用其他开发包 12.5 小结</span><br><span class="line"></span><br><span class="line"> 第13章 数据库支持 13.1 Python数据库API 13.1.1 全局变量 13.1.2 异常 13.1.3 连接和游标 13.1.4 类型 13.2 SQLite和PySQLite 13.2.1 入门 13.2.2 数据库应用程序示例 13.3 小结 13.3.1 本章的新函数 13.3.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第14章 网络编程 14.1 少数几个网络设计模块 14.1.1 socket模块 14.1.2 urllib和urllib2模块 14.1.3 其他模块 14.2 SocketServer和它的朋友们 14.3 多连接 14.3.1 使用SocketServer进行分叉和线程处理 14.3.2 带有select和port的异步I／O 14.4 Twisted 14.4.1 下裁并安装Twisted 14.4.2 编写Twisted服务器 14.5 小结 14.5.1 本章的新函数 14.5.2 接下来学什么</span><br><span class="line"></span><br><span class="line"> 第15章 Python和万维网 15.1 屏幕抓取 15.1.1 Tidy和XHTML解析 …… 第16章 测试 第17章 扩展Python 第18章 程序打包 第19章 好玩的编程 第20章 项目1：即时标记 第21章 项目2：画幅好画 第22章 项目3：万能的XML 第23章 项目4：新闻聚合 第24章 项目5：虚拟茶话会 第25章 项目6：使用CGI进行远程编辑 第26章 项目7：自定义电子公告板 第27章 项目8：使用XML-RPC进行文件共享 第28章 项目9：文件共享2——GUI版本 第29章 项目10：DIY街机游戏 附录A 简明版本 附录B Python参考手册 附录C 在线资源 附录D Python3.0</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B003TSBAMM/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B003TSBAMM&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51gh5X9rz7L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B003U8XUKQ/" rel="prev" title="编写高质量代码 Web前端开发修炼之道">
+      <i class="fa fa-chevron-left"></i> 编写高质量代码 Web前端开发修炼之道
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B003SWP8XG/" rel="next" title="UNIX网络编程(卷1) 套接字联网API(第3版)">
+      UNIX网络编程(卷1) 套接字联网API(第3版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

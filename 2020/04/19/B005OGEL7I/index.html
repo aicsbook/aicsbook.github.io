@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C++反汇编与逆向分析技术揭秘作者信息： 作者: 钱林松 [ 中文 pdf ] 简单介绍《C++反汇编与逆向分析技术揭秘》：深度揭秘软件逆向分析技术的流程与方法，理论与实践完美结合，由安全领域资深专家亲自执笔，看雪软件安全网站创始人段钢等多位安全领域专家联袂推荐。 目录123456789101112131415161718192021222324252627282930313233">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++反汇编与逆向分析技术揭秘">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B005OGEL7I/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C++反汇编与逆向分析技术揭秘作者信息： 作者: 钱林松 [ 中文 pdf ] 简单介绍《C++反汇编与逆向分析技术揭秘》：深度揭秘软件逆向分析技术的流程与方法，理论与实践完美结合，由安全领域资深专家亲自执笔，看雪软件安全网站创始人段钢等多位安全领域专家联袂推荐。 目录123456789101112131415161718192021222324252627282930313233">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51febSBwXjL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.107Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="汇编">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51febSBwXjL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B005OGEL7I/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C++反汇编与逆向分析技术揭秘 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B005OGEL7I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++反汇编与逆向分析技术揭秘
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C++反汇编与逆向分析技术揭秘<br>作者信息： 作者: 钱林松 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《C++反汇编与逆向分析技术揭秘》：深度揭秘软件逆向分析技术的流程与方法，理论与实践完美结合，由安全领域资深专家亲自执笔，看雪软件安全网站创始人段钢等多位安全领域专家联袂推荐。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line">前言</span><br><span class="line">第一部分 准备工作</span><br><span class="line">第1章 熟悉工作环境和相关工具 &#x2F; 2</span><br><span class="line">1.1 调试工具Microsoft Visual C++ 6.0和OllyDBG &#x2F; 2</span><br><span class="line">1.2 反汇编静态分析工具IDA &#x2F; 5</span><br><span class="line">1.3 反汇编引擎的工作原理 &#x2F; 11</span><br><span class="line">1.4 本章小结 &#x2F; 16</span><br><span class="line">第二部分 C++反汇编揭秘</span><br><span class="line">第2章 基本数据类型的表现形式 &#x2F; 18</span><br><span class="line">2.1 整数类型 &#x2F; 18</span><br><span class="line">2.1.1 无符号整数 &#x2F; 18</span><br><span class="line">2.1.2 有符号整数 &#x2F; 18</span><br><span class="line">2.2 浮点数类型 &#x2F; 20</span><br><span class="line">2.2.1 浮点数的编码方式 &#x2F; 21</span><br><span class="line">2.2.2 基本的浮点数指令 &#x2F; 23</span><br><span class="line">2.3 字符和字符串 &#x2F; 26</span><br><span class="line">2.3.1 字符的编码 &#x2F; 27</span><br><span class="line">2.3.2 字符串的存储方式 &#x2F; 28</span><br><span class="line">2.4 布尔类型 &#x2F; 29</span><br><span class="line">2.5 地址、指针和引用 &#x2F; 29</span><br><span class="line">2.5.1 指针和地址的区别 &#x2F; 30</span><br><span class="line">2.5.2 各类型指针的工作方式 &#x2F; 31</span><br><span class="line">2.5.3 引用 &#x2F; 34</span><br><span class="line">2.6 常量 &#x2F; 35</span><br><span class="line">2.6.1 常量的定义 &#x2F; 36</span><br><span class="line">2.6.2 #define和const的区别 &#x2F; 37</span><br><span class="line">2.7 本章小结 &#x2F; 38</span><br><span class="line">第3章 认识启动函数，找到用户入口 &#x2F; 40</span><br><span class="line">3.1 程序的真正入口 &#x2F; 40</span><br><span class="line">3.2 了解VC++ 6.0的启动函数 &#x2F; 40</span><br><span class="line">3.3 main函数的识别 &#x2F; 44</span><br><span class="line">3.4 本章小结 &#x2F; 46</span><br><span class="line">第4章 观察各种表达式的求值过程 &#x2F; 47</span><br><span class="line">4.1 算术运算和赋值 &#x2F; 47</span><br><span class="line">4.1.1 各种算术运算的工作形式 &#x2F; 47</span><br><span class="line">4.1.2 算术结果溢出 &#x2F; 82</span><br><span class="line">4.1.3 自增和自减 &#x2F; 83</span><br><span class="line">4.2 关系运算和逻辑运算 &#x2F; 85</span><br><span class="line">4.2.1 关系运算和条件跳转的对应 &#x2F; 85</span><br><span class="line">4.2.2 表达式短路 &#x2F; 86</span><br><span class="line">4.2.3 条件表达式 &#x2F; 88</span><br><span class="line">4.3 位运算 &#x2F; 92</span><br><span class="line">4.4 编译器使用的优化技巧 &#x2F; 94</span><br><span class="line">4.4.1 流水线优化规则 &#x2F; 97</span><br><span class="line">4.4.2 分支优化规则 &#x2F; 101</span><br><span class="line">4.4.3 高速缓存（cache）优化规则 &#x2F; 101</span><br><span class="line">4.5 一次算法逆向之旅 &#x2F; 102</span><br><span class="line">4.6 本章小结 &#x2F; 109</span><br><span class="line">第5章 流程控制语句的识别 &#x2F; 110</span><br><span class="line">5.1 if语句 &#x2F; 110</span><br><span class="line">5.2 if…else…语句 &#x2F; 112</span><br><span class="line">5.3 用if构成的多分支流程 &#x2F; 115</span><br><span class="line">5.4 switch的真相 &#x2F; 119</span><br><span class="line">5.5 难以构成跳转表的switch &#x2F; 128</span><br><span class="line">5.6 降低判定树的高度 &#x2F; 133</span><br><span class="line">5.7 do&#x2F;while&#x2F;for的比较 &#x2F; 137</span><br><span class="line">5.8 编译器对循环结构的优化 &#x2F; 143</span><br><span class="line">5.9 本章小结 &#x2F; 148</span><br><span class="line">第6章 函数的工作原理 &#x2F; 149</span><br><span class="line">6.1 栈帧的形成和关闭 &#x2F; 149</span><br><span class="line">6.2 各种调用方式的考察 &#x2F; 152</span><br><span class="line">6.3 使用ebp或esp寻址 &#x2F; 155</span><br><span class="line">6.4 函数的参数 &#x2F; 158</span><br><span class="line">6.5 函数的返回值 &#x2F; 160</span><br><span class="line">6.6 回顾 &#x2F; 163</span><br><span class="line">6.7 本章小结 &#x2F; 165</span><br><span class="line">第7章 变量在内存中的位置和访问方式 &#x2F; 166</span><br><span class="line">7.1 全局变量和局部变量的区别 &#x2F; 166</span><br><span class="line">7.2 局部静态变量的工作方式 &#x2F; 169</span><br><span class="line">7.3 堆变量 &#x2F; 173</span><br><span class="line">7.4 本章小结 &#x2F; 177</span><br><span class="line">第8章 数组和指针的寻址 &#x2F; 178</span><br><span class="line">8.1 数组在函数内 &#x2F; 178</span><br><span class="line">8.2 数组作为参数 &#x2F; 181</span><br><span class="line">8.3 数组作为返回值 &#x2F; 185</span><br><span class="line">8.4 下标寻址和指针寻址 &#x2F; 189</span><br><span class="line">8.5 多维数组 &#x2F; 193</span><br><span class="line">8.6 存放指针类型数据的数组 &#x2F; 199</span><br><span class="line">8.7 指向数组的指针变量 &#x2F; 201</span><br><span class="line">8.8 函数指针 &#x2F; 204</span><br><span class="line">8.9 本章小结 &#x2F; 206</span><br><span class="line">第9章 结构体和类 &#x2F; 207</span><br><span class="line">9.1 对象的内存布局 &#x2F; 207</span><br><span class="line">9.2 this指针 &#x2F; 212</span><br><span class="line">9.3 静态数据成员 &#x2F; 217</span><br><span class="line">9.4 对象作为函数参数 &#x2F; 219</span><br><span class="line">9.5 对象作为返回值 &#x2F; 226</span><br><span class="line">9.6 本章小结 &#x2F; 231</span><br><span class="line">第10章 关于构造函数和析构函数 &#x2F; 233</span><br><span class="line">10.1 构造函数的出现时机 &#x2F; 233</span><br><span class="line">10.2 每个对象都有默认的构造函数吗 &#x2F; 243</span><br><span class="line">10.3 析构函数的出现时机 &#x2F; 245</span><br><span class="line">10.4 本章小结 &#x2F; 254</span><br><span class="line">第11章 关于虚函数 &#x2F; 256</span><br><span class="line">11.1 虚函数的机制 &#x2F; 256</span><br><span class="line">11.2 虚函数的识别 &#x2F; 261</span><br><span class="line">11.3 本章小结 &#x2F; 268</span><br><span class="line">第12章 从内存角度看继承和多重继承 &#x2F; 269</span><br><span class="line">12.1 识别类和类之间的关系 &#x2F; 270</span><br><span class="line">12.2 多重继承   &#x2F; 292</span><br><span class="line">12.3 虚基类 &#x2F; 298</span><br><span class="line">12.4 菱形继承 &#x2F; 299</span><br><span class="line">12.5 本章小结 &#x2F; 307</span><br><span class="line">第13章 异常处理 &#x2F; 308</span><br><span class="line">13.1 异常处理的相关知识 &#x2F; 308</span><br><span class="line">13.2 异常类型为基本数据类型的处理流程 &#x2F; 314</span><br><span class="line">13.3 异常类型为对象的处理流程 &#x2F; 323</span><br><span class="line">13.4 识别异常处理 &#x2F; 329</span><br><span class="line">13.5 本章小结 &#x2F; 341</span><br><span class="line">第三部分 逆向分析技术应用</span><br><span class="line">第14章 PEiD的工作原理分析 &#x2F; 344</span><br><span class="line">14.1 开发环境的识别 &#x2F; 344</span><br><span class="line">14.2 开发环境的伪造 &#x2F; 353</span><br><span class="line">14.3 本章小结 &#x2F; 356</span><br><span class="line">第15章 “熊猫烧香”病毒逆向分析 &#x2F; 357</span><br><span class="line">15.1 调试环境配置 &#x2F; 357</span><br><span class="line">15.2 病毒程序初步分析 &#x2F; 358</span><br><span class="line">15.3 “熊猫烧香”的启动过程分析 &#x2F; 360</span><br><span class="line">15.4 “熊猫烧香”的自我保护分析 &#x2F; 366</span><br><span class="line">15.5 “熊猫烧香”的感染过程分析 &#x2F; 369</span><br><span class="line">15.6 本章小结 &#x2F; 379</span><br><span class="line">第16章 调试器OllyDBG的工作原理分析 &#x2F; 380</span><br><span class="line">16.1 INT3断点 &#x2F; 380</span><br><span class="line">16.2 内存断点 &#x2F; 385</span><br><span class="line">16.3 硬件断点 &#x2F; 390</span><br><span class="line">16.4 异常处理机制 &#x2F; 396</span><br><span class="line">16.5 加载调试程序 &#x2F; 402</span><br><span class="line">16.6 本章小结 &#x2F; 406</span><br><span class="line">第17章 反汇编代码的重建与编译 &#x2F; 407</span><br><span class="line">17.1 重建反汇编代码 &#x2F; 407</span><br><span class="line">17.2 编译重建后的反汇编代码 &#x2F; 410</span><br><span class="line">17.3 本章小结 &#x2F; 411</span><br><span class="line">参考文献 &#x2F; 412</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B005OGEL7I/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B005OGEL7I&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51febSBwXjL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B1%87%E7%BC%96/" rel="tag"># 汇编</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B005X5ORFQ/" rel="prev" title="Hadoop实战">
+      <i class="fa fa-chevron-left"></i> Hadoop实战
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B005N4L03E/" rel="next" title="SQL反模式">
+      SQL反模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

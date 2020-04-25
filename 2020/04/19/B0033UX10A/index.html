@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Android应用开发揭秘作者信息： 作者: 杨丰盛 [ 中文 pdf ] 简单介绍《Android应用开发揭秘》：Android应用开发揭秘Windows操作系统的诞生成就了微软的霸主地位，也造就了PC时代的繁荣。然而，以Android和iPhone手机为代表的智能移动设备的发明却敲响了PC时代的丧钟!移动互联网时代(3G时代)已经来临，谁会成为这些移动设备上的主宰?毫无疑问，它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android应用开发揭秘">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B0033UX10A/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Android应用开发揭秘作者信息： 作者: 杨丰盛 [ 中文 pdf ] 简单介绍《Android应用开发揭秘》：Android应用开发揭秘Windows操作系统的诞生成就了微软的霸主地位，也造就了PC时代的繁荣。然而，以Android和iPhone手机为代表的智能移动设备的发明却敲响了PC时代的丧钟!移动互联网时代(3G时代)已经来临，谁会成为这些移动设备上的主宰?毫无疑问，它">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51Mn4UNRZ6L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.637Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51Mn4UNRZ6L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B0033UX10A/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android应用开发揭秘 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B0033UX10A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android应用开发揭秘
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Android应用开发揭秘<br>作者信息： 作者: 杨丰盛 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Android应用开发揭秘》：Android应用开发揭秘Windows操作系统的诞生成就了微软的霸主地位，也造就了PC时代的繁荣。然而，以Android和iPhone手机为代表的智能移动设备的发明却敲响了PC时代的丧钟!移动互联网时代(3G时代)已经来临，谁会成为这些移动设备上的主宰?毫无疑问，它就是Android——PC时代的Windows!移动互联网还是一个新生的婴儿，各种移动设备上的操作系统群雄争霸!与Sym‘Dian、i P}lone OS、Wiridows Mobile相比，Androjd有着天生的优势一完全开放和免费，对广大开发者和手机厂商而言，这是何等的诱人!此外，在Google和以其为首的Android手机联盟的大力支持和推广下，Android不仅得到了全球开发者社区的关注，而且一大批世界一流的手机厂商都已经或准备采用Android。拥抱Android开发。拥抱移动开发的未来!如果你在思考下面这些问题，也许本书就是你想要的！Android开发与传统的J2ME开发有何相似与不同？如何通过Shared Preferences、Files、Network和SQLite等方式高效实现Android数据的存储？又如何通过Content Providers轻松地实现Androld数据的共享？如何使用Open Core、MediaPlayer、MediaRecorder方便快速地开发出包含音频和视频等流媒体的丰富多媒体应用？如何利用Android 2.0新增的蓝牙特性开发包含蓝牙功能的应用？又如何使用蓝牙APL来完善应用的网络功能？如何解决Android网络通信中的乱码问题？在Android中如何使用语音服务和Google Map Apl? Android如何访问摄象头、传感器等硬件的APl？如何时行Widget开发？如何用各种Android组件来打造漂亮的UI界面？Android如何解析XML数据？又如何提高解析速度和减少对内存、CPU资源的消耗？如何使用OpenGL ES在Android平台上开发出绚丽的3D应用？在Android平台上如何更好地设计和实现游戏引擎？如何对Android应用进行优化？如何进行程序性能测试？如何实现UI、zipalign和图片优化？如何通过NDK利用C、C＋＋以及通过ASE利用Python等脚本语言Android开发应用？国内首本基于Android 2.0的经典著作，5大专业社区一致鼎力推荐！</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">前言</span><br><span class="line">第一部分 准备篇</span><br><span class="line">第1章 Android开发简介</span><br><span class="line">1.1 Android基本概念</span><br><span class="line">1.1.1 Android简介</span><br><span class="line">1.1.2 Android的系统构架</span><br><span class="line">1.1.3 Android应用程序框架</span><br><span class="line">1.2 OMS介绍</span><br><span class="line">1.2.1 OPhone介绍</span><br><span class="line">1.2.2 Widget介绍</span><br><span class="line">1.3 小结 </span><br><span class="line"></span><br><span class="line"> 第2章 Android开发环境搭建 2.1 Android开发准备工作 2.2 开发包及其工具的安装和 配置 2.2.1 安装JDK和配置Java开发 环境 2.2.2 Eclipse的安装与汉化 2.2.3 SDK和ADT的安装和 配置 2.3 创建第一个Android项目——HeUoAndroid 2.3.1 创建HelloAndroid项目 2.3.2 运行HelloAndroid及模拟器的使用 2.3.3 调试HelloAndroid 2.4 小结 第二部分 基础篇</span><br><span class="line"></span><br><span class="line"> 第3章 Android程序设计基础 3.1 Android程序框架 3.1.1 Android项目目录结构 3.1.2 Android应用解析 3.2 Android的生命周期 3.3 Android程序U设计 3.4 小结</span><br><span class="line"></span><br><span class="line"> 第4章 用户界面开发 4.1 用户界面开发详解 4.1.1 用户界面简介 4.1.2 事件处理 4.2 常用控件应用 4.2.1 文本框(Textiew) 4.2.2 列表(ListView) 4.2.3 提示(T0ast) 4.2.4 编辑框(EditText) 4.2.5 单项选择(RadioGroup、RadioButton 4.2.6 多项选择(CheckBox) 4.2.7 下拉列表(Spinner) 4.2.8 自动提示(AutoComplete.TextⅥew) 4.2.9 日期和时间(DatePicker、TimePicker) 4.2.10 按钮(Button) 4.2.1l 菜单(Menu) 4.2.12 对话框(Dialog) 4.2.13 图片视图(ImageView) 4.2.14 带图标的按钮(ImageButton) 4.2.15 拖动效果(Gallery) 4.2.16 切换图片(hmgeSwilcher) 4.2.17 网格视图(GridView) 4.2.18 卷轴视图(ScrollView) 4.2.19 进度条(ProgressBar) 4.2.20 拖动条(SeekBar) 4.2.21 状态栏提示(Notification、NotificationManager) 4.2.22 对话框中的进度条(ProgressDialog) 4.3 界面布局 4.3.1 垂直线性布局 4.3.2 水平线性布局 4.3.3.相对布局(RelativeLayout) 4.3.4 表单布局(TableLayout) 4.3.5 切换卡(TabWidget) 4,4 小结</span><br><span class="line"></span><br><span class="line"> 第5章 Android游戏开发 5.1 Android游戏开发框架 5.1.1 View类开发框架 5.1.2 SurfaceView类开发框架 5.2 Graphics类开发 5.5.1 Paint和Color类介绍 5.2.2 Canvas类介绍 5.2.3 几何图形绘制 5.2.4 字符串绘制 5.2.5 图像绘制 5.2.6 图像旋转 5.2.7 图像缩放 5.2.8 图像像素操作 5.2.9 Shader类介绍 5.2.10 双缓冲技术 5.2.11 全屏显示 5.2.12 获得屏幕属性 5.3 动画实现 5.3.1 Tween动画 5.3.2 Frame动画 5.3.3 GIF动画播放 5.4 小结</span><br><span class="line"></span><br><span class="line"> 第6章 Android数据存储 6.1 Android数据存储初探 6.2 数据存储之Shared Preferences 6.3 数据存储之Files 6.4 数据存储之Network 6.5 Android数据库编程 6.5.1 SQLite简介 6.5.2 SQLite编程详解 6.5.3 SQLiteOpenHelper应用 6.6 数据共享(ContentProviders) 6.7 小结</span><br><span class="line"></span><br><span class="line"> 第7 章多媒体开发 7.1 多媒体开发详解 7.1.1 Open Core 7.1.2 MediaPlayer 7.1.3 MediaRecorder 7.2 播放音乐 7.3 播放视频 7.4 录制歌曲 7.5 相机设置 7.6 闹钟设置 7.7 铃声设置 7.8 小结</span><br><span class="line"></span><br><span class="line"> 第8章 网络与通信 8.1 网络通信基础 8.1.1 无线网络技术 8.1.2 Android网络基础 8.2 HTTP通信 8.2.1 HttpURLConnection接口 8.2.2 HttpClient接口 8.2.3 实时更新 8.3 Socket通信 8.3.1 Socket基础 8.3.2 Socket应用(简易聊天室) 8.4 网络通信的中文乱码问题 8.5 WebKit应用 8.5.1 WebKjt概述 8.5.2 WebView浏览网页 8.5.3 WebView与Javascript 8.6 WtFi介绍 8.7 蓝牙 8.8 小结</span><br><span class="line"></span><br><span class="line"> 第9章 Android特色开发 9.1 传感器 9.2 语音识别 9.3 GoogleMap 9.3.1 GoogleMap概述 9.3.2 准备工作 9.3.3 GoogleMapAPI的使用 9.3.4 定位系统 9.4 桌面组件 9.4.1 快捷方式 9.4.2 实时文件夹 9.4.3 Widget开发 9.5 账户管理 9.6 小结 第三部分 实例篇</span><br><span class="line"></span><br><span class="line"> 第10章 Android应用开发 实例 10.1 情境模式 10.2 文件管理器 10.3 通讯录 10.4 音乐播放器 10.5 天气预报 10.6 个人地图 10.7 Widget日历 10.8 小结</span><br><span class="line"></span><br><span class="line"> 第11 章Android游戏开发实例 11.1 手机游戏开发简介 11.2 游戏框架设计 11.3 地图设计 11.4 主角设计 11.5 图层管理器 11.6 游戏音效 11.7 游戏存档 11.8 小结 第四部分 高级篇</span><br><span class="line"></span><br><span class="line"> 第12章 AndroidOpenGL开发 基础 12.1 OpenGL简介 12.2 多边形 12.3 颜色 12.4 旋转 12.5 3D 空间 12.6 纹理映射 12.7 光照和事件 12.8 混合 12.9 小结</span><br><span class="line"></span><br><span class="line"> 第13章 AndroidOpenGL综合 应用 13.1 移动图像 13.2.3D 世界 13.3 飘动的旗帜 13.4 显示列表 13.5 雾 13.6 粒子系统 13.7 蒙版 13.8 变形 13.9 小结</span><br><span class="line"></span><br><span class="line"> 第14章 游戏引擎实现 14.1 游戏引擎介绍 14.1.1 什么是引擎 14.1.2 引擎的进化 14.1.3 常见的游戏引擎 14.1.4 Android游戏引擎 14.2 游戏引擎结构 14.2.1 游戏引擎原理 14.2.2 游戏引擎定位 14.2.3 游戏引擎框架 14.3 游戏引擎设计 14.3.1 游戏引擎结构和功能 设计 14.3.2 游戏引擎设计注意事项 14.4 游戏引擎实现 14.4.1 Activity类实现 14.4.2 流程控制和线程 14.4.3 游戏对象与对象管理 14.4.4 图形引擎 14.4.5 物理引擎 14.4.6 事件模块 14.4.7 工具模块 14.4.8 脚本引擎、音效模块、网络 模块 14.5 小结</span><br><span class="line"></span><br><span class="line"> 第15章 优化技术 15.1 优化的基本知识 15.1.1 如何书写出优秀代码 15.1.2 编程规范 15.2 程序性能测试 15.2.1 计算性能测试 15.2.2 内存消耗测试 15.3 初级优化 15.4 高级优化 15.5 Android高效开发 15.6 AndroidUI优化 15.7 其他优化 15.7.1 zipalign 15.7.2 图片优化 15.8 小结 第五部分 扩展篇</span><br><span class="line"></span><br><span class="line"> 第16章 Android NDK开发 16.1 AndroidNDK简介 16.2 安装和配置NDK开发环境 16.2.1 系统和软件需求 16.2.2 NDK开发环境搭建 16.2.3 编译第一个NDK程序 16.3 AndroidNDK开发 16.3.1 JNI接口设计 16.3.2 使用C\C++实现本地 方法 16.3.3 Android.mk实现 16.3.4 Application.mk实现 16.3.5 编译C\C++代码 16.4 AndroidNDK中使用0penGL 16.5小结</span><br><span class="line"></span><br><span class="line"> 第17章 Android脚本环境 17.1 Android脚本环境简介 17.2 Android脚本环境安装 17.3如何编写Android脚本程序 17.4小结</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B0033UX10A/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B0033UX10A&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51Mn4UNRZ6L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B002WC7NGS/" rel="prev" title="数据结构与算法分析 C语言描述(原书第2版)">
+      <i class="fa fa-chevron-left"></i> 数据结构与算法分析 C语言描述(原书第2版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B001P5HR4Q/" rel="next" title="你必须知道的495个C语言问题">
+      你必须知道的495个C语言问题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

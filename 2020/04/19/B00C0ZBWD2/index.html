@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 腾云 云计算和大数据时代网络技术揭秘作者信息： 作者: 徐立冰 [ 中文 pdf ] 简单介绍国内第一本云计算网络书云计算与大数据时代，网络技术人员必看！“弯曲评论”网站“拨云见日”系列热文加量10倍的强烈之书首次完整呈现。云计算时代，网络面临怎样的挑战？大数据之下，网络设计应着眼何处？虚拟化的最后1000米你该如何冲刺？OpenFlow、FCoE、LISP、FabricPath、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾云 云计算和大数据时代网络技术揭秘">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00C0ZBWD2/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 腾云 云计算和大数据时代网络技术揭秘作者信息： 作者: 徐立冰 [ 中文 pdf ] 简单介绍国内第一本云计算网络书云计算与大数据时代，网络技术人员必看！“弯曲评论”网站“拨云见日”系列热文加量10倍的强烈之书首次完整呈现。云计算时代，网络面临怎样的挑战？大数据之下，网络设计应着眼何处？虚拟化的最后1000米你该如何冲刺？OpenFlow、FCoE、LISP、FabricPath、">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51UOyne98DL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.042Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="云计算">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51UOyne98DL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00C0ZBWD2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>腾云 云计算和大数据时代网络技术揭秘 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00C0ZBWD2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          腾云 云计算和大数据时代网络技术揭秘
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 腾云 云计算和大数据时代网络技术揭秘<br>作者信息： 作者: 徐立冰 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>国内第一本云计算网络书云计算与大数据时代，网络技术人员必看！“弯曲评论”网站“拨云见日”系列热文加量10倍的强烈之书首次完整呈现。云计算时代，网络面临怎样的挑战？大数据之下，网络设计应着眼何处？虚拟化的最后1000米你该如何冲刺？OpenFlow、FCoE、LISP、FabricPath、VN-Tag、VPLS、VXLAN……当所有这一切结合到一起，你将面临怎样的情形？是时候，重新设计互联网亚嵌特聘首席科学家、“弯曲评论”创办人陈怀临、Net130大版主、重磅畅销书《大话存储》作者冬瓜头、《网络世界》总编辑张群英合力推荐！</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br></pre></td><td class="code"><pre><span class="line">第一部分 缘起篇</span><br><span class="line">第1章 云计算的兴起 2</span><br><span class="line">1.1 云计算的身世 2</span><br><span class="line">1.1.1 “上古”时期，摩尔定律刚起步 2</span><br><span class="line">1.1.2 从互联网大爆炸中诞生 4</span><br><span class="line">1.1.3 接棒Amazon 6</span><br><span class="line">1.1.4 百花齐放的年代 7</span><br><span class="line">1.2 云计算的DNA 8</span><br><span class="line">1.3 云计算的五大特征 10</span><br><span class="line">1.3.1 自助式服务 10</span><br><span class="line">1.3.2 通过网络分发服务 11</span><br><span class="line">1.3.3 资源池化 12</span><br><span class="line">1.3.4 资源的灵活调度 12</span><br><span class="line">1.3.5 可衡量的服务 13</span><br><span class="line">1.4 IaaS&#x2F;PaaS&#x2F;SaaS，它们都是什么 13</span><br><span class="line">1.4.1 位于最底层，基础架构即服务——IaaS 14</span><br><span class="line">1.4.2 IaaS之上，平台即服务——PaaS 15</span><br><span class="line">1.4.3 最上层，软件即服务——SaaS 15</span><br><span class="line">1.5 各种云——私有云／社区云／公有云／混合云 15</span><br><span class="line">1.5.1 私有云 16</span><br><span class="line">1.5.2 公有云 16</span><br><span class="line">1.5.3 社区云 16</span><br><span class="line">1.5.4 混合云 17</span><br><span class="line">1.6 云计算的独有优势 18</span><br><span class="line">1.6.1 降低成本 18</span><br><span class="line">1.6.2 扩展性 18</span><br><span class="line">1.6.3 高可靠性 19</span><br><span class="line">1.6.4 远程访问 20</span><br><span class="line">1.6.5 模块化 20</span><br><span class="line">1.6.6 高等级服务 21</span><br><span class="line">第2章 云与网的关系 22</span><br><span class="line">2.1 以数据中心为界，云计算网络的外延与内涵 22</span><br><span class="line">2.2 外延——关注用户体验 24</span><br><span class="line">2.2.1 可靠的网络 24</span><br><span class="line">2.2.2 安全的网络 25</span><br><span class="line">2.2.3 灵活的网络 25</span><br><span class="line">2.3 内涵——关注系统效率，下一代数据中心的网络平台 25</span><br><span class="line">第二部分 外延篇</span><br><span class="line">第3章 安全的网络通道（一）——网络准入 28</span><br><span class="line">3.1 为什么安全是云计算的基础 28</span><br><span class="line">3.2 云计算安全的发展现状 29</span><br><span class="line">3.3 网络在云计算安全防护中扮演的角色 30</span><br><span class="line">3.4 网络准入的技术分类 31</span><br><span class="line">3.4.1 二层准入 33</span><br><span class="line">3.4.2 三层准入 36</span><br><span class="line">3.4.3 客户端方式 39</span><br><span class="line">3.5 二层准入vs.三层准入vs.客户端方式 40</span><br><span class="line">3.5.1 二层准入的特点——成熟、实用 40</span><br><span class="line">3.5.2 三层准入的特点——轻便、简单 42</span><br><span class="line">3.5.3 客户端方式的特点——功能全面、无统一标准 44</span><br><span class="line">3.6 最终用户需要什么样的方案 45</span><br><span class="line">3.7 IT部门需要什么样的方案 46</span><br><span class="line">3.8 什么是完美的产品 46</span><br><span class="line">3.9 虚拟桌面的机会 47</span><br><span class="line">第4章 安全的网络通道（二）——网络加密 48</span><br><span class="line">4.1 通过VPN隧道保证云计算的数据安全 48</span><br><span class="line">4.2 VPN技术选择——SSLPKIPsec 49</span><br><span class="line">4.3 让SSL胜出的独门绝技 51</span><br><span class="line">4.4 SSL的技术实现 51</span><br><span class="line">4.4.1 SSL握手协议 52</span><br><span class="line">4.4.2 SSL记录协议 53</span><br><span class="line">4.5 几种SSLVPN类型 54</span><br><span class="line">4.6 SSL的后续发展——DTLS&#x2F;TLS 55</span><br><span class="line">第5章 可靠的网络通道 57</span><br><span class="line">5.1 云服务的用户体验与网络服务质量 57</span><br><span class="line">5.2 为更好服务，先对云计算流量进行分类 58</span><br><span class="line">5.3 不同流量分类不同服务质量的设计方法 59</span><br><span class="line">5.3.1 流量识别 60</span><br><span class="line">5.3.2 流量标记 61</span><br><span class="line">5.3.3 流量处理 65</span><br><span class="line">第6章 灵活的网络通道 66</span><br><span class="line">6.1 移动性是云计算网络的基本特征 66</span><br><span class="line">6.2 现有解决方案一——DNS重定向 67</span><br><span class="line">6.3 现有解决方案二——健康路由注入 70</span><br><span class="line">6.4 对现有方案的改进——用LISP将位置与身份分离 71</span><br><span class="line">6.5 LISP的核心思想——Map—and—encap 72</span><br><span class="line">6.6 LISP的基本架构 73</span><br><span class="line">6.7 LISP的新包头 74</span><br><span class="line">6.8 通过LISP—ALT实现可扩展网络 75</span><br><span class="line">6.9 一个LISP转发实例 76</span><br><span class="line">6.10 LISP的应用场景 77</span><br><span class="line">6.10.1 IP终端的灵活移动 77</span><br><span class="line">6.10.2 IPv6—IPv4混合部署 79</span><br><span class="line">6.10.3 多租户VPN环境 80</span><br><span class="line">6.11 我们真的需要LISP吗 81</span><br><span class="line">第三部分 内涵篇</span><br><span class="line">第7章 支持虚拟化数据中心的扩张——TRILL&#x2F;FabricPath和SPB 84</span><br><span class="line">7.1 二层网络的困境 84</span><br><span class="line">7.2 为什么传统二层网络不给力 87</span><br><span class="line">7.3 FabricPath的目标 89</span><br><span class="line">7.4 FabricPath的实现：新的控制平面 89</span><br><span class="line">7.4.1 新增一个二层帧头 89</span><br><span class="line">7.4.2 增加一套简化的IS—IS路由协议 90</span><br><span class="line">7.5 第一个问题——为什么需要新的地址空间 90</span><br><span class="line">7.6 FabricPath的工作模式 91</span><br><span class="line">7.7 第二个问题——现有技术不足够吗 92</span><br><span class="line">7.8 TRILL——FabricPath的公开标准 93</span><br><span class="line">7.9 另一个TRILL——SPB 95</span><br><span class="line">7.10 TRILLvs.SPB 98</span><br><span class="line">第8章 利用以太传输存储流量——FCoE 102</span><br><span class="line">8.1 存储与网络的关系 102</span><br><span class="line">8.2 传统存储网络面临的挑战——布线与能耗 103</span><br><span class="line">8.3 融合！FCoE给出的解决方案 105</span><br><span class="line">8.4 FCoE的基本面 105</span><br><span class="line">8.5 给以太网动手术——FCoE的数据平面 107</span><br><span class="line">8.5.1 PFC——不丢包以太网 107</span><br><span class="line">8.5.2 ETS——灵活带宽调度 110</span><br><span class="line">8.5.3 DCBX——与现有环境的兼容性 112</span><br><span class="line">8.6 连接两个世界的FIP——FCoE的控制平面 113</span><br><span class="line">8.6.1 FCoEVLAN发现 115</span><br><span class="line">8.6.2 FLOGI注册和FPMA 115</span><br><span class="line">8.7 典型的FCoE网络架构 117</span><br><span class="line">8.8 FCoE架构中的两种设备类型 118</span><br><span class="line">8.8.1 终结FCoE流量的设备——ENode 118</span><br><span class="line">8.8.2 转发FCoE流量的交换机——FCF 119</span><br><span class="line">8.9 FCoE的演化——四种多跳FCoE方案 120</span><br><span class="line">8.9.1 纯以太网模式 120</span><br><span class="line">8.9.2 FIPSnooping模式 122</span><br><span class="line">8.9.3 NPV模式 125</span><br><span class="line">8.9.4 VE_Port互联模式 126</span><br><span class="line">8.10 一个FCoE数据帧的转发过程 127</span><br><span class="line">8.11 FCoE的标准化与市场化进程 129</span><br><span class="line">8.12 iSCSI行不行？非FCoE不可吗 130</span><br><span class="line">第9章 连接虚拟机的交换机 133</span><br><span class="line">9.1 为什么虚拟化数据中心需要一台新的交换机 133</span><br><span class="line">9.2 仅仅在服务器内部实现简单交换是不够的 136</span><br><span class="line">9.2.1 软件VEB 136</span><br><span class="line">9.2.2 硬件VEB 137</span><br><span class="line">9.3 识别特定虚拟机的流量——用VN—Tag为虚拟机打上网络标签 138</span><br><span class="line">9.4 一个VN—Tag交换实例 142</span><br><span class="line">9.5 基于VN—Tag的新一代网络设备 145</span><br><span class="line">9.5.1 VN—Tag网卡 145</span><br><span class="line">9.5.2 VN—Tag交换机 147</span><br><span class="line">9.5.3 操作系统支持 148</span><br><span class="line">9.6 VN—Tag之外的选择——VEPA 148</span><br><span class="line">9.6.1 标准版VEPA 148</span><br><span class="line">9.6.2 增强版VEPA 149</span><br><span class="line">9.7 VEPA交换机扫描 151</span><br><span class="line">9.7.1 HP5900 151</span><br><span class="line">9.7.2 JuniperQFabric 152</span><br><span class="line">9.7.3 JuniperEX4500和EX8200 152</span><br><span class="line">9.7.4 ExtremeSummitX670 153</span><br><span class="line">9.8 VN—Tag与VEPA的交锋 154</span><br><span class="line">第10章 虚拟化的最后一公里——虚拟化网卡 158</span><br><span class="line">10.1 补齐虚拟化的最后一公里 158</span><br><span class="line">10.2 什么是虚拟化网卡 161</span><br><span class="line">10.2.1 什么是虚拟接入 161</span><br><span class="line">10.2.2 什么是虚拟通道 161</span><br><span class="line">10.3 利用SR—IOV实现虚拟化网卡 162</span><br><span class="line">10.4 SR—IOV的实践者——Palo 163</span><br><span class="line">10.5 将SR—IOV带入现实的辅助技术 165</span><br><span class="line">10.6 更加彻底的虚拟化——MR—IOV 166</span><br><span class="line">10.7 后面的故事 168</span><br><span class="line">第11章 数据中心互联设计——更广泛的二层网络 169</span><br><span class="line">11.1 数据中心二层互联的需求 169</span><br><span class="line">11.2 通过VPLS实现互联 171</span><br><span class="line">11.3 一个VPLS转发实例 173</span><br><span class="line">11.4 VPLS的限制 175</span><br><span class="line">11.4.1 缺乏对局域网的优化 175</span><br><span class="line">11.4.2 依赖运营商资源 176</span><br><span class="line">11.4.3 配置复杂 176</span><br><span class="line">11.5 通过OTV（上层传输虚拟化）实现互联 176</span><br><span class="line">11.5.1 OTV的数据平面 177</span><br><span class="line">11.5.2 OTV的控制平面 177</span><br><span class="line">11.6 OTV对二层协议的优化 179</span><br><span class="line">11.7 OTV对三层网关的优化 180</span><br><span class="line">11.8 OTV环境下的多接入和流量负载均衡 180</span><br><span class="line">11.9 LISPvs.VPLS 181</span><br><span class="line">11.10 LISP与OTV的关系 183</span><br><span class="line">第12章 自定义网络——OpenFlow与SDN 184</span><br><span class="line">12.1 通过软件定义网络——SDN 184</span><br><span class="line">12.2 实验室中走出的OpenFlow 186</span><br><span class="line">12.3 OpenFlow的系统模型 189</span><br><span class="line">12.4 OpenFlow交换机基本组成 192</span><br><span class="line">12.5 两种OpenFlow交换机 193</span><br><span class="line">12.5.1 OpenFlow专用交换机 193</span><br><span class="line">12.5.2 OpenFlow兼容型交换机 194</span><br><span class="line">12.6 OpenFlow中央控制器 195</span><br><span class="line">12.6.1 控制器的主动工作模式 196</span><br><span class="line">12.6.2 控制器的被动工作模式 197</span><br><span class="line">12.7 一个OpenFlow实例 197</span><br><span class="line">12.8 构建标准化的网络设计标准——OF—Config 199</span><br><span class="line">12.8.1 OF—Config解决的问题 199</span><br><span class="line">12.8.2 OF—Config的功能描述 199</span><br><span class="line">12.9 认识一下OpenFlow的近亲 201</span><br><span class="line">12.9.1 分布式转发模块化交换机 201</span><br><span class="line">12.9.2 远端板卡 202</span><br><span class="line">12.9.3 Nexus1000v 203</span><br><span class="line">12.9.4 OpenvSwitch 204</span><br><span class="line">12.9.5 EEM 204</span><br><span class="line">12.10 Google的OpenFlow实践 206</span><br><span class="line">12.11 网络厂家的SDN战略 208</span><br><span class="line">12.11.1 NEC的OpenFlow战略 209</span><br><span class="line">12.11.2 HP的OpenFlow战略 209</span><br><span class="line">12.11.3 Juniper的OpenFlow战略 210</span><br><span class="line">12.11.4 Nicira的OpenFlow战略 210</span><br><span class="line">12.11.5 Cisco的OpenFlow战略 211</span><br><span class="line">12.12 SDN&#x2F;OpenFlow的前景 213</span><br><span class="line">第13章 更大的云——VXLAN 217</span><br><span class="line">13.1 VXLAN要解决的问题 217</span><br><span class="line">13.2 VXLAN的新头部 219</span><br><span class="line">13.3 VXLAN的数据平面——隧道机制 220</span><br><span class="line">13.3.1 隧道机制减小对现网的改动 221</span><br><span class="line">13.3.2 隧道机制对快速变更的支持 221</span><br><span class="line">13.4 VXLAN的控制平面——改进的二层协议 221</span><br><span class="line">13.5 纯VXLAN部署场景 223</span><br><span class="line">13.6 VXLAN与非VXLAN混合部署 224</span><br><span class="line">13.7 一个VXLAN转发实例 225</span><br><span class="line">13.7.1 第一阶段——ARP请求 226</span><br><span class="line">13.7.2 第二阶段——数据传输 226</span><br><span class="line">13.8 VXLAN、OTV、LISP，它们都有什么关系 227</span><br><span class="line">13.9 Microsoft的算盘——NVGRE 228</span><br><span class="line">第14章 桌面虚拟化网络漫谈 230</span><br><span class="line">14.1 桌面虚拟化的前身——远程桌面 230</span><br><span class="line">14.2 虚拟桌面的诞生 231</span><br><span class="line">14.3 虚拟桌面是怎样工作的 232</span><br><span class="line">14.3.1 集中托管方式 232</span><br><span class="line">14.3.2 远程同步方式 233</span><br><span class="line">14.4 虚拟桌面的客户端类型 234</span><br><span class="line">14.4.1 零客户端虚拟桌面 234</span><br><span class="line">14.4.2 瘦客户端虚拟桌面 235</span><br><span class="line">14.4.3 胖客户端虚拟桌面 235</span><br><span class="line">14.5 一个典型的虚拟桌面后台架构 235</span><br><span class="line">14.6 决定虚拟桌面的成败——用网络替代VGA线缆 237</span><br><span class="line">14.7 虚拟桌面的核心网络技术——网络显示协议 238</span><br><span class="line">14.8 网络显示协议三大要素 239</span><br><span class="line">14.8.1 网络资源 239</span><br><span class="line">14.8.2 用户体验 240</span><br><span class="line">14.8.3 CPU占用率 240</span><br><span class="line">14.9 显示协议——兵家必争之地 240</span><br><span class="line">14.10 老牌显示协议——RDP 241</span><br><span class="line">14.11 显示协议的王者——HDX&#x2F;ICA 244</span><br><span class="line">14.12 后起之秀——PCoIP 245</span><br><span class="line">14.13 HDXvs.RDPvs.PCoIP，谁主沉浮 248</span><br><span class="line">第15章 大数据网络设计要点 251</span><br><span class="line">15.1 大数据的产生 251</span><br><span class="line">15.2 全新的大数据 253</span><br><span class="line">15.3 MapReduce的原理 254</span><br><span class="line">15.4 MapReduce的业务流程 254</span><br><span class="line">15.5 写入数据过程中的网络流量模型 255</span><br><span class="line">15.6 MapReduce算法过程中的网络流量模型 255</span><br><span class="line">15.6.1 Map过程 256</span><br><span class="line">15.6.2 Shuffle过程 256</span><br><span class="line">15.6.3 Reduce过程 257</span><br><span class="line">15.6.4 OutPut过程 257</span><br><span class="line">15.7 读取数据过程中的网络流量模型 257</span><br><span class="line">15.8 MapReduce网络模型综述 257</span><br><span class="line">第四部分 基石篇</span><br><span class="line">第16章 怎样将服务器接入网络 260</span><br><span class="line">16.1 ToR（柜顶接入）和EoR（列头接入） 260</span><br><span class="line">16.2 从增加一台服务器到增加一个机柜的服务器 262</span><br><span class="line">16.3 鱼与熊掌不可兼得？ 263</span><br><span class="line">16.4 Cisco的提案——FEX远端板卡 265</span><br><span class="line">16.5 Juniper的尝试——QFabric 267</span><br><span class="line">第17章 VOQ解密 270</span><br><span class="line">17.1 头端阻塞是实现DCE交换机的障碍 270</span><br><span class="line">17.2 利用VOQ防止头端阻塞 271</span><br><span class="line">17.3 针对组播的VOQ设计 273</span><br><span class="line">17.4 VOQ的产业化发展 273</span><br><span class="line">第18章 刀片服务器网络 275</span><br><span class="line">18.1 刀片服务器渊源 275</span><br><span class="line">18.2 刀片服务器同传统ToR接入的区别 276</span><br><span class="line">18.3 把握刀片服务器的网络设计 278</span><br><span class="line">18.3.1 直通模块 278</span><br><span class="line">18.3.2 交换模块 279</span><br><span class="line">18.3.3 集中接入模式 281</span><br><span class="line">第19章 千兆不够，要万兆！ 283</span><br><span class="line">19.1 千兆到万兆的质变 283</span><br><span class="line">19.1.1 万兆网络是FCoE的基础 283</span><br><span class="line">19.1.2 更高的传输效率 285</span><br><span class="line">19.1.3 助推虚拟化 287</span><br><span class="line">19.2 万兆以太网标准现状 288</span><br><span class="line">19.3 盘点万兆以太网交换机 289</span><br><span class="line">19.3.1 CiscoCatalyst6500 289</span><br><span class="line">19.3.2 CiscoNexus7000 290</span><br><span class="line">19.3.3 H3C12500 291</span><br><span class="line">19.3.4 H3C10500 291</span><br><span class="line">19.3.5 JuniperQFabric 292</span><br><span class="line">19.3.6 华为CloudEngine12800 292</span><br><span class="line">19.3.7 DELLForce10E1200i 293</span><br><span class="line">19.3.8 BrocadeBigIronRX 294</span><br><span class="line">19.3.9 ExtremeX8 294</span><br><span class="line">19.3.10 Arista7500 295</span><br><span class="line">19.3.11 AVAYA8800 295</span><br><span class="line">19.3.12 Alcatel—LucentOmniSwitch10K 296</span><br><span class="line">19.3.13 锐捷RG—S12000 297</span><br><span class="line">后记 298</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00C0ZBWD2/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00C0ZBWD2&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51UOyne98DL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag"># 云计算</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00BTCPBUC/" rel="prev" title="3D打印 从想象到现实">
+      <i class="fa fa-chevron-left"></i> 3D打印 从想象到现实
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00BLZMF5Q/" rel="next" title="R和Ruby数据分析之旅">
+      R和Ruby数据分析之旅 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

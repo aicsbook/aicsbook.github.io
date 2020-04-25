@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Java并发编程实战作者信息： 作者: 盖茨 (Brian Goetz) [ 英文 pdf ] 简单介绍《Java并发编程实战》第16届Jolt大奖提名图书，JavaOne大会最畅销图书，了解Java并发编程必读佳作。线程是Java平台的基础组成部分之一。随着多核处理器逐渐成为主流，如何高效地使用并发已成为构建高性能应用程序的重要因素。Java SE 5和Java 6在并发程序开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java并发编程实战">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B0077K9XHW/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Java并发编程实战作者信息： 作者: 盖茨 (Brian Goetz) [ 英文 pdf ] 简单介绍《Java并发编程实战》第16届Jolt大奖提名图书，JavaOne大会最畅销图书，了解Java并发编程必读佳作。线程是Java平台的基础组成部分之一。随着多核处理器逐渐成为主流，如何高效地使用并发已成为构建高性能应用程序的重要因素。Java SE 5和Java 6在并发程序开发">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51PSBtsarqL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.867Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51PSBtsarqL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B0077K9XHW/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Java并发编程实战 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B0077K9XHW/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java并发编程实战
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Java并发编程实战<br>作者信息： 作者: 盖茨 (Brian Goetz) [ 英文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Java并发编程实战》第16届Jolt大奖提名图书，JavaOne大会最畅销图书，了解Java并发编程必读佳作。线程是Java平台的基础组成部分之一。随着多核处理器逐渐成为主流，如何高效地使用并发已成为构建高性能应用程序的重要因素。Java SE 5和Java 6在并发程序开发方面取得了巨大的进步，在其Java虚拟机中能支持一些高性能的并且具有高可伸缩性的并发类，此外还支持一组新的并发基础构建模块。在《Java并发编程实战》中，这些新功能的编写者们不仅介绍了它们的工作原理和使用方式，还介绍了隐藏在这些功能背后的研究背景与设计模式。然而，在开发、测试以及调试多线程的程序时仍然存在巨大的困难。开发人员很容易编写出一些看似能正常工作，但在一些情况下仍然会失败的程序（包括在正式发布的产品中，以及在高负载环境中）。《Java并发编程实战》不仅讲解了并发的理论基础，还介绍了各种实际的开发技术，这些知识对于构建可靠的、可伸缩的以及可维护的并发应用程序来说非常有用。《Java并发编程实战》并不仅是简单地罗列出各种并发API以及机制，而是详细地介绍了许多设计原则、设计模式以及思维模式，这些内容使得开发人员更容易构建出正确的并且高性能的并发程序。《Java并发编程实战》主要内容包括：并发性与线程安全性的基本概念，构建以及组合各种线程安全类的技术，使用java.util.concurrent包中的各种井发构建基础模块，性能优化中的注意事项，如何测试并发程序，以及一些高级主题，包括原子变量，无阻塞算法及JAVA内存模。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">对本书的赞誉</span><br><span class="line">译者序</span><br><span class="line">前　言</span><br><span class="line">第1章　简介</span><br><span class="line">1.1　并发简史</span><br><span class="line">1.2　线程的优势</span><br><span class="line">1.2.1　发挥多处理器的强大能力</span><br><span class="line">1.2.2　建模的简单性</span><br><span class="line">1.2.3　异步事件的简化处理</span><br><span class="line">1.2.4　响应更灵敏的用户界面</span><br><span class="line">1.3　线程带来的风险</span><br><span class="line">1.3.1　安全性问题</span><br><span class="line">1.3.2　活跃性问题</span><br><span class="line">1.3.3　性能问题</span><br><span class="line">1.4　线程无处不在</span><br><span class="line">第一部分　基础知识 </span><br><span class="line"></span><br><span class="line"> 第2章　线程安全性 2.1　什么是线程安全性 2.2　原子性 2.2.1　竞态条件 2.2.2　示例:延迟初始化中的竞态条件 2.2.3　复合操作 2.3　加锁机制 2.3.1　内置锁 2.3.2　重入 2.4　用锁来保护状态 2.5　活跃性与性能</span><br><span class="line"></span><br><span class="line"> 第3章　对象的共享 3.1　可见性 3.1.1　失效数据 3.1.2　非原子的64位操作 3.1.3　加锁与可见性 3.1.4　Volatile变量 3.2　发布与逸出 3.3　线程封闭 3.3.1　Ad-hoc线程封闭 3.3.2　栈封闭 3.3.3　ThreadLocal类 3.4　不变性 3.4.1　Final域 3.4.2　示例:使用Volatile类型来发布不可变对象 3.5　安全发布 3.5.1　不正确的发布:正确的对象被破坏 3.5.2 　不可变对象与初始化安全性 3.5.3　安全发布的常用模式 3.5.4　事实不可变对象 3.5.5　可变对象 3.5.6　安全地共享对象</span><br><span class="line"></span><br><span class="line"> 第4章　对象的组合 4.1　设计线程安全的类 4.1.1　收集同步需求 4.1.2　依赖状态的操作 4.1.3　状态的所有权 4.2　实例封闭 4.2.1　Java监视器模式 4.2.2　示例:车辆追踪 4.3　线程安全性的委托 4.3.1　示例:基于委托的车辆追踪器 4.3.2　独立的状态变量 4.3.3　当委托失效时 4.3.4　发布底层的状态变量 4.3.5　示例:发布状态的车辆追踪器 4.4　在现有的线程安全类中添加功能 4.4.1　客户端加锁机制 4.4.2　组合 4.5　将同步策略文档化</span><br><span class="line"></span><br><span class="line"> 第5章　基础构建模块 5.1　同步容器类 5.1.1　同步容器类的问题 5.1.2　迭代器与Concurrent-Modification Exception 5.1.3　隐藏迭代器 5.2　并发容器 5.2.1　Concurrent Hash Map 5.2.2　额外的原子Map操作 5.2.3　Copy On Write Array List 5.3　阻塞队列和生产者-消费者模式 5.3.1　示例:桌面搜索 5.3.2　串行线程封闭 5.3.3　双端队列与工作密取 5.4　阻塞方法与中断方法 5.5　同步工具类 5.5.1　闭锁 5.5.2　Future Task 5.5.3　信号量 5.5.4　栅栏 5.6　构建高效且可伸缩的结果缓存 第二部分　结构化并发应用程序</span><br><span class="line"></span><br><span class="line"> 第6章　任务执行 6.1　在线程中执行任务 6.1.1　串行地执行任务 6.1.2　显式地为任务创建线程 6.1.3　无限制创建线程的不足 6.2　Executor框架 6.2.1　示例:基于Executor的Web服务器 6.2.2　执行策略 6.2.3　线程池 6.2.4　Executor的生命周期 6.2.5　延迟任务与周期任务 6.3　找出可利用的并行性 6.3.1　示例:串行的页面渲染器 6.3.2　携带结果的任务Callable与Future 6.3.3　示例:使用Future实现页面渲染器 6.3.4　在异构任务并行化中存在的局限 6.3.5　Completion Service:Executor与Blocking Queue 6.3.6　示例:使用Completion Service实现页面渲染器 6.3.7　为任务设置时限 6.3.8　示例:旅行预定门户网站</span><br><span class="line"></span><br><span class="line"> 第7章　取消与关闭 7.1　任务取消 7.1.1　中断 7.1.2　中断策略 7.1.3　响应中断 7.1.4　示例:计时运行 7.1.5　通过Future来实现取消 7.1.6　处理不可中断的阻塞 7.1.7　采用New Task For来封装非标准的取消 7.2　停止基于线程的服务 7.2.1　示例:日志服务 7.2.2　关闭Executor Service 7.2.3　“毒丸”对象 7.2.4　示例:只执行一次的服务 7.2.5　Shutdown Now的局限性 7.3　处理非正常的线程终止 7.4　JVM关闭 7.4.1　关闭钩子 7.4.2　守护线程 7.4.3　终结器</span><br><span class="line"></span><br><span class="line"> 第8章　线程池的使用 8.1　在任务与执行策略之间的隐性耦合 8.1.1　线程饥饿死锁 8.1.2　运行时间较长的任务 8.2　设置线程池的大小 8.3　配置Thread Pool Executor 8.3.1　线程的创建与销毁 8.3.2　管理队列任务 8.3.3　饱和策略 8.3.4　线程工厂 8.3.5　在调用构造函数后再定制Thread Pool Executor 8.4　扩展 Thread Pool Executor 8.5　递归算法的并行化</span><br><span class="line"></span><br><span class="line"> 第9章　图形用户界面应用程序 9.1　为什么GUI是单线程的 9.1.1　串行事件处理 9.1.2　Swing中的线程封闭机制 9.2　短时间的GUI任务 9.3　长时间的GUI任务 9.3.1　取消 9.3.2　进度标识和完成标识 9.3.3　Swing Worker 9.4　共享数据模型 9.4.1　线程安全的数据模型 9.4.2　分解数据模型 9.5　其他形式的单线程子系统 第三部分　活跃性、性能与测试</span><br><span class="line"></span><br><span class="line"> 第10章　避免活跃性危险 10.1　死锁 10.1.1　锁顺序死锁 10.1.2　动态的锁顺序死锁 10.1.3　在协作对象之间发生的死锁 10.1.4　开放调用 10.1.5　资源死锁 10.2　死锁的避免与诊断 10.2.1　支持定时的锁 10.2.2　通过线程转储信息来分析死锁 10.3　其他活跃性危险 10.3.1　饥饿 10.3.2　糟糕的响应性 10.3.3　活锁</span><br><span class="line"></span><br><span class="line"> 第11章　性能与可伸缩性 11.1　对性能的思考 11.1.1　性能与可伸缩性 11.1.2　评估各种性能权衡因素 11.2　Amdahl定律 11.2.1　示例:在各种框架中隐藏的串行部分 11.2.2　Amdahl定律的应用 11.3　线程引入的开销 11.3.1　上下文切换 11.3.2　内存同步 11.3.3　阻塞 11.4　减少锁的竞争 11.4.1　缩小锁的范围(“快进快出”) 11.4.2　减小锁的粒度 11.4.3　锁分段 11.4.4　避免热点域 11.4.5　一些替代独占锁的方法 11.4.6　监测CPU的利用率 11.4.7　向对象池说“不” 11.5　示例:比较Map的性能 11.6　减少上下文切换的开销</span><br><span class="line"></span><br><span class="line"> 第12章　并发程序的测试 12.1　正确性测试 12.1.1　基本的单元测试 12.1.2　对阻塞操作的测试 12.1.3　安全性测试 12.1.4　资源管理的测试 12.1.5　使用回调 12.1.6　产生更多的交替操作 12.2　性能测试 12.2.1　在PutTakeTest中增加计时功能 12.2.2　多种算法的比较 12.2.3　响应性衡量 12.3　避免性能测试的陷阱 12.3.1　垃圾回收 12.3.2　动态编译 12.3.3　对代码路径的不真实采样 12.3.4　不真实的竞争程度 12.3.5　无用代码的消除 12.4　其他的测试方法 12.4.1　代码审查 12.4.2　静态分析工具 12.4.3　面向方面的测试技术 12.4.4　分析与监测工具 第四部分　高级主题</span><br><span class="line"></span><br><span class="line"> 第13章　显式锁 13.1　Lock与 Reentrant Lock 13.1.1　轮询锁与定时锁 13.1.2　可中断的锁获取操作 13.1.3　非块结构的加锁 13.2　性能考虑因素 13.3　公平性 13.4　在synchronized和Reentrant Lock之间进行选择 13.5　读-写锁</span><br><span class="line"></span><br><span class="line"> 第14章　构建自定义的同步工具 14.1　状态依赖性的管理 14.1.1　示例:将前提条件的失败传递给调用者 14.1.2　示例:通过轮询与休眠来实现简单的阻塞 14.1.3　条件队列 14.2　使用条件队列 14.2.1　条件谓词 14.2.2　过早唤醒 14.2.3　丢失的信号 14.2.4　通知 14.2.5　示例:阀门类 14.2.6　子类的安全问题 14.2.7　封装条件队列 14.2.8　入口协议与出口协议 14.3　显式的Condition对象 14.4　Synchronizer剖析 14.5　Abstract Queued Synchronizer 14.6　java.util.concurrent同步器类中的 AQS 14.6.1　ReentrantLock 14.6.2　Semaphore与CountDownLatch 14.6.3　FutureTask 14.6.4　ReentrantReadWriteLock</span><br><span class="line"></span><br><span class="line"> 第15章　原子变量与非阻塞同步机制 15.1　锁的劣势 15.2　硬件对并发的支持 15.2.1　比较并交换 15.2.2　非阻塞的计数器 15.2.3　JVM对CAS的支持 15.3　原子变量类 15.3.1　原子变量是一种“更好的volatile” 15.3.2　性能比较:锁与原子变量 15.4　非阻塞算法 15.4.1　非阻塞的栈 15.4.2　非阻塞的链表 15.4.3　原子的域更新器 15.4.4　ABA问题</span><br><span class="line"></span><br><span class="line"> 第16章　Java内存模型 16.1　什么是内存模型,为什么需要它 16.1.1　平台的内存模型 16.1.2　重排序 16.1.3　Java内存模型简介 16.1.4　借助同步 16.2　发布 16.2.1　不安全的发布 16.2.2　安全的发布 16.2.3　安全初始化模式 16.2.4　双重检查加锁 16.3　初始化过程中的安全性 附录A　并发性标注 参考文献</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B0077K9XHW/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B0077K9XHW&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51PSBtsarqL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B007EWGFZG/" rel="prev" title="王志刚作品系列 HTML5移动开发即学即用(双色)">
+      <i class="fa fa-chevron-left"></i> 王志刚作品系列 HTML5移动开发即学即用(双色)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B006R3TUIC/" rel="next" title="深入剖析Tomcat">
+      深入剖析Tomcat <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

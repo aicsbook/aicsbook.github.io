@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Python学习手册(第4版)作者信息： 作者: 鲁特兹(Mark Lutz) [ 中文 pdf ] 简单介绍Google和YouTube由于PythonF的高可适应性、易于维护以及适合于快速开发而采用它。《Python学习手册(第4版)》将帮助你使用Python编写出高质量、高效的并且易于与其他语言和工具集成的代码。《Python学习手册(第4版)》根据Python专家MarkL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习手册(第4版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B004TUJ7A6/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Python学习手册(第4版)作者信息： 作者: 鲁特兹(Mark Lutz) [ 中文 pdf ] 简单介绍Google和YouTube由于PythonF的高可适应性、易于维护以及适合于快速开发而采用它。《Python学习手册(第4版)》将帮助你使用Python编写出高质量、高效的并且易于与其他语言和工具集成的代码。《Python学习手册(第4版)》根据Python专家MarkL">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51qFpYVexpL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.980Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51qFpYVexpL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B004TUJ7A6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python学习手册(第4版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B004TUJ7A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python学习手册(第4版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Python学习手册(第4版)<br>作者信息： 作者: 鲁特兹(Mark Lutz) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>Google和YouTube由于PythonF的高可适应性、易于维护以及适合于快速开发而采用它。《Python学习手册(第4版)》将帮助你使用Python编写出高质量、高效的并且易于与其他语言和工具集成的代码。《Python学习手册(第4版)》根据Python专家MarkLutz的著名培训课程编写而成，是易于掌握和自学的Python教程。《Python学习手册(第4版)》每一章都对Python语言的关键内容做单独讲解，并且配有章首习题，便于你学习新的技能并巩固加深自己的理解。书中配有大量注释的示例以及图表，它们都将帮助你轻松地学习Python3．0。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">前言1</span><br><span class="line">第一部分 使用入门</span><br><span class="line">第1章 问答环节19</span><br><span class="line">人们为何使用Python19</span><br><span class="line">软件质量20</span><br><span class="line">开发效率21</span><br><span class="line">Python是“脚本语言”吗21</span><br><span class="line">好吧，Python的缺点是什么呢23</span><br><span class="line">如今谁在使用Python23</span><br><span class="line">使用Python可以做些什么24</span><br><span class="line">系统编程25</span><br><span class="line">用户图形接口25</span><br><span class="line">Internet脚本25</span><br><span class="line">组件集成26</span><br><span class="line">数据库编程26</span><br><span class="line">快速原型27</span><br><span class="line">数值计算和科学计算编程27</span><br><span class="line">游戏、图像、人工智能、XML、机器人等27</span><br><span class="line">Python如何获得支持28</span><br><span class="line">Python有哪些技术上的优点28</span><br><span class="line">面向对象28</span><br><span class="line">免费29</span><br><span class="line">可移植29</span><br><span class="line">功能强大30</span><br><span class="line">可混合31</span><br><span class="line">简单易用31</span><br><span class="line">简单易学32</span><br><span class="line">Python和其他语言比较起来怎么样32</span><br><span class="line">本章小结33</span><br><span class="line">本章习题33</span><br><span class="line">习题解答34</span><br><span class="line">Python是工程，不是艺术34 </span><br><span class="line"></span><br><span class="line"> 第2章 Python如何运行程序36 Python解释器简介36 程序执行37 程序员的视角37 Python的视角39 执行模块的变体41 Python实现的替代者42 执行优化工具43 冻结二进制文件44 其他执行选项45 未来的可能性46 本章小结46 本章习题47 习题解答47</span><br><span class="line"></span><br><span class="line"> 第3章 如何运行程序48 交互提示模式下编写代码48 交互地运行代码49 为什么使用交互提示模式51 使用交互提示模式52 系统命令行和文件54 第一段脚本55 使用命令行运行文件56 使用命令行和文件57 UNIX可执行脚本(#!)58 UNIX env查找技巧59 点击文件图标60 在Windows中点击图标60 input的技巧61 图标点击的其他限制63 模块导入和重载63 模块的显要特性：属性65 import和reload的使用注意事项68 使用exec运行模块文件69 IDLE用户界面70 IDLE基础71 使用IDLE72 高级IDLE工具74 其他的IDE74 其他启动选项76 嵌入式调用76 冻结二进制的可执行性77 文本编辑器启动的选择77 其他的启动选择77 未来的可能77 我应该选用哪种78 调试Python代码78 本章小结80 本章习题80 习题解答80 第一部分 练习题81</span><br><span class="line"></span><br><span class="line"> 第二部分 类型和运算 第4章 介绍Python对象类型87 为什么使用内置类型88 Python的核心数据类型88 数字90 字符串92 序列的操作92 不可变性94 类型特定的方法94 寻求帮助96 编写字符串的其他方法97 模式匹配98 列表98 序列操作98 类型特定的操作99 边界检查100 嵌套100 列表解析101 字典103 映射操作103 重访嵌套104 键的排序：for 循环105 迭代和优化107 不存在的键：if 测试107 元组109 为什么要用元组109 文件110 其他文件类工具111 其他核心类型111 如何破坏代码的灵活性113 用户定义的类114 剩余的内容115 本章小结115 本章习题116 习题解答116</span><br><span class="line"></span><br><span class="line"> 第5章 数字117 Python的数字类型117 数字常量118 内置数学工具和扩展119 Python表达式操作符120 在实际应用中的数字125 变量和基本的表达式125 数字显示的格式126 比较：一般的和连续的127 str和repr显示格式128 除法： 传统除法、Floor除法和真除法129 整数精度133 复数133 十六进制、八进制和二进制记数134 位操作136 其他的内置数学工具137 其他数字类型139 小数数字139 分数类型141 集合145 布尔型151 数字扩展152 本章小结153 本章习题153 习题解答153</span><br><span class="line"></span><br><span class="line"> 第6章 动态类型简介155 缺少类型声明语句的情况155 变量、对象和引用156 类型属于对象，而不是变量157 对象的垃圾收集158 共享引用159 共享引用和在原处修改161 共享引用和相等163 动态类型随处可见164 本章小结165 本章习题165 习题解答165</span><br><span class="line"></span><br><span class="line"> 第7章 字符串167 字符串常量169 单双引号字符串是一样的170 用转义序列代表特殊字节171 raw字符串抑制转义173 三重引号编写多行字符串块175 实际应用中的字符串176 基本操作176 索引和分片177 为什么要在意：分片181 字符串转换工具181 修改字符串184 字符串方法185 字符串方法实例：修改字符串187 字符串方法实例：文本解析189 实际应用中的其他常见字符串方法190 最初的字符串模块（在Python 3.0中删除）191 字符串格式化表达式192 更高级的字符串格式化表达式194 基于字典的字符串格式化196 字符串格式化调用方法196 基础知识197 添加键、属性和偏移量198 添加具体格式化198 与%格式化表达式比较200 为什么用新的格式化方法203 通常意义下的类型分类206 同样分类的类型共享其操作集合206 可变类型能够在原处修改207 本章小结208 本章习题208 习题解答208</span><br><span class="line"></span><br><span class="line"> 第8章 列表与字典210 列表210 实际应用中的列表213 基本列表操作213 列表迭代和解析213 索引、分片和矩阵214 原处修改列表215 字典220 实际应用中的字典222 字典的基本操作222 原处修改字典223 其他字典方法224 语言表225 字典用法注意事项226 为什么要在意字典接口229 创建字典的其他方法230 Python 3.0中的字典变化231 本章小结237 本章习题237 习题解答237</span><br><span class="line"></span><br><span class="line"> 第9章 元组、文件及其他239 元组239 实际应用中的元组241 为什么有了列表还要元组243 文件243 打开文件244 使用文件245 实际应用中的文件246 其他文件工具252 重访类型分类254 为什么要在意操作符重载255 对象灵活性255 引用 VS 拷贝256 比较、相等性和真值258 Python 3.0的字典比较260 Python中真和假的含义261 Python的类型层次263 Type对象263 Python中的其他类型265 内置类型陷阱265 赋值生成引用，而不是拷贝265 重复能够增加层次深度266 留意循环数据结构266 不可变类型不可以在原处改变267 本章小结267 本章习题268 习题解答268 第二部分练习题269</span><br><span class="line"></span><br><span class="line"> 第三部分 语句和语法 第10章 Python语句简介275 重访Python程序结构275 Python的语句276 两个if的故事278 Python增加了什么279 Python删除了什么279 为什么使用缩进语法281 几个特殊实例283 简短实例：交互循环285 一个简单的交互式循环285 对用户输入数据做数学运算287 用测试输入数据来处理错误288 用try语句处理错误289 嵌套代码三层290 本章小结290 本章习题291 习题解答291</span><br><span class="line"></span><br><span class="line"> 第11章 赋值、表达式和打印292 赋值语句292 赋值语句的形式293 序列赋值294 Python 3.0中的扩展序列解包297 多目标赋值语句301 增强赋值语句302 变量命名规则305 Python的废弃协议306 表达式语句308 表达式语句和在原处的修改309 打印操作310 Python 3.0的print函数311 Python 2.6 print语句313 打印流重定向315 版本独立的打印318 为什么要注意print和stdout319 本章小结320 本章习题321 习题解答321</span><br><span class="line"></span><br><span class="line"> 第12章 if测试和语法规则322 if语句322 通用格式322 基本例子323 多路分支323 Python语法规则325 代码块分隔符326 语句的分隔符328 一些特殊情况329 真值测试330 if&#x2F;else三元表达式332 为什么要在意布尔值334 本章小结335 本章习题335 习题解答335</span><br><span class="line"></span><br><span class="line"> 第13章 while和for循环336 while循环336 一般格式336 例子337 break、continue、pass和循环else338 一般循环格式338 pass338 continue340 break340 循环else341 为什么要在意“模拟C 语言的while循环”342 for循环343 一般格式343 例子344 为什么要在意“文件扫描”349 编写循环的技巧350 循环计数器：while和range351 非完备遍历：range和分片352 修改列表：range353 并行遍历：zip和map354 产生偏移和元素：enumerate357 本章小结358 本章习题358 习题解答359</span><br><span class="line"></span><br><span class="line"> 第14章 迭代器和解析，第一部分360 迭代器：初探360 文件迭代器361 手动迭代：iter和next363 其他内置类型迭代器365 列表解析：初探367 列表解析基础知识368 在文件上使用列表解析369 扩展的列表解析语法370 其他迭代环境371 Python 3.0中的新的可迭代对象375 range迭代器376 map、zip和filter迭代器377 多个迭代器 VS单个迭代器378 字典视图迭代器379 其他迭代器主题381 本章小结381 本章习题381 习题解答382</span><br><span class="line"></span><br><span class="line"> 第15章 文档383 Python文档资源383</span><br><span class="line"></span><br><span class="line"> 注释384</span><br><span class="line"></span><br><span class="line"> dir函数384 文档字符串：doc385 PyDoc：help函数388 PyDoc：HTML报表390 标准手册集393 网络资源394 已出版的书籍394 常见编写代码的陷阱395 本章小结397 本章习题397 习题解答397 第三部分练习题398</span><br><span class="line"></span><br><span class="line"> 第四部分 函数 第16章 函数基础403 为何使用函数404 编写函数405 def语句406 def语句是实时执行的407 第一个例子：定义和调用408 定义408 调用408 Python中的多态409 第二个例子：寻找序列的交集410 定义410 调用411 重访多态411 本地变量412 本章小结413 本章习题413 习题解答413</span><br><span class="line"></span><br><span class="line"> 第17章 作用域415 Python作用域基础415 作用域法则416 变量名解析：LEGB原则418 作用域实例419 内置作用域420 在Python 2.6中违反通用性422 global语句422 最小化全局变量423 最小化文件间的修改424 其他访问全局变量的方法426 作用域和嵌套函数427 嵌套作用域的细节427 嵌套作用域举例427 nonlocal语句433 nonlocal基础433 nonlocal应用435 为什么使用nonlocal437 本章小结440 本章习题441 习题解答442</span><br><span class="line"></span><br><span class="line"> 第18章 参数444 传递参数444 参数和共享引用445 避免可变参数的修改447 对参数输出进行模拟448 特定的参数匹配模型449 基础知识449 匹配语法450 细节452 关键字参数和默认参数的实例452 任意参数的实例455 Python 3.0 Keyword-Only参数459 min调用462 满分463 加分点464 结论465 一个更有用的例子：通用set函数465 模拟Python 3.0 print函数466 使用Keyword-Only参数467 为什么要在意：关键字参数469 本章小结469 本章习题470 习题解答470</span><br><span class="line"></span><br><span class="line"> 第19章 函数的高级话题472 函数设计概念472 递归函数474 用递归求和474 编码替代方案475 循环语句VS递归476 处理任意结构477 函数对象：属性和注解478 间接函数调用478 函数内省479 函数属性480 Python 3.0中的函数注解481 匿名函数： lambda483 lambda表达式483 为什么使用lambda484 如何（不要）让Python代码变得晦涩难懂486 嵌套lambda和作用域487 为什么要在意：回调488 在序列中映射函数：map489 函数式编程工具：filter和reduce490 本章小结492 本章习题492 习题解答492</span><br><span class="line"></span><br><span class="line"> 第20章 迭代和解析，第二部分494 回顾列表解析：函数式编程工具494 列表解析与map495 增加测试和嵌套循环496 列表解析和矩阵498 理解列表解析499 为什么要在意：列表解析和map500 重访迭代器：生成器501 生成器函数：yield VS return502 生成器表达式：迭代器遇到列表解析506 生成器函数 VS 生成器表达式507 生成器是单迭代器对象508 用迭代工具模拟zip和map510 为什么你会留意：单次迭代514 内置类型和类中的值生成515 Python 3.0解析语法概括516 解析集合和字典解析517 针对集合和字典的扩展的解析语法517 对迭代的各种方法进行计时518 对模块计时519 计时脚本519 计时结果520 计时模块替代方案523 其他建议527 函数陷阱528 本地变量是静态检测的528 默认和可变对象529 没有return语句的函数531 嵌套作用域的循环变量532 本章小结532 本章习题532 习题解答533 第四部分练习题533 第五部分 模块</span><br><span class="line"></span><br><span class="line"> 第21章 模块：宏伟蓝图539 为什么使用模块540 Python程序架构540 如何组织一个程序541 导入和属性541 标准库模块543 import如何工作543 1.搜索544 2.编译（可选）544 3.运行545 模块搜索路径545 配置搜索路径547 搜索路径的变动548 sys.path列表548 模块文件选择549 高级的模块选择概念550 第三方工具：distutils550 本章小结551 本章习题551 习题解答551</span><br><span class="line"></span><br><span class="line"> 第22章 模块代码编写基础553 模块的创建553 模块的使用554 import语句554 from语句555 from *语句555 导入只发生一次555 import和from是赋值语句556 文件间变量名的改变557 import和from的对等性557 from语句潜在的陷阱558 模块命名空间560 文件生成命名空间560 属性名的点号运算562 导入和作用域562 命名空间的嵌套563 重载模块564 reload基础565 reload实例566 为什么要在意：模块重载567 本章小结568 本章习题568 习题解答568 第23章 模块包570 包导入基础570 包和搜索路径设置571 init.py包文件572 包导入实例573 包对应的from语句和import语句574 为什么要使用包导入575 三个系统的传说576 包相对导入578 Python 3.0中的变化578 相对导入基础知识579 为什么使用相对导入581 相对导入的作用域583 模块查找规则总结583 相对导入的应用584 为什么要在意：模块包589 本章小结590 本章习题590 习题解答590</span><br><span class="line"></span><br><span class="line"> 第24章 高级模块话题592 在模块中隐藏数据592 最小化from 的破坏：_X和all593 启用以后的语言特性593 混合用法模式：name和main594 以name进行单元测试595 使用带有name的命令行参数596 修改模块搜索路径599 Import语句和from语句的as扩展599 模块是对象：元程序600 用名称字符串导入模块603 过渡性模块重载604 模块设计理念607 模块陷阱607 顶层代码的语句次序的重要性608 from复制变量名，而不是连接609 from 会让变量语义模糊610 reload不会影响from导入610 reload、from以及交互模式测试611 递归形式的from导入无法工作612 本章小结613 本章习题613 习题解答613 第五部分练习题614 第六部分 类和OOP</span><br><span class="line"></span><br><span class="line"> 第25章 OOP：宏伟蓝图619 为何使用类620 概览OOP621 属性继承搜索621 类和实例623 类方法调用624 编写类树624 OOP是为了代码重用627 本章小结629 本章习题629 习题解答630</span><br><span class="line"></span><br><span class="line"> 第26章 类代码编写基础631 类产生多个实例对象631 类对象提供默认行为632 实例对象是具体的元素632 第一个例子632 类通过继承进行定制635 第二个例子635 类是模块内的属性637 类可以截获Python运算符638 第三个例子639 为什么要使用运算符重载641 世界上最简单的Python类641 类与字典的关系644 本章小结646 本章习题646 习题解答646</span><br><span class="line"></span><br><span class="line"> 第27章 更多实例649 步骤1：创建实例650 编写构造函数650 在进行中测试651 以两种方式使用代码652 版本差异提示654 步骤2：添加行为方法654 编写方法656 步骤3：运算符重载658 提供打印显示658 步骤4：通过子类定制行为659 编写子类660 扩展方法：不好的方式660 扩展方法：好的方式661 多态的作用663 继承、定制和扩展664 OOP：大思路664 步骤5：定制构造函数665 OOP比我们认为的要简单666 组合类的其他方式667 在Python 3.0中捕获内置属性669 步骤6：使用内省工具670 特殊类属性670 一种通用显示工具671 实例与类属性的关系672 工具类的命名考虑673 类的最终形式674 步骤7（最后一步）：把对象存储到数据库中676 Pickle和Shelve676 在shelve数据库中存储对象677 交互地探索shelve678 更新shelve中的对象680 未来方向681 本章小结683 本章习题684 习题解答684</span><br><span class="line"></span><br><span class="line"> 第28章 类代码编写细节686 class语句686 一般形式686 例子687 方法689 例子690 调用超类构造函数691 其他方法调用的可能性691 继承692 属性树的构造692 继承方法的专有化693 类接口技术694 抽象超类695 Python 2.6和Python 3.0的抽象超类696 命名空间：完整的内容698 简单变量名：如果赋值就不是全局变量698 属性名称：对象命名空间698 Python命名空间的“禅”：赋值将变量名分类699 命名空间字典701 命名空间链接704 回顾文档字符串706 类与模块的关系707 本章小结708 本章习题708 习题解答708</span><br><span class="line"></span><br><span class="line"> 第29章 运算符重载710 基础知识710 构造函数和表达式：init和sub711 常见的运算符重载方法711 索引和分片：getitem和setitem713 拦截分片713 Python 2.6中的分片和索引715 索引迭代：getitem716 迭代器对象：iter和next717 用户定义的迭代器717 有多个迭代器的对象719 成员关系：contains、iter和getitem721 属性引用：getattr和setattr723 其他属性管理工具725 模拟实例属性的私有性：第一部分725 repr和str会返回字符串表达形式726 右侧加法和原处加法：radd和iadd729 原处加法730 Call表达式：call731 函数接口和回调代码732 比较：lt、gt和其他方法734 Python 2.6的cmp方法（已经从Python 3.0中移除了）734 布尔测试：bool和len735 Python 2.6中的布尔736 对象析构函数：del738 本章小结739 本章习题739 习题解答739</span><br><span class="line"></span><br><span class="line"> 第30章 类的设计741 Python和OOP741 通过调用标记进行重载（或不要）742 OOP和继承：“是一个”关系743 OOP和组合：“有一个”关系744 重访流处理器746 为什么要在意：类和持续性748 OOP和委托：“包装”对象749 类的伪私有属性751 变量名压缩概览751 为什么使用伪私有属性752 方法是对象：绑定或无绑定754 在Python 3.0中，无绑定方法是函数756 绑定方法和其他可调用对象757 为什么要在意：绑定方法和回调函数760 多重继承：“混合”类760 编写混合显示类761 类是对象：通用对象的工厂771 为什么有工厂772 与设计相关的其他话题773 本章小结773 本章习题774 习题解答774</span><br><span class="line"></span><br><span class="line"> 第31章 类的高级主题775 扩展内置类型775 通过嵌入扩展类型776 通过子类扩展类型777 新式类779 新式类变化780 类型模式变化781 钻石继承变动785 新式类的扩展789 slots实例789 类特性793 getattribute和描述符795 元类795 静态方法和类方法796 为什么使用特殊方法796 Python 2.6和Python 3.0中的静态方法797 静态方法替代方案799 使用静态和类方法800 使用静态方法统计实例801 用类方法统计实例802 装饰器和元类：第一部分805 函数装饰器基础805 装饰器例子806 类装饰器和元类807 更多详细信息808 类陷阱809 修改类属性的副作用809 修改可变的类属性也可能产生副作用810 多重继承：顺序很重要811 类、方法以及嵌套作用域812 Python中基于委托的类：getattr和内置函数814 “过度包装”814 本章小结815 本章习题815 习题解答815</span><br><span class="line"></span><br><span class="line"> 第六部分 练习题816 为什么要在意：大师眼中的OOP821 第七部分 异常和工具 第32章 异常基础825 为什么使用异常826 异常的角色826 异常处理：简明扼要827 默认异常处理器827 捕获异常828 引发异常829 用户定义的异常830 终止行为830 为什么要在意：错误检查832 本章小结833 本章习题833 习题解答834</span><br><span class="line"></span><br><span class="line"> 第33章 异常编码细节835 try&#x2F;except&#x2F;else语句835 try语句分句836 try&#x2F;else分句839 例子：默认行为840 例子：捕捉内置异常841 try&#x2F;finally语句841 例子：利用try&#x2F;finally编写终止行为842 统一try&#x2F;except&#x2F;finally语句843 统一try语句语法845 通过嵌套合并finally和except845 合并try的例子846 raise语句847 利用raise传递异常849 Python 3.0异常链：raise from849 assert语句850 例子：收集约束条件（但不是错误）850 with&#x2F;as环境管理器851 基本使用852 环境管理协议853 本章小结855 本章习题855 习题解答856</span><br><span class="line"></span><br><span class="line"> 第34章 异常对象857 异常：回到未来858 字符串异常很简单858 基于类的异常858 类异常例子859 为什么使用类异常861 内置Exception类864 内置异常分类865 默认打印和状态866 定制打印显示867 定制数据和行为868 提供异常细节868 提供异常方法869 本章小结870 本章习题870 习题解答870</span><br><span class="line"></span><br><span class="line"> 第35章 异常的设计872 嵌套异常处理器872 例子：控制流程嵌套873 例子：语法嵌套化874 异常的习惯用法876 异常不总是错误876 函数信号条件和raise876 关闭文件和服务器连接877 在try外进行调试878 运行进程中的测试879 关于sys.exc_info879 与异常有关的技巧880 应该包装什么881 捕捉太多：避免空except语句881 捕捉过少：使用基于类的分类883 核心语言总结884 Python工具集884 大型项目的开发工具885 本章小结888 第七部分练习题889 第八部分 高级话题注1</span><br><span class="line"></span><br><span class="line"> 第36章 Unicode和字节字符串893 Python 3.0中的字符串修改894 字符串基础知识895 字符编码方法895 Python的字符串类型897 文本和二进制文件899 Python 3.0中的字符串应用900 常量和基本属性900 转换901 编码Unicode字符串903 编码ASCII文本903 编码非ASCII文本904 编码和解码非ASCII文本904 其他Unicode编码技术905 转换编码907 在Python 2.6中编码Unicode字符串908 源文件字符集编码声明910 使用Python 3.0 Bytes对象911 方法调用912 序列操作913 创建bytes对象的其他方式913 混合字符串类型914 使用Python 3.0（和Python 2.6）bytearray对象915 使用文本文件和二进制文件918 文本文件基础919 Python 3.0中的文本和二进制模式919 类型和内容错误匹配921 使用Unicode文件922 在Python 3.0中读取和写入Unicode922 在Python 3.0中处理BOM924 Python 2.6中的Unicode文件927 Python 3.0中其他字符串工具的变化927 re模式匹配模块927 Struct二进制数据模块928 pickle对象序列化模块931 XML解析工具932 本章小结935 本章习题935 习题解答936</span><br><span class="line"></span><br><span class="line"> 第37章 管理属性938 为什么管理属性938 插入在属性访问时运行的代码939 特性940 基础知识940 第一个例子941 计算的属性942 使用装饰器编写特性943 描述符944 基础知识945 第一个示例947 计算的属性949 在描述符中使用状态信息950 特性和描述符是如何相关的952 getattr和getattribute953 基础知识954 第一个示例956 计算属性958 getattr和getattribute比较959 管理技术比较960 拦截内置操作属性963 重访基于委托的Manager967 示例：属性验证970 使用特性来验证971 使用描述符验证973 使用getattr来验证974 使用getattribute验证976 本章小结977 本章习题977 习题解答977</span><br><span class="line"></span><br><span class="line"> 第38章 装饰器979 什么是装饰器979 管理调用和实例980 管理函数和类980 使用和定义装饰器981 为什么使用装饰器981 基础知识982 函数装饰器982 类装饰器986 装饰器嵌套988 装饰器参数990 装饰器管理函数和类991 编写函数装饰器991 跟踪调用992 状态信息保持选项993 类错误之一：装饰类方法997 计时调用1002 添加装饰器参数1004 编写类装饰器1007 单体类1007 跟踪对象接口1009 类错误之二：保持多个实例1012 装饰器与管理器函数的关系1013 为什么使用装饰器（重访）1015 直接管理函数和类1016 示例：“私有”和“公有”属性1018 实现私有属性1019 实现细节之一1021 公有声明的泛化1022 实现细节之二1024 开放问题1025 Python不是关于控制1029 示例：验证函数参数1030 目标1030 针对位置参数的一个基本范围测试装饰器1031 针对关键字和默认泛化1033 实现细节1036 开放问题1038 装饰器参数 VS 函数注解1039 其他应用程序：类型测试1041 本章小结1042 本章习题1042 习题解答1043</span><br><span class="line"></span><br><span class="line"> 第39章 元类1046 要么是元类，要么不是元类1046 提高魔力层次1047 “辅助”函数的缺点1049 元类与类装饰器的关系：第一回合1051 元类模型1053 类是类型的实例1053 元类是Type的子类1055 Class语句协议1056 声明元类1057 编写元类1058 基本元类1058 定制构建和初始化1059 其他元类编程技巧1060 实例与继承的关系1063 示例：向类添加方法1064 手动扩展1064 基于元类的扩展1065 元类与类装饰器的关系：第二回合1067 示例：对方法应用装饰器1070 用装饰器手动跟踪1070 用元类和装饰器跟踪1071 把任何装饰器应用于方法1073 元类与类装饰器的关系：第三回合1074 “可选的”语言功能1076 本章小结1078 本章习题1078 习题解答1078 第九部分 附录注2 附录A 安装和配置1083 附录B 各部分练习题的解答 1093</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B004TUJ7A6/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B004TUJ7A6&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51qFpYVexpL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00566HJVQ/" rel="prev" title="0day安全 软件漏洞分析技术(第2版)">
+      <i class="fa fa-chevron-left"></i> 0day安全 软件漏洞分析技术(第2版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B004S76ZOG/" rel="next" title="Python灰帽子 黑客与逆向工程师的Python编程之道">
+      Python灰帽子 黑客与逆向工程师的Python编程之道 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

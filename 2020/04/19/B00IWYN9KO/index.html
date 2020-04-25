@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Mahout实战作者信息： 作者: Sean Owen　Robin Anil　Ted Dunning　Ellen Friedman [ 英文 pdf ] 简单介绍Apache基金会官方推荐Mahout核心团队权威力作大数据时代机器学习的实战经典 目录1234567891011121314151617181920212223242526272829303132333435363738">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mahout实战">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00IWYN9KO/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Mahout实战作者信息： 作者: Sean Owen　Robin Anil　Ted Dunning　Ellen Friedman [ 英文 pdf ] 简单介绍Apache基金会官方推荐Mahout核心团队权威力作大数据时代机器学习的实战经典 目录1234567891011121314151617181920212223242526272829303132333435363738">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51sUA9JGl0L._SL500_AA300_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.049Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="互联网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51sUA9JGl0L._SL500_AA300_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00IWYN9KO/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Mahout实战 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00IWYN9KO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mahout实战
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Mahout实战<br>作者信息： 作者: Sean Owen　Robin Anil　Ted Dunning　Ellen Friedman [ 英文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>Apache基金会官方推荐Mahout核心团队权威力作大数据时代机器学习的实战经典</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">目　录 </span><br><span class="line"></span><br><span class="line"> 第1章　初识Mahout　1 1.1　Mahout的故事　1 1.2　Mahout的机器学习主题　2 1.2.1　推荐引擎　2 1.2.2　聚类　3 1.2.3　分类　4 1.3　利用Mahout和Hadoop处理大规模数据　4 1.4　安装Mahout　6 1.4.1　Java和IDE　6 1.4.2　安装Maven　7 1.4.3　安装Mahout　7 1.4.4　安装Hadoop　8 1.5　小结　8</span><br><span class="line"></span><br><span class="line"> 第一部分　推荐</span><br><span class="line"></span><br><span class="line"> 第2章　推荐系统　10 2.1　推荐的定义　10 2.2　运行第一个推荐引擎　11 2.2.1　创建输入　11 2.2.2　创建一个推荐程序　13 2.2.3　分析输出　14 2.3　评估一个推荐程序　14 2.3.1　训练数据与评分　15 2.3.2　运行RecommenderEvaluator　15 2.3.3　评估结果　16 2.4　评估查准率与查全率　17 2.4.1　运行RecommenderIRStats-Evaluator　17 2.4.2　查准率和查全率的问题　19 2.5　评估GroupLens数据集　19 2.5.1　提取推荐程序的输入　19 2.5.2　体验其他推荐程序　20 2.6　小结　20</span><br><span class="line"></span><br><span class="line"> 第3章　推荐数据的表示　21 3.1　偏好数据的表示　21 3.1.1　Preference对象　21 3.1.2　PreferenceArray及其实现　22 3.1.3　改善聚合的性能　23 3.1.4　FastByIDMap和FastIDSet　23 3.2　内存级DataModel　24 3.2.1　GenericDataModel　24 3.2.2　基于文件的数据　25 3.2.3　可刷新组件　25 3.2.4　更新文件　26 3.2.5　基于数据库的数据　26 3.2.6　JDBC和MySQL　27 3.2.7　通过JNDI进行配置　27 3.2.8　利用程序进行配置　28 3.3　无偏好值的处理　29 3.3.1　何时忽略值　29 3.3.2　无偏好值时的内存级表示　30 3.3.3　选择兼容的实现　31 3.4　小结　33</span><br><span class="line"></span><br><span class="line"> 第4章　进行推荐　34 4.1　理解基于用户的推荐　34 4.1.1　推荐何时会出错　34 4.1.2　推荐何时是正确的　35 4.2　探索基于用户的推荐程序　36 4.2.1　算法　36 4.2.2　基于GenericUserBased-Recommender实现算法　36 4.2.3　尝试GroupLens数据集　37 4.2.4　探究用户邻域　38 4.2.5　固定大小的邻域　39 4.2.6　基于阈值的邻域　39 4.3　探索相似性度量　40 4.3.1　基于皮尔逊相关系数的相似度　40 4.3.2　皮尔逊相关系数存在的问题　42 4.3.3　引入权重　42 4.3.4　基于欧氏距离定义相似度　43 4.3.5　采用余弦相似性度量　43 4.3.6　采用斯皮尔曼相关系数基于相对排名定义相似度　44 4.3.7　忽略偏好值基于谷本系数计算相似度　45 4.3.8　基于对数似然比更好地计算相似度　46 4.3.9　推测偏好值　47 4.4　基于物品的推荐　47 4.4.1　算法　48 4.4.2　探究基于物品的推荐程序　49 4.5　Slope-one推荐算法　50 4.5.1　算法　50 4.5.2　Slope-one实践　51 4.5.3　DiffStorage和内存考虑　52 4.5.4　离线计算量的分配　53 4.6　最新以及试验性质的推荐算法　53 4.6.1　基于奇异值分解的推荐算法　53 4.6.2　基于线性插值物品的推荐算法　54 4.6.3　基于聚类的推荐算法　55 4.7　对比其他推荐算法　56 4.7.1　为Mahout引入基于内容的技术　56 4.7.2　深入理解基于内容的推荐算法　57 4.8　对比基于模型的推荐算法　57 4.9　小结　57</span><br><span class="line"></span><br><span class="line"> 第5章　让推荐程序实用化　59 5.1　分析来自约会网站的样本数据　59 5.2　找到一个有效的推荐程序　61 5.2.1　基于用户的推荐程序　61 5.2.2　基于物品的推荐程序　62 5.2.3　slope-one推荐程序　63 5.2.4　评估查准率和查全率　63 5.2.5　评估性能　64 5.3　引入特定域的信息　65 5.3.1　采用一个定制的物品相似性度量　65 5.3.2　基于内容进行推荐　66 5.3.3　利用IDRescorer修改推荐结果　66 5.3.4　在IDRescorer中引入性别　67 5.3.5　封装一个定制的推荐程序　69 5.4　为匿名用户做推荐　71 5.4.1　利用PlusAnonymousUser-DataModel处理临时用户　71 5.4.2　聚合匿名用户　73 5.5　创建一个支持Web访问的推荐程序　73 5.5.1　封装WAR文件　74 5.5.2　测试部署　74 5.6　更新和监控推荐程序　75 5.7　小结　76</span><br><span class="line"></span><br><span class="line"> 第6章　分布式推荐　78 6.1　分析Wikipedia数据集　78 6.1.1　挑战规模　79 6.1.2　分布式计算的优缺点　80 6.2　设计一个基于物品的分布式推荐算法　81 6.2.1　构建共现矩阵　81 6.2.2　计算用户向量　82 6.2.3　生成推荐结果　82 6.2.4　解读结果　83 6.2.5　分布式实现　83 6.3　基于MapReduce实现分布式算法　83 6.3.1　MapReduce简介　84 6.3.2　向MapReduce转换：生成用户向量　84 6.3.3　向MapReduce转换：计算共现关系　85 6.3.4　向MapReduce转换：重新思考矩阵乘　87 6.3.5　向MapReduce转换：通过部分乘积计算矩阵乘　87 6.3.6　向MapReduce转换：形成推荐　90 6.4　在Hadoop上运行MapReduce　91 6.4.1　安装Hadoop　92 6.4.2　在Hadoop上执行推荐　92 6.4.3　配置mapper和reducer　94 6.5　伪分布式推荐程序　94 6.6　深入理解推荐　95 6.6.1　在云上运行程序　95 6.6.2　考虑推荐的非传统用法　97 6.7　小结　97</span><br><span class="line"></span><br><span class="line"> 第二部分　聚类</span><br><span class="line"></span><br><span class="line"> 第7章　聚类介绍　100 7.1　聚类的基本概念　100 7.2　项目相似性度量　102 7.3　Hello World：运行一个简单的聚类示例　103 7.3.1　生成输入数据　103 7.3.2　使用Mahout聚类　104 7.3.3　分析输出结果　107 7.4　探究距离测度　108 7.4.1　欧氏距离测度　108 7.4.2　平方欧氏距离测度　108 7.4.3　曼哈顿距离测度　108 7.4.4　余弦距离测度　109 7.4.5　谷本距离测度　110 7.4.6　加权距离测度　110 7.5　在简单示例上使用各种距离测度　111 7.6　小结　111</span><br><span class="line"></span><br><span class="line"> 第8章　聚类数据的表示　112 8.1　向量可视化　113 8.1.1　将数据转换为向量　113 8.1.2　准备Mahout所用的向量　115 8.2　将文本文档表示为向量　116 8.2.1　使用TF-IDF改进加权　117 8.2.2　通过n-gram搭配词考察单词的依赖性　118 8.3　从文档中生成向量　119 8.4　基于归一化改善向量的质量　123 8.5　小结　124</span><br><span class="line"></span><br><span class="line"> 第9章　Mahout中的聚类算法　125 9.1　k-means聚类　125 9.1.1　关于k-means你需要了解的　126 9.1.2　运行k-means聚类　127 9.1.3　通过canopy聚类寻找最佳k值　134 9.1.4　案例学习：使用k-means对新闻聚类　138 9.2　超越k-means: 聚类技术概览　141 9.2.1　不同类型的聚类问题　141 9.2.2　不同的聚类方法　143 9.3　模糊k-means聚类　145 9.3.1　运行模糊k-means聚类　145 9.3.2　多模糊会过度吗　147 9.3.3　案例学习：用模糊k-means对新闻进行聚类　148 9.4　基于模型的聚类　149 9.4.1　k-means的不足　149 9.4.2　狄利克雷聚类　150 9.4.3　基于模型的聚类示例　151 9.5　用LDA进行话题建模　154 9.5.1　理解LDA　155 9.5.2　对比TF-IDF与LDA　156 9.5.3　LDA参数调优　156 9.5.4　案例学习：寻找新闻文档中的话题　156 9.5.5　话题模型的应用　158 9.6　小结　158</span><br><span class="line"></span><br><span class="line"> 第10章　评估并改善聚类质量　160 10.1　检查聚类输出　160 10.2　分析聚类输出　162 10.2.1　距离测度与特征选择　163 10.2.2　簇间与簇内距离　163 10.2.3　簇的混合与重叠　166 10.3　改善聚类质量　166 10.3.1　改进文档向量生成过程　166 10.3.2　编写自定义距离测度　169 10.4　小结　171</span><br><span class="line"></span><br><span class="line"> 第11章　将聚类用于生产环境　172 11.1　Hadoop下运行聚类算法的快速入门　172 11.1.1　在本地Hadoop集群上运行聚类算法　173 11.1.2　定制Hadoop配置　174 11.2　聚类性能调优　176 11.2.1　在计算密集型操作中避免性能缺陷　176 11.2.2　在I&#x2F;O密集型操作中避免性能缺陷　178 11.3　批聚类及在线聚类　178 11.3.1　案例分析：在线新闻聚类　179 11.3.2　案例分析：对维基百科文章聚类　180 11.4　小结　181</span><br><span class="line"></span><br><span class="line"> 第12章　聚类的实际应用　182 12.1　发现Twitter上的相似用户　182 12.1.1　数据预处理及特征加权　183 12.1.2　避免特征选择中的常见陷阱　184 12.2　为Last.fm上的艺术家推荐标签　187 12.2.1　利用共现信息进行标签推荐　187 12.2.2　构建Last.fm艺术家词典　188 12.2.3　将Last.fm标签转换成以艺术家为特征的向量　190 12.2.4　在Last.fm数据上运行k-means算法　191 12.3　分析Stack Overflow数据集　193 12.3.1　解析Stack Overflow数据集　193 12.3.2　在Stack Overflow中发现聚类问题　193 12.4　小结　194</span><br><span class="line"></span><br><span class="line"> 第三部分　分类</span><br><span class="line"></span><br><span class="line"> 第13章　分类　198 13.1　为什么用Mahout做分类　198 13.2　分类系统基础　199 13.2.1　分类、推荐和聚类的区别　201 13.2.2　分类的应用　201 13.3　分类的工作原理　202 13.3.1　模型　203 13.3.2　训练、测试与生产　203 13.3.3　预测变量与目标变量　204 13.3.4　记录、字段和值　205 13.3.5　预测变量值的4种类型　205 13.3.6　有监督学习与无监督学习　207 13.4　典型分类项目的工作流　207 13.4.1　第一阶段工作流：训练分类模型　208 13.4.2　第二阶段工作流：评估分类模型　212 13.4.3　第三阶段工作流：在生产中使用模型　212 13.5　循序渐进的简单分类示例　213 13.5.1　数据和挑战　213 13.5.2　训练一个模型来寻找颜色填充：初步设想　214 13.5.3　选择一个学习算法来训练模型　215 13.5.4　改进填充颜色分类器的性能　217 13.6　小结　221</span><br><span class="line"></span><br><span class="line"> 第14章　训练分类器　222 14.1　提取特征以构建分类器　222 14.2　原始数据的预处理　224 14.2.1　原始数据的转换　224 14.2.2　一个计算营销的例子　225 14.3　将可分类数据转换为向量　226 14.3.1　用向量表示数据　226 14.3.2　用Mahout API做特征散列　228 14.4　用SGD对20 Newsgroups数据集进行分类　231 14.4.1　开始：数据集预览　231 14.4.2　20 Newsgroups数据特征的解析和词条化　234 14.4.3　20 Newsgroups数据的训练代码　234 14.5　选择训练分类器的算法　238 14.5.1　非并行但仍很强大的算法：SGD和SVM　239 14.5.2　朴素分类器的力量：朴素贝叶斯及补充朴素贝叶斯　239 14.5.3　精密结构的力量：随机森林算法　240 14.6　用朴素贝叶斯对20 Newsgroups数据分类　241 14.6.1　开始：为朴素贝叶斯提取数据　241 14.6.2　训练朴素贝叶斯分类器　242 14.6.3　 测试朴素贝叶斯模型　242 14.7　小结　244</span><br><span class="line"></span><br><span class="line"> 第15章　分类器评估及调优　245 15.1　Mahout中的分类器评估　245 15.1.1　获取即时反馈　246 15.1.2　确定分类“好”的含义　246 15.1.3　认识不同的错误代价　247 15.2　分类器评估API　247 15.2.1　计算AUC　248 15.2.2　计算混淆矩阵和熵矩阵　250 15.2.3　计算平均对数似然　252 15.2.4　模型剖析　253 15.2.5　20 Newsgroups语料上SGD分类器的性能指标计算　254 15.3　分类器性能下降时的处理　257 15.3.1　目标泄漏　258 15.3.2　特征提取崩溃　260 15.4　分类器性能调优　262 15.4.1　问题调整　262 15.4.2　分类器调优　265 15.5　小结　267</span><br><span class="line"></span><br><span class="line"> 第16章　分类器部署　268 16.1　巨型分类系统的部署过程　268 16.1.1　理解问题　269 16.1.2　根据需要优化特征提取过程　269 16.1.3　根据需要优化向量编码　269 16.1.4　部署可扩展的分类器服务　270 16.2　确定规模和速度需求　270 16.2.1　多大才算大　270 16.2.2　在规模和速度之间折中　272 16.3　对大型系统构建训练流水线　273 16.3.1　获取并保留大规模数据　274 16.3.2　非规范化及下采样　275 16.3.3　训练中的陷阱　276 16.3.4　快速读取数据并对其进行编码　278 16.4　集成Mahout分类器　282 16.4.1　提前计划：集成中的关键问题　283 16.4.2　模型序列化　287 16.5　案例：一个基于Thrift的分类服务器　288 16.5.1　运行分类服务器　292 16.5.2　访问分类器服务　294 16.6　小结　296</span><br><span class="line"></span><br><span class="line"> 第17章　案例分析——Shop It To Me　297 17.1　Shop It To Me选择Mahout的原因　297 17.1.1　Shop It To Me公司简介　298 17.1.2　Shop It To Me需要分类系统的原因　298 17.1.3　对Mahout向外扩展　298 17.2　邮件交易系统的一般结构　299 17.3　训练模型　301 17.3.1　定义分类项目的目标　301 17.3.2　按时间划分　303 17.3.3　避免目标泄漏　303 17.3.4　调整学习算法　303 17.3.5　特征向量编码　304 17.4　加速分类过程　306 17.4.1　特征向量的线性组合　307 17.4.2　模型得分的线性扩展　308 17.5　小结　310</span><br><span class="line"></span><br><span class="line"> 附录A　JVM调优　311 附录B　Mahout数学基础　313 附录C　相关资源　318</span><br><span class="line"></span><br><span class="line"> 索引　320</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00IWYN9KO/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00IWYN9KO&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51sUA9JGl0L._SL500_AA300_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" rel="tag"># 互联网</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00KMR129E/" rel="prev" title="UNIX环境高级编程(第3版)(英文版)">
+      <i class="fa fa-chevron-left"></i> UNIX环境高级编程(第3版)(英文版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00IM56I5Q/" rel="next" title="趣学Python编程">
+      趣学Python编程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

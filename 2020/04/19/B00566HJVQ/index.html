@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 0day安全 软件漏洞分析技术(第2版)作者信息： 作者: 浏览全部评论  [ 中文 pdf ] 简单介绍王清主编的《Oday安全：软件漏洞分析技术（第2版）》将系统全面地介绍Windows平台软件缓冲区溢出漏洞的发现、检测、分析和利用等方面的知识。    为了保证这些技术能够被读者轻松理解并掌握，本书在叙述中尽量避免枯燥乏味的大段理论阐述和代码粘贴。书中所有概念和方法都会在紧随其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0day安全 软件漏洞分析技术(第2版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00566HJVQ/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 0day安全 软件漏洞分析技术(第2版)作者信息： 作者: 浏览全部评论  [ 中文 pdf ] 简单介绍王清主编的《Oday安全：软件漏洞分析技术（第2版）》将系统全面地介绍Windows平台软件缓冲区溢出漏洞的发现、检测、分析和利用等方面的知识。    为了保证这些技术能够被读者轻松理解并掌握，本书在叙述中尽量避免枯燥乏味的大段理论阐述和代码粘贴。书中所有概念和方法都会在紧随其">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/514Si0pGjLL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.068Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="信息安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/514Si0pGjLL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00566HJVQ/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>0day安全 软件漏洞分析技术(第2版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00566HJVQ/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          0day安全 软件漏洞分析技术(第2版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 0day安全 软件漏洞分析技术(第2版)<br>作者信息： 作者: 浏览全部评论  [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>王清主编的《Oday安全：软件漏洞分析技术（第2版）》将系统全面地介绍Windows平台软件缓冲区溢出漏洞的发现、检测、分析和利用等方面的知识。    为了保证这些技术能够被读者轻松理解并掌握，本书在叙述中尽量避免枯燥乏味的大段理论阐述和代码粘贴。书中所有概念和方法都会在紧随其后的调试实验中被再次解释，实验和案例是本书的精髓所在。从为了阐述概念而精心自制的漏洞程序调试实验到现实中已经造成很大影响的著名漏洞分析，每一个调试实验都有着不同的技术侧重点，每一个漏洞利用都有自己的独到之处。    我将带领您一步一步地完成调试的每一步，并在这个过程中逐步解释漏洞分析思路。不管您是网络安全从业人员、黑客技术发烧友、网络安全专业的研究生或本科生，如果您能够完成这些分析实验，相信您的软件调试技术、对操作系统底层的理解等计算机能力一定会得到一次质的飞跃，并能够对安全技术有一个比较深入的认识。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br></pre></td><td class="code"><pre><span class="line">目    录</span><br><span class="line">第1篇  漏洞利用原理（初级）</span><br><span class="line">第1章  基础知识 2</span><br><span class="line">1.1  漏洞概述 2</span><br><span class="line">1.1.1  bug与漏洞 2</span><br><span class="line">1.1.2  几个令人困惑的安全问题 2</span><br><span class="line">1.1.3  漏洞挖掘、漏洞分析、漏洞利用 3</span><br><span class="line">1.1.4  漏洞的公布与0 day响应 5</span><br><span class="line">1.2  二进制文件概述 5</span><br><span class="line">1.2.1  PE文件格式 5</span><br><span class="line">1.2.2  虚拟内存 6</span><br><span class="line">1.2.3  PE文件与虚拟内存之间的映射 7</span><br><span class="line">1.3  必备工具 11</span><br><span class="line">1.3.1  OllyDbg简介 11</span><br><span class="line">1.3.2  SoftICE简介 11</span><br><span class="line">1.3.3  WinDbg简介 16</span><br><span class="line">1.3.4  IDA Pro简介 18</span><br><span class="line">1.3.5  二进制编辑器 20</span><br><span class="line">1.3.6  VMware简介 21</span><br><span class="line">1.3.7  Python编程环境 28</span><br><span class="line">1.4  Crack小实验 29</span><br><span class="line">第2章  栈溢出原理与实践 38</span><br><span class="line">2.1  系统栈的工作原理 38</span><br><span class="line">2.1.1  内存的不同用途 38</span><br><span class="line">2.1.2  栈与系统栈 39</span><br><span class="line">2.1.3  函数调用时发生了什么 40</span><br><span class="line">2.1.4  寄存器与函数栈帧 43</span><br><span class="line">2.1.5  函数调用约定与相关指令 44</span><br><span class="line">2.2  修改邻接变量 47</span><br><span class="line">2.2.1  修改邻接变量的原理 47</span><br><span class="line">2.2.2  突破密码验证程序 49</span><br><span class="line">2.3  修改函数返回地址 53</span><br><span class="line">2.3.1  返回地址与程序流程 53</span><br><span class="line">2.3.2  控制程序的执行流程 57</span><br><span class="line">2.4  代码植入 62</span><br><span class="line">2.4.1  代码植入的原理 62</span><br><span class="line">2.4.2  向进程中植入代码 62</span><br><span class="line">第3章  开发shellcode的艺术 71</span><br><span class="line">3.1  shellcode概述 71</span><br><span class="line">3.1.1  shellcode与exploit 71</span><br><span class="line">3.1.2  shellcode需要解决的问题 72</span><br><span class="line">3.2  定位shellcode 73</span><br><span class="line">3.2.1  栈帧移位与jmp esp 73</span><br><span class="line">3.2.2  获取“跳板”的地址 76</span><br><span class="line">3.2.3  使用“跳板”定位的exploit 78</span><br><span class="line">3.3  缓冲区的组织 81</span><br><span class="line">3.3.1  缓冲区的组成 81</span><br><span class="line">3.3.2  抬高栈顶保护shellcode 83</span><br><span class="line">3.3.3  使用其他跳转指令 83</span><br><span class="line">3.3.4  不使用跳转指令 84</span><br><span class="line">3.3.5  函数返回地址移位 85</span><br><span class="line">3.4  开发通用的shellcode 87</span><br><span class="line">3.4.1  定位API的原理 87</span><br><span class="line">3.4.2  shellcode的加载与调试 88</span><br><span class="line">3.4.3  动态定位API地址的shellcode 89</span><br><span class="line">3.5  shellcode编码技术 98</span><br><span class="line">3.5.1  为什么要对shellcode编码 98</span><br><span class="line">3.5.2  会“变形”的shellcode 99</span><br><span class="line">3.6  为shellcode“减肥” 103</span><br><span class="line">3.6.1  shellcode瘦身大法 103</span><br><span class="line">3.6.2  选择恰当的hash算法 105</span><br><span class="line">3.6.3  191个字节的bindshell 107</span><br><span class="line">第4章  用MetaSploit开发Exploit 119</span><br><span class="line">4.1  漏洞测试平台MSF 简介 119</span><br><span class="line">4.2  入侵Windows系统 121</span><br><span class="line">4.2.1  漏洞简介 121</span><br><span class="line">4.2.2  图形界面的漏洞测试 121</span><br><span class="line">4.2.3  console界面的漏洞测试 125</span><br><span class="line">4.3  利用MSF制作shellcode 126</span><br><span class="line">4.4  用MSF扫描“跳板” 128</span><br><span class="line">4.5  Ruby语言简介 129</span><br><span class="line">4.6 “傻瓜式”Exploit开发 134</span><br><span class="line">4.7  用MSF发布POC 140</span><br><span class="line">第5章  堆溢出利用 144</span><br><span class="line">5.1  堆的工作原理 144</span><br><span class="line">5.1.1  Windows堆的历史 144</span><br><span class="line">5.1.2  堆与栈的区别 145</span><br><span class="line">5.1.3  堆的数据结构与管理策略 146</span><br><span class="line">5.2  在堆中漫游 151</span><br><span class="line">5.2.1  堆分配函数之间的调用关系 151</span><br><span class="line">5.2.2  堆的调试方法 152</span><br><span class="line">5.2.3  识别堆表 155</span><br><span class="line">5.2.4  堆块的分配 158</span><br><span class="line">5.2.5  堆块的释放 159</span><br><span class="line">5.2.6  堆块的合并 159</span><br><span class="line">5.2.7  快表的使用 161</span><br><span class="line">5.3  堆溢出利用（上）——DWORD SHOOT 163</span><br><span class="line">5.3.1  链表“拆卸”中的问题 163</span><br><span class="line">5.3.2  在调试中体会“DWORD SHOOT” 165</span><br><span class="line">5.4  堆溢出利用（下）——代码植入 169</span><br><span class="line">5.4.1  DWORD SHOOT的利用方法 169</span><br><span class="line">5.4.2  狙击P.E.B中RtlEnterCritical-Section()的函数指针 170</span><br><span class="line">5.4.3  堆溢出利用的注意事项 175</span><br><span class="line">第6章  形形色色的内存攻击技术 178</span><br><span class="line">6.1  狙击Windows异常处理机制 178</span><br><span class="line">6.1.1  S.E.H概述 178</span><br><span class="line">6.1.2  在栈溢出中利用S.E.H 180</span><br><span class="line">6.1.3　在堆溢出中利用S.E.H 184</span><br><span class="line">6.1.4　深入挖掘Windows异常处理 187</span><br><span class="line">6.1.5　其他异常处理机制的利用思路 192</span><br><span class="line">6.2 “off by one”的利用 196</span><br><span class="line">6.3　攻击C++的虚函数 198</span><br><span class="line">6.4　Heap Spray：堆与栈的协同攻击 201</span><br><span class="line">第7章  手机里的缓冲区溢出 204</span><br><span class="line">7.1  Windows Mobile简介 204</span><br><span class="line">7.1.1  Windows Mobile前世今生 204</span><br><span class="line">7.1.2  Windows Mobile架构概述 205</span><br><span class="line">7.1.3  Windows Mobile的内存管理 209</span><br><span class="line">7.2  ARM简介 212</span><br><span class="line">7.2.1  ARM是什么 212</span><br><span class="line">7.2.2  ARM寄存器结构 212</span><br><span class="line">7.2.3  ARM汇编指令结构 215</span><br><span class="line">7.2.4  ARM指令寻址方式 220</span><br><span class="line">7.2.5  ARM的函数调用与返回 222</span><br><span class="line">7.3  Windows Mobile上的HelloWorld 223</span><br><span class="line">7.4  远程调试工具简介 227</span><br><span class="line">7.4.1  远程信息查看管理套件 227</span><br><span class="line">7.4.2  手机上的调试——Microsoft Visual Studio 231</span><br><span class="line">7.4.3  手机上的调试——IDA 233</span><br><span class="line">7.5  手机上的exploit me 237</span><br><span class="line">第8章  其他类型的软件漏洞 243</span><br><span class="line">8.1　格式化串漏洞 243</span><br><span class="line">8.1.1　printf中的缺陷 243</span><br><span class="line">8.1.2　用printf读取内存数据 244</span><br><span class="line">8.1.3　用printf向内存写数据 245</span><br><span class="line">8.1.4　格式化串漏洞的检测与防范 246</span><br><span class="line">8.2　SQL注入攻击 247</span><br><span class="line">8.2.1　SQL注入原理 247</span><br><span class="line">8.2.2　攻击PHP+MySQL网站 248</span><br><span class="line">8.2.3　攻击ASP+SQL Server网站 250</span><br><span class="line">8.2.4　注入攻击的检测与防范 252</span><br><span class="line">8.3　其他注入方式 253</span><br><span class="line">8.3.1　Cookie注入，绕过马其诺防线 253</span><br><span class="line">8.3.2　XPath注入，XML的阿喀琉斯之踵 254</span><br><span class="line">8.4　XSS攻击 255</span><br><span class="line">8.4.1　脚本能够“跨站”的原因 255</span><br><span class="line">8.4.2　XSS Reflection攻击场景 256</span><br><span class="line">8.4.3　Stored XSS攻击场景 258</span><br><span class="line">8.4.4　攻击案例回顾：XSS蠕虫 258</span><br><span class="line">8.4.5　XSS的检测与防范 259</span><br><span class="line">8.5  路径回溯漏洞 260</span><br><span class="line">8.5.1  路径回溯的基本原理 260</span><br><span class="line">8.5.2  范式化与路径回溯 261</span><br><span class="line">第2篇  漏洞利用原理（高级）</span><br><span class="line">第9章  Windows安全机制概述 264</span><br><span class="line">第10章  栈中的守护天使：GS 267</span><br><span class="line">10.1  GS安全编译选项的保护原理 267</span><br><span class="line">10.2  利用未被保护的内存突破GS 271</span><br><span class="line">10.3  覆盖虚函数突破GS 273</span><br><span class="line">10.4  攻击异常处理突破GS 276</span><br><span class="line">10.5  同时替换栈中和.data中的Cookie突破GS 280</span><br><span class="line">第11章  亡羊补牢：SafeSEH 284</span><br><span class="line">11.1  SafeSEH对异常处理的保护原理 284</span><br><span class="line">11.2  攻击返回地址绕过SafeSEH 288</span><br><span class="line">11.3  利用虚函数绕过SafeSEH 288</span><br><span class="line">11.4  从堆中绕过SafeSEH 288</span><br><span class="line">11.5  利用未启用SafeSEH模块绕过SafeSEH 292</span><br><span class="line">11.6  利用加载模块之外的地址绕过SafeSEH 299</span><br><span class="line">11.7  利用Adobe Flash Player ActiveX控件绕过SafeSEH 305</span><br><span class="line">第12章  数据与程序的分水岭：DEP 313</span><br><span class="line">12.1  DEP机制的保护原理 313</span><br><span class="line">12.2  攻击未启用DEP的程序 316</span><br><span class="line">12.3  利用Ret2Libc挑战DEP 317</span><br><span class="line">12.3.1  Ret2Libc实战之利用ZwSetInformationProcess 318</span><br><span class="line">12.3.2  Ret2Libc实战之利用VirtualProtect 330</span><br><span class="line">12.3.3  Ret2Libc实战之利用VirtualAlloc 339</span><br><span class="line">12.4  利用可执行内存挑战DEP 348</span><br><span class="line">12.5  利用.NET挑战DEP 352</span><br><span class="line">12.6  利用Java applet挑战DEP 359</span><br><span class="line">第13章  在内存中躲猫猫：ASLR 363</span><br><span class="line">13.1  内存随机化保护机制的原理 363</span><br><span class="line">13.2  攻击未启用ASLR的模块 367</span><br><span class="line">13.3  利用部分覆盖进行定位内存地址 372</span><br><span class="line">13.4  利用Heap spray技术定位内存地址 376</span><br><span class="line">13.5  利用Java applet heap spray技术定位内存地址 379</span><br><span class="line">13.6  为.NET控件禁用ASLR 382</span><br><span class="line">第14章  S.E.H终极防护：SEHOP 386</span><br><span class="line">14.1  SEHOP的原理 386</span><br><span class="line">14.2  攻击返回地址 388</span><br><span class="line">14.3  攻击虚函数 388</span><br><span class="line">14.4  利用未启用SEHOP的模块 388</span><br><span class="line">14.5  伪造S.E.H链表 390</span><br><span class="line">第15章  重重保护下的堆 396</span><br><span class="line">15.1  堆保护机制的原理 396</span><br><span class="line">15.2  攻击堆中存储的变量 397</span><br><span class="line">15.3  利用chunk重设大小攻击堆 398</span><br><span class="line">15.4  利用Lookaside表进行堆溢出 407</span><br><span class="line">第3篇  漏洞挖掘技术</span><br><span class="line">第16章  漏洞挖掘技术简介 414</span><br><span class="line">16.1  漏洞挖掘概述 414</span><br><span class="line">16.2  动态测试技术 415</span><br><span class="line">16.2.1  SPIKE简介 415</span><br><span class="line">16.2.2  beSTORM简介 421</span><br><span class="line">16.3　静态代码审计 429</span><br><span class="line">第17章  文件类型漏洞挖掘 与Smart Fuzz 431</span><br><span class="line">17.1  Smart Fuzz概述 431</span><br><span class="line">17.1.1  文件格式Fuzz的基本方法 431</span><br><span class="line">17.1.2  Blind Fuzz和Smart Fuzz 432</span><br><span class="line">17.2  用Peach挖掘文件漏洞 433</span><br><span class="line">17.2.1  Peach介绍及安装 433</span><br><span class="line">17.2.2  XML介绍 434</span><br><span class="line">17.2.3  定义简单的 Peach Pit 436</span><br><span class="line">17.2.4  定义数据之间的依存关系 440</span><br><span class="line">17.2.5  用Peach Fuzz PNG文件 441</span><br><span class="line">17.3  010脚本，复杂文件解析的瑞士军刀 446</span><br><span class="line">17.3.1  010 Editor简介 446</span><br><span class="line">17.3.2  010脚本编写入门 447</span><br><span class="line">17.3.3  010脚本编写提高——PNG文件解析 449</span><br><span class="line">17.3.4  深入解析，深入挖掘——PPT文件解析 452</span><br><span class="line">第18章  FTP的漏洞挖掘 457</span><br><span class="line">18.1  FTP协议简介 457</span><br><span class="line">18.2  漏洞挖掘手记1：DOS 457</span><br><span class="line">18.3  漏洞挖掘手记2：访问权限 466</span><br><span class="line">18.4  漏洞挖掘手记3：缓冲区溢出 468</span><br><span class="line">18.5  漏洞挖掘手记4：Fuzz DIY 472</span><br><span class="line">第19章  E-Mail的漏洞挖掘 477</span><br><span class="line">19.1  挖掘SMTP漏洞 477</span><br><span class="line">19.1.1  SMTP协议简介 477</span><br><span class="line">19.1.2  SMTP漏洞挖掘手记 478</span><br><span class="line">19.2  挖掘POP3漏洞 480</span><br><span class="line">19.2.1  POP3协议简介 480</span><br><span class="line">19.2.2  POP3漏洞挖掘手记 481</span><br><span class="line">19.3  挖掘IMAP4漏洞 489</span><br><span class="line">19.3.1  IMAP4协议简介 489</span><br><span class="line">19.3.2  IMAP4漏洞挖掘手记 490</span><br><span class="line">19.4  其他E-mail漏洞 491</span><br><span class="line">19.4.1  URL中的路径回溯 491</span><br><span class="line">19.4.2  内存中的路径回溯 494</span><br><span class="line">19.4.3  邮件中的XSS 500</span><br><span class="line">第20章  ActiveX控件的漏洞挖掘 502</span><br><span class="line">20.1  ActiveX控件简介 502</span><br><span class="line">20.1.1  浏览器与ActiveX控件的关系 502</span><br><span class="line">20.1.2  控件的属性 503</span><br><span class="line">20.2  手工测试ActiveX控件 504</span><br><span class="line">20.2.1  建立测试模板 504</span><br><span class="line">20.2.2  获取控件的接口信息 505</span><br><span class="line">20.3  用工具测试ActiveX控件：COMRaider 509</span><br><span class="line">20.4  挖掘ActiveX漏洞 516</span><br><span class="line">20.4.1  ActiveX漏洞的分类 516</span><br><span class="line">20.4.2  漏洞挖掘手记1：超星阅读器溢出 517</span><br><span class="line">20.4.3  漏洞挖掘手记2：目录操作权限 521</span><br><span class="line">20.4.4  漏洞挖掘手记3：文件读权限 523</span><br><span class="line">20.4.5  漏洞挖掘手记3：文件删除权限 525</span><br><span class="line">第4篇  操作系统内核安全</span><br><span class="line">第21章  探索ring0 528</span><br><span class="line">21.1  内核基础知识介绍 528</span><br><span class="line">21.1.1  内核概述 528</span><br><span class="line">21.1.2  驱动编写之Hello World 528</span><br><span class="line">21.1.3  派遣例程与IRP结构 533</span><br><span class="line">21.1.4  Ring3打开驱动设备 537</span><br><span class="line">21.1.5  DeviceIoControl函数与IoControlCode 538</span><br><span class="line">21.1.6  Ring3&#x2F;Ring0的四种通信方式 539</span><br><span class="line">21.2  内核调试入门 541</span><br><span class="line">21.2.1  创建内核调试环境 541</span><br><span class="line">21.2.2  蓝屏分析 549</span><br><span class="line">21.3  内核漏洞概述 551</span><br><span class="line">21.3.1  内核漏洞的分类 551</span><br><span class="line">21.3.2  内核漏洞的研究过程 553</span><br><span class="line">21.4  编写安全的驱动程序 555</span><br><span class="line">21.4.1  输入输出检查 555</span><br><span class="line">21.4.2  验证驱动的调用者 556</span><br><span class="line">21.4.3  白名单机制的挑战 556</span><br><span class="line">第22章  内核漏洞利用技术 557</span><br><span class="line">22.1  利用实验之exploitme.sys 557</span><br><span class="line">22.2  内核漏洞利用思路 559</span><br><span class="line">22.3  内核漏洞利用方法 560</span><br><span class="line">22.4  内核漏洞利用实战与编程 565</span><br><span class="line">22.5  Ring0 Shellcode的编写 570</span><br><span class="line">第23章  FUZZ驱动程序 579</span><br><span class="line">23.1  内核FUZZ思路 579</span><br><span class="line">23.2  内核FUZZ工具介绍 581</span><br><span class="line">23.3  内核FUZZ工具DIY 583</span><br><span class="line">23.3.1  Fuzz对象、Fuzz策略、Fuzz项 583</span><br><span class="line">23.3.2  IoControl MITM Fuzz 583</span><br><span class="line">23.3.3  IoControl Driver Fuzz 585</span><br><span class="line">23.3.4  MyIoControl Fuzzer界面 586</span><br><span class="line">23.4  内核漏洞挖掘实战 588</span><br><span class="line">23.4.1  超级巡警ASTDriver.sys本地提权漏洞 588</span><br><span class="line">23.4.2  东方微点mp110013.sys本地提权漏洞 594</span><br><span class="line">23.4.3  瑞星HookCont.sys驱动本地拒绝服务漏洞 601</span><br><span class="line">第24章  内核漏洞案例分析 605</span><br><span class="line">24.1  远程拒绝服务内核漏洞 605</span><br><span class="line">24.2  本地拒绝服务内核漏洞 611</span><br><span class="line">24.3  缓冲区溢出内核漏洞 614</span><br><span class="line">24.4  任意地址写任意数据内核漏洞 619</span><br><span class="line">24.5  任意地址写固定数据内核漏洞 622</span><br><span class="line">第5篇  漏洞分析案例</span><br><span class="line">第25章  漏洞分析技术概述 628</span><br><span class="line">25.1  漏洞分析的方法 628</span><br><span class="line">25.2运动中寻求突破：调试技术 629</span><br><span class="line">25.2.1  断点技巧 630</span><br><span class="line">25.2.2  回溯思路 644</span><br><span class="line">25.3　用“白眉”在PE中漫步 647</span><br><span class="line">25.3.1　指令追踪技术与Paimei 647</span><br><span class="line">25.3.2　Paimei的安装 648</span><br><span class="line">25.3.3　使用PE Stalker 649</span><br><span class="line">25.3.4　迅速定位特定功能对应的代码 652</span><br><span class="line">25.4　补丁比较 654</span><br><span class="line">第26章  RPC入侵：MS06-040 与MS08-067 658</span><br><span class="line">26.1  RPC漏洞 658</span><br><span class="line">26.1.1  RPC漏洞简介 658</span><br><span class="line">26.1.2  RPC编程简介 658</span><br><span class="line">26.2  MS06-040 659</span><br><span class="line">26.2.1  MS06-040简介 659</span><br><span class="line">26.2.2  动态调试 660</span><br><span class="line">26.2.3  静态分析 667</span><br><span class="line">26.2.4  实现远程exploit 670</span><br><span class="line">26.3  Windows XP环境下的MS06-040 exploit 677</span><br><span class="line">26.3.1  静态分析 677</span><br><span class="line">26.3.2  蠕虫样本的exploit方法 682</span><br><span class="line">26.3.3  实践跨平台exploit 684</span><br><span class="line">26.4  MS08-067 690</span><br><span class="line">26.4.1  MS08-067简介 690</span><br><span class="line">26.4.2  认识Legacy Folder 693</span><br><span class="line">26.4.3 “移经”测试 694</span><br><span class="line">26.4.4 “移经”风险 695</span><br><span class="line">26.4.5  POC的构造 696</span><br><span class="line">26.5  魔波、Conficker与蠕虫病毒 703</span><br><span class="line">第27章  MS06-055分析：实战Heap Spray 705</span><br><span class="line">27.1　MS06-055简介 705</span><br><span class="line">27.1.1　矢量标记语言（VML）简介 705</span><br><span class="line">27.1.2　0 day安全响应纪实 706</span><br><span class="line">27.2　漏洞分析 707</span><br><span class="line">27.3  漏洞利用 710</span><br><span class="line">第28章  MS09-032分析：一个“＆”引发的血案 713</span><br><span class="line">28.1  MS09-032简介 713</span><br><span class="line">28.2  漏洞原理及利用分析 713</span><br><span class="line">第29章  Yahoo!Messenger栈 溢出漏洞 719</span><br><span class="line">29.1  漏洞介绍 719</span><br><span class="line">29.2  漏洞分析 719</span><br><span class="line">29.3  漏洞利用 723</span><br><span class="line">第30章  CVE-2009-0927：PDF中的JS 725</span><br><span class="line">30.1  CVE-2009-0927简介 725</span><br><span class="line">30.2  PDF文档格式简介 725</span><br><span class="line">30.3  漏洞原理及利用分析 727</span><br><span class="line">第31章  坝之蚁穴：超长URL溢出漏洞 731</span><br><span class="line">31.1  漏洞简介 731</span><br><span class="line">31.3  漏洞原理及利用分析 731</span><br><span class="line">第32章  暴风影音M3U文件解析漏洞 737</span><br><span class="line">32.1  漏洞简介 737</span><br><span class="line">32.2  M3U文件简介 737</span><br><span class="line">32.3  漏洞原理及利用分析 738</span><br><span class="line">第33章  LNK快捷方式文件漏洞 744</span><br><span class="line">33.1  漏洞简介 744</span><br><span class="line">33.2  漏洞原理及利用分析 744</span><br><span class="line">附录A  已公布的内核程序漏洞列表 750</span><br><span class="line">参考文献 753</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00566HJVQ/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00566HJVQ&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/514Si0pGjLL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" rel="tag"># 信息安全</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B005B99QK0/" rel="prev" title="Python编程(上下)(影印版)(第4版)">
+      <i class="fa fa-chevron-left"></i> Python编程(上下)(影印版)(第4版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B004TUJ7A6/" rel="next" title="Python学习手册(第4版)">
+      Python学习手册(第4版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

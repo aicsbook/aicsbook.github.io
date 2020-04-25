@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C++ GUI Qt 4编程(第2版)作者信息： 作者: 布兰切特 (Jasmin Blanchette) [ 中文 pdf ] 简单介绍《C++ GUI Qt 4编程(第2版)》讲授的大量Qt4编程原理和实践，都可以轻易将其应用于Qt4.4、Qt4.5及后续版本的Qt程序的开发过程中。《C++ GUI Qt 4编程(第2版)》适合对Qt编程感兴趣的程序员及广大计算机编程爱好者阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ GUI Qt 4编程(第2版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00D3CU7MI/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C++ GUI Qt 4编程(第2版)作者信息： 作者: 布兰切特 (Jasmin Blanchette) [ 中文 pdf ] 简单介绍《C++ GUI Qt 4编程(第2版)》讲授的大量Qt4编程原理和实践，都可以轻易将其应用于Qt4.4、Qt4.5及后续版本的Qt程序的开发过程中。《C++ GUI Qt 4编程(第2版)》适合对Qt编程感兴趣的程序员及广大计算机编程爱好者阅读">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51TGJlwPNyL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.692Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51TGJlwPNyL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00D3CU7MI/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C++ GUI Qt 4编程(第2版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00D3CU7MI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++ GUI Qt 4编程(第2版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C++ GUI Qt 4编程(第2版)<br>作者信息： 作者: 布兰切特 (Jasmin Blanchette) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《C++ GUI Qt 4编程(第2版)》讲授的大量Qt4编程原理和实践，都可以轻易将其应用于Qt4.4、Qt4.5及后续版本的Qt程序的开发过程中。《C++ GUI Qt 4编程(第2版)》适合对Qt编程感兴趣的程序员及广大计算机编程爱好者阅读，也可作为相关机构的培训教材。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line">第一部分Qt基础</span><br><span class="line">第1章Qt入门</span><br><span class="line">1.1HelloQt</span><br><span class="line">1.2建立连接</span><br><span class="line">1.3窗口部件的布局</span><br><span class="line">1.4使用参考文档</span><br><span class="line">第2章创建对话框</span><br><span class="line">2.1子类化QDialog</span><br><span class="line">2.2深入介绍信号和槽</span><br><span class="line">2.3快速设计对话框</span><br><span class="line">2.4改变形状的对话框</span><br><span class="line">2.5动态对话框</span><br><span class="line">2.6内置的窗口部件类和对话框类</span><br><span class="line">第3章创建主窗口</span><br><span class="line">3.1子类化QMainWindow</span><br><span class="line">3.2创建菜单和工具栏</span><br><span class="line">3.3设置状态栏</span><br><span class="line">3.4实现File菜单</span><br><span class="line">3.5使用对话框</span><br><span class="line">3.6存储设置</span><br><span class="line">3.7多文档</span><br><span class="line">3.8程序启动画面</span><br><span class="line">第4章实现应用程序的功能</span><br><span class="line">4.1中央窗口部件</span><br><span class="line">4.2子类化QTableWidget</span><br><span class="line">4.3载入和保存</span><br><span class="line">4.4实现Edit菜单</span><br><span class="line">4.5实现其他菜单</span><br><span class="line">4.6子类化QTableWidgetItem</span><br><span class="line">第5章创建自定义窗口部件</span><br><span class="line">5.1自定义Qt窗口部件</span><br><span class="line">5.2子类化QWidget</span><br><span class="line">5.3在Qt设计师中集成自定义窗口部件</span><br><span class="line">5.4双缓冲</span><br><span class="line">第二部分Qt中级</span><br><span class="line">第6章布局管理</span><br><span class="line">6.1在窗体中摆放窗口部件</span><br><span class="line">6.2分组布局</span><br><span class="line">6.3切分窗口</span><br><span class="line">6.4滚动区域</span><br><span class="line">6.5停靠窗口和工具栏</span><br><span class="line">6.6多文档界面</span><br><span class="line">第7章事件处理</span><br><span class="line">7.1重新实现事件处理器</span><br><span class="line">7.2安装事件过滤器</span><br><span class="line">7.3处理密集时的响应保持</span><br><span class="line">第8章二维图形</span><br><span class="line">8.1用QPainter绘图</span><br><span class="line">8.2坐标系统变换</span><br><span class="line">8.3用QImage高质量绘图</span><br><span class="line">8.4基于项的图形视图</span><br><span class="line">8.5打印</span><br><span class="line">第9章拖放</span><br><span class="line">9.1使拖放生效</span><br><span class="line">9.2支持自定义拖动类型</span><br><span class="line">9.3剪贴板处理技术</span><br><span class="line">第10章项视图类</span><br><span class="line">10.1使用项视图的简便类</span><br><span class="line">10.2使用预定义模型</span><br><span class="line">10.3实现自定义模型</span><br><span class="line">10.4实现自定义委托</span><br><span class="line">第11章容器类</span><br><span class="line">11.1连续容器</span><br><span class="line">11.2关联容器</span><br><span class="line">11.3通用算法</span><br><span class="line">11.4字符串、字节数组和变量</span><br><span class="line">第12章输入与输出</span><br><span class="line">12.1读取和写入二进制数据</span><br><span class="line">12.2读取和写入文本</span><br><span class="line">12.3遍历目录</span><br><span class="line">12.4嵌入资源</span><br><span class="line">12.5进程间通信</span><br><span class="line">第13章数据库</span><br><span class="line">13.1连接和查询</span><br><span class="line">13.2查看表</span><br><span class="line">13.3使用窗体编辑记录</span><br><span class="line">13.4在表中显示数据</span><br><span class="line">第14章多线程</span><br><span class="line">14.1创建线程</span><br><span class="line">14.2同步线程</span><br><span class="line">14.3与主线程通信</span><br><span class="line">14.4在次线程中使用Qt的类</span><br><span class="line">第15章网络</span><br><span class="line">15.1写FTP客户端</span><br><span class="line">15.2写HTTP客户端</span><br><span class="line">15.3写TCP客户&#x2F;服务器应用程序</span><br><span class="line">15.4发送和接收UDP数据报</span><br><span class="line">第16章XML</span><br><span class="line">16.1使用QXmlStreamReader读取XML</span><br><span class="line">16.2用DOM读取XML</span><br><span class="line">16.3使用SAX读取XML</span><br><span class="line">16.4写入XML</span><br><span class="line">第17章提供在线帮助</span><br><span class="line">17.1工具提示、状态提示和“What’s This？”帮助</span><br><span class="line">17.2利用Web浏览器提供在线帮助</span><br><span class="line">17.3将QTextBrowser作为简单的帮助引擎</span><br><span class="line">17.4使用QtAssistant提供强大的在线帮助</span><br><span class="line">第三部分Qt高级</span><br><span class="line">第18章国际化</span><br><span class="line">18.1使用Unicode</span><br><span class="line">18.2让应用程序感知翻译</span><br><span class="line">18.3动态切换语言</span><br><span class="line">18.4翻译应用程序</span><br><span class="line">第19章自定义外观</span><br><span class="line">19.1使用Qt样式表</span><br><span class="line">19.2子类化QStyle</span><br><span class="line">第20章三维图形</span><br><span class="line">20.1使用OpenGL绘图</span><br><span class="line">20.2OpenGL和QPainter的结合</span><br><span class="line">20.3使用帧缓存对象生成叠加</span><br><span class="line">第21章创建插件</span><br><span class="line">21.1利用插件扩展Qt</span><br><span class="line">21.2使应用程序感知插件</span><br><span class="line">21.3编写应用程序的插件</span><br><span class="line">第22章应用程序脚本</span><br><span class="line">22.1ECMAScript语言概述</span><br><span class="line">22.2使用脚本扩展Qt应用程序</span><br><span class="line">22.3使用脚本实现GUI扩展</span><br><span class="line">22.4使用脚本自动化处理任务</span><br><span class="line">第23章平台相关特性</span><br><span class="line">23.1连接本地的应用程序编程接口</span><br><span class="line">23.2在Windows上使用ActiveX</span><br><span class="line">23.3处理X11会话管理</span><br><span class="line">第24章嵌入式编程</span><br><span class="line">24.1从Qt&#x2F;EmbeddedLinux开始</span><br><span class="line">24.2自定义Qt&#x2F;EmbeddedLinux</span><br><span class="line">24.3Qt应用程序与Qtopia的集成</span><br><span class="line">24.4使用Qtopia的API</span><br><span class="line">第四部分附录</span><br><span class="line">附录AQt的获取和安装</span><br><span class="line">A.1协议说明</span><br><span class="line">A.2Qt&#x2F;Windows的安装</span><br><span class="line">A.3Qt&#x2F;Mac的安装</span><br><span class="line">A.4Qt&#x2F;X11的安装</span><br><span class="line">附录B编译Qt应用程序</span><br><span class="line">B.1使用qmake</span><br><span class="line">B.2使用第三方编译工具</span><br><span class="line">附录CQtJambi简介</span><br><span class="line">C.1QtJambi入门</span><br><span class="line">C.2在EclipseIDE中使用QtJambi</span><br><span class="line">C.3在QtJambi中集成C＋＋组件</span><br><span class="line">附录D面向Java和C#程序员的C＋＋简介</span><br><span class="line">D.1C＋＋入门</span><br><span class="line">D.2主要语言之间的差异</span><br><span class="line">D.3C＋＋标准库</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00D3CU7MI/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00D3CU7MI&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51TGJlwPNyL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00D678VHS/" rel="prev" title="深入理解C++11 C++11新特性解析与应用">
+      <i class="fa fa-chevron-left"></i> 深入理解C++11 C++11新特性解析与应用
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B009DFCZAQ/" rel="next" title="HTML5秘籍">
+      HTML5秘籍 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

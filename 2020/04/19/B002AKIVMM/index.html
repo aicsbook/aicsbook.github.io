@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Windows内核情景分析：采用开源代码ReactOS(上、下册)作者信息： 作者: 浏览全部评论  [ 中文 pdf ] 简单介绍•市面上唯一一本讲述Windows内核分析的图书。•历时三年，近1500页篇幅，毛德操老师最新力作！《Windows内核情景分析：采用开源代码ReactOS》：历时3年，近1500页篇幅，毛德操老师重磅著作 目录12345678910111213141">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows内核情景分析：采用开源代码ReactOS(上、下册)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B002AKIVMM/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Windows内核情景分析：采用开源代码ReactOS(上、下册)作者信息： 作者: 浏览全部评论  [ 中文 pdf ] 简单介绍•市面上唯一一本讲述Windows内核分析的图书。•历时三年，近1500页篇幅，毛德操老师最新力作！《Windows内核情景分析：采用开源代码ReactOS》：历时3年，近1500页篇幅，毛德操老师重磅著作 目录12345678910111213141">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/5160KtMq3iL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.028Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="windows">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/5160KtMq3iL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B002AKIVMM/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Windows内核情景分析：采用开源代码ReactOS(上、下册) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B002AKIVMM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows内核情景分析：采用开源代码ReactOS(上、下册)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Windows内核情景分析：采用开源代码ReactOS(上、下册)<br>作者信息： 作者: 浏览全部评论  [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>•市面上唯一一本讲述Windows内核分析的图书。•历时三年，近1500页篇幅，毛德操老师最新力作！《Windows内核情景分析：采用开源代码ReactOS》：历时3年，近1500页篇幅，毛德操老师重磅著作</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">上册</span><br><span class="line">第1章  概述 1</span><br><span class="line">1.1  Windows操作系统发展简史 1</span><br><span class="line">1.2  用户空间和系统空间 3</span><br><span class="line">1.3  Windows内核 4</span><br><span class="line">1.4  开源项目ReactOS及其代码 9</span><br><span class="line">1.5  Windows内核函数的命名 10 </span><br><span class="line"></span><br><span class="line"> 第2章 系统调用 12 2.1 内核与系统调用 12 2.2 系统调用的内核入口KiSystemService() 22 2.3 系统调用的函数跳转 29 2.4 系统调用的返回 32 2.5 快速系统调用 35 2.6 从内核中发起系统调用 42</span><br><span class="line"></span><br><span class="line"> 第3章 内存管理 44 3.1 内存区间的动态分配 47 3.1.1 内核对用户空间的管理 48 3.1.2 内核对于物理页面的管理 60 3.1.3 虚存页面的映射 67 3.1.4 Hyperspace的临时映射 78 3.1.5 系统空间的映射 86 3.1.6 系统调用NtAllocateVirtualMemory() 90 3.2 页面异常 97 3.3 页面的换出 107 3.4 共享映射区（Section） 115 3.5 系统空间的缓冲区管理 133</span><br><span class="line"></span><br><span class="line"> 第4章 对象管理 136 4.1 对象与对象目录 136 4.2 对象类型 148 4.3 句柄和句柄表 162 4.4 对象的创建 169 4.5 几个常用的内核函数 179 4.5.1 ObReferenceObjectByHandle() 179 4.5.2 ObReferenceObjectByPointer() 187 4.5.3 ObpLookupEntryDirectory() 188 4.5.4 ObpLookupObjectName() 192 4.5.5 ObOpenObjectByName() 209 4.5.6 ObReferenceObjectByName() 213 4.5.7 ObDereferenceObject() 214 4.6 对象的访问控制 218 4.7 句柄的遗传和继承 218 4.8 系统调用NtDuplicateObject() 223 4.9 系统调用NtClose() 233</span><br><span class="line"></span><br><span class="line"> 第5章 进程与线程 241 5.1 概述 241 5.2 Windows进程的用户空间 253 5.3 系统调用NtCreateProcess() 273 5.4 系统调用NtCreateThread() 284 5.5 Windows的可执行程序映像 300 5.6 Windows的进程创建和映像装入 305 5.7 Windows DLL的装入和连接 329 5.8 Windows的APC机制 358 5.9 Windows线程的调度和切换 381 5.9.1 x86系统结构与线程切换 382 5.9.2 几个重要的数据结构 385 5.9.3 线程的切换 388 5.9.4 线程的调度 395 5.10 线程和进程的优先级 409 5.11 线程本地存储TLS 421 5.12 进程挂靠 434 5.13 Windows的跨进程操作 442 5.14 Windows线程间的相互作用 450</span><br><span class="line"></span><br><span class="line"> 第6章 进程间通信 467 6.1 概述 467 6.2 共享内存区（Section） 469 6.3 线程的等待&#x2F;唤醒机制 470 6.4 信号量（Semaphore） 499 6.5 互斥门（Mutant） 505 6.6 事件（Event） 512 6.7 命名管道（Named Pipe）和信插（Mailslot） 516 6.8 本地过程调用（LPC） 521 6.9 视窗报文（Message） 555</span><br><span class="line"></span><br><span class="line"> 第7章 视窗报文 556 7.1 视窗线程与Win32k扩充系统调用 556 7.2 视窗报文的接收 566 7.3 Win32k的用户空间回调机制 590 7.4 用户空间的外挂函数 602 7.5 视窗报文的发送 615 7.6 键盘输入线程 628 7.7 鼠标器输入线程 642 7.8 默认的报文处理 662</span><br><span class="line"></span><br><span class="line"> 第8章 结构化异常处理 665 8.1 结构化异常处理的程序框架 666 8.2 系统空间的结构化异常处理 683 8.3 用户空间的结构化异常处理 710 8.4 软异常 720</span><br><span class="line"></span><br><span class="line"> 下册 第9章 设备驱动 729 9.1 Windows的设备驱动框架 729 9.2 一个“老式”驱动模块的实例 745 9.3 DPC函数及其执行 769 9.4 内核劳务线程 778 9.5 一组PnP设备驱动模块的实例 783 9.6 中断处理 817 9.7 一个过滤设备驱动模块的示例 828 9.8 设备驱动模块的装载 830 9.9 磁盘的设备驱动堆叠 858 9.9.1 类驱动disk.sys 860 9.10 磁盘的Miniport驱动模块 887 9.11 命名管道与Mailslot 896 9.12 MDL 918 9.13 同步I&#x2F;O与异步I&#x2F;O 932 9.14 IRP请求的完成与返回 946</span><br><span class="line"></span><br><span class="line"> 第10章 网络操作 957 10.1 概述 957 10.2 NDIS及其实现 959 10.3 Windows的网络驱动堆叠 974 10.3.1 NIC驱动 975 10.3.2 LAN驱动模块 997 10.3.3 TCP&#x2F;IP驱动模块 1014 10.3.4 AFD驱动与Winsock 1035 10.4 Socket的无连接通信 1062 10.5 Socket的有连接通信 1089 10.6 Winsock的实现 1093</span><br><span class="line"></span><br><span class="line"> 第11章 文件操作 1099 11.1 Win32 API函数CreateFileW() 1099 11.2 NT路径名 1109 11.3 文件路径名的解析 1119 11.4 FAT32文件系统 1144 11.5 文件系统驱动的装载和初始化 1169 11.6 文件卷的安装 1175 11.7 文件的创建 1199 11.8 缓存管理 1214 11.9 文件的读写 1237 11.10 NTFS文件系统简介 1252</span><br><span class="line"></span><br><span class="line"> 第12章 操作系统的安全性 1278 12.1 概述 1278 12.2 证章 1289 12.3 安全描述块和ACL 1305 12.4 访问权限检查 1322</span><br><span class="line"></span><br><span class="line"> 第13章 注册表 1351 13.1 注册表操作 1351 13.2 注册表的初始化和装载 1369 13.3 库函数RtlQueryRegistryValues() 1376</span><br><span class="line"></span><br><span class="line"> 第14章 系统管理进程与服务进程 1394 14.1 系统管理进程Smss 1394 14.2 Windows子系统的服务进程Csrss 1408 14.3 服务管理进程Services 1424 14.4 服务进程Svchost 1449 跋 1464 参考文献 1466</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B002AKIVMM/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B002AKIVMM&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/5160KtMq3iL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/windows/" rel="tag"># windows</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B002NKMS7I/" rel="prev" title="Python学习手册(第3版)">
+      <i class="fa fa-chevron-left"></i> Python学习手册(第3版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0021L99F8/" rel="next" title="Ruby Programming 向Ruby之父学程序设计(第2版)">
+      Ruby Programming 向Ruby之父学程序设计(第2版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

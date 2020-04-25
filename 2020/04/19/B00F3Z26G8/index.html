@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 大型网站技术架构:核心原理与案例分析作者信息： 作者: 李智慧 [ 中文 pdf ] 简单介绍本书作者是拥有核心技术部门的一线工作经验，直接体验了大型网站构建与发展过程中的种种生与死，蜕与变，见证了一个网站架构从幼稚走向成熟稳定的历程。没有晦涩难懂的术语，没有诘屈聱牙的文句，没有故弄玄虚的观点……明明白白的语句，清清楚楚的文法，干净利落的建议——让读者直接体会网站架构的紧要处，不容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大型网站技术架构:核心原理与案例分析">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00F3Z26G8/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 大型网站技术架构:核心原理与案例分析作者信息： 作者: 李智慧 [ 中文 pdf ] 简单介绍本书作者是拥有核心技术部门的一线工作经验，直接体验了大型网站构建与发展过程中的种种生与死，蜕与变，见证了一个网站架构从幼稚走向成熟稳定的历程。没有晦涩难懂的术语，没有诘屈聱牙的文句，没有故弄玄虚的观点……明明白白的语句，清清楚楚的文法，干净利落的建议——让读者直接体会网站架构的紧要处，不容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41ywlt1rlCL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.009Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41ywlt1rlCL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00F3Z26G8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>大型网站技术架构:核心原理与案例分析 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00F3Z26G8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          大型网站技术架构:核心原理与案例分析
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 大型网站技术架构:核心原理与案例分析<br>作者信息： 作者: 李智慧 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>本书作者是拥有核心技术部门的一线工作经验，直接体验了大型网站构建与发展过程中的种种生与死，蜕与变，见证了一个网站架构从幼稚走向成熟稳定的历程。<br>没有晦涩难懂的术语，没有诘屈聱牙的文句，没有故弄玄虚的观点……<br>明明白白的语句，清清楚楚的文法，干净利落的建议——让读者直接体会网站架构的紧要处，不容马虎的关键点——这恰好是一个优秀的网站架构所必备的要素。<br>如果说“水不在深，有龙则灵”，那么对于想了解网站架构的读者而言，这本书恰好是“书不在多，有它则行！”<br>还犹豫什么呢？</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br></pre></td><td class="code"><pre><span class="line">第1篇概述</span><br><span class="line">1大型网站架构演化2</span><br><span class="line">1.1大型网站软件系统的特点3</span><br><span class="line">1.2大型网站架构演化发展历程4</span><br><span class="line">1.2.1初始阶段的网站架构4</span><br><span class="line">1.2.2应用服务和数据服务分离4</span><br><span class="line">1.2.3使用缓存改善网站性能5</span><br><span class="line">1.2.4使用应用服务器集群改善网站的并发处理能力6</span><br><span class="line">1.2.5数据库读写分离7</span><br><span class="line">1.2.6使用反向代理和CDN加速网站响应8</span><br><span class="line">1.2.7使用分布式文件系统和分布式数据库系统9</span><br><span class="line">1.2.8使用NoSQL和搜索引擎10</span><br><span class="line">1.2.9业务拆分11</span><br><span class="line">1.2.10分布式服务11</span><br><span class="line">1.3大型网站架构演化的价值观13</span><br><span class="line">1.3.1大型网站架构技术的核心价值是随网站所需灵活应对13</span><br><span class="line">1.3.2驱动大型网站技术发展的主要力量是网站的业务发展13</span><br><span class="line">1.4网站架构设计误区14</span><br><span class="line">1.4.1一味追随大公司的解决方案14</span><br><span class="line">1.4.2为了技术而技术14</span><br><span class="line">1.4.3企图用技术解决所有问题14</span><br><span class="line">1.5小结15</span><br><span class="line">2大型网站架构模式16</span><br><span class="line">2.1网站架构模式16</span><br><span class="line">2.1.1分层17</span><br><span class="line">2.1.2分割18</span><br><span class="line">2.1.3分布式18</span><br><span class="line">2.1.4集群19</span><br><span class="line">2.1.5缓存20</span><br><span class="line">2.1.6异步20</span><br><span class="line">2.1.7冗余21</span><br><span class="line">2.1.8自动化22</span><br><span class="line">2.1.9安全23</span><br><span class="line">2.2架构模式在新浪微博的应用23</span><br><span class="line">2.3小结25</span><br><span class="line">3大型网站核心架构要素26</span><br><span class="line">3.1性能27</span><br><span class="line">3.2可用性28</span><br><span class="line">3.3伸缩性29</span><br><span class="line">3.4扩展性30</span><br><span class="line">3.5安全性30</span><br><span class="line">3.6小结31</span><br><span class="line">第2篇架构</span><br><span class="line">4瞬时响应：网站的高性能架构34</span><br><span class="line">4.1网站性能测试35</span><br><span class="line">4.1.1不同视角下的网站性能35</span><br><span class="line">4.1.2性能测试指标36</span><br><span class="line">4.1.3性能测试方法39</span><br><span class="line">4.1.4性能测试报告41</span><br><span class="line">4.1.5性能优化策略41</span><br><span class="line">4.2Web前端性能优化42</span><br><span class="line">4.2.1浏览器访问优化42</span><br><span class="line">4.2.2CDN加速43</span><br><span class="line">4.2.3反向代理44</span><br><span class="line">4.3应用服务器性能优化45</span><br><span class="line">4.3.1分布式缓存45</span><br><span class="line">4.3.2异步操作52</span><br><span class="line">4.3.3使用集群53</span><br><span class="line">4.3.4代码优化54</span><br><span class="line">4.4存储性能优化58</span><br><span class="line">4.4.1机械硬盘vs.固态硬盘58</span><br><span class="line">4.4.2B+树vs.LSM树59</span><br><span class="line">4.4.3RAIDvs.HDFS61</span><br><span class="line">4.5小结64</span><br><span class="line">5万无一失：网站的高可用架构66</span><br><span class="line">5.1网站可用性的度量与考核67</span><br><span class="line">5.1.1网站可用性度量67</span><br><span class="line">5.1.2网站可用性考核67</span><br><span class="line">5.2高可用的网站架构69</span><br><span class="line">5.3高可用的应用71</span><br><span class="line">5.3.1通过负载均衡进行无状态服务的失效转移72</span><br><span class="line">5.3.2应用服务器集群的Session管理73</span><br><span class="line">5.4高可用的服务76</span><br><span class="line">5.5高可用的数据78</span><br><span class="line">5.5.1CAP原理79</span><br><span class="line">5.5.2数据备份82</span><br><span class="line">5.5.3失效转移84</span><br><span class="line">5.6高可用网站的软件质量保证85</span><br><span class="line">5.6.1网站发布85</span><br><span class="line">5.6.2自动化测试86</span><br><span class="line">5.6.3预发布验证87</span><br><span class="line">5.6.4代码控制88</span><br><span class="line">5.6.5自动化发布90</span><br><span class="line">5.6.6灰度发布91</span><br><span class="line">5.7网站运行监控91</span><br><span class="line">5.7.1监控数据采集92</span><br><span class="line">5.7.2监控管理93</span><br><span class="line">5.8小结94</span><br><span class="line">6永无止境：网站的伸缩性架构95</span><br><span class="line">6.1网站架构的伸缩性设计97</span><br><span class="line">6.1.1不同功能进行物理分离实现伸缩97</span><br><span class="line">6.1.2单一功能通过集群规模实现伸缩98</span><br><span class="line">6.2应用服务器集群的伸缩性设计99</span><br><span class="line">6.2.1HTTP重定向负载均衡100</span><br><span class="line">6.2.2DNS域名解析负载均衡101</span><br><span class="line">6.2.3反向代理负载均衡102</span><br><span class="line">6.2.4IP负载均衡103</span><br><span class="line">6.2.5数据链路层负载均衡104</span><br><span class="line">6.2.6负载均衡算法105</span><br><span class="line">6.3分布式缓存集群的伸缩性设计106</span><br><span class="line">6.3.1Memcached分布式缓存集群的访问模型107</span><br><span class="line">6.3.2Memcached分布式缓存集群的伸缩性挑战107</span><br><span class="line">6.3.3分布式缓存的一致性Hash算法109</span><br><span class="line">6.4数据存储服务器集群的伸缩性设计112</span><br><span class="line">6.4.1关系数据库集群的伸缩性设计113</span><br><span class="line">6.4.2NoSQL数据库的伸缩性设计117</span><br><span class="line">6.5小结119</span><br><span class="line">7随需应变：网站的可扩展架构121</span><br><span class="line">7.1构建可扩展的网站架构122</span><br><span class="line">7.2利用分布式消息队列降低系统耦合性123</span><br><span class="line">7.2.1事件驱动架构123</span><br><span class="line">7.2.2分布式消息队列124</span><br><span class="line">7.3利用分布式服务打造可复用的业务平台126</span><br><span class="line">7.3.1WebService与企业级分布式服务128</span><br><span class="line">7.3.2大型网站分布式服务的需求与特点129</span><br><span class="line">7.3.3分布式服务框架设计130</span><br><span class="line">7.4可扩展的数据结构131</span><br><span class="line">7.5利用开放平台建设网站生态圈132</span><br><span class="line">7.6小结134</span><br><span class="line">8固若金汤：网站的安全架构135</span><br><span class="line">8.1道高一尺魔高一丈的网站应用攻击与防御136</span><br><span class="line">8.1.1XSS攻击136</span><br><span class="line">8.1.2注入攻击138</span><br><span class="line">8.1.3CSRF攻击139</span><br><span class="line">8.1.4其他攻击和漏洞140</span><br><span class="line">8.1.5Web应用防火墙141</span><br><span class="line">8.1.6网站安全漏洞扫描142</span><br><span class="line">8.2信息加密技术及密钥安全管理142</span><br><span class="line">8.2.1单向散列加密143</span><br><span class="line">8.2.2对称加密144</span><br><span class="line">8.2.3非对称加密144</span><br><span class="line">8.2.4密钥安全管理145</span><br><span class="line">8.3信息过滤与反垃圾146</span><br><span class="line">8.3.1文本匹配147</span><br><span class="line">8.3.2分类算法148</span><br><span class="line">8.3.3黑名单149</span><br><span class="line">8.4电子商务风险控制150</span><br><span class="line">8.4.1风险151</span><br><span class="line">8.4.2风控151</span><br><span class="line">8.5小结153</span><br><span class="line">第3篇案例</span><br><span class="line">9淘宝网的架构演化案例分析156</span><br><span class="line">9.1淘宝网的业务发展历程157</span><br><span class="line">9.2淘宝网技术架构演化158</span><br><span class="line">9.3小结162</span><br><span class="line">10维基百科的高性能架构设计分析163</span><br><span class="line">10.1Wikipedia网站整体架构163</span><br><span class="line">10.2Wikipedia性能优化策略165</span><br><span class="line">10.2.1Wikipedia前端性能优化165</span><br><span class="line">10.2.2Wikipedia服务端性能优化166</span><br><span class="line">10.2.3Wikipedia后端性能优化167</span><br><span class="line">11海量分布式存储系统Doris的高可用架构设计分析169</span><br><span class="line">11.1分布式存储系统的高可用架构170</span><br><span class="line">11.2不同故障情况下的高可用解决方案171</span><br><span class="line">11.2.1分布式存储系统的故障分类172</span><br><span class="line">11.2.2正常情况下系统访问结构172</span><br><span class="line">11.2.3瞬时故障的高可用解决方案173</span><br><span class="line">11.2.4临时故障的高可用解决方案174</span><br><span class="line">11.2.5永久故障的高可用解决方案175</span><br><span class="line">12网购秒杀系统架构设计案例分析176</span><br><span class="line">12.1秒杀活动的技术挑战177</span><br><span class="line">12.2秒杀系统的应对策略177</span><br><span class="line">12.3秒杀系统架构设计178</span><br><span class="line">12.4小结182</span><br><span class="line">13大型网站典型故障案例分析183</span><br><span class="line">13.1写日志也会引发故障184</span><br><span class="line">13.2高并发访问数据库引发的故障184</span><br><span class="line">13.3高并发情况下锁引发的故障185</span><br><span class="line">13.4缓存引发的故障185</span><br><span class="line">13.5应用启动不同步引发的故障186</span><br><span class="line">13.6大文件读写独占磁盘引发的故障186</span><br><span class="line">13.7滥用生产环境引发的故障187</span><br><span class="line">13.8不规范的流程引发的故障187</span><br><span class="line">13.9不好的编程习惯引发的故障188</span><br><span class="line">13.10小结188</span><br><span class="line">第4篇架构师</span><br><span class="line">14架构师领导艺术190</span><br><span class="line">14.1关注人而不是产品191</span><br><span class="line">14.2发掘人的优秀191</span><br><span class="line">14.3共享美好蓝图192</span><br><span class="line">14.4共同参与架构193</span><br><span class="line">14.5学会妥协194</span><br><span class="line">14.6成就他人194</span><br><span class="line">15网站架构师职场攻略196</span><br><span class="line">15.1发现问题，寻找突破197</span><br><span class="line">15.2提出问题，寻求支持199</span><br><span class="line">15.3解决问题，达成绩效201</span><br><span class="line">16漫话网站架构师203</span><br><span class="line">16.1按作用划分架构师203</span><br><span class="line">16.2按效果划分架构师204</span><br><span class="line">16.3按职责角色划分架构师205</span><br><span class="line">16.4按关注层次划分架构师205</span><br><span class="line">16.5按口碑划分架构师206</span><br><span class="line">16.6非主流方式划分架构师207</span><br><span class="line">附录A大型网站架构技术一览208</span><br><span class="line">附录BWeb开发技术发展历程215</span><br><span class="line">后记218</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00F3Z26G8/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00F3Z26G8&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41ywlt1rlCL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web/" rel="tag"># web</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00FEMKN7Y/" rel="prev" title="Processing语言权威指南">
+      <i class="fa fa-chevron-left"></i> Processing语言权威指南
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00DSQZBDE/" rel="next" title="世界是数字的">
+      世界是数字的 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

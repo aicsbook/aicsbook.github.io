@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Windows核心编程(第5版)作者信息： 作者: 杰夫瑞 (Jeffrey Richter) [ 中文 pdf ] 简单介绍《Windows核心编程(第5版)》是一本经典的Windows核心编程指南，从第1版到第5版，引领着数十万程序员走入Windows开发阵营，培养了大批精英。《Windows核心编程(第5版)》针对WindowsXP，WindowsVista和WindowsS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows核心编程(第5版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B001GS7918/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Windows核心编程(第5版)作者信息： 作者: 杰夫瑞 (Jeffrey Richter) [ 中文 pdf ] 简单介绍《Windows核心编程(第5版)》是一本经典的Windows核心编程指南，从第1版到第5版，引领着数十万程序员走入Windows开发阵营，培养了大批精英。《Windows核心编程(第5版)》针对WindowsXP，WindowsVista和WindowsS">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51y1A9kbbBL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.030Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="windows">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51y1A9kbbBL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B001GS7918/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Windows核心编程(第5版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B001GS7918/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows核心编程(第5版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Windows核心编程(第5版)<br>作者信息： 作者: 杰夫瑞 (Jeffrey Richter) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Windows核心编程(第5版)》是一本经典的Windows核心编程指南，从第1版到第5版，引领着数十万程序员走入Windows开发阵营，培养了大批精英。《Windows核心编程(第5版)》针对WindowsXP，WindowsVista和WindowsServer2008全面修订。主题广泛，内容丰富，讲解深入而精辟。透过这本Windows编程经典，我们可以在专家的悉心指导下，洞悉Windows编程精华，深入了解高级编程技巧，编写出高性能的Windows应用程序。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br></pre></td><td class="code"><pre><span class="line">第1部分 必备知识</span><br><span class="line">第1章 错误处理</span><br><span class="line">1.1 定义自己的错误代码</span><br><span class="line">1.2 Error Show示例程序</span><br><span class="line">第2章 字符和字符串处理</span><br><span class="line">2.1 字符编码</span><br><span class="line">2.2 ANSI字符和Unicode字符与字符串数据类型</span><br><span class="line">2.3 Windows中的Unicode函数和ANSI函数</span><br><span class="line">2.4 C运行库中的Unicode函数和ANSI函数</span><br><span class="line">2.5 C运行库中的安全字符串函数</span><br><span class="line">2.5.1 初识新的安全字符串函数</span><br><span class="line">2.5.2 在处理字符串时如何获得更多控制</span><br><span class="line">2.5.3 Windows字符串函数</span><br><span class="line">2.6 为何要用Unicode</span><br><span class="line">2.7 推荐的字符和字符串处理方式</span><br><span class="line">2.8 Unicode与ANSI字符串转换</span><br><span class="line">2.8.1 导出ANSI和Unicode DLL函数</span><br><span class="line">2.8.2 判断文本是ANSI还是Unicode</span><br><span class="line">第3章 内核对象</span><br><span class="line">3.1 何为内核对象</span><br><span class="line">3.1.1 使用计数</span><br><span class="line">3.1.2 内核对象的安全性</span><br><span class="line">3.2 进程内核对象句柄表</span><br><span class="line">3.2.1 创建一个内核对象</span><br><span class="line">3.2.2 关闭内核对象</span><br><span class="line">3.3 跨进程边界共享内核对象</span><br><span class="line">3.3.1 使用对象句柄继承</span><br><span class="line">3.3.2 改变句柄的标志</span><br><span class="line">3.3.3 为对象命名</span><br><span class="line">3.3.4 终端服务命名空间</span><br><span class="line">3.3.5 专有命名空间</span><br><span class="line">3.3.5 复制对象句柄</span><br><span class="line">第Ⅱ部分 工作机制</span><br><span class="line">第4章 进程</span><br><span class="line">4.1 编写第一个Windows应用程序</span><br><span class="line">4.1.1 进程实例句柄</span><br><span class="line">4.1.2 进程前一个实例的句柄</span><br><span class="line">4.1.3 进程的命令行</span><br><span class="line">4.1.4 进程的环境变量</span><br><span class="line">4.1.5 进程的关联性</span><br><span class="line">4.1.6 进程的错误模式</span><br><span class="line">4.1.7 进程当前所在的驱动器和目录</span><br><span class="line">4.1.8 进程的当前目录</span><br><span class="line">4.1.9 系统版本</span><br><span class="line">4.2 Create Process函数</span><br><span class="line">4.2.1 psz Application Name和psz Command Line参数</span><br><span class="line">4.2.2 psa Process，psaThread和bInherit Handles参数</span><br><span class="line">4.2.3 fdw Create参数</span><br><span class="line">4.2.4 pv Environment参数</span><br><span class="line">4.2.5 psz Cur Dir参数</span><br><span class="line">4.2.6 psi StartInfo参数</span><br><span class="line">4.2.7 ppi ProcInfo参数</span><br><span class="line">4.3 终止进程</span><br><span class="line">4.3.1 主线程的入口点函数返回</span><br><span class="line">4.3.2 Exit Process函数</span><br><span class="line">4.3.3 Terminate Process函数</span><br><span class="line">4.3.4 当进程中的所有线程终止时</span><br><span class="line">4.3.5 当进程终止运行时</span><br><span class="line">4.4 子进程</span><br><span class="line">4.5 管理员以标准用户权限运行时</span><br><span class="line">4.5.1 自动提升进程的权限</span><br><span class="line">4.5.2 手动提升进程的权限</span><br><span class="line">4.5.3 何为当前权限上下文</span><br><span class="line">4.5.4 枚举系统中正在运行的进程</span><br><span class="line">4.5.5 Process Information示例程序</span><br><span class="line">第5章 作业</span><br><span class="line">5.1 对作业中的进程施加限制</span><br><span class="line">5.2 将进程放入作业中</span><br><span class="line">5.3 终止作业中的所有线程查询作业统计信息</span><br><span class="line">5.4 作业通知</span><br><span class="line">5.6 Job Lab示例程序</span><br><span class="line">第6章 线程基础</span><br><span class="line">6.1 何时创建线程</span><br><span class="line">6.2 何时不应该创建线程</span><br><span class="line">6.3 编写第一个线程函数</span><br><span class="line">6.4 Create Thread函数</span><br><span class="line">6.4.1 psa参数</span><br><span class="line">6.4.2 cb Stack Size参数</span><br><span class="line">6.4.3 pfn Start Addr和pv Param参数</span><br><span class="line">6.4.4 dw Create Flags</span><br><span class="line">6.4.5 pdw ThreadID7</span><br><span class="line">6.5 终止运行线程</span><br><span class="line">6.5.1 线程函数返回</span><br><span class="line">6.5.2 Exit Thread函数</span><br><span class="line">6.5.3 Terminate Thread函数</span><br><span class="line">6.5.4 进程终止运行时</span><br><span class="line">6.5.5 线程终止运行时</span><br><span class="line">6.6 线程内幕</span><br><span class="line">6.7 C&#x2F;C++运行库注意事项</span><br><span class="line">6.7.1 用_beginthreadex而不要用Create Thread创建线程</span><br><span class="line">6.7.2 绝对不应该调用的C&#x2F;C++运行库函数</span><br><span class="line">6.8 了解自己的身份</span><br><span class="line">6.8.1 将伪句柄转换为真正的句柄</span><br><span class="line">第7章 线程调度、优先级和关联性</span><br><span class="line">7.1 线程的挂起和恢复</span><br><span class="line">7.2 进程的挂起和恢复</span><br><span class="line">7.3 睡眠</span><br><span class="line">7.4 切换到另一个线程</span><br><span class="line">7.5 在超线程CPU上切换到另一个线程</span><br><span class="line">7.6 线程的执行时间</span><br><span class="line">7.7 在实际上下文中谈CONTEXT结构</span><br><span class="line">7.8 线程优先级</span><br><span class="line">7.9 从抽象角度看优先级</span><br><span class="line">7.10 优先级编程</span><br><span class="line">7.10.1 动态提升线程优先级</span><br><span class="line">7.10.2 为前台进程微调调度程序</span><br><span class="line">7.10.3 调度I&#x2F;O请求优先级</span><br><span class="line">7.10.4 Scheduling Lab 示例程序</span><br><span class="line">7.11 关联性</span><br><span class="line">第8章 用户模式下的线程同步</span><br><span class="line">8.1 原子访问：Interlocked系列函数</span><br><span class="line">8.2 高速缓存行</span><br><span class="line">8.3 高级线程同步需要避免使用的一种方法</span><br><span class="line">8.4 关键段</span><br><span class="line">8.4.1 关键段：细节</span><br><span class="line">8.4.2 关键段和旋转锁</span><br><span class="line">8.4.3 关键段和错误处理</span><br><span class="line">8.5 Slim读&#x2F;写锁</span><br><span class="line">8.6 条件变量</span><br><span class="line">8.6.1 Queue示例程序</span><br><span class="line">8.6.2 在停止线程时的死锁问题</span><br><span class="line">8.6.3 一些有用的窍门和技巧</span><br><span class="line">第9章 用内核对象进行线程同步</span><br><span class="line">9.1 等待函数</span><br><span class="line">9.2 等待成功所引起的副作用</span><br><span class="line">9.3 事件内核对象</span><br><span class="line">9.4 可等待的计时器内核对象</span><br><span class="line">9.4.1 让可等待的计时器添加APC调用</span><br><span class="line">9.4.2 计时器的剩余问题</span><br><span class="line">9.5 信号量内核对象</span><br><span class="line">9.6 互斥量内核对象</span><br><span class="line">9.6.1 遗弃问题</span><br><span class="line">9.6.2 互斥量与关键段的比较</span><br><span class="line">9.6.3 Queue示例程序</span><br><span class="line">9.7 线程同步对象速查表</span><br><span class="line">9.8 其他的线程同步函数</span><br><span class="line">9.8.1 异步设备I&#x2F;O</span><br><span class="line">9.8.2 Wait For InputIdle函数</span><br><span class="line">9.8.3 Msg Wait For Multiple Objects（Ex）函数</span><br><span class="line">9.8.4 Wait For Debug Event函数</span><br><span class="line">9.8.5 Signal Object And Wait函数</span><br><span class="line">9.8.6 使用等待链遍历API来检测死锁</span><br><span class="line">第10章 同步设备I&#x2F;O与异步设备I&#x2F;O</span><br><span class="line">10.1 打开和关闭设备细看Create File函数</span><br><span class="line">10.2 使用文件设备</span><br><span class="line">10.2.1 取得文件的大小</span><br><span class="line">10.2.2 设置文件指针的位置</span><br><span class="line">10.2.3 设置文件尾</span><br><span class="line">10.3 执行同步设备I&#x2F;O</span><br><span class="line">10.3.1 将数据刷新至设备</span><br><span class="line">10.3.2 同步I&#x2F;O的取消</span><br><span class="line">10.4 异步设备I&#x2F;O基础</span><br><span class="line">10.4.1 OVERLAPPED结构</span><br><span class="line">10.4.2 异步设备I&#x2F;O的注意事项</span><br><span class="line">10.4.3 取消队列中的设备I&#x2F;O请求</span><br><span class="line">10.5 接收I&#x2F;O请求完成通知</span><br><span class="line">10.5.1 触发设备内核对象</span><br><span class="line">10.5.2 触发事件内核对象</span><br><span class="line">10.5.3 可提醒I&#x2F;O</span><br><span class="line">10.5.4 I&#x2F;O完成端口</span><br><span class="line">10.5.5 模拟已完成的I&#x2F;O请求</span><br><span class="line">第11章 Windows线程池</span><br><span class="line">11.1 情形1：以异步方式调用函数</span><br><span class="line">11.1.1 显式地控制工作项</span><br><span class="line">11.1.2 Batch示例程序</span><br><span class="line">11.2 情形2：每隔一段时间调用一个函数</span><br><span class="line">11.3 情形3：在内核对象触发时调用一个函数</span><br><span class="line">11.4 情形4：在异步I&#x2F;O请求完成时调用一个函数</span><br><span class="line">11.5 回调函数的终止操作</span><br><span class="line">11.5.1 对线程池进行定制</span><br><span class="line">11.5.2 得体地销毁线程池：清理组</span><br><span class="line">第12章 纤程</span><br><span class="line">第Ⅲ部分 内存管理</span><br><span class="line">第13章 Windows内存体系结构</span><br><span class="line">13.1 进程的虚拟地址空间</span><br><span class="line">13.2 虚拟地址空间的分区</span><br><span class="line">13.2.1 空指针赋值分区</span><br><span class="line">13.2.2 用户模式分区</span><br><span class="line">13.3 地址空间中的区域</span><br><span class="line">13.4 给区域调拨物理存储器</span><br><span class="line">13.5 物理存储器和页交换文件</span><br><span class="line">13.6 页面保护属性</span><br><span class="line">13.6.1 写时复制</span><br><span class="line">13.6.2 一些特殊的访问保护属性标志</span><br><span class="line">13.7 实例分析</span><br><span class="line">13.8 数据对齐的重要性</span><br><span class="line">第14章 探索虚拟内存</span><br><span class="line">14.1 系统信息</span><br><span class="line">14.2 虚拟内存状态</span><br><span class="line">14.3 NUMA机器中的内存管理</span><br><span class="line">14.4 确定地址空间的状态</span><br><span class="line">14.4.1 VM Query函数</span><br><span class="line">14.4.2 示例程序：虚拟内存映射</span><br><span class="line">第15章 在应用程序中使用虚拟内存</span><br><span class="line">15.1 预订地址空间区域</span><br><span class="line">15.2 给区域调拨物理存储器</span><br><span class="line">15.3 同时预订和调拨物理存储器</span><br><span class="line">15.4 何时调拨物理存储器</span><br><span class="line">15.5 撤销调拨物理存储器及释放区</span><br><span class="line">15.5.1 何时撤销调拨物理存储器</span><br><span class="line">15.5.2 虚拟内存分配示例程序</span><br><span class="line">15.6 改变保护属性</span><br><span class="line">15.7 重置物理存储器的内容</span><br><span class="line">15.8 地址窗口扩展</span><br><span class="line">第16章 线程栈</span><br><span class="line">16.1 C&#x2F;C++运行库的栈检查函数</span><br><span class="line">16.2 Summation示例程序</span><br><span class="line">第17章 内存映射文件</span><br><span class="line">17.1 映射到内存的可执行文件和DLL</span><br><span class="line">17.1.1 同一个可执行文件或DLL的多个实例不会共享静态数据</span><br><span class="line">17.1.2 在同一个可执行文件或DLL的多个实例间共享静态数据</span><br><span class="line">17.1.3 Application Instances示例程序</span><br><span class="line">17.2 映射到内存的数据文件</span><br><span class="line">17.2.1 方法1：一个文件，一块缓存</span><br><span class="line">17.2.2 方法2：两个文件，一块缓存</span><br><span class="line">17.2.3 方法3：一个文件，两块缓存</span><br><span class="line">17.2.4 方法4：一个文件，零个缓存</span><br><span class="line">17.3 使用内存映射文件</span><br><span class="line">17.3.1 第1步：创建或打开文件内核对象</span><br><span class="line">17.3.2 第2步：创建文件映射内核对象</span><br><span class="line">17.3.3 第3步：将文件的数据映射到进程的地址空间</span><br><span class="line">17.3.4 第4步：从进程的地址空间撤销对文件数据的映射</span><br><span class="line">17.3.5 第5步和第6步：关闭文件映射对象和文件对象</span><br><span class="line">17.6 File Reverse示例程序</span><br><span class="line">17.7 用内存映射文件来处理大文件</span><br><span class="line">17.8 内存映射文件和一致性</span><br><span class="line">17.9 给内存映射文件指定基地址</span><br><span class="line">17.10 内存映射文件的实现细节</span><br><span class="line">第18章 堆</span><br><span class="line">18.1 进程的默认堆</span><br><span class="line">18.2 为什么要创建额外的堆</span><br><span class="line">18.2.1 对组件进行保护</span><br><span class="line">18.2.2 更有效的内存管理</span><br><span class="line">18.2.3 使内存访问局部化</span><br><span class="line">18.2.4 避免线程同步的开销</span><br><span class="line">18.2.5 快速释放</span><br><span class="line">18.3 如何创建额外的堆</span><br><span class="line">18.3.1 从堆中分配内存块</span><br><span class="line">18.3.2 调整内存块的大小</span><br><span class="line">18.3.3 获得内存块的大小</span><br><span class="line">18.3.4 释放内存块</span><br><span class="line">18.3.5 销毁堆</span><br><span class="line">18.3.6 在C++中使用堆</span><br><span class="line">18.4 其他堆函数</span><br><span class="line">第Ⅳ部分 动态链接库</span><br><span class="line">第19章 DLL基础</span><br><span class="line">19.1 DLL和进程的地址空间</span><br><span class="line">19.2 纵观全局</span><br><span class="line">19.2.1 构建DLL模块</span><br><span class="line">19.2.2 构建可执行模块</span><br><span class="line">19.2.3 运行可执行模块</span><br><span class="line">第20章 DLL高级技术</span><br><span class="line">20.1 DLL模块的显式载入和符号链接</span><br><span class="line">20.1.1 显式地载入DLL模块</span><br><span class="line">20.1.2 显式地卸载DLL模块</span><br><span class="line">20.1.3 显式地链接到导出符号</span><br><span class="line">20.2 DLL的入口点函数</span><br><span class="line">20.2.1 DLL_PROCESS_ATTACH通知</span><br><span class="line">20.2.2 DLL_PROCESS_DETACH通知</span><br><span class="line">20.2.3 DLL_THREAD_ATTACH通知</span><br><span class="line">20.2.4 DLL_THREAD_DETACH通知</span><br><span class="line">20.2.5 Dll Main的序列化调用</span><br><span class="line">20.2.6 Dll Main和C&#x2F;C++运行库</span><br><span class="line">20.3 延迟载入DLL</span><br><span class="line">20.4 函数转发器</span><br><span class="line">20.5 已知的DLL</span><br><span class="line">20.6 DLL重定向</span><br><span class="line">20.7 模块的基地址重定位</span><br><span class="line">20.8 模块的绑定</span><br><span class="line">第21章 线程局部存储区</span><br><span class="line">21.1 动态TLS</span><br><span class="line">21.2 静态TLS0</span><br><span class="line">第22章 DLL注入和API拦截</span><br><span class="line">22.1 DLL注入的一个例子</span><br><span class="line">22.2 使用注册表来注入DLL</span><br><span class="line">22.3 使用Windows挂钩来注入DLL</span><br><span class="line">22.4 使用远程线程来注入DLL</span><br><span class="line">22.4.1 Inject Library示例程序</span><br><span class="line">22.4.2 Image Walk DLL</span><br><span class="line">22.5 使用木马DLL来注入DLL</span><br><span class="line">22.6 把DLL作为调试器来注入</span><br><span class="line">22.7 使用Create Process来注入代码</span><br><span class="line">22.8 API拦截的一个例子9</span><br><span class="line">22.8.1 通过覆盖代码来拦截API0</span><br><span class="line">22.8.2 通过修改模块的导入段来拦截API</span><br><span class="line">22.8.3 Last Message Box Info示例程序</span><br><span class="line">第Ⅴ部分 结构化异常处理</span><br><span class="line">第23章 终止处理程序</span><br><span class="line">第24章 异常处理程序与软件异常</span><br><span class="line">24.1 通过实例理解异常过滤程序和异常处理程序</span><br><span class="line">24.1.1 Funcmeister1函数</span><br><span class="line">24.1.2 Funcmeister2函数</span><br><span class="line">24.2 EXCEPTION_EXECUTE_HANDLER1</span><br><span class="line">24.2.1 一些有用的例子</span><br><span class="line">24.2.2 全局展开</span><br><span class="line">24.2.3 停止全局展开</span><br><span class="line">24.3 EXCEPTION_CONTINUE_EXECUTION</span><br><span class="line">24.4 EXCEPTION_CONTINUE_SEARCH0</span><br><span class="line">24.5 GetExceptionCode2</span><br><span class="line">24.6 GetExceptionInformation6</span><br><span class="line">24.7 软件异常</span><br><span class="line">第25章 未处理异常、向量化异常处理与C++异常</span><br><span class="line">25.1 Unhandled Exception Filter函数详解</span><br><span class="line">25.2 即时调试</span><br><span class="line">25.3 电子表格示例程序</span><br><span class="line">25.4 向量化异常和继续处理程序</span><br><span class="line">25.5 C++异常与结构化异常的比较</span><br><span class="line">25.6 异常与调试器</span><br><span class="line">第26章 错误报告与应用程序恢复</span><br><span class="line">26.1 Windows错误报告控制台</span><br><span class="line">26.2 可编程的Windows错误报告</span><br><span class="line">26.3 对进程中所有的问题报告进行定制</span><br><span class="line">26.4 问题报告的创建与定制</span><br><span class="line">26.4.1 创建一个自定义的问题报告</span><br><span class="line">26.4.2 设置报告参数：Wer Report Set Parameter</span><br><span class="line">26.4.3 将小型转储文件放入报告：Wer Report Add Dump 8</span><br><span class="line">26.4.4 将任意文件放入报告：Wer Report AddFile 9</span><br><span class="line">26.4.5 修改对话框文本：Wer Report Set UI Option</span><br><span class="line">26.4.6 提交错误报告：Wer Report Submit</span><br><span class="line">26.4.7 关闭问题报告：Wer Report Close Handle</span><br><span class="line">26.4.8 Customized WER示例程序</span><br><span class="line">26.5 应用程序的自动重启与恢复</span><br><span class="line">26.5.1 应用程序的自动重启</span><br><span class="line">26.5.2 对应用程序恢复的支持</span><br><span class="line">第Ⅵ部分</span><br><span class="line">附录A 构建环境</span><br><span class="line">附录B 消息处理宏、子控件宏和API宏</span><br><span class="line">索引</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B001GS7918/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B001GS7918&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51y1A9kbbBL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/windows/" rel="tag"># windows</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B001MV7CXY/" rel="prev" title="写给大家看的设计书(第3版)">
+      <i class="fa fa-chevron-left"></i> 写给大家看的设计书(第3版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B001D2C91M/" rel="next" title="Python源码剖析 深度探索动态语言核心技术">
+      Python源码剖析 深度探索动态语言核心技术 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

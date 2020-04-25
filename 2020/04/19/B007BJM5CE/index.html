@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C语言学习路线图•C语言必须知道的300个问题作者信息： 作者: 明日科技 [ 中文 pdf ] 简单介绍《C语言学习路线图•C语言必须知道的300个问题》提供了内容丰富的配套资源，找到《C语言学习路线图•C语言必须知道的300个问题》后，在该页面的“网络资源”超链接处下载也可以访问《C语言学习路线图•C语言必须知道的300个问题》的新浪微博，根据提示链接下载。C语言学习路线图，为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言学习路线图•C语言必须知道的300个问题">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B007BJM5CE/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C语言学习路线图•C语言必须知道的300个问题作者信息： 作者: 明日科技 [ 中文 pdf ] 简单介绍《C语言学习路线图•C语言必须知道的300个问题》提供了内容丰富的配套资源，找到《C语言学习路线图•C语言必须知道的300个问题》后，在该页面的“网络资源”超链接处下载也可以访问《C语言学习路线图•C语言必须知道的300个问题》的新浪微博，根据提示链接下载。C语言学习路线图，为">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51WxBeGvCSL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.657Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51WxBeGvCSL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B007BJM5CE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C语言学习路线图•C语言必须知道的300个问题 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B007BJM5CE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C语言学习路线图•C语言必须知道的300个问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C语言学习路线图•C语言必须知道的300个问题<br>作者信息： 作者: 明日科技 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《C语言学习路线图•C语言必须知道的300个问题》提供了内容丰富的配套资源，找到《C语言学习路线图•C语言必须知道的300个问题》后，在该页面的“网络资源”超链接处下载也可以访问《C语言学习路线图•C语言必须知道的300个问题》的新浪微博，根据提示链接下载。C语言学习路线图，为读者朋友提供了从入门到实际项目开发所需要的各方面必备知识，提供了较为完善的学习整体解决方案，搭起了从学校走向社会的桥梁各个品种既有前后关联，也可以独立使用从而避免了像以前那样，学完一本书之后，仍然无所适从，既不会做项目也不知道接下来该学什么，以至于半途而废的困惑。快速服务：微博、QQ在线服务，自学视频：72集大型多媒体自学视频，海量资源：模块库、案例库、素材库、题库。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">第1章 初识c语言</span><br><span class="line">问题1 c语言是如何发展起来的？</span><br><span class="line">问题2 什么是ansi标准？</span><br><span class="line">问题3 c语言编写程序的优点有哪些？</span><br><span class="line">问题4 如何规避c语言的不足之处？</span><br><span class="line">问题5 c语言的应用领域有哪些？</span><br><span class="line">问题6 什么是c99标准？与c89标准相比，c99标准有哪些新特性？</span><br><span class="line">问题7 c语言是c++的子集吗？</span><br><span class="line">问题8 c语言程序的开发过程是怎样的？</span><br><span class="line">问题9 什么是编译程序和解释程序？</span><br><span class="line">问题10 ansi c的编译限制有哪些？ </span><br><span class="line"></span><br><span class="line"> 第2章 一个简单的c程序 问题11 c语言的入口函数是什么？ 问题12 c语言程序由哪些部分组成？ 问题13 如何在turbo c 2.0中输入一个程序？ 问题14 如何在visual c++ 6.0中运行一个c程序？ 问题15 如何在visual c++ 2008中运行一个c程序？ 问题16 如何提高程序的可读性？ 问题17 什么是关键字？c语言的关键字有哪些？ 问题18 什么是标识符？使用标识符的注意事项是什么？ 问题19 void关键字都有哪些用途？ 问题20 什么是匈牙利命名约定？它是否是好的约定？</span><br><span class="line"></span><br><span class="line"> 第3章 算法入门 问题21 为什么说算法是程序设计的灵魂？ 问题22 算法的特性有哪些？ 问题23 如何评价一个算法的好坏？ 问题24 算法的表示方法都有哪些？ 问题25 算法的基本结构是什么？ 问题26 算法有哪几类？ 问题27 算法的效率度量方法有哪些？ 问题28 什么是算法的时间复杂度？ 问题29 什么是算法的空间复杂度？ 问题30 什么是分治法算法思想？</span><br><span class="line"></span><br><span class="line"> 第4章 常用数据类型 问题31 声明变量和定义变量的区别是什么？ 问题32 在开发时如何决定使用哪种数据类型？ 问题33 什么是常量？如何区分常量和变量？ 问题34 各种数据类型所占的内存是多少？ 问题35 字符与字符串的差别有哪些？ 问题36 变量是否必须初始化？ 问题37 为什么会发生数据溢出？如何避免数据溢出？ 问题38 局部变量和全局变量能否重名？ 问题39 全局变量可不可以定义在可被多个.c文件包含的头文件中？为什么？ 问题40 如何引用一个已经定义过的外部变量？ 问题41 全局变量和局部变量的存储方式有什么区别？ 问题42 整型常量的存储形式是怎样的？ 问题43 整型常量的表示形式有哪几种？ 问题44 使用了没定义的变量会有什么现象？ 问题45 static关键字有什么作用？ 问题46 const关键字有什么作用？ 问题47 const与#define相比有何优点？ 问题48 sizeof不是函数吗？ 问题49 float类型数如何与0值比较？ 问题50 静态变量与自动变量的区别有哪些？</span><br><span class="line"></span><br><span class="line"> 第5章 运算符与表达式 问题51 运算符的优先级和结合性是怎样的？ 问题52 如何区分“，”是运算符还是分隔符？ 问题53 c语言如何解释x&#x3D;a+&#x3D;b+c？ 问题54 x&#x3D;x+1，x+&#x3D;1，x++，哪个效率最高？ 问题55 什么是运算符的目？怎样进行区分？ 问题56 使用“++”和“——”运算符需要注意些什么？ 问题57 如何理解i+++j？ 问题58 赋值表达式中什么是左值和右值？数组名作为左右值时又具有怎样的意义？ 问题59 如何确定条件表达式的结果的数据类型？ 问题60 “%”运算符是否可以对小数进行运算？ 问题61 “&#x2F;”运算符得到的结果一定为整数吗？ 问题62 在进行多种数据类型混合运算的时候，数据类型自动转换有哪些规则？ 问题63 c语言中有哪些简化的运算表达式？ 问题64 使用逻辑表达式需要注意哪几点问题？ 问题65 i++*i++这样的表达式为什么不能得到预期的结果？ 问题66 a[i]&#x3D;i++;这样的代码正确吗？ 问题67 编写表达式时需要注意什么？ 问题68 如何理解c&#x3D;a,b;？ 问题69 为无符号类型变量赋值时，数据类型应怎样转换？ 问题70 c语言表达式的求值顺序总是按照运算符的结合性保证“自左至右”或者“自右至左”吗？</span><br><span class="line"></span><br><span class="line"> 第6章 输入&#x2F;输出函数 问题71 函数printf（）的基本格式是什么？ 问题72 如何认识printf（）函数的格式字符？ 问题73 函数printf（）的标志有几种？如何使用？ 问题74 如何控制输出最小宽度？ 问题75 如何控制输出精度？ 问题76 如何控制输出长度？ 问题77 如何动态设置输出宽度和精度？ 问题78 printf（）函数的返回值是什么？ 问题79 如何理解输出列表？ 问题80 函数scanf（）的基本格式是什么？ 问题81 scanf（）函数的格式字符是什么？ 问题82 使用scanf（）函数应注意的问题是什么？ 问题83 scanf（）函数的返回值是什么？ 问题84 如何使用getchar（）函数？ 问题85 getch（）函数如何使用？ 问题86 如何应用gets（）函数？ 问题87 如何应用putch（）函数？ 问题88 puts（）函数该如何应用？ 问题89 如何控制多数值的输入？ 问题90 如何输入字符数组？</span><br><span class="line"></span><br><span class="line"> 第7章 选择、分支结构程序设计 问题91 5]4]3为什么不成立——谈谈关系表达式的值 问题92 &#x3D;和&#x3D;&#x3D;如何区分？ 问题93 什么叫逻辑短路？ 问题94 if语句的基本形式有哪些？如何应用？ 问题95 浮点数的相等比较是否可以用&#x3D;&#x3D;？ 问题96 关系运算符和数学不等号有什么区别？ 问题97 if语句后面一定不能写分号吗？ 问题98 这个程序为什么多执行了好多语句？ 问题99 不用关系表达式和逻辑表达式做条件 问题100 怎样理解复合语句中的变量？ 问题101 如何进行if语句的嵌套？ 问题102 条件运算符“？ :”怎样应用？ 问题103 switch语句的基本格式是什么？ 问题104 if语句与switch语句的优缺点是什么？ 问题105 switch语句中的default关键字是否必须？ 问题106 break关键字在switch语句中应注意什么？ 问题107 如何正确判断if和else的匹配？ 问题108 switch和case后的表达式值的类型是否可以是浮点型？ 问题109 区段划分型条件有什么技巧？ 问题110 default必须写在所有case之后吗？</span><br><span class="line"></span><br><span class="line"> 第8章 循环结构 问题111 循环结构的基本概念是什么？ 问题112 while语句的基本格式是什么？ 问题113 while循环应注意什么问题？ 问题114 for循环语句的基本格式是什么？ 问题115 for语句的三个表达式都是必须的吗？ 问题116 do…while语句的基本格式是什么？ 问题117 分号在循环体中的作用？ 问题118 while与do…while的区别？ 问题119 什么是循环嵌套？ 问题120 循环嵌套的结构是怎样的？ 问题121 如何正确使用循环嵌套？ 问题122 死循环是怎样产生的？ 问题123 怎样提高循环语句的效率？ 问题124 continue语句的基本作用是什么？ 问题125 break语句的基本作用是什么？ 问题126 goto语句的基本格式是什么？如何使用？ 问题127 goto语句的缺陷是什么？ 问题128 如何选择循环语句？ 问题129 如何判定循环结束和提前结束？ 问题130 如何避免循环中的初值错误问题？</span><br><span class="line"></span><br><span class="line"> 第9章 数组 问题131 什么是数组？其存储有何特点？ 问题132 数组的维数该如何理解？ 问题133 一维数组是怎样定义的？ 问题134 如何引用一维数组元素？ 问题135 如何初始化一维数组？ 问题136 如何设计数组的排序算法？ 问题137 如何定义二维数组？ 问题138 如何引用二维数组元素？ 问题139 如何初始化二维数组？ 问题140 如何定义字符数组？ 问题141 如何初始化字符数组？ 问题142 如何引用字符数组？ 问题143 如何进行字符数组的复制？ 问题144 如何进行字符数组的连接？ 问题145 如何进行字符串的比较？ 问题146 如何测定字符串的长度？ 问题147 如何进行字符串大小写的相互转换？ 问题148 如何计算字符串中有多少个单词？ 问题149 gets（）函数和scanf（）函数在输入字符串时有何区别？ 问题150 puts（）函数和printf（）函数在输出字符串时有何区别？ 问题151 数组与指针的区别是什么？ 问题152 为什么作为函数形参的数组和指针可以互换？ 问题153 为什么数组名作参数传递给子函数时，子函数可以改变主函数中数组的值？ 问题154 c语言中有动态数组吗？ 问题155 如何实现动态二维数组？ 问题156 strcpy（）函数可以复制字符串的一部分吗？ 问题157 字符串和字符数组有什么区别？ 问题158 ‘\0&#39;和“\0”有什么区别？ 问题159 字符数组占用内存怎样算？ 问题160 用字符数组和指针两种方式定义的字符串有什么不同？</span><br><span class="line"></span><br><span class="line"> 第10章 函数编程基础 问题161 什么是函数？如何分类？ 问题162 如何定义无参函数？ 问题163 如何定义有参函数？ 问题164 什么是空函数？作用是什么？ 问题165 什么是形参和实参？如何使用？ 问题166 如何从函数返回？ 问题167 函数返回值你了解多少？ 问题168 如何进行函数的一般调用？ 问题169 函数调用的基本方式有几种？各是什么？ 问题170 函数调用应具备哪些条件？ 问题171 如何进行函数的嵌套调用？ 问题172 什么是递归调用？如何实现？ 问题173 函数如何将数组元素作为实参？ 问题174 如何将数组名作为函数参数？ 问题175 如何将多维数组名作为函数参数？ 问题176 什么是局部变量？ 问题177 什么是全局变量？如何应用？ 问题178 存储方式有哪几种？分别是什么？ 问题179 如何使用auto关键字？ 问题180 什么是静态变量？如何实现？ 问题181 什么是寄存器变量？如何实现？ 问题182 如何声明外部变量？ 问题183 如何调用编译后的函数？ 问题184 如何限定外部变量的使用范围？ 问题185 如何使用函数调用实现对字符串的统计？ 问题186 main（）函数有什么作用？ 问题187 什么是内部函数？ 问题188 什么是外部函数？怎么用？ 问题189 static（）函数与普通函数有什么区别？ 问题190 形参和实参有什么区别？</span><br><span class="line"></span><br><span class="line"> 第11章 指针解析 问题191 什么是指针？什么是指针变量？ 问题192 如何创建指针？ 问题193 如何初始化指针？ 问题194 如何使用指针？ 问题195 函数中如何传递指针？ 问题196 指针、数组和地址之间的关系是什么？ 问题197 如何进行指针运算？ 问题198 如何使用指针操作数组？ 问题199 如何用指针表示多维数组？ 问题200 如何使用指针操作多维数组？ 问题201 如何用指针为函数传递数组？ 问题202 如何用指针表示字符串？ 问题203 如何使用字符串指针作为函数参数？ 问题204 字符数组和字符指针的区别是什么？ 问题205 什么是指针数组？ 问题206 如何使用指针数组处理字符串？ 问题207 如何将指针数组作为函数的参数？ 问题208 什么是指向指针的指针？ 问题209 二级指针如何应用于一维数组？ 问题210 如何实现二级指针对二维数组的操作？ 问题211 二级指针如何操作字符串数组（指针数组）？ 问题212 如何理解返回指针的函数？ 问题213 什么是指向函数的指针？ 问题214 如何用const控制指针？ 问题215 什么是“野指针”？ 问题216 main（）函数的指针数组形参是怎么回事？ 问题217 void指针就是空指针吗？它有什么作用？ 问题218 指针是一种特殊的变量，只能用来保存地址。这句话对吗？ 问题219 字符指针、浮点数指针以及函数指针这三种类型的变量哪个占用的内存最大？为什么？ 问题220 一个32位的机器，该机器的指针是多少位？</span><br><span class="line"></span><br><span class="line"> 第12章 常用数据结构 问题221 空结构体所占的内存是多少？ 问题222 在c语言中，一个结构体可以包含指向自己的指针吗？ 问题223 struct person&#123;…&#125;;person a;为什么编译出错？ 问题224 怎样从&#x2F;向数据文件读&#x2F;写结构？ 问题225 枚举与#define宏的区别有哪些？ 问题226 如何看待枚举类型，枚举类型的优点是什么？ 问题227 关键字typedef的功能是什么？ 问题228 类型定义是否允许嵌套？ 问题229 typedef与#define宏的相似之处与不同之处是什么？ 问题230 什么是散列法？ 问题231 大小端模式对union类型数据有什么影响？ 问题232 如何为联合体变量赋初值？ 问题233 如何证明联合体变量的所有成员是共享一个内存单元的？ 问题234 堆和栈的区别是什么？ 问题235 举例说明，什么是静态链表？什么是动态链表？ 问题236 单向链表、双向链表和循环链表有什么区别？ 问题237 如何在链表中的指定位置插入结点？ 问题238 如何删除链表中指定位置的结点？ 问题239 如何创建一个动态链表？ 问题240 指向结构体数组的指针如何应用？</span><br><span class="line"></span><br><span class="line"> 第13章 位运算操作符 问题241 什么是位运算？位运算符包括哪些？ 问题242 移位运算中如何补位？ 问题243 移位运算符与加减运算符的优先级哪个较高？ 问题244 什么是循环移位？ 问题245 什么是位段？其优点是什么？ 问题246 如何正确使用位段？ 问题247 数据在计算机中的存储单位有哪些？有几种存储形式？</span><br><span class="line"></span><br><span class="line"> 第14章 存储管理 问题248 与内存息息相关的重要概念有哪些？ 问题249 指针指向不合法引起了哪些内存问题？ 问题250 内存分配与释放引起的常见问题有哪些？ 问题251 什么是内存越界？什么是内存泄露？二者是如何产生的？ 问题252 c语言提供了哪些动态内存分配函数？ 问题253 malloc（）函数与calloc（）函数有什么区别？ 问题254 内存耗尽怎么办？ 问题255 动态内存会被自动释放吗？ 问题256 高位优先与低位优先的不同之处是什么？ 问题257 free（）和delete（）怎样处理指针？ 问题258 怎样利用好敏感的内存资源？</span><br><span class="line"></span><br><span class="line"> 第15章 预处理和函数类型 问题259 在头文件中#if、stdc等字符起什么作用？ 问题260 如何书写多条语句宏？ 问题261 预处理中#和##运算符是什么意思？ 问题262 一个头文件可以包含另一个头文件吗？ 问题263 #include[]和#include“”有什么区别？ 问题264 什么是无参宏定义？ 问题265 什么是带参宏定义？ 问题266 怎样写参数个数可变的宏？ 问题267 #pragma预处理的作用是什么？ 问题268 条件编译的表达形式有哪些？ 问题269 如何应用内部函数？ 问题270 如何应用外部函数？</span><br><span class="line"></span><br><span class="line"> 第16章 文件的读写操作 问题271 各个读写操作的区别是什么？ 问题272 c语言文件有哪几类？ 问题273 怎样写数据文件，使之可以在不同字大小、字节顺序或浮点格式的机器上读入？ 问题274 能否使用fflush（）函数清除多余的输入？ 问题275 fopen（）函数打开文件失败的原因是什么？ 问题276 为什么打开文件后要及时关闭？ 问题277 文件的打开方式有哪些？ 问题278 如何正确使用putchar（）函数和getchar（）函数？ 问题279 getchar（）函数、getch（）函数和getche（）函数的区别是什么？ 问题280 使用printf（）函数和scanf（）函数需要注意什么？ 问题281 printf（）函数有哪些参数？ 问题282 scanf（）函数的格式控制包括哪些？ 问题283 printf（）函数和scanf（）函数格式符的修饰符“*”有什么作用？ 问题284 fscanf（）函数、fprintf（）函数与scanf（）函数和printf（）函数有什么不同？ 问题285 如何判断文件的结束？</span><br><span class="line"></span><br><span class="line"> 第17章 图形图像处理 问题286 为什么在使用图形函数时要首先初始化图形模式？ 问题287 怎样初始化图形模式？ 问题288 初始化时提示“bgi error: graphics not initialized（use ‘initgraph&#39;）”怎么办？ 问题289 怎样利用c语言建立独立的图形运行程序？ 问题290 tc中有几个画线函数？怎么使用？ 问题291 tc中有几个画矩形函数？怎么使用？ 问题292 tc中有几个画圆函数？怎么使用？ 问题293 如何使用c语言填充封闭图形？ 问题294 tc中有几个和光标有关的函数？怎样使用？ 问题295 如何在图形模式下输出文本？ 问题296 背景色、线条颜色和填充颜色有什么区别？何时使用？ 问题297 怎样记住那么多的颜色？ 问题298 线条样式和填充样式都有哪些？怎样设置？ 问题299 怎样复制图形？ 问题300 怎样在c语言中制作动画？</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B007BJM5CE/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B007BJM5CE&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51WxBeGvCSL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B007H4NZEK/" rel="prev" title="Android多媒体开发高级编程 为智能手机和平板电脑开发图形、音乐、视频和富媒体应用">
+      <i class="fa fa-chevron-left"></i> Android多媒体开发高级编程 为智能手机和平板电脑开发图形、音乐、视频和富媒体应用
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B006VQ7IA2/" rel="next" title="Android开发从入门到精通">
+      Android开发从入门到精通 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

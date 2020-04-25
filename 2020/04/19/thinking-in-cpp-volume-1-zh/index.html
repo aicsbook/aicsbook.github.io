@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C++编程思想第一卷作者信息： 作者: bruce eckel [ 中文 pdf ] 简单介绍本书的内容、讲授方法，选用例子和跟随的练习，别具特色。作者Bruce Eckel不是按传统的方法讲解C++的概念和编程方法，而是根据他自己过去学习C++的亲身体会，根据他在多年教学实践中发现的问题，用一些非常简单的例子和简练的叙述，阐明了在学习C++中特别容易混淆的概念。特别是，他经常通过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++编程思想第一卷">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/thinking-in-cpp-volume-1-zh/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C++编程思想第一卷作者信息： 作者: bruce eckel [ 中文 pdf ] 简单介绍本书的内容、讲授方法，选用例子和跟随的练习，别具特色。作者Bruce Eckel不是按传统的方法讲解C++的概念和编程方法，而是根据他自己过去学习C++的亲身体会，根据他在多年教学实践中发现的问题，用一些非常简单的例子和简练的叙述，阐明了在学习C++中特别容易混淆的概念。特别是，他经常通过">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/517TcaLgATL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.746Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/517TcaLgATL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/thinking-in-cpp-volume-1-zh/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C++编程思想第一卷 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/thinking-in-cpp-volume-1-zh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++编程思想第一卷
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C++编程思想第一卷<br>作者信息： 作者: bruce eckel [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>本书的内容、讲授方法，选用例子和跟随的练习，别具特色。作者Bruce Eckel不是按传统的方法讲解C++的概念和编程方法，而是根据他自己过去学习C++的亲身体会，根据他在多年教学实践中发现的问题，用一些非常简单的例子和简练的叙述，阐明了在学习C++中特别容易混淆的概念。特别是，他经常通过例子引导读者从C++编译实现的汇编代码的角度反向审视C++的语法和语义，常常使读者有‘心有灵犀一点通’的奇特效果。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">《c++编程思想(两卷合订本)》</span><br><span class="line">出版者的话</span><br><span class="line">出版说明</span><br><span class="line">第1卷 标准c++导引</span><br><span class="line">译者序 3</span><br><span class="line">前言 5</span><br><span class="line">第1章 对象导言 11</span><br><span class="line">1.1 抽象的过程 11</span><br><span class="line">1.2 对象有一个接口 12</span><br><span class="line">1.3 实现的隐藏 14</span><br><span class="line">1.4 实现的重用 15</span><br><span class="line">1.5 继承：重用接口 15</span><br><span class="line">1.5.1 is-a 关系和is-like-a 关系 18</span><br><span class="line">1.6 具有多态性的可互换对象 18</span><br><span class="line">1.7 创建和销毁对象 21</span><br><span class="line">1.8 异常处理：应对错误 22</span><br><span class="line">1.9 分析和设计 22</span><br><span class="line">1.9.1 第0阶段：制定计划 24</span><br><span class="line">1.9.2 第1阶段：我们在做什么 24</span><br><span class="line">1.9.3 第2阶段：我们将如何建立对象 26 </span><br><span class="line"></span><br><span class="line"> .1.9.4 第3阶段：创建核心 28 1.9.5 第4阶段：迭代用例 29 1.9.6 第5阶段：进化 29 1.9.7 计划的回报 30 1.10 极限编程 30 1.10.1 先写测试 31 1.10.2 结对编程 32 1.11 为什么c++会成功 32 1.11.1 一个较好的c 32 1.11.2 延续式的学习过程 33 1.11.3 效率 33 1.11.4 系统更容易表达和理解 33 1.11.5 尽量使用库 33 1.11.6 利用模板的源代码重用 34 1.11.7 错误处理 34 1.11.8 大型程序设计 34 1.12 为向oop转变而采取的策略 34 1.12.1 指导方针 35 1.12.2 管理的障碍 35 1.13 小结 37 第2章 对象的创建与使用 38 2.1 语言的翻译过程 38 2.1.1 解释器 38 2.1.2 编译器 39 2.1.3 编译过程 39 2.2 分段编译工具 40 2.2.1 声明与定义 40 2.2.2 连接 44 2.2.3 使用库文件 44 2.3 编写第一个c++程序 45 2.3.1 使用iostream类 45 2.3.2 名字空间 46 2.3.3 程序的基本结构 47 2.3.4 “hello, world!” 47 2.3.5 运行编译器 48 2.4 关于输入输出流 48 2.4.1 字符数组的拼接 49 2.4.2 读取输入数据 49 2.4.3 调用其他程序 50 2.5 字符串简介 50 2.6 文件的读写 51 2.7 vector简介 52 2.8 小结 55 2.9 练习 56 第3章 c++中的c 57 3.1 创建函数 57 3.1.1 函数的返回值 58 3.1.2 使用c的函数库 59 3.1.3 通过库管理器创建自己的库 59 3.2 执行控制语句 60 3.2.1 真和假 60 3.2.2 if-else语句 60 3.2.3 while语句 61 3.2.4 do-while语句 61 3.2.5 for语句 62 3.2.6 关键字break 和 continue 63 3.2.7 switch语句 64 3.2.8 使用和滥用goto 65 3.2.9 递归 65 3.3 运算符简介 66 3.3.1 优先级 66 3.3.2 自增和自减 67 3.4 数据类型简介 67 3.4.1 基本内建类型 67 3.4.2 bool类型与true和false 68 3.4.3 说明符 69 3.4.4 指针简介 70 3.4.5 修改外部对象 72 3.4.6 c++引用简介 74 3.4.7 用指针和引用作为修饰符 75 3.5 作用域 76 3.5.1 实时定义变量 77 3.6 指定存储空间分配 78 3.6.1 全局变量 78 3.6.2 局部变量 79 3.6.3 静态变量 80 3.6.4 外部变量 81 3.6.5 常量 82 3.6.6 volatile变量 83 3.7 运算符及其使用 83 3.7.1 赋值 83 3.7.2 数学运算符 83 3.7.3 关系运算符 85 3.7.4 逻辑运算符 85 3.7.5 位运算符 85 3.7.6 移位运算符 86 3.7.7 一元运算符 88 3.7.8 三元运算符 88 3.7.9 逗号运算符 89 3.7.10 使用运算符时的常见问题 89 3.7.11 转换运算符 90 3.7.12 c++的显式转换 90 3.7.13 sizeof—独立运算符 93 3.7.14 asm 关键字 94 3.7.15 显式运算符 94 3.8 创建复合类型 94 3.8.1 用typedef命名别名 95 3.8.2 用struct把变量结合在一起 95 3.8.3 用enum提高程度清晰度 97 3.8.4 用union节省内存 98 3.8.5 数组 99 3.9 调试技巧 106 3.9.1 调试标记 106 3.9.2 把变量和表达式转换成字符串 108 3.9.3 c语言assert( )宏 108 3.10 函数地址 109 3.10.1 定义函数指针 109 3.10.2 复杂的声明和定义 109 3.10.3 使用函数指针 110 3.10.4 指向函数的指针数组 111 3.11 make：管理分段编译 111 3.11.1 make的行为 112 3.11.2 本书中的makefile 114 3.11.3 makefile的一个例子 114 3.12 小结 116 3.13 练习 116 第4章 数据抽象 119 4.1 一个袖珍c库 119 4.1.1 动态存储分配 122 4.1.2 有害的猜测 124 4.2 哪儿出问题 125 4.3 基本对象 126 4.4 什么是对象 130 4.5 抽象数据类型 131 4.6 对象细节 131 4.7 头文件形式 132 4.7.1 头文件的重要性 132 4.7.2 多次声明问题 133 4.7.3 预处理器指示#define、#ifdef 和#endif 134 4.7.4 头文件的标准 134 4.7.5 头文件中的名字空间 135 4.7.6 在项目中使用头文件 135 4.8 嵌套结构 136 4.8.1 全局作用域解析 138 4.9 小结 139 4.10 练习 139 第5章 隐藏实现 142 5.1 设置限制 142 5.2 c++的访问控制 142 5.2.1 protected说明符 144 5.3 友元 144 5.3.1 嵌套友元 146 5.3.2 它是纯面向对象的吗 148 5.4 对象布局 148 5.5 类 149 5.5.1 用访问控制来修改stash 151 5.5.2 用访问控制来修改stack 151 5.6 句柄类 152 5.6.1 隐藏实现 152 5.6.2 减少重复编译 152 5.7 小结 154 5.8 练习 154 第6章 初始化与清除 156 6.1 用构造函数确保初始化 156 6.2 用析构函数确保清除 157 6.3 清除定义块 159 6.3.1 for循环 160 6.3.2 内存分配 161 6.4 带有构造函数和析构函数的stash 162 6.5 带有构造函数和析构函数的stack 164 6.6 聚合初始化 166 6.7 默认构造函数 168 6.8 小结 169 6.9 练习 169 第7章 函数重载与默认参数 171 7.1 名字修饰 172 7.1.1 用返回值重载 172 7.1.2 类型安全连接 172 7.2 重载的例子 173 7.3 联合 176 7.4 默认参数 178 7.4.1 占位符参数 179 7.5 选择重载还是默认参数 180 7.6 小结 183 7.7 练习 183 第8章 常量 185 8.1 值替代 185 8.1.1 头文件里的const 186 8.1.2 const的安全性 186 8.1.3 聚合 187 8.1.4 与c语言的区别 187 8.2 指针 188 8.2.1 指向const的指针 189 8.2.2 const指针 189 8.2.3 赋值和类型检查 190 8.3 函数参数和返回值 191 8.3.1 传递const值 191 8.3.2 返回const值 191 8.3.3 传递和返回地址 193 8.4 类 195 8.4.1 类里的const 196 8.4.2 编译期间类里的常量 198 8.4.3 const对象和成员函数 200 8.5 volatile 204 8.6 小结 205 8.7 练习 205 第9章 内联函数 207 9.1 预处理器的缺陷 207 9.1.1 宏和访问 209 9.2 内联函数 210 9.2.1 类内部的内联函数 210 9.2.2 访问函数 211 9.3 带内联函数的stash和stack 215 9.4 内联函数和编译器 218 9.4.1 限制 219 9.4.2 向前引用 219 9.4.3 在构造函数和析构函数里隐藏行为 220 9.5 减少混乱 220 9.6 预处理器的更多特征 221 9.6.1 标志粘贴 222 9.7 改进的错误检查 222 9.8 小结 225 9.9 练习 225 第10章 名字控制 227 10.1 来自c语言中的静态元素 227 10.1.1 函数内部的静态变量 227 10.1.2 控制连接 230 10.1.3 其他存储类型说明符 232 10.2 名字空间 232 10.2.1 创建一个名字空间 232 10.2.2 使用名字空间 234 10.2.3 名字空间的使用 237 10.3 c++中的静态成员 238 10.3.1 定义静态数据成员的存储 238 10.3.2 嵌套类和局部类 241 10.3.3 静态成员函数 242 10.4 静态初始化的相依性 244 10.4.1 怎么办 245 10.5 替代连接说明 250 10.6 小结 250 10.7 练习 251 第11章 引用和拷贝构造函数 254 11.1 c++中的指针 254 11.2 c++中的引用 254 11.2.1 函数中的引用 255 11.2.2 参数传递准则 257 11.3 拷贝构造函数 257 11.3.1 按值传递和返回 257 11.3.2 拷贝构造函数 261 11.3.3 默认拷贝构造函数 265 11.3.4 替代拷贝构造函数的方法 266 11.4 指向成员的指针 267 11.4.1 函数 269 11.5 小结 271 11.6 练习 271 第12章 运算符重载 274 12.1 两个极端 274 12.2 语法 274 12.3 可重载的运算符 275 12.3.1 一元运算符 276 12.3.2 二元运算符 279 12.3.3 参数和返回值 288 12.3.4 不常用的运算符 290 12.3.5 不能重载的运算符 295 12.4 非成员运算符 296 12.4.1 基本方针 297 12.5 重载赋值符 297 12.5.1 operator&#x3D;的行为 298 12.6 自动类型转换 306 12.6.1 构造函数转换 306 12.6.2 运算符转换 307 12.6.3 类型转换例子 309 12.6.4 自动类型转换的缺陷 310 12.7 小结 312 12.8 练习 312 第13章 动态对象创建 315 13.1 对象创建 315 13.1.1 c从堆中获取存储单元的方法 316 13.1.2 operator new 317 13.1.3 operator delete 317 13.1.4 一个简单的例子 318 13.1.5 内存管理的开销 318 13.2 重新设计前面的例子 319 13.2.1 使用delete void*可能会出错 319 13.2.2 对指针的清除责任 320 13.2.3 指针的stash 320 13.3 用于数组的new和delete 324 13.3.1 使指针更像数组 325 13.4 耗尽内存 325 13.5 重载new和delete 326 13.5.1 重载全局new和delete 327 13.5.2 对于一个类重载new和delete 328 13.5.3 为数组重载new和delete 330 13.5.4 构造函数调用 332 13.5.5 定位new和delete 333 13.6 小结 334 13.7 练习 334 第14章 继承和组合 336 14.1 组合语法 336 14.2 继承语法 337 14.3 构造函数的初始化表达式表 339 14.3.1 成员对象初始化 339 14.3.2 在初始化表达式表中的内建类型 339 14.4 组合和继承的联合 340 14.4.1 构造函数和析构函数调用的次序 341 14.5 名字隐藏 343 14.6 非自动继承的函数 346 14.6.1 继承和静态成员函数 349 14.7 组合与继承的选择 349 14.7.1 子类型设置 350 14.7.2 私有继承 352 14.8 protected 353 14.8.1 protected继承 353 14.9 运算符的重载与继承 353 14.10 多重继承 355 14.11 渐增式开发 355 14.12 向上类型转换 356 14.12.1 为什么要“向上类型转换” 357 14.12.2 向上类型转换和拷贝构造函数 357 14.12.3 组合与继承（再论） 359 14.12.4 指针和引用的向上类型转换 360 14.12.5 危机 360 14.13 小结 361 14.14 练习 361 第15章 多态性和虚函数 364 15.1 c++程序员的演变 364 15.2 向上类型转换 365 15.3 问题 366 15.3.1 函数调用捆绑 366 15.4 虚函数 366 15.4.1 扩展性 367 15.5 c++如何实现晚捆绑 369 15.5.1 存放类型信息 370 15.5.2 虚函数功能图示 371 15.5.3 撩开面纱 372 15.5.4 安装vpointer 373 15.5.5 对象是不同的 373 15.6 为什么需要虚函数 374 15.7 抽象基类和纯虚函数 375 15.7.1 纯虚定义 378 15.8 继承和vtable 378 15.8.1 对象切片 380 15.9 重载和重新定义 382 15.9.1 变量返回类型 383 15.10 虚函数和构造函数 385 15.10.1 构造函数调用次序 385 15.10.2 虚函数在构造函数中的行为 386 15.11 析构函数和虚拟析构函数 386 15.11.1 纯虚析构函数 388 15.11.2 析构函数中的虚机制 389 15.11.3 创建基于对象的继承 390 15.12 运算符重载 392 15.13 向下类型转换 394 15.14 小结 396 15.15 练习 397 第16章 模板介绍 400 16.1 容器 400 16.1.1 容器的需求 401 16.2 模板综述 402 16.2.1 模板方法 403 16.3 模板语法 404 16.3.1 非内联函数定义 405 16.3.2 作为模板的intstack 406 16.3.3 模板中的常量 408 16.4 作为模板的stash和stack 409 16.4.1 模板化的指针stash 411 16.5 打开和关闭所有权 415 16.6 以值存放对象 417 16.7 迭代器简介 418 16.7.1 带有迭代器的栈 425 16.7.2 带有迭代器的pstash 427 16.8 为什么使用迭代器 432 16.8.1 函数模板 434 16.9 小结 435 16.10 练习 435 附录a 编码风格 附录b 编程准则 附录c 推荐读物 第2卷 实用编程技术 译者序 441 前言 442 第一部分 建立稳定的系统 第1章 异常处理 448 1.1 传统的错误处理 448 1.2 抛出异常 450 1.3 捕获异常 451 1.3.1 try块 451 1.3.2 异常处理器 451 1.3.3 终止和恢复 452 1.4 异常匹配 453 1.4.1 捕获所有异常 454 1.4.2 重新抛出异常 454 1.4.3 不捕获异常 455 1.5 清理 456 1.5.1 资源管理 457 1.5.2 使所有事物都成为对象 458 1.5.3 auto_ptr 460 1.5.4 函数级的try块 461 1.6 标准异常 462 1.7 异常规格说明 464 1.7.1 更好的异常规格说明 467 1.7.2 异常规格说明和继承 467 1.7.3 什么时候不使用异常规格说明 468 1.8 异常安全 468 1.9 在编程中使用异常 471 1.9.1 什么时候避免异常 471 1.9.2 异常的典型应用 472 1.10 使用异常造成的开销 474 1.11 小结 476 1.12 练习 476 第2章 防御性编程 478 2.1 断言 480 2.2 一个简单的单元测试框架 482 2.2.1 自动测试 483 2.2.2 testsuite框架 485 2.2.3 测试套件 488 2.2.4 测试框架的源代码 489 2.3 调试技术 493 2.3.1 用于代码跟踪的宏 494 2.3.2 跟踪文件 494 2.3.3 发现内存泄漏 495 2.4 小结 499 2.5 练习 500 第二部分 标准c++库 第3章 深入理解字符串 504 3.1 字符串的内部是什么 504 3.2 创建并初始化c++字符串 505 3.3 对字符串进行操作 508 3.3.1 追加、插入和连接字符串 508 3.3.2 替换字符串中的字符 509 3.3.3 使用非成员重载运算符连接 512 3.4 字符串的查找 513 3.4.1 反向查找 516 3.4.2 查找一组字符第1次或最后一次出现的位置 517 3.4.3 从字符串中删除字符 519 3.4.4 字符串的比较 520 3.4.5 字符串和字符的特性 523 3.5 字符串的应用 527 3.6 小结 531 3.7 练习 531 第4章 输入输出流 534 4.1 为什么引入输入输出流 534 4.2 救助输入输出流 537 4.2.1 插入符和提取符 537 4.2.2 通常用法 540 4.2.3 按行输入 541 4.3 处理流错误 542 4.4 文件输入输出流 544 4.4.1 一个文件处理的例子 544 4.4.2 打开模式 546 4.5 输入输出流缓冲 546 4.6 在输入输出流中定位 548 4.7 字符串输入输出流 550 4.7.1 输入字符串流 551 4.7.2 输出字符串流 552 4.8 输出流的格式化 555 4.8.1 格式化标志 555 4.8.2 格式化域 556 4.8.3 宽度、填充和精度设置 557 4.8.4 一个完整的例子 557 4.9 操纵算子 560 4.9.1 带参数的操纵算子 560 4.9.2 创建操纵算子 562 4.9.3 效用算子 563 4.10 输入输出流程序举例 565 4.10.1 维护类库的源代码 565 4.10.2 检测编译器错误 568 4.10.3 一个简单的数据记录器 570 4.11 国际化 573 4.11.1 宽字符流 574 4.11.2 区域性字符流 575 4.12 小结 577 4.13 练习 577 第5章 深入理解模板 580 5.1 模板参数 580 5.1.1 无类型模板参数 580 5.1.2 默认模板参数 582 5.1.3 模板类型的模板参数 583 5.1.4 typename关键字 587 5.1.5 以template关键字作为提示 588 5.1.6 成员模板 589 5.2 有关函数模板的几个问题 591 5.2.1 函数模板参数的类型推断 591 5.2.2 函数模板重载 594 5.2.3 以一个已生成的函数模板地址作为参数 595 5.2.4 将函数应用到stl序列容器中 598 5.2.5 函数模板的半有序 600 5.3 模板特化 601 5.3.1 显式特化 601 5.3.2 半特化 602 5.3.3 一个实例 604 5.3.4 防止模板代码膨胀 606 5.4 名称查找问题 609 5.4.1 模板中的名称 609 5.4.2 模板和友元 613 5.5 模板编程中的习语 617 5.5.1 特征 617 5.5.2 策略 621 5.5.3 奇特的递归模板模式 623 5.6 模板元编程 624 5.6.1 编译时编程 625 5.6.2 表达式模板 631 5.7 模板编译模型 636 5.7.1 包含模型 636 5.7.2 显式实例化 637 5.7.3 分离模型 638 5.8 小结 639 5.9 练习 640 第6章 通用算法 642 6.1 概述 642 6.1.1 判定函数 644 6.1.2 流迭代器 646 6.1.3 算法复杂性 647 6.2 函数对象 648 6.2.1 函数对象的分类 649 6.2.2 自动创建函数对象 649 6.2.3 可调整的函数对象 652 6.2.4 更多的函数对象例子 653 6.2.5 函数指针适配器 658 6.2.6 编写自己的函数对象适配器 662 6.3 stl算法目录 665 6.3.1 实例创建的支持工具 666 6.3.2 填充和生成 669 6.3.3 计数 670 6.3.4 操作序列 671 6.3.5 查找和替换 674 6.3.6 比较范围 679 6.3.7 删除元素 681 6.3.8 对已排序的序列进行排序和运算 684 6.3.9 堆运算 691 6.3.10 对某一范围内的所有元素进行运算 691 6.3.11 数值算法 697 6.3.12 通用实用程序 699 6.4 创建自己的stl风格算法 700 6.5 小结 701 6.6 练习 702 第7章 通用容器 706 7.1 容器和迭代器 706 7.2 概述 707 7.2.1 字符串容器 711 7.2.2 从stl容器继承 712 7.3 更多迭代器 714 7.3.1 可逆容器中的迭代器 715 7.3.2 迭代器的种类 716 7.3.3 预定义迭代器 717 7.4 基本序列容器：vector、list和deque 721 7.4.1 基本序列容器的操作 721 7.4.2 向量 723 7.4.3 双端队列 728 7.4.4 序列容器间的转换 730 7.4.5 被检查的随机访问 731 7.4.6 链表 732 7.4.7 交换序列 736 7.5 集合 737 7.6 堆栈 743 7.7 队列 745 7.8 优先队列 748 7.9 持有二进制位 755 7.9.1 bitset[n] 756 7.9.2 vector[bool] 758 7.10 关联式容器 760 7.10.1 用于关联式容器的发生器和填充器 763 7.10.2 不可思议的映像 765 7.10.3 多重映像和重复的关键字 766 7.10.4 多重集合 768 7.11 将stl容器联合使用 771 7.12 清除容器的指针 773 7.13 创建自己的容器 774 7.14 对stl的扩充 776 7.15 非stl容器 777 7.16 小结 781 7.17 练习 781 第三部分 专 题 第8章 运行时类型识别 785 8.1 运行时类型转换 785 8.2 typeid 操作符 789 8.2.1 类型转换到中间层次类型 790 8.2.2 void型指针 791 8.2.3 运用带模板的rtti 792 8.3 多重继承 793 8.4 合理使用rtti 793 8.5 rtti的机制和开销 797 8.6 小结 797 8.7 练习 798 第9章 多重继承 800 9.1 概论 800 9.2 接口继承 801 9.3 实现继承 803 9.4 重复子对象 807 9.5 虚基类 810 9.6 名字查找问题 817 9.7 避免使用多重继承 819 9.8 扩充一个接口 820 9.9 小结 823 9.10 练习 823 第10章 设计模式 825 10.1 模式的概念 825 10.2 模式分类 826 10.3 简化习语 827 10.3.1 信使 827 10.3.2 收集参数 828 10.4 单件 829 10.5 命令：选择操作 833 10.6 消除对象耦合 836 10.6.1 代理模式：作为其他对象的前端 837 10.6.2 状态模式：改变对象的行为 838 10.7 适配器模式 840 10.8 模板方法模式 841 10.9 策略模式：运行时选择算法 842 10.10 职责链模式：尝试采用一系列 策略模式 843 10.11 工厂模式：封装对象的创建 845 10.11.1 多态工厂 847 10.11.2 抽象工厂 849 10.11.3 虚构造函数 851 10.12 构建器模式：创建复杂对象 855 10.13 观察者模式 860 10.13.1 “内部类”方法 862 10.13.2 观察者模式举例 864 10.14 多重派遣 867 10.15 小结 873 10.16 练习 873 第11章 并发 875 11.1 动机 875 11.2 c++中的并发 876 11.3 定义任务 878 11.4 使用线程 879 11.4.1 创建有响应的用户界面 880 11.4.2 使用执行器简化工作 882 11.4.3 让步 884 11.4.4 休眠 885 11.4.5 优先权 886 11.5 共享有限资源 887 11.5.1 保证对象的存在 887 11.5.2 不恰当地访问资源 890 11.5.3 访问控制 892 11.5.4 使用保护简化编码 893 11.5.5 线程本地存储 896 11.6 终止任务 897 11.6.1 防止输入&#x2F;输出流冲突 897 11.6.2 举例观赏植物园 898 11.6.3 阻塞时终止 901 11.6.4 中断 902 11.7 线程间协作 906 11.7.1 等待和信号 906 11.7.2 生产者-消费者关系 909 11.7.3 用队列解决线程处理的问题 912 11.7.4 广播 916 11.8 死锁 921 11.9 小结 925 11.10 练习 926 附 录 附录a 推荐读物 附录b 其他</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00119J7N0/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00119J7N0&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/517TcaLgATL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/shen-ru-qian-chu-mfc/" rel="prev" title="深入浅出MFC">
+      <i class="fa fa-chevron-left"></i> 深入浅出MFC
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/thinking-in-cpp-volume-2-zh/" rel="next" title="C++编程思想第二卷">
+      C++编程思想第二卷 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

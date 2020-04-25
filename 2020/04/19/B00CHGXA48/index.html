@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Android安全机制解析与应用实践作者信息： 作者: 吴倩 [ 中文 pdf ] 简单介绍《Android安全机制解析与应用实践》编辑推荐：原理分析透彻，结合Android系统源代码，从应用层、应用框架层、硬件抽象层、系统内核层等多角度剖析了Android的安全机制和实现原理，以及安全机制中存在的不足和潜在风险。实用性强，不仅介绍了各种常用的实用分析工具、安全风险分析方法、安全策">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android安全机制解析与应用实践">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00CHGXA48/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Android安全机制解析与应用实践作者信息： 作者: 吴倩 [ 中文 pdf ] 简单介绍《Android安全机制解析与应用实践》编辑推荐：原理分析透彻，结合Android系统源代码，从应用层、应用框架层、硬件抽象层、系统内核层等多角度剖析了Android的安全机制和实现原理，以及安全机制中存在的不足和潜在风险。实用性强，不仅介绍了各种常用的实用分析工具、安全风险分析方法、安全策">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41avuf%2BTD-L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.577Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41avuf%2BTD-L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00CHGXA48/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android安全机制解析与应用实践 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00CHGXA48/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android安全机制解析与应用实践
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Android安全机制解析与应用实践<br>作者信息： 作者: 吴倩 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Android安全机制解析与应用实践》编辑推荐：原理分析透彻，结合Android系统源代码，从应用层、应用框架层、硬件抽象层、系统内核层等多角度剖析了Android的安全机制和实现原理，以及安全机制中存在的不足和潜在风险。<br>实用性强，不仅介绍了各种常用的实用分析工具、安全风险分析方法、安全策略，而且还针对Android在各种应用领域可能出现的安全问题给出了解决方案。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line">推荐序</span><br><span class="line">前言</span><br><span class="line">第一部分 准备篇</span><br><span class="line">第1章 Android基础／2</span><br><span class="line">1.1 Android系统架构／2</span><br><span class="line">1.1.1 Linux内核层／3</span><br><span class="line">1.1.2 硬件抽象层／4</span><br><span class="line">1.1.3 系统运行库层／5</span><br><span class="line">1.1.4 应用程序框架层／7</span><br><span class="line">1.1.5 应用层／7</span><br><span class="line">1.2 应用程序组件／8</span><br><span class="line">1.3 Android系统启动／10</span><br><span class="line">1.3.1 Linux系统启动／10</span><br><span class="line">1.3.2 Android应用系统启动／15</span><br><span class="line">1.4 Android系统升级／17</span><br><span class="line">1.4.1 Android数据线升级／17</span><br><span class="line">1.4.2 AndroidSD卡升级／17</span><br><span class="line">1.4.3 Android在线升级／18</span><br><span class="line">1.5 本章小结／18</span><br><span class="line">第2章 Android安全模型／19</span><br><span class="line">2.1 Linux安全模型／20</span><br><span class="line">2.1.1 用户与权限／21</span><br><span class="line">2.1.2 进程与内存空间／24</span><br><span class="line">2.2 Android安全机制／26</span><br><span class="line">2.2.1 进程沙箱／26</span><br><span class="line">2.2.2 应用权限／28</span><br><span class="line">2.2.3 进程通信／29</span><br><span class="line">2.2.4 内存管理／32</span><br><span class="line">2.2.5 Android系统分区及加载／35</span><br><span class="line">2.2.6 应用程序签名／36</span><br><span class="line">2.3 Android开发工具提供的安全性机制／37</span><br><span class="line">2.4 本章小结／38</span><br><span class="line">第二部分 原理篇</span><br><span class="line">第3章 Android安全机制源代码分析／40</span><br><span class="line">3.1 文件系统权限的代码实现／41</span><br><span class="line">3.2 进程通信机制的代码实现／44</span><br><span class="line">3.2.1 匿名共享内存／44</span><br><span class="line">3.2.2 Binder机制／50</span><br><span class="line">3.3 Android应用程序安全机制／56</span><br><span class="line">3.3.1 Android应用程序权限机制的源代码分析／56</span><br><span class="line">3.3.2 应用程序签名机制实现的源代码分析／62</span><br><span class="line">3.4 本章小结／65</span><br><span class="line">第4章 Android安全性分析／66</span><br><span class="line">4.1 Android系统安全分析／66</span><br><span class="line">4.1.1 Linux内核／66</span><br><span class="line">4.1.2 系统库／67</span><br><span class="line">4.1.3 Dalvik虚拟机／67</span><br><span class="line">4.2 Android应用安全分析／68</span><br><span class="line">4.2.1 应用程序权限／68</span><br><span class="line">4.2.2 应用程序安装／69</span><br><span class="line">4.2.3 网络浏览器／70</span><br><span class="line">4.2.4 数据库与SQL注入／70</span><br><span class="line">4.2.5 软件更新／71</span><br><span class="line">4.3 硬件安全分析／72</span><br><span class="line">4.4 恶意软件／72</span><br><span class="line">4.4.1 Linux恶意软件／73</span><br><span class="line">4.4.2 Android恶意软件／74</span><br><span class="line">4.5 安全风险与漏洞／75</span><br><span class="line">4.5.1 已知安全风险／75</span><br><span class="line">4.5.2 潜在安全漏洞／76</span><br><span class="line">4.6 本章小结／76</span><br><span class="line">第5章 Android实用安全分析工具／78</span><br><span class="line">5.1 实用分析方法／78</span><br><span class="line">5.1.1 Linux系统信息分析／79</span><br><span class="line">5.1.2 Android应用信息分析／86</span><br><span class="line">5.2 实用分析工具／92</span><br><span class="line">5.2.1 Android系统调试工具／92</span><br><span class="line">5.2.2 dumpsys工具／103</span><br><span class="line">5.2.3 应用程序分析工具／104</span><br><span class="line">5.3 专业分析工具与技术／107</span><br><span class="line">5.3.1 常用逻辑分析工具与技术／107</span><br><span class="line">5.3.2 常用物理分析工具与技术／108</span><br><span class="line">5.4 本章小结／110</span><br><span class="line">第三部分 实践篇</span><br><span class="line">第6章 SEAndroid—增强Android安全性／114</span><br><span class="line">6.1 内核安全风险与增强策略／114</span><br><span class="line">6.2 SEAndroid概述／114</span><br><span class="line">6.3 SEAndroid编译与安装／115</span><br><span class="line">6.3.1 源代码获取／115</span><br><span class="line">6.3.2 源代码结构／116</span><br><span class="line">6.3.3 源代码编译和安装／118</span><br><span class="line">6.4 SEAndroid安全策略概述／124</span><br><span class="line">6.4.1 seapp_contexts文件／125</span><br><span class="line">6.4.2 property_contexts文件／125</span><br><span class="line">6.4.3 mac_permissions.xml文件／126</span><br><span class="line">6.5 SEAndroid兼容性测试工具／127</span><br><span class="line">6.6 SEAndroid的权限限制策略／127</span><br><span class="line">6.6.1 强制限制的权限模型／128</span><br><span class="line">6.6.2 安装时MAC／128</span><br><span class="line">6.6.3 权限取消／128</span><br><span class="line">6.6.4 权限标签传播／129</span><br><span class="line">6.6.5 SEAndroid的其他类与权限策略／129</span><br><span class="line">6.7 本章小结／129</span><br><span class="line">第7章 Android加密文件系统／130</span><br><span class="line">7.1 加密文件系统概述／130</span><br><span class="line">7.2 加密算法介绍／131</span><br><span class="line">7.2.1 AES加密算法／131</span><br><span class="line">7.2.2 加密模式／131</span><br><span class="line">7.3 加密文件系统源代码分析／133</span><br><span class="line">7.3.1 Linux内核的dm—crypt／134</span><br><span class="line">7.3.2 Android的vold／138</span><br><span class="line">7.3.3 工作流程分析／145</span><br><span class="line">7.4 加密文件系统配置／148</span><br><span class="line">7.4.1 块设备选取与配置／148</span><br><span class="line">7.4.2 init.rc配置／149</span><br><span class="line">7.5 本章小结／150</span><br><span class="line">第8章 Android应用安全实用解决方案／151</span><br><span class="line">8.1 安全风险控制策略／151</span><br><span class="line">8.2 应用权限控制／154</span><br><span class="line">8.2.1 权限控制策略／154</span><br><span class="line">8.2.2 权限定义和运用／156</span><br><span class="line">8.3 应用程序签名／159</span><br><span class="line">8.3.1 数字签名基础知识／160</span><br><span class="line">8.3.2 数字签名算法／160</span><br><span class="line">8.3.3 数字签名使用方式／163</span><br><span class="line">8.3.4 应用程序签名的实现／164</span><br><span class="line">8.4 静态代码分析／166</span><br><span class="line">8.5 防火墙／168</span><br><span class="line">8.6 数据存储加密／170</span><br><span class="line">8.7 应用程序组件开发的安全要点／172</span><br><span class="line">8.7.1 私有组件与公有组件／172</span><br><span class="line">8.7.2 Activity安全／173</span><br><span class="line">8.7.3 Service安全／174</span><br><span class="line">8.7.4 ContentProvider安全／175</span><br><span class="line">8.7.5 BroadcastReceiver安全／180</span><br><span class="line">8.7.6 Intent安全／182</span><br><span class="line">8.7.7 Binder安全／184</span><br><span class="line">8.8 本章小结／185</span><br><span class="line">第9章 Android的无线通信安全／186</span><br><span class="line">9.1 无线移动通信的安全威胁与防范／186</span><br><span class="line">9.1.1 语音通信的空口加密与明文传输／187</span><br><span class="line">9.1.2 短信与彩信的存储转发机制／188</span><br><span class="line">9.1.3 传统的搭线窃听与合法监控／189</span><br><span class="line">9.1.4 端到端的通信安全机制／189</span><br><span class="line">9.2 Android的无线移动电话系统／190</span><br><span class="line">9.2.1 无线移动电话系统的结构／190</span><br><span class="line">9.2.2 无线移动电话系统的RIL层实现／190</span><br><span class="line">9.2.3 无线移动电话系统的应用层框架／193</span><br><span class="line">9.3 加密短信和彩信收发／196</span><br><span class="line">9.3.1 普通短信与彩信的收发流程／196</span><br><span class="line">9.3.2 短信与彩信的数字加密处理／208</span><br><span class="line">9.3.3 加密短信与彩信的传输处理／210</span><br><span class="line">9.3.4 加密短信与彩信的存储与调阅／210</span><br><span class="line">9.4 加密实时语音通信／214</span><br><span class="line">9.4.1 AT命令与电话建立流程／214</span><br><span class="line">9.4.2 Android音频系统的电话部分／216</span><br><span class="line">9.4.3 电话状态下音频通道的设置／217</span><br><span class="line">9.4.4 电话音频加密处理／218</span><br><span class="line">9.5 本章小结／222</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00CHGXA48/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00CHGXA48&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41avuf%2BTD-L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/111860864X/" rel="prev" title="Android Hacker’s Handbook">
+      <i class="fa fa-chevron-left"></i> Android Hacker’s Handbook
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00BSXRLR8/" rel="next" title="疯狂Android讲义(第2版)">
+      疯狂Android讲义(第2版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

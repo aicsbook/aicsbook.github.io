@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C和C++安全编码作者信息： 作者: 塞克德 (Robert C.Seacord) [ 中文 pdf ] 简单介绍《华章程序员书库:C和C++安全编码(原书第2版)》介绍了Windows和Linux上数以百计的例子，包括安全的代码、不安全的代码和利用方法。如果你负责创建安全的C或C++软件，或者需要保证它们的安全，《华章程序员书库:C和C++安全编码(原书第2版)》将为你提供详尽的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C和C++安全编码">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00HI6UH8Y/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C和C++安全编码作者信息： 作者: 塞克德 (Robert C.Seacord) [ 中文 pdf ] 简单介绍《华章程序员书库:C和C++安全编码(原书第2版)》介绍了Windows和Linux上数以百计的例子，包括安全的代码、不安全的代码和利用方法。如果你负责创建安全的C或C++软件，或者需要保证它们的安全，《华章程序员书库:C和C++安全编码(原书第2版)》将为你提供详尽的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41sAPjgYk5L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.686Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41sAPjgYk5L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00HI6UH8Y/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C和C++安全编码 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00HI6UH8Y/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C和C++安全编码
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C和C++安全编码<br>作者信息： 作者: 塞克德 (Robert C.Seacord) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《华章程序员书库:C和C++安全编码(原书第2版)》介绍了Windows和Linux上数以百计的例子，包括安全的代码、不安全的代码和利用方法。如果你负责创建安全的C或C++软件，或者需要保证它们的安全，《华章程序员书库:C和C++安全编码(原书第2版)》将为你提供详尽的专家级援助。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br></pre></td><td class="code"><pre><span class="line">译者序</span><br><span class="line">序</span><br><span class="line">前言</span><br><span class="line">致谢</span><br><span class="line">第1章 夹缝求生</span><br><span class="line">1.1 衡量危险</span><br><span class="line">1.1.1 损失的现状</span><br><span class="line">1.1.2 威胁的来源</span><br><span class="line">1.1.3 软件安全</span><br><span class="line">1.2 安全概念</span><br><span class="line">1.2.1 安全策略</span><br><span class="line">1.2.2 安全缺陷</span><br><span class="line">1.2.3 漏洞</span><br><span class="line">1.2.4 漏洞利用</span><br><span class="line">1.2.5 缓解措施</span><br><span class="line">1.3 C和C++</span><br><span class="line">1.3.1 C和C++简史</span><br><span class="line">1.3.2 C存在的问题</span><br><span class="line">1.3.3 遗留代码</span><br><span class="line">1.3.4 其他语言</span><br><span class="line">1.4 开发平台</span><br><span class="line">1.4.1 操作系统</span><br><span class="line">1.4.2 编译器</span><br><span class="line">1.5 小结</span><br><span class="line">1.6 阅读材料</span><br><span class="line">第2章 字符串</span><br><span class="line">2.1 字符串</span><br><span class="line">2.1.1 字符串数据类型</span><br><span class="line">2.1.2 UTF—8</span><br><span class="line">2.1.3 宽字符串</span><br><span class="line">2.1.4 字符串字面值</span><br><span class="line">2.1.5 C++中的字符串</span><br><span class="line">2.1.6 字符类型</span><br><span class="line">2.1.7 计算字符串大小</span><br><span class="line">2.2 常见的字符串操作错误</span><br><span class="line">2.2.1 无界字符串复制</span><br><span class="line">2.2.2 差一错误</span><br><span class="line">2.2.3 空字符结尾错误</span><br><span class="line">2.2.4 字符串截断</span><br><span class="line">2.2.5 与函数无关的字符串错误</span><br><span class="line">2.3 字符串漏洞及其利用</span><br><span class="line">2.3.1 被污染的数据</span><br><span class="line">2.3.2 IsPasswordOK的安全缺陷</span><br><span class="line">2.3.3 缓冲区溢出</span><br><span class="line">2.3.4 进程内存组织</span><br><span class="line">2.3.5 栈管理</span><br><span class="line">2.3.6 栈溢出</span><br><span class="line">2.3.7 代码注入</span><br><span class="line">2.3.8 弧注入</span><br><span class="line">2.3.9 返回导向编程</span><br><span class="line">2.4 字符串漏洞缓解策略</span><br><span class="line">2.4.1 字符串处理</span><br><span class="line">2.4.2 C11附录K边界检查接口</span><br><span class="line">2.4.3 动态分配函数</span><br><span class="line">2.4.4 C++ std：：basic_string</span><br><span class="line">2.4.5 使字符串对象的引用失效</span><br><span class="line">2.4.6 使用basic_string的其他常见错误</span><br><span class="line">2.5 字符串处理函数</span><br><span class="line">2.5.1 gets</span><br><span class="line">2.5.2 C99</span><br><span class="line">2.5.3 C11附录K边界检查接口：gets—s</span><br><span class="line">2.5.4 动态分配函数</span><br><span class="line">2.5.5 strcpy和strcat</span><br><span class="line">2.5.6 C99</span><br><span class="line">2.5.7 strncpy和strncat</span><br><span class="line">2.5.8 memcpy和memmove</span><br><span class="line">2.5.9 strlen</span><br><span class="line">2.6 运行时保护策略</span><br><span class="line">2.6.1 检测和恢复</span><br><span class="line">2.6.2 输入验证</span><br><span class="line">2.6.3 对象大小检查</span><br><span class="line">2.6.4 Visual Studio中编译器生成的运行时检查</span><br><span class="line">2.6.5 栈探测仪</span><br><span class="line">2.6.6 栈溢出保护器</span><br><span class="line">2.6.7 操作系统策略</span><br><span class="line">2.6.8 检测和恢复</span><br><span class="line">2.6.9 不可执行栈</span><br><span class="line">2.6.10 WX</span><br><span class="line">2.6.11 PaX</span><br><span class="line">2.6.12 未来发展方向</span><br><span class="line">2.7 著名的漏洞</span><br><span class="line">2.7.1 远程登录</span><br><span class="line">2.7.2 Kerberos</span><br><span class="line">2.8 小结</span><br><span class="line">2.9 阅读材料</span><br><span class="line">第3章 指针诡计</span><br><span class="line">3.1 数据位置</span><br><span class="line">3.2 函数指针</span><br><span class="line">3.3 对象指针</span><br><span class="line">3.4 修改指令指针</span><br><span class="line">3.5 全局偏移表</span><br><span class="line">3.6 dtors区</span><br><span class="line">3.7 虚指针</span><br><span class="line">3.8 atexit和on—exit函数</span><br><span class="line">3.9 longjmp函数</span><br><span class="line">3.10 异常处理</span><br><span class="line">3.10.1 结构化异常处理</span><br><span class="line">3.10.2 系统默认异常处理</span><br><span class="line">3.11 缓解策略</span><br><span class="line">3.11.1 栈探测仪</span><br><span class="line">3.11.2 W—X</span><br><span class="line">3.11.3 对函数指针编码和解码</span><br><span class="line">3.12 小结</span><br><span class="line">3.13 阅读材料</span><br><span class="line">第4章 动态内存管理</span><br><span class="line">4.1 C内存管理</span><br><span class="line">4.1.1 C标准内存管理函数</span><br><span class="line">4.1.2 对齐</span><br><span class="line">4.1.3 alloca和变长数组</span><br><span class="line">4.2 常见的C内存管理错误</span><br><span class="line">4.2.1 初始化错误</span><br><span class="line">4.2.2 未检查返回值</span><br><span class="line">4.2.3 Null或无效指针解引用</span><br><span class="line">4.2.4 引用已释放内存</span><br><span class="line">4.2.5 多次释放内存</span><br><span class="line">4.2.6 内存泄漏</span><br><span class="line">4.2.7 零长度分配</span><br><span class="line">4.2.8 DR # 400</span><br><span class="line">4.3 C++的动态内存管理</span><br><span class="line">4.3.1 分配函数</span><br><span class="line">4.3.2 释放函数</span><br><span class="line">4.3.3 垃圾回收</span><br><span class="line">4.4 常见的C++内存管理错误</span><br><span class="line">4.4.1 未能正确检查分配失败</span><br><span class="line">4.4.2 不正确配对的内存管理函数</span><br><span class="line">4.4.3 多次释放内存</span><br><span class="line">4.4.4 释放函数抛出一个异常</span><br><span class="line">4.5 内存管理器</span><br><span class="line">4.6 Doug Lea的内存分配器</span><br><span class="line">4.7 双重释放漏洞</span><br><span class="line">4.7.1 写入已释放的内存</span><br><span class="line">4.7.2 RtlHeap</span><br><span class="line">4.7.3 缓冲区溢出（终极版）</span><br><span class="line">4.8 缓解策略</span><br><span class="line">4.8.1 空指针</span><br><span class="line">4.8.2 一致的内存管理约定</span><br><span class="line">4.8.3 phkmalloc</span><br><span class="line">4.8.4 随机化</span><br><span class="line">4.8.5 OpenBSD</span><br><span class="line">4.8.6 jemalloc内存管理器</span><br><span class="line">4.8.7 静态分析</span><br><span class="line">4.8.8 运行时分析工具</span><br><span class="line">4.9 值得注意的漏洞</span><br><span class="line">4.9.1 CVS缓冲区溢出漏洞</span><br><span class="line">4.9.2 Microsoft数据访问组件</span><br><span class="line">4.9.3 CVS服务器双重释放漏洞</span><br><span class="line">4.9.4 MIT Kerberos 5中的漏洞</span><br><span class="line">4.10 小结</span><br><span class="line">第5章 整数安全</span><br><span class="line">5.1 整数安全导论</span><br><span class="line">5.2 整数数据类型</span><br><span class="line">5.2.1 无符号整数类型</span><br><span class="line">5.2.2 回绕</span><br><span class="line">5.2.3 有符号整数类型</span><br><span class="line">5.2.4 有符号整数的取值范围</span><br><span class="line">5.2.5 整数溢出</span><br><span class="line">5.2.6 字符类型</span><br><span class="line">5.2.7 数据模型</span><br><span class="line">5.2.8 其他整数类型</span><br><span class="line">5.3 整数转换</span><br><span class="line">5.3.1 转换整数</span><br><span class="line">5.3.2 整数转换级别</span><br><span class="line">5.3.3 整数类型提升</span><br><span class="line">5.3.4 普通算术转换</span><br><span class="line">5.3.5 由无符号整数类型转换</span><br><span class="line">5.3.6 由有符号整数类型转换</span><br><span class="line">5.3.7 转换的影响</span><br><span class="line">5.4 整数操作</span><br><span class="line">5.4.1 赋值</span><br><span class="line">5.4.2 加法</span><br><span class="line">5.4.3 减法</span><br><span class="line">5.4.4 乘法</span><br><span class="line">5.4.5 除法和求余</span><br><span class="line">5.4.6 移位</span><br><span class="line">5.5 整数漏洞</span><br><span class="line">5.5.1 漏洞</span><br><span class="line">5.5.2 回绕</span><br><span class="line">5.5.3 转换和截断错误</span><br><span class="line">5.5.4 非异常的整数逻辑错误</span><br><span class="line">5.6 缓解策略</span><br><span class="line">5.6.1 整数类型的选择</span><br><span class="line">5.6.2 抽象数据类型</span><br><span class="line">5.6.3 任意精度算术</span><br><span class="line">5.6.4 范围检查</span><br><span class="line">5.6.5 前提条件和后验条件测试</span><br><span class="line">5.6.6 安全整数库</span><br><span class="line">5.6.7 溢出检测</span><br><span class="line">5.6.8 编译器生成的运行时检查</span><br><span class="line">5.6.9 可验证范围操作</span><br><span class="line">5.6.10 仿佛无限范围整数模型</span><br><span class="line">5.6.11 测试与分析</span><br><span class="line">5.7 小结</span><br><span class="line">第6章 格式化输出</span><br><span class="line">6.1 变参函数</span><br><span class="line">6.2 格式化输出函数</span><br><span class="line">6.2.1 格式字符串</span><br><span class="line">6.2.2 GCC</span><br><span class="line">6.2.3 Visual C++</span><br><span class="line">6.3 对格式化输出函数的漏洞利用</span><br><span class="line">6.3.1 缓冲区溢出</span><br><span class="line">6.3.2 输出流</span><br><span class="line">6.3.3 使程序崩溃</span><br><span class="line">6.3.4 查看栈内容</span><br><span class="line">6.3.5 查看内存内容</span><br><span class="line">6.3.6 覆写内存</span><br><span class="line">6.3.7 国际化</span><br><span class="line">6.3.8 宽字符格式字符串漏洞</span><br><span class="line">6.4 栈随机化</span><br><span class="line">6.4.1 阻碍栈随机化</span><br><span class="line">6.4.2 以双字的格式写地址</span><br><span class="line">6.4.3 直接参数访问</span><br><span class="line">6.5 缓解策略</span><br><span class="line">6.5.1 排除用户输入的格式字符串</span><br><span class="line">6.5.2 静态内容的动态使用</span><br><span class="line">6.5.3 限制字节写入</span><br><span class="line">6.5.4 C11附录K边界检查接口</span><br><span class="line">6.5.5 iostream与stdio</span><br><span class="line">6.5.6 测试</span><br><span class="line">6.5.7 编译器检查</span><br><span class="line">6.5.8 静态污点分析</span><br><span class="line">6.5.9 调整变参函数的实现</span><br><span class="line">6.5.10 Exec Shield</span><br><span class="line">6.5.11 FormatGuard</span><br><span class="line">6.5.12 静态二进制分析</span><br><span class="line">6.6 著名的漏洞</span><br><span class="line">6.6.1 华盛顿大学FTP Daemon</span><br><span class="line">6.6.2 CDE ToolTalk</span><br><span class="line">6.6.3 Ettercap NG—0.7.2版</span><br><span class="line">6.7 小结</span><br><span class="line">6.8 阅读材料</span><br><span class="line">……</span><br><span class="line">第7章 并发</span><br><span class="line">第8章 文件I／O</span><br><span class="line">第9章 推荐的实践</span><br><span class="line">参考文献</span><br><span class="line">缩略语</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00HI6UH8Y/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00HI6UH8Y&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41sAPjgYk5L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/beyond-the-cpp-standard-library/" rel="prev" title="Beyond the C++ Standard Library">
+      <i class="fa fa-chevron-left"></i> Beyond the C++ Standard Library
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00IZW4DK8/" rel="next" title="C标准库(英文版)">
+      C标准库(英文版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

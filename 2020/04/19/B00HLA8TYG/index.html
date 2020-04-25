@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Linux&#x2F;UNIX系统编程手册作者信息： 作者: 凯利斯克 (Michael Kerrisk) [ 中文 pdf ] 简单介绍Linux&#x2F;UNIX系统编程接口权威巨著，无出其右；涵盖500多个系统调用和库函数；示例清晰完整，解释巨细靡遗；涵盖当前UNIX标准（POSI X.1-2001&#x2F;SUS v3和POSI X.1-2008&#x2F;SUS v4）；众多业内专家人士联袂推荐；Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux&#x2F;UNIX系统编程手册">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00HLA8TYG/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Linux&#x2F;UNIX系统编程手册作者信息： 作者: 凯利斯克 (Michael Kerrisk) [ 中文 pdf ] 简单介绍Linux&#x2F;UNIX系统编程接口权威巨著，无出其右；涵盖500多个系统调用和库函数；示例清晰完整，解释巨细靡遗；涵盖当前UNIX标准（POSI X.1-2001&#x2F;SUS v3和POSI X.1-2008&#x2F;SUS v4）；众多业内专家人士联袂推荐；Linux">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51EUI039ySL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.926Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51EUI039ySL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00HLA8TYG/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Linux/UNIX系统编程手册 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00HLA8TYG/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux/UNIX系统编程手册
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Linux/UNIX系统编程手册<br>作者信息： 作者: 凯利斯克 (Michael Kerrisk) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>Linux/UNIX系统编程接口权威巨著，无出其右；涵盖500多个系统调用和库函数；示例清晰完整，解释巨细靡遗；涵盖当前UNIX标准（POSI X.1-2001/SUS v3和POSI X.1-2008/SUS v4）；众多业内专家人士联袂推荐；Linux/UNIX开发人员的案头必备，注定成为新的经典；</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br></pre></td><td class="code"><pre><span class="line">《Linux&#x2F;UNIX系统编程手册（上册）》目录：</span><br><span class="line">第1章 历史和标准 1</span><br><span class="line">1.1 UNIX和C语言简史 1</span><br><span class="line">1.2 Linux简史 4</span><br><span class="line">1.2.1 GNU项目 4</span><br><span class="line">1.2.2 Linux内核 5</span><br><span class="line">1.3 标准化 8</span><br><span class="line">1.3.1 C编程语言 8</span><br><span class="line">1.3.2 首个POSIX标准 9</span><br><span class="line">1.3.3 X&#x2F;Open公司和TheOpenGroup 10</span><br><span class="line">1.3.4 SUSv3和POSIX.1—2001 10</span><br><span class="line">1.3.5 SUSv4和POSIX.1—2008 12</span><br><span class="line">1.3.6 UNIX标准时间表 12</span><br><span class="line">1.3.7 实现标准 14</span><br><span class="line">1.3.8 Linux、标准、Linux标准规范（LinuxStandardBase） 14</span><br><span class="line">1.4 总结 15</span><br><span class="line">第2章 基本概念 17</span><br><span class="line">2.1 操作系统的核心—内核 17</span><br><span class="line">2.2 shell 19</span><br><span class="line">2.3 用户和组 20</span><br><span class="line">2.4 单根目录层级、目录、链接及文件 21</span><br><span class="line">2.5 文件I&#x2F;O模型 23</span><br><span class="line">2.6 程序 24</span><br><span class="line">2.7 进程 25</span><br><span class="line">2.8 内存映射 27</span><br><span class="line">2.9 静态库和共享库 28</span><br><span class="line">2.10 进程间通信及同步 28</span><br><span class="line">2.11 信号 29</span><br><span class="line">2.12 线程 30</span><br><span class="line">2.13 进程组和shell任务控制 30</span><br><span class="line">2.14 会话、控制终端和控制进程 30</span><br><span class="line">2.15 伪终端 31</span><br><span class="line">2.16 日期和时间 31</span><br><span class="line">2.17 客户端服务器架构 32</span><br><span class="line">2.18 实时性 32</span><br><span class="line">2.19 proc文件系统 33</span><br><span class="line">2.20 总结 33</span><br><span class="line">第3章 系统编程概念 34</span><br><span class="line">3.1 系统调用 34</span><br><span class="line">3.2 库函数 36</span><br><span class="line">3.3 标准C语言函数库；GNUC语言函数库（glibc） 37</span><br><span class="line">3.4 处理来自系统调用和库函数的错误 38</span><br><span class="line">3.5 关于本书示例程序的注意事项 40</span><br><span class="line">3.5.1 命令行选项及参数 40</span><br><span class="line">3.5.2 常用的函数及头文件 40</span><br><span class="line">3.6 可移植性问题 49</span><br><span class="line">3.6.1 特性测试宏 49</span><br><span class="line">3.6.2 系统数据类型 51</span><br><span class="line">3.6.3 其他的可移植性问题 53</span><br><span class="line">3.7 总结 54</span><br><span class="line">3.8 练习 55</span><br><span class="line">第4章 文件I&#x2F;O：通用的I&#x2F;O模型 56</span><br><span class="line">4.1 概述 56</span><br><span class="line">4.2 通用I&#x2F;O 58</span><br><span class="line">4.3 打开一个文件：open（） 58</span><br><span class="line">4.3.1 open（）调用中的flags参数 60</span><br><span class="line">4.3.2 open（）函数的错误 63</span><br><span class="line">4.3.3 creat（）系统调用 64</span><br><span class="line">4.4 读取文件内容：read（） 64</span><br><span class="line">4.5 数据写入文件：write（） 65</span><br><span class="line">4.6 关闭文件：close（） 66</span><br><span class="line">4.7 改变文件偏移量：lseek（） 66</span><br><span class="line">4.8 通用I&#x2F;O模型以外的操作：ioctl（） 70</span><br><span class="line">4.9 总结 71</span><br><span class="line">4.10 练习 71</span><br><span class="line">第5章 深入探究文件I&#x2F;O 72</span><br><span class="line">5.1 原子操作和竞争条件 72</span><br><span class="line">5.2 文件控制操作：fcntl（） 75</span><br><span class="line">5.3 打开文件的状态标志 75</span><br><span class="line">5.4 文件描述符和打开文件之间的关系 76</span><br><span class="line">5.5 复制文件描述符 78</span><br><span class="line">5.6 在文件特定偏移量处的I&#x2F;O：pread（）和pwrite（） 80</span><br><span class="line">5.7 分散输入和集中输出（Scatter—GatherI&#x2F;O）：readv（）和writev（） 81</span><br><span class="line">5.8 截断文件：truncate（）和ftruncate（）系统调用 84</span><br><span class="line">5.9 非阻塞I&#x2F;O 84</span><br><span class="line">5.10 大文件I&#x2F;O 85</span><br><span class="line">5.11 &#x2F;dev&#x2F;fd目录 88</span><br><span class="line">5.12 创建临时文件 88</span><br><span class="line">5.13 总结 90</span><br><span class="line">5.14 练习 90</span><br><span class="line">第6章 进程 92</span><br><span class="line">6.1 进程和程序 92</span><br><span class="line">6.2 进程号和父进程号 93</span><br><span class="line">6.3 进程内存布局 94</span><br><span class="line">6.4 虚拟内存管理 97</span><br><span class="line">6.5 栈和栈帧 99</span><br><span class="line">6.6 命令行参数（argc，argv） 99</span><br><span class="line">6.7 环境列表 101</span><br><span class="line">6.8 执行非局部跳转：setjmp（）和longjmp（） 106</span><br><span class="line">6.9 总结 111</span><br><span class="line">6.9 练习 112</span><br><span class="line">第7章 内存分配 113</span><br><span class="line">7.1 在堆上分配内存 113</span><br><span class="line">7.1.1 调整programbreak：brk（）和sbrk（） 113</span><br><span class="line">7.1.2 在堆上分配内存：malloc（）和free（） 114</span><br><span class="line">7.1.3 malloc（）和free（）的实现 117</span><br><span class="line">7.1.4 在堆上分配内存的其他方法 120</span><br><span class="line">7.2 在堆栈上分配内存：alloca（） 122</span><br><span class="line">7.3 总结 123</span><br><span class="line">7.4 练习 123</span><br><span class="line">第8章 用户和组 124</span><br><span class="line">8.1 密码文件：&#x2F;etc&#x2F;passwd 124</span><br><span class="line">8.2 shadow密码文件：&#x2F;etc&#x2F;shadow 125</span><br><span class="line">8.3 组文件：&#x2F;etc&#x2F;group 126</span><br><span class="line">8.4 获取用户和组的信息 127</span><br><span class="line">8.5 密码加密和用户认证 132</span><br><span class="line">8.6 总结 135</span><br><span class="line">8.7 练习 135</span><br><span class="line">第9章 进程凭证 136</span><br><span class="line">9.1 实际用户ID和实际组ID 136</span><br><span class="line">9.2 有效用户ID和有效组ID 136</span><br><span class="line">9.3 Set—User—ID和Set—Group—ID程序 137</span><br><span class="line">9.4 保存set—user—ID和保存set—group—ID 138</span><br><span class="line">9.5 文件系统用户ID和组ID 139</span><br><span class="line">9.6 辅助组ID 140</span><br><span class="line">9.7 获取和修改进程凭证 140</span><br><span class="line">9.7.1 获取和修改实际、有效和保存设置标识 140</span><br><span class="line">9.7.2 获取和修改文件系统ID 145</span><br><span class="line">9.7.3 获取和修改辅助组ID 145</span><br><span class="line">9.7.4 修改进程凭证的系统调用总结 146</span><br><span class="line">9.7.5 示例：显示进程凭证 148</span><br><span class="line">9.8 总结 149</span><br><span class="line">9.9 习题 150</span><br><span class="line">第10章 时间 151</span><br><span class="line">10.1 日历时间（CalendarTime） 151</span><br><span class="line">10.2 时间转换函数 153</span><br><span class="line">10.2.1 将time_t转换为可打印格式 153</span><br><span class="line">10.2.2 time_t和分解时间之间的转换 154</span><br><span class="line">10.2.3 分解时间和打印格式之间的转换 155</span><br><span class="line">10.3 时区 161</span><br><span class="line">10.4 地区（Locale） 163</span><br><span class="line">10.5 更新系统时钟 167</span><br><span class="line">10.6 软件时钟（jiffies） 168</span><br><span class="line">10.7 进程时间 168</span><br><span class="line">10.8 总结 171</span><br><span class="line">10.9 练习 172</span><br><span class="line">第11章 系统限制和选项 173</span><br><span class="line">11.1 系统限制 174</span><br><span class="line">11.2 在运行时获取系统限制（和选项） 176</span><br><span class="line">11.3 运行时获取与文件相关的限制（和选项） 178</span><br><span class="line">11.4 不确定的限制 179</span><br><span class="line">11.5 系统选项 180</span><br><span class="line">11.6 总结 181</span><br><span class="line">11.7 练习 182</span><br><span class="line">第12章 系统和进程信息 183</span><br><span class="line">12.1 &#x2F;proc文件系统 183</span><br><span class="line">12.1.1 获取与进程有关的信息：&#x2F;proc&#x2F;PID 183</span><br><span class="line">12.1.2 &#x2F;proc目录下的系统信息 185</span><br><span class="line">12.1.3 访问&#x2F;proc文件 186</span><br><span class="line">12.2 系统标识：uname（） 188</span><br><span class="line">12.3 总结 190</span><br><span class="line">12.4 练习 190</span><br><span class="line">第13章 文件I&#x2F;O缓冲 191</span><br><span class="line">13.1 文件I&#x2F;O的内核缓冲：缓冲区高速缓存 191</span><br><span class="line">13.2 stdio库的缓冲 194</span><br><span class="line">13.3 控制文件I&#x2F;O的内核缓冲 196</span><br><span class="line">13.4 I&#x2F;O缓冲小结 200</span><br><span class="line">13.5 就I&#x2F;O模式向内核提出建议 201</span><br><span class="line">13.6 绕过缓冲区高速缓存：直接I&#x2F;O 202</span><br><span class="line">13.7 混合使用库函数和系统调用进行文件I&#x2F;O 204</span><br><span class="line">13.8 总结 205</span><br><span class="line">13.9 练习 205</span><br><span class="line">第14章 系统编程概念 207</span><br><span class="line">14.1 设备专用文件（设备文件） 207</span><br><span class="line">14.2 磁盘和分区 208</span><br><span class="line">14.3 文件系统 209</span><br><span class="line">14.4 i节点 211</span><br><span class="line">14.5 虚拟文件系统（VFS） 213</span><br><span class="line">14.6 日志文件系统 214</span><br><span class="line">14.7 单根目录层级和挂载点 215</span><br><span class="line">14.8 文件系统的挂载和卸载 216</span><br><span class="line">14.8.1 挂载文件系统：mount（） 217</span><br><span class="line">14.8.2 卸载文件系统：umount（）和umount2（） 222</span><br><span class="line">14.9 高级挂载特性 223</span><br><span class="line">14.9.1 在多个挂载点挂载文件系统 224</span><br><span class="line">14.9.2 多次挂载同一挂载点 224</span><br><span class="line">14.9.3 基于每次挂载的挂载标志 225</span><br><span class="line">14.9.4 绑定挂载 225</span><br><span class="line">14.9.5 递归绑定挂载 226</span><br><span class="line">14.10 虚拟内存文件系统：tmpfs 227</span><br><span class="line">14.11 获得与文件系统有关的信息：statvfs（） 228</span><br><span class="line">14.12 总结 229</span><br><span class="line">14.13 练习 230</span><br><span class="line">第15章 文件属性 231</span><br><span class="line">15.1 获取文件信息：stat（） 231</span><br><span class="line">15.2 文件时间戳 236</span><br><span class="line">15.2.1 使用utime（）和utimes（）来改变文件时间戳 238</span><br><span class="line">15.2.2 使用utimensat（）和futimens（）改变文件时间戳 239</span><br><span class="line">15.3 文件属主 241</span><br><span class="line">15.3.1 新建文件的属主 241</span><br><span class="line">15.3.2 改变文件属主：chown（）、fchown（）和lchown（） 241</span><br><span class="line">15.4 文件权限 244</span><br><span class="line">15.4.1 普通文件的权限 244</span><br><span class="line">15.4.2 目录权限 246</span><br><span class="line">15.4.3 权限检查算法 246</span><br><span class="line">15.4.4 检查对文件的访问权限：access（） 248</span><br><span class="line">15.4.5 Set—User—ID、Set—Group—ID和Sticky位 249</span><br><span class="line">15.4.6 进程的文件模式创建掩码：umask（） 249</span><br><span class="line">15.4.7 更改文件权限：chmod（）和fchmod（） 251</span><br><span class="line">15.5 I节点标志（ext2扩展文件属性） 252</span><br><span class="line">15.6 总结 256</span><br><span class="line">15.7 练习 256</span><br><span class="line">第16章 扩展属性 258</span><br><span class="line">16.1 概述 258</span><br><span class="line">16.2 扩展属性的实现细节 260</span><br><span class="line">16.3 操控扩展属性的系统调用 260</span><br><span class="line">16.4 总结 264</span><br><span class="line">16.5 练习 264</span><br><span class="line">第17章 访问控制列表 265</span><br><span class="line">17.1 概述 265</span><br><span class="line">17.2 ACL权限检查算法 267</span><br><span class="line">17.3 ACL的长、短文本格式 268</span><br><span class="line">17.4 ACL_mask型ACE和ACL组分类 269</span><br><span class="line">17.5 getfacl和setfacl命令 270</span><br><span class="line">17.6 默认ACL与文件创建 271</span><br><span class="line">17.7 ACL在实现方面的限制 272</span><br><span class="line">17.8 ACLAPI 273</span><br><span class="line">17.9 总结 280</span><br><span class="line">17.10 练习 280</span><br><span class="line">第18章 目录与链接 281</span><br><span class="line">18.1 目录和（硬）链接 281</span><br><span class="line">18.2 符号（软）链接 283</span><br><span class="line">18.3 创建和移除（硬）链接：link（）和unlink（） 286</span><br><span class="line">18.4 更改文件名：rename（） 289</span><br><span class="line">18.5 使用符号链接：symlink（）和readlink（） 290</span><br><span class="line">18.6 创建和移除目录：mkdir（）和rmdir（） 291</span><br><span class="line">18.7 移除一个文件或目录：remove（） 292</span><br><span class="line">18.8 读目录：opendir（）和readdir（） 292</span><br><span class="line">18.9 文件树遍历：nftw（） 297</span><br><span class="line">18.10 进程的当前工作目录 301</span><br><span class="line">18.11 针对目录文件描述符的相关操作 303</span><br><span class="line">18.12 改变进程的根目录：chroot（） 304</span><br><span class="line">18.13 解析路径名：realpath（） 306</span><br><span class="line">18.14 解析路径名字符串：dirname（）和basename（） 307</span><br><span class="line">18.15 总结 309</span><br><span class="line">18.16 练习 309</span><br><span class="line">第19章 监控文件事件 311</span><br><span class="line">19.1 概述 311</span><br><span class="line">19.2 inotifyAPI 312</span><br><span class="line">19.3 inotify事件 313</span><br><span class="line">19.4 读取inotify事件 315</span><br><span class="line">19.5 队列限制和&#x2F;proc文件 319</span><br><span class="line">19.6 监控文件的旧有系统：dnotify 320</span><br><span class="line">19.7 总结 320</span><br><span class="line">19.8 练习 320</span><br><span class="line">第20章 信号：基本概念 321</span><br><span class="line">20.1 概念和概述 321</span><br><span class="line">20.2 信号类型和默认行为 323</span><br><span class="line">20.3 改变信号处置：signal（） 329</span><br><span class="line">20.4 信号处理器简介 330</span><br><span class="line">20.5 发送信号：kill（） 333</span><br><span class="line">20.6 检查进程的存在 334</span><br><span class="line">20.7 发送信号的其他方式：raise（）和killpg（） 335</span><br><span class="line">20.8 显示信号描述 336</span><br><span class="line">20.9 信号集 337</span><br><span class="line">20.10 信号掩码（阻塞信号传递） 339</span><br><span class="line">20.11 处于等待状态的信号 341</span><br><span class="line">20.12 不对信号进行排队处理 341</span><br><span class="line">20.13 改变信号处置：sigaction（） 345</span><br><span class="line">20.14 等待信号：pause（） 346</span><br><span class="line">20.15 总结 347</span><br><span class="line">20.16 练习 347</span><br><span class="line">第21章 信号：信号处理器函数 348</span><br><span class="line">21.1 设计信号处理器函数 348</span><br><span class="line">21.1.1 再论信号的非队列化处理 348</span><br><span class="line">21.1.2 可重入函数和异步信号安全函数 349</span><br><span class="line">21.1.3 全局变量和sig_atomic_t数据类型 353</span><br><span class="line">21.2 终止信号处理器函数的其他方法 354</span><br><span class="line">21.2.1 在信号处理器函数中执行非本地跳转 354</span><br><span class="line">21.2.2 异常终止进程：abort（） 358</span><br><span class="line">21.3 在备选栈中处理信号：sigaltstack（） 358</span><br><span class="line">21.4 SA_SIGINFO标志 361</span><br><span class="line">21.5 系统调用的中断和重启 366</span><br><span class="line">21.6 总结 368</span><br><span class="line">21.7 练习 369</span><br><span class="line">第22章 信号：高级特性 370</span><br><span class="line">22.1 核心转储文件 370</span><br><span class="line">22.2 传递、处置及处理的特殊情况 372</span><br><span class="line">22.3 可中断和不可中断的进程睡眠状态 373</span><br><span class="line">22.4 硬件产生的信号 374</span><br><span class="line">22.5 信号的同步生成和异步生成 374</span><br><span class="line">22.6 信号传递的时机与顺序 375</span><br><span class="line">22.7 signal（）的实现及可移植性 376</span><br><span class="line">22.8 实时信号 378</span><br><span class="line">22.8.1 发送实时信号 379</span><br><span class="line">22.8.2 处理实时信号 380</span><br><span class="line">22.9 使用掩码来等待信号：sigsuspend（） 384</span><br><span class="line">22.10 以同步方式等待信号 387</span><br><span class="line">22.11 通过文件描述符来获取信号 390</span><br><span class="line">22.12 利用信号进行进程间通信 393</span><br><span class="line">22.13 早期的信号API（SystemV和BSD） 393</span><br><span class="line">22.14 总结 395</span><br><span class="line">22.15 练习 396</span><br><span class="line">……</span><br><span class="line">第23章 定时器与休眠 397</span><br><span class="line">第24章 进程的创建 425</span><br><span class="line">第25章 进程的终止 440</span><br><span class="line">第26章 监控子进程 447</span><br><span class="line">第27章 程序的执行 465</span><br><span class="line">第28章 详述进程创建和程序执行 487</span><br><span class="line">第29章 线程：介绍 509</span><br><span class="line">第30章 线程：线程同步 521</span><br><span class="line">第31章 线程：线程安全和每线程存储 539</span><br><span class="line">第32章 线程：线程取消 552</span><br><span class="line">第33章 线程：更多细节 561</span><br><span class="line">……</span><br><span class="line">《Linux&#x2F;UNIX系统编程手册（下册）》</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00HLA8TYG/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00HLA8TYG&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51EUI039ySL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00HV4DPWS/" rel="prev" title="数据之美：一本书学会可视化设计">
+      <i class="fa fa-chevron-left"></i> 数据之美：一本书学会可视化设计
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00H93EFGG/" rel="next" title="R语言技术手册(第2版)">
+      R语言技术手册(第2版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

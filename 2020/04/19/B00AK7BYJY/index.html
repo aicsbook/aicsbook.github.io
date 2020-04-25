@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 算法导论(原书第3版)作者信息： 作者: Thomas H.Cormen [ 中文 pdf ] 简单介绍《算法导论(原书第3版)》编辑推荐：全球超过50万人阅读的算法圣经！算法标准教材，国内外1000余所高校采用。国内知名高校6位教授历时3年倾心翻译！ 目录123456789101112131415161718192021222324252627282930313233343536">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法导论(原书第3版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00AK7BYJY/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 算法导论(原书第3版)作者信息： 作者: Thomas H.Cormen [ 中文 pdf ] 简单介绍《算法导论(原书第3版)》编辑推荐：全球超过50万人阅读的算法圣经！算法标准教材，国内外1000余所高校采用。国内知名高校6位教授历时3年倾心翻译！ 目录123456789101112131415161718192021222324252627282930313233343536">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51yWNzHYyUL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.123Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51yWNzHYyUL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00AK7BYJY/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>算法导论(原书第3版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00AK7BYJY/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          算法导论(原书第3版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 算法导论(原书第3版)<br>作者信息： 作者: Thomas H.Cormen [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《算法导论(原书第3版)》编辑推荐：全球超过50万人阅读的算法圣经！算法标准教材，国内外1000余所高校采用。国内知名高校6位教授历时3年倾心翻译！</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line">出版者的话</span><br><span class="line">译者序</span><br><span class="line">前言</span><br><span class="line">第一部分基础知识</span><br><span class="line">第1章算法在计算中的作用</span><br><span class="line">1.1算法</span><br><span class="line">1.2作为一种技术的算法</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第2章算法基础</span><br><span class="line">2.1插入排序</span><br><span class="line">2.2分析算法</span><br><span class="line">2.3设计算法</span><br><span class="line">2.3.1分治法</span><br><span class="line">2.3.2分析分治算法</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第3章函数的增长</span><br><span class="line">3.1渐近记号</span><br><span class="line">3.2标准记号与常用函数</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第4章分治策略</span><br><span class="line">4.1最大子数组问题</span><br><span class="line">4.2矩阵乘法的Strassen算法</span><br><span class="line">4.3用代入法求解递归式</span><br><span class="line">4.4用递归树方法求解递归式</span><br><span class="line">4.5用主方法求解递归式</span><br><span class="line">4.6证明主定理</span><br><span class="line">4.6.1对6的幂证明主定理</span><br><span class="line">4.6.2向下取整和向上取整</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第5章概率分析和随机算法</span><br><span class="line">5.1雇用问题</span><br><span class="line">5.2指示器随机变量</span><br><span class="line">5.3随机算法</span><br><span class="line">5.4概率分析和指示器随机变量的进一步使用 5.4.1生日悖论 5.4.2球与箱子 5.4.3特征序列 5.4.4在线雇用问题 思考题 本章注记 第二部分排序和顺序统计量 第6章堆排序 6.1堆 6.2维护堆的性质 6.3建堆 6.4堆排序算法 6.5优先队列 思考题 本章注记 第7章快速排序 7.1快速排序的描述 7.2快速排序的性能 7.3快速排序的随机化版本 7.4快速排序分析 7.4.1最坏情况分析 7.4.2期望运行时间 思考题 本章注记 第8章线性时间排序 8.1排序算法的下界 8.2计数排序 8.3基数排序 8.4桶排序 思考题 本章注记 第9章中位数和顺序统计量 9.1最小值和最大值 9.2期望为线性时间的选择算法 9.3最坏情况为线性时间的选择算法 思考题 本章注记 第三部分数据结构 第10章基本数据结构 10.1栈和队列 10.2链表 10.3指针和对象的实现 10.4有根树的表示 思考题 本章注记 第11章散列表 11.1直接寻址表 11.2散列表 11.3散列函数 11.3.1除法散列法 11.3.2乘法散列法 11.3.3全域散列法</span><br><span class="line">11.4开放寻址法</span><br><span class="line">11.5完全散列</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第12章二叉搜索树</span><br><span class="line">12.1什么是二叉搜索树</span><br><span class="line">12.2查询二叉搜索树</span><br><span class="line">12.3插入和删除</span><br><span class="line">12.4随机构建二叉搜索树</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第13章红黑树</span><br><span class="line">13.1红黑树的性质</span><br><span class="line">13.2旋转</span><br><span class="line">13.3插入</span><br><span class="line">13.4删除</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第14章数据结构的扩张</span><br><span class="line">14.1动态顺序统计</span><br><span class="line">14.2如何扩张数据结构</span><br><span class="line">14.3区间树</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第四部分高级设计和分析技术</span><br><span class="line">第15章动态规划</span><br><span class="line">15.1钢条切割</span><br><span class="line">15.2矩阵链乘法</span><br><span class="line">15.3动态规划原理</span><br><span class="line">15.4最长公共子序列</span><br><span class="line">15.5最优二叉搜索树</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第16章贪心算法</span><br><span class="line">16.1活动选择问题</span><br><span class="line">16.2贪心算法原理</span><br><span class="line">16.3赫夫曼编码</span><br><span class="line">16.4拟阵和贪心算法 16.5用拟阵求解任务调度问题</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第17章摊还分析</span><br><span class="line">17，1聚合分析</span><br><span class="line">17.2核算法</span><br><span class="line">17.3势能法</span><br><span class="line">17.4动态表</span><br><span class="line">17.4.1表扩张</span><br><span class="line">17.4.2表扩张和收缩</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第五部分高级数据结构</span><br><span class="line">第18章B树</span><br><span class="line">18.1B树的定义</span><br><span class="line">18.2B树上的基本操作</span><br><span class="line">18.3从B树中删除关键字</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第19章斐波那契堆</span><br><span class="line">19.1斐波那契堆结构</span><br><span class="line">19.2可合并堆操作</span><br><span class="line">19.3关键字减值和删除一个结点</span><br><span class="line">19.4最大度数的界</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第20章van Emde Boas树</span><br><span class="line">20.1基本方法</span><br><span class="line">20.2递归结构</span><br><span class="line">20.2.1原型van Emde Boas结构</span><br><span class="line">20.2.2原型van Emde Boas结构上的操作</span><br><span class="line">20.3van Emde Boas树及其操作</span><br><span class="line">20.3.1van Emde Boas树</span><br><span class="line">20.3.2van Emde Boas树的操作</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第21章用于不相交集合的数据结构</span><br><span class="line">21.1不相交集合的操作</span><br><span class="line">21.2不相交集合的链表表示</span><br><span class="line">21.3不相交集合森林</span><br><span class="line">21.4带路径压缩的按秩合并的分析 思考题 本章注记 第六部分图算法 第22章基本的图算法 22.1图的表示 22.2广度优先搜索 22.3深度优先搜索 22.4拓扑排序 22.5强连通分量 思考题 本章注记 第23章最小生成树 23.1最小生成树的形成 23.2Kruskal算法和Prim算法 思考题 本章注记 第24章单源最短路径 24.1Bellman—Ford算法 24.2有向无环图中的单源最短路径问题 24.3Dijkstra算法 24.4差分约束和最短路径 24.5最短路径性质的证明 思考题 本章注记 第25章所有结点对的最短路径问题 25.1最短路径和矩阵乘法 25.2Floyd—Warshall算法 25.3用于稀疏图的Johnson算法 思考题 本章注记 第26章最大流 26.1流网络 26.2Ford—Fulkerson方法 26.3最大二分匹配 26.4推送一重贴标签算法</span><br><span class="line">26.5前置重贴标签算法 思考题 本章注记 第七部分算法问题选编 第27章多线程算法 27.1动态多线程基础 27.2多线程矩阵乘法 27.3多线程归并排序 思考题 本章注记 第28章矩阵运算 28.1求解线性方程组 28.2矩阵求逆 28.3对称正定矩阵和最小二乘 逼近 思考题 本章注记 第29章线性规划 29.1标准型和松弛型 29.2将问题表达为线性规划 29.3单纯形算法 29.4对偶性 29.5初始基本可行解 思考题 本章注记 第30章多项式与快速傅里叶变换 30.1多项式的表示 30.2DFT与FFT 30.3高效FFT实现 思考题 本章注记 第31章数论算法 31.1基础数论概念 31.2最大公约数 31.3模运算 31.4求解模线性方程 31.5中国余数定理 31.6元素的幂 31.7RSA公钥加密系统 31.3素数的测试</span><br><span class="line">31.9整数的因子分解 思考题 本章注记 第32章字符串匹配 32.1朴素字符串匹配算法 32.2Rabin—Karp算法 32.3利用有限自动机进行字符串匹配 32.4Knuth—Morris—Pratt算法</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第33章计算几何学</span><br><span class="line">33.1线段的性质</span><br><span class="line">33.2确定任意一对线段是否相交</span><br><span class="line">33.3寻找凸包</span><br><span class="line">33.4寻找最近点对</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第34章NP完全性</span><br><span class="line">34.1多项式时间</span><br><span class="line">34.2多项式时间的验证</span><br><span class="line">34.3NP完全性与可归约性</span><br><span class="line">34.4NP完全性的证明</span><br><span class="line">34.5NP完全问题</span><br><span class="line">34.5.1团问题</span><br><span class="line">34.5.2顶点覆盖问题</span><br><span class="line">34.5.3哈密顿回路问题</span><br><span class="line">34.5.4旅行商问题</span><br><span class="line">34.5.5子集和问题</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第35章近似算法</span><br><span class="line">35.1顶点覆盖问题</span><br><span class="line">35.2旅行商问题</span><br><span class="line">35.2.1满足三角不等式的旅行商问题</span><br><span class="line">35.2.2一般旅行商问题</span><br><span class="line">35.3集合覆盖问题</span><br><span class="line">35.4随机化和线性规划</span><br><span class="line">35.5子集和问题</span><br><span class="line">思考题</span><br><span class="line">本章注记</span><br><span class="line">第八部分附录：数学基础知识</span><br><span class="line">附录A求和</span><br><span class="line">A.1求和公式及其性质</span><br><span class="line">A.2确定求和时间的界</span><br><span class="line">思考题</span><br><span class="line">附录注记</span><br><span class="line">附录B集合等离散数学内容</span><br><span class="line">B.1集合</span><br><span class="line">B.2关系</span><br><span class="line">B.3函数</span><br><span class="line">B.4图</span><br><span class="line">B.5树</span><br><span class="line">B.5.1自由树</span><br><span class="line">B.5.2有根树和有序树</span><br><span class="line">B.5.3二叉树和位置树</span><br><span class="line">思考题</span><br><span class="line">附录注记</span><br><span class="line">附录C计数与概率</span><br><span class="line">C.1计数</span><br><span class="line">C.2概率</span><br><span class="line">C.3离散随机变量</span><br><span class="line">C.4几何分布与二项分布</span><br><span class="line">思考题</span><br><span class="line">附录注记</span><br><span class="line">附录D矩阵</span><br><span class="line">D.1矩阵与矩阵运算</span><br><span class="line">D.2矩阵的基本性质</span><br><span class="line">思考题</span><br><span class="line">附录注记</span><br><span class="line">参考文献</span><br><span class="line">索引</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00AK7BYJY/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00AK7BYJY&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51yWNzHYyUL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00AYR34R0/" rel="prev" title="Effective MySQL之SQL语句最优化">
+      <i class="fa fa-chevron-left"></i> Effective MySQL之SQL语句最优化
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00A9YD7A2/" rel="next" title="重构与模式(修订版)">
+      重构与模式(修订版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

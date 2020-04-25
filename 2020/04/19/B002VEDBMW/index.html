@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： iphone3开发基础教程作者信息： 作者: 马克(Dave Mark) [ 中文 pdf ] 简单介绍《iphone3开发基础教程》是Amazon计算机榜首图书，创造销售奇迹的经典著作，针对iPhoe SDK 3新特性全面改版，从这里，拥抱软件开发的未来。Apple公司的iPflone开创了移动平台新纪元！而最新版iPhone 3做了不少改进，如强化应用程序对GPS的支持，还增加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iphone3开发基础教程">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B002VEDBMW/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： iphone3开发基础教程作者信息： 作者: 马克(Dave Mark) [ 中文 pdf ] 简单介绍《iphone3开发基础教程》是Amazon计算机榜首图书，创造销售奇迹的经典著作，针对iPhoe SDK 3新特性全面改版，从这里，拥抱软件开发的未来。Apple公司的iPflone开创了移动平台新纪元！而最新版iPhone 3做了不少改进，如强化应用程序对GPS的支持，还增加">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51scqo9tR8L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.811Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="ios">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51scqo9tR8L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B002VEDBMW/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>iphone3开发基础教程 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B002VEDBMW/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          iphone3开发基础教程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： iphone3开发基础教程<br>作者信息： 作者: 马克(Dave Mark) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《iphone3开发基础教程》是Amazon计算机榜首图书，创造销售奇迹的经典著作，针对iPhoe SDK 3新特性全面改版，从这里，拥抱软件开发的未来。Apple公司的iPflone开创了移动平台新纪元！而最新版iPhone 3做了不少改进，如强化应用程序对GPS的支持，还增加了众多新功能，如全系统搜索、支持复制和粘贴、收发多媒体信息等。iPhone 3与App Store的绝配为全世界的程序员提供了一个施展才华的全新大舞台。只要有新奇的创意，你完全有可能像开发iStloot游戏的Ethan Nicliolas（日收入2万多美元）和开发Trism游戏的Steve Demmeter（月收入超过10万美元）那样，单枪匹马即可赢得全球市场，成功创业，改变自己的人生。上一版英文原版问世以来在Anlazor、计算机图书排行榜持续雄踞榜首，总排名一度在20名左右，被奉为经典。而中文版出版后也迅速荣登各大网店排行榜榜首，并创造了半年内印刷四次的销售奇迹。书中从到Apple网站注册账号，下载和安装免费iPhone SDK开始，清晰透彻地讲述了创建iPhone应用程序的全过程。作者在探讨基本概念和各个关键特性（iPhone界面元素、数据保存、SQLite3、Quarrtz和OpenGL ES、手势支持、本地化、Core Location等）时，提供了丰富的实例。更难得的是，《iphone3开发基础教程》始终强调iPhone开发中的各种最佳实践，即使是有经验的开发人员，也会因此受益匪浅。《iphone3开发基础教程》新版针对iPhone SDK 3做了大幅修订，力求使新老读者都能觉得物有所值。作者在纠正上一版错误的基础上，不仅更新了所有项目代码，使之兼容新旧SDK，还新增了不少内容，进一步阐明一些读者反馈的比较难懂的主题。此外，书中还为Core Data增加了一个新项目。立即展卷阅读，开始神奇的iPhone开发之旅吧。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">第1章 欢迎来到iPhone的世界 1</span><br><span class="line">1.1 关于本书 1</span><br><span class="line">1.2 必要条件 1</span><br><span class="line">1.3 必备知识 3</span><br><span class="line">1.4 编写iPhone应用程序有何不同 4</span><br><span class="line">1.4.1 只有一个正在运行的应用程序 4</span><br><span class="line">1.4.2 只有一个窗口 4</span><br><span class="line">1.4.3 受限访问 5</span><br><span class="line">1.4.4 有限的响应时间 5</span><br><span class="line">1.4.5 有限的屏幕大小 5</span><br><span class="line">1.4.6 有限的系统资源 5</span><br><span class="line">1.4.7 不支持垃圾收集 6</span><br><span class="line">1.4.8 新功能 6</span><br><span class="line">1.4.9 与众不同的方法 6</span><br><span class="line">1.5 本书内容 6</span><br><span class="line">1.6 本次更新的内容 7</span><br><span class="line">1.7 准备开始吧 7 </span><br><span class="line"></span><br><span class="line"> 第2章 创建基本项目 8 2.1 在Xcode中设置项目 8 2.2 Interface Builder简介 13 2.2.1 nib文件的构成 14 2.2.2 在视图中添加标签 15 2.3 美化iPhone应用程序 17 2.4 小结 20</span><br><span class="line"></span><br><span class="line"> 第3章 处理基本交互 21 3.1 MVC范型 21 3.2 创建项目 22 3.3 创建视图控制器 22 3.3.1 输出口 23 3.3.2 操作 24 3.3.3 将操作和输出口添加到视图控制器 24 3.3.4 将操作和输出口添加到实现文件 26 3.4 使用应用程序委托 30 3.5 编辑MainWindow.xib 33 3.6 编辑Button_FunViewController.xib 34 3.6.1 在Interface Builder中创建视图 34 3.6.2 连接所有元素 36 3.6.3 测试 39 3.7 小结 39</span><br><span class="line"></span><br><span class="line"> 第4章 更丰富的用户界面 40 4.1 满是控件的屏幕 40 4.2 活动、静态和被动控件 42 4.3 创建应用程序 42 4.3.1 导入图像 42 4.3.2 实现图像视图和文本字段 43 4.3.3 添加图像视图 44 4.3.4 添加文本字段 47 4.3.5 设置第二个文本字段的属性 50 4.3.6 连接输出口 50 4.4 构建和运行 51 4.4.1 完成输入后关闭键盘 51 4.4.2 通过触摸背景关闭键盘 52 4.5 实现滑块和标签 54 4.5.1 确定输出口 54 4.5.2 确定操作 54 4.5.3 添加输出口和操作 54 4.5.4 添加滑块和标签 55 4.5.5 连接操作和输出口 56 4.6 实现开关、按钮和分段控件 57 4.6.1 确定输出口 57 4.6.2 确定操作 57 4.6.3 添加开关、按钮和分段控件 59 4.6.4 连接开关输出口和操作 60 4.6.5 添加按钮 61 4.7 实现操作表和警报 62 4.7.1 遵从操作表委托方法 62 4.7.2 显示操作表 62 4.7.3 操作表委托和创建警报 64 4.8 美化按钮 66 4.8.1 viewDidLoad方法 66 4.8.2 控件状态 67 4.8.3 可拉伸图像 67 4.9 成为出色的内存使用者 67 4.10 小结 68</span><br><span class="line"></span><br><span class="line"> 第5章 自动旋转和自动调整大小 70 5.1 使用自动调整属性处理旋转 71 5.1.1 指定旋转支持 71 5.1.2 使用自动调整属性设计界面 73 5.1.3 自动调整属性 74 5.1.4 设置按钮的自动调整属性 75 5.2 在旋转时重构视图 76 5.2.1 声明和连接输出口 77 5.2.2 在旋转时移动按钮 77 5.3 切换视图 79 5.3.1 确定输出口 80 5.3.2 确定动作 80 5.3.3 声明动作和输出口 80 5.3.4 设计两个视图 81 5.3.5 实现交换和动作 82 5.4 小结 84</span><br><span class="line"></span><br><span class="line"> 第6章 多视图应用程序 85 6.1 View Switcher应用程序 87 6.2 多视图应用程序的体系结构 88 6.3 构建View Switcher 88 6.3.1 创建视图控制器和nib文件 89 6.3.2 修改应用程序委托 91 6.3.3 SwitchViewController.h 92 6.3.4 修改MainWindow.xib 92 6.3.5 编写SwitchViewController.m 95 6.3.6 实现内容视图 98 6.4 制作转换动画 101 6.5 小结 103</span><br><span class="line"></span><br><span class="line"> 第7章 标签栏与选取器 104 7.1 Pickers应用程序 104 7.2 委托和数据源 106 7.3 建立工具栏框架 106 7.3.1 创建文件 107 7.3.2 添加根视图控制器 108 7.4 实现日期选取器 112 7.5 实现单个组件选取器 114 7.5.1 声明输出口和操作 114 7.5.2 构建视图 115 7.5.3 将控制器实现为数据源和委托 115 7.6 实现多组件选取器 120 7.6.1 声明输出口和操作 120 7.6.2 构建视图 120 7.6.3 实现控制器 121 7.7 实现独立组件 123 7.8 使用自定义选取器创建简单游戏 130 7.8.1 编写控制器头文件 130 7.8.2 构建视图 130 7.8.3 添加图像资源 131 7.8.4 实现控制器 131 7.8.5 spin方法 134 7.8.6 viewDidLoad方法 135 7.8.7 最后的细节 137 7.8.8 链接Audio Toolbox框架 140 7.9 小结 141</span><br><span class="line"></span><br><span class="line"> 第8章 表视图简介 142 8.1 表视图基础 142 8.2 实现一个简单的表 145 8.2.1 设计视图 145 8.2.2 编写控制器 146 8.3 添加一个图像 149 8.4 附加配置 151 8.4.1 设置缩进级别 152 8.4.2 处理行的选择 152 8.4.3 更改字体大小和行高 154 8.4.4 委托还能做什么 155 8.5 定制表视图单元 155 8.5.1 单元应用程序 155 8.5.2 向表视图单元添加子视图 156 8.5.3 使用UITableViewCell的自定义子类 159 8.6 分组分区和索引分区 163 8.6.1 构建视图 163 8.6.2 导入数据 164 8.6.3 实现控制器 164 8.6.4 添加索引 168 8.7 实现搜索栏 168 8.7.1 重新考虑设计 168 8.7.2 深层可变副本 169 8.7.3 更新控制器头文件 170 8.7.4 修改视图 171 8.7.5 修改控制器实现 173 8.8 小结 183</span><br><span class="line"></span><br><span class="line"> 第9章 导航控制器和表视图 184 9.1 导航控制器 184 9.1.1 栈的性质 184 9.1.2 控制器栈 185 9.2 由6个部分组成的分层应用程序：Nav 185 9.3 构建Nav应用程序的骨架 188 9.3.1 创建第一级视图控制器 188 9.3.2 设置导航控制器 189 9.4 第一个子控制器：展示按钮视图 194 9.5 第二个子控制器：校验表 201 9.6 第三个子控制器：表行上的控件 205 9.7 第四个子控制器：可移动的行 211 9.7.1 编辑模式 211 9.7.2 创建一个新的二级控制器 212 9.8 第五个子控制器：可删除的行 217 9.9 第六个子控制器：可编辑的详细窗格 222 9.9.1 创建数据模型对象 222 9.9.2 创建控制器 224 9.9.3 创建详细视图控制器 227 9.10 其他内容 240 9.11 小结 243</span><br><span class="line"></span><br><span class="line"> 第10章 应用程序设置和用户默认设置 244 10.1 设置束 244 10.2 AppSettings应用程序 245 10.3 创建项目 247 10.4 使用设置束 248 10.4.1 在项目中添加设置束 248 10.4.2 设置属性列表 249 10.4.3 添加文本字段设置 250 10.4.4 添加安全文本字段设置 252 10.4.5 添加多值字段 252 10.4.6 添加拨动开关设置 253 10.4.7 添加滑块设置 254 10.4.8 添加子设置视图 255 10.5 读取应用程序中的设置 256 10.6 更改应用程序中的默认设置 260 10.7 小结 263</span><br><span class="line"></span><br><span class="line"> 第11章 基本数据持久性 264 11.1 应用程序的沙盒 264 11.1.1 获取Documents目录 265 11.1.2 获取tmp目录 266 11.2 文件保存策略 266 11.2.1 单个文件持久性 266 11.2.2 多个文件持久性 267 11.3 持久保存应用程序数据 267 11.4 持久性应用程序 268 11.4.1 创建持久性项目 269 11.4.2 设计持久性应用程序视图 269 11.4.3 编辑持久性类 270 11.4.4 对模型对象进行归档 273 11.4.5 实现NSCopying 275 11.5 归档应用程序 276 11.5.1 实现FourLines类 277 11.5.2 实现PersistenceView-Controller类 278 11.6 使用iPhone的嵌入式SQLite3 280 11.7 使用Core Data 289 11.7.1 实体和托管对象 291 11.7.2 键&#x2F;值编码 292 11.7.3 在上下文中结合它们 292 11.7.4 创建新托管对象 293 11.7.5 检索托管对象 293 11.7.6 设计数据模型 294 11.7.7 创建持久视图和控制器 297 11.7.8 将持久视图控制器设置为应用程序的根控制器 302 11.8 小结 303</span><br><span class="line"></span><br><span class="line"> 第12章 使用Quartz和OpenGL绘图 304 12.1 图形世界的两个视图 304 12.2 本章的绘图应用程序 305 12.3 Quart绘图方法 305 12.3.1 Quartz 2D的图形上下文 305 12.3.2 坐标系 306 12.3.3 指定颜色 307 12.3.4 在上下文中绘制图像 308 12.3.5 绘制形状：多边形、直线和曲线 309 12.3.6 Quartz 2D工具示例：模式、梯度、虚线模式 309 12.4 构建QuartzFun应用程序 309 12.4.1 创建随机颜色 310 12.4.2 定义应用程序常量 311 12.4.3 实现QuartzFunView框架 312 12.4.4 向视图控制器中添加输出口和操作 314 12.4.5 更新QuartzFunViewContro-ller.xib 316 12.4.6 绘制直线 317 12.4.7 绘制矩形和椭圆形 319 12.4.8 绘制图像 320 12.4.9 优化QuartzFun应用程序 322 12.5 一些OpenGL ES基础知识 325 12.5.1 构建GLFun应用程序 326 12.5.2 设计Nib、添加框架、运行应用程序 335 12.6 小结 335</span><br><span class="line"></span><br><span class="line"> 第13章 轻击、触摸和手势 336 13.1 多触摸术语 336 13.2 响应者链 337 13.3 多触摸体系结构 338 13.4 触摸浏览器应用程序 339 13.5 Swipes应用程序 342 13.6 实现多个轻扫动作 345 13.7 检测多次轻击 347 13.8 检测捏合操作 351 13.9 自己定义手势 354 13.10 小结 358</span><br><span class="line"></span><br><span class="line"> 第14章 使用Core Location定位功能 359 14.1 位置管理器 359 14.1.1 设置所需的精度 360 14.1.2 设置距离筛选器 360 14.1.3 启动位置管理器 360 14.1.4 更明智地使用位置管理器 360 14.2 位置管理器委托 361 14.2.1 获取位置更新 361 14.2.2 使用CLLocation获取纬度和经度 361 14.2.3 错误通知 362 14.3 尝试使用Core Location 363 14.3.1 更新位置管理器 367 14.3.2 确定移动距离 367 14.4 小结 368</span><br><span class="line"></span><br><span class="line"> 第15章 加速计 369 15.1 加速计物理学 369 15.2 访问加速计 370 15.2.1 UIAcceleration 370 15.2.2 实现accelerometer: didAccelerate:方法 371 15.3 摇动与击碎 373 15.3.1 用于击碎的代码 373 15.3.2 加载模拟文件 376 15.3.3 完好如初——复原触摸 377 15.4 滚弹珠程序 377 15.4.1 实现Ball View控制器 378 15.4.2 编写Ball View 379 15.4.3 计算小球运动 382 15.5 小结 385</span><br><span class="line"></span><br><span class="line"> 第16章 iPhone照相机和照片库 386 16.1 使用图像选取器和UIImagePicker-Controller 386 16.2 实现图像选取器控制器委托 387 16.3 实际测试照相机和库 389 16.3.1 设计界面 390 16.3.2 实现照相机视图控制器 390 16.4 小结 394</span><br><span class="line"></span><br><span class="line"> 第17章 应用程序本地化 395 17.1 本地化体系结构 395 17.2 使用字符串文件 396 17.3 现实中的iPhone：本地化应用程序 398 17.3.1 查看当前区域设置 401 17.3.2 测试LocalizeMe 401 17.3.3 本地化nib文件 402 17.3.4 查看本地化的项目结构 403 17.3.5 本地化图像 405 17.3.6 本地化应用程序图标 406 17.3.7 生成和本地化字符串文件 406 17.4 小结 409</span><br><span class="line"></span><br><span class="line"> 第18章 未来之路 410 18.1 别陷进单一的思路里 410 18.1.1 苹果公司的文档 410 18.1.2 邮件列表 411 18.1.3 论坛 411 18.1.4 网站 411 18.1.5 博客 412 18.1.6 Dave和Jeff的博客及Twitter 412 18.1.7 参考图书 412 18.1.8 如果仍未解决问题 412 18.2 再会 412</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B002VEDBMW/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B002VEDBMW&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51scqo9tR8L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ios/" rel="tag"># ios</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0036WSTQ6/" rel="prev" title="Web编程入门经典 HTML、XHTML和CSS(第2版)">
+      <i class="fa fa-chevron-left"></i> Web编程入门经典 HTML、XHTML和CSS(第2版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B002MUB66I/" rel="next" title="Java软件结构与数据结构(第3版)">
+      Java软件结构与数据结构(第3版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 深入理解Java虚拟机 JVM高级特性与最佳实践(第2版)作者信息： 作者: 周志明 [ 中文 pdf ] 简单介绍《深入理解Java虚拟机:JVM高级特性与最佳实践(第2版)》编辑推荐：超级畅销书全新升级，第1版两年内印刷近10次，Java图书领域公认的经典著作，繁体版台湾发行。基于最新JDK1.7，围绕内存管理、执行子系统、程序编译与优化、高效并发等核心主题对JVM进行全面而深">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解Java虚拟机 JVM高级特性与最佳实践(第2版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00D2ID4PK/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 深入理解Java虚拟机 JVM高级特性与最佳实践(第2版)作者信息： 作者: 周志明 [ 中文 pdf ] 简单介绍《深入理解Java虚拟机:JVM高级特性与最佳实践(第2版)》编辑推荐：超级畅销书全新升级，第1版两年内印刷近10次，Java图书领域公认的经典著作，繁体版台湾发行。基于最新JDK1.7，围绕内存管理、执行子系统、程序编译与优化、高效并发等核心主题对JVM进行全面而深">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41WduDiHOWL._SL500_AA300_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.864Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41WduDiHOWL._SL500_AA300_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00D2ID4PK/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>深入理解Java虚拟机 JVM高级特性与最佳实践(第2版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00D2ID4PK/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深入理解Java虚拟机 JVM高级特性与最佳实践(第2版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 深入理解Java虚拟机 JVM高级特性与最佳实践(第2版)<br>作者信息： 作者: 周志明 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《深入理解Java虚拟机:JVM高级特性与最佳实践(第2版)》编辑推荐：超级畅销书全新升级，第1版两年内印刷近10次，Java图书领域公认的经典著作，繁体版台湾发行。基于最新JDK1.7，围绕内存管理、执行子系统、程序编译与优化、高效并发等核心主题对JVM进行全面而深入的分析，深刻揭示JVM的工作原理。以实践为导向，通过大量与实际生产环境相结合的案例展示了解决各种常见JVM问题的技巧和最佳实践。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br></pre></td><td class="code"><pre><span class="line">前言</span><br><span class="line">第一部分走近Java</span><br><span class="line">第1章走近Java2</span><br><span class="line">1.1概述2</span><br><span class="line">1.2Java技术体系3</span><br><span class="line">1.3Java发展史5</span><br><span class="line">1.4Java虚拟机发展史9</span><br><span class="line">1.4.1SunClassicExactVM9</span><br><span class="line">1.4.2SunHotSpotVM11</span><br><span class="line">1.4.3SunMobile—EmbeddedVMMeta—CircularVM12</span><br><span class="line">1.4.4BEAJRockitIBMJ9VM13</span><br><span class="line">1.4.5AzulVMBEALiquidVM14</span><br><span class="line">1.4.6ApacheHarmonyGoogleAndroidDalvikVM14</span><br><span class="line">1.4.7MicrosoftJVM及其他15</span><br><span class="line">1.5展望Java技术的未来16</span><br><span class="line">1.5.1模块化17</span><br><span class="line">1.5.2混合语言17</span><br><span class="line">1.5.3多核并行19</span><br><span class="line">1.5.4进一步丰富语法20</span><br><span class="line">1.5.564位虚拟机21</span><br><span class="line">1.6实战：自己编译JDK22</span><br><span class="line">1.6.1获取JDK源码22</span><br><span class="line">1.6.2系统需求24</span><br><span class="line">1.6.3构建编译环境25</span><br><span class="line">1.6.4进行编译26</span><br><span class="line">1.6.5在IDE工具中进行源码调试31</span><br><span class="line">1.7本章小结35</span><br><span class="line">第二部分自动内存管理机制</span><br><span class="line">第2章Java内存区域与内存溢出异常38</span><br><span class="line">2.1概述38</span><br><span class="line">2.2运行时数据区域38</span><br><span class="line">2.2.1程序计数器39</span><br><span class="line">2.2.2Java虚拟机栈39</span><br><span class="line">2.2.3本地方法栈40</span><br><span class="line">2.2.4Java堆41</span><br><span class="line">2.2.5方法区41</span><br><span class="line">2.2.6运行时常量池42</span><br><span class="line">2.2.7直接内存43</span><br><span class="line">2.3HotSpot虚拟机对象探秘43</span><br><span class="line">2.3.1对象的创建44</span><br><span class="line">2.3.2对象的内存布局47</span><br><span class="line">2.3.3对象的访问定位48</span><br><span class="line">2.4实战：OutOfMemoryError异常50</span><br><span class="line">2.4.1Java堆溢出51</span><br><span class="line">2.4.2虚拟机栈和本地方法栈溢出53</span><br><span class="line">2.4.3方法区和运行时常量池溢出56</span><br><span class="line">2.4.4本机直接内存溢出59</span><br><span class="line">2.5本章小结60</span><br><span class="line">第3章垃圾收集器与内存分配策略61</span><br><span class="line">3.1概述61</span><br><span class="line">3.2对象已死吗62</span><br><span class="line">3.2.1引用计数算法62</span><br><span class="line">3.2.2可达性分析算法64</span><br><span class="line">3.2.3再谈引用65</span><br><span class="line">3.2.4生存还是死亡66</span><br><span class="line">3.2.5回收方法区68</span><br><span class="line">3.3垃圾收集算法69</span><br><span class="line">3.3.1标记—清除算法69</span><br><span class="line">3.3.2复制算法70</span><br><span class="line">3.3.3标记—整理算法71</span><br><span class="line">3.3.4分代收集算法72</span><br><span class="line">3.4HotSpot的算法实现72</span><br><span class="line">3.4.1枚举根节点72</span><br><span class="line">3.4.2安全点73</span><br><span class="line">3.4.3安全区域74</span><br><span class="line">3.5垃圾收集器75</span><br><span class="line">3.5.1Serial收集器76</span><br><span class="line">3.5.2ParNew收集器77</span><br><span class="line">3.5.3ParallelScavenge收集器79</span><br><span class="line">3.5.4SerialOld收集器80</span><br><span class="line">3.5.5ParallelOld收集器80</span><br><span class="line">3.5.6CMS收集器81</span><br><span class="line">3.5.7G1收集器84</span><br><span class="line">3.5.8理解GC日志89</span><br><span class="line">3.5.9垃圾收集器参数总结90</span><br><span class="line">3.6内存分配与回收策略91</span><br><span class="line">3.6.1对象优先在Eden分配91</span><br><span class="line">3.6.2大对象直接进入老年代93</span><br><span class="line">3.6.3长期存活的对象将进入老年代95</span><br><span class="line">3.6.4动态对象年龄判定97</span><br><span class="line">3.6.5空间分配担保98</span><br><span class="line">3.7本章小结100</span><br><span class="line">第4章虚拟机性能监控与故障处理工具101</span><br><span class="line">4.1概述101</span><br><span class="line">4.2JDK的命令行工具101</span><br><span class="line">4.2.1jps：虚拟机进程状况工具104</span><br><span class="line">4.2.2jstat：虚拟机统计信息监视工具105</span><br><span class="line">4.2.3jinfo：Java配置信息工具106</span><br><span class="line">4.2.4jmap：Java内存映像工具107</span><br><span class="line">4.2.5jhat：虚拟机堆转储快照分析工具108</span><br><span class="line">4.2.6jstack：Java堆栈跟踪工具109</span><br><span class="line">4.2.7HSDIS：JIT生成代码反汇编111</span><br><span class="line">4.3JDK的可视化工具114</span><br><span class="line">4.3.1JConsole：Java监视与管理控制台115</span><br><span class="line">4.3.2VisualVM：多合一故障处理工具122</span><br><span class="line">4.4本章小结131</span><br><span class="line">第5章调优案例分析与实战132</span><br><span class="line">5.1概述132</span><br><span class="line">5.2案例分析132</span><br><span class="line">5.2.1高性能硬件上的程序部署策略132</span><br><span class="line">5.2.2集群间同步导致的内存溢出135</span><br><span class="line">5.2.3堆外内存导致的溢出错误136</span><br><span class="line">5.2.4外部命令导致系统缓慢137</span><br><span class="line">5.2.5服务器JVM进程崩溃138</span><br><span class="line">5.2.6不恰当数据结构导致内存占用过大139</span><br><span class="line">5.2.7由Windows虚拟内存导致的长时间停顿141</span><br><span class="line">5.3实战：Eclipse运行速度调优142</span><br><span class="line">5.3.1调优前的程序运行状态142</span><br><span class="line">5.3.2升级JDK1.6的性能变化及兼容问题145</span><br><span class="line">5.3.3编译时间和类加载时间的优化150</span><br><span class="line">5.3.4调整内存设置控制垃圾收集频率153</span><br><span class="line">5.3.5选择收集器降低延迟157</span><br><span class="line">5.4本章小结160</span><br><span class="line">第三部分虚拟机执行子系统</span><br><span class="line">第6章类文件结构162</span><br><span class="line">6.1概述162</span><br><span class="line">6.2无关性的基石162</span><br><span class="line">6.3Class类文件的结构164</span><br><span class="line">6.3.1魔数与Class文件的版本166</span><br><span class="line">6.3.2常量池167</span><br><span class="line">6.3.3访问标志173</span><br><span class="line">6.3.4类索引、父类索引与接口索引集合174</span><br><span class="line">6.3.5字段表集合175</span><br><span class="line">6.3.6方法表集合178</span><br><span class="line">6.3.7属性表集合180</span><br><span class="line">6.4字节码指令简介196</span><br><span class="line">6.4.1字节码与数据类型197</span><br><span class="line">6.4.2加载和存储指令199</span><br><span class="line">6.4.3运算指令200</span><br><span class="line">6.4.4类型转换指令202</span><br><span class="line">6.4.5对象创建与访问指令203</span><br><span class="line">6.4.6操作数栈管理指令203</span><br><span class="line">6.4.7控制转移指令204</span><br><span class="line">6.4.8方法调用和返回指令204</span><br><span class="line">6.4.9异常处理指令205</span><br><span class="line">6.4.10同步指令205</span><br><span class="line">6.5公有设计和私有实现206</span><br><span class="line">6.6Class文件结构的发展207</span><br><span class="line">6.7本章小结208</span><br><span class="line">第7章虚拟机类加载机制209</span><br><span class="line">7.1概述209</span><br><span class="line">7.2类加载的时机210</span><br><span class="line">7.3类加载的过程214</span><br><span class="line">7.3.1加载214</span><br><span class="line">7.3.2验证216</span><br><span class="line">7.3.3准备219</span><br><span class="line">7.3.4解析220</span><br><span class="line">7.3.5初始化225</span><br><span class="line">7.4类加载器227</span><br><span class="line">7.4.1类与类加载器228</span><br><span class="line">7.4.2双亲委派模型229</span><br><span class="line">7.4.3破坏双亲委派模型233</span><br><span class="line">7.5本章小结235</span><br><span class="line">第8章虚拟机字节码执行引擎236</span><br><span class="line">8.1概述236</span><br><span class="line">8.2运行时栈帧结构236</span><br><span class="line">8.2.1局部变量表238</span><br><span class="line">8.2.2操作数栈242</span><br><span class="line">8.2.3动态连接243</span><br><span class="line">8.2.4方法返回地址243</span><br><span class="line">8.2.5附加信息244</span><br><span class="line">8.3方法调用244</span><br><span class="line">8.3.1解析244</span><br><span class="line">8.3.2分派246</span><br><span class="line">8.3.3动态类型语言支持258</span><br><span class="line">8.4基于栈的字节码解释执行引擎269</span><br><span class="line">8.4.1解释执行269</span><br><span class="line">8.4.2基于栈的指令集与基于寄存器的指令集270</span><br><span class="line">8.4.3基于栈的解释器执行过程272</span><br><span class="line">8.5本章小结275</span><br><span class="line">第9章类加载及执行子系统的案例与实战276</span><br><span class="line">9.1概述276</span><br><span class="line">9.2案例分析276</span><br><span class="line">9.2.1Tomcat：正统的类加载器架构276</span><br><span class="line">9.2.2OSGi：灵活的类加载器架构279</span><br><span class="line">9.2.3字节码生成技术与动态代理的实现282</span><br><span class="line">9.2.4Retrotranslator：跨越JDK版本286</span><br><span class="line">9.3实战：自己动手实现远程执行功能289</span><br><span class="line">9.3.1目标290</span><br><span class="line">9.3.2思路290</span><br><span class="line">9.3.3实现291</span><br><span class="line">9.3.4验证298</span><br><span class="line">9.4本章小结299</span><br><span class="line">第四部分程序编译与代码优化</span><br><span class="line">第10章早期（编译期）优化302</span><br><span class="line">10.1概述302</span><br><span class="line">10.2Javac编译器303</span><br><span class="line">10.2.1Javac的源码与调试303</span><br><span class="line">10.2.2解析与填充符号表305</span><br><span class="line">10.2.3注解处理器307</span><br><span class="line">10.2.4语义分析与字节码生成307</span><br><span class="line">10.3Java语法糖的味道311</span><br><span class="line">10.3.1泛型与类型擦除311</span><br><span class="line">10.3.2自动装箱、拆箱与遍历循环315</span><br><span class="line">10.3.3条件编译317</span><br><span class="line">10.4实战：插入式注解处理器318</span><br><span class="line">10.4.1实战目标318</span><br><span class="line">10.4.2代码实现319</span><br><span class="line">10.4.3运行与测试326</span><br><span class="line">10.4.4其他应用案例327</span><br><span class="line">10.5本章小结328</span><br><span class="line">第11章晚期（运行期）优化329</span><br><span class="line">11.1概述329</span><br><span class="line">11.2HotSpot虚拟机内的即时编译器329</span><br><span class="line">11.2.1解释器与编译器330</span><br><span class="line">11.2.2编译对象与触发条件332</span><br><span class="line">11.2.3编译过程337</span><br><span class="line">11.2.4查看及分析即时编译结果339</span><br><span class="line">11.3编译优化技术345</span><br><span class="line">11.3.1优化技术概览346</span><br><span class="line">11.3.2公共子表达式消除350</span><br><span class="line">11.3.3数组边界检查消除351</span><br><span class="line">11.3.4方法内联352</span><br><span class="line">11.3.5逃逸分析354</span><br><span class="line">11.4Java与C&#x2F;C++的编译器对比356</span><br><span class="line">11.5本章小结358</span><br><span class="line">第五部分高效并发</span><br><span class="line">第12章Java内存模型与线程360</span><br><span class="line">12.1概述360</span><br><span class="line">12.2硬件的效率与一致性361</span><br><span class="line">12.3Java内存模型362</span><br><span class="line">12.3.1主内存与工作内存363</span><br><span class="line">12.3.2内存间交互操作364</span><br><span class="line">12.3.3对于volatile型变量的特殊规则366</span><br><span class="line">12.3.4对于long和double型变量的特殊规则372</span><br><span class="line">12.3.5原子性、可见性与有序性373</span><br><span class="line">12.3.6先行发生原则375</span><br><span class="line">12.4Java与线程378</span><br><span class="line">12.4.1线程的实现378</span><br><span class="line">12.4.2Java线程调度381</span><br><span class="line">12.4.3状态转换383</span><br><span class="line">12.5本章小结384</span><br><span class="line">第13章线程安全与锁优化385</span><br><span class="line">13.1概述385</span><br><span class="line">13.2线程安全385</span><br><span class="line">13.2.1Java语言中的线程安全386</span><br><span class="line">13.2.2线程安全的实现方法390</span><br><span class="line">13.3锁优化397</span><br><span class="line">13.3.1自旋锁与自适应自旋398</span><br><span class="line">13.3.2锁消除398</span><br><span class="line">13.3.3锁粗化400</span><br><span class="line">13.3.4轻量级锁400</span><br><span class="line">13.3.5偏向锁402</span><br><span class="line">13.4本章小结403</span><br><span class="line">附录</span><br><span class="line">附录A编译Windows版的OpenJDK406</span><br><span class="line">附录B虚拟机字节码指令表414</span><br><span class="line">附录CHotSpot虚拟机主要参数表420</span><br><span class="line">附录D对象查询语言（OQL）简介424</span><br><span class="line">附录EJDK历史版本轨迹430</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00D2ID4PK/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00D2ID4PK&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41WduDiHOWL._SL500_AA300_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00EXGR1DG/" rel="prev" title="精通iOS开发(第5版)">
+      <i class="fa fa-chevron-left"></i> 精通iOS开发(第5版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00D6MT3LG/" rel="next" title="JavaScript设计模式">
+      JavaScript设计模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

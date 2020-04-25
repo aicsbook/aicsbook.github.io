@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Windows内核原理与实现作者信息： 作者: 潘爱民 [ 中文 pdf ] 简单介绍潘爱民编著的《Windows内核原理与实现》从操作系统原理角度组织材料，深度解析了Windows内核如何实现现代操作系统的各个关键部件，并直接以Windows核源代码(WRK， Windows Research Kernel)为参照。在内容选取方面，侧重Windows核中基本的系统部件，同时也兼顾">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows内核原理与实现">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00CRKN9T0/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Windows内核原理与实现作者信息： 作者: 潘爱民 [ 中文 pdf ] 简单介绍潘爱民编著的《Windows内核原理与实现》从操作系统原理角度组织材料，深度解析了Windows内核如何实现现代操作系统的各个关键部件，并直接以Windows核源代码(WRK， Windows Research Kernel)为参照。在内容选取方面，侧重Windows核中基本的系统部件，同时也兼顾">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/515yY2vRxxL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.026Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="windows">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/515yY2vRxxL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00CRKN9T0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Windows内核原理与实现 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00CRKN9T0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows内核原理与实现
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Windows内核原理与实现<br>作者信息： 作者: 潘爱民 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>潘爱民编著的《Windows内核原理与实现》从操作系统原理角度组织材料，深度解析了Windows内核如何实现现代操作系统的各个关键部件，并直接以Windows核源代码(WRK， Windows Research Kernel)为参照。在内容选取方面，侧重Windows核中基本的系统部件，同时也兼顾作为一个操作系统的完整性。在讲解代码实现的同时并未局限于代码本身，而是着重阐述了Windows内核中运用的算法和机制。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br></pre></td><td class="code"><pre><span class="line">第1章  概述 1</span><br><span class="line">1.1  操作系统基础 2</span><br><span class="line">1.1.1  计算机系统的硬件资源管理 2</span><br><span class="line">1.1.2  为应用程序提供执行环境 5</span><br><span class="line">1.2  学习操作系统之必备知识 7</span><br><span class="line">1.3  Windows操作系统发展历史 9</span><br><span class="line">1.4  Windows内核的版本 11</span><br><span class="line">1.5  操作系统的研究与发展 13</span><br><span class="line">1.6  本章总结 16</span><br><span class="line">第2章  Windows系统总述 17</span><br><span class="line">2.1  现代操作系统的基本结构 17</span><br><span class="line">2.2  Windows系统结构 18</span><br><span class="line">2.2.1  Windows内核结构 20</span><br><span class="line">2.2.2  Windows内核中的关键组件 22</span><br><span class="line">2.2.3  Windows子系统 29</span><br><span class="line">2.2.4  系统线程和系统进程 32</span><br><span class="line">2.3  关于Windows研究内核 34</span><br><span class="line">2.3.1  WRK包含了什么 35</span><br><span class="line">2.3.2  WRK源代码说明 36</span><br><span class="line">2.3.3  本书对WRK源代码的引用 38</span><br><span class="line">2.4  Windows内核的基本概念 39</span><br><span class="line">2.4.1  处理器模式 40</span><br><span class="line">2.4.2  内存管理 41</span><br><span class="line">2.4.3  进程和线程管理 43</span><br><span class="line">2.4.4  中断和异常 45</span><br><span class="line">2.4.5  同步 48</span><br><span class="line">2.5  Windows内核中的公共管理设施 50</span><br><span class="line">2.5.1  Windows内核中的对象管理 50</span><br><span class="line">2.5.2  注册表和配置管理器 58</span><br><span class="line">2.5.3  事件追踪（ETW） 69</span><br><span class="line">2.5.4  安全性管理 72</span><br><span class="line">2.6  Windows引导过程 79</span><br><span class="line">2.6.1  内核加载 79</span><br><span class="line">2.6.2  内核初始化 86</span><br><span class="line">2.6.3  建立用户登录会话 91</span><br><span class="line">2.7  本章总结 97</span><br><span class="line">第3章  Windows进程和线程 99</span><br><span class="line">3.1  进程基本概念 99</span><br><span class="line">3.1.1  多进程模型 99</span><br><span class="line">3.1.2  进程和程序 101</span><br><span class="line">3.2  线程基本概念 104</span><br><span class="line">3.2.1  线程模型 104</span><br><span class="line">3.2.2  线程调度算法 106</span><br><span class="line">3.2.3  线程和进程的关系 108</span><br><span class="line">3.3  Windows中进程和线程数据结构 108</span><br><span class="line">3.3.1  内核层的进程和线程对象 108</span><br><span class="line">3.3.2  执行体层的进程和线程对象 120</span><br><span class="line">3.4  Windows的进程和线程管理 131</span><br><span class="line">3.4.1  Windows进程中的句柄表 131</span><br><span class="line">3.4.2  获得当前线程和进程 136</span><br><span class="line">3.4.3  进程和线程的创建过程 137</span><br><span class="line">3.4.4  进程和线程的结束 147</span><br><span class="line">3.4.5  系统初始进程和线程 149</span><br><span class="line">3.5  Windows中的线程调度 151</span><br><span class="line">3.5.1  线程优先级 152</span><br><span class="line">3.5.2  线程状态转移 154</span><br><span class="line">3.5.3  时限管理 164</span><br><span class="line">3.5.4  优先级调度和环境切换 166</span><br><span class="line">3.6  进程和线程状态监视工具 172</span><br><span class="line">3.6.1  ProcMon使用示例 172</span><br><span class="line">3.6.2  ProcMon实现原理 174</span><br><span class="line">3.7  本章总结 174</span><br><span class="line">第4章  Windows内存管理 175</span><br><span class="line">4.1  内存管理概述 176</span><br><span class="line">4.1.1  页式内存管理 177</span><br><span class="line">4.1.2  段式内存管理 181</span><br><span class="line">4.1.3  内存管理算法介绍 184</span><br><span class="line">4.1.4  Windows内存管理概述 192</span><br><span class="line">4.2  Windows系统内存管理 194</span><br><span class="line">4.2.1  系统地址空间初始化 194</span><br><span class="line">4.2.2  系统地址空间内存管理 209</span><br><span class="line">4.2.3  系统PTE区域的管理 224</span><br><span class="line">4.3  进程虚拟内存管理 229</span><br><span class="line">4.3.1  地址空间的创建和初始化 229</span><br><span class="line">4.3.2  地址空间切换 234</span><br><span class="line">4.3.3  虚拟地址空间的管理 235</span><br><span class="line">4.3.4  内存区对象 241</span><br><span class="line">4.4  内存页面交换 249</span><br><span class="line">4.4.1  x86中的PTE 250</span><br><span class="line">4.4.2  软件PTE：无效PTE和原型PTE 253</span><br><span class="line">4.4.3  页面错误处理 257</span><br><span class="line">4.4.4  Windows的写时复制 263</span><br><span class="line">4.5  物理内存管理 265</span><br><span class="line">4.5.1  PFN数据库 265</span><br><span class="line">4.5.2  物理页面的状态变化 270</span><br><span class="line">4.5.3  物理页面链表的管理和操作 274</span><br><span class="line">4.5.4  修改页面写出器 279</span><br><span class="line">4.5.5  进程&#x2F;栈交换器 281</span><br><span class="line">4.5.6  低内存通知和高内存通知 284</span><br><span class="line">4.6  工作集管理 285</span><br><span class="line">4.6.1  Windows工作集管理器 285</span><br><span class="line">4.6.2  平衡集管理器 291</span><br><span class="line">4.7  内存监视工具Mem_Mon 292</span><br><span class="line">4.7.1  Mem_Mon使用介绍 292</span><br><span class="line">4.7.2  Mem_Mon实现原理 293</span><br><span class="line">4.8  本章总结 294</span><br><span class="line">第5章  Windows中的并发和同步 295</span><br><span class="line">5.1  进程和线程同步基础 295</span><br><span class="line">5.1.1  并发性基础 296</span><br><span class="line">5.1.2  进程或线程之间的通讯 299</span><br><span class="line">5.1.3  经典的同步问题 303</span><br><span class="line">5.2  Windows中断与异常 308</span><br><span class="line">5.2.1  硬件中断的发生和处理 308</span><br><span class="line">5.2.2  中断请求级别（IRQL） 314</span><br><span class="line">5.2.3  中断对象 317</span><br><span class="line">5.2.4  DPC（延迟过程调用） 320</span><br><span class="line">5.2.5  时钟中断和定时器管理 324</span><br><span class="line">5.2.6  APC（异步过程调用） 328</span><br><span class="line">5.2.7  异常分发 333</span><br><span class="line">5.3  不依赖于线程调度的同步机制 340</span><br><span class="line">5.3.1  提升IRQL实现数据同步 340</span><br><span class="line">5.3.2  互锁操作 342</span><br><span class="line">5.3.3  无锁的单链表实现 343</span><br><span class="line">5.3.4  自旋锁 345</span><br><span class="line">5.4  基于线程调度的同步机制 351</span><br><span class="line">5.4.1  线程进入等待 351</span><br><span class="line">5.4.2  分发器对象 358</span><br><span class="line">5.4.3  门等待 365</span><br><span class="line">5.4.4  执行体资源（executive resource） 367</span><br><span class="line">5.4.5  推锁（push lock） 370</span><br><span class="line">5.4.6  死锁 375</span><br><span class="line">5.5  使用工具DPerfLite 376</span><br><span class="line">5.5.1  DPerfLite使用示例 376</span><br><span class="line">5.5.2  DPerfLite实现原理 378</span><br><span class="line">5.6  本章总结 379</span><br><span class="line">第6章  Windows I&#x2F;O系统 381</span><br><span class="line">6.1  I&#x2F;O概述 382</span><br><span class="line">6.1.1  现代计算机系统的I&#x2F;O 382</span><br><span class="line">6.1.2  I&#x2F;O软件技术 386</span><br><span class="line">6.1.3  Windows的I&#x2F;O系统结构 388</span><br><span class="line">6.2  I&#x2F;O管理器 390</span><br><span class="line">6.2.1  驱动程序初始化 390</span><br><span class="line">6.2.2  驱动程序对象和设备对象 397</span><br><span class="line">6.2.3  文件对象 401</span><br><span class="line">6.2.4  对象生命周期管理 405</span><br><span class="line">6.3  即插即用管理器 406</span><br><span class="line">6.3.1  即插即用的基本要求 407</span><br><span class="line">6.3.2  Windows中驱动程序的即插即用支持 408</span><br><span class="line">6.3.3  设备列举与设备树 409</span><br><span class="line">6.4  电源管理器 411</span><br><span class="line">6.4.1  电源管理概述 412</span><br><span class="line">6.4.2  Windows中的电源管理 415</span><br><span class="line">6.5  设备驱动程序 420</span><br><span class="line">6.5.1  驱动程序分类 420</span><br><span class="line">6.5.2  例子驱动程序toaster 423</span><br><span class="line">6.5.3  驱动程序的代码结构 425</span><br><span class="line">6.5.4  toaster设备的设备栈 430</span><br><span class="line">6.5.5  过滤驱动程序的配置和加载 431</span><br><span class="line">6.5.6  非即插即用驱动程序 435</span><br><span class="line">6.6  I&#x2F;O处理 437</span><br><span class="line">6.6.1  I&#x2F;O请求包（IRP） 438</span><br><span class="line">6.6.2  针对独立设备对象的I&#x2F;O处理 444</span><br><span class="line">6.6.3  处理I&#x2F;O请求过程中的事项 449</span><br><span class="line">6.6.4  针对设备栈的I&#x2F;O处理 459</span><br><span class="line">6.6.5  I&#x2F;O完成端口 463</span><br><span class="line">6.7  I&#x2F;O监视工具IRPMon 466</span><br><span class="line">6.7.1  IRPMon使用介绍 466</span><br><span class="line">6.7.2  IRPMon实现原理 467</span><br><span class="line">6.8  本章总结 468</span><br><span class="line">第7章  Windows存储管理 469</span><br><span class="line">7.1  存储管理概述 469</span><br><span class="line">7.1.1  硬件存储体系（Memory hierarchy） 470</span><br><span class="line">7.1.2  Windows的存储管理结构 472</span><br><span class="line">7.2  Windows缓存管理 474</span><br><span class="line">7.2.1  Windows缓存空间的内存管理 474</span><br><span class="line">7.2.2  缓存管理器的数据访问路径 481</span><br><span class="line">7.2.3  直接使用缓存中的数据 484</span><br><span class="line">7.2.4  缓存管理器的预读处理 491</span><br><span class="line">7.2.5  缓存管理器的延迟写 494</span><br><span class="line">7.3  Windows卷管理 497</span><br><span class="line">7.3.1  Windows中存储栈结构 497</span><br><span class="line">7.3.2  卷的挂载 501</span><br><span class="line">7.3.3  卷与文件系统 504</span><br><span class="line">7.3.4  文件对象的I&#x2F;O处理 508</span><br><span class="line">7.4  Windows文件系统 510</span><br><span class="line">7.4.1  文件系统驱动程序结构 511</span><br><span class="line">7.4.2  RAW文件系统和FsRtl 516</span><br><span class="line">7.4.3  文件系统的过滤 520</span><br><span class="line">7.4.4  FAT文件系统 527</span><br><span class="line">7.4.5  NTFS文件系统 532</span><br><span class="line">7.5  本章总结 540</span><br><span class="line">第8章  Windows系统服务 541</span><br><span class="line">8.1  Windows系统服务原理 541</span><br><span class="line">8.1.1  Intel x86的用户模式-内核模式切换 541</span><br><span class="line">8.1.2  Windows的用户模式-内核模式切换 546</span><br><span class="line">8.1.3  Windows中的系统服务分发 550</span><br><span class="line">8.1.4  增加系统服务表或表项 557</span><br><span class="line">8.2  LPC（本地过程调用）服务 561</span><br><span class="line">8.2.1  LPC结构模型 561</span><br><span class="line">8.2.2  LPC端口和LPC消息 563</span><br><span class="line">8.2.3  LPC通讯模型的实现 565</span><br><span class="line">8.2.4  LPC应用 571</span><br><span class="line">8.3  命名管道（Named Pipe）服务 573</span><br><span class="line">8.3.1  命名管道的名称解析 573</span><br><span class="line">8.3.2  命名管道的通讯模型 575</span><br><span class="line">8.3.3  命名管道的实现 577</span><br><span class="line">8.4  邮件槽（Mailslot）服务 580</span><br><span class="line">8.4.1  邮件槽的名称解析 580</span><br><span class="line">8.4.2  邮件槽的通讯模型 581</span><br><span class="line">8.4.3  邮件槽的实现 581</span><br><span class="line">8.5  SDT显示工具SDTViewer 583</span><br><span class="line">8.5.1  SDTViewer使用介绍 583</span><br><span class="line">8.5.2  SDTViewer实现原理 584</span><br><span class="line">8.6  本章总结 585</span><br><span class="line">第9章  Windows内核高级话题 587</span><br><span class="line">9.1  网络 587</span><br><span class="line">9.1.1  Windows网络体系结构 587</span><br><span class="line">9.1.2  TDI（传输驱动程序接口） 591</span><br><span class="line">9.1.3  NDSI（网络驱动程序接口规范） 594</span><br><span class="line">9.1.4  Windows Vista以后的网络结构 597</span><br><span class="line">9.2  Windows子系统 599</span><br><span class="line">9.2.1  Windows子系统结构 599</span><br><span class="line">9.2.2  Windows子系统初始化与GUI线程 602</span><br><span class="line">9.2.3  窗口管理 606</span><br><span class="line">9.2.4  GDI（图形设备接口） 616</span><br><span class="line">9.2.5  Windows Vista以后的子系统变化 622</span><br><span class="line">9.3  内核日志 625</span><br><span class="line">9.3.1  WRK中的内核记录器 625</span><br><span class="line">9.3.2  利用ETW信息诊断性能问题 628</span><br><span class="line">9.4  Windows Vista&#x2F;Server 2008&#x2F;7的重要变化 636</span><br><span class="line">9.4.1  MinWin工程 636</span><br><span class="line">9.4.2  ？？ 639</span><br><span class="line">附录A  建立编译和调试WRK环境 641</span><br><span class="line">A.1  编译WRK 641</span><br><span class="line">A.2  启动WRK 645</span><br><span class="line">A.3  调试WRK 648</span><br><span class="line">附录B  内核代码插入工具KInjectToolKit 657</span><br><span class="line">B.1  KInjectToolKit功能介绍 658</span><br><span class="line">B.2  KInjectToolKit的代码实现 659</span><br><span class="line">B.3  KInjectToolKit的限制 663</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00CRKN9T0/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00CRKN9T0&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/515yY2vRxxL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/windows/" rel="tag"># windows</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00DSQZBDE/" rel="prev" title="世界是数字的">
+      <i class="fa fa-chevron-left"></i> 世界是数字的
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00CFCNEJ0/" rel="next" title="数据挖掘与R语言">
+      数据挖掘与R语言 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

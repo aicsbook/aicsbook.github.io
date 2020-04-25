@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 深入理解Android(卷1)作者信息： 作者: 邓凡平 [ 中文 pdf ] 简单介绍《深入理解Android(卷1)》：结合实际应用开发需求，以情景分析的方式有针对性地对Android的源代码进行了十分详尽的剖析，深刻揭示Android系统的工作原理。机锋网、51CTO、开源中国社区等专业技术网站一致鼎力推荐！在Android领域，无论是从事上层的应用开发.还是从事底层的系统级">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解Android(卷1)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B005K70V8E/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 深入理解Android(卷1)作者信息： 作者: 邓凡平 [ 中文 pdf ] 简单介绍《深入理解Android(卷1)》：结合实际应用开发需求，以情景分析的方式有针对性地对Android的源代码进行了十分详尽的剖析，深刻揭示Android系统的工作原理。机锋网、51CTO、开源中国社区等专业技术网站一致鼎力推荐！在Android领域，无论是从事上层的应用开发.还是从事底层的系统级">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41VF-7JYhcL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.567Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41VF-7JYhcL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B005K70V8E/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>深入理解Android(卷1) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B005K70V8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深入理解Android(卷1)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 深入理解Android(卷1)<br>作者信息： 作者: 邓凡平 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《深入理解Android(卷1)》：结合实际应用开发需求，以情景分析的方式有针对性地对Android的源代码进行了十分详尽的剖析，深刻揭示Android系统的工作原理。机锋网、51CTO、开源中国社区等专业技术网站一致鼎力推荐！<br>在Android领域，无论是从事上层的应用开发.还是从事底层的系统级开发，如果想成为一名优秀的开发者，通过深入探究Android的源代码来了解Android的实现原理与工作机制也许是唯一的捷径。Android Framework是Android系统的基石，也是Android的核心之一，对于上层的应用开发者而言，深入理解它的工作原理是十分有必要的。Java世界是如何通过Zygote创建的？Handler和Looper是如何工作的？Binder的工作原理是什么？Audio系统和Surface系统的工作流程是怎<br>样的？Vold、Rild、MediaScanner等是如何实现<br>的？<br>这些内容是每一位从事Android应用开发的程序员都需要学习和掌握的。<br>《深入理解Android(卷1)》用情景分析的方式对Android的源代码进行了有针对性的分析，不仅全面而详细地分析了Framework层的工作机制和实现原理，而且还涉及Native层和Application层的重要内容。每一个功能模块的分析都从实际的使用场景和具体的问题入手，每一个知识点都力求做到把实现原理讲清楚，把工作机制说明白，尽量深入.竭力避免泛泛而谈。除此之外，《深入理解Android(卷1)》在重要章节还精心设计了“拓展思考”的内容，旨在进一步激发读者学习和研究Android源代码的兴趣。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br></pre></td><td class="code"><pre><span class="line">第1章 阅读前的准备工作 &#x2F; 1</span><br><span class="line">1.1 系统架构 &#x2F; 2</span><br><span class="line">1.1.1 Android系统架构 &#x2F; 2</span><br><span class="line">1.1.2 本书的架构 &#x2F; 3</span><br><span class="line">1.2 搭建开发环境 &#x2F; 4</span><br><span class="line">1.2.1 下载源码 &#x2F; 4</span><br><span class="line">1.2.2 编译源码 &#x2F; 6</span><br><span class="line">1.3 工具介绍 &#x2F; 8</span><br><span class="line">1.3.1 Source Insight介绍 &#x2F; 8</span><br><span class="line">1.3.3 Busybox的使用 &#x2F; 11</span><br><span class="line">1.4 本章小结 &#x2F; 12</span><br><span class="line">第2章 深入理解JNI &#x2F; 13</span><br><span class="line">2.1 JNI概述 &#x2F; 14</span><br><span class="line">2.2 学习JNI的实例：MediaScanner &#x2F; 15</span><br><span class="line">2.3 Java层的MediaScanner分析 &#x2F; 16</span><br><span class="line">2.3.1 加载JNI库 &#x2F; 16</span><br><span class="line">2.3.2 Java的native函数和总结 &#x2F; 17</span><br><span class="line">2.4 JNI层MediaScanner的分析 &#x2F; 17</span><br><span class="line">2.4.1 注册JNI函数 &#x2F; 18</span><br><span class="line">2.4.2 数据类型转换 &#x2F; 22</span><br><span class="line">2.4.3 JNIEnv介绍 &#x2F; 24</span><br><span class="line">2.4.4 通过JNIEnv操作jobject &#x2F; 25</span><br><span class="line">2.4.5 jstring介绍 &#x2F; 27</span><br><span class="line">2.4.6 JNI类型签名介绍 &#x2F; 28</span><br><span class="line">2.4.7 垃圾回收 &#x2F; 29</span><br><span class="line">2.4.8 JNI中的异常处理 &#x2F; 32</span><br><span class="line">2.5 本章小结 &#x2F; 32</span><br><span class="line">第3章 深入理解init &#x2F; 33</span><br><span class="line">3.1 概述 &#x2F; 34</span><br><span class="line">3.2 init分析 &#x2F; 34</span><br><span class="line">3.2.1 解析配置文件 &#x2F; 38</span><br><span class="line">3.2.2 解析service &#x2F; 42</span><br><span class="line">3.2.3 init控制service &#x2F; 48</span><br><span class="line">3.2.4 属性服务 &#x2F; 52</span><br><span class="line">3.3 本章小结 &#x2F; 60</span><br><span class="line">第4章 深入理解zygote &#x2F; 61</span><br><span class="line">4.1 概述 &#x2F; 62</span><br><span class="line">4.2 zygote分析 &#x2F; 62</span><br><span class="line">4.2.1 AppRuntime分析 &#x2F; 63</span><br><span class="line">4.2.2 Welcome to Java World &#x2F; 68</span><br><span class="line">4.2.3 关于zygote的总结 &#x2F; 74</span><br><span class="line">4.3 SystemServer分析 &#x2F; 74</span><br><span class="line">4.3.1 SystemServer的诞生 &#x2F; 74</span><br><span class="line">4.3.2 SystemServer的重要使命 &#x2F; 77</span><br><span class="line">4.3.3 关于 SystemServer的总结 &#x2F; 83</span><br><span class="line">4.4 zygote的分裂  &#x2F; 84</span><br><span class="line">4.4.1 ActivityManagerService发送请求 &#x2F; 84</span><br><span class="line">4.4.2 有求必应之响应请求 &#x2F; 86</span><br><span class="line">4.4.3  关于zygote分裂的总结 &#x2F; 88</span><br><span class="line">4.5 拓展思考 &#x2F; 88</span><br><span class="line">4.5.1 虚拟机heapsize的限制 &#x2F; 88</span><br><span class="line">4.5.2 开机速度优化 &#x2F; 89</span><br><span class="line">4.5.3 Watchdog分析 &#x2F; 90</span><br><span class="line">4.6 本章小结 &#x2F; 93</span><br><span class="line">第5章 深入理解常见类 &#x2F; 95</span><br><span class="line">5.1 概述 &#x2F; 96</span><br><span class="line">5.2 以“三板斧”揭秘RefBase、sp和wp &#x2F; 96</span><br><span class="line">5.2.1 第一板斧——初识影子对象 &#x2F; 96</span><br><span class="line">5.2.2 第二板斧——由弱生强 &#x2F; 103</span><br><span class="line">5.2.3 第三板斧——破解生死魔咒 &#x2F; 106</span><br><span class="line">5.2.4 轻量级的引用计数控制类LightRefBase &#x2F; 108</span><br><span class="line">5.2.5 题外话-三板斧的来历 &#x2F; 109</span><br><span class="line">5.3 Thread类及常用同步类分析 &#x2F; 109</span><br><span class="line">5.3.1 一个变量引发的思考 &#x2F; 109</span><br><span class="line">5.3.2 常用同步类 &#x2F; 114</span><br><span class="line">5.4 Looper和Handler类分析 &#x2F; 121</span><br><span class="line">5.4.1 Looper类分析 &#x2F; 122</span><br><span class="line">5.4.2 Handler分析 &#x2F; 124</span><br><span class="line">5.4.3 Looper和Handler的同步关系 &#x2F; 127</span><br><span class="line">5.4.4 HandlerThread介绍 &#x2F; 129</span><br><span class="line">5.5 本章小结 &#x2F; 129</span><br><span class="line">第6章 深入理解Binder &#x2F; 130</span><br><span class="line">6.1 概述 &#x2F; 131</span><br><span class="line">6.2 庖丁解MediaServer &#x2F; 132</span><br><span class="line">6.2.1 MediaServer的入口函数 &#x2F; 132</span><br><span class="line">6.2.2 独一无二的ProcessState &#x2F; 133</span><br><span class="line">6.2.3 时空穿越魔术-defaultServiceManager &#x2F; 134</span><br><span class="line">6.2.4 注册MediaPlayerService &#x2F; 142</span><br><span class="line">6.2.5 秋风扫落叶-StartThread Pool和join Thread Pool分析 &#x2F; 149</span><br><span class="line">6.2.6 你彻底明白了吗 &#x2F; 152</span><br><span class="line">6.3 服务总管ServiceManager &#x2F; 152</span><br><span class="line">6.3.1 ServiceManager的原理 &#x2F; 152</span><br><span class="line">6.3.2 服务的注册 &#x2F; 155</span><br><span class="line">6.3.3 ServiceManager存在的意义 &#x2F; 158</span><br><span class="line">6.4 MediaPlayerService和它的Client &#x2F; 158</span><br><span class="line">6.4.1 查询ServiceManager &#x2F; 158</span><br><span class="line">6.4.2 子承父业 &#x2F; 159</span><br><span class="line">6.5 拓展思考 &#x2F; 162</span><br><span class="line">6.5.1 Binder和线程的关系 &#x2F; 162</span><br><span class="line">6.5.2 有人情味的讣告 &#x2F; 163</span><br><span class="line">6.5.3 匿名Service &#x2F; 165</span><br><span class="line">6.6 学以致用 &#x2F; 166</span><br><span class="line">6.6.1 纯Native的Service &#x2F; 166</span><br><span class="line">6.6.2 扶得起的“阿斗”（aidl） &#x2F; 169</span><br><span class="line">6.7 本章小结 &#x2F; 172</span><br><span class="line">第7章 深入理解Audio系统 &#x2F; 173</span><br><span class="line">7.1 概述 &#x2F; 174</span><br><span class="line">7.2 AudioTrack的破解 &#x2F; 174</span><br><span class="line">7.2.1 用例介绍 &#x2F; 174</span><br><span class="line">7.2.2 AudioTrack（Java空间）分析 &#x2F; 179</span><br><span class="line">7.2.3 AudioTrack（Native空间）分析 &#x2F; 188</span><br><span class="line">7.2.4 关于AudioTrack的总结 &#x2F; 200</span><br><span class="line">7.3 AudioFlinger的破解 &#x2F; 200</span><br><span class="line">7.3.1 AudioFlinger的诞生 &#x2F; 200</span><br><span class="line">7.3.2 通过流程分析AudioFlinger &#x2F; 204</span><br><span class="line">7.3.3 audio_track_cblk_t分析 &#x2F; 230</span><br><span class="line">7.3.4 关于AudioFlinger的总结 &#x2F; 234</span><br><span class="line">7.4 AudioPolicyService的破解 &#x2F; 234</span><br><span class="line">7.4.1 AudioPolicyService的创建 &#x2F; 235</span><br><span class="line">7.4.2 重回AudioTrack &#x2F; 245</span><br><span class="line">7.4.3 声音路由切换实例分析 &#x2F; 251</span><br><span class="line">7.4.4 关于AudioPolicy的总结 &#x2F; 262</span><br><span class="line">7.5 拓展思考 &#x2F; 262</span><br><span class="line">7.5.1 DuplicatingThread破解 &#x2F; 262</span><br><span class="line">7.5.2 题外话 &#x2F; 270</span><br><span class="line">7.6 本章小结 &#x2F; 272</span><br><span class="line">第8章 深入理解Surface系统 &#x2F; 273</span><br><span class="line">8.1 概述 &#x2F; 275</span><br><span class="line">8.2 一个Activity的显示 &#x2F; 275</span><br><span class="line">8.2.1 Activity的创建 &#x2F; 275</span><br><span class="line">8.2.2 Activity的UI绘制 &#x2F; 294</span><br><span class="line">8.2.3 关于Activity的总结 &#x2F; 296</span><br><span class="line">8.3 初识Surface &#x2F; 297</span><br><span class="line">8.3.1 和Surface有关的流程总结 &#x2F; 297</span><br><span class="line">8.3.2 Surface之乾坤大挪移 &#x2F; 298</span><br><span class="line">8.3.3 乾坤大挪移的JNI层分析 &#x2F; 303</span><br><span class="line">8.3.4 Surface和画图 &#x2F; 307</span><br><span class="line">8.3.5 初识Surface小结 &#x2F; 309</span><br><span class="line">8.4 深入分析Surface &#x2F; 310</span><br><span class="line">8.4.1 与Surface相关的基础知识介绍 &#x2F; 310</span><br><span class="line">8.4.2 SurfaceComposerClient分析 &#x2F; 315</span><br><span class="line">8.4.3 SurfaceControl分析 &#x2F; 320</span><br><span class="line">8.4.4 writeToParcel和Surface对象的创建 &#x2F; 331</span><br><span class="line">8.4.5 lockCanvas和unlockCanvasAndPost分析 &#x2F; 335</span><br><span class="line">8.4.6 GraphicBuffer介绍 &#x2F; 344</span><br><span class="line">8.4.7 深入分析Surface的总结 &#x2F; 353</span><br><span class="line">8.5 SurfaceFlinger分析 &#x2F; 353</span><br><span class="line">8.5.1 SurfaceFlinger的诞生 &#x2F; 354</span><br><span class="line">8.5.2 SF工作线程分析 &#x2F; 359</span><br><span class="line">8.5.3 Transaction分析 &#x2F; 368</span><br><span class="line">8.5.4 关于SurfaceFlinger的总结 &#x2F; 376</span><br><span class="line">8.6 拓展思考 &#x2F; 377</span><br><span class="line">8.6.1 Surface系统的CB对象分析 &#x2F; 377</span><br><span class="line">8.6.2 ViewRoot的你问我答 &#x2F; 384</span><br><span class="line">8.6.3 LayerBuffer分析 &#x2F; 385</span><br><span class="line">8.7 本章小结 &#x2F; 394</span><br><span class="line">第9章 深入理解Vold和Rild &#x2F; 395</span><br><span class="line">9.1 概述 &#x2F; 396</span><br><span class="line">9.2 Vold的原理与机制分析 &#x2F; 396</span><br><span class="line">9.2.1 Netlink和Uevent介绍 &#x2F; 397</span><br><span class="line">9.2.2 初识Vold &#x2F; 399</span><br><span class="line">9.2.3 NetlinkManager模块分析 &#x2F; 400</span><br><span class="line">9.2.4 VolumeManager模块分析 &#x2F; 408</span><br><span class="line">9.2.5 CommandListener模块分析 &#x2F; 414</span><br><span class="line">9.2.6 Vold实例分析 &#x2F; 417</span><br><span class="line">9.2.7 关于Vold的总结 &#x2F; 428</span><br><span class="line">9.3 Rild的原理与机制分析 &#x2F; 428</span><br><span class="line">9.3.1 初识Rild &#x2F; 430</span><br><span class="line">9.3.2 RIL_startEventLoop分析 &#x2F; 432</span><br><span class="line">9.3.3 RIL_Init分析 &#x2F; 437</span><br><span class="line">9.3.4 RIL_register分析 &#x2F; 444</span><br><span class="line">9.3.5 关于Rild main函数的总结 &#x2F; 447</span><br><span class="line">9.3.6 Rild实例分析 &#x2F; 447</span><br><span class="line">9.3.7 关于Rild的总结 &#x2F; 459</span><br><span class="line">9.4 拓展思考 &#x2F; 459</span><br><span class="line">9.4.1 嵌入式系统的存储知识介绍 &#x2F; 459</span><br><span class="line">9.4.2 Rild和Phone的改进探讨 &#x2F; 462</span><br><span class="line">9.5 本章小结 &#x2F; 463</span><br><span class="line">第10章 深入理解MediaScanner &#x2F; 464</span><br><span class="line">10.1 概述 &#x2F; 465</span><br><span class="line">10.2 android.process.media分析 &#x2F; 465</span><br><span class="line">10.2.1 MSR模块分析 &#x2F; 466</span><br><span class="line">10.2.2 MSS模块分析 &#x2F; 467</span><br><span class="line">10.2.3 android.process.media媒体扫描工作的流程总结 &#x2F; 471</span><br><span class="line">10.3 MediaScanner分析 &#x2F; 472</span><br><span class="line">10.3.1 Java层分析 &#x2F; 472</span><br><span class="line">10.3.2 JNI层分析 &#x2F; 476</span><br><span class="line">10.3.3 PVMediaScanner分析 &#x2F; 479</span><br><span class="line">10.3.4 关于MediaScanner的总结 &#x2F; 485</span><br><span class="line">10.4 拓展思考 &#x2F; 486</span><br><span class="line">10.4.1 MediaScannerConnection介绍 &#x2F; 486</span><br><span class="line">10.4.2 我问你答 &#x2F; 487</span><br><span class="line">10.5 本章小结 &#x2F; 488</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B005K70V8E/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B005K70V8E&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41VF-7JYhcL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B008RVQMBK/" rel="prev" title="深入理解Android:卷2">
+      <i class="fa fa-chevron-left"></i> 深入理解Android:卷2
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/1849518122/" rel="next" title="Android Database Programming">
+      Android Database Programming <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

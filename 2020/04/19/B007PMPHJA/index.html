@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Android框架揭秘作者信息： 作者: 金泰延 [ 中文 pdf ] 简单介绍《Android框架揭秘》由人民邮电出版社出版。 目录12345678910111213141516171819202122232425目　录  第1章　Android Framework概要　1 1.1　Android源代码组成　2 1.2　通过启动过程分析Android Framework　3 第2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android框架揭秘">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B007PMPHJA/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Android框架揭秘作者信息： 作者: 金泰延 [ 中文 pdf ] 简单介绍《Android框架揭秘》由人民邮电出版社出版。 目录12345678910111213141516171819202122232425目　录  第1章　Android Framework概要　1 1.1　Android源代码组成　2 1.2　通过启动过程分析Android Framework　3 第2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51WUFn33fVL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.611Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51WUFn33fVL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B007PMPHJA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android框架揭秘 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B007PMPHJA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android框架揭秘
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Android框架揭秘<br>作者信息： 作者: 金泰延 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Android框架揭秘》由人民邮电出版社出版。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">目　录 </span><br><span class="line"></span><br><span class="line"> 第1章　Android Framework概要　1 1.1　Android源代码组成　2 1.2　通过启动过程分析Android Framework　3</span><br><span class="line"></span><br><span class="line"> 第2章　搭建Android开发环境　7 2.1　主机环境构成　7 2.1.1　安装VirtualBox　7 2.1.2　安装Ubuntu　8 2.2　搭建Android平台编译环境　9 2.2.1　编译工具　10 2.2.2　安装Repo　11 2.2.3　下载Android源代码　11 2.2.4　编译Android源代码　12 2.3　搭建Android SDK开发环境　13 2.3.1　下载、安装Eclipse　13 2.3.2　下载Android SDK starter　13 2.3.3　安装ADT插件　14 2.3.4　设置Android SDK路径　16 2.3.5　安装Android SDK　16 2.4　开发Android应用程序　18 2.5　应用程序Framework源码级别调试　21 2.5.1　加载应用程序Framework源　21 2.5.2　调试HelloWorld Framework(源码级)　24 2.6　小结　27</span><br><span class="line"></span><br><span class="line"> 第3章　init进程　29 3.1　init进程运行过程　29 3.2　init进程源码分析　31 3.3　init.rc脚本文件分析与执行　40 3.3.1　动作列表(Action List)　41 3.3.2　服务列表(Service List)　43 3.3.3　init.rc文件分析函数　44 3.3.4　动作列表与服务列表的运行　48 3.4　创建设备节点文件　52 3.4.1　创建静态设备节点　52 3.4.2　动态设备感知　57 3.5　进程的终止与再启动　58 3.6　属性服务　62 3.6.1　属性初始化　63 3.6.2　属性变更请求处理　65 3.7　小结　67</span><br><span class="line"></span><br><span class="line"> 第4章　JNI与NDK　69 4.1　Android与JNI　69 4.2　JNI的基本原理　72 4.2.1　在Java中调用C库函数　72 4.2.2　小结　83 4.3　调用JNI函数　84 4.3.1　调用JNI函数的示例程序结构　84 4.3.2　Java层代码(JniFuncMain.java)　85 4.3.3　分析JNI本地函数代码　87 4.3.4　编译及运行结果　101 4.3.5　在Android中的应用举例　102 4.4　在C程序中运行Java类　102 4.4.1　Invocation API应用示例　103 4.4.2　编译及运行　108 4.4.3　Invocation API在Android中的应用举例：Zygote进程　110 4.5　直接注册JNI本地函数　110 4.5.1　加载本地库时，注册JNI本地函数　111 4.5.2　Android中的应用举例　115 4.6　使用Android NDK开发　122 4.6.1　安装Android NDK　123 4.6.2　使用Android NDK开发步骤　127 4.6.3　小结　136</span><br><span class="line"></span><br><span class="line"> 第5章　Zygote　137 5.1　Zygote是什么　137 5.2　由app_process运行ZygoteInit class　142 5.2.1　生成AppRuntime对象　143 5.2.2　调用AppRuntime对象　144 5.2.3　创建Dalvik虚拟机　145 5.2.4　运行ZygoteInit类　146 5.3　ZygoteInit类的功能　147 5.3.1　绑定&#x2F;dev&#x2F;socket&#x2F;zygote套接字　149 5.3.2　加载应用程序Framework中的类与平台资源　150 5.3.3　运行SystemServer　155 5.3.4　运行新Android应用程序　158</span><br><span class="line"></span><br><span class="line"> 第6章　Android服务概要　163 6.1　示例程序：理解Android服务的运行　163 6.2　Android服务的种类　166 6.3　Android应用程序服务　168 6.4　Android系统服务　182 6.5　运行系统服务　185 6.5.1　分析媒体服务器(Media Server)的运行代码　186 6.5.2　分析系统服务器(System Server)的运行代码　188 6.6　Android Service Framework、Binder Driver概要及相关术语　192</span><br><span class="line"></span><br><span class="line"> 第7章　Android Binder IPC　197 7.1　Linux内存空间与Binder Driver　197 7.2　Android Binder Model　199 7.2.1　Binder IPC数据传递　201 7.2.2　Binder IPC数据流　202 7.2.3　Binder协议(Binder Protocol)　204 7.2.4　RPC代码与RPC数据　206 7.2.5　Binder寻址(Binder Addressing)　206 7.3　Android Binder Driver分析　209 7.3.1　从进程的角度看服务的使用　210 7.3.2　从Binder Driver角度看服务的使用　214 7.3.3　Binder Driver函数分析　219 7.4　Context Manager　251 7.5　小结　256</span><br><span class="line"></span><br><span class="line"> 第8章　Android Service Framework　257 8.1　服务框架(Service Framework)　257 8.2　服务框架(Service Framework)的构成　259 8.2.1　各层构成元素的配置　260 8.2.2　各层构成元素间的相互作用　261 8.2.3　类的结构　264 8.3　运行机制　266 8.3.1　服务接口　267 8.3.2　服务　273 8.3.3　服务代理(Service Proxy)　276 8.3.4　Binder IPC处理　280 8.4　本地服务管理器(Native Service Manager)　282 8.4.1　Service Manager概要　282 8.4.2　Service Manager类　284 8.4.3　Service Manager的运行　286 8.5　编写本地服务　314 8.5.1　设计HelloWorld系统服务　314 8.5.2　HelloWorld服务接口　315 8.5.3　HelloWorld服务　316 8.5.4　HelloWorld服务代理　319 8.5.5　运行HelloWorld服务　320 8.6　小结　325</span><br><span class="line"></span><br><span class="line"> 第9章　本地系统服务(Native System Service)分析　327 9.1　相机服务(Cameral Service)　327 9.2　相机应用程序　328 9.3　相机服务框架(Camera Service Framework)　331 9.3.1　相机服务框架层次结构　331 9.3.2　相机服务框架类　333 9.4　相机服务框架的运行　334 9.4.1　初始化相机服务　334 9.4.2　连接相机服务　335 9.4.3　相机服务连接过程分析　337 9.4.4　相机设置与控制　340 9.4.5　相机设置与控制分析　341 9.4.6　相机事件处理　342 9.4.7　相机事件处理分析　343 9.5　小结　345</span><br><span class="line"></span><br><span class="line"> 第10章　Java服务框架(Java Service Framework)　347 10.1　Java服务框架(Java Service Framework)　347 10.1.1　Java服务框架的层次结构　348 10.1.2　Java服务框架中各个类间的相互作用　351 10.2　运行机制　354 10.2.1　Java服务框架初始化　355 10.2.2　Binder　355 10.2.3　BinderProxy　361 10.2.4　Parcel　364 10.3　Java系统服务的实现　367 10.3.1　闹钟服务(Alarm Manager Service)分析　368 10.3.2　编写HelloWorldService系统服务　372 10.3.3　使用HelloWorldService系统服务　375 10.3.4　编译HelloWorldService系统服务　378 10.4　Java Service Manager　380 10.4.1　Java Service Manager简介　380 10.4.2　BinderInternal　381 10.4.3　Java Service Manager的运行实例　383 10.5　使用AIDL生成服务代理与服务Stub　389 10.5.1　在AIDL文件中定义服务接口　390 10.5.2　使用AIDL编译器，生成服务接口、服务Stub以及服务代理　391 10.5.3　继承Stub类创建服务　392 10.5.4　服务接口的调用　393 10.6　小结　394</span><br><span class="line"></span><br><span class="line"> 第11章　Java系统服务运行分析　395 11.1　Activity Manager Service　395 11.2　Activity Manager Service创建服务分析　397 11.2.1　Controller Activity-调用startService()方法　398 11.2.2　Activity Manager Service的startService()方法的调用过程(使用Binder RPC)　399 11.2.3　Activity Manager Service——运行startService() Stub方法　405 11.2.4　运行ActivityThread类的main() 方法　409 11.2.5　Activity Manager Service——attachApplication() Stub方法　414 11.3　小结　421</span><br><span class="line"></span><br><span class="line"> 附录　AIDL语法　423</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B007PMPHJA/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B007PMPHJA&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51WUFn33fVL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B007UR03AI/" rel="prev" title="Android 3D游戏开发技术宝典 OpenGL ES 2.0">
+      <i class="fa fa-chevron-left"></i> Android 3D游戏开发技术宝典 OpenGL ES 2.0
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B007H4NZEK/" rel="next" title="Android多媒体开发高级编程 为智能手机和平板电脑开发图形、音乐、视频和富媒体应用">
+      Android多媒体开发高级编程 为智能手机和平板电脑开发图形、音乐、视频和富媒体应用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

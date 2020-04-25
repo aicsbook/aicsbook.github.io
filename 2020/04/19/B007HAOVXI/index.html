@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 写给Web开发人员看的HTML5教程作者信息： 作者: Klaus F?rster [ 中文 pdf ] 简单介绍《写给Web开发人员看的HTML5教程》适合具有一定的HTML和JavaScript基础的Web开发人员阅读。 目录12345678910111213141516171819202122232425262728293031323334353637383940414243">
+<meta property="og:type" content="article">
+<meta property="og:title" content="写给Web开发人员看的HTML5教程">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B007HAOVXI/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 写给Web开发人员看的HTML5教程作者信息： 作者: Klaus F?rster [ 中文 pdf ] 简单介绍《写给Web开发人员看的HTML5教程》适合具有一定的HTML和JavaScript基础的Web开发人员阅读。 目录12345678910111213141516171819202122232425262728293031323334353637383940414243">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51TZtAkKKeL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.792Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51TZtAkKKeL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B007HAOVXI/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>写给Web开发人员看的HTML5教程 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B007HAOVXI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          写给Web开发人员看的HTML5教程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 写给Web开发人员看的HTML5教程<br>作者信息： 作者: Klaus F?rster [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《写给Web开发人员看的HTML5教程》适合具有一定的HTML和JavaScript基础的Web开发人员阅读。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line">第1章Web标准概述</span><br><span class="line">1.1HTML5诞生始末</span><br><span class="line">1.2重大历史事件回顾</span><br><span class="line">1.3拣重要的说</span><br><span class="line">1.3.1有什么新特色？</span><br><span class="line">1.3.2去掉了什么？</span><br><span class="line">1.3.3XHTML呢？</span><br><span class="line">1.4现在我可以开始使用HTML5了吗？</span><br><span class="line">小结</span><br><span class="line">第2章文档结构和语义</span><br><span class="line">2.1页眉的header和hgroup标签</span><br><span class="line">2.2正文（article）内容</span><br><span class="line">2.3由footer和nav组成的页脚</span><br><span class="line">2.4由aside及section组成的工具栏</span><br><span class="line">2.5大纲算法</span><br><span class="line">2.6图形中的figure及figcaption</span><br><span class="line">2.7文档级别语义——更多新的标签</span><br><span class="line">2.7.1元素ruby、rt及rp</span><br><span class="line">2.7.2time元素</span><br><span class="line">2.7.3mark元素</span><br><span class="line">2.7.4wbr元素</span><br><span class="line">2.7.5略微改变的元素</span><br><span class="line">小结</span><br><span class="line">第3章智能表单</span><br><span class="line">3.1新的输入类型（inputtype）</span><br><span class="line">3.1.1输入类型tel及search</span><br><span class="line">3.1.2输入类型url及email</span><br><span class="line">3.1.3用datetime，date，month，week，time以及datetime—local表示日期和时间</span><br><span class="line">3.1.4输入类型number及range</span><br><span class="line">3.1.5输入类型color</span><br><span class="line">3.1.6新输入类型的实际应用</span><br><span class="line">3.2有用的表单属性</span><br><span class="line">3.2.1使用autofocus操作焦点</span><br><span class="line">3.2.2为文本使用placeholder占位符</span><br><span class="line">3.2.3使用required定义必填项</span><br><span class="line">3.2.4input元素中的更多属性</span><br><span class="line">3.3新的元素</span><br><span class="line">3.3.1使用meter显示度量</span><br><span class="line">3.3.2用progress显示任务进程</span><br><span class="line">3.3.3datalist选项列表</span><br><span class="line">3.3.4使用keygen处理密钥</span><br><span class="line">3.3.5用output进行计算</span><br><span class="line">3.4客户端表单验证</span><br><span class="line">3.4.1invalid事件</span><br><span class="line">3.4.2checkValidity函数</span><br><span class="line">3.4.3使用setCustomValidity（）进行错误处理</span><br><span class="line">3.4.4有效性验证总结</span><br><span class="line">3.4.5不做有效性验证也许更好？“formnovalidate”</span><br><span class="line">3.5案例：一张维修表单</span><br><span class="line">小结</span><br><span class="line">第4章视频与音频</span><br><span class="line">4.1第一个案例</span><br><span class="line">4.2video元素及其属性</span><br><span class="line">4.3视频编解码器</span><br><span class="line">4.3.1Ogg：Theora与Vorbis</span><br><span class="line">4.3.2MPEG—4：H.264与AAC</span><br><span class="line">4.3.3WebM：VP8与Vorbis</span><br><span class="line">4.4视频转换工具</span><br><span class="line">4.4.1FFmpeg</span><br><span class="line">4.4.2VLC</span><br><span class="line">4.4.3Firefogg</span><br><span class="line">4.4.4MiroVideoConverter</span><br><span class="line">4.5各种浏览器支持些什么格式</span><br><span class="line">4.6旧浏览器的过渡解决方案</span><br><span class="line">4.6.1mwEmbed</span><br><span class="line">4.6.2htm15media</span><br><span class="line">4.7视频与脚本——简单的视频播放器</span><br><span class="line">4.7.1视频整合</span><br><span class="line">4.7.2播放和暂停视频</span><br><span class="line">4.7.3显示及设定播放位置</span><br><span class="line">4.7.4快进和后退</span><br><span class="line">4.7.5选择电影场景</span><br><span class="line">4.7.6音量调节及静音</span><br><span class="line">4.7.8HTMLMediaElement接口中其他的属性及方法</span><br><span class="line">4.7.9媒体事件列表</span><br><span class="line">4.8关于音频</span><br><span class="line">小结</span><br><span class="line">第5章画布</span><br><span class="line">5.1案例</span><br><span class="line">5.2矩形</span><br><span class="line">5.3颜色及阴影</span><br><span class="line">5.4渐变</span><br><span class="line">5.5路径绘图</span><br><span class="line">5.5.1线条</span><br><span class="line">5.5.2Bézier曲线</span><br><span class="line">5.5.3弧线</span><br><span class="line">5.5.4矩形</span><br><span class="line">5.5.5轮廓、填充及剪切遮罩</span><br><span class="line">5.6文本</span><br><span class="line">5.6.1字体</span><br><span class="line">5.6.2水平锚点</span><br><span class="line">5.6.3垂直锚点</span><br><span class="line">5.6.4绘制及测量文本</span><br><span class="line">5.7内嵌图像</span><br><span class="line">5.8像素处理</span><br><span class="line">5.8.1使用ImageData对象</span><br><span class="line">5.8.2使用getImageData（）、createImageData（）及putImageData（）进行颜色处理</span><br><span class="line">5.9混合（Compositing）</span><br><span class="line">5.10图案（Pattern）</span><br><span class="line">5.11变换（Transformations）</span><br><span class="line">5.12用canvas.toDataURL（）进行Base64编码</span><br><span class="line">5.13save（）与restore（）</span><br><span class="line">5.14动画</span><br><span class="line">5.14.1彩色球体动画</span><br><span class="line">5.14.2用drawImage（）播放视频</span><br><span class="line">5.15还有遗漏吗？</span><br><span class="line">5.15.1isPointInPath（x，y）</span><br><span class="line">5.15.2Canvas的可访问性？</span><br><span class="line">5.15.3安全方面</span><br><span class="line">5.15.4浏览器支持</span><br><span class="line">5.15.5更多链接</span><br><span class="line">小结</span><br><span class="line">第6章SVG与MathML</span><br><span class="line">6.1MathML</span><br><span class="line">6.2SVG</span><br><span class="line">小结</span><br><span class="line">第7章地理定位</span><br><span class="line">7.1地理定位介绍</span><br><span class="line">7.1.1地理数据</span><br><span class="line">7.1.2在线地图服务</span><br><span class="line">7.2初体验：在浏览器中使用地理定位</span><br><span class="line">7.3定位的技术背景</span><br><span class="line">7.4OpenStreetMap上显示当前位置</span><br><span class="line">7.5使用GoogleMaps追踪位置</span><br><span class="line">7.6案例：Geonotes</span><br><span class="line">7.6.1操作</span><br><span class="line">7.6.2重要的代码片断</span><br><span class="line">7.7浏览器支持</span><br><span class="line">小结</span><br><span class="line">第8章Web存储及离线Web应用程序</span><br><span class="line">8.1存储</span><br><span class="line">8.1.1Storage接口</span><br><span class="line">8.1.2会话存储（sessionStorage）</span><br><span class="line">8.1.3本地存储（localStorage）</span><br><span class="line">8.1.4storage事件</span><br><span class="line">8.1.5调试</span><br><span class="line">8.2离线Web应用程序</span><br><span class="line">8.2.1缓存清单文件</span><br><span class="line">8.2.2离线状态及事件</span><br><span class="line">8.2.3调试</span><br><span class="line">8.3浏览器支持</span><br><span class="line">8.4案例：Clicktotick！</span><br><span class="line">8.4.1用户界面</span><br><span class="line">8.4.2管理界面</span><br><span class="line">8.4.3重要代码片段</span><br><span class="line">8.4.4扩展选项</span><br><span class="line">小结</span><br><span class="line">第9章网页套接字</span><br><span class="line">9.1WebSocket服务器</span><br><span class="line">9.2案例：广播服务器</span><br><span class="line">9.2.1广播客户端</span><br><span class="line">9.2.2广播服务器</span><br><span class="line">9.3案例：Battleships！（战列舰）</span><br><span class="line">小结</span><br><span class="line">第10章多线程</span><br><span class="line">10.1WebWorker介绍</span><br><span class="line">10.2查找闰年</span><br><span class="line">10.3配合Canvans计算海拔档案</span><br><span class="line">10.3.1重要代码清单</span><br><span class="line">小结</span><br><span class="line">第11章微数据</span><br><span class="line">11.1微数据语法</span><br><span class="line">11.1.1属性itemscope及itemprop</span><br><span class="line">11.1.2itemtype属性</span><br><span class="line">11.1.3itemid属性</span><br><span class="line">11.1.4itemref属性</span><br><span class="line">11.2微数据DOMAPI</span><br><span class="line">小结</span><br><span class="line">第12章写在最后：一些全局属性</span><br><span class="line">12.1class属性的变化</span><br><span class="line">12.2用“data—*”定义自定义属性</span><br><span class="line">12.3hidden属性</span><br><span class="line">12.4classList接口</span><br><span class="line">12.5通过draggable属性实现拖曳</span><br><span class="line">12.5.1拖曳与FileAPI相结合</span><br><span class="line">12.6属性contenteditable与spellcheck</span><br><span class="line">小结</span><br><span class="line">后记</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B007HAOVXI/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B007HAOVXI&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51TZtAkKKeL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/html/" rel="tag"># html</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B006OI9JUE/" rel="prev" title="深入理解C#(第2版)">
+      <i class="fa fa-chevron-left"></i> 深入理解C#(第2版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B005APNMJQ/" rel="next" title="C#设计模式">
+      C#设计模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

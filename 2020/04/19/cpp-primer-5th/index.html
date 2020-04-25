@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C++ Primer 第五版 （英文）作者信息： 作者: Stanley B.Lippman [ 英文 pdf ] 简单介绍《C++ Primer英文版(第5版)》编辑推荐：最新标准C++11发布，距上一版本已10年；《C++ Primer英文版(第5版)》是唯一持续更新的全球顶级C++读本。多位深孚众望的大师组合堪称绝无仅有；经过前四个版本积累，第5版的体例堪称完美。这一版本作者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Primer 第五版 （英文）">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/cpp-primer-5th/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C++ Primer 第五版 （英文）作者信息： 作者: Stanley B.Lippman [ 英文 pdf ] 简单介绍《C++ Primer英文版(第5版)》编辑推荐：最新标准C++11发布，距上一版本已10年；《C++ Primer英文版(第5版)》是唯一持续更新的全球顶级C++读本。多位深孚众望的大师组合堪称绝无仅有；经过前四个版本积累，第5版的体例堪称完美。这一版本作者">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41YyoY5A7pL._SL500_AA300_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.727Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41YyoY5A7pL._SL500_AA300_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/cpp-primer-5th/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C++ Primer 第五版 （英文） | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/cpp-primer-5th/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++ Primer 第五版 （英文）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C++ Primer 第五版 （英文）<br>作者信息： 作者: Stanley B.Lippman [ 英文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《C++ Primer英文版(第5版)》编辑推荐：最新标准C++11发布，距上一版本已10年；《C++ Primer英文版(第5版)》是唯一持续更新的全球顶级C++读本。多位深孚众望的大师组合堪称绝无仅有；经过前四个版本积累，第5版的体例堪称完美。这一版本作者历时3年完成，极力避免在原版上升级，而是将C++11的新特性真正融入各章节；更将所有代码示例用C++ 11的简化写法完成，而不是仅单独增加内容。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br></pre></td><td class="code"><pre><span class="line">Preface xxiii</span><br><span class="line">Chapter 1 Getting Started</span><br><span class="line">1.1 Writing a Simple C++Program</span><br><span class="line">1.1.1 Compiling and Executing Our Program</span><br><span class="line">1.2 AFirstLookat Input&#x2F;Output</span><br><span class="line">1.3 AWordaboutComments</span><br><span class="line">1.4 FlowofControl</span><br><span class="line">1.4.1 The whileStatement</span><br><span class="line">1.4.2 The forStatement</span><br><span class="line">1.4.3 ReadinganUnknownNumberof Inputs</span><br><span class="line">1.4.4 The ifStatement</span><br><span class="line">1.5 IntroducingClasses</span><br><span class="line">1.5.1 The Sales_itemClass</span><br><span class="line">1.5.2 AFirstLookatMemberFunctions</span><br><span class="line">1.6 TheBookstoreProgram</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Part I The Basics</span><br><span class="line">Chapter 2 Variables and Basic Types</span><br><span class="line">2.1 PrimitiveBuilt-inTypes</span><br><span class="line">2.1.1 ArithmeticTypes</span><br><span class="line">2.1.2 TypeConversions</span><br><span class="line">2.1.3 Literals</span><br><span class="line">2.2 Variables</span><br><span class="line">2.2.1 VariableDefinitions</span><br><span class="line">2.2.2 VariableDeclarations andDefinitions</span><br><span class="line">2.2.3 Identifiers</span><br><span class="line">2.2.4 Scopeof aName</span><br><span class="line">2.3 CompoundTypes</span><br><span class="line">2.3.1 References</span><br><span class="line">2.3.2 Pointers</span><br><span class="line">vii</span><br><span class="line">viii Contents</span><br><span class="line">2.3.3 UnderstandingCompoundTypeDeclarations</span><br><span class="line">2.4 constQualifier</span><br><span class="line">2.4.1 References to const</span><br><span class="line">2.4.2 Pointers and const</span><br><span class="line">2.4.3 Top-Level const</span><br><span class="line">2.4.4 constexprandConstantExpressions</span><br><span class="line">2.5 DealingwithTypes</span><br><span class="line">2.5.1 TypeAliases</span><br><span class="line">2.5.2 The autoTypeSpecifier</span><br><span class="line">2.5.3 The decltypeTypeSpecifier</span><br><span class="line">2.6 DefiningOurOwnDataStructures</span><br><span class="line">2.6.1 Defining the Sales_dataType</span><br><span class="line">2.6.2 Using the Sales_dataClass</span><br><span class="line">2.6.3 Writing Our Own Header Files</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 3 Strings， Vectors， and Arrays</span><br><span class="line">3.1 Namespace usingDeclarations</span><br><span class="line">3.2 Library stringType</span><br><span class="line">3.2.1 Defining and Initializing strings</span><br><span class="line">3.2.2 Operations on strings</span><br><span class="line">3.2.3 Dealing with the Characters in a string</span><br><span class="line">3.3 Library vectorType</span><br><span class="line">3.3.1 Defining and Initializing vectors</span><br><span class="line">3.3.2 Adding Elements to a vector</span><br><span class="line">3.3.3 Other vectorOperations</span><br><span class="line">3.4 IntroducingIterators</span><br><span class="line">3.4.1 UsingIterators</span><br><span class="line">3.4.2 IteratorArithmetic</span><br><span class="line">3.5 Arrays</span><br><span class="line">3.5.1 DefiningandInitializingBuilt-inArrays</span><br><span class="line">3.5.2 AccessingtheElementsof anArray</span><br><span class="line">3.5.3 Pointers andArrays</span><br><span class="line">3.5.4 C-StyleCharacterStrings</span><br><span class="line">3.5.5 InterfacingtoOlderCode</span><br><span class="line">3.6 MultidimensionalArrays</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 4 Expressions</span><br><span class="line">4.1 Fundamentals</span><br><span class="line">4.1.1 BasicConcepts</span><br><span class="line">4.1.2 PrecedenceandAssociativity</span><br><span class="line">4.1.3 OrderofEvaluation</span><br><span class="line">4.2 ArithmeticOperators</span><br><span class="line">4.3 Logical andRelationalOperators</span><br><span class="line">Contents ix</span><br><span class="line">4.4 AssignmentOperators</span><br><span class="line">4.5 Increment andDecrementOperators</span><br><span class="line">4.6 TheMemberAccessOperators</span><br><span class="line">4.7 TheConditionalOperator</span><br><span class="line">4.8 TheBitwiseOperators</span><br><span class="line">4.9 The sizeofOperator</span><br><span class="line">4.10 CommaOperator</span><br><span class="line">4.11 TypeConversions</span><br><span class="line">4.11.1 TheArithmeticConversions</span><br><span class="line">4.11.2 Other ImplicitConversions</span><br><span class="line">4.11.3 ExplicitConversions</span><br><span class="line">4.12 OperatorPrecedenceTable</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 5 Statements</span><br><span class="line">5.1 Simple Statements</span><br><span class="line">5.2 StatementScope</span><br><span class="line">5.3 Conditional Statements</span><br><span class="line">5.3.1 The ifStatement</span><br><span class="line">5.3.2 The switchStatement</span><br><span class="line">5.4 IterativeStatements</span><br><span class="line">5.4.1 The whileStatement</span><br><span class="line">5.4.2 Traditional forStatement</span><br><span class="line">5.4.3 Range forStatement</span><br><span class="line">5.4.4 The do whileStatement</span><br><span class="line">5.5 JumpStatements</span><br><span class="line">5.5.1 The breakStatement</span><br><span class="line">5.5.2 The continueStatement</span><br><span class="line">5.5.3 The gotoStatement</span><br><span class="line">5.6 tryBlocks andExceptionHandling</span><br><span class="line">5.6.1 A throwExpression</span><br><span class="line">5.6.2 The tryBlock</span><br><span class="line">5.6.3 StandardExceptions</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 6 Functions</span><br><span class="line">6.1 FunctionBasics</span><br><span class="line">6.1.1 LocalObjects</span><br><span class="line">6.1.2 FunctionDeclarations</span><br><span class="line">6.1.3 SeparateCompilation</span><br><span class="line">6.2 ArgumentPassing</span><br><span class="line">6.2.1 PassingArgumentsbyValue</span><br><span class="line">6.2.2 PassingArgumentsbyReference</span><br><span class="line">6.2.3 constParametersandArguments</span><br><span class="line">6.2.4 ArrayParameters</span><br><span class="line">x Contents</span><br><span class="line">6.2.5 main：HandlingCommand-LineOptions</span><br><span class="line">6.2.6 FunctionswithVaryingParameters</span><br><span class="line">6.3 Return Types and the returnStatement</span><br><span class="line">6.3.1 FunctionswithNoReturnValue</span><br><span class="line">6.3.2 FunctionsThatReturnaValue</span><br><span class="line">6.3.3 ReturningaPointer toanArray</span><br><span class="line">6.4 OverloadedFunctions</span><br><span class="line">6.4.1 OverloadingandScope</span><br><span class="line">6.5 Features forSpecializedUses</span><br><span class="line">6.5.1 DefaultArguments</span><br><span class="line">6.5.2 Inline and constexprFunctions</span><br><span class="line">6.5.3 Aids for Debugging</span><br><span class="line">6.6 FunctionMatching</span><br><span class="line">6.6.1 ArgumentTypeConversions</span><br><span class="line">6.7 Pointers toFunctions</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 7 Classes</span><br><span class="line">7.1 DefiningAbstractDataTypes</span><br><span class="line">7.1.1 Designing the Sales_dataClass</span><br><span class="line">7.1.2 Defining the Revised Sales_dataClass</span><br><span class="line">7.1.3 DefiningNonmemberClass-RelatedFunctions</span><br><span class="line">7.1.4 Constructors</span><br><span class="line">7.1.5 Copy，Assignment， andDestruction</span><br><span class="line">7.2 AccessControl andEncapsulation</span><br><span class="line">7.2.1 Friends</span><br><span class="line">7.3 AdditionalClassFeatures</span><br><span class="line">7.3.1 ClassMembersRevisited</span><br><span class="line">7.3.2 Functions That Return *this</span><br><span class="line">7.3.3 ClassTypes</span><br><span class="line">7.3.4 FriendshipRevisited</span><br><span class="line">7.4 ClassScope</span><br><span class="line">7.4.1 NameLookupandClassScope</span><br><span class="line">7.5 ConstructorsRevisited</span><br><span class="line">7.5.1 Constructor InitializerList</span><br><span class="line">7.5.2 DelegatingConstructors</span><br><span class="line">7.5.3 TheRoleof theDefaultConstructor</span><br><span class="line">7.5.4 ImplicitClass-TypeConversions</span><br><span class="line">7.5.5 AggregateClasses</span><br><span class="line">7.5.6 LiteralClasses</span><br><span class="line">7.6 staticClassMembers</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Contents xi</span><br><span class="line">Part II The C++ Library</span><br><span class="line">Chapter 8 The IO Library</span><br><span class="line">8.1 The IOClasses</span><br><span class="line">8.1.1 NoCopyorAssignfor IOObjects</span><br><span class="line">8.1.2 ConditionStates</span><br><span class="line">8.1.3 ManagingtheOutputBuffer</span><br><span class="line">8.2 File Input and Output</span><br><span class="line">8.2.1 Using File Stream Objects</span><br><span class="line">8.2.2 File Modes</span><br><span class="line">8.3 stringStreams</span><br><span class="line">8.3.1 Using an istringstream</span><br><span class="line">8.3.2 Using ostringstreams</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 9 Sequential Containers</span><br><span class="line">9.1 Overviewof the SequentialContainers</span><br><span class="line">9.2 ContainerLibraryOverview</span><br><span class="line">9.2.1 Iterators</span><br><span class="line">9.2.2 ContainerTypeMembers</span><br><span class="line">9.2.3 begin and endMembers</span><br><span class="line">9.2.4 DefiningandInitializingaContainer</span><br><span class="line">9.2.5 Assignment and swap</span><br><span class="line">9.2.6 ContainerSizeOperations</span><br><span class="line">9.2.7 RelationalOperators</span><br><span class="line">9.3 SequentialContainerOperations</span><br><span class="line">9.3.1 AddingElements toaSequentialContainer</span><br><span class="line">9.3.2 AccessingElements</span><br><span class="line">9.3.3 ErasingElements</span><br><span class="line">9.3.4 Specialized forward_listOperations</span><br><span class="line">9.3.5 ResizingaContainer</span><br><span class="line">9.3.6 ContainerOperationsMayInvalidateIterators</span><br><span class="line">9.4 How a vectorGrows</span><br><span class="line">9.5 Additional stringOperations</span><br><span class="line">9.5.1 Other Ways to Construct strings</span><br><span class="line">9.5.2 Other Ways to Change a string</span><br><span class="line">9.5.3 stringSearchOperations</span><br><span class="line">9.5.4 The compareFunctions</span><br><span class="line">9.5.5 NumericConversions</span><br><span class="line">9.6 ContainerAdaptors</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">xii Contents</span><br><span class="line">Chapter 10 Generic Algorithms</span><br><span class="line">10.1 Overview</span><br><span class="line">10.2 AFirstLookat theAlgorithms</span><br><span class="line">10.2.1 Read-OnlyAlgorithms</span><br><span class="line">10.2.2 AlgorithmsThatWriteContainerElements</span><br><span class="line">10.2.3 AlgorithmsThatReorderContainerElements</span><br><span class="line">10.3 CustomizingOperations</span><br><span class="line">10.3.1 PassingaFunctiontoanAlgorithm</span><br><span class="line">10.3.2 LambdaExpressions</span><br><span class="line">10.3.3 LambdaCapturesandReturns</span><br><span class="line">10.3.4 BindingArguments</span><br><span class="line">10.4 Revisiting Iterators</span><br><span class="line">10.4.1 Insert Iterators</span><br><span class="line">10.4.2 iostream Iterators</span><br><span class="line">10.4.3 Reverse Iterators</span><br><span class="line">10.5 StructureofGenericAlgorithms</span><br><span class="line">10.5.1 TheFive IteratorCategories</span><br><span class="line">10.5.2 AlgorithmParameterPatterns</span><br><span class="line">10.5.3 AlgorithmNamingConventions</span><br><span class="line">10.6 Container-SpecificAlgorithms</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 11 Associative Containers</span><br><span class="line">11.1 UsinganAssociativeContainer</span><br><span class="line">11.2 Overviewof theAssociativeContainers</span><br><span class="line">11.2.1 DefininganAssociativeContainer</span><br><span class="line">11.2.2 Requirements onKeyType</span><br><span class="line">11.2.3 The pairType</span><br><span class="line">11.3 Operations onAssociativeContainers</span><br><span class="line">11.3.1 AssociativeContainer Iterators</span><br><span class="line">11.3.2 AddingElements</span><br><span class="line">11.3.3 ErasingElements</span><br><span class="line">11.3.4 Subscripting a map</span><br><span class="line">11.3.5 AccessingElements</span><br><span class="line">11.3.6 AWordTransformationMap</span><br><span class="line">11.4 TheUnorderedContainers</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 12 DynamicMemory</span><br><span class="line">12.1 DynamicMemoryandSmartPointers</span><br><span class="line">12.1.1 The shared_ptrClass</span><br><span class="line">12.1.2 ManagingMemoryDirectly</span><br><span class="line">12.1.3 Using shared_ptrs with new</span><br><span class="line">12.1.4 SmartPointers andExceptions</span><br><span class="line">12.1.5 unique_ptr</span><br><span class="line">Contents xiii</span><br><span class="line">12.1.6 weak_ptr</span><br><span class="line">12.2 DynamicArrays</span><br><span class="line">12.2.1 newandArrays</span><br><span class="line">12.2.2 The allocatorClass</span><br><span class="line">12.3 UsingtheLibrary：AText-QueryProgram</span><br><span class="line">12.3.1 Designof theQueryProgram</span><br><span class="line">12.3.2 DefiningtheQueryProgramClasses</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Part III Tools for Class Authors</span><br><span class="line">Chapter 13 Copy Control</span><br><span class="line">13.1 Copy，Assign， andDestroy</span><br><span class="line">13.1.1 TheCopyConstructor</span><br><span class="line">13.1.2 TheCopy-AssignmentOperator</span><br><span class="line">13.1.3 TheDestructor</span><br><span class="line">13.1.4 TheRuleofThree&#x2F;Five</span><br><span class="line">13.1.5 Using &#x3D; default</span><br><span class="line">13.1.6 PreventingCopies</span><br><span class="line">13.2 CopyControl andResourceManagement</span><br><span class="line">13.2.1 ClassesThatActLikeValues</span><br><span class="line">13.2.2 DefiningClassesThatActLikePointers</span><br><span class="line">13.3 Swap</span><br><span class="line">13.4 ACopy-ControlExample</span><br><span class="line">13.5 ClassesThatManageDynamicMemory</span><br><span class="line">13.6 MovingObjects</span><br><span class="line">13.6.1 RvalueReferences</span><br><span class="line">13.6.2 MoveConstructor andMoveAssignment</span><br><span class="line">13.6.3 RvalueReferencesandMemberFunctions</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 14 Overloaded Operations and Conversions</span><br><span class="line">14.1 BasicConcepts</span><br><span class="line">14.2 Input andOutputOperators</span><br><span class="line">14.2.1 Overloading the Output Operator &lt;&lt;</span><br><span class="line">14.2.2 Overloading the Input Operator &gt;&gt;</span><br><span class="line">14.3 Arithmetic andRelationalOperators</span><br><span class="line">14.3.1 EqualityOperators</span><br><span class="line">14.3.2 RelationalOperators</span><br><span class="line">14.4 AssignmentOperators</span><br><span class="line">14.5 SubscriptOperator</span><br><span class="line">14.6 Increment andDecrementOperators</span><br><span class="line">14.7 MemberAccessOperators</span><br><span class="line">14.8 Function-CallOperator</span><br><span class="line">xiv Contents</span><br><span class="line">14.8.1 LambdasAreFunctionObjects</span><br><span class="line">14.8.2 Library-DefinedFunctionObjects</span><br><span class="line">14.8.3 Callable Objects and function</span><br><span class="line">14.9 Overloading，Conversions， andOperators</span><br><span class="line">14.9.1 ConversionOperators</span><br><span class="line">14.9.2 AvoidingAmbiguousConversions</span><br><span class="line">14.9.3 FunctionMatchingandOverloadedOperators</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 15 Object-Oriented Programming</span><br><span class="line">15.1 OOP：AnOverview</span><br><span class="line">15.2 DefiningBaseandDerivedClasses</span><br><span class="line">15.2.1 DefiningaBaseClass</span><br><span class="line">15.2.2 DefiningaDerivedClass</span><br><span class="line">15.2.3 Conversions andInheritance</span><br><span class="line">15.3 VirtualFunctions</span><br><span class="line">15.4 AbstractBaseClasses</span><br><span class="line">15.5 AccessControl andInheritance</span><br><span class="line">15.6 ClassScopeunder Inheritance</span><br><span class="line">15.7 Constructors andCopyControl</span><br><span class="line">15.7.1 VirtualDestructors</span><br><span class="line">15.7.2 SynthesizedCopyControl andInheritance</span><br><span class="line">15.7.3 Derived-ClassCopy-ControlMembers</span><br><span class="line">15.7.4 InheritedConstructors</span><br><span class="line">15.8 Containers andInheritance</span><br><span class="line">15.8.1 Writing a BasketClass</span><br><span class="line">15.9 TextQueriesRevisited</span><br><span class="line">15.9.1 AnObject-OrientedSolution</span><br><span class="line">15.9.2 The Query_base and QueryClasses</span><br><span class="line">15.9.3 TheDerivedClasses</span><br><span class="line">15.9.4 The evalFunctions</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 16 Templates and Generic Programming</span><br><span class="line">16.1 DefiningaTemplate</span><br><span class="line">16.1.1 FunctionTemplates</span><br><span class="line">16.1.2 ClassTemplates</span><br><span class="line">16.1.3 TemplateParameters</span><br><span class="line">16.1.4 MemberTemplates</span><br><span class="line">16.1.5 Controlling Instantiations</span><br><span class="line">16.1.6 Efficiency and Flexibility</span><br><span class="line">16.2 TemplateArgumentDeduction</span><br><span class="line">16.2.1 Conversions andTemplateTypeParameters</span><br><span class="line">16.2.2 Function-TemplateExplicitArguments</span><br><span class="line">16.2.3 Trailing Return Types and Type Transformation</span><br><span class="line">Contents xv</span><br><span class="line">16.2.4 FunctionPointers andArgumentDeduction</span><br><span class="line">16.2.5 TemplateArgumentDeductionandReferences</span><br><span class="line">16.2.6 Understanding std：：move</span><br><span class="line">16.2.7 Forwarding</span><br><span class="line">16.3 OverloadingandTemplates</span><br><span class="line">16.4 VariadicTemplates</span><br><span class="line">16.4.1 WritingaVariadicFunctionTemplate</span><br><span class="line">16.4.2 PackExpansion</span><br><span class="line">16.4.3 ForwardingParameterPacks</span><br><span class="line">16.5 Template Specializations</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Part IV Advanced Topics</span><br><span class="line">Chapter 17 Specialized Library Facilities</span><br><span class="line">17.1 The tupleType</span><br><span class="line">17.1.1 Defining and Initializing tuples</span><br><span class="line">17.1.2 Using a tuple toReturnMultipleValues</span><br><span class="line">17.2 The bitsetType</span><br><span class="line">17.2.1 Defining and Initializing bitsets</span><br><span class="line">17.2.2 Operations on bitsets</span><br><span class="line">17.3 RegularExpressions</span><br><span class="line">17.3.1 UsingtheRegularExpressionLibrary</span><br><span class="line">17.3.2 TheMatchandRegex IteratorTypes</span><br><span class="line">17.3.3 UsingSubexpressions</span><br><span class="line">17.3.4 Using regex_replace</span><br><span class="line">17.4 RandomNumbers</span><br><span class="line">17.4.1 Random-NumberEngines andDistribution</span><br><span class="line">17.4.2 OtherKinds ofDistributions</span><br><span class="line">17.5 The IOLibraryRevisited</span><br><span class="line">17.5.1 FormattedInput andOutput</span><br><span class="line">17.5.2 UnformattedInput&#x2F;OutputOperations</span><br><span class="line">17.5.3 RandomAccess toaStream</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 18 Tools for Large Programs</span><br><span class="line">18.1 ExceptionHandling</span><br><span class="line">18.1.1 ThrowinganException</span><br><span class="line">18.1.2 CatchinganException</span><br><span class="line">18.1.3 Function tryBlocks andConstructors</span><br><span class="line">18.1.4 The noexceptExceptionSpecification</span><br><span class="line">18.1.5 ExceptionClassHierarchies</span><br><span class="line">18.2 Namespaces</span><br><span class="line">18.2.1 NamespaceDefinitions</span><br><span class="line">xvi Contents</span><br><span class="line">18.2.2 UsingNamespaceMembers</span><br><span class="line">18.2.3 Classes，Namespaces，andScope</span><br><span class="line">18.2.4 OverloadingandNamespaces</span><br><span class="line">18.3 Multiple andVirtual Inheritance</span><br><span class="line">18.3.1 Multiple Inheritance</span><br><span class="line">18.3.2 Conversions andMultipleBaseClasses</span><br><span class="line">18.3.3 ClassScopeunderMultiple Inheritance</span><br><span class="line">18.3.4 Virtual Inheritance</span><br><span class="line">18.3.5 Constructors andVirtual Inheritance</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Chapter 19 Specialized Tools and Techniques</span><br><span class="line">19.1 Controlling Memory Allocation</span><br><span class="line">19.1.1 Overloading new and delete</span><br><span class="line">19.1.2 Placement newExpressions</span><br><span class="line">19.2 Run-TimeTypeIdentification</span><br><span class="line">19.2.1 The dynamic_castOperator</span><br><span class="line">19.2.2 The typeidOperator</span><br><span class="line">19.2.3 UsingRTTI</span><br><span class="line">19.2.4 The type_infoClass</span><br><span class="line">19.3 Enumerations</span><br><span class="line">19.4 Pointer toClassMember</span><br><span class="line">19.4.1 Pointers toDataMembers</span><br><span class="line">19.4.2 Pointers toMemberFunctions</span><br><span class="line">19.4.3 UsingMemberFunctions asCallableObjects</span><br><span class="line">19.5 NestedClasses</span><br><span class="line">19.6 union：ASpace-SavingClass</span><br><span class="line">19.7 LocalClasses</span><br><span class="line">19.8 InherentlyNonportableFeatures</span><br><span class="line">19.8.1 Bit-fields</span><br><span class="line">19.8.2 volatileQualifier</span><br><span class="line">19.8.3 Linkage Directives： extern “C”</span><br><span class="line">ChapterSummary</span><br><span class="line">DefinedTerms</span><br><span class="line">Appendix A The Library</span><br><span class="line">A.1 LibraryNames andHeaders</span><br><span class="line">A.2 ABriefTourof theAlgorithms</span><br><span class="line">A.2.1 Algorithms toFindanObject</span><br><span class="line">A.2.2 OtherRead-OnlyAlgorithms</span><br><span class="line">A.2.3 BinarySearchAlgorithms</span><br><span class="line">A.2.4 AlgorithmsThatWriteContainerElements</span><br><span class="line">A.2.5 PartitioningandSortingAlgorithms</span><br><span class="line">A.2.6 GeneralReorderingOperations</span><br><span class="line">A.2.7 PermutationAlgorithms</span><br><span class="line">A.2.8 SetAlgorithms forSortedSequences</span><br><span class="line">Contents xvii</span><br><span class="line">A.2.9 MinimumandMaximumValues</span><br><span class="line">A.2.10 NumericAlgorithms</span><br><span class="line">A.3 RandomNumbers</span><br><span class="line">A.3.1 RandomNumberDistributions</span><br><span class="line">A.3.2 RandomNumberEngines</span><br><span class="line">Index </span><br><span class="line"></span><br><span class="line"> New Features in C++ 2.1.1 long longType 2.2.1 List Initialization 2.3.2 nullptrLiteral 2.4.4 constexprVariables 2.5.1 TypeAliasDeclarations 2.5.2 The autoTypeSpecifier 2.5.3 The decltypeTypeSpecifier 2.6.1 In-Class Initializers 3.2.2 Using auto or decltype forTypeAbbreviation 3.2.3 Range forStatement 3.3 Defining a vector of vectors 3.3.1 List Initialization for vectors 3.4.1 Container cbegin and cendFunctions 3.5.3 Library begin and endFunctions 3.6 Using auto or decltype to SimplifyDeclarations 4.2 RoundingRules forDivision 4.4 Assignment fromaBracedListofValues 4.9 sizeofAppliedtoaClassMember 5.4.3 Range forStatement 6.2.6 Library initializer_listClass 6.3.2 List InitializingaReturnValue 6.3.3 Declaring a Trailing Return Type 6.3.3 Using decltype to Simplify Return Type Declarations 6.5.2 constexprFunctions 7.1.4 Using &#x3D; default toGenerateaDefaultConstructor 7.3.1 In-class Initializers forMembersofClassType 7.5.2 DelegatingConstructors 7.5.6 constexprConstructors 8.2.1 Using strings for File Names 9.1 The array and forward_listContainers 9.2.3 Container cbegin and cendFunctions 9.2.4 List InitializationforContainers 9.2.5 Container Nonmember swapFunctions 9.3.1 Return Type for Container insertMembers 9.3.1 Container emplaceMembers xix xx New Features in C++ 9.4 shrink_to_fit 9.5.5 Numeric Conversion Functions for strings 10.3.2 LambdaExpressions 10.3.3 Trailing Return Type in Lambda Expressions 10.3.4 The Library bindFunction 11.2.1 List Initializationof anAssociativeContainer 11.2.3 List Initializing pairReturnType 11.3.2 List Initialization of a pair 11.4 TheUnorderedContainers 12.1 SmartPointers 12.1.1 The shared_ptrClass 12.1.2 List InitializationofDynamicallyAllocatedObjects 12.1.2 autoandDynamicAllocation 12.1.5 The unique_ptrClass 12.1.6 The weak_ptrClass 12.2.1 Range for Doesn‘t Apply to Dynamically AllocatedArrays 12.2.1 List InitializationofDynamicallyAllocatedArrays 12.2.1 autoCan’tBeUsedtoAllocateanArray 12.2.2 allocator：：constructCanUseanyConstructor 13.1.5 Using &#x3D; default forCopy-ControlMembers 13.1.6 Using &#x3D; delete toPreventCopyingClassObjects 13.5 MovingInsteadofCopyingClassObjects 13.6.1 RvalueReferences 13.6.1 The Library moveFunction 13.6.2 MoveConstructor andMoveAssignment 13.6.2 Move Constructors Usually Should Be noexcept 13.6.2 MoveIterators 13.6.3 ReferenceQualifiedMemberFunctions 14.8.3 The functionClassTemplate 14.9.1 explicitConversionOperators 15.2.2 overrideSpecifier forVirtualFunctions 15.2.2 Preventing Inheritance by Defining a Class as final 15.3 override and final Specifiers for Virtual Functions 15.7.2 DeletedCopyControl andInheritance 15.7.4 InheritedConstructors 16.1.2 DeclaringaTemplateTypeParameteras aFriend 16.1.2 TemplateTypeAliases 16.1.3 DefaultTemplateArguments forTemplateFunctions 16.1.5 ExplicitControlof Instantiation 16.2.3 Template Functions and Trailing Return Types 16.2.5 ReferenceCollapsingRules 16.2.6 static_cast fromanLvaluetoanRvalue 16.2.7 The Library forwardFunction 16.4 VariadicTemplates 16.4 The sizeof…Operator 16.4.3 VariadicTemplates andForwarding New Features in C++11 xxi 17.1 The Library TupleClassTemplate 17.2.2 New bitsetOperations 17.3 TheRegularExpressionLibrary 17.4 TheRandomNumberLibrary 17.5.1 Floating-Point FormatControl 18.1.4 The noexceptExceptionSpecifier 18.1.4 The noexceptOperator 18.2.1 InlineNamespaces 18.3.1 InheritedConstructors andMultiple Inheritance 19.3 Scoped enums 19.3 Specifying the Type Used to Hold an enum 19.3 Forward Declarations for enums 19.4.3 The Library mem_fnClassTemplate 19.6 UnionMembersofClassTypes</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00CE43I04/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00CE43I04&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41YyoY5A7pL._SL500_AA300_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/dsls-in-action/" rel="prev" title="领域专用语言实战(英文版)">
+      <i class="fa fa-chevron-left"></i> 领域专用语言实战(英文版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/efeffective-stl/" rel="next" title="Effective STL">
+      Effective STL <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

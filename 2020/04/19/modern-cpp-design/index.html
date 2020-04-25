@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C++设计新思维作者信息： 作者: Alexandrescu [ 中文 pdf ] 简单介绍本书从根本上展示了generic patterns(泛型模式)或pattern templates（模式模板），并将它们视之为“在C 中创造可扩充设计”的一种功能强大的新方法。这种方法结合了template和patterns，你可能未曾想过，但的确存在。为C 打开了全新视野，而且不仅仅在编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++设计新思维">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/modern-cpp-design/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C++设计新思维作者信息： 作者: Alexandrescu [ 中文 pdf ] 简单介绍本书从根本上展示了generic patterns(泛型模式)或pattern templates（模式模板），并将它们视之为“在C 中创造可扩充设计”的一种功能强大的新方法。这种方法结合了template和patterns，你可能未曾想过，但的确存在。为C 打开了全新视野，而且不仅仅在编程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41BQPo8oQIL._SL500_AA300_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.707Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41BQPo8oQIL._SL500_AA300_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/modern-cpp-design/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C++设计新思维 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/modern-cpp-design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++设计新思维
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C++设计新思维<br>作者信息： 作者: Alexandrescu [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>本书从根本上展示了generic patterns(泛型模式)或pattern templates（模式模板），并将它们视之为“在C 中创造可扩充设计”的一种功能强大的新方法。这种方法结合了template和patterns，你可能未曾想过，但的确存在。为C 打开了全新视野，而且不仅仅在编程方面，还在于软件设计本身；对软件分析和软件体系结构来说，它也具有丰富的内涵。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br></pre></td><td class="code"><pre><span class="line">译序by 侯捷 i</span><br><span class="line">译序by 於春景  iii</span><br><span class="line">目录   v</span><br><span class="line">序言by scott meyers    xi</span><br><span class="line">序言by john vlissides  xv</span><br><span class="line">前言   xvii</span><br><span class="line">致谢   xxi</span><br><span class="line">第一篇 技术（techniques）    1</span><br><span class="line">第1章 基于policy的class设计（policy-based class design）   3</span><br><span class="line">1.1 软件设计的多样性（multiplicity）   3</span><br><span class="line">1.2 全功能型（do-it-all）接口的失败   4</span><br><span class="line">1.3 多重继承（multiple inheritance）是救世主？   5</span><br><span class="line">1.4 templates带来曙光    6</span><br><span class="line">1.5 policies和policy classes    7</span><br><span class="line">1.6 更丰富的policies     12</span><br><span class="line">1.7 policy classes的析构函数（destructors）   12</span><br><span class="line">1.8 通过不完全具现化（incomplete instantiation）而获得的选择性机能（optional functionality）    13</span><br><span class="line">1.9 结合policy classes    14</span><br><span class="line">.   1.10    以policy classes定制结构   16</span><br><span class="line">1.11    policies的兼容性     17</span><br><span class="line">1.12    将一个class分解为一堆policies    19</span><br><span class="line">1.13    摘要   20</span><br><span class="line">第2章 技术（techniques）   23</span><br><span class="line">2.1 编译期（compile-time）assertions   23</span><br><span class="line">2.2 partial template specialization（模板偏特化）    26</span><br><span class="line">2.3 局部类（local classes）     28</span><br><span class="line">2.4 常整数映射为型别（mapping integral constants to types）   29</span><br><span class="line">2.5 型别对型别的映射（type-to-type mapping）  31</span><br><span class="line">2.6 型别选择（type selection）     33</span><br><span class="line">2.7 编译期间侦测可转换性（convertibility）和继承性（inheritance） 34</span><br><span class="line">2.8 type_info的一个外覆类（wrapper）    37</span><br><span class="line">2.9 nulltype和emptytype     39</span><br><span class="line">2.10    type traits  40</span><br><span class="line">2.11    摘要   46</span><br><span class="line">第3章 typelists    49</span><br><span class="line">3.1 typelists的必要性 49</span><br><span class="line">3.2 定义typelists  51</span><br><span class="line">3.3 将typelist的生成线性化（linearizing）  52</span><br><span class="line">3.4 计算长度     53</span><br><span class="line">3.5 间奏曲    54</span><br><span class="line">3.6 索引式访问（indexed access） 55</span><br><span class="line">3.7 查找typelists  56</span><br><span class="line">3.8 附加元素至typelists     57</span><br><span class="line">3.9 移除typelist中的某个元素    58</span><br><span class="line">3.10    移除重复元素（erasing duplicates）59</span><br><span class="line">3.11    取代typelist中的某个元素    60</span><br><span class="line">3.12    为typelists局部更换次序（partially ordering）  61</span><br><span class="line">3.13    运用typelists自动产生classes   64</span><br><span class="line">3.14    摘要   74</span><br><span class="line">3.15    typelist要点概览     75</span><br><span class="line">第4章 小型对象分配技术（small-object allocation）    77</span><br><span class="line">4.1 缺省的free store分配器     78</span><br><span class="line">4.2 内存分配器的工作方式   78</span><br><span class="line">4.3 小型对象分配器（small-object allocator）   80</span><br><span class="line">4.4 chunks（大块内存）     81</span><br><span class="line">4.5 大小一致（fixed-size）的分配器    84</span><br><span class="line">4.6 smallobjallocator class  87</span><br><span class="line">4.7 帽子下的戏法   89</span><br><span class="line">4.8 简单，复杂，终究还是简单    92</span><br><span class="line">4.9 使用细节     93</span><br><span class="line">4.10    摘要   94</span><br><span class="line">4.11    小型对象分配器（small-object allocator）要点概览   94</span><br><span class="line">第二篇   组件（components）   97</span><br><span class="line">第5章 泛化仿函数（generalized functors）   99</span><br><span class="line">5.1 command设计模式  100</span><br><span class="line">5.2 真实世界中的command    102</span><br><span class="line">5.3 c++ 中的可呼叫体（callable entities）    103</span><br><span class="line">5.4 functor class template骨干    104</span><br><span class="line">5.5 实现“转发式”（forwarding）functor::operator()     108</span><br><span class="line">5.6 处理仿函数  110</span><br><span class="line">5.7 做一个，送一个    112</span><br><span class="line">5.8 引数（argument）和返回型别（return type）的转换    114</span><br><span class="line">5.9 处理pointer to member function（成员函数指针）     115</span><br><span class="line">5.10    绑定（binding）  119</span><br><span class="line">5.11    将请求串接起来（chaining requests）    122</span><br><span class="line">5.12    现实世界中的问题之1：转发式函数的成本 122</span><br><span class="line">5.13    现实世界中的问题之2：heap分配    124</span><br><span class="line">5.14    通过functor实现undo和redo   125</span><br><span class="line">5.15    摘要   126</span><br><span class="line">5.16    functor要点概览  126</span><br><span class="line">第6章 singletons（单件）实现技术   129</span><br><span class="line">6.1 静态数据 + 静态函数 !&#x3D; singleton    130</span><br><span class="line">6.2 用以支持singleton的一些c++ 基本手法  131</span><br><span class="line">6.3 实施“singleton的唯一性”    132</span><br><span class="line">6.4 摧毁singleton  133</span><br><span class="line">6.5 dead（失效的）reference问题   135</span><br><span class="line">6.6 解决dead reference问题（i）：phoenix singleton    137</span><br><span class="line">6.7 解决dead reference问题（ii）：带寿命的singletons 139</span><br><span class="line">6.8 实现“带寿命的singletons”   142</span><br><span class="line">6.9 生活在多线程世界     145</span><br><span class="line">6.10    将一切组装起来    148</span><br><span class="line">6.11    使用singletonholder    153</span><br><span class="line">6.12    摘要   155</span><br><span class="line">6.13    singletonholder class template要点概览  155</span><br><span class="line">第7章 smart pointers（智能指针）    157</span><br><span class="line">7.1 smart pointers基础    157</span><br><span class="line">7.2 交易   158</span><br><span class="line">7.3 smart pointers的存储 160</span><br><span class="line">7.4 smart pointer的成员函数    161</span><br><span class="line">7.5 拥有权（ownership）管理策略     163</span><br><span class="line">7.6 address-of（取址）操作符  170</span><br><span class="line">7.7 隐式转换（implicit conversion）至原始指针型别   171</span><br><span class="line">7.8 相等性（equality）和不等性（inequality）  173</span><br><span class="line">7.9 次序比较（ordering comparisons）  178</span><br><span class="line">7.10    检测及错误报告（checking and error reporting）  181</span><br><span class="line">7.11    smart pointers to const和const smart pointers   182</span><br><span class="line">7.12    arrays   183</span><br><span class="line">7.13    smart pointers和多线程（multithreading）  184</span><br><span class="line">7.14    将一切组装起来   187</span><br><span class="line">7.15    摘要   194</span><br><span class="line">7.16    smartptr要点概览194</span><br><span class="line">第8章 object factories（对象工厂）  197</span><br><span class="line">8.1 为什么需要object factories 198</span><br><span class="line">8.2 object factories in c++：classes和objects 200</span><br><span class="line">8.3 实现一个object factory   201</span><br><span class="line">8.4 型别标识符（type identifiers）   206</span><br><span class="line">8.5 泛化（generalization）   207</span><br><span class="line">8.6 细节琐务    210</span><br><span class="line">8.7 clone factories（克隆工厂、翻制工厂、复制工厂） 211</span><br><span class="line">8.8 通过其他泛型组件来使用object factories    215</span><br><span class="line">8.9 摘要   216</span><br><span class="line">8.10    factory class template要点概览   216</span><br><span class="line">8.11    clonefactory class template要点概览 217</span><br><span class="line">第9章 abstract factory（抽象工厂）  219</span><br><span class="line">9.1 abstract factory扮演的体系结构角色（architectural role） 219</span><br><span class="line">9.2 一个泛化的abstract factory接口    223</span><br><span class="line">9.3 实作出abstractfactory     226</span><br><span class="line">9.4 一个prototype-based abstract factory实作品 228</span><br><span class="line">9.5 摘要  233</span><br><span class="line">9.6 abstractfactory和concretefactory要点概览   233</span><br><span class="line">第10章    visitor（访问者、视察者）  235</span><br><span class="line">10.1    visitor 基本原理    235</span><br><span class="line">10.2    重载（overloading）：catch-all函数    242</span><br><span class="line">10.3    一份更加精炼的实作品：acyclic visitor     243</span><br><span class="line">10.4    visitor之泛型实作  248</span><br><span class="line">10.5    再论 “cyclic” visitor 255</span><br><span class="line">10.6    变化手段     258</span><br><span class="line">10.7    摘要   260</span><br><span class="line">10.8    visitor泛型组件要点概览  261</span><br><span class="line">第11章    multimethods     263</span><br><span class="line">11.1    什么是multimethods?  264</span><br><span class="line">11.2    何时需要multimethods？ 264</span><br><span class="line">11.3    double switch-on-type：暴力法   265</span><br><span class="line">11.4    将暴力法自动化    268</span><br><span class="line">11.5    暴力式dispatcher 的对称性    273</span><br><span class="line">11.6    对数型（logarithmic）double dispatcher 276</span><br><span class="line">11.7    fndispatcher 和对称性    282</span><br><span class="line">11.8    double dispatch（双重分派）至仿函数（functors） 282</span><br><span class="line">11.9    引数的转型：static_cast或dynamic_cast？  285</span><br><span class="line">11.10   常数时间的multimethods：原始速度（raw speed）   290</span><br><span class="line">11.11   将basicdispatcher 和basicfastdispatcher当做policies 293</span><br><span class="line">11.12   展望  294</span><br><span class="line">11.13   摘要  296</span><br><span class="line">11.14   double dispatcher要点概览   297</span><br><span class="line">附录  一个超迷你的多线程程序库（a minimalist multithreading library）   301</span><br><span class="line">a.1 多线程的反思  302</span><br><span class="line">a.2 loki的作法   303</span><br><span class="line">a.3 整数型别上的原子操作（atomic operations）   303</span><br><span class="line">a.4 mutexes（互斥器）  305</span><br><span class="line">a.5 面向对象编程中的锁定语意（locking semantics） 306</span><br><span class="line">a.6 可有可无的（optional）volatile标识符  308</span><br><span class="line">a.7 semaphores, events和其他好东西     309</span><br><span class="line">a.8 摘要  309</span><br><span class="line">参考书目（bibliography）  311</span><br><span class="line">索引（index）    313</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00CLQBZ28/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00CLQBZ28&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41BQPo8oQIL._SL500_AA300_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/more-effective-cpp/" rel="prev" title="More Effective C++">
+      <i class="fa fa-chevron-left"></i> More Effective C++
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/inside-the-cpp-object-model/" rel="next" title="inside the c++ object model">
+      inside the c++ object model <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

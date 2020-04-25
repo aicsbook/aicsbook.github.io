@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 传世经典书丛 UNIX编程艺术作者信息： 作者: 埃瑞克•S.理曼德(Eric S. Raymond) [ 中文 pdf ] 简单介绍《传世经典书丛:UNIX编程艺术》内容涉及社群文化、软件开发设计与实现，覆盖面广、内容深邃，完全展现了作者极其深厚的经验积累和领域智慧。 目录123456789101112131415161718192021222324252627282930313">
+<meta property="og:type" content="article">
+<meta property="og:title" content="传世经典书丛 UNIX编程艺术">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B008Z1IEQ8/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 传世经典书丛 UNIX编程艺术作者信息： 作者: 埃瑞克•S.理曼德(Eric S. Raymond) [ 中文 pdf ] 简单介绍《传世经典书丛:UNIX编程艺术》内容涉及社群文化、软件开发设计与实现，覆盖面广、内容深邃，完全展现了作者极其深厚的经验积累和领域智慧。 目录123456789101112131415161718192021222324252627282930313">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/517htLnDtsL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.006Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="unix">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/517htLnDtsL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B008Z1IEQ8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>传世经典书丛 UNIX编程艺术 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B008Z1IEQ8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          传世经典书丛 UNIX编程艺术
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 传世经典书丛 UNIX编程艺术<br>作者信息： 作者: 埃瑞克•S.理曼德(Eric S. Raymond) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《传世经典书丛:UNIX编程艺术》内容涉及社群文化、软件开发设计与实现，覆盖面广、内容深邃，完全展现了作者极其深厚的经验积累和领域智慧。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br></pre></td><td class="code"><pre><span class="line">序</span><br><span class="line">PartIⅠ1</span><br><span class="line">第1章 哲学3</span><br><span class="line">1.1 文化？什么文化3</span><br><span class="line">1.2 Unix的生命力4</span><br><span class="line">1.3 反对学习Unix文化的理由5</span><br><span class="line">1.4 Unix之失6</span><br><span class="line">1.5 Unix之得7</span><br><span class="line">1.5.1 开源软件7</span><br><span class="line">1.5.2 跨平台可移植性和开放标准8</span><br><span class="line">1.5.3 Internet和万维网8</span><br><span class="line">1.5.4 开源社区9</span><br><span class="line">1.5.5 从头到脚的灵活性9</span><br><span class="line">1.5.6 UnixHack之趣10</span><br><span class="line">1.5.7 Unix的经验别处也可适用11</span><br><span class="line">1.6 Unix哲学基础11</span><br><span class="line">1.6.1 模块原则：使用简洁的接口拼合简单的部件14</span><br><span class="line">1.6.2 清晰原则：清晰胜于机巧14</span><br><span class="line">1.6.3 组合原则：设计时考虑拼接组合15</span><br><span class="line">1.6.4 分离原则：策略同机制分离，接口同引擎分离16</span><br><span class="line">1.6.5 简洁原则：设计要简洁，复杂度能低则低17</span><br><span class="line">1.6.6 吝啬原则：除非确无它法，不要编写庞大的程序18</span><br><span class="line">1.6.7 透明性原则：设计要可见，以便审查和调试18</span><br><span class="line">1.6.8 健壮原则：健壮源于透明与简洁18</span><br><span class="line">1.6.9 表示原则：把知识叠入数据以求逻辑质朴而健壮19</span><br><span class="line">1.6.10 通俗原则：接口设计避免标新立异20</span><br><span class="line">1.6.11 缄默原则：如果一个程序没什么好说的，就保持沉默20</span><br><span class="line">1.6.12 补救原则：出现异常时，马上退出并给出足量错误信息21</span><br><span class="line">1.6.13 经济原则：宁花机器一分，不花程序员一秒22</span><br><span class="line">1.6.14 生成原则：避免手工hack，尽量编写程序去生成程序22</span><br><span class="line">1.6.15 优化原则：雕琢前先得有原型，跑之前先学会走23</span><br><span class="line">1.6.16 多样原则：决不相信所谓“不二法门”的断言24</span><br><span class="line">1.6.17 扩展原则：设计着眼未来，未来总比预想快24</span><br><span class="line">1.7 Unix哲学之一言以蔽之25</span><br><span class="line">1.8 应用Unix哲学26</span><br><span class="line">1.9 态度也要紧26</span><br><span class="line">第2章 历史——双流记29</span><br><span class="line">2.1 Unix的起源及历史，1969－199529</span><br><span class="line">2.1.1 创世纪：1969－197130</span><br><span class="line">2.1.2 出埃及记：1971－198032</span><br><span class="line">2.1.3 TCP&#x2F;IP和Unix内战：1980－199035</span><br><span class="line">2.1.4 反击帝国：1991－199541</span><br><span class="line">2.2 黑客的起源和历史：1961－199543</span><br><span class="line">2.2.1 游戏在校园的林间：1961－198044</span><br><span class="line">2.2.2 互联网大融合与自由软件运动：1981－199145</span><br><span class="line">2.2.3 Linux和实用主义者的应对：1991－199848</span><br><span class="line">2.3 开源运动：1998年及之后49</span><br><span class="line">2.4 Unix的历史教训51</span><br><span class="line">第3章 对比：Unix哲学同其他哲学的比较53</span><br><span class="line">3.1 操作系统的风格元素53</span><br><span class="line">3.1.1 什么是操作系统的统一性理念54</span><br><span class="line">3.1.2 多任务能力54</span><br><span class="line">3.1.3 协作进程55</span><br><span class="line">3.1.4 内部边界57</span><br><span class="line">3.1.5 文件属性和记录结构57</span><br><span class="line">3.1.6 二进制文件格式58</span><br><span class="line">3.1.7 首选用户界面风格58</span><br><span class="line">3.1.8 目标受众59</span><br><span class="line">3.1.9 开发的门坎60</span><br><span class="line">3.2 操作系统的比较61</span><br><span class="line">3.2.1 VMS61</span><br><span class="line">3.2.2 MacOS64</span><br><span class="line">3.2.3 OS&#x2F;265</span><br><span class="line">3.2.4 WindowsNT68</span><br><span class="line">3.2.5 BeOS71</span><br><span class="line">3.2.6 MVS72</span><br><span class="line">3.2.7 VM&#x2F;CMS74</span><br><span class="line">3.2.8 Linux76</span><br><span class="line">3.3 种什么籽，得什么果78</span><br><span class="line">PartⅡ81</span><br><span class="line">第4章 模块性：保持清晰，保持简洁83</span><br><span class="line">4.1 封装和最佳模块大小85</span><br><span class="line">4.2 紧凑性和正交性87</span><br><span class="line">4.2.1 紧凑性87</span><br><span class="line">4.2.2 正交性89</span><br><span class="line">4.2.3 SPOT原则91</span><br><span class="line">4.2.4 紧凑性和强单一中心92</span><br><span class="line">4.2.5 分离的价值94</span><br><span class="line">4.3 软件是多层的95</span><br><span class="line">4.3.1 自顶向下和自底向上95</span><br><span class="line">4.3.2 胶合层97</span><br><span class="line">4.3.3 实例分析：被视为薄胶合层的C语言98</span><br><span class="line">4.4 程序库99</span><br><span class="line">4.4.1 实例分析：GIMP插件100</span><br><span class="line">4.5 Unix和面向对象语言101</span><br><span class="line">4.6 模块式编码103</span><br><span class="line">第5章 文本化：好协议产生好实践105</span><br><span class="line">5.1 文本化的重要性107</span><br><span class="line">5.1.1 实例分析：Unix口令文件格式109</span><br><span class="line">5.1.2 实例分析：newsrc格式110</span><br><span class="line">5.1.3 实例分析：PNG图形文件格式111</span><br><span class="line">5.2 数据文件元格式112</span><br><span class="line">5.2.1 DSV风格113</span><br><span class="line">5.2.2 RFC822格式114</span><br><span class="line">5.2.3 Cookie—Jar格式115</span><br><span class="line">5.2.4 Record—Jar格式116</span><br><span class="line">5.2.5 XML117</span><br><span class="line">5.2.6 WindowsINI格式119</span><br><span class="line">5.2.7 Unix文本文件格式的约定120</span><br><span class="line">5.2.8 文件压缩的利弊122</span><br><span class="line">5.3 应用协议设计123</span><br><span class="line">5.3.1 实例分析：SMTP，一个简单的套接字协议124</span><br><span class="line">5.3.2 实例分析：POP3，邮局协议124</span><br><span class="line">5.3.3 实例分析：IMAP，互联网消息访问协议126</span><br><span class="line">5.4 应用协议元格式127</span><br><span class="line">5.4.1 经典的互联网应用元协议127</span><br><span class="line">5.4.2 作为通用应用协议的HTTP128</span><br><span class="line">5.4.3 BEEP：块可扩展交换协议130</span><br><span class="line">5.4.4 XML—RPC，SOAP和Jabber131</span><br><span class="line">第6章 透明性：来点儿光133</span><br><span class="line">6.1 研究实例135</span><br><span class="line">6.1.1 实例分析：audacity135</span><br><span class="line">6.1.2 实例分析：fetchmail的–v选项136</span><br><span class="line">6.1.3 实例分析：GCC139</span><br><span class="line">6.1.4 实例分析：kmail140</span><br><span class="line">6.1.5 实例分析：SNG142</span><br><span class="line">6.1.6 实例分析：Terminfo数据库144</span><br><span class="line">6.1.7 实例分析：Freeciv数据文件146</span><br><span class="line">6.2 为透明性和可显性而设计148</span><br><span class="line">6.2.1 透明性之禅149</span><br><span class="line">6.2.2 为透明性和可显性而编码150</span><br><span class="line">6.2.3 透明性和避免过度保护151</span><br><span class="line">6.2.4 透明性和可编辑的表现形式152</span><br><span class="line">6.2.5 透明性、故障诊断和故障恢复153</span><br><span class="line">6.3 为可维护性而设计154</span><br><span class="line">第7章 多道程序设计：分离进程为独立的功能157</span><br><span class="line">7.1 从性能调整中分离复杂度控制159</span><br><span class="line">7.2 UnixIPC方法的分类160</span><br><span class="line">7.2.1 把任务转给专门程序160</span><br><span class="line">7.2.2 管道、重定向和过滤器161</span><br><span class="line">7.2.3 包装器166</span><br><span class="line">7.2.4 安全性包装器和Bernstein链167</span><br><span class="line">7.2.5 从进程168</span><br><span class="line">7.2.6 对等进程间通信169</span><br><span class="line">7.3 要避免的问题和方法176</span><br><span class="line">7.3.1 废弃的UnixIPC方法176</span><br><span class="line">7.3.2 远程过程调用178</span><br><span class="line">7.3.3 线程——恐吓或威胁180</span><br><span class="line">7.4 在设计层次上的进程划分181</span><br><span class="line">第8章 微型语言：寻找歌唱的乐符183</span><br><span class="line">8.1 理解语言分类法185</span><br><span class="line">8.2 应用微型语言187</span><br><span class="line">8.2.1 案例分析：sng187</span><br><span class="line">8.2.2 案例分析：正则表达式188</span><br><span class="line">8.2.3 案例分析：Glade191</span><br><span class="line">8.2.4 案例分析：m4193</span><br><span class="line">8.2.5 案例分析：XSLT194</span><br><span class="line">8.2.6 案例分析：TheDocumenter’s work bench Tools195</span><br><span class="line">8.2.7 案例分析：fetchmail的运行控制语法199</span><br><span class="line">8.2.8 案例分析：awk200</span><br><span class="line">8.2.9 案例分析：PostScript202</span><br><span class="line">8.2.10 案例分析：bc和dc203</span><br><span class="line">8.2.11 案例分析：EmacsLisp205</span><br><span class="line">8.2.12 案例分析：JavaScript205</span><br><span class="line">8.3 设计微型语言206</span><br><span class="line">8.3.1 选择正确的复杂度207</span><br><span class="line">8.3.2 扩展和嵌入语言209</span><br><span class="line">8.3.3 编写自定义语法210</span><br><span class="line">8.3.4 宏—慎用210</span><br><span class="line">8.3.5 语言还是应用协议212</span><br><span class="line">第9章 生成：提升规格说明的层次215</span><br><span class="line">9.1 数据驱动编程216</span><br><span class="line">9.1.1 实例分析：ascii217</span><br><span class="line">9.1.2 实例分析：统计学的垃圾邮件统计218</span><br><span class="line">9.1.3 实例分析：fetchmailconf中的元类改动219</span><br><span class="line">9.2 专用代码的生成225</span><br><span class="line">9.2.1 实例分析：生成ascii显示的代码225</span><br><span class="line">9.2.2 实例分析：为列表生成HTML代码227</span><br><span class="line">第10章 配置：迈出正确的第一步231</span><br><span class="line">10.1 什么应是可配置的231</span><br><span class="line">10.2 配置在哪里233</span><br><span class="line">10.3 运行控制文件234</span><br><span class="line">10.3.1 实例分析：.Netrc文件236</span><br><span class="line">10.3.2 到其它操作系统的可移植性238</span><br><span class="line">10.4 环境变量238</span><br><span class="line">10.4.1 系统环境变量238</span><br><span class="line">10.4.2 用户环境变量240</span><br><span class="line">10.4.3 何时使用环境变量240</span><br><span class="line">10.4.4 到其它操作系统的可移植性242</span><br><span class="line">10.5 命令行选项242</span><br><span class="line">10.5.1 从–a到–z的命令行选项243</span><br><span class="line">10.5.2 到其它操作系统的可移植性248</span><br><span class="line">10.6 如何挑选方法248</span><br><span class="line">10.6.1 实例分析：fetchmail249</span><br><span class="line">10.6.2 实例分析：XFree86服务器251</span><br><span class="line">10.7 论打破规则252</span><br><span class="line">第11章 接口：Unix环境下的用户接口设计模式253</span><br><span class="line">11.1 最小立异原则的应用254</span><br><span class="line">11.2 Unix接口设计的历史256</span><br><span class="line">11.3 接口设计评估257</span><br><span class="line">11.4 CLI和可视接口之间的权衡259</span><br><span class="line">11.4.1 实例分析：编写计算器程序的两种方式262</span><br><span class="line">11.5 透明度、表现力和可配置性264</span><br><span class="line">11.6 Unix接口设计模式266</span><br><span class="line">11.6.1 过滤器模式266</span><br><span class="line">11.6.2 Cantrip模式268</span><br><span class="line">11.6.3 源模式268</span><br><span class="line">11.6.4 接收器模式269</span><br><span class="line">11.6.5 编译器模式269</span><br><span class="line">11.6.6 ed模式270</span><br><span class="line">11.6.7 Roguelike模式270</span><br><span class="line">11.6.8 “引擎和接口分离”模式273</span><br><span class="line">11.6.9 CLI服务器模式278</span><br><span class="line">11.6.10 基于语言的接口模式279</span><br><span class="line">11.7 应用Unix接口设计模式280</span><br><span class="line">11.7.1多价程序模式</span><br><span class="line">11.8 网页浏览器作为通用前端281</span><br><span class="line">11.9 沉默是金284</span><br><span class="line">第12章 优化287</span><br><span class="line">12.1 什么也别做，就站在那儿287</span><br><span class="line">12.2 先估量，后优化288</span><br><span class="line">12.3 非定域性之害290</span><br><span class="line">12.4 吞吐量和延迟291</span><br><span class="line">12.4.1 批操作292</span><br><span class="line">12.4.2 重叠操作293</span><br><span class="line">12.4.3 缓存操作结果293</span><br><span class="line">第13章 复杂度：尽可能简单，但别简过了头295</span><br><span class="line">13.1 谈谈复杂度296</span><br><span class="line">13.1.1 复杂度的三个来源296</span><br><span class="line">13.1.2 接口复杂度和实现复杂度的折中298</span><br><span class="line">13.1.3 必然的、可能的和偶然的复杂度299</span><br><span class="line">13.1.4 映射复杂度300</span><br><span class="line">13.1.5 当简洁性不能胜任302</span><br><span class="line">13.2 五个编辑器的故事302</span><br><span class="line">13.2.1 ed304</span><br><span class="line">13.2.2 vi305</span><br><span class="line">13.2.3 Sam306</span><br><span class="line">13.2.4 Emacs307</span><br><span class="line">13.2.5 Wily308</span><br><span class="line">13.3 编辑器的适当规模309</span><br><span class="line">13.3.1 甄别复杂度问题309</span><br><span class="line">13.3.2 折衷无用312</span><br><span class="line">13.3.3 Emacs是个反Unix传统的论据吗314</span><br><span class="line">13.4 软件的适度规模316</span><br><span class="line">PartⅢ319</span><br><span class="line">第14章 语言：C还是非C321</span><br><span class="line">14.1 Unix下语言的丰饶321</span><br><span class="line">14.2 为什么不是C323</span><br><span class="line">14.3 解释型语言和混合策略325</span><br><span class="line">14.4 语言评估325</span><br><span class="line">14.4.1 C326</span><br><span class="line">14.4.2 C++327</span><br><span class="line">14.4.3 Shell330</span><br><span class="line">14.4.4 Perl332</span><br><span class="line">14.4.5 Tcl334</span><br><span class="line">14.4.6 Python336</span><br><span class="line">14.4.7 Java339</span><br><span class="line">14.4.8 EmacsLisp342</span><br><span class="line">14.5 未来趋势344</span><br><span class="line">14.6 选择X工具包346</span><br><span class="line">第15章 工具：开发的战术349</span><br><span class="line">15.1 开发者友好的操作系统349</span><br><span class="line">15.2 编辑器选择350</span><br><span class="line">15.2.1 了解vi351</span><br><span class="line">15.2.2 了解Emacs351</span><br><span class="line">15.2.3 非虔诚的选择：两者兼用352</span><br><span class="line">15.3 专用代码生成器352</span><br><span class="line">15.3.1 yacc和lex353</span><br><span class="line">15.3.2 实例分析：fetchmailrc的语法356</span><br><span class="line">15.3.3 实例分析：Glade356</span><br><span class="line">15.4 make：自动化编译357</span><br><span class="line">15.4.1 make的基本理论357</span><br><span class="line">15.4.2 非C&#x2F;C++开发中的make359</span><br><span class="line">15.4.3 通用生成目标359</span><br><span class="line">15.4.4 生成Makefile362</span><br><span class="line">15.5 版本控制系统364</span><br><span class="line">15.5.1 为什么需要版本控制364</span><br><span class="line">15.5.2 手工版本控制365</span><br><span class="line">15.5.3 自动化的版本控制366</span><br><span class="line">15.5.4 Unix的版本控制工具367</span><br><span class="line">15.6 运行期调试369</span><br><span class="line">15.7 性能分析370</span><br><span class="line">15.8 使用Emacs整合工具370</span><br><span class="line">15.8.1 Emacs和make371</span><br><span class="line">15.8.2 Emacs和运行期调试371</span><br><span class="line">15.8.3 Emacs和版本控制371</span><br><span class="line">15.8.4 Emacs和Profiling372</span><br><span class="line">15.8.5 像IDE一样，但更强373</span><br><span class="line">第16章 重用：论不要重新发明轮子375</span><br><span class="line">16.1 猪小兵的故事376</span><br><span class="line">16.2 透明性是重用的关键379</span><br><span class="line">16.3 从重用到开源380</span><br><span class="line">16.4 生命中最美好的就是“开放”381</span><br><span class="line">16.5 何处找384</span><br><span class="line">16.6 使用开源软件的问题385</span><br><span class="line">16.7 许可证问题386</span><br><span class="line">16.7.1 开放源码的资格386</span><br><span class="line">16.7.2 标准开放源码许可证388</span><br><span class="line">16.7.3 何时需要律师390</span><br><span class="line">PartⅣ391</span><br><span class="line">第17章 可移植性：软件可移植性与遵循标准393</span><br><span class="line">17.1 C语言的演化394</span><br><span class="line">17.1.1 早期的C语言395</span><br><span class="line">17.1.2 C语言标准396</span><br><span class="line">17.2 Unix标准398</span><br><span class="line">17.2.1 标准和Unix之战398</span><br><span class="line">17.2.2 庆功宴上的幽灵401</span><br><span class="line">17.2.3 开源世界的Unix标准402</span><br><span class="line">17.3 IETF和RFC标准化过程403</span><br><span class="line">17.4 规格DNA，代码RNA405</span><br><span class="line">17.5 可移植性编程408</span><br><span class="line">17.5.1 可移植性和编程语言选择409</span><br><span class="line">17.5.2 避免系统依赖性412</span><br><span class="line">17.5.3 移植工具413</span><br><span class="line">17.6 国际化413</span><br><span class="line">17.7 可移植性、开放标准以及开放源码414</span><br><span class="line">第18章 文档：向网络世界阐释代码417</span><br><span class="line">18.1 文档概念418</span><br><span class="line">18.2 Unix风格420</span><br><span class="line">18.2.1 大文档偏爱420</span><br><span class="line">18.2.2 文化风格421</span><br><span class="line">18.3 各种Unix文档格式422</span><br><span class="line">18.3.1 troff和Documenter’s Work bench Tools422</span><br><span class="line">18.3.2 TEX424</span><br><span class="line">18.3.3 Texinfo425</span><br><span class="line">18.3.4 POD425</span><br><span class="line">18.3.5 HTML426</span><br><span class="line">18.3.6 DocBook426</span><br><span class="line">18.4 当前的混乱和可能的出路426</span><br><span class="line">18.5 DocBook427</span><br><span class="line">18.5.1 文档类型定义427</span><br><span class="line">18.5.2 其它DTD428</span><br><span class="line">18.5.3 DocBook工具链429</span><br><span class="line">18.5.4 移植工具431</span><br><span class="line">18.5.5 编辑工具432</span><br><span class="line">18.5.6 相关标准和实践433</span><br><span class="line">18.5.7 SGML433</span><br><span class="line">18.5.8 XML—DocBook参考书籍433</span><br><span class="line">18.6 编写Unix文档的最佳实践434</span><br><span class="line">第19章 开放源码：在Unix新社区中编程437</span><br><span class="line">19.1 Unix和开放源码438</span><br><span class="line">19.2 与开源开发者协同工作的最佳实践440</span><br><span class="line">19.2.1 良好的修补实践440</span><br><span class="line">19.2.2 良好的项目、档案文件命名实践444</span><br><span class="line">19.2.3 良好的开发实践447</span><br><span class="line">19.2.4 良好的发行制作实践450</span><br><span class="line">19.2.5 良好的交流实践454</span><br><span class="line">19.3 许可证的逻辑：如何挑选456</span><br><span class="line">19.4 为什么应使用某个标准许可证457</span><br><span class="line">19.5 各种开源许可证457</span><br><span class="line">19.5.1 MIT或者Xconsortium许可证457</span><br><span class="line">19.5.2 经典BSD许可证457</span><br><span class="line">19.5.3 Artistic许可证458</span><br><span class="line">19.5.4 通用公共许可证458</span><br><span class="line">19.5.5 Mozilla公共许可证459</span><br><span class="line">第20章 未来：危机与机遇461</span><br><span class="line">20.1 Unix传统中的必然和偶然461</span><br><span class="line">20.2 Plang：未来之路464</span><br><span class="line">20.3 Unix设计中的问题466</span><br><span class="line">20.3.1 Unix文件就是一大袋字节466</span><br><span class="line">20.3.2 Unix对GUI的支持孱弱467</span><br><span class="line">20.3.3 文件删除不可撤销468</span><br><span class="line">20.3.4 Unix假定文件系统是静态的469</span><br><span class="line">20.3.5 作业控制设计拙劣469</span><br><span class="line">20.3.6 UnixAPI没有使用异常470</span><br><span class="line">20.3.7 ioctl（2）和fcntl（2）是个尴尬471</span><br><span class="line">20.3.8 Unix安全模型可能太过原始471</span><br><span class="line">20.3.9 Unix名字种类太多472</span><br><span class="line">20.3.10 文件系统可能有害论472</span><br><span class="line">20.3.11 朝向全局互联网地址空间472</span><br><span class="line">20.4 Unix的环境问题473</span><br><span class="line">20.5 Unix文化中的问题475</span><br><span class="line">20.6 信任的理由477</span><br><span class="line">附录A 缩写词表479</span><br><span class="line">附录B 参考文献483</span><br><span class="line">附录C 贡献者495</span><br><span class="line">附录D 无根的根：无名师的Unix心传499</span><br><span class="line">Colophon510</span><br><span class="line">索引511</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B008Z1IEQ8/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B008Z1IEQ8&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/517htLnDtsL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/unix/" rel="tag"># unix</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0097CON2S/" rel="prev" title="JavaScript语言精粹(修订版)">
+      <i class="fa fa-chevron-left"></i> JavaScript语言精粹(修订版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B008BDGUC0/" rel="next" title="Python标准库">
+      Python标准库 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

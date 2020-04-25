@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 图灵程序设计丛书 图解TCP&#x2F;IP(第5版)作者信息： 作者: 竹下隆史 [ 中文 pdf ] 简单介绍《图解TCP&#x2F;IP(第5版)》原版畅销36万册，是TCP&#x2F;IP圣经级教材，268张图解轻松入门TCP&#x2F;IP。这是一本图文并茂的网络管理技术书籍，旨在让广大读者理解TCP&#x2F;IP的基本知识、掌握TCP&#x2F;IP的基本技能。 《图解TCP&#x2F;IP(第5版)》中讲解了网络基础知识、TCP&#x2F;IP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图灵程序设计丛书 图解TCP&#x2F;IP(第5版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00DMS9990/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 图灵程序设计丛书 图解TCP&#x2F;IP(第5版)作者信息： 作者: 竹下隆史 [ 中文 pdf ] 简单介绍《图解TCP&#x2F;IP(第5版)》原版畅销36万册，是TCP&#x2F;IP圣经级教材，268张图解轻松入门TCP&#x2F;IP。这是一本图文并茂的网络管理技术书籍，旨在让广大读者理解TCP&#x2F;IP的基本知识、掌握TCP&#x2F;IP的基本技能。 《图解TCP&#x2F;IP(第5版)》中讲解了网络基础知识、TCP&#x2F;IP">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41aYu54xneL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.127Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41aYu54xneL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00DMS9990/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>图灵程序设计丛书 图解TCP/IP(第5版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00DMS9990/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          图灵程序设计丛书 图解TCP/IP(第5版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 图灵程序设计丛书 图解TCP/IP(第5版)<br>作者信息： 作者: 竹下隆史 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《图解TCP/IP(第5版)》原版畅销36万册，是TCP/IP圣经级教材，268张图解轻松入门TCP/IP。这是一本图文并茂的网络管理技术书籍，旨在让广大读者理解TCP/IP的基本知识、掌握TCP/IP的基本技能。 《图解TCP/IP(第5版)》中讲解了网络基础知识、TCP/IP基础知识、数据链路、IP协议、IP协议相关技术、TCP与UDP、路由协议、应用协议、网络安全等内容，引导读者了解和掌握TCP/IP，营造一个安全的、使用放心的网络环境。《图解TCP/IP(第5版)》适合计算机网络的开发、管理人员阅读，也可作为大专院校相关专业的教学参考书。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br></pre></td><td class="code"><pre><span class="line">第1章 网络基础知识 1</span><br><span class="line">1.1 计算机网络出现的背景 2</span><br><span class="line">1.1.1 计算机的普及与多样化 2</span><br><span class="line">1.1.2 从独立模式到网络互连模式 2</span><br><span class="line">1.1.3 从计算机通信到信息通信 3</span><br><span class="line">1.1.4 计算机网络的作用 4</span><br><span class="line">1.2 计算机与网络发展的7个阶段 5</span><br><span class="line">1.2.1 批处理 5</span><br><span class="line">1.2.2 分时系统 5</span><br><span class="line">1.2.3 计算机之间的通信 6</span><br><span class="line">1.2.4 计算机网络的产生 7</span><br><span class="line">1.2.5 互联网的普及 8</span><br><span class="line">1.2.6 以互联网技术为中心的时代 9</span><br><span class="line">1.2.7 从“单纯建立连接”到“安全建立连接” 9</span><br><span class="line">1.2.8 手握金刚钻的TCP&#x2F;IP 10</span><br><span class="line">1.3 协议 11</span><br><span class="line">1.3.1 随处可见的协议 11</span><br><span class="line">1.3.2 协议的必要性 11</span><br><span class="line">1.3.3 协议如同人与人的对话 12</span><br><span class="line">1.3.4 计算机中的协议 13</span><br><span class="line">1.3.5 分组交换协议 14</span><br><span class="line">1.4 协议由谁规定 15</span><br><span class="line">1.4.1 计算机通信的诞生及其标准化 15</span><br><span class="line">1.4.2 协议的标准化 15</span><br><span class="line">1.5 协议分层与OSI参考模型 17</span><br><span class="line">1.5.1 协议的分层 17</span><br><span class="line">1.5.2 通过对话理解分层 17</span><br><span class="line">1.5.3 OSI参考模型 </span><br><span class="line">1.5.4 OSI参考模型中各个分层的作用 20</span><br><span class="line">1.6 OSI参考模型通信处理举例 22</span><br><span class="line">1.6.1 7层通信 22</span><br><span class="line">1.6.2 会话层以上的处理 22</span><br><span class="line">1.6.3 传输层以下的处理 25</span><br><span class="line">1.7 传输方式的分类 29</span><br><span class="line">1.7.1 面向有连接型与面向无连接型 29</span><br><span class="line">1.7.2 电路交换与分组交换 30</span><br><span class="line">1.7.3 根据接收端数量分类 32</span><br><span class="line">1.8 地址 34</span><br><span class="line">1.8.1 地址的唯一性 34</span><br><span class="line">1.8.2 地址的层次性 35</span><br><span class="line">1.9 网络的构成要素 37</span><br><span class="line">1.9.1 通信媒介与数据链路 37</span><br><span class="line">1.9.2 网卡 39</span><br><span class="line">1.9.3 中继器 39</span><br><span class="line">1.9.4 网桥&#x2F;2层交换机 40</span><br><span class="line">1.9.5 路由器&#x2F;3层交换机 42</span><br><span class="line">1.9.6 4～～7层交换机 42</span><br><span class="line">1.9.7 网关 43</span><br><span class="line">1.10 现代网络实态 45</span><br><span class="line">1.10.1 网络的构成 45</span><br><span class="line">1.10.2 互联网通信 47</span><br><span class="line">1.10.3 移动通信 47</span><br><span class="line">1.10.4 从信息发布者的角度看网络 49</span><br><span class="line">第2章 TCP&#x2F;IP基础知识 51</span><br><span class="line">2.1 TCP&#x2F;IP出现的背景及其历史 52</span><br><span class="line">2.1.1 从军用技术的应用谈起 52</span><br><span class="line">2.1.2 ARPANET的诞生 53</span><br><span class="line">2.1.3 TCP&#x2F;IP的诞生 53</span><br><span class="line">2.1.4 UNIX系统的普及与互联网的扩张 54</span><br><span class="line">2.1.5 商用互联网服务的启蒙 54</span><br><span class="line">2.2 TCP&#x2F;IP的标准化 55</span><br><span class="line">2.2.1 TCP&#x2F;IP的具体含义 55</span><br><span class="line">2.2.2 TCP&#x2F;IP标准化精髓 55</span><br><span class="line">2.2.3 TCP&#x2F;IP规范——RFC 56</span><br><span class="line">2.2.4 TCP&#x2F;IP的标准化流程 58</span><br><span class="line">2.2.5 RFC的获取方法 59</span><br><span class="line">2.3 互联网基础知识 61</span><br><span class="line">2.3.1 互联网定义 61</span><br><span class="line">2.3.2 互联网与TCP&#x2F;IP的关系 61</span><br><span class="line">2.3.3 互联网的结构 61</span><br><span class="line">2.3.4 ISP和区域网 62</span><br><span class="line">2.4 TCP&#x2F;IP协议分层模型 64</span><br><span class="line">2.4.1 TCP&#x2F;IP与OSI参考模型 64</span><br><span class="line">2.4.2 硬件（物理层） 64</span><br><span class="line">2.4.3 网络接口层（数据链路层） 65</span><br><span class="line">2.4.4 互联网层（网络层） 65</span><br><span class="line">2.4.5 传输层 66</span><br><span class="line">2.4.6 应用层（会话层以上的分层） 66</span><br><span class="line">2.5 TCP&#x2F;IP分层模型与通信示例 70</span><br><span class="line">2.5.1 数据包首部 70</span><br><span class="line">2.5.2 发送数据包 71</span><br><span class="line">2.5.3 经过数据链路的包 72</span><br><span class="line">2.5.4 数据包接收处理 73</span><br><span class="line">第3章 数据链路 75</span><br><span class="line">3.1 数据链路的作用 76</span><br><span class="line">3.2 数据链路相关技术 78</span><br><span class="line">3.2.1 MAC地址 78</span><br><span class="line">3.2.2 共享介质型网络 79</span><br><span class="line">3.2.3 非共享介质网络 82</span><br><span class="line">3.2.4 根据MAC地址转发 84</span><br><span class="line">3.2.5 环路检测技术 85</span><br><span class="line">3.2.6 VLAN 87</span><br><span class="line">3.3 以太网 89</span><br><span class="line">3.3.1 以太网连接形式 89</span><br><span class="line">3.3.2 以太网的分类 90</span><br><span class="line">3.3.3 以太网的历史 91</span><br><span class="line">3.3.4 以太网帧格式 92</span><br><span class="line">3.4 无线通信 96</span><br><span class="line">3.4.1 无线通信的种类 96</span><br><span class="line">3.4.2 IEEE802.11 96</span><br><span class="line">3.4.3 IEEE802.11b和IEEE802.11g 98</span><br><span class="line">3.4.4 IEEE802.11a 98</span><br><span class="line">3.4.5 IEEE802.11n 98</span><br><span class="line">3.4.6 使用无线LAN时的注意事项 99</span><br><span class="line">3.4.7 蓝牙 99</span><br><span class="line">3.4.8 WiMAX 99</span><br><span class="line">3.4.9 ZigBee 100</span><br><span class="line">3.5 PPP 101</span><br><span class="line">3.5.1 PPP定义 101</span><br><span class="line">3.5.2 LCP与NCP 101</span><br><span class="line">3.5.3 PPP的帧格式 102</span><br><span class="line">3.5.4 PPPoE 102</span><br><span class="line">3.6 其他数据链路 103</span><br><span class="line">3.6.1 ATM 103</span><br><span class="line">3.6.2 POS 106</span><br><span class="line">3.6.3 FDDI 106</span><br><span class="line">3.6.4 TokenRing 107</span><br><span class="line">3.6.5 100VG—AnyLAN 107</span><br><span class="line">3.6.6 光纤通道 107</span><br><span class="line">3.6.7 HIPPI 107</span><br><span class="line">3.6.8 IEEE1394 108</span><br><span class="line">3.6.9 HDMI 108</span><br><span class="line">3.6.10 iSCSI 108</span><br><span class="line">3.6.11 InfiniBand 108</span><br><span class="line">3.6.12 DOCSIS 108</span><br><span class="line">3.6.13 高速PLC 108</span><br><span class="line">3.7 公共网络110</span><br><span class="line">3.7.1 模拟电话线路 110</span><br><span class="line">3.7.2 移动通信服务 110</span><br><span class="line">3.7.3 ADSL 110</span><br><span class="line">3.7.4 FTTH 111</span><br><span class="line">3.7.5 有线电视 112</span><br><span class="line">3.7.6 专线 112</span><br><span class="line">3.7.7 VPN 113</span><br><span class="line">3.7.8 公共无线LAN 113</span><br><span class="line">3.7.9 其他公共无线通信服务 114</span><br><span class="line">第4章 IP协议 115</span><br><span class="line">4.1 IP即网际协议 116</span><br><span class="line">4.1.1 IP相当于OSI参考模型的第3层 116</span><br><span class="line">4.1.2 网络层与数据链路层的关系 116</span><br><span class="line">4.2 IP基础知识 118</span><br><span class="line">4.2.1 IP地址属于网络层地址 118</span><br><span class="line">4.2.2 路由控制 118</span><br><span class="line">4.2.3 数据链路的抽象化 121</span><br><span class="line">4.2.4 IP属于面向无连接型 122</span><br><span class="line">4.3 IP地址的基础知识 124</span><br><span class="line">4.3.1 IP地址的定义 124</span><br><span class="line">4.3.2 IP地址由网络和主机两部分标识组成 124</span><br><span class="line">4.3.3 IP地址的分类 126</span><br><span class="line">4.3.4 广播地址 127</span><br><span class="line">4.3.5 IP多播 128</span><br><span class="line">4.3.6 子网掩码 130</span><br><span class="line">4.3.7 CIDR与VLSM 132</span><br><span class="line">4.3.8 全局地址与私有地址 133</span><br><span class="line">4.3.9 全局地址由谁决定 133</span><br><span class="line">4.4 路由控制 137</span><br><span class="line">4.4.1 IP地址与路由控制 137</span><br><span class="line">4.4.2 路由控制表的聚合 138</span><br><span class="line">4.5 IP分割处理与再构成处理 140</span><br><span class="line">4.5.1 数据链路不同，MTU则相异 140</span><br><span class="line">4.5.2 IP报文的分片与重组 140</span><br><span class="line">4.5.3 路径MTU发现 141</span><br><span class="line">4.6 IPv6 144</span><br><span class="line">4.6.1 IPv6的必要性 144</span><br><span class="line">4.6.2 IPv6的特点 144</span><br><span class="line">4.6.3 IPv6中IP地址的标记方法 144</span><br><span class="line">4.6.4 IPv6地址的结构 145</span><br><span class="line">4.6.5 全局单播地址 146</span><br><span class="line">4.6.6 链路本地单播地址 147</span><br><span class="line">4.6.7 唯一本地地址 147</span><br><span class="line">4.6.8 IPv6分段处理 147</span><br><span class="line">4.7 IPv4首部 148</span><br><span class="line">4.8 IPv6首部格式 153</span><br><span class="line">第5章 IP协议相关技术 157</span><br><span class="line">5.1 仅凭IP无法完成通信 158</span><br><span class="line">5.2 DNS 159</span><br><span class="line">5.2.1 IP地址不便记忆 159</span><br><span class="line">5.2.2 DNS的产生 159</span><br><span class="line">5.2.3 域名的构成 160</span><br><span class="line">5.2.4 DNS查询 163</span><br><span class="line">5.2.5 DNS如同互联网中的分布式数据库 163</span><br><span class="line">5.3 ARP 165</span><br><span class="line">5.3.1 ARP概要 165</span><br><span class="line">5.3.2 ARP的工作机制 165</span><br><span class="line">5.3.3 IP地址和MAC地址缺一不可？ 166</span><br><span class="line">5.3.4 RARP 167</span><br><span class="line">5.3.5 代理ARP 168</span><br><span class="line">5.4 ICMP 169</span><br><span class="line">5.4.1 辅助IP的ICMP 169</span><br><span class="line">5.4.2 主要的ICMP消息 170</span><br><span class="line">5.4.3 其他ICMP消息 173</span><br><span class="line">5.4.4 ICMPv6 173</span><br><span class="line">5.5 DHCP 176</span><br><span class="line">5.5.1 DHCP实现即插即用 176</span><br><span class="line">5.5.2 DHCP的工作机制 176</span><br><span class="line">5.5.3 DHCP中继代理 177</span><br><span class="line">5.6 NAT 179</span><br><span class="line">5.6.1 NAT定义 179</span><br><span class="line">5.6.2 NAT的工作机制 179</span><br><span class="line">5.6.3 NAT—PT（NAPT—PT） 180</span><br><span class="line">5.6.4 NAT的潜在问题 181</span><br><span class="line">5.6.5 解决NAT的潜在问题与NAT穿越 181</span><br><span class="line">5.7 IP隧道 183</span><br><span class="line">5.8 其他IP相关技术 185</span><br><span class="line">5.8.1 IP多播相关技术 185</span><br><span class="line">5.8.2 IP任播 186</span><br><span class="line">5.8.3 通信质量控制 187</span><br><span class="line">5.8.4 显式拥塞通知 189</span><br><span class="line">5.8.5 MobileIP 190</span><br><span class="line">第6章 TCP与UDP 193</span><br><span class="line">6.1 传输层的作用 194</span><br><span class="line">6.1.1 传输层定义 194</span><br><span class="line">6.1.2 通信处理 195</span><br><span class="line">6.1.3 两种传输层协议TCP和UDP 195</span><br><span class="line">6.1.4 TCP与UDP区分 196</span><br><span class="line">6.2 端口号 197</span><br><span class="line">6.2.1 端口号定义 197</span><br><span class="line">6.2.2 根据端口号识别应用 197</span><br><span class="line">6.2.3 通过IP地址、端口号、协议号进行通信识别 197</span><br><span class="line">6.2.4 端口号如何确定 198</span><br><span class="line">6.2.5 端口号与协议 199</span><br><span class="line">6.3 UDP 202</span><br><span class="line">6.4 TCP 203</span><br><span class="line">6.4.1 TCP的特点及其目的 204</span><br><span class="line">6.4.2 通过序列号与确认应答提高可靠性 204</span><br><span class="line">6.4.3 重发超时如何确定 206</span><br><span class="line">6.4.4 连接管理 207</span><br><span class="line">6.4.5 TCP以段为单位发送数据 208</span><br><span class="line">6.4.6 利用窗口控制提高速度 209</span><br><span class="line">6.4.7 窗口控制与重发控制 211</span><br><span class="line">6.4.8 流控制 212</span><br><span class="line">6.4.9 拥塞控制 213</span><br><span class="line">6.4.10 提高网络利用率的规范 215</span><br><span class="line">6.4.11 使用TCP的应用 217</span><br><span class="line">6.5 其他传输层协议 218</span><br><span class="line">6.5.1 UDP—Lite 218</span><br><span class="line">6.5.2 SCTP 218</span><br><span class="line">6.5.3 DCCP 219</span><br><span class="line">6.6 UDP首部的格式 220</span><br><span class="line">6.7 TCP首部格式 222</span><br><span class="line">第7章 路由协议 227</span><br><span class="line">7.1 路由控制的定义 228</span><br><span class="line">7.1.1 IP地址与路由控制 228</span><br><span class="line">7.1.2 静态路由与动态路由 228</span><br><span class="line">7.1.3 动态路由的基础 229</span><br><span class="line">7.2 路由控制范围 230</span><br><span class="line">7.2.1 接入互联网的各种组织机构 230</span><br><span class="line">7.2.2 自治系统与路由协议 230</span><br><span class="line">7.2.3 IGP与EGP 231</span><br><span class="line">7.3 路由算法 232</span><br><span class="line">7.3.1 距离向量算法 232</span><br><span class="line">7.3.2 链路状态算法 232</span><br><span class="line">7.3.3 主要路由协议 233</span><br><span class="line">7.4 RIP 234</span><br><span class="line">7.4.1 广播路由控制信息 234</span><br><span class="line">7.4.2 根据距离向量确定路由 234</span><br><span class="line">7.4.3 使用子网掩码时的RIP处理 235</span><br><span class="line">7.4.4 RIP中路由变更时的处理 236</span><br><span class="line">7.4.5 RIP2 239</span><br><span class="line">7.5 OSPF 240</span><br><span class="line">7.5.1 OSPF是链路状态型路由协议 240</span><br><span class="line">7.5.2 OSPF基础知识 241</span><br><span class="line">7.5.3 OSPF工作原理概述 242</span><br><span class="line">7.5.4 将区域分层化进行细分管理 243</span><br><span class="line">7.6 BGP 245</span><br><span class="line">7.6.1 BGP与AS号 245</span><br><span class="line">7.6.2 BGP是路径向量协议 246</span><br><span class="line">7.7 MPLS 248</span><br><span class="line">7.7.1 MPLS的网络基本动作 249</span><br><span class="line">7.7.2 MPLS的优点 250</span><br><span class="line">第8章 应用协议 251</span><br><span class="line">8.1 应用层协议概要 252</span><br><span class="line">8.2 远程登录 253</span><br><span class="line">8.2.1 TELNET 253</span><br><span class="line">8.2.2 SSH 255</span><br><span class="line">8.3 文件传输 256</span><br><span class="line">8.4 电子邮件 260</span><br><span class="line">8.4.1 电子邮件的工作机制 260</span><br><span class="line">8.4.2 邮件地址 261</span><br><span class="line">8.4.3 MIME 262</span><br><span class="line">8.4.4 SMTP 263</span><br><span class="line">8.4.5 POP 265</span><br><span class="line">8.4.6 IMAP 267</span><br><span class="line">8.5 WWW 268</span><br><span class="line">8.5.1 互联网的蓬勃发展 268</span><br><span class="line">8.5.2 WWW基本概念 268</span><br><span class="line">8.5.3 URI 269</span><br><span class="line">8.5.4 HTML 270</span><br><span class="line">8.5.5 HTTP 272</span><br><span class="line">8.5.6 JavaScript、CGI、Cookie 274</span><br><span class="line">8.6 网络管理 276</span><br><span class="line">8.6.1 SNMP 276</span><br><span class="line">8.6.2 MIB 277</span><br><span class="line">8.6.3 RMON 278</span><br><span class="line">8.6.4 SNMP应用举例 278</span><br><span class="line">8.7 其他应用层协议 280</span><br><span class="line">8.7.1 多媒体通信实现技术 280</span><br><span class="line">8.7.2 P2P 283</span><br><span class="line">8.7.3 LDAP 283</span><br><span class="line">第9章 网络安全 285</span><br><span class="line">9.1 TCP&#x2F;IP与网络安全 286</span><br><span class="line">9.2 网络安全构成要素 287</span><br><span class="line">9.2.1 防火墙 287</span><br><span class="line">9.2.2 IDS（入侵检测系统） 288</span><br><span class="line">9.2.3 反病毒&#x2F;个人防火墙 288</span><br><span class="line">9.3 加密技术基础 290</span><br><span class="line">9.3.1 对称密码体制与公钥密码体制 290</span><br><span class="line">9.3.2 身份认证技术 291</span><br><span class="line">9.4 安全协议 293</span><br><span class="line">9.4.1 IPsec与VPN 293</span><br><span class="line">9.4.2 TLS&#x2F;SSL与HTTPS 294</span><br><span class="line">9.4.3 IEEE802.1X 294</span><br><span class="line">附录 297</span><br><span class="line">附1 互联网上便捷的资源 298</span><br><span class="line">附1.1 国际 298</span><br><span class="line">附1.2 日本 299</span><br><span class="line">附2 IP地址分类（A、B、C类）相关基础知识 300</span><br><span class="line">附2.1 A类 300</span><br><span class="line">附2.2 B类 300</span><br><span class="line">附2.3 C类 301</span><br><span class="line">附3 物理层 302</span><br><span class="line">附3.1 物理层相关基础知识 302</span><br><span class="line">附3.2 0&#x2F;1编码 302</span><br><span class="line">附4 传输介质相关基础知识 304</span><br><span class="line">附4.1 同轴电缆 304</span><br><span class="line">附4.2 双绞线 304</span><br><span class="line">附4.3 光纤电缆 306</span><br><span class="line">附4.4 无线 307</span><br><span class="line">附5 插页导图 309</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00DMS9990/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00DMS9990&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41aYu54xneL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00E3ENQNM/" rel="prev" title="程序员面试宝典(第4版)">
+      <i class="fa fa-chevron-left"></i> 程序员面试宝典(第4版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00CBO13MW/" rel="next" title="大数据:正在到来的数据革命,以及它如何改变政府、商业与我们的生活">
+      大数据:正在到来的数据革命,以及它如何改变政府、商业与我们的生活 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 深入理解计算机系统作者信息： 作者: 布莱恩特 [ 中文 pdf ] 简单介绍“2005年，我开始采用Bryant和O’Hallaron的这本书作为本科生计算机系统课程的教材。现今，这本书仍然是我的计算机系统课程教科书的首选。”　　——Mirela Damian，维拉诺瓦大学“本书表述清晰、恰到好处——举重若轻地呈现了那些非常复杂的内容。”　　——Ibrahim Matta，波士顿">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解计算机系统">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/shen-ru-li-jie-ji-suan-ji-xi-tong/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 深入理解计算机系统作者信息： 作者: 布莱恩特 [ 中文 pdf ] 简单介绍“2005年，我开始采用Bryant和O’Hallaron的这本书作为本科生计算机系统课程的教材。现今，这本书仍然是我的计算机系统课程教科书的首选。”　　——Mirela Damian，维拉诺瓦大学“本书表述清晰、恰到好处——举重若轻地呈现了那些非常复杂的内容。”　　——Ibrahim Matta，波士顿">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51XrO5U3a-L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.831Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="it文化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51XrO5U3a-L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/shen-ru-li-jie-ji-suan-ji-xi-tong/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>深入理解计算机系统 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/shen-ru-li-jie-ji-suan-ji-xi-tong/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深入理解计算机系统
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 深入理解计算机系统<br>作者信息： 作者: 布莱恩特 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>“2005年，我开始采用Bryant和O’Hallaron的这本书作为本科生计算机系统课程的教材。现今，这本书仍然是我的计算机系统课程教科书的首选。”<br>　　——Mirela Damian，维拉诺瓦大学<br>“本书表述清晰、恰到好处——举重若轻地呈现了那些非常复杂的内容。”<br>　　——Ibrahim Matta，波士顿大学<br>“这是一本学习计算机硬件和软件如何‘真正’协同工作的好书，还教会你为什么了解这些知识会使你成为一个更有价值的程序员。本书还帮你为学习像操作系统和编译器这样的高级课程做好准备。在本书中，我最喜欢的章节是关于缓存的，当我第一次发现缓存有多重要时，真是难以置信！”<br>　　——Vishal Shah，Ask.com总架构师</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">出版者的话</span><br><span class="line">译者序</span><br><span class="line">前言</span><br><span class="line">第1章 计算机系统漫游 1</span><br><span class="line">1.1 信息就是位+上下文 1</span><br><span class="line">1.2 程序被其他程序翻译成不同的格式 3</span><br><span class="line">1.3 了解编译系统如何工作是大有益处的 4</span><br><span class="line">1.4 处理器读并解释存储在存储器中的指令 5</span><br><span class="line">1.4.1 系统的硬件组成 5</span><br><span class="line">1.4.2 运行hello程序 7</span><br><span class="line">1.5 高速缓存至关重要 7</span><br><span class="line">1.6 存储设备形成层次结构 9</span><br><span class="line">1.7 操作系统管理硬件 10</span><br><span class="line">1.7.1 进程 11</span><br><span class="line">1.7.2 线程 12</span><br><span class="line">1.7.3 虚拟存储器 12</span><br><span class="line">1.7.4 文件 13</span><br><span class="line">1.8 系统之间利用网络通信 13</span><br><span class="line">1.9 重要主题 15</span><br><span class="line">1.9.1 并发和并行 15</span><br><span class="line">1.9.2 计算机系统中抽象的重要性 17</span><br><span class="line">1.10 小结 17</span><br><span class="line">参考文献说明 18 </span><br><span class="line"></span><br><span class="line"> 第一部分 程序结构和执行 第2章 信息的表示和处理 20 2.1 信息存储 22 2.1.1 十六进制表示法 22 2.1.2 字 25 2.1.3 数据大小 25 2.1.4 寻址和字节顺序 26 2.1.5 表示字符串 31 2.1.6 表示代码 31 2.1.7 布尔代数简介 32 2.1.8 C语言中的位级运算 34 2.1.9 C语言中的逻辑运算 36 2.1.10 V语言中的移位运算 36 2.2 整数表示 38 2.2.1 整型数据类型 38 2.2.2 无符号数的编码 39 2.2.3 补码编码 40 2.2.4 有符号数和无符号数之间的转换 44 2.2.5 C语言中的有符号数与无符号数 47 2.2.6 扩展一个数字的位表示 49 2.2.7 截断数字 51 2.2.8 关于有符号数与无符号数的建议 52 2.3 整数运算 54 2.3.1 无符号加法 54 2.3.2 补码加法 57 2.3.3 补码的非 59 2.3.4 无符号乘法 60 2.3.5 补码乘法 60 2.3.6 乘以常数 63 2.3.7 除以2的幂 64 2.3.8 关于整数运算的最后思考 67 2.4 浮点数 67 2.4.1 二进制小数 68 2.4.2 IEEE浮点表示 70 2.4.3 数字示例 71 2.4.4 舍入 74 2.4.5 浮点运算 76 2.4.6 C语言中的浮点数 77 2.5 小结 79 参考文献说明 80 家庭作业 80 练习题答案 90</span><br><span class="line"></span><br><span class="line"> 第3章 程序的机器级表示 102 3.1 历史观点 103 3.2 程序编码 105 3.2.1 机器级代码 106 3.2.2 代码示例 107 3.2.3 关于格式的注解 109 3.3 数据格式 111 3.4 访问信息 112 3.4.1 操作数指示符 112 3.4.2 数据传送指令 114 3.4.3 数据传送示例 116 3.5 算术和逻辑操作 118 3.5.1 加载有效地址 118 3.5.2 一元操作和二元操作 119 3.5.3 移位操作 120 3.5.4 讨论 120 3.5.5 特殊的算术操作 122 3.6 控制 123 3.6.1 条件码 124 3.6.2 访问条件码 125 3.6.3 跳转指令及其编码 127 3.6.4 翻译条件分支 129 3.6.5 循环 132 3.6.6 条件传送指令 139 3.6.7 switch语句 144 3.7 过程 149 3.7.1 栈帧结构 149 3.7.2 转移控制 150 3.7.3 寄存器使用惯例 151 3.7.4 过程示例 152 3.7.5 递归过程 156 3.8 数组分配和访问 158 3.8.1 基本原则 158 3.8.2 指针运算 159 3.8.3 嵌套的数组 159 3.8.4 定长数组 161 3.8.5 变长数组 163 3.9 异质的数据结构 164 3.9.1 结构 164 3.9.2 联合 167 3.9.3 数据对齐 170 3.10 综合：理解指针 172 3.11 应用：使用GDB调试器 174 3.12 存储器的越界引用和缓冲区溢出 175 3.13 x86-64：将ia32扩展到64位 183 3.13.1 x86-64的历史和动因 184 3.13.2 x86-64简介 185 3.13.3 访问信息 187 3.13.4 控制 192 3.13.5 数据结构 200 3.13.6 关于x86-64的总结性评论 200 3.14 浮点程序的机器级表示 201 3.15 小结 201 参考文献说明 202 家庭作业 202 练习题答案 212</span><br><span class="line"></span><br><span class="line"> 第4章 处理器体系结构2 30 4.1 Y86指令集体系结构 231 4.1.1 程序员可见的状态 231 4.1.2 Y86指令 232 4.1.3 指令编码 233 4.1.4 Y86异常 237 4.1.5 Y86程序 237 4.1.6 一些Y86指令的详情 241 4.2 逻辑设计和硬件控制语言HCL 242 4.2.1 逻辑门 243 4.2.2 组合电路和HCL布尔表达式 243 4.2.3 字级的组合电路和HCL整数表达式 245 4.2.4 集合关系 248 4.2.5 存储器和时钟 248 4.3 y86的顺序实现 250 4.3.1 将处理组织成阶段 250 4.3.2 SEQ硬件结构 258 4.3.3 SEQ的时序 259 4.3.4 SEQ阶段的实现 262 4.4 流水线的通用原理 267 4.4.1 计算流水线 268 4.4.2 流水线操作的详细说明 269 4.4.3 流水线的局限性 271 4.4.4 带反馈的流水线系统272 4.5 Y86的流水线实现273 4.5.1 SEQ+：重新安排计算阶段 273 4.5.2 插入流水线寄存器 276 4.5.3 对信号进行重新排列和标号 277 4.5.4 预测下一个PC 279 4.5.5 流水线冒险 280 4.5.6 用暂停来避免数据冒险 283 4.5.7 用转发来避免数据冒险 285 4.5.8 加载&#x2F;使用数据冒险 288 4.5.9 异常处理 289 4.5.10 pipe各阶段的实现 291 4.5.11 流水线控制逻辑 297 4.5.12 性能分析 305 4.5.13 未完成的工作 306 4.6 小结 308 参考文献说明309 家庭作业309 练习题答案 314</span><br><span class="line"></span><br><span class="line"> 第5章 优化程序性能 324 5.1 优化编译器的能力和局限性 325 5.2 表示程序性能 328 5.3 程序示例 330 5.4 消除循环的低效率 332 5.5 减少过程调用 336 5.6 消除不必要的存储器引用 336 5.7 理解现代处理器 340 5.7.1 整体操作 340 5.7.2 功能单元的性能 343 5.7.3 处理器操作的抽象模型 344 5.8 循环展开 348 5.9 提高并行性 351 5.9.1 多个累积变量 351 5.9.2 重新结合变换 354 5.10 优化合并代码的结果小结 358 5.11 一些限制因素 359 5.11.1 寄存器溢出359 5.11.2 分支预测和预测错误处罚 360 5.12 理解存储器性能 363 5.12.1 加载的性能 363 5.12.2 存储的性能 364 5.13 应用：性能提高技术 369 5.14 确认和消除性能瓶颈 369 5.14.1 程序剖析 370 5.14.2 使用剖析程序来指导优化 371 5.14.3 Amdahl定律 374 5.15 小结 375 参考文献说明 375 家庭作业 376 练习题答案 378</span><br><span class="line"></span><br><span class="line"> 第6章 存储器层次结构 382 6.1 存储技术 382 6.1.1 随机访问存储器 383 6.1.2 磁盘存储 389 6.1.3 固态硬盘 398 6.1.4 存储技术趋势 399 6.2 局部性 401 6.2.1 对程序数据引用的局部性 402 6.2.2 取指令的局部性 403 6.2.3 局部性小结 403 6.3 存储器层次结构 405 6.3.1 存储器层次结构中的缓存 406 6.3.2 存储器层次结构概念小结 408 6.4 高速缓存存储器 408 6.4.1 通用的高速缓存存储器结构 409 6.4.2 直接映射高速缓存 410 6.4.3 组相联高速缓存 416 6.4.4 全相联高速缓存 418 6.4.5 有关写的问题 420 6.4.6 一个真实的高速缓存层次结构的解剖 421 6.4.7 高速缓存参数的性能影响 422 6.5 编写高速缓存友好的代码 423 6.6 综合：高速缓存对程序性能的影响 426 6.6.1 存储器山 426 6.6.2 重新排列循环以提高空间局部性 430 6.6.3 在程序中利用局部性 433 6.7 小结 433 参考文献说明 434 家庭作业 434 练习题答案 442</span><br><span class="line"></span><br><span class="line"> 第二部分 在系统上运行程序 第7章 链接 448 7.1 编译器驱动程序 449 7.2 静态链接 450 7.3 目标文件 450 7.4 可重定位目标文件 451 7.5 符号和符号表 452 7.6 符号解析 454 7.6.1 链接器如何解析多重定义的全局符号 455 7.6.2 与静态库链接 457 7.6.3 链接器如何使用静态库来解析引用 460 7.7 重定位 461 7.7.1 重定位条目 461 7.7.2 重定位符号引用 462 7.8 可执行目标文件 465 7.9 加载可执行目标文件 466 7.10 动态链接共享库 467 7.11 从应用程序中加载和链接共享库 468 7.12 与位置无关的代码（PIC） 471 7.13 处理目标文件的工具 473 7.14 小结 473 参考文献说明 474 家庭作业 474 练习题答案 479</span><br><span class="line"></span><br><span class="line"> 第8章 异常控制流 480 8.1 异常 481 8.1.1 异常处理 481 8.1.2 异常的类别 482 8.1.3 Linux&#x2F;IA32系统中的异常 484 8.2 进程 487 8.2.1 逻辑控制流 487 8.2.2 并发流 487 8.2.3 私有地址空间488 8.2.4 用户模式和内核模式 488 8.2.5 上下文切换 489 8.3 系统调用错误处理 491 8.4 进程控制 492 8.4.1 获取进程ID 492 8.4.2 创建和终止进程 492 8.4.3 回收子进程 495 8.4.4 让进程休眠 499 8.4.5 加载并运行程序500 8.4.6 利用fork和execve运行程序502 8.5 信号 504 8.5.1 信号术语 505 8.5.2 发送信号 506 8.5.3 接收信号 509 8.5.4 信号处理问题 511</span><br><span class="line"></span><br><span class="line"> …… 第9章 虚拟存储器 534 第10章 系统级I&#x2F;O 596 第11章 网络编程 614 第12章 并发编程 648 附录A 错误处理 694</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B004BJ18KM/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B004BJ18KM&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51XrO5U3a-L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/it%E6%96%87%E5%8C%96/" rel="tag"># it文化</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/song-ben-xing-hong-de-cheng-xu-shi-jie/" rel="prev" title="松本行弘的程序世界">
+      <i class="fa fa-chevron-left"></i> 松本行弘的程序世界
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/qi-zhou-qi-yu-yan/" rel="next" title="七周七语言">
+      七周七语言 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

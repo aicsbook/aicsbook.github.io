@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 计算机科学概论作者信息： 作者: 戴尔 (Nell Dale) [ 中文 pdf ] 简单介绍《计算机科学概论》采用大量最新素材，全面介绍计算机科学领域的基础知识。《计算机科学概论》由当今该领域备受赞誉且经验丰富的教育家Nell Dale和John Lewis共同编写。就整体而言，全书内容翔实、覆盖面广，旨在向读者展示计算机科学的全貌；从细节上看，《计算机科学概论》层次清晰、描述生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机科学概论">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B001TDM10Y/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 计算机科学概论作者信息： 作者: 戴尔 (Nell Dale) [ 中文 pdf ] 简单介绍《计算机科学概论》采用大量最新素材，全面介绍计算机科学领域的基础知识。《计算机科学概论》由当今该领域备受赞誉且经验丰富的教育家Nell Dale和John Lewis共同编写。就整体而言，全书内容翔实、覆盖面广，旨在向读者展示计算机科学的全貌；从细节上看，《计算机科学概论》层次清晰、描述生">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51VostuezwL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.150Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="软件工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51VostuezwL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B001TDM10Y/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机科学概论 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B001TDM10Y/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机科学概论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 计算机科学概论<br>作者信息： 作者: 戴尔 (Nell Dale) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《计算机科学概论》采用大量最新素材，全面介绍计算机科学领域的基础知识。《计算机科学概论》由当今该领域备受赞誉且经验丰富的教育家Nell Dale和John Lewis共同编写。就整体而言，全书内容翔实、覆盖面广，旨在向读者展示计算机科学的全貌；从细节上看，《计算机科学概论》层次清晰、描述生动；从信息讲起，分别介绍了关于硬件、编程、操作系统、应用以及通信方面的内容，涉及计算机科学的各个层面。 《计算机科学概论》内容严谨、深入浅出，是计算机科学专业学生理想的入门教材。《计算机科学概论》特点：采用一般语言对编程概念进行了描述，关于Java、C++语言对该问题的描述在《计算机科学概论》的配套网站 <a href="http://csilluminated.jbpub.com" target="_blank" rel="noopener">http://csilluminated.jbpub.com</a>) 中提供。增加了名人传记、历史事件以及技术发展的前沿知识；并在每章中就科技发展对人类社会伦理道德的影响进行了探讨。包含大量练习和思考题，方便教学。 《计算机科学概论》的配套网站集学术性及趣味性于一体，提供了大量教学资源：Flash幻灯片、在线术语表、互动学习、填字游戏、HTML帮助信息等，以更灵活的方式多方位地加深读者对《计算机科学概论》知识的理解。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">出版者的话</span><br><span class="line">专家指导委员会</span><br><span class="line">译者序</span><br><span class="line">前言</span><br><span class="line">第一部分 基础篇</span><br><span class="line">第1章 全景图</span><br><span class="line">1.1 计算系统</span><br><span class="line">1.1.1 计算系统的分层</span><br><span class="line">1.1.2 抽象</span><br><span class="line">1.2 计算的历史</span><br><span class="line">1.2.1 计算硬件的简史</span><br><span class="line">1.2.2 计算软件的简史</span><br><span class="line">1.2.3 预言</span><br><span class="line">1.3 计算工具和计算学科</span><br><span class="line">小结</span><br><span class="line">练习</span><br><span class="line">思考题 </span><br><span class="line"></span><br><span class="line"> 第二部分 信息层 第2章 二进制数值和记数系统 2.1 数字分类 2.2 自然数 2.2.1 位置记数法 2.2.2 二进制、八进制和十六进制 2.2.3 其他记数系统中的运算 2.2.4 以2的幂为基数的记数系统 2.2.5 把十进制数转换成其他数制的数 2.2.6 二进制数值和计算机 小结 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第3章 数据表示法 3.1 数据和计算机 3.1.1 模拟信息和数字信息 3.1.2 二进制表示法 3.2 数字数据的表示法 3.2.1 负数表示法 3.2.2 实数表示法 3.3 文本表示法 3.3.1 ASCII字符集 3.3.2 Unicode字符集 3.3.3 文本压缩 3.4 音频信息表示法 3.4.1 音频格式 3.4.2 MP3音频格式 3.5 图像和图形的表示法 3.5.1 颜色表示法 3.5.2 数字化图像和图形 3.5.3 图形的矢量表示法 3.6 视频表示法 小结 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第三部分 硬件层 第4章门和电路 4.1 计算机和电学 4.2 门 4.2.1 非门 4.2.2 与门 4.2.3 或门 4.2.4 异或门 4.2.5 与非门和或非门 4.2.6 门处理回顾 4.2.7 具有更多输入的门</span><br><span class="line"></span><br><span class="line"> 4.3 门的构造 4.4 电路 4.4.1 组合电路 4.4.2 加法器 4.4.3 多路复用器 4.5 存储器电路 4.6 集成电路 4.7 CPU芯片 小结 道德问题：电子邮件隐私权 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第5章 计算部件 5.1 独立的计算机部件 5.2 存储程序的概念 5.2.1 冯？诺伊曼体系结构 5.2.2 读取一执行周期 5.2.3 RAM和ROM 5.2.4 二级存储设备 5.2.5 触摸屏 5.3 非冯？诺伊曼体系结构 小结 道德问题：生物信息学研究和deCODE Genetics公司的案例 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第四部分 程序设计层 第6章问题求解和算法设计 6.1 问题求解 6.1.1 如何解决问题 6.1.2 应用Polya的问题求解策略 6.2 算法 6.2.1 计算机问题求解 6.2.2 执行算法 6.2.3 开发算法 6.3 伪代码 6.3.1 执行一个伪代码算法 6.3.2 伪代码的功能 6.3.3 伪代码示例 6.4 自顶向下设计方法 6.4.1 一个通用的实例 6.4.2 一个计算机实例 6.4.3 方法总结 6.4.4 测试算法 6.5 面向对象方法 6.5.1 面向对象 6.5.2 设计方法 6.5.3 一个通用的实例 6.5.4 一个计算机实例 6.6 几个重要思想 6.6.1 信息隐蔽 6.6.2 抽象 6.6.3 事物命名 6.6.4 程序设计语言 6.6.5 测试 小结 道德问题：计算机专业人员许可 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第7章 低级程序设计语言 7.1 计算机操作 7.2 抽象的分层 7.3 机器语言 7.4 一个程序实例 7.4.1 问题和算法 7.4.2 程序 7.5 汇编语言 7.5.1 Pep／7汇编语言 7.5.2 伪代码操作 7.5.3 “Hello”程序的汇编语言版本 7.5.4 一个新程序 7.5.5 具有分支的程序 7.5.6 具有循环的程序 7.6 其他重要思想 7.6.1 抽象 7.6.2 测试 7.6.3 测试计划实现 小结 道德问题：软件盗版和版权 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第8章 高级程序设计语言 8.1 翻译过程 8.1.1 编译器 8.1.2 解释器 8.2 程序设计语言的范型 8.3 命令式语言的功能性 8.3.1 布尔表达式 8.3.2 强类型化 8.3.3 输入／输出结构 8.3.4 控制结构 8.3.5 复合数据类型 8.4 面向对象语言的功能性 8.4.1 封装 8.4.2 继承 8.4.3 多态性 小结 道德问题：开源软件的发展 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第9章 抽象数据类型和算法 9.1 抽象数据类型 9.2 实现 9.2.1 基于数组的实现 9.2.2 链式实现 9.3 列表 9.3.1 列表的基本操作 9.3.2 其他列表操作 9.4 排序 9.4.1 选择排序 9.4.2 冒泡排序 9.4.3 快速排序 9.5 二分检索法 9.6 栈和队列 9.6.1 栈 9.6.2 队列 9.6.3 实现 9.7 树 9.7.1 二叉树 9.7.2 二叉检索树 9.7.3 其他操作 9.7.4 图 9.8 程序设计库 小结 道德问题：使用计算机的恶作剧和欺诈行为 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第五部分 操作系统层 第10章 操作系统 10.1 操作系统的角色 10.1.1 内存、进程和CPU管理 10.1.2 批处理 10.1.3 分时操作 10.1.4 其他OS要素 10.2 内存管理 10.2.1 单块内存管理 10.2.2 分区内存管理 10.2.3 页式内存管理 10.3 进程管理 10.3.1 进程状态 10.3.2 进程控制块 10.4 CPU调度 10.4.1 先到先服务 10.4.2 最短作业优先 10.4.3 循环调度法 小结 道德问题：数字版权管理和关于sony公司的根目录案件的争论 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第11章 文件系统和目录 11.1 文件系统 11.1.1 文本文件和二进制文件 11.1.2 文件类型 11.1.3 文件操作 11.1.4 文件访问 11.1.5 文件保护 11.2 目录 11.2.1 目录树 11.2.2 路径名 11.3 磁盘调度 11.3.1 先到先服务磁盘调度法 11.3.2 最短寻道时间优先磁盘调度法 11.3.3 SCAN磁盘调度法 小结 道德问题：垃圾邮件 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第六部分 应用程序层 第12章 信息系统 12.1 信息管理 12.2 电子制表软件 12.2.1 电子数据表公式 12.2.2 循环引用 12.2.3 电子数据表分析 12.3 数据库管理系统 12.3.1 关系模型 12.3.2 关系 12.3.3 结构化查询语言 12.3.4 数据库设计 12.4 信息安全 12.4.1 机密性、完整性和可用性 12.4.2 密码学 小结 道德问题：加密 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第13章 人工智能 13.1 思维机 13.1.1 图灵测试 13.1.2 AI问题的各个方面 13.2 知识表示 13.2.1 语义网 13.2.2 检索树 13.3 专家系统 13.4 神经网络 13.4.1 生物神经网络 13.4.2 人工神经网络 13.5 自然语言处理 13.5.1 语音合成 13.5.2 语音识别 13.5.3 自然语言理解 13.6 机器人学 13.6.1 感知一规划一执行范型 13.6.2 包孕体系结构 13.6.3 物理部件 小结 道德问题：HIPAA（健康保险携带和责任法案） 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第14章 模拟、图形学和其他应用程序 14.1 什么是模拟 14.1.1 复杂系统 14.1.2 模型 14.1.3 构造模型 14.1.4 排队系统 14.1.5 气象模型 14.1.6 其他模型 14.1.7 必要的计算能力 14.2 计算机图形学 14.2.1 光的工作原理 14.2.2 物体形状 14.2.3 光模拟 14.2.4 复杂对象的建模 14.2.5 让物体动起来 14.3 嵌入式系统 14.4 电子商务 14.5 计算机安全 14.5.1 恶意代码 14.5.2 安全攻击 小结 道德问题：入侵大学的计算机系统，查询 录取程序中某人的录取状态 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第七部分 通信层 第15章 网络 15.1 连网 15.1.1 网络的类型 15.1.2 Internet连接 15.1.3 包交换 15.2 开放式系统和协议 15.2.1 开放式系统 15.2.2 网络协议 15.2.3 TCP／IP 15.2.4 高层协议 15.2.5 MIME类型 15.2.6 防火墙 15.3 网络地址 小结 道德问题：无所不在的计算 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第16章 万维网 16.1 Web简介 16.1.1 搜索引擎 16.1.2 即时消息 16.1.3 博客 16.1.4 cookje 16.2 HTML 16.2.1 基本的HTML格式 16.2.2 图像和链接 16.3 交互式Web页 16.3.1.1 ava小程序 16.3.2 Java服务器页 16.4 XML 小结 道德问题：写博客 练习 思考题</span><br><span class="line"></span><br><span class="line"> 第八部分 总结 第17章 计算的限制 17.1 硬件 17.1.1 算术运算的限制 17.1.2 部件的限制 17.1.3 通信的限制 17.2 软件 17.2.1 软件的复杂度 17.2.2 当前提高软件质量的方法 17.2.3 臭名昭著的软件错误 17.3 问题 17.3.1 算法比较 17.3.2 图灵机 17.3.3 停机问题 17.3.4 算法分类 小结 道德问题：深度链接 练习 思考题 参考文献</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B001TDM10Y/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B001TDM10Y&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51VostuezwL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="tag"># 软件工程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0027VSA7U/" rel="prev" title="程序员的自我修养 链接、装载与库">
+      <i class="fa fa-chevron-left"></i> 程序员的自我修养 链接、装载与库
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B001NGO85I/" rel="next" title="编译原理(第2版)">
+      编译原理(第2版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

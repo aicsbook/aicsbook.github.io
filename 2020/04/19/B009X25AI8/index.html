@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Hadoop实战(第2版)作者信息： 作者: 陆嘉恒 [ 中文 pdf ] 简单介绍《Hadoop实战(第2版)》编辑推荐：第1版广受好评，第2版基于Hadoop及其相关技术最新版本撰写，从多角度做了全面的修订和补充。不仅详细讲解了新一代的Hadoop技术，而且全面介绍了Hive、HBase、Mahout、Pig、ZooKeeper、Avro、Chukwa等重要技术，是系统学习Ha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop实战(第2版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B009X25AI8/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Hadoop实战(第2版)作者信息： 作者: 陆嘉恒 [ 中文 pdf ] 简单介绍《Hadoop实战(第2版)》编辑推荐：第1版广受好评，第2版基于Hadoop及其相关技术最新版本撰写，从多角度做了全面的修订和补充。不仅详细讲解了新一代的Hadoop技术，而且全面介绍了Hive、HBase、Mahout、Pig、ZooKeeper、Avro、Chukwa等重要技术，是系统学习Ha">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41T3S9xNdXL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.086Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41T3S9xNdXL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B009X25AI8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hadoop实战(第2版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B009X25AI8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hadoop实战(第2版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Hadoop实战(第2版)<br>作者信息： 作者: 陆嘉恒 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Hadoop实战(第2版)》编辑推荐：第1版广受好评，第2版基于Hadoop及其相关技术最新版本撰写，从多角度做了全面的修订和补充。不仅详细讲解了新一代的Hadoop技术，而且全面介绍了Hive、HBase、Mahout、Pig、ZooKeeper、Avro、Chukwa等重要技术，是系统学习Hadoop技术的首选之作。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br></pre></td><td class="code"><pre><span class="line">前言</span><br><span class="line">第1章Hadoop简介1</span><br><span class="line">1.1什么是Hadoop2</span><br><span class="line">1.1.1Hadoop概述2</span><br><span class="line">1.1.2Hadoop的历史2</span><br><span class="line">1.1.3Hadoop的功能与作用2</span><br><span class="line">1.1.4Hadoop的优势3</span><br><span class="line">1.1.5Hadoop应用现状和发展趋势3</span><br><span class="line">1.2Hadoop项目及其结构3</span><br><span class="line">1.3Hadoop体系结构6</span><br><span class="line">1.4Hadoop与分布式开发7</span><br><span class="line">1.5Hadoop计算模型—MapReduce10</span><br><span class="line">1.6Hadoop数据管理10</span><br><span class="line">1.6.1HDFS的数据管理10</span><br><span class="line">1.6.2HBase的数据管理12</span><br><span class="line">1.6.3Hive的数据管理13</span><br><span class="line">1.7Hadoop集群安全策略15</span><br><span class="line">1.8本章小结17</span><br><span class="line">第2章Hadoop的安装与配置19</span><br><span class="line">2.1在Linux上安装与配置Hadoop20</span><br><span class="line">2.1.1安装JDK1.620</span><br><span class="line">2.1.2配置SSH免密码登录21</span><br><span class="line">2.1.3安装并运行Hadoop22</span><br><span class="line">2.2在MacOSX上安装与配置Hadoop24</span><br><span class="line">2.2.1安装Homebrew24</span><br><span class="line">2.2.2使用Homebrew安装Hadoop25</span><br><span class="line">2.2.3配置SSH和使用Hadoop25</span><br><span class="line">2.3在Windows上安装与配置Hadoop25</span><br><span class="line">2.3.1安装JDK1.6或更高版本25</span><br><span class="line">2.3.2安装Cygwin25</span><br><span class="line">2.3.3配置环境变量26</span><br><span class="line">2.3.4安装sshd服务26</span><br><span class="line">2.3.5启动sshd服务26</span><br><span class="line">2.3.6配置SSH免密码登录26</span><br><span class="line">2.3.7安装并运行Hadoop26</span><br><span class="line">2.4安装和配置Hadoop集群27</span><br><span class="line">2.4.1网络拓扑27</span><br><span class="line">2.4.2定义集群拓扑27</span><br><span class="line">2.4.3建立和安装Cluster28</span><br><span class="line">2.5日志分析及几个小技巧34</span><br><span class="line">2.6本章小结35</span><br><span class="line">第3章MapReduce计算模型36</span><br><span class="line">3.1为什么要用MapReduce37</span><br><span class="line">3.2MapReduce计算模型38</span><br><span class="line">3.2.1MapReduceJob38</span><br><span class="line">3.2.2Hadoop中的HelloWorld程序38</span><br><span class="line">3.2.3MapReduce的数据流和控制流46</span><br><span class="line">3.3MapReduce任务的优化47</span><br><span class="line">3.4Hadoop流49</span><br><span class="line">3.4.1Hadoop流的工作原理50</span><br><span class="line">3.4.2Hadoop流的命令51</span><br><span class="line">3.4.3两个例子52</span><br><span class="line">3.5HadoopPipes54</span><br><span class="line">3.6本章小结56</span><br><span class="line">第4章开发MapReduce应用程序57</span><br><span class="line">4.1系统参数的配置58</span><br><span class="line">4.2配置开发环境60</span><br><span class="line">4.3编写MapReduce程序60</span><br><span class="line">4.3.1Map处理60</span><br><span class="line">4.3.2Reduce处理61</span><br><span class="line">4.4本地测试62</span><br><span class="line">4.5运行MapReduce程序62</span><br><span class="line">4.5.1打包64</span><br><span class="line">4.5.2在本地模式下运行64</span><br><span class="line">4.5.3在集群上运行64</span><br><span class="line">4.6网络用户界面65</span><br><span class="line">4.6.1JobTracker页面65</span><br><span class="line">4.6.2工作页面65</span><br><span class="line">4.6.3返回结果66</span><br><span class="line">4.6.4任务页面67</span><br><span class="line">4.6.5任务细节页面67</span><br><span class="line">4.7性能调优68</span><br><span class="line">4.7.1输入采用大文件68</span><br><span class="line">4.7.2压缩文件68</span><br><span class="line">4.7.3过滤数据69</span><br><span class="line">4.7.4修改作业属性71</span><br><span class="line">4.8MapReduce工作流72</span><br><span class="line">4.8.1复杂的Map和Reduce函数72</span><br><span class="line">4.8.2MapReduceJob中全局共享数据74</span><br><span class="line">4.8.3链接MapReduceJob75</span><br><span class="line">4.9本章小结77</span><br><span class="line">第5章MapReduce应用案例79</span><br><span class="line">5.1单词计数80</span><br><span class="line">5.1.1实例描述80</span><br><span class="line">5.1.2设计思路80</span><br><span class="line">5.1.3程序代码81</span><br><span class="line">5.1.4代码解读82</span><br><span class="line">5.1.5程序执行83</span><br><span class="line">5.1.6代码结果83</span><br><span class="line">5.1.7代码数据流84</span><br><span class="line">5.2数据去重85</span><br><span class="line">5.2.1实例描述85</span><br><span class="line">5.2.2设计思路86</span><br><span class="line">5.2.3程序代码86</span><br><span class="line">5.3排序87</span><br><span class="line">5.3.1实例描述87</span><br><span class="line">5.3.2设计思路88</span><br><span class="line">5.3.3程序代码89</span><br><span class="line">5.4单表关联91</span><br><span class="line">5.4.1实例描述91</span><br><span class="line">5.4.2设计思路92</span><br><span class="line">5.4.3程序代码92</span><br><span class="line">5.5多表关联95</span><br><span class="line">5.5.1实例描述95</span><br><span class="line">5.5.2设计思路96</span><br><span class="line">5.5.3程序代码96</span><br><span class="line">5.6本章小结98</span><br><span class="line">第6章MapReduce工作机制99</span><br><span class="line">6.1MapReduce作业的执行流程100</span><br><span class="line">6.1.1MapReduce任务执行总流程100</span><br><span class="line">6.1.2提交作业101</span><br><span class="line">6.1.3初始化作业103</span><br><span class="line">6.1.4分配任务104</span><br><span class="line">6.1.5执行任务106</span><br><span class="line">6.1.6更新任务执行进度和状态107</span><br><span class="line">6.1.7完成作业108</span><br><span class="line">6.2错误处理机制108</span><br><span class="line">6.2.1硬件故障109</span><br><span class="line">6.2.2任务失败109</span><br><span class="line">6.3作业调度机制110</span><br><span class="line">6.4Shuffle和排序111</span><br><span class="line">6.4.1Map端111</span><br><span class="line">6.4.2Reduce端113</span><br><span class="line">6.4.3shuffle过程的优化114</span><br><span class="line">6.5任务执行114</span><br><span class="line">6.5.1推测式执行114</span><br><span class="line">6.5.2任务JVM重用115</span><br><span class="line">6.5.3跳过坏记录115</span><br><span class="line">6.5.4任务执行环境116</span><br><span class="line">6.6本章小结117</span><br><span class="line">第7章HadoopIO操作118</span><br><span class="line">7.1IO操作中的数据检查119</span><br><span class="line">7.2数据的压缩126</span><br><span class="line">7.2.1Hadoop对压缩工具的选择126</span><br><span class="line">7.2.2压缩分割和输入分割127</span><br><span class="line">7.2.3在MapReduce程序中使用压缩127</span><br><span class="line">7.3数据的IO中序列化操作128</span><br><span class="line">7.3.1Writable类128</span><br><span class="line">7.3.2实现自己的Hadoop数据类型137</span><br><span class="line">7.4针对Mapreduce的文件类139</span><br><span class="line">7.4.1SequenceFile类139</span><br><span class="line">7.4.2MapFile类144</span><br><span class="line">7.4.3ArrayFile、SetFile和BloomMapFile146</span><br><span class="line">7.5本章小结148</span><br><span class="line">第8章下一代MapReduce：YARN149</span><br><span class="line">8.1MapReduceV2设计需求150</span><br><span class="line">8.2MapReduceV2主要思想和架构151</span><br><span class="line">8.3MapReduceV2设计细节153</span><br><span class="line">8.4MapReduceV2优势156</span><br><span class="line">8.5本章小结156</span><br><span class="line">第9章HDFS详解157</span><br><span class="line">9.1Hadoop的文件系统158</span><br><span class="line">9.2HDFS简介160</span><br><span class="line">9.3HDFS体系结构161</span><br><span class="line">9.3.1HDFS的相关概念161</span><br><span class="line">9.3.2HDFS的体系结构162</span><br><span class="line">9.4HDFS的基本操作164</span><br><span class="line">9.4.1HDFS的命令行操作164</span><br><span class="line">9.4.2HDFS的Web界面165</span><br><span class="line">9.5HDFS常用JavaAPI详解166</span><br><span class="line">9.5.1使用HadoopURL读取数据166</span><br><span class="line">9.5.2使用FileSystemAPI读取数据167</span><br><span class="line">9.5.3创建目录169</span><br><span class="line">9.5.4写数据169</span><br><span class="line">9.5.5删除数据171</span><br><span class="line">9.5.6文件系统查询171</span><br><span class="line">9.6HDFS中的读写数据流175</span><br><span class="line">9.6.1文件的读取175</span><br><span class="line">9.6.2文件的写入176</span><br><span class="line">9.6.3一致性模型178</span><br><span class="line">9.7HDFS命令详解179</span><br><span class="line">9.7.1通过distcp进行并行复制179</span><br><span class="line">9.7.2HDFS的平衡180</span><br><span class="line">9.7.3使用Hadoop归档文件180</span><br><span class="line">9.7.4其他命令183</span><br><span class="line">9.8WebHDFS186</span><br><span class="line">9.8.1WebHDFS的配置186</span><br><span class="line">9.8.2WebHDFS命令186</span><br><span class="line">9.9本章小结190</span><br><span class="line">第10章Hadoop的管理191</span><br><span class="line">10.1HDFS文件结构192</span><br><span class="line">10.2Hadoop的状态监视和管理工具196</span><br><span class="line">10.2.1审计日志196</span><br><span class="line">10.2.2监控日志196</span><br><span class="line">10.2.3Metrics197</span><br><span class="line">10.2.4Java管理扩展199</span><br><span class="line">10.2.5Ganglia200</span><br><span class="line">10.2.6Hadoop管理命令202</span><br><span class="line">10.3Hadoop集群的维护206</span><br><span class="line">10.3.1安全模式206</span><br><span class="line">10.3.2Hadoop的备份207</span><br><span class="line">10.3.3Hadoop的节点管理208</span><br><span class="line">10.3.4系统升级210</span><br><span class="line">10.4本章小结212</span><br><span class="line">第11章Hive详解213</span><br><span class="line">11.1Hive简介214</span><br><span class="line">11.1.1Hive的数据存储214</span><br><span class="line">11.1.2Hive的元数据存储216</span><br><span class="line">11.2Hive的基本操作216</span><br><span class="line">11.2.1在集群上安装Hive216</span><br><span class="line">11.2.2配置MySQL存储Hive元数据218</span><br><span class="line">11.2.3配置Hive220</span><br><span class="line">11.3HiveQL详解221</span><br><span class="line">11.3.1数据定义（DDL）操作221</span><br><span class="line">11.3.2数据操作（DML）231</span><br><span class="line">11.3.3SQL操作233</span><br><span class="line">11.3.4HiveQL使用实例235</span><br><span class="line">11.4Hive网络（WebUI）接口237</span><br><span class="line">11.4.1Hive网络接口配置237</span><br><span class="line">11.4.2Hive网络接口操作实例238</span><br><span class="line">11.5Hive的JDBC接口241</span><br><span class="line">11.5.1Eclipse环境配置241</span><br><span class="line">11.5.2程序实例241</span><br><span class="line">11.6Hive的优化244</span><br><span class="line">11.7本章小结246</span><br><span class="line">第12章HBase详解247</span><br><span class="line">12.1HBase简介248</span><br><span class="line">12.2HBase的基本操作249</span><br><span class="line">12.2.1HBase的安装249</span><br><span class="line">12.2.2运行HBase253</span><br><span class="line">12.2.3HBaseShell255</span><br><span class="line">12.2.4HBase配置258</span><br><span class="line">12.3HBase体系结构260</span><br><span class="line">12.3.1HRegion260</span><br><span class="line">12.3.2HRegion服务器261</span><br><span class="line">12.3.3HBaseMaster服务器262</span><br><span class="line">12.3.4ROOT表和META表262</span><br><span class="line">12.3.5ZooKeeper263</span><br><span class="line">12.4HBase数据模型263</span><br><span class="line">12.4.1数据模型263</span><br><span class="line">12.4.2概念视图264</span><br><span class="line">12.4.3物理视图264</span><br><span class="line">12.5HBase与RDBMS265</span><br><span class="line">12.6HBase与HDFS266</span><br><span class="line">12.7HBase客户端266</span><br><span class="line">12.8JavaAPI267</span><br><span class="line">12.9HBase编程273</span><br><span class="line">12.9.1使用Eclipse开发HBase应用程序273</span><br><span class="line">12.9.2HBase编程275</span><br><span class="line">12.9.3HBase与MapReduce278</span><br><span class="line">12.10模式设计280</span><br><span class="line">12.10.1模式设计应遵循的原则280</span><br><span class="line">12.10.2学生表281</span><br><span class="line">12.10.3事件表282</span><br><span class="line">12.11本章小结283</span><br><span class="line">第13章Mahout详解284</span><br><span class="line">13.1Mahout简介285</span><br><span class="line">13.2Mahout的安装和配置285</span><br><span class="line">13.3MahoutAPI简介288</span><br><span class="line">13.4Mahout中的频繁模式挖掘290</span><br><span class="line">13.4.1什么是频繁模式挖掘290</span><br><span class="line">13.4.2Mahout中的频繁模式挖掘290</span><br><span class="line">13.5Mahout中的聚类和分类292</span><br><span class="line">13.5.1什么是聚类和分类292</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B009X25AI8/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B009X25AI8&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41T3S9xNdXL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00AAHWURE/" rel="prev" title="谁说菜鸟不会数据分析(入门篇)(全彩)">
+      <i class="fa fa-chevron-left"></i> 谁说菜鸟不会数据分析(入门篇)(全彩)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B008FTJ2CK/" rel="next" title="游戏改变世界 游戏化如何让现实变得更美好">
+      游戏改变世界 游戏化如何让现实变得更美好 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

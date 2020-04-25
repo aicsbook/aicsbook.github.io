@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： jQuery用户界面库学习指南作者信息： 作者: 韦尔曼(Dan Wellman) [ 中文 pdf ] 简单介绍《jQuery用户界面库学习指南》提供了使用jQuery用户界面库的完整体验.书中依次介绍了每种组件，并通过大量从初级到高级用法的示例，循序渐进地帮助读者掌握这些知识。《jQuery用户界面库学习指南》内容：用tab和aCCordion形式将相关内容的不同部分组织起来以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery用户界面库学习指南">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B002T1G8XQ/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： jQuery用户界面库学习指南作者信息： 作者: 韦尔曼(Dan Wellman) [ 中文 pdf ] 简单介绍《jQuery用户界面库学习指南》提供了使用jQuery用户界面库的完整体验.书中依次介绍了每种组件，并通过大量从初级到高级用法的示例，循序渐进地帮助读者掌握这些知识。《jQuery用户界面库学习指南》内容：用tab和aCCordion形式将相关内容的不同部分组织起来以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/514s2zp-XGL._SL500_AA300_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.901Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/514s2zp-XGL._SL500_AA300_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B002T1G8XQ/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>jQuery用户界面库学习指南 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B002T1G8XQ/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          jQuery用户界面库学习指南
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： jQuery用户界面库学习指南<br>作者信息： 作者: 韦尔曼(Dan Wellman) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《jQuery用户界面库学习指南》提供了使用jQuery用户界面库的完整体验.书中依次介绍了每种组件，并通过大量从初级到高级用法的示例，循序渐进地帮助读者掌握这些知识。《jQuery用户界面库学习指南》内容：用tab和aCCordion形式将相关内容的不同部分组织起来以节省页面空间；使用对话框控件显示消息、图片和表单型的交互内容；在应用程序中使用滑动条进行音量或颜色控制，通过动态地左右拖动来显示不同的取值范围；允许页面访问者通过日期选择控件从日历中选择日期；使用自动完成控件丰富页面功能；提供拖放机制使用户能够直接安排页面中的各种元素；选择元素群组中的几个元素。并对它们应用统一的动作；创建带有多个内容框的页面。并且根据访问者的个性化需求,将这些内容框排列到不同的位置。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">第1章　jQuery UI简介　1</span><br><span class="line">1.1　本书适合我吗　2</span><br><span class="line">1.2　程序库的下载　3</span><br><span class="line">1.3　建立开发环境　4</span><br><span class="line">1.4　程序库结构　4</span><br><span class="line">1.4.1　单元测试　5</span><br><span class="line">1.4.2　控件主题　6</span><br><span class="line">1.4.3　简化的打包组件　6</span><br><span class="line">1.5　主题定制器　7</span><br><span class="line">1.6　简化的API　8</span><br><span class="line">1.7　组件的类别　9</span><br><span class="line">1.8　浏览器支持　10</span><br><span class="line">1.9　本书范例　10</span><br><span class="line">1.10　程序库的许可　11</span><br><span class="line">1.11　小结　11 </span><br><span class="line"></span><br><span class="line"> 第2章　选项卡控件　13 2.1　选项卡的基本实现　14 2.2　选项卡风格　16 2.3　可配置属性　17 2.4　过渡效果　21 2.5　选项卡控件的事件　23 2.6　使用选项卡方法　27 2.6.1　激活和禁用选项卡　27 2.6.2　增加和除去选项卡　29 2.6.3　模拟点击　32 2.6.4　创建选项卡的幻灯效果　33 2.7　AJAX选项卡　36 2.8　选项卡的乐趣　43 2.9　小结　46</span><br><span class="line"></span><br><span class="line"> 第3章　Accordion控件　47 3.1　Accordion控件的结构　48 3.2　设置Accordion的样式　50 3.3　配置accordion　55 3.4　Accordion控件的方法　61 3.4.1　销毁方法　61 3.4.2　激活和禁用　63 3.4.3　打开“抽屉”　68 3.5　Accordion动画　69 3.6　Accordion事件　72 3.7　Accordion的乐趣　73 3.8　小结　78</span><br><span class="line"></span><br><span class="line"> 第4章　对话框　79 4.1　基本对话框　80 4.2　自定义对话框皮肤　82 4.3　对话框属性　85 4.4　使用对话框的回调属性　90 4.5　使用对话框动画　92 4.6　以编程方式控制对话框　94 4.7　从对话框中获取数据　99 4.8　对话框的乐趣　102 4.9　小结　107</span><br><span class="line"></span><br><span class="line"> 第5章　滑动条　108 5.1　实现滑动条　109 5.2　改写默认的主题　110 5.3　可配置属性　113 5.4　使用滑动条的回调函数　116 5.5　滑动条的方法　119 5.6　滑动条动画　122 5.7　多手柄的滑动条　122 5.8　滑动条的乐趣　125 5.9　小结　129</span><br><span class="line"></span><br><span class="line"> 第6章　日期选择器　130 6.1　默认的日期选择器　131 6.2　定制日期选择器的皮肤　132 6.3　日期选择器的可配置属性　135 6.3.1　改变日期的格式　138 6.3.2　本地化　140 6.3.3　回调属性　146 6.3.4　触发按钮　149 6.3.5　多月选择　150 6.3.6　激活日期范围选择　152 6.3.7　配置可选动画　154 6.3.8　日期选择控件的方法　155 6.4　日期选择器的乐趣　165 6.5　小结　172</span><br><span class="line"></span><br><span class="line"> 第7章　自动完成控件　173 7.1　基 本 实 现　174 7.2　可配置属性　175 7.2.1　滚动　178 7.2.2　自动完成控件的样式　180 7.2.3　多项选择　185 7.2.4　高级格式　186 7.2.5　匹配属性　192 7.2.6　远程数据　194 7.2.7　向服务端发送附加数据　196 7.2.8　缓存　197 7.3　自动完成控件的方法　197 7.4　自动完成控件的乐趣　200 7.5　小结　204</span><br><span class="line"></span><br><span class="line"> 第8章　拖放组件　205 8.1　使用拖放组件　206 8.2　拖动助手　206 8.3　配置拖动属性　208 8.3.1　重设拖动后的元素　212 8.3.2　拖动手柄　213 8.3.3　Helper元素　215 8.3.4　限制拖动区域　218 8.3.5　Snapping　220 8.4　拖动事件回调函数　222 8.5　使用拖动组件的方法　227 8.6　投放组件　229 8.7　配置投放对象　231 8.8　投放事件回调函数　238 8.9　投放组件的方法　245 8.10　投放组件的乐趣　245 8.11　小结　250</span><br><span class="line"></span><br><span class="line"> 第9章　尺寸改变组件　252 9.1　尺寸改变组件的基本实现　253 9.2　定制尺寸改变组件的皮肤　255 9.3　尺寸改变组件的属性　256 9.3.1　配置尺寸改变手柄　257 9.3.2　定义尺寸限制　260 9.3.3　尺寸改变的阴影（ghosts）　262 9.3.4　限制尺寸改变的范围和宽高比　264 9.3.5　尺寸改变动画　266 9.4　尺寸改变组件的回调函数　268 9.5　尺寸改变组件的方法　271 9.6　尺寸改变组件的乐趣　271 9.7　小结　274</span><br><span class="line"></span><br><span class="line"> 第10章　选择组件　275 10.1　基本实现　275 10.2　Selectee样式类名　279 10.2.1　选择类的配置属性　280 10.2.2　过滤选择项　280 10.3　选择组件的回调函数　282 10.4　选择组件的方法　285 10.5　选择组件的乐趣　289 10.6　小结　301</span><br><span class="line"></span><br><span class="line"> 第11章　排序组件　302 11.1　基本实现　302 11.2　配置排序组件的属性　306 11.2.1　占位符　311 11.2.2　排序助手　313 11.2.3　排序条目　315 11.2.4　连接列表　317 11.3　对排序事件的响应　321 11.4　连接列表的相关回调属性　327 11.5　排序方法　330 11.6　控件兼容性　334 11.7　排序组件的乐趣　336 11.8　小结　352</span><br><span class="line"></span><br><span class="line"> 第12章　UI特效　353 12.1　核心特效文件　354 12.1.1　颜色动画　354 12.1.2　样式类切换　356 12.1.3　高级缓冲动画　358 12.2　highlight　359 12.3　boucing　361 12.4　shaking　363 12.5　transference　365 12.6　scaling　368 12.7　element explosion　370 12.8　puff特效　372 12.9　pulsate　374 12.10　drop　376 12.11　slide　379 12.12　clip　382 12.13　blind　383 12.14　fold　385 12.15　小结　388</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B002T1G8XQ/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B002T1G8XQ&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/514s2zp-XGL._SL500_AA300_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0031M9GIG/" rel="prev" title="Python高级编程">
+      <i class="fa fa-chevron-left"></i> Python高级编程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B002BNKWI4/" rel="next" title="JavaScript宝典(第6版)">
+      JavaScript宝典(第6版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

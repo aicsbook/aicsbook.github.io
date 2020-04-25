@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Struts 2.1权威指南作者信息： 作者: 浏览全部评论  [ 中文 pdf ] 简单介绍《Struts 2.1权威指南》特点为：1.经验丰富，针对性强《Struts 2.1权威指南》凝聚了作者大量的实际开发经验和感悟。作者依照读者的学习规律，首先介绍基本概念和基本操作，然后对内容进行深入讲解。2.讲解具体，示范典型书中通过大量的示范性实例(全书范例近百个)，逐一、详细地讲解了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Struts 2.1权威指南">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B002A7XPPS/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Struts 2.1权威指南作者信息： 作者: 浏览全部评论  [ 中文 pdf ] 简单介绍《Struts 2.1权威指南》特点为：1.经验丰富，针对性强《Struts 2.1权威指南》凝聚了作者大量的实际开发经验和感悟。作者依照读者的学习规律，首先介绍基本概念和基本操作，然后对内容进行深入讲解。2.讲解具体，示范典型书中通过大量的示范性实例(全书范例近百个)，逐一、详细地讲解了">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51itAHrg7SL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.852Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51itAHrg7SL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B002A7XPPS/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Struts 2.1权威指南 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B002A7XPPS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Struts 2.1权威指南
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Struts 2.1权威指南<br>作者信息： 作者: 浏览全部评论  [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Struts 2.1权威指南》特点为：1.经验丰富，针对性强《Struts 2.1权威指南》凝聚了作者大量的实际开发经验和感悟。作者依照读者的学习规律，首先介绍基本概念和基本操作，然后对内容进行深入讲解。2.讲解具体，示范典型书中通过大量的示范性实例(全书范例近百个)，逐一、详细地讲解了Struts2各知识点的用法，并细致地讲解每个用法的各种参数、选项，可以帮助读者入门到精通。3.配合案例，快速提高《Struts 2.1权威指南》最后配备了几个非常常见的案例，可以让读者在掌握前而的基础知识点的情况下，将所有知识融会贯通，把基础知识点应用项目开发过程中。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">第1章  Struts 2概述 1</span><br><span class="line">1.1  MVC思想概述    2</span><br><span class="line">1.1.1  Web技术的发展   2</span><br><span class="line">1.1.2  Model 1和Model 2    4</span><br><span class="line">1.1.3  MVC思想及其优势    6</span><br><span class="line">1.1.4  常用的MVC框架   7</span><br><span class="line">1.2  Struts 2的起源和背景 8</span><br><span class="line">1.2.1  Struts 1简介及存在的问题 9</span><br><span class="line">1.2.2  WebWork简介    12</span><br><span class="line">1.2.3  Struts 2起源   15</span><br><span class="line">1.3  Struts 2体系介绍   16</span><br><span class="line">1.3.1  Struts 2框架架构 16</span><br><span class="line">1.3.2  Struts 2的配置文件  17</span><br><span class="line">1.3.3  Strut 2的标签库  18</span><br><span class="line">1.3.4  Struts 2的控制器组件   19</span><br><span class="line">1.4  Struts 2与Struts 1的对比   20</span><br><span class="line">1.5  WebWork和Struts 2对比   21</span><br><span class="line">1.6  本章小结   22 </span><br><span class="line"></span><br><span class="line"> 第2章 Struts 2下的HelloWorld 23 2.1 下载和安装Struts 2框架 23 2.2 从用户请求开始 25 2.3 创建Struts 2的Web应用 27 2.3.1 创建Web应用 27 2.3.2 增加Struts 2功能 28 2.4 实现控制器 28 2.4.1 实现控制器类 29 2.4.2 配置Action 30 2.4.3 增加视图资源完成应用 30 2.5 改进控制器 32 2.5.1 实现Action接口 32 2.5.2 跟踪用户状态 33 2.5.3 添加处理信息 35 2.5.4 输出处理信息 37 2.6 改进视图组件 39 2.6.1 改善输出页面 39 2.6.2 使用UI标签简化表单页面 40 2.7 完成程序国际化 42 2.7.1 定义国际化资源文件 42 2.7.2 加载资源文件 43 2.7.3 输出国际化信息 44 2.8 增加数据校验 46 2.8.1 继承ActionSupport 46 2.8.2 使用Struts 2的校验框架 49 2.9 本章小结 51</span><br><span class="line"></span><br><span class="line"> 第3章 Struts 2基础 52 3.1 WebWork的MVC实现 52 3.1.1 WebWork的下载和安装 53 3.1.2 实现Action 53 3.1.3 配置Action 56 3.1.4 完成数据校验 58 3.1.5 完成应用流程 59 3.2 在Eclipse中开发Struts 2 60 3.2.1 创建Web应用 61 3.2.2 增加Struts 2支持 63 3.2.3 部署Struts 2应用 64 3.2.4 增加应用的Action 65 3.3 Struts 2的基本流程 66 3.3.1 核心控制器：FilterDispatcher 66 3.3.2 业务控制器 67 3.3.3 Struts 2的模型组件 67 3.3.4 Struts 2的视图组件 68 3.3.5 Struts 2的运行流程 68 3.4 Struts 2的基本配置 69 3.4.1 配置web.xml文件 69 3.4.2 struts.xml配置文件 71 3.4.3 struts.properties配置文件 74 3.4.4 struts.xml文件结构 78 3.5 本章小结 82</span><br><span class="line"></span><br><span class="line"> 第4章 深入Struts 2 83 4.1 深入Struts 2的配置文件 83 4.1.1 Bean配置 84 4.1.2 常量配置 85 4.1.3 包配置 87 4.1.4 命名空间配置 89 4.1.5 包含配置 91 4.1.6 拦截器配置 91 4.2 Struts 2的Action 92 4.2.1 实现Action处理类 92 4.2.2 Action访问Servlet API 97 4.2.3 Action直接访问Servlet API 100 4.2.4 配置Action 103 4.2.5 配置Action的默认处理类 104 4.2.6 动态方法调用 105 4.2.7 为action元素指定method 4.2.7 属性 107 4.2.8 使用通配符 109 4.2.9 配置默认Action 115 4.3 管理处理结果 116 4.3.1 处理结果的改进 116 4.3.2 配置结果 117 4.3.3 Struts 2支持的处理结果 4.2.7 类型 118 4.3.4 plainText结果类型 120 4.3.5 redirect结果类型 123 4.3.6 redirectAction结果类型 124 4.3.7 动态结果 125 4.3.8 请求参数决定结果 126 4.3.9 全局结果 129 4.4 属性驱动和模型驱动 130 4.4.1 模型的作用 130 4.4.2 使用模型驱动 131 4.5 Struts 2的异常机制 134 4.5.1 Struts 2的异常处理哲学 135 4.5.2 声明式异常捕捉 136 4.5.3 输出异常信息 139 4.6 未知处理器 141 4.7 本章小结 143</span><br><span class="line"></span><br><span class="line"> 第5章 Struts 2的类型转换 144 5.1 类型转换的意义 145 5.1.1 表现层数据处理 145 5.1.2 类型转换 145 5.2 Struts 2内建的类型转换器 149 5.3 基于OGNL的类型转换 151 5.4 自定义类型转换器 155 5.4.1 系统需求 155 5.4.2 实现类型转换器 157 5.4.3 局部类型转换器 159 5.4.4 全局类型转换器 161 5.4.5 基于Struts 2的类型转换器 163 5.4.6 数组属性的类型转换器 165 5.4.7 集合属性的类型转换器 168 5.5 集合类型转换的高级特性 170 5.5.1 指定集合元素的类型 170 5.5.2 为Set集合的元素指定 4.2.7 索引属性 172 5.6 类型转换中错误处理 174 5.6.1 类型转换的错误处理流程 174 5.6.2 处理类型转换错误 176 5.6.3 输出类型转换错误 176 5.6.4 处理集合属性的转换错误 179 5.7 本章小结 182</span><br><span class="line"></span><br><span class="line"> 第6章 Struts 2的输入校验 183 6.1 输入校验概述 184 6.1.1 为什么需要输入校验 184 6.1.2 客户端校验 185 6.1.3 服务器端校验 187 6.1.4 类型转换和输入校验 191 6.2 基本输入校验 192 6.2.1 编写校验规则文件 192 6.2.2 国际化提示信息 195 6.2.3 使用客户端校验 197 6.3 校验器的配置风格 200 6.3.1 字段校验器配置风格 201 6.3.2 非字段校验器配置风格 201 6.3.3 短路校验器 203 6.3.4 校验顺序和短路 205 6.4 校验文件的搜索规则 205 6.5 内建校验器 208 6.5.1 注册校验器 208 6.5.2 必填校验器 210 6.5.3 必填字符串校验器 210 6.5.4 整数校验器 211 6.5.5 日期校验器 212 6.5.6 表达式校验器 213 6.5.7 字段表达式校验器 213 6.5.8 邮件地址校验器 214 6.5.9 网址校验器 215 6.5.10 Visitor校验器 216 6.5.11 转换校验器 219 6.5.12 字符串长度校验器 220 6.5.13 正则表达式校验器 221 6.6 基于Annotation的输入校验 221 6.7 手动完成输入校验 223 6.7.1 重写validate()方法 223 6.7.2 重写validateXxx()方法 225 6.7.3 Struts 2的输入校验流程 227 6.8 本章小结 228</span><br><span class="line"></span><br><span class="line"> 第7章 上传和下载文件 229 7.1 文件上传的原理 230 7.1.1 表单元素的enctype属性 230 7.1.2 手动上传 233 7.1.3 使用上传框架完成上传 235 7.2 Struts 2的文件上传 241 7.2.1 Struts 2的文件上传支持 241 7.2.2 实现文件上传的Action 242 7.2.3 配置文件上传的Action 244 7.2.4 手动实现文件过滤 246 7.2.5 拦截器实现文件过滤 249 7.2.6 输出错误提示 250 7.2.7 文件上传的常量配置 252 7.3 使用Pell上传 252 7.4 同时上传多个文件 253 7.4.1 使用数组同时上传多个文件 254 7.4.2 使用List同时上传多个文件 257 7.5 使用Struts 2控制文件下载 258 7.5.1 实现文件下载的Action 259 7.5.2 配置Action 260 7.5.3 下载前的授权控制 261 7.6 本章小结 263</span><br><span class="line"></span><br><span class="line"> 第8章 Struts 2的国际化 264 8.1 程序国际化简介 265 8.1.1 程序国际化的意义 265 8.1.2 Java国际化的思路 265 8.1.3 Java支持的语言和国家 266 8.1.4 完成程序国际化 267 8.1.5 使用MessageFormat处理 8.1.5 带占位符的消息 269 8.1.6 使用类文件代替资源文件 270 8.2 Struts 2的国际化入门 271 8.2.1 加载全局资源文件 271 8.2.2 访问国际化消息 272 8.2.3 输出带占位符的国际化消息 275 8.3 加载资源文件的不同方式 277 8.3.1 包范围资源文件 277 8.3.2 Action范围资源文件 279 8.3.3 临时指定资源文件 279 8.3.4 加载资源文件的顺序 281 8.4 允许用户自行选择程序语言 282 8.4.1 Struts 2国际化的运行机制 282 8.4.2 创建下拉列表框 283 8.4.3 选择程序语言 286 8.5 本章小结 287</span><br><span class="line"></span><br><span class="line"> 第9章 Struts 2的标签库 288 9.1 Struts 2标签库概述 289 9.1.1 标签的优势 289 9.1.2 Struts 2的标签分类 290 9.2 Struts 2标签入门 291 9.2.1 使用Struts 2标签的准备 291 9.2.2 Struts 2的OGNL表达式 9.2.2 语言 292 9.2.3 OGNL中的集合操作 295 9.2.4 访问静态成员 296 9.2.5 Lambda（λ）表达式 296 9.3 控制标签 297 9.3.1 if&#x2F;elseif&#x2F;else标签 297 9.3.2 iterator标签 298 9.3.3 append标签 300 9.3.4 generator标签 302 9.3.5 merge标签 304 9.3.6 subset标签 304 9.3.7 sort标签 307 9.4 数据标签 309 9.4.1 action标签 309 9.4.2 bean标签 311 9.4.3 date标签 313 9.4.4 debug标签 314 9.4.5 include标签 315 9.4.6 param标签 316 9.4.7 push标签 316 9.4.8 set标签 317 9.4.9 url标签 319 9.4.10 property标签 320 9.5 主题和模板 321 9.5.1 选择主题 321 9.5.2 自定义主题 323 9.6 表单标签 325 9.6.1 表单标签的通用属性 325 9.6.2 表单标签的name和 9.6.2 value属性 328 9.6.3 checkboxlist标签 328 9.6.4 combobox标签 331 9.6.5 doubleselect标签 331 9.6.6 head标签 334 9.6.7 optiontransferselect标签 334 9.6.8 select标签 336 9.6.9 radio标签 337 9.6.10 optgroup标签 338 9.6.11 token标签 340 9.6.12 updownselect标签 341 9.7 非表单标签 343 9.7.1 actionerror和actionmessage 9.7.1 标签 343 9.7.2 component标签 344 9.8 本章小结 347</span><br><span class="line"></span><br><span class="line"> 第10章 Struts 2的拦截器 348 10.1 理解拦截器 349 10.1.1 理解DRY规则 349 10.1.2 拦截器的意义 350 10.1.3 拦截器的实现原理 352 10.1.4 拦截器和AOP的关系 356 10.1.5 拦截器在Struts 2中的作用 357 10.2 拦截器配置初步 359 10.2.1 配置拦截器 359 10.2.2 使用拦截器 361 10.2.3 配置默认拦截器 362 10.3 Struts 2内建的拦截器 365 10.3.1 Struts 2内建的拦截器 365 10.3.2 struts-default.properties里 10.3.2 配置的拦截器 366 10.4 开发自己的拦截器 370 10.4.1 实现拦截器类 371 10.4.2 使用拦截器 372 10.4.3 拦截器和Struts 2插件的 10.4.3 关系 374 10.5 深入拦截器编程 375 10.5.1 拦截方法的拦截器 375 10.5.2 拦截器的执行顺序 378 10.5.3 拦截结果的监听器 380 10.5.4 覆盖拦截器栈里特定 10.5.4 拦截器的参数 381 10.6 拦截器示例：实现权限控制 383 10.6.1 实现拦截器类 383 10.6.2 配置权限控制拦截器 384 10.7 本章小结 386</span><br><span class="line"></span><br><span class="line"> 第11章 Struts 2的Ajax支持 387 11.1 Ajax概述 388 11.1.1 Ajax的起源和变革 388 11.1.2 Ajax的核心技术 391 11.2 Struts 2提供的Ajax支持 393 11.3 基于Dojo的异步表单 397 11.3.1 安装Dojo插件 398 11.3.2 定义异步表单 398 11.3.3 实现Action 400 11.3.4 实现服务器响应页面 402 11.4 基于Dojo的pub-sub事件 11.4 模型 403 11.4.1 pub-sub的原理 404 11.4.2 pub-sub的示例 405 11.4.3 阻止请求 407 11.5 基于Dojo的Ajax标签 407 11.5.1 div标签 407 11.5.2 submit和a标签 414 11.5.3 autocompleter标签 419 11.5.4 tabbedpanel标签 426 11.5.5 datetimepicker 430 11.5.6 tree和treenode 432 11.5.7 textarea 435 11.5.8 bind 436 11.6 基于JSON插件的Ajax 11.6 实现 438 11.6.1 JSON的基本知识 438 11.6.2 安装Struts 2的JSON插件 441 11.6.3 实现Action逻辑 441 11.6.4 实现JSP页面 443 11.7 本章小结 446</span><br><span class="line"></span><br><span class="line"> 第12章 Struts 2的REST支持 447 12.1 Codebehind插件和零配置 448 12.1.1 自动搜索Action 448 12.1.2 使用Annotation指定命名 12.1.2 空间、父包和结果映射 449 12.2 Convention插件和零配置 452 12.2.1 搜索Action 453 12.2.2 按约定映射Action 454 12.2.3 按约定映射Result 456 12.2.4 Action链的约定 459 12.2.5 自动重加载映射 461 12.3 Convention插件的相关常量 461 12.4 Convention的Annotation 462 12.4.1 Action配置相关的 12.4.1 Annotation 463 12.4.2 Result配置相关的 12.4.1 Annotation 464 12.4.3 包和命名空间相关的 12.4.1 Annotation 466 12.4.4 异常处理相关的Annotation 466 12.4.5 拦截器配置相关的 12.4.1 Annotation 468 12.5 REST简介 468 12.5.1 资源和标识符 469 12.5.2 操作资源的方式 470 12.6 Struts 2的REST支持 471 12.6.1 RestActionMapper简介 471 12.6.2 安装REST插件 472 12.6.3 实现支持REST的 12.6.3 Action类 473 12.6.4 实现视图层 478 12.7 本章小结 481</span><br><span class="line"></span><br><span class="line"> 第13章 使用FreeMarker作为</span><br><span class="line"></span><br><span class="line"> 第13章 表现层 482 13.1 体验FreeMarker 483 13.1.1 下载和安装FreeMarker 483</span><br><span class="line"></span><br><span class="line"> 13.1.2 在Java程序中使用 13.1.2 FreeMarker 483 13.1.3 在Web应用中使用 13.1.2 FreeMarker 485 13.2 FreeMarker的模板文件 489 13.2.1 模板结构 489 13.2.2 FTL指令规则 490 13.2.3 插值规则 490 13.3 表达式 492 13.3.1 直接指定值 492 13.3.2 输出变量值 494 13.3.3 字符串操作 496 13.3.4 集合连接运算符 497 13.3.5 Map连接运算符 497 13.3.6 算术运算符 498 13.3.7 比较运算符 499 13.3.8 逻辑运算符 499 13.3.9 内建函数 499 13.3.10 空值处理运算符 500 13.3.11 运算符优先级 500 13.4 FreeMarker的常用指令 501 13.4.1 if指令 501 13.4.2 switch、case、default、 13.4.2 break指令 502 13.4.3 list、break指令 502 13.4.4 include指令 503 13.4.5 import指令 503 13.4.6 noparse指令 503 13.4.7 escape、noescape指令 504 13.4.8 assign指令 505 13.4.9 setting指令 506 13.4.10 macro、nested、return指令 506 13.5 使用FreeMarker作为 13.5 Struts 2的视图技术 509 13.5.1 在FreeMarker模板中 13.5.1 使用Struts 2标签 509 13.5.2 使用Freemarker Result 512 13.5.3 解析模板中的变量 514 13.5.4 访问Servlet&#x2F;JSP范围的值 516 13.6 本章小结 517</span><br><span class="line"></span><br><span class="line"> 第14章 整合Spring 518 14.1 Spring简介 519 14.1.1 Spring的起源和核心 519 14.1.2 使用Spring的IoC容器 521 14.2 Struts 2插件 524 14.2.1 插件概述 524 14.2.2 插件开发概述 526 14.3 使用Spring插件完成整合 527 14.3.1 整合Spring前的准备工作 528 14.3.2 整合Spring的思考 531 14.4 让Spring管理控制器 532 14.4.1 整合流程 532 14.4.2 从页面请求开始 533 14.4.3 实现控制器逻辑 533 14.4.4 实现业务逻辑 535 14.5 使用自动装配 537 14.5.1 指定自动装配 537 14.5.2 修改配置文件 538 14.5.3 改变自动装配策略 539 14.6 本章小结 540</span><br><span class="line"></span><br><span class="line"> 第15章 整合JSF 541 15.1 JSF简介 541 15.1.1 JSF概述 542 15.1.2 JSF和Struts 2的对比 542 15.2 使用MyFaces 543 15.2.1 下载和安装MyFaces 543 15.2.2 从输入页面开始 545 15.2.3 在Web应用中配置MyFaces 547 15.2.4 实现后台Bean 548 15.2.5 定义导航规则 549 15.3 安装JSF插件 551 15.4 使用JSF插件 552 15.4.1 实现业务逻辑组件 553 15.4.2 列出全部图书 556 15.4.3 添加&#x2F;修改图书 558 15.5 整合JSF的思考 563 15.6 本章小结 564</span><br><span class="line"></span><br><span class="line"> 第16章 整合SiteMesh 565 16.1 SiteMesh简介 565 16.1.1 SiteMesh概述 566 16.1.2 下载和安装SiteMesh 567 16.1.3 定义装饰器页面 569 16.1.4 定义原始页面 570 16.1.5 更复杂的装饰器页面 572 16.2 使用SiteMesh插件 575 16.2.1 安装SiteMesh插件 575 16.2.2 在Struts 2中使用SiteMesh 577 16.3 本章小结 579</span><br><span class="line"></span><br><span class="line"> 第17章 整合JasperReports 580 17.1 JasperReports简介 581 17.1.1 下载和安装JasperReports 581 17.1.2 JasperReports初探 582 17.1.3 JasperReports的开发流程 588 17.1.4 解决PDF报表的中文问题 589 17.2 动态报表 590 17.2.1 带参数的报表 590 17.2.2 带查询的报表 594 17.2.3 以VO集合作为数据源的 17.2.3 动态报表 600 17.3 使用iReport设计报表 605 17.3.1 下载和安装iReport 605 17.3.2 使用iReport 607 17.3.3 建立数据源 608 17.3.4 设计报表布局 611 17.4 安装JasperReports插件 614 17.5 使用JasperReports报表 614 17.5.1 创建生成报表的Action 615 17.5.2 配置生成JasperReports 17.2.3 报表的Action 616 17.5.3 生成JasperReports报表 617 17.6 本章小结 618</span><br><span class="line"></span><br><span class="line"> 第18章 整合JFreeChart 619 18.1 JFreeChart简介 620 18.1.1 JFreeChart的下载和安装 620 18.1.2 使用JFreeChart 621 18.1.3 JFreeChart开发步骤 623 18.2 JFreeChart的常用统计图表 624 18.2.1 柱状图 625 18.2.2 折线图 629 18.2.3 时间顺序图 630 18.3 在网页中生成带交互功能的 18.3 统计图 633 18.4 安装JFreeChart插件 638 18.5 在Struts 2应用中使用 18.5 JFreeChart 639 18.5.1 创建Action类 639 18.5.2 配置Action 641 18.6 本章小结 642</span><br><span class="line"></span><br><span class="line"> 第19章 整合Hibernate 643 19.1 Hibernate概述 644 19.1.1 Hibernate的作用 644 19.1.2 Hibernate的优势 646 19.2 Hibernate开发入门 646 19.2.1 Hibernate下载和安装 646 19.2.2 使用Hibernate保存记录 647 19.2.3 使用Hibernate查询记录 652 19.3 Struts 2整合Hibernate的思考 654 19.3.1 自定义的整合方案 654 19.3.2 整合方案的实现策略 656 19.4 整合示例 656 19.4.1 持久层设计 656 19.4.2 DAO层设计 660 19.4.3 业务逻辑层设计 663 19.4.4 初始化组件工厂 665 19.4.5 控制器实现 666 19.5 整合后的思考和Spring框架 668 19.6 本章小结 669</span><br><span class="line"></span><br><span class="line"> 第20章 “零配置”案例：注册</span><br><span class="line"></span><br><span class="line"> 第20章 登录系统 670 20.1 系统概述 671 20.1.1 系统功能简介 671 20.1.2 系统总体设计 671 20.2 实现Hibernate持久层 672 20.2.1 编写持久化PO类 672 20.2.2 编写映射文件 673 20.3 实现DAO层 674 20.3.1 管理SessionFactory 674 20.3.2 编写DAO接口 675 20.3.3 实现DAO组件 677 20.3.4 配置DAO组件 679 20.4 实现业务逻辑层 679 20.4.1 定义业务逻辑组件接口 679 20.4.2 提供业务逻辑组件实现类 680 20.4.3 配置业务逻辑组件 682 20.5 使用Struts 2 683 20.5.1 整合Struts 2和Spring 683 20.5.2 处理登录 685 20.5.3 图形验证码 689 20.5.4 使用Ajax验证用户名 692 20.5.5 注册新用户 696 20.6 使用SiteMesh装饰页面 699 20.7 本章小结 700</span><br><span class="line"></span><br><span class="line"> 第21章 电子拍卖系统 701 21.1 系统功能简介和架构设计 702 21.1.1 系统功能简介 702 21.1.2 系统架构设计 702 21.1.3 相关技术介绍 703</span><br><span class="line"></span><br><span class="line"> 21.2 持久层设计 706 21.2.1 系统实体 706 21.2.2 系统E-R图和数据表 707 21.2.3 实现Hibernate PO 709 21.2.4 管理SessionFactory 718 21.3 实现系统DAO层 720 21.3.1 DAO的基础配置 721 21.3.2 实现系统DAO组件 721 21.3.3 配置系统DAO组件 728 21.4 实现业务逻辑层 729 21.4.1 定义业务逻辑组件接口 730 21.4.2 依赖注入DAO组件 732 21.4.3 业务逻辑组件中的异常 21.4.3 处理 733 21.4.4 处理用户竞价 735 21.4.5 判断拍卖物品状态 737 21.4.6 事务管理 740 21.4.7 配置业务层组件 741 21.5 实现系统Web层 744 21.5.1 配置Struts 2的核心Filter 744 21.5.2 处理用户登录 745 21.5.3 图形验证码 749 21.5.4 Web层的异常处理 750 21.5.5 登录控制 751 21.5.6 添加物品 753 21.5.7 处理用户竞价 760 21.6 使用SiteMesh页面装饰 766 21.6.1 在Struts 2中整合SiteMesh 21.6.1 页面装饰 766 21.6.2 定义页面装饰 767 21.7 本章小结 770</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B002A7XPPS/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B002A7XPPS&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51itAHrg7SL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0012UMVYA/" rel="prev" title="JavaScript权威指南(第5版)">
+      <i class="fa fa-chevron-left"></i> JavaScript权威指南(第5版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B001PTGR52/" rel="next" title="Sun 公司核心技术丛书 Effective Java中文版(第2版)">
+      Sun 公司核心技术丛书 Effective Java中文版(第2版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Linux程序设计(第4版)作者信息： 作者: 马修(Neil Matthew) [ 中文 pdf ] 简单介绍《Linux程序设计(第4版)》：最负盛名的Linux程序设计图书，内容全面深入，全球开源社区集体智慧结晶。时至今日，Linux系统已经从一个个人作品发展为可以用于各种关键任务的成熟、高效和稳定的操作系统，因为具备跨平台、开源、支持众多应用软件和网络协议等优点，它得到了各">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux程序设计(第4版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B003Q97NPC/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Linux程序设计(第4版)作者信息： 作者: 马修(Neil Matthew) [ 中文 pdf ] 简单介绍《Linux程序设计(第4版)》：最负盛名的Linux程序设计图书，内容全面深入，全球开源社区集体智慧结晶。时至今日，Linux系统已经从一个个人作品发展为可以用于各种关键任务的成熟、高效和稳定的操作系统，因为具备跨平台、开源、支持众多应用软件和网络协议等优点，它得到了各">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51L1Hqh7vNL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.931Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51L1Hqh7vNL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B003Q97NPC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Linux程序设计(第4版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B003Q97NPC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux程序设计(第4版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Linux程序设计(第4版)<br>作者信息： 作者: 马修(Neil Matthew) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Linux程序设计(第4版)》：最负盛名的Linux程序设计图书，内容全面深入，全球开源社区集体智慧结晶。时至今日，Linux系统已经从一个个人作品发展为可以用于各种关键任务的成熟、高效和稳定的操作系统，因为具备跨平台、开源、支持众多应用软件和网络协议等优点，它得到了各大主流软硬件厂商的支持，也成为广大程序设计人员理想的开发平台。《Linux程序设计(第4版)》是Linux程序设计领域的经典名著，以简单易懂、内容全面和示例丰富而广受好评。中文版前两版出版后。在国内的Linux爱好者和程序员中引起了强烈反响。这一热潮一直持续至今。《Linux程序设计(第4版)》是国内读者翘首以待的第4版，此次新版内容组织更加严谨，译者更是细心雕琢，保留了这部权威著作的原汁原味。对Ljnux所提供的功能全面而准确的阐述，以及贯穿全书的示例程序体验，使《Linux程序设计(第4版)》不仅成为初学者的最佳Linux程序设计指南。而且是中高级程序员不可或缺的参考书。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">第1章 入门</span><br><span class="line">1.1 LNIX、Linux和GNU简介</span><br><span class="line">1.1.1 什么是IYNIX</span><br><span class="line">1.1.2 什么是Linux</span><br><span class="line">1.1.3 GNL，项目和自由软件基金会</span><br><span class="line">1.1.4 Linux发行版</span><br><span class="line">1.2 Linux程序设计.</span><br><span class="line">1.2.1 Linux程序</span><br><span class="line">1.2.2 文本编辑器</span><br><span class="line">1.2.3 C语言编译器</span><br><span class="line">1.2.4 开发系统导引</span><br><span class="line">1.3 获得帮助</span><br><span class="line">1.4 小结 </span><br><span class="line"></span><br><span class="line"> 第2章 shell程序设计 2.1 为什么使用shell编程 2.2 一点哲学 2.3 什么是shell 2.4 管道和重定向 2.4.1 重定向输出 2.4.2 重定向输入 2.4.3 管道 2.5 作为程序设计语言的shell 2.5.1 交互式程序 2.5.2 创建脚本 2.5.3 把脚本设置为可执行 2.6 shell的语法 2.6.1 变量 2.6.2 条件 2.6.3 控制结构 2.6.4 函数 2.6.5 命令 2.6.6 命令的执行 2.6.7 1aere文档 2.6.8 调试脚本程序 2.7 迈向图形化：dialog工具 2.8 综合应用 2.8.1 需求 2.8.2 设计 2.8.3 应用程序的说明 2.9 小结</span><br><span class="line"></span><br><span class="line"> 第3章 文件操作. 3.1 Linux文件结构 3.1.1 目录 3.1.2 文件和设备 3.2 系统调用和设备驱动程序 3.3 库函数 3.4 底层文件访问 3.4.1 write系统调用 3.4.2 read系统调用 3.4.3 open系统调用 3.4.4 访问权限的初始值 3.4.5 其他与文件管理有关的系统调用 3.5 标准I／O库 3.5.1 fopen函数 3.5.2 fread函数 3.5.3 fwrite函数 3.5.4 fclose函数 3.5.5 f￡1ush函数 3.5.6 fseek函数 3.5.7 fgetc、getc和getchar函数 3.5.8 fputc、putc和putchar函数 3.5.9 fgets和gets函数 3.6 格式化输入和输出 3.6.1 printf、fprintf和sprin七函数 3.6.2 scanf、fscanf和sscanf函数 3.6.3 其他流函数 3.6.4 文件流错误 3.6.5 文件流和文件描述符 3.7 文件和目录的维护 3.7.1 chIrrod系统调用 3.7.2 chown系统调用 3.7.3 unlink、1ink和symlink系统调用 3.7.4 mkdJ.r和rmdir系统调用 3.7.5 chdir系统调用和getcwd函数 3.8 扫描目录 3.8.1 opendir函数 3.8.2 readdir函数 3.8.3 elldir函数 3.8.4 see]kdir函数 3.8.5 closedir函数 3.9 错误处理 3.9.1 strerror函数 3.9.2 perror函数 3.10 proc文件系统 3.11 高级主题：fcntl和mmap 3.11.1 fcntl系统调用 3.11.2 map函数 3.12 小结</span><br><span class="line"></span><br><span class="line"> 第4章 Linux环境 4.1 程序参数 4.1.1 qetopt 4.1.2 getooptlong 4.2 环境变量 4.2.1 环境变量的用途 4.2.2 environ变量 4.3 时间和日期 4.4 临时文件 4.5 用户信息 4.6 主机信息 4.7 日志 4.8 资源和限制 4.9 小结</span><br><span class="line"></span><br><span class="line"> 第5章 终端 5.1 对终端进行读写 5.2 与终端进行对话 5.3 终端驱动程序和通用终端接口 5.3.1 概述 5.3.2 硬件模型 5.4 temios结构 5.4.1 输入模式 5.4.2 输出模式 5.4.3 控制模式 5.4.4 本地模式 5.4.5 特殊控制字符 5.4.6 终端速度 5.4.7 其他函数 5.5 终端的输出 5.5.1 终端的类型 5.5.2 识别终端类型 5.5.3 使用teminfo功能标志 5.6 检测击键动作 5.7 虚拟控制台 5.8 伪终端 5.9 小结</span><br><span class="line"></span><br><span class="line"> 第6章 使用curses函数库管理基于文本的屏幕 6.1 用curses函数库进行编译 6.2 curses术语和概念 6.3 屏幕 6.3.1 输出到屏幕 6.3.2 从屏幕读取 6.3.3 清除屏幕 6.3.4 移动光标 6.3.5 字符属性 6.4 键盘 6.4.1 键盘模式 6.4.2 键盘输入 6.5 窗口 6.5.1 wINDOW结构 6.5.2 通用函数 6.5.3 移动和更新窗口 6.5.4 优化屏幕刷新 6.6 子窗口 6.7 keypad模式 6.8 彩色显示 6.9 pad 6.10 CD唱片应用程序 6.10.1 新CD唱片应用程序的开始部分 6.10.2 main函数 6.10.3 建立菜单 6.10.4 操作数据库文件 6.10.5 查询CD数据库 6.11 小结</span><br><span class="line"></span><br><span class="line"> 第7章 数据管理 7.1 内存管理 7.1.1 简单的内存分配 7.1.2 分配大量的内存 7.1.3 滥用内存 7.1.4 空指针 7.1.5 释放内存 7.1.6 其他内存分配函数 7.2 文件锁定 7.2.1 创建锁文件 7.2.2 区域锁定 7.2.3 锁定状态下的读写操作 7.2.4 文件锁的竞争 7.2.5 其他锁命令 7.2.6 死锁 7.3 数据库 7.3.1 dbm数据库 7.3.2 dbm例程 7.3.3 d.bm访问函数 7.3.4 其他dbm函数 7.4 CD唱片应用程序 7.4.1 更新设计 7.4.2 使用dbm数据库的CD唱片应用程序 7.5 小结</span><br><span class="line"></span><br><span class="line"> 第8章 MySQL 8.1 安装 8.1.1 MySQL软件包 8.1.2 安装后的配置 8.1.3 安装后的故障修复 8.2 MySQL管理 8.2.1 命令 8.2.2 创建用户并赋予权限 8.2.3 密码 8.2.4 创建数据库 8.2.5 数据类型 8.2.6 创建表 8.2.7 图形化工具 8.3 使用C语言访问。MySQL数据 8.3.1 连接例程 8.3.2 错误处理 8.3.3 执行SQL语句 8.3.4 更多的函数 8.4 CD数据库应用程序 8.4.1 创建表 8.4.2 添加数据 8.4.3 使用C语言访问数据 8.5 小结</span><br><span class="line"></span><br><span class="line"> 第9章 开发工具 9.1 多个源文件带来的问题 9.2 make命令和makefile文件 9.2.1 mekefile的语法 9.2.2 make命令的选项和参数 9.2.3 makefile文件中的注释 9.2.4 mekefile文件中的宏 9.2.5 多个目标 9.2.6 内置规则 9.2.7 后缀和模式规则 9.2.8 用make管理函数库 9.2.9 高级主题：makefile文件和子目录 9.2.1 0GNUmake和qcc 9.3 源代码控制 9.3.1 RCS 9.3.2 SCCS 9.3.3 RCS和SCCS的比较 9.3.4 CVS 9.3.5 CVS的前端程序 9.3.6 SubvcrsiOn 9.4 编写手册页 9.5 发行软件 9.5.1 pach程序 9.5.2 其他软件发行工具 9.6 RPM软件包 9.6.1 使用RPM软件包文件 9.6.2 安装RPM软件包 9.6.3 创建RPM软件包 9.7 其他软件包格式 9.8 开发环境 9.8.1 KDevelop 9.8.2 其他开发环境 9.9 小结</span><br><span class="line"></span><br><span class="line"> 第10章 调试 10.1 错误类型 10.2 常用调试技巧 10.2.1 有漏洞的程序 10.2.2 代码检查 10.2.3 取样法 10.2.4 程序的受控执行 10.3 使用gdb进行调试 10.3.1 启动gdb 10.3.2 运行一个程序 10.3.3 栈跟踪 10.3.4 检查变量 10.3.5 列出程序源代码 10.3.6 设置断点 10.3.7 用调试器打补丁 10.3.8 深入学习gdb 10.4 其他调试工具 10.4.1 lint清理程序中的“垃圾” 10.4.2 函数调用工具 10.4.3 用prof／gprof产生执行存档 10.5 断言 10.6 内存调试 10.6.1 ElectnicFence函数库 10.6.2 valgrind 10.7 小结</span><br><span class="line"></span><br><span class="line"> 第11章 进程和信号 11.1 什么是进程 11.2 进程的结构 11.2.1 进程表 11.2.2 查看进程 11.2.3 系统进程 11.2.4 进程调度 11.3 启动新进程 11.3.1 等待一个进程 11.3.2 僵尸进程 11.3.3 输入和输出重定向 11.3.4 线程 11.4 信号 11.4.1 发送信号 11.4.2 信号集 11.5 小结</span><br><span class="line"></span><br><span class="line"> 第12章 POSlX线程 12.1 什么是线程 12.2 线程的优点和缺点 12.3 第一个线程程序 12.4 同时执行 12.5 同步 12.5.1 用信号量进行同步 12.5.2 用互斥量进行同步 …… 第13章 进程音通信：管道 第14章 信号量、共享内存和消息队列 第15章 套接字 第16章 用GTK+进行+GNOME编程 第17章 用Qt进行KDE编程 第18章 Linux标准</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B003Q97NPC/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B003Q97NPC&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51L1Hqh7vNL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B003M92AJK/" rel="prev" title="SEO必知必会51技">
+      <i class="fa fa-chevron-left"></i> SEO必知必会51技
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B003LPO4KS/" rel="next" title="Python Cookbook(第2版)中文版">
+      Python Cookbook(第2版)中文版 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

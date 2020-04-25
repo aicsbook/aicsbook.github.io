@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： JavaScript高级应用与实践作者信息： 作者: 浏览全部评论  [ 中文 pdf ] 简单介绍《JavaScript高级应用与实践》适合于不同层次的JavaScript语言爱好者和技术人员学习和参考。 目录12345678910111213141516171819202122232425262728第1章  快速入门1.1  阅读本书方式1.1.1  融合注释，会说话的代码1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript高级应用与实践">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B0018NT7D4/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： JavaScript高级应用与实践作者信息： 作者: 浏览全部评论  [ 中文 pdf ] 简单介绍《JavaScript高级应用与实践》适合于不同层次的JavaScript语言爱好者和技术人员学习和参考。 目录12345678910111213141516171819202122232425262728第1章  快速入门1.1  阅读本书方式1.1.1  融合注释，会说话的代码1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51RkF1GXhVL._SL500_AA300_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.907Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51RkF1GXhVL._SL500_AA300_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B0018NT7D4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JavaScript高级应用与实践 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B0018NT7D4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript高级应用与实践
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： JavaScript高级应用与实践<br>作者信息： 作者: 浏览全部评论  [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《JavaScript高级应用与实践》适合于不同层次的JavaScript语言爱好者和技术人员学习和参考。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">第1章  快速入门</span><br><span class="line">1.1  阅读本书方式</span><br><span class="line">1.1.1  融合注释，会说话的代码</span><br><span class="line">1.1.2  交叉阅读</span><br><span class="line">1.1.3  水到渠成</span><br><span class="line">1.1.4  环境</span><br><span class="line">1.2  规范和约定</span><br><span class="line">1.2.1  注释约定</span><br><span class="line">1.2.2  命名约定</span><br><span class="line">1.2.3  辅助调试编码约定</span><br><span class="line">1.3  本书公共代码（Jcore.js）导读</span><br><span class="line">1.4  本书常见代码语法预阅</span><br><span class="line">1.4.1  逗号运算符号</span><br><span class="line">1.4.2  JavaScript独特的逻辑或、逻辑与运算符号</span><br><span class="line">1.5  不推荐的中文命名方式</span><br><span class="line">1.6  本书的写作思想 </span><br><span class="line"></span><br><span class="line"> 第2章 Function扩展和性能 2.1 关于Function的设计原则建议 2.2 arguments，length 2.3 toString 方法和valueOf 方法 2.4 Function的toString还有个妙用 2.5 绑定技术 HTML DOM对象事件动态行为绑定 2.6 JavaScript中的this( )是什么 2.7 绑定NaN、Infinity、null、undefined给对象，this会是什么 2.8 Function对象的apply 和call的区别 2.9 不用new的时候应该注意什么 2.9.1 一般直接调用方式 2.9.2 new调用 2.9.3 apply方式 2.9.4 call方式 2.9.5 本书推荐的巧妙方式 2.10 如何给你的function增加[ ]运算符号的支持Web项目中HTML DOM的应用 2.11 如何让你的this加、减、乘、除 2.12 回调函数之函数“类型” 流行中的AJAX里的回调应用 2.13 打造方便的调试函数 2.14 匿名函数 2.15 匿名函数的递归调用 2.16 继承后如何在函数中访问Super的简化设计 2.17 静态函数、属性的访问问题 2.18 总结</span><br><span class="line"></span><br><span class="line"> 第3章 Object扩展和性能及Web应用之神兵利器 3.1 typeof和constructor总结 3.2 高性能初始化 3.2.1 和普通Object初始化的性能比较 3.2.2 与function的比较 3.3 当心，这里的bind对我无用 3.4 完美之绑定(bind)将通用于Object、Function和其他对象，同时支持给Object增加［　］运算符号 3.5 通用属性复制 3.6 “继承” 3.7 多态 3.8 推荐的对象模型方法[优点：一个名称空间，更便于内存才清理和释放] 3.9 Json引入 3.9.1 什么是Json 3.9.2 Json串形化有什么用途 3.9.3 我为Json修正了什么 3.9.4 Json使用举例 3.10 toString 3.11 融合HTML DOM支持的完美通用对象迭代器模型设计之each 3.12 通用迭代模式的元素属性的获取和设置Style外观样式对象的获取和设置设计 3.13 通用对象排序模型设计之继承Array的相关功能 3.14 isPrototypeOf和hasOwnProperty 3.14.1 isPrototypeOf 3.14.2 hasOwnProperty 3.15 给所有JavaScript对象扩展属性、方法 3.16 打造“完美中的完美”的HTML DOM对象XPath对象选择器 115 3.16.1 XPath对象选择器架构说明 3.16.2 模式匹配函数定义说明 3.16.3 基本正则表达式模式详解 3.16.4 可扩展的转义及可扩展模块说明 3.16.5 选择后的对象集合如何支持HTML事件的动态绑定 125 3.16.6 实现代码及使用举例 3.17 不要被怪物吓倒：0.1234[“each”]、true[“each”] 152 3.18 泛型设计之保留四舍五入保留小数：toFixed 3.19 addClass、removeClass、toggleClass、mstgcls、remove的扩展设计</span><br><span class="line"></span><br><span class="line"> 第4章 Array扩展和独辟蹊径的应用 4.1 高性能初始化 4.2 数字下标 4.3 文本下标 4.4 “特殊”数字下标揭秘 4.5 对象下标揭秘 4.6 迭代器 4.7 扩展Array及应用 4.7.1 Max、Min的扩展 4.7.2 indexOf、lastIndexOf的扩展 4.7.3 some、every、filter、forEach、map的扩展 4.7.4 克隆的实现 4.8 Array函数功能增强 4.8.1 push的增强，名为ps 4.8.2 pop的增强，名为pp 4.8.3 shift的增强，名为sft 4.8.4 unshift的增强，名为usft 4.8.5 splice的增强，名为splc 4.9 给自己定义的对象增加[ ]运算符号</span><br><span class="line"></span><br><span class="line"> 第5章 String的扩展 5.1 如何将自定义对象直接赋予HTML DOM的innerText、innerHTML、value和其他属性 5.2 扩展自己的append方法 5.3 也谈StringBuffer 5.3.1 StringBuffer的实现 5.3.2 和String扩展的append性能比较 5.4 扩展自己的trim、trimAll、trimL、trimR 5.5 兼容Java时equals的扩展 5.6 把replace玩到颠峰 5.6.1 稍微高级的玩法设计 5.6.2 最迷惑人的隐匿方式设计 5.7 转换汉字及双字节字符为Unicode 5.7.1 Unicode编码 5.7.2 Unicode解码 5.8 加密我的String加、解密的实现 5.9 Web常用验证功能集 5.9.1 身份证的验证和自动升位 5.9.2 E-mail的验证 5.9.3 数字范围验证及在Web开发中的应用、输入限制的设计 214 5.9.4 Web开发中IP地址的输入限制和验证 5.10 类似Java里的参数功能：toString的&#123;1 ……n&#125;参数模式的合成 5.11 String的Left、Right、Mid扩展</span><br><span class="line"></span><br><span class="line"> 第6章 For的优化和性能提升 6.1 使用For…in应该注意什么 6.2 do&#123;……&#125; while()和for的性能比较 6.3 匿名函数对象对性能的提升 6.4 倒着循环对性能的提升 6.5 最佳性能for的设计 6.6 本章for各种实现性能综合比较 第7章 window对象的性能应用</span><br><span class="line"></span><br><span class="line"> 第8章 Form开发经验之谈 8.1 通用获取输入对象元素value的设计 8.2 通用设置输入对象元素value的设计 8.3 异步支持设计 8.4 动态支持上传N个文件的封装设计 8.5 Web开发中自定义输入对象组和表达式求值的设计 309 8.6 Web开发中人性化输入值长度光标跟踪提示 8.7 如何在必输项没有输入值前其相关按钮、对象不可以操作 313 8.8 如何令表格中没有选择radio、checkbox输入对象的时候相应的 8.8 按钮、相应的对象不可以操作 8.9 AJAX让你的网站支持多语言——多语言的google Translate AJAX 8.8 的封装 …… 第15章 JavaScript在WebDAV中的应用 附录A 附录B 参考文献</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B0018NT7D4/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B0018NT7D4&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51RkF1GXhVL._SL500_AA300_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B001D2C91M/" rel="prev" title="Python源码剖析 深度探索动态语言核心技术">
+      <i class="fa fa-chevron-left"></i> Python源码剖析 深度探索动态语言核心技术
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B001BTRFDO/" rel="next" title="JavaScript王者归来">
+      JavaScript王者归来 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

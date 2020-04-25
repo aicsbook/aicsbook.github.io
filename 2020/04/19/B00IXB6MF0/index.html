@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 易学Python作者信息： 作者: Anthony Briggs [ 英文 pdf ] 简单介绍Python凭借其迅速和高效的特点虏获了程序员的芳心，Python编程语言的学习也应该具备迅速和高效的特点。《易学Python》正是以这样一种方式，通过让读者自行编写程序来学习Python的基本概念，以及一些高级概念和编程新风格的简单介绍。简单易学  即使读者之前没有写过一行代码，也可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="易学Python">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00IXB6MF0/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 易学Python作者信息： 作者: Anthony Briggs [ 英文 pdf ] 简单介绍Python凭借其迅速和高效的特点虏获了程序员的芳心，Python编程语言的学习也应该具备迅速和高效的特点。《易学Python》正是以这样一种方式，通过让读者自行编写程序来学习Python的基本概念，以及一些高级概念和编程新风格的简单介绍。简单易学  即使读者之前没有写过一行代码，也可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/519JRseVEBL._SL500_AA300_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.957Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/519JRseVEBL._SL500_AA300_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00IXB6MF0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>易学Python | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00IXB6MF0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          易学Python
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 易学Python<br>作者信息： 作者: Anthony Briggs [ 英文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>Python凭借其迅速和高效的特点虏获了程序员的芳心，Python编程语言的学习也应该具备迅速和高效的特点。《易学Python》正是以这样一种方式，通过让读者自行编写程序来学习Python的基本概念，以及一些高级概念和编程新风格的简单介绍。简单易学  即使读者之前没有写过一行代码，也可以迅速写出真正的Python应用程序。案例优秀  本书每章都有新花样，其中包括游戏、Django Web开发、数据库等。图文并茂  使用大量的卡通插图和平实的写作风格，来引导读者学习Python。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">目　录 </span><br><span class="line"></span><br><span class="line"> 第1章　为何学习Python　1 1.1　学习编程　2 1.1.1　告诉计算机做什么　2 1.1.2　编程是创意　4 1.1.3　编程是设计　4 1.2　是什么让Python如此杰出　5 1.2.1　Python简单易学　5 1.2.2　Python是真正的语言　5 1.2.3　Python“开箱即用”　6 1.2.4　Python社区规模庞大　6 1.3　在Windows系统上安装Python　7 1.3.1　安装Python　7 1.3.2　在Windows系统上运行Python程序　9 1.3.3　从命令行运行Python程序　11 1.4　Linux　14 1.4.1　在Linux系统上安装Python　14 1.4.2　Linux GUI　14 1.4.3　Linux命令行　16 1.5　Macintosh　16 1.5.1　更新Shell配置文件　17 1.5.2　设置默认应用程序　17 1.6　排除故障　18 1.6.1　语法错误　18 1.6.2　文件扩展名不对(Windows)　19 1.6.3　Python的安装位置不对(Linux)　19 1.7　文本编辑器和IDE　19 1.8　总结　20</span><br><span class="line"></span><br><span class="line"> 第2章　Hunt the Wumpus　21 2.1　程序是什么　22 2.1.1　在屏幕上显示　23 2.1.2　使用变量存储信息　23 2.1.3　询问玩家想做什么　24 2.1.4　做出决策　24 2.1.5　循环　25 2.1.6　函数　26 2.2　您的第一个程序　27 2.2.1　Hunt the Wumpus的第一个版本　27 2.2.2　调试　29 2.3　捣鼓程序　29 2.3.1　调整洞穴数量　30 2.3.2　更友好的wumpus　30 2.3.3　多个wumpus　30 2.4　创建洞穴　31 2.4.1　列表　31 2.4.2　for循环　33 2.4.3　构造洞穴网络　33 2.5　修复微妙的错误　35 2.5.1　问题　36 2.5.2　解决方案　36 2.5.3　打造连通的洞穴网络　36 2.6　使用函数让代码更整洁　39 2.6.1　函数的基本知识　39 2.6.2　变量作用域　40 2.6.3　共享状态　41 2.7　使用函数组织游戏Hunt the Wumpus　42 2.7.1　与洞穴交互　42 2.7.2　创建洞穴　43 2.7.3　与玩家交互　44 2.7.4　程序的其他部分　45 2.8　弓和箭　47 2.9　进一步美化　49 2.10　接下来如何做　51 2.10.1　蝙蝠和深渊　52 2.10.2　让Wumpus移动　52 2.10.3　不同的洞穴网络　52 2.11　总结　52</span><br><span class="line"></span><br><span class="line"> 第3章　与外部交互　53 3.1　开箱即用：Python库　54 3.1.1　Python标准库　54 3.1.2　其他库　54 3.1.3　使用库　55 3.1.4　库到底是什么　55 3.2　另一种提问方式　58 3.2.1　使用命令行参数　58 3.2.2　使用模块sys　58 3.3　读写文件　59 3.3.1　路径和目录(我的文件在哪里)　59 3.3.2　路径　61 3.3.3　打开文件　61 3.4　比较文件　63 3.4.1　采集文件的指纹　63 3.4.2　将文件的指纹存储到字典中　64 3.5　综合应用　65 3.6　测试程序　68 3.7　改进脚本　70 3.7.1　按顺序排列结果　70 3.7.2　比较目录　72 3.8　接下来如何做　73 3.9　总结　73</span><br><span class="line"></span><br><span class="line"> 第4章　组织有序　74 4.1　规范程序　74 4.2　如何确定程序是正确的　75 4.2.1　手工测试太烦　75 4.2.2　功能测试　76 4.2.3　单元测试：让计算机去做　76 4.2.4　测试驱动的开发　76 4.3　编写程序　77 4.4　整合程序　80 4.4.1　测试用户界面　80 4.4.2　用输入做什么　81 4.4.3　执行命令　82 4.4.4　运行程序　85 4.5　状况评估　85 4.5.1　接下来做什么　86 4.5.2　我既繁忙又重要　88 4.5.3　列表解析　89 4.5.4　发现bug　92 4.6　存储待办事项清单　95 4.7　编辑和删除　98 4.7.1　修复一个小问题　99 4.7.2　删除待办事项　101 4.7.3　编辑待办事项　103 4.8　接下来如何做　106 4.8.1　帮助命令　106 4.8.2　撤销　106 4.8.3　不同的界面　107 4.8.4　时间管理和估算　107 4.8.5　研究一个单元测试框架　107 4.9　总结　107</span><br><span class="line"></span><br><span class="line"> 第5章　面向业务的编程　109 5.1　让程序相互交流　110 5.1.1　CSV来救场　110 5.1.2　其他格式　111 5.2　准备工作　112 5.2.1　安装Beautiful Soup　112 5.2.2　安装Firefox和Firebug　113 5.2.3　查看网页　113 5.3　使用Python下载网页　115 5.3.1　提取想要的数据　116 5.3.2　进一步提取数据　117 5.3.3　网页抓取的注意事项　119 5.4　写入CSV文件　119 5.5　通过电子邮件发送CSV文件　121 5.5.1　电子邮件的结构　121 5.5.2　创建电子邮件　122 5.5.3　发送电子邮件　123 5.5.4　其他电子邮件模块　124 5.6　一个简单脚本——哪些地方可能出问题　125 5.6.1　未连接到网络　126 5.6.2　数据无效　126 5.6.3　数据出乎意料　126 5.6.4　无法写入数据　126 5.6.5　无法访问邮件服务器　126 5.6.6　您不必修复这些问题　127 5.7　如何处理有问题的脚本　127 5.7.1　交流　127 5.7.2　对故障的承受力　127 5.7.3　一开始就做好　128 5.7.4　失败要赶早，还要大张旗鼓　128 5.7.5　双保险　128 5.7.6　压力测试和性能测试　129 5.7.7　以后再试　129 5.8　异常　131 5.8.1　为何使用异常　131 5.8.2　程序崩溃是什么意思　131 5.8.3　捕获异常　134 5.8.4　模块traceback　135 5.9　接下来如何做　136 5.10　总结　136</span><br><span class="line"></span><br><span class="line"> 第6章　类与面向对象编程　137 6.1　类是什么　137 6.1.1　类包含数据　138 6.1.2　类是类型　138 6.1.3　类的工作原理　138 6.1.4　您的第一个类　138 6.2　面向对象设计　140 6.3　玩家输入　143 6.4　财宝　146 6.4.1　方法该放在什么地方　146 6.4.2　寻宝　147 6.4.3　捡宝　148 6.5　在洞穴迷宫中漫步　151 6.6　怪物出没　156 6.6.1　创建怪物　156 6.6.2　一些面向对象的技巧　157 6.6.3　组合起来　158 6.7　危险与刺激　161 6.8　接下来如何做　163 6.8.1　增加怪物和财宝　164 6.8.2　扩展格斗方式和物品　164 6.8.3　添加更多冒险元素　164 6.8.4　尝试动词和名词　164 6.8.5　研究类的高级功能　164 6.9　总结　164</span><br><span class="line"></span><br><span class="line"> 第7章　高级技术　166 7.1　面向对象　166 7.1.1　混合类　166 7.1.2　super()及注意事项　169 7.2　定制类　169 7.2.1　getattr　170 7.2.2　setattr　170 7.2.3　getattribute　172 7.2.4　特性(property)　173 7.2.5　模拟其他类型　175 7.3　生成器和迭代器　177 7.3.1　迭代器　177 7.3.2　生成器　179 7.3.3　生成器表达式　180 7.4　使用迭代器　180 7.4.1　读文件　181 7.4.2　处理日志行　183 7.4.3　提取字段　184 7.5　函数式编程　188 7.5.1　副作用　188 7.5.2　map和filter　188 7.5.3　传递和返回函数　189 7.6　接下来如何做　191 7.7　总结　191</span><br><span class="line"></span><br><span class="line"> 第8章　Django　192 8.1　使用Django编写Web应用　193 8.1.1　安装Django　193 8.1.2　设置Django　193 8.2　编写应用　197 8.2.1　最简单的待办事项清单　197 8.2.2　使用模板　198 8.3　使用模型　201 8.3.1　设置数据库　201 8.3.2　创建模型　201 8.3.3　Django模块admin　203 8.3.4　添加管理界面　204 8.4　使用数据　206 8.4.1　使用模型　206 8.4.2　设计URL　208 8.4.3　提交表单　210 8.4.4　处理待办事项　213 8.5　最后的优化　216 8.6　接下来如何做　217 8.7　总结　217</span><br><span class="line"></span><br><span class="line"> 第9章　使用Pyglet开发游戏　218 9.1　安装Pyglet　218 9.2　起步　220 9.3　简单的宇宙飞船　222 9.3.1　让事情发生　224 9.3.2　回到学校：牛顿第一定律及矢量　226 9.4　引力　229 9.4.1　计算引力　229 9.4.2　小心行星　232 9.5　不能缺了枪炮　234 9.6　邪恶的外星人　237 9.7　接下来如何做　242 9.7.1　添加新元素　242 9.7.2　改成别的类型　242 9.7.3　重构　243 9.7.4　获取反馈　243 9.8　总结　243</span><br><span class="line"></span><br><span class="line"> 第10章　Twisted网络编程　244 10.1　安装Twisted　244 10.2　第一个应用程序　245 10.3　MUD初步　249 10.4　让游戏更有趣　254 10.4.1　可恨的怪物　254 10.4.2　回到聊天服务器　256 10.5　要求玩家登录　260 10.5.1　探索不熟悉的代码　260 10.5.2　整合　261 10.5.3　编写自定义状态机　265 10.6　保存玩家状态　269 10.7　接下来如何做　273 10.8　总结　273</span><br><span class="line"></span><br><span class="line"> 第11章　再谈Django　274 11.1　身份验证　274 11.1.1　登录　275 11.1.2　添加用户　277 11.2　只列出当前用户的待办事项　278 11.2.1　修复数据库　279 11.2.2　言归正传　282 11.2.3　滴水不漏　283 11.2.4　更新接口　284 11.3　测试　285 11.3.1　单元测试　285 11.3.2　功能测试　287 11.3.3　运行测试　288 11.4　图像和样式　289 11.4.1　使用Django提供媒体内容　289 11.4.2　由另一个服务器提供媒体　291 11.4.3　最后一步　292 11.5　接下来如何做　292 11.6　总结　293</span><br><span class="line"></span><br><span class="line"> 第12章　接下来如何做　294 12.1　再阅读一些代码　294 12.1.1　Python标准库　295 12.1.2　Python秘诀　295 12.1.3　开源项目　295 12.1.4　加入Python社区　295 12.1.5　加入邮件列表　295 12.1.6　寻找当地用户组　296 12.1.7　给开源项目帮忙　296 12.2　解决自己遇到的问题　296 12.3　其他Python库　297 12.3.1　代码剖析　297 12.3.2　日志　297 12.3.3　子进程和多任务　297 12.3.4　更复杂的分析　297 12.3.5　PIL和图像处理　298 12.3.6　XML、ElementTree和JSON　298 12.4　总结　298</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00IXB6MF0/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00IXB6MF0&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/519JRseVEBL._SL500_AA300_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00LO3SVSA/" rel="prev" title="周鸿祎自述:我的互联网方法论">
+      <i class="fa fa-chevron-left"></i> 周鸿祎自述:我的互联网方法论
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00KMR129E/" rel="next" title="UNIX环境高级编程(第3版)(英文版)">
+      UNIX环境高级编程(第3版)(英文版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

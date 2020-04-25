@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： iPhone开发秘籍(第2版)作者信息： 作者: 萨丹(Erica Sadun) [ 中文 pdf ] 简单介绍《iPhone开发秘籍(第2版)》：iPhone开发的重量级参考书揭示官方文档未详述的细节代码示例清晰易懂想要为iPhone和iPod touch构建应用吗？是否已投身iPhone应用开发之列，并想迅速提升自己的功力？《iPhone开发秘籍(第2版)》将为你提供专家级的指">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iPhone开发秘籍(第2版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B004BA21TI/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： iPhone开发秘籍(第2版)作者信息： 作者: 萨丹(Erica Sadun) [ 中文 pdf ] 简单介绍《iPhone开发秘籍(第2版)》：iPhone开发的重量级参考书揭示官方文档未详述的细节代码示例清晰易懂想要为iPhone和iPod touch构建应用吗？是否已投身iPhone应用开发之列，并想迅速提升自己的功力？《iPhone开发秘籍(第2版)》将为你提供专家级的指">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/5173KmpKyHL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.809Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="ios">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/5173KmpKyHL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B004BA21TI/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>iPhone开发秘籍(第2版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B004BA21TI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          iPhone开发秘籍(第2版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： iPhone开发秘籍(第2版)<br>作者信息： 作者: 萨丹(Erica Sadun) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《iPhone开发秘籍(第2版)》：iPhone开发的重量级参考书揭示官方文档未详述的细节代码示例清晰易懂想要为iPhone和iPod touch构建应用吗？是否已投身iPhone应用开发之列，并想迅速提升自己的功力？《iPhone开发秘籍(第2版)》将为你提供专家级的指导，带你领略绝妙的代码示例！《iPhone开发秘籍(第2版)》在第一版的基础上进行了全面修订和大量扩充，当之无愧地成为iPhone开发的必备佳作。《iPhone开发秘籍(第2版)》面向已经熟悉ObjectiVe-C、Xcode和C0coa框架的中高级iPhone和Mac开发人员。并简单介绍TObjective-C、Xcode和Inte rface Builder-以便没有这些语言（或工具）使用经验的开发人员也能够快速融入Mac／iPhone世界。《iPhone开发秘籍(第2版)》这一版新增内容主要包括：使用iPhone SDK设计和定制界面使用手势、触摸和其他高级界面功能充分挖掘表、视图、视图控制器和动画的潜力使用进度条、状态栏更新和其他指示器使用推送通知功能发送消息用MediaKit播放音频与视频使用地址簿、Core Locatjon和传感器连接网络和Web服务使MapKit~Google Mobile Maps嵌入地图使用GameKit构建多人游戏使用Core Data构建数据驱动的应用使用StoreKit开发应用内购买的功能与服务使用辅助功能构建残障人士可访问的应用</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">第1章 iphone sdk简介 1</span><br><span class="line">1.1 iphone开发人员计划 1</span><br><span class="line">1.1.1 在线开发人员计划 1</span><br><span class="line">1.1.2 标准开发人员计划 2</span><br><span class="line">1.1.3 企业开发人员计划 2</span><br><span class="line">1.1.4 大学开发人员计划 2</span><br><span class="line">1.1.5 注册 2</span><br><span class="line">1.2 开始 2</span><br><span class="line">1.2.1 下载sdk 2</span><br><span class="line">1.2.2 开发设备 3</span><br><span class="line">1.2.3 模拟器的限制 4</span><br><span class="line">1.2.4 tethering 4</span><br><span class="line">1.3 理解型号差异 5</span><br><span class="line">1.3.1 摄像头 5</span><br><span class="line">1.3.2 扬声器和麦克风 5</span><br><span class="line">1.3.3 手机 6</span><br><span class="line">1.3.4 core location的差异 6</span><br><span class="line">1.3.5 振动支持和接近传感器 6</span><br><span class="line">1.3.6 处理器速度 6</span><br><span class="line">1.3.7 opengl es 7</span><br><span class="line">1.4 平台限制 7</span><br><span class="line">1.4.1 存储限制 7</span><br><span class="line">1.4.2 数据访问限制 7</span><br><span class="line">1.4.3 内存限制 7</span><br><span class="line">1.4.4 交互限制 8</span><br><span class="line">1.4.5 电量限制 8</span><br><span class="line">1.4.6 应用程序限制 8</span><br><span class="line">1.4.7 用户行为限制 9</span><br><span class="line">1.5 sdk限制 9</span><br><span class="line">1.6 使用开发人员门户 9</span><br><span class="line">1.6.1 建立团队 10</span><br><span class="line">1.6.2 请求证书 10</span><br><span class="line">1.6.3 注册设备 11</span><br><span class="line">1.6.4 注册应用程序标识符 11</span><br><span class="line">1.6.5 设置 12</span><br><span class="line">1.7 组建iphone项目 12</span><br><span class="line">1.7.1 iphone应用程序的主干 13</span><br><span class="line">1.7.2 main.m 14</span><br><span class="line">1.7.3 应用程序委托 15</span><br><span class="line">1.7.4 视图控制器 16</span><br><span class="line">1.7.5 关于本书示例代码的说明 16</span><br><span class="line">1.8 iphone应用程序组件 17</span><br><span class="line">1.8.1 应用程序文件夹层次结构 17</span><br><span class="line">1.8.2 可执行文件 17</span><br><span class="line">1.8.3 info.plist文件 17</span><br><span class="line">1.8.4 图标和默认图像 19</span><br><span class="line">1.8.5 nib文件 20</span><br><span class="line">1.8.6 应用程序束中不存在的文件 20</span><br><span class="line">1.8.7 ipa归档 20</span><br><span class="line">1.8.8 沙盒 20</span><br><span class="line">1.9 编程范例 21</span><br><span class="line">1.9.1 面向对象编程 21</span><br><span class="line">1.9.2 模型-视图-控制器 22</span><br><span class="line">1.10 小结 27 </span><br><span class="line"></span><br><span class="line"> 第2章 构建第一个项目 28 2.1 创建新项目 28 2.2 用模板构建hello world应用程序 29 2.2.1 创建新项目 29 2.2.2 project窗口 30 2.2.3 detail窗格 31 2.2.4 编辑器窗口 32 2.2.5 查看项目 32 2.2.6 打开视图控制器.xib 33 2.2.7 编辑视图 34 2.2.8 运行应用程序 34 2.3 使用模拟器 35 2.4 极简单的hello world 36 2.4.1 浏览sdk api 38 2.4.2 将interface builder文件转换成objective-c代码 39 2.5 使用调试器 41 2.5.1 设置断点 41 2.5.2 打开调试器 41 2.5.3 运行程序 41 2.5.4 查看标签 42 2.5.5 设置另一个断点 42 2.5.6 使用文本消息 43 2.5.7 移动clear log按钮 43 2.5.8 启用zombie 44 2.6 内存管理 45 2.6.1 泄漏 45 2.6.2 缓存 45 2.7 秘诀：使用instruments检测内存泄漏 46 2.8 秘诀：使用instruments监视缓存对象的内存分配 48 2.9 使用clang静态分析器 50 2.10 针对iphone进行构建 51 2.10.1 安装开发配置 51 2.10.2 编辑应用程序标识符 51 2.10.3 设置code signing identity 52 2.10.4 编译和运行hello world应用程序 53 2.10.5 对编译后的应用程序签名 53 2.11 从xcode到iphone：organizer interface 54 2.11.1 projects and sources列表 54 2.11.2 devices列表 55 2.11.3 iphone development tools列表 55 2.11.4 summary选项卡 55 2.11.5 console选项卡 56 2.11.6 crash logs选项卡 56 2.11.7 screenshot选项卡 57 2.12 使用编译器指令 57 2.12.1 获得特定于iphone的定义 58 2.12.2 运行时检查 58 2.12.3 记忆标记 59 2.12.4 折叠方法 60 2.13 针对发布进行构建 60 2.14 清除构建 61 2.14.1 针对app store进行编译 62 2.14.2 调试app store上传 63 2.15 针对临时发布进行构建 64 2.15.1 注册设备 64 2.15.2 构建临时配置 64 2.15.3 在项目中添加授权文件 64 2.15.4 在设置中添加授权文件 64 2.15.5 构建临时应用程序 65 2.15.6 为临时发布添加图片 65 2.16 定制xcode标识 66 2.17 创建自定义xcode模板 66 2.17.1 覆盖com.yourcompany 67 2.17.2 构建其他模板 67 2.18 并排查看代码 68 2.19 小结 69</span><br><span class="line"></span><br><span class="line"> 第3章 objective-c训练营 70 3.1 objective-c编程语言 70 3.2 类与对象 70 3.2.1 创建对象 72 3.2.2 内存分配 72 3.2.3 释放内存 73 3.3 方法、消息和选择器 73 3.3.1 动态类型检查 74 3.3.2 继承方法 75 3.3.3 声明方法 76 3.3.4 实现方法 76 3.3.5 类方法 78 3.3.6 快速枚举 78 3.4 类层次结构 79 3.5 日志信息 79 3.6 属性 81 3.6.1 点表示法 81 3.6.2 属性与内存管理 81 3.6.3 创建属性 82 3.6.4 创建自定义的取值方法和赋值方法 83 3.6.5 属性的特性 84 3.7 简单的内存管理 85 3.7.1 创建对象 85 3.7.2 创建自动释放的对象 86 3.7.3 自动释放对象的生命周期 87 3.7.4 保留自动释放的对象 87 3.7.5 已保留属性 87 3.7.6 高保留计数 89 3.7.7 创建对象的其他方式 90 3.7.8 释放对象 91 3.8 创建单例 93 3.9 类别（扩展类） 93 3.10 协议 94 3.10.1 定义协议 95 3.10.2 合并协议 95 3.10.3 增加回调 95 3.10.4 声明可选回调 96 3.10.5 实现可选回调 96 3.10.6 符合协议 97 3.11 foundation类 97 3.11.1 字符串 98 3.11.2 数字与日期 101 3.11.3 集合 103 3.12 补充内容：消息转发 107 3.12.1 实现消息转发 108 3.12.2 使用转发消息 109 3.12.3 思路整理 109 3.12.4 超级简单的转发 110 3.13 小结 110</span><br><span class="line"></span><br><span class="line"> 第4章 设计界面 111 4.1 uiview和uiwindow 111 4.1.1 显示数据的视图 111 4.1.2 做出选择的视图 112 4.1.3 控件 112 4.1.4 表格和拾取器 113 4.1.5 栏 113 4.1.6 进度与活动 114 4.2 uiviewcontroller 114 4.2.1 uiviewcontroller 114 4.2.2 uinavigationcontroller 115 4.2.3 uitabbarcontroller 115 4.2.4 表格控制器 115 4.2.5 地址簿控制器 116 4.2.6 uiimagepickercontroller 116 4.2.7 邮件撰写 116 4.2.8 gkpeerpickercontroller 116 4.2.9 media player控制器 117 4.3 视图设计几何学 117 4.3.1 状态栏 117 4.3.2 导航栏、工具栏和选项卡栏 118 4.3.3 键盘和拾取器 119 4.3.4 文本字段 120 4.3.5 uiscreen类 120 4.4 构建界面 120 4.5 实战演练：使用ib构建温度单位转换器 121 4.5.1 新建项目 121 4.5.2 添加媒体 121 4.5.3 interface builder 121 4.5.4 编辑导航栏 122 4.5.5 替换主视图 123 4.5.6 启用仿真元素 123 4.5.7 创建图像背景 123 4.5.8 添加标签和视图 123 4.5.9 测试界面 124 4.5.10 添加出口和动作 124 4.5.11 检查新类头 125 4.5.12 添加连接 126 4.5.13 获取紫色 126 4.5.14 定义转换方法 127 4.5.15 运行应用程序 127 4.6 实战演练：手动构建温度单位转换器界面 127 4.7 实战演练：创建混合转换器 130 4.7.1 清理基本模板 131 4.7.2 通过.xib添加新视图控制器类 131 4.7.3 设计界面 131 4.7.4 编辑视图控制器实现 132 4.7.5 编辑main.m 132 4.7.6 运行应用程序 133 4.8 实战演练：直接从代码加载.xib文件 133 4.8.1 清理.xib 134 4.8.2 更新loadview 134 4.9 针对旋转进行设计 134 4.10 启用旋转 135 4.11 自动调整大小 136 4.11.1 自动调整大小示例 136 4.11.2 评估自动调整大小选项 138 4.12 移动视图 138 4.13 交换视图 141 4.14 补充内容：6个有用的interface builder技巧 142 4.15 小结 143</span><br><span class="line"></span><br><span class="line"> 第5章 使用视图控制器 144 5.1 使用导航控制器开发 144 5.1.1 设置导航控制器 144 5.1.2 推入和弹出视图控制器 145 5.1.3 导航项类 145 5.1.4 模态演示 146 5.2 实用工具函数 146 5.3 秘诀：构建一个简单的双项菜单 147 5.4 秘诀：添加一个分段控件 149 5.5 秘诀：在视图控制器之间导航 150 5.6 秘诀：使用创意弹出选项 152 5.6.1 加载一个视图控制器数组 152 5.6.2 推入临时视图 152 5.7 秘诀：演示一个自定义模态信息视图 153 5.8 秘诀：选项卡栏 155 5.9 秘诀：记住选项卡状态 157 5.10 补充点：interface builder和选项卡栏控制器 160 5.11 小结 161</span><br><span class="line"></span><br><span class="line"> 第6章 组合视图和动画 162 6.1 视图层次结构 162 6.2 秘诀：建立视图层次结构树 163 6.3 秘诀：查询子视图 164 6.4 管理子视图 166 6.4.1 添加子视图 166 6.4.2 重新排序和删除子视图 166 6.4.3 视图回调 166 6.5 秘诀：标记和检索视图 167 6.6 秘诀：命名视图 168 6.7 视图的几何特征 172 6.7.1 框架 172 6.7.2 变换 173 6.7.3 坐标系 173 6.8 秘诀：视图框架的处理 173 6.8.1 调整大小 174 6.8.2 cgrect和中心 175 6.8.3 其他实用工具方法 176 6.9 秘诀：移动带边界的视图到任意位置 179 6.10 秘诀：视图变形 180 6.11 显示和交互特性 183 6.12 uiview动画 183 6.12.1 建立uiview动画块 184 6.12.2 动画回调 184 6.13 秘诀：视图的淡入和淡出 185 6.14 秘诀：视图交换 186 6.15 秘诀：翻转视图 187 6.16 秘诀：使用core animation transitions 188 6.17 秘诀：一般的core animation调用 190 6.18 翻页过渡 192 6.19 秘诀：当视图显示时反弹视图 193 6.20 秘诀：图像视图动画 195 6.21 补充内容：给视图添加映射 196 6.22 小结 199</span><br><span class="line"></span><br><span class="line"> 第7章 图像处理 201 7.1 秘诀：查找和加载图像 201 7.1.1 读取图像数据 201 7.1.2 加载图像文件 203 7.2 秘诀：从iphone相册访问照片 205 7.2.1 使用图像拾取器 206 7.2.2 添加2.x支持 206 7.2.3 添加3.1支持 206 7.2.4 拾取视频 206 7.3 秘诀：选择和定制相册中的图像 208 7.4 秘诀：拍摄照片并将照片写到相册上 210 7.5 秘诀：将图片保存到documents文件夹 212 7.6 秘诀：通过电子邮件发送图片 213 7.7 秘诀：捕捉定时拍摄的照片 214 7.8 秘诀：使用定制摄像头覆盖图 216 7.9 秘诀：在可滚动视图中显示图像 218 7.10 秘诀：创建多图像分页滚动 220 7.11 秘诀：从头开始创建新图像 221 7.12 秘诀：构建图像缩略图 224 7.13 调整照片方向 227 7.14 捕捉屏幕截图 229 7.15 秘诀：直接处理位图 230 7.15.1 在位图上下文中绘制 230 7.15.2 应用图像处理 232 7.15.3 图像处理实况 233 7.16 补充内容：灰度模式 236 7.17 小结 237</span><br><span class="line"></span><br><span class="line"> 第8章 手势和触摸 238 8.1 触摸 238 8.1.1 阶段 238 8.1.2 触摸和视图方法 239 8.1.3 触摸视图 239 8.1.4 多点触摸 240 8.2 秘诀：添加一个简单直观的操作界面 240 8.3 秘诀：限制移动 241 8.4 秘诀：测试触摸 242 8.5 秘诀：测试位图上的触摸 243 8.6 秘诀：向直接操作界面添加持久性 246 8.6.1 存储状态 246 8.6.2 恢复状态 247 8.7 秘诀：通过归档实现持久性 248 8.8 秘诀：添加撤销支持 250 8.8.1 创建撤销管理器 250 8.8.2 子视图撤销支持 250 8.8.3 使用导航栏 250 8.8.4 注册撤销 251 8.9 秘诀：添加晃动控制的撤销支持 252 8.9.1 添加撤销和恢复的动作名称 253 8.9.2 提供晃动以编辑支持 253 8.9.3 设置第一个响应程序 253 8.10 秘诀：屏幕绘图 254 8.11 秘诀：线的计算 255 8.12 秘诀：检测圆形 257 8.13 秘诀：多点触摸 259 8.14 秘诀：区分手势 260 8.15 补充内容：交互式调整大小和旋转 264 8.16 小结 269</span><br><span class="line"></span><br><span class="line"> 第9章 构建和使用控件 270 9.1 uicontrol类 270 9.1.1 控件种类 270 9.1.2 控件事件 270 9.2 按钮 272 9.3 在interface builder中添加按钮 273 9.3.1 样式 273 9.3.2 连接按钮与动作 274 9.3.3 假按钮 275 9.4 在xcode中构建定制按钮 275 9.5 多行按钮文本 277 9.6 向按钮添加动画元素 277 9.7 秘诀：为按钮响应制作动画效果 278 9.8 秘诀：使用开关 279 9.9 秘诀：添加定制滑块缩略图 281 9.9.1 定制uislider 281 9.9.2 增加效能 282 9.10 秘诀：创建一个可两次点击的分段控件 286 9.11 秘诀：子类化uicontrol 287 9.11.1 跟踪触摸 288 9.11.2 分派事件 288 9.12 秘诀：关闭uitextfield键盘 290 9.12.1 文本特征属性 291 9.12.2 其他文本字段属性 291 9.13 秘诀：关闭uitextview键盘 292 9.14 秘诀：构建更好的文本编辑器 294 9.15 秘诀：文本输入筛选 296 9.16 秘诀：添加一个页面指示器控件 298 9.17 秘诀：创建一个可定制的分页滚动条 300 9.18 秘诀：构建工具栏 304 9.18.1 在xcode中构建工具栏 305 9.18.2 工具栏提示 307 9.19 补充内容：智能标签 307 9.20 小结 308</span><br><span class="line"></span><br><span class="line"> 第10章 提醒用户 309 10.1 通过警告框直接与用户对话 309 10.1.1 构建简单的警告框 309 10.1.2 警告框委托 310 10.1.3 显示警告框 311 10.1.4 警告框类 311 10.2 秘诀：无按钮警告框 312 10.3 秘诀：使用run循环创建模态警告框 313 10.4 秘诀：要求用户进行文本输入 316 10.5 秘诀：对警告框视图使用可变参数 318 10.6 秘诀：展示简单的菜单 319 10.7 秘诀：在动作表中显示文本 321 10.8 “please wait”：向用户显示进度 321 10.9 秘诀：构建uiprogressview 322 10.10 构建定制覆盖图 324 10.11 秘诀：可点击的覆盖图 326 10.12 秘诀：可调整方向的滚动警告框 327 10.13 秘诀：使用网络活动指示器 329 10.14 秘诀：给应用程序贴标记 329 10.15 秘诀：简单的音频警告 330 10.15.1 系统声音 330 10.15.2 震动 331 10.15.3 警告 331 10.15.4 延迟 332 10.16 补充内容：展示音量警告框 333 10.17 小结 333</span><br><span class="line"></span><br><span class="line"> 第11章 创建和管理表格视图 335 第12章 使用gamekit和bonjour进行连接 391 第13章 网络连接 432 第14章 设备能力 471 第15章 音频、视频和媒体工具 488 第16章 推送通知 525 第17章 使用core location和mapkit 552 第18章 连接地址簿 578 第19章 使用core data 605 第20章 storekit：应用程序内购买 623 第21章 辅助功能以及其他iphone os服务 637 附录a info.plist密钥 653</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B004BA21TI/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B004BA21TI&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/5173KmpKyHL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ios/" rel="tag"># ios</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B004GCCAFQ/" rel="prev" title="程序员的思维修炼 开发认知潜能的九堂课">
+      <i class="fa fa-chevron-left"></i> 程序员的思维修炼 开发认知潜能的九堂课
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0046XB3HG/" rel="next" title="jQuery攻略">
+      jQuery攻略 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

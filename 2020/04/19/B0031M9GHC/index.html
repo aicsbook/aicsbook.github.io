@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 代码整洁之道作者信息： 作者: 马丁 (Robert C. Martin) [ 中文 pdf ] 简单介绍《代码整洁之道》：细节之中自有天地，整洁成就卓越代码尽管糟糕的代码也能运行，但如果代码不整洁，会使整个开发团队泥足深陷，写得不好的代码每年都要耗费难以计数的时间和资源。然而这种情况并非无法避免。著名软件专家RoberfC.Marlin在《代码整洁之道》中为你呈现出了革命性的视野">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码整洁之道">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B0031M9GHC/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 代码整洁之道作者信息： 作者: 马丁 (Robert C. Martin) [ 中文 pdf ] 简单介绍《代码整洁之道》：细节之中自有天地，整洁成就卓越代码尽管糟糕的代码也能运行，但如果代码不整洁，会使整个开发团队泥足深陷，写得不好的代码每年都要耗费难以计数的时间和资源。然而这种情况并非无法避免。著名软件专家RoberfC.Marlin在《代码整洁之道》中为你呈现出了革命性的视野">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41jiPKJEFDL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.161Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="软件工程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41jiPKJEFDL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B0031M9GHC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>代码整洁之道 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B0031M9GHC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          代码整洁之道
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 代码整洁之道<br>作者信息： 作者: 马丁 (Robert C. Martin) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《代码整洁之道》：细节之中自有天地，整洁成就卓越代码尽管糟糕的代码也能运行，但如果代码不整洁，会使整个开发团队泥足深陷，写得不好的代码每年都要耗费难以计数的时间和资源。然而这种情况并非无法避免。著名软件专家RoberfC.Marlin在《代码整洁之道》中为你呈现出了革命性的视野。Martin携同ObjectMetltor公司的同事，从他们有关整洁代码的最佳敏捷实践中提炼出软件技艺的价值观，以飨读者，让你成为更优秀的程序员——只要你着手研读《代码整洁之道》。阅读《代码整洁之道》需要你做些什么呢？你将阅读代码——大量代码。《代码整洁之道》促使你思考代码中何谓正确，何谓错误。更重要的是，《代码整洁之道》将促使你重新评估自己的专业价值观，以及对自己技艺的承诺。从《代码整洁之道》中可以学到：好代码和糟糕的代码之间的区别：如何编写好代码，如何将糟糕的代码转化为好代码：如何创建好名称、好函数、好对象和好类；如何格式化代码以实现其可读性的最大化：如何在不妨碍代码逻辑的前提下充分实现错误处理；如何进行单元测试和测试驱动开发。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">第1章　整洁代码　1</span><br><span class="line">1.1　要有代码　2</span><br><span class="line">1.2　糟糕的代码　2</span><br><span class="line">1.3　混乱的代价　3</span><br><span class="line">1.3.1　华丽新设计　4</span><br><span class="line">1.3.2　态度　4</span><br><span class="line">1.3.3　迷题　5</span><br><span class="line">1.3.4　整洁代码的艺术　5</span><br><span class="line">1.3.5　什么是整洁代码　6</span><br><span class="line">1.4　思想流派　10</span><br><span class="line">1.5　我们是作者　11</span><br><span class="line">1.6　童子军军规　12</span><br><span class="line">1.7　前传与原则　12</span><br><span class="line">1.8　小结　12</span><br><span class="line">1.9　文献　13 </span><br><span class="line"></span><br><span class="line"> 第2章　有意义的命名　15 2.1　介绍　15 2.2　名副其实　16 2.3　避免误导　17 2.4　做有意义的区分　18 2.5　使用读得出来的名称　19 2.6　使用可搜索的名称　20 2.7　避免使用编码　21 2.7.1　匈牙利语标记法　21 2.7.2　成员前缀　21 2.7.3　接口和实现　22 2.8　避免思维映射　22 2.9　 类名　23 2.10　方法名　23 2.11　别扮可爱　23 2.12　每个概念对应一个词　24 2.13　别用双关语　24 2.14　使用解决方案领域名称　25 2.15　使用源自所涉问题领域的名称　25 2.16　添加有意义的语境　25 2.17　不要添加没用的语境　27 2.18　最后的话　27</span><br><span class="line"></span><br><span class="line"> 第3章　函数　29 3.1　短小　32 3.2　只做一件事　33 3.3　每个函数一个抽象层级　34 3.4　switch语句　35 3.5　使用描述性的名称　36 3.6　函数参数　37 3.6.1　一元函数的普遍形式　38 3.6.2　标识参数　38 3.6.3　二元函数　38 3.6.4　三元函数　39 3.6.5　参数对象　39 3.6.6　参数列表　40 3.6.7　动词与关键字　40 3.7　无副作用　40 3.8　分隔指令与询问　42 3.9　使用异常替代返回错误码　42 3.9.1　抽离Try&#x2F;Catch代码块　43 3.9.2　错误处理就是一件事　44 3.9.3　Error.java依赖磁铁　44 3.10　别重复自己　44 3.11　结构化编程　45 3.12　如何写出这样的函数　45 3.13　小结　45 3.14　SetupTeardownIncluder程序　46 3.15　文献　48</span><br><span class="line"></span><br><span class="line"> 第4章　注释　49 4.1　注释不能美化糟糕的代码　50 4.2　用代码来阐述　51 4.3　好注释　51 4.3.1　法律信息　51 4.3.2　提供信息的注释　51 4.3.3　对意图的解释　52 4.3.4　阐释　53 4.3.5　警示　53 4.3.6　TODO注释　54 4.3.7　放大　54 4.3.8　公共API中的Javadoc　55 4.4　坏注释　55 4.4.1　喃喃自语　55 4.4.2　多余的注释　56 4.4.3　误导性注释　58 4.4.4　循规式注释　58 4.4.5　日志式注释　59 4.4.6　废话注释　59 4.4.7　可怕的废话　61 4.4.8　能用函数或变量时就别用注释　62 4.4.9　位置标记　62 4.4.10　括号后面的注释　62 4.4.11　归属与署名　63 4.4.12　注释掉的代码　63 4.4.13　HTML注释　64 4.4.14　非本地信息　64 4.4.15　信息过多　65 4.4.16　不明显的联系　65 4.4.17　函数头　66 4.4.18　非公共代码中的Javadoc　66 4.4.19　范例　66 4.5　文献　69</span><br><span class="line"></span><br><span class="line"> 第5章　格式　71 5.1　格式的目的　72 5.2　垂直格式　72 5.2.1　向报纸学习　73 5.2.2　概念间垂直方向上的区隔　73 5.2.3　垂直方向上的靠近　74 5.2.4　垂直距离　75 5.2.5　垂直顺序　79 5.3　横向格式　79 5.3.1　水平方向上的区隔与靠近　80 5.3.2　水平对齐　81 5.3.3　缩进　82 5.3.4　空范围　84 5.4　团队规则　84 5.5　鲍勃大叔的格式规则　85</span><br><span class="line"></span><br><span class="line"> 第6章　对象和数据结构　87 6.1　数据抽象　87 6.2　数据、对象的反对称性　89 6.3　得墨忒耳律　91 6.3.1　火车失事　91 6.3.2　混杂　92 6.3.3　隐藏结构　92 6.4　数据传送对象　93 6.5　小结　94 6.6　文献　94</span><br><span class="line"></span><br><span class="line"> 第7章　错误处理　95 7.1　使用异常而非返回码　96 7.2　先写Try-Catch-Finally语句　97 7.3　使用不可控异常　98 7.4　给出异常发生的环境说明　99 7.5　依调用者需要定义异常类　99 7.6　定义常规流程　100 7.7　别返回null值　101 7.8　别传递null值　102 7.9　小结　103 7.10 文献　104</span><br><span class="line"></span><br><span class="line"> 第8章　边界　105 8.1　使用第三方代码　106 8.2　浏览和学习边界　107 8.3　学习log4j　108 8.4　学习性测试的好处不只是免费　110 8.5　使用尚不存在的代码　110 8.6　整洁的边界　111 8.7　文献　112</span><br><span class="line"></span><br><span class="line"> 第9章　单元测试　113 9.1　TDD三定律　114 9.2　保持测试整洁　115 9.3　整洁的测试　116 9.3.1　面向特定领域的测试语言　118 9.3.2　双重标准　119 9.4　每个测试一个断言　121 9.5　F.I.R.S.T.　122 9.6　小结　123 9.7　文献　124</span><br><span class="line"></span><br><span class="line"> 第10章　类　125 10.1　类的组织　126 10.2　类应该短小　126 10.2.1　单一权责原则　128 10.2.2　内聚　129 10.2.3　保持内聚性就会得到许多短小的类　130 10.3　为了修改而组织　136 10.4　文献　139</span><br><span class="line"></span><br><span class="line"> 第11章　系统　141 11.1　如何建造一个城市　142 11.2　将系统的构造与使用分开　142 11.2.1　分解main　143 11.2.2　工厂　143 11.2.3　依赖注入　144 11.3　扩容　145 11.4　Java代理　148 11.5　纯Java AOP框架　150 11.6　AspectJ的方面　152 11.7　测试驱动系统架构　153 11.8　优化决策　154 11.9　明智使用添加了可论证价值的标准　154 11.10 系统需要领域特定语言　154 11.11 小结　155 11.12 文献　155</span><br><span class="line"></span><br><span class="line"> 第12章　迭进　157 12.1　通过迭进设计达到整洁目的　157 12.2　简单设计规则1：运行所有测试　158 12.3　简单设计规则2～4：重构　158 12.4　不可重复　159 12.5　表达力　161 12.6　尽可能少的类和方法　162 12.7　小结　162 12.8　文献　162</span><br><span class="line"></span><br><span class="line"> 第13章　并发编程　163 13.1　为什么要并发　164 13.2　挑战　165 13.3　并发防御原则　166 13.3.1　单一权责原则　166 13.3.2　推论：限制数据作用域　166 13.3.3　推论：使用数据复本　167 13.3.4　推论：线程应尽可能地独立　167 13.4　了解Java库　167 13.5　了解执行模型　168 13.5.1　生产者-消费者模型　169 13.5.2　读者-作者模型　169 13.5.3　宴席哲学家　169 13.6　警惕同步方法之间的依赖　169 13.7　保持同步区域微小　170 13.8　很难编写正确的关闭代码　170 13.9　测试线程代码　171 13.9.1　将伪失败看作可能的线程问题　171 13.9.2　先使非线程代码可工作　171 13.9.3　编写可插拔的线程代码　172 13.9.4　编写可调整的线程代码　172 13.9.5　运行多于处理器数量的线程　172 13.9.6　在不同平台上运行　172 13.9.7　装置试错代码　173 13.9.8　硬编码　173 13.9.9　自动化　174 13.10　小结　175 13.11　文献　175</span><br><span class="line"></span><br><span class="line"> 第14章　逐步改进　176 14.1　Args的实现　177 14.2　Args：草稿　183 14.2.1　所以我暂停了　195 14.2.2　渐进　195 14.3　字符串参数　197 14.4　小结　234</span><br><span class="line"></span><br><span class="line"> 第15章　JUnit内幕　235 15.1　JUnit框架　236 15.2　小结　249</span><br><span class="line"></span><br><span class="line"> 第16章　重构SerialDate　251 16.1　首先，让它能工作　252 16.2　让它做对　254 16.3　小结　266 16.4　文献　267</span><br><span class="line"></span><br><span class="line"> 第17章　味道与启发　269 17.1　注释　270 17.2　环境　271 17.3　函数　271 17.4　一般性问题　272 17.5　Java　288 17.6　名称　291 17.7　测试　294 17.8　小结　295 17.9　文献　296</span><br><span class="line"></span><br><span class="line"> 附录A　并发编程II　297 A.1　客户端&#x2F;服务器的例子　297 A.1.1　服务器　297 A.1.2　添加线程代码　298 A.1.3　观察服务器端　299 A.1.4　小结　301 A.2　执行的可能路径　301 A.2.1　路径数量　302 A.2.2　深入挖掘　303 A.2.3　小结　305 A.3　了解类库　305 A.3.1　Executor框架　305 A.3.2　非锁定的解决方案　306 A.3.3　非线程安全类　307 A.4　方法之间的依赖可能破坏并发代码　308 A.4.1　容忍错误　309 A.4.2　基于客户代码的锁定　309 A.4.3　基于服务端的锁定　311 A.5　提升吞吐量　312 A.5.1　单线程条件下的吞吐量　313 A.5.2　多线程条件下的吞吐量　313 A.6　死锁　314 A.6.1　互斥　315 A.6.2　上锁及等待　315 A.6.3　无抢先机制　315 A.6.4　循环等待　315 A.6.5　不互斥　316 A.6.6　不上锁及等待　316 A.6.7　满足抢先机制　317 A.6.8　不做循环等待　317 A.7　测试多线程代码　317 A.8　测试线程代码的工具支持　320 A.9　小结　320 A.10 教程：完整代码范例　321 A.10.1　客户端&#x2F;服务器非线程代码　321 A.10.2　使用线程的客户端&#x2F;服务器代码　324 附录B　org.jfree.date.SerialDate　327 结束语　389</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B0031M9GHC/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B0031M9GHC&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41jiPKJEFDL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="tag"># 软件工程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0033WSFAO/" rel="prev" title="高效程序员的45个习惯 敏捷开发修炼之道">
+      <i class="fa fa-chevron-left"></i> 高效程序员的45个习惯 敏捷开发修炼之道
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B002YK59LE/" rel="next" title="架构之美">
+      架构之美 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

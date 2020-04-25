@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 研磨Struts2作者信息： 作者: 陈臣 [ 中文 pdf ] 简单介绍《研磨Struts2》：超过450分钟的Struts2课堂教学视频，提供配书视频对应的PPT、课堂讲义和源代码。Struts2的架构和运行流程、Action、Result和Intercepter、值栈的功能和使用OGNL、Struts2标签体系、Struts2对Ajax的支持、Struts2对文件上传下载的支">
+<meta property="og:type" content="article">
+<meta property="og:title" content="研磨Struts2">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B005XISP7E/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 研磨Struts2作者信息： 作者: 陈臣 [ 中文 pdf ] 简单介绍《研磨Struts2》：超过450分钟的Struts2课堂教学视频，提供配书视频对应的PPT、课堂讲义和源代码。Struts2的架构和运行流程、Action、Result和Intercepter、值栈的功能和使用OGNL、Struts2标签体系、Struts2对Ajax的支持、Struts2对文件上传下载的支">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/5104ErqWf7L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.856Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/5104ErqWf7L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B005XISP7E/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>研磨Struts2 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B005XISP7E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          研磨Struts2
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 研磨Struts2<br>作者信息： 作者: 陈臣 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《研磨Struts2》：超过450分钟的Struts2课堂教学视频，提供配书视频对应的PPT、课堂讲义和源代码。Struts2的架构和运行流程、Action、Result和Intercepter、值栈的功能和使用OGNL、Struts2标签体系、Struts2对Ajax的支持、Struts2对文件上传下载的支持、防止重复提交和进度条、整合Spring、JFreeChart、SiteMeth、Struts2的国际化、使用Struts2的验证框架和类型转换、Struts2对零配置的支持。国内知名的高端Java实训机构：一个能让你学到真实本领的Java学习基地！一个能帮助你真正解决就业问题的机构！在Java私塾：高薪就业根本就不是问题。更好的职业发展才是硬道理。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">第1章 Struts2概述</span><br><span class="line">1.1 MVC模式</span><br><span class="line">1.1.1 MVC模式简介</span><br><span class="line">1.1.2 MVC模式基础</span><br><span class="line">1.1.3 MVC模式作用</span><br><span class="line">1.1.4 Model2模型中的MVC</span><br><span class="line">1.2 Struts2基础</span><br><span class="line">1.2.1 Strutsl时代</span><br><span class="line">1.2.2 Struts2出世</span><br><span class="line">1.2.3 Struts2基本组成</span><br><span class="line">1.2.4 Struts2能干什么</span><br><span class="line">1.3 Struts2和MVC </span><br><span class="line"></span><br><span class="line"> 第2章 struts2的HelloWorId 2.1 概述 2.2 准备开发环境和运行环境 2.2.1 配置JDK 2.2.2 下载并安装：Eclipse 2.2.3 下载Tomcat并在Eclipse里面引用Tomcat 2.2.4 下载Struts2以及认识Struts2包结构 2.3 从Servlet+JSP+JavaBean实现MVC开始 2.3.1 起点概述 2.3.2 建立动态的Web工程 2.3.3 配置工程运行环境 2.3.4 编写JavaBean 2.3.5 编写Servlet 2.3.6 配置web.xml 2.3.7 编写登录页面 2.3.8 编写欢迎页面 2.3.9 测试示例 2.3.10 中文处理 2.4 Struts2的HelloWorld 2.4.1 概述 2.4.2 配置Struts2的运行环境 2.4.3 实现动作类（Action） 2.4.4 配置struts.xml 2.4.5 制作登录页面 2.4.6 制作欢迎页面 2.4.7 测试示例 2.5 开发中的一些小窍门 2.5.1 概述 2.5.2 使用DTD来获得XML帮助 2.5.3 在新建菜单中添加JSP 2.5.4 获得Action的全类名 2.5.5 获得JSP在Web工程中的绝对路径</span><br><span class="line"></span><br><span class="line"> 第3章 struts2的架构和运行流程 3.1 Struts2的系统架构 3.1.1 Struts2的系统架构 3.1.2 各模块说明 3.2 Struts2的运行流程 3.3 Struts2的核心概念 3.4 小结</span><br><span class="line"></span><br><span class="line"> 第4章 Action 4.1 Action基础 4.1.1 Action是什么 4.1.2.Action能干什么 4.1.3 Action的基本配置 4.2 Action的实现 4.2.1 POJO的实现 4.2.2 实现Action接口 4.2.3 继承ActionSupport类 4.2.4 execute方法内部实现方式 4.2.5 简单的单元测试 4.3 Action的数据 4.3.1 数据来源 4.3.2 基本的数据对应方式 4.3.3 传入非String类型的值 4.3.4 如何处理传入多个值 4.4 Action的配置 4.4.1 〈package〉的配置 4.4.2 〈action〉的配置 4.4.3 分模块配置方式 4.4.4 使用通配符 4.4.5 默认类配置方式 4.5 Action的其他重要知识 4.5.1 Action的生命周期 4.5.2 调用非execute方法</span><br><span class="line"></span><br><span class="line"> 第5章 ResuIt 5.1 Result基础 5.1.1 Result是什么和能干什么 5.1.2 Result和ResultType 5.1.3 Result有什么 5.2 预定义的Result 5.2.1 预定义的ResultType 5.2.2 如何配置使用 5.2.3 名称为dispatcher的ResultType 5.2.4 名称为redirect的ResultType 5.2.5 名称为chain的ResultType 5.2.6 名称为FreeMarker的ResultType 5.2.7 其他ResultType 5.3 全局Result 5.3.1 全局Result概述 5.3.2 配置和使用 5.3.3 搜寻Result的顺序 5.3.4 应用示例 5.4.使用通配符 5.5 Struts2的异常映射 5.5.1 异常映射基础 5.5.2 局部异常映射与全局异常映射 5.5.3 在页面输出异常信息 5.6 PreResultListener 5.6.1 什么是PreResultListener 5.6.2 PreResultListener实现示例 5.7 自定义Result 5.7.1 自定义Result概述 5.7.2 开发自定义Result</span><br><span class="line"></span><br><span class="line"> 第6章 拦截器 6.1 拦截器基础 6.1.1 拦截器是什么 6.1.2 拦截器的优点 6.1.3 拦截器有什么 6.2 预定义的拦截器 6.2.1 预定义的拦截器 6.2.2 预定义的拦截器栈 6.2.3 预定义拦截器的配置使用 6.2.4 拦截器的调用顺序 6.2.5 实践一下 6.3 自定义的拦截器 6.3.1 什么是自定义的拦截器 6.3.2 开发自定义拦截器 6.3.3 向拦截器传入参数 6.4 两个有用的拦截器 6.4.1 更强大的logger拦截器 6.4.2 登录检查拦截器</span><br><span class="line"></span><br><span class="line"> 第7章 值栈和0GNL 7.1 值栈 7.1.1 值栈是什么 7.1.2 值栈能干什么 7.1.3 值栈有什么 7.1.4 ActionContext的基本使用 7.1.5 ValueStack的基本使用 7.2 OGNL 7.2.1 0GNL概述 7.2.2 OGNL的基本使用 …… 附录A 参考文献</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B005XISP7E/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B005XISP7E&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/5104ErqWf7L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00647RUGK/" rel="prev" title="HTML5与CSS3实战指南">
+      <i class="fa fa-chevron-left"></i> HTML5与CSS3实战指南
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B005Z7FABC/" rel="next" title="黑客 计算机革命的英雄">
+      黑客 计算机革命的英雄 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

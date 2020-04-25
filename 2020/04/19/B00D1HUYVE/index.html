@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 图灵程序设计丛书 代码的未来作者信息： 作者: 松本行弘 (Yukihiro Matsumoto) [ 中文 pdf ] 简单介绍《代码的未来》编辑推荐：20年后、100年后的编程语言会是什么样？《代码的未来》中Ruby之父松本行弘剖析云计算、大数据时代下的技术：Lisp会是未来的发展趋势吗？ Go和Dart能取代C和JavaScript吗？关系型数据库已经走到穷途末路了吗？Go、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图灵程序设计丛书 代码的未来">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00D1HUYVE/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 图灵程序设计丛书 代码的未来作者信息： 作者: 松本行弘 (Yukihiro Matsumoto) [ 中文 pdf ] 简单介绍《代码的未来》编辑推荐：20年后、100年后的编程语言会是什么样？《代码的未来》中Ruby之父松本行弘剖析云计算、大数据时代下的技术：Lisp会是未来的发展趋势吗？ Go和Dart能取代C和JavaScript吗？关系型数据库已经走到穷途末路了吗？Go、">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51kDl298FvL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.829Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="it文化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51kDl298FvL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00D1HUYVE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>图灵程序设计丛书 代码的未来 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00D1HUYVE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          图灵程序设计丛书 代码的未来
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 图灵程序设计丛书 代码的未来<br>作者信息： 作者: 松本行弘 (Yukihiro Matsumoto) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《代码的未来》编辑推荐：20年后、100年后的编程语言会是什么样？《代码的未来》中Ruby之父松本行弘剖析云计算、大数据时代下的技术：Lisp会是未来的发展趋势吗？ Go和Dart能取代C和JavaScript吗？关系型数据库已经走到穷途末路了吗？Go、VoltDB、node.js、CoffeeScript、Dart、MongoDB…… 云计算、大数据时代下谁主沉浮？作者在《代码的未来》中一一剖析。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br></pre></td><td class="code"><pre><span class="line">第一章 编程的时间和空间</span><br><span class="line">1.1 编程的本质 3</span><br><span class="line">编程的本质是思考 4</span><br><span class="line">创造世界的乐趣 4</span><br><span class="line">快速提高的性能改变了社会 5</span><br><span class="line">以不变应万变 8</span><br><span class="line">摩尔定律的局限 9</span><br><span class="line">社会变化与编程 10</span><br><span class="line">1.2 未来预测 13</span><br><span class="line">科学的未来预测 14</span><br><span class="line">IT未来预测 14</span><br><span class="line">极限未来预测 16</span><br><span class="line">从价格看未来 16</span><br><span class="line">从性能看未来 17</span><br><span class="line">从容量看未来 18</span><br><span class="line">从带宽看未来 19</span><br><span class="line">小结 20</span><br><span class="line">第二章 编程语言的过去、现在和未来</span><br><span class="line">2.1 编程语言的世界 23</span><br><span class="line">被历史埋没的先驱 25</span><br><span class="line">编程语言的历史 26</span><br><span class="line">编程语言的进化方向 30</span><br><span class="line">未来的编程语言 32</span><br><span class="line">20年后的编程语言 34</span><br><span class="line">学生们的想象 34</span><br><span class="line">2.2 DSL（特定领域语言） 36</span><br><span class="line">外部DSL 37</span><br><span class="line">内部DSL 38</span><br><span class="line">DSL的优势 39</span><br><span class="line">DSL的定义 39</span><br><span class="line">适合内部DSL的语言 40</span><br><span class="line">外部DSL实例 42</span><br><span class="line">DSL设计的构成要素 43</span><br><span class="line">Sinatra 46</span><br><span class="line">小结 47</span><br><span class="line">2.3 元编程 48</span><br><span class="line">Meta，Reflection 48</span><br><span class="line">类对象 51</span><br><span class="line">类的操作 52</span><br><span class="line">Lisp 53</span><br><span class="line">数据和程序 54</span><br><span class="line">Lisp程序 56</span><br><span class="line">宏 56</span><br><span class="line">宏的功与过 57</span><br><span class="line">元编程的可能性与危险性 59</span><br><span class="line">小结 60</span><br><span class="line">2.4 内存管理 61</span><br><span class="line">看似无限的内存 61</span><br><span class="line">GC的三种基本方式 62</span><br><span class="line">术语定义 62</span><br><span class="line">标记清除方式 63</span><br><span class="line">复制收集方式 64</span><br><span class="line">引用计数方式 65</span><br><span class="line">引用计数方式的缺点 65</span><br><span class="line">进一步改良的应用方式 66</span><br><span class="line">分代回收 66</span><br><span class="line">对来自老生代的引用进行记录 67</span><br><span class="line">增量回收 68</span><br><span class="line">并行回收 69</span><br><span class="line">GC大统一理论 69</span><br><span class="line">2.5 异常处理 71</span><br><span class="line">“一定没问题的” 71</span><br><span class="line">用特殊返回值表示错误 72</span><br><span class="line">容易忽略错误处理 72</span><br><span class="line">Ruby中的异常处理 73</span><br><span class="line">产生异常 74</span><br><span class="line">更高级的异常处理 75</span><br><span class="line">Ruby中的后处理保证 76</span><br><span class="line">其他语言中的异常处理 77</span><br><span class="line">Java的检查型异常 77</span><br><span class="line">Icon的异常和真假值 78</span><br><span class="line">Eiffel的DesignbyContract 80</span><br><span class="line">异常与错误值 80</span><br><span class="line">小结 81</span><br><span class="line">2.6 闭包 82</span><br><span class="line">函数对象 82</span><br><span class="line">高阶函数 83</span><br><span class="line">用函数参数提高通用性 84</span><br><span class="line">函数指针的局限 85</span><br><span class="line">作用域：变量可见范围 87</span><br><span class="line">生存周期：变量的存在范围 88</span><br><span class="line">闭包与面向对象 89</span><br><span class="line">Ruby的函数对象 89</span><br><span class="line">Ruby与JavaScript的区别 90</span><br><span class="line">Lisp—1与Lisp—2 91</span><br><span class="line">第三章 编程语言的新潮流</span><br><span class="line">3.1 语言的设计 97</span><br><span class="line">客户端与服务器端 97</span><br><span class="line">向服务器端华丽转身 98</span><br><span class="line">在服务器端获得成功的四大理由 99</span><br><span class="line">客户端的JavaScript 100</span><br><span class="line">性能显著提升 101</span><br><span class="line">服务器端的Ruby 102</span><br><span class="line">RubyonRails带来的飞跃 102</span><br><span class="line">服务器端的Go 103</span><br><span class="line">静态与动态 104</span><br><span class="line">动态运行模式 105</span><br><span class="line">何谓类型 105</span><br><span class="line">静态类型的优点 106</span><br><span class="line">动态类型的优点 106</span><br><span class="line">有鸭子样的就是鸭子 107</span><br><span class="line">StructuralSubtyping 108</span><br><span class="line">小结 108</span><br><span class="line">3.2 Go 109</span><br><span class="line">New（新的） 109</span><br><span class="line">Experimental（实验性的） 109</span><br><span class="line">Concurrent（并发的） 110</span><br><span class="line">Garbage—collected（带垃圾回收的） 110</span><br><span class="line">Systems（系统） 111</span><br><span class="line">Go的创造者们 111</span><br><span class="line">HelloWorld 112</span><br><span class="line">Go的控制结构 113</span><br><span class="line">类型声明 116</span><br><span class="line">无继承式面向对象 118</span><br><span class="line">多值与多重赋值 120</span><br><span class="line">并发编程 122</span><br><span class="line">小结 124</span><br><span class="line">3.3 Dart 126</span><br><span class="line">为什么要推出Dart？ 126</span><br><span class="line">Dart的设计目标 129</span><br><span class="line">代码示例 130</span><br><span class="line">Dart的特征 132</span><br><span class="line">基于类的对象系统 132</span><br><span class="line">非强制性静态类型 133</span><br><span class="line">Dart的未来 134</span><br><span class="line">3.4 CoffeeScript 135</span><br><span class="line">最普及的语言 135</span><br><span class="line">被误解最多的语言 135</span><br><span class="line">显著高速化的语言 136</span><br><span class="line">对JavaScript的不满 138</span><br><span class="line">CoffeeScript 138</span><br><span class="line">安装方法 139</span><br><span class="line">声明和作用域 139</span><br><span class="line">分号和代码块 141</span><br><span class="line">省略记法 142</span><br><span class="line">字符串 143</span><br><span class="line">数组和循环 143</span><br><span class="line">类 145</span><br><span class="line">小结 146</span><br><span class="line">3.5 Lua 148</span><br><span class="line">示例程序 149</span><br><span class="line">数据类型 149</span><br><span class="line">函数 150</span><br><span class="line">表 150</span><br><span class="line">元表 151</span><br><span class="line">方法调用的实现 153</span><br><span class="line">基于原型编程 155</span><br><span class="line">和Ruby的比较（语言篇） 157</span><br><span class="line">嵌入式语言Lua 157</span><br><span class="line">和Ruby的比较（实现篇） 158</span><br><span class="line">嵌入式Ruby 159</span><br><span class="line">第四章 云计算时代的编程</span><br><span class="line">4.1 可扩展性 163</span><br><span class="line">信息的尺度感 163</span><br><span class="line">大量数据的查找 164</span><br><span class="line">二分法查找 165</span><br><span class="line">散列表 167</span><br><span class="line">布隆过滤器 169</span><br><span class="line">一台计算机的极限 170</span><br><span class="line">DHT（分布式散列表） 171</span><br><span class="line">Roma 172</span><br><span class="line">MapReduce 173</span><br><span class="line">小结 174</span><br><span class="line">4.2 C10K问题 175</span><br><span class="line">何为C10K问题 175</span><br><span class="line">C10K问题所引发的“想当然” 177</span><br><span class="line">使用epoll功能 180</span><br><span class="line">使用libev框架 181</span><br><span class="line">使用EventMachine 183</span><br><span class="line">小结 185</span><br><span class="line">4.3 HashFold 186</span><br><span class="line">HashFold库的实现（Level1） 187</span><br><span class="line">运用多核的必要性 190</span><br><span class="line">目前的Ruby实现所存在的问题 191</span><br><span class="line">通过进程来实现HashFold（Level2） 191</span><br><span class="line">抖动 193</span><br><span class="line">运用进程池的HashFold（Level3） 194</span><br><span class="line">小结 197</span><br><span class="line">4.4 进程间通信 198</span><br><span class="line">进程与线程 198</span><br><span class="line">同一台计算机上的进程间通信 199</span><br><span class="line">TCP&#x2F;IP协议 201</span><br><span class="line">用C语言进行套接字编程 202</span><br><span class="line">用Ruby进行套接字编程 204</span><br><span class="line">Ruby的套接字功能 205</span><br><span class="line">用Ruby实现网络服务器 208</span><br><span class="line">小结 209</span><br><span class="line">4.5 Rack与Unicorn 210</span><br><span class="line">Rack中间件 211</span><br><span class="line">应用程序服务器的问题 212</span><br><span class="line">Unicorn的架构 215</span><br><span class="line">Unicorn的解决方案 215</span><br><span class="line">性能 219</span><br><span class="line">策略 220</span><br><span class="line">小结 221</span><br><span class="line">第五章 支撑大数据的数据存储技术</span><br><span class="line">5.1 键—值存储 225</span><br><span class="line">Hash类 225</span><br><span class="line">DBM类 226</span><br><span class="line">数据库的ACID特性 226</span><br><span class="line">CAP原理 227</span><br><span class="line">CAP解决方案——BASE 228</span><br><span class="line">不能舍弃可用性 229</span><br><span class="line">大规模环境下的键—值存储 230</span><br><span class="line">访问键—值存储 230</span><br><span class="line">键—值存储的节点处理 231</span><br><span class="line">存储器 232</span><br><span class="line">写入和读取 233</span><br><span class="line">节点追加 233</span><br><span class="line">故障应对 233</span><br><span class="line">终止处理 235</span><br><span class="line">其他机制 235</span><br><span class="line">性能与应用实例 236</span><br><span class="line">小结 236</span><br><span class="line">5.2 NoSQL 237</span><br><span class="line">RDB的极限 237</span><br><span class="line">NoSQL数据库的解决方案 238</span><br><span class="line">形形色色的NoSQL数据库 239</span><br><span class="line">面向文档数据库 240</span><br><span class="line">MongoDB的安装 241</span><br><span class="line">启动数据库服务器 243</span><br><span class="line">MongoDB的数据库结构 244</span><br><span class="line">数据的插入和查询 244</span><br><span class="line">用JavaScript进行查询 245</span><br><span class="line">高级查询 246</span><br><span class="line">数据的更新和删除 249</span><br><span class="line">乐观并发控制 250</span><br><span class="line">5.3 用Ruby来操作MongoDB 251</span><br><span class="line">使用Ruby驱动 251</span><br><span class="line">对数据库进行操作 253</span><br><span class="line">数据的插入 253</span><br><span class="line">数据的查询 253</span><br><span class="line">高级查询 254</span><br><span class="line">find方法的选项 256</span><br><span class="line">原子操作 257</span><br><span class="line">ActiveRecord 259</span><br><span class="line">ODMapper 260</span><br><span class="line">5.4 SQL数据库的反击 264</span><br><span class="line">“云”的定义 264</span><br><span class="line">SQL数据库的极限 264</span><br><span class="line">存储引擎Spider 265</span><br><span class="line">SQL数据库之父的反驳 265</span><br><span class="line">SQL数据库VoltDB 268</span><br><span class="line">VoltDB的架构 269</span><br><span class="line">VoltDB中的编程 270</span><br><span class="line">HelloVoltDB！ 271</span><br><span class="line">性能测试 273</span><br><span class="line">小结 275</span><br><span class="line">5.5 memcached和它的伙伴们 276</span><br><span class="line">用于高速访问的缓存 276</span><br><span class="line">memcached 277</span><br><span class="line">示例程序 278</span><br><span class="line">对memcached的不满 279</span><br><span class="line">memcached替代服务器 280</span><br><span class="line">另一种键—值存储Redis 282</span><br><span class="line">Redis的数据类型 284</span><br><span class="line">Redis的命令与示例 285</span><br><span class="line">小结 289</span><br><span class="line">第六章 多核时代的编程</span><br><span class="line">6.1 摩尔定律 293</span><br><span class="line">呈几何级数增长 293</span><br><span class="line">摩尔定律的内涵 294</span><br><span class="line">摩尔定律的结果 295</span><br><span class="line">摩尔定律所带来的可能性 296</span><br><span class="line">为了提高性能 297</span><br><span class="line">摩尔定律的极限 302</span><br><span class="line">超越极限 303</span><br><span class="line">不再有免费的午餐 304</span><br><span class="line">6.2 UNIX管道 305</span><br><span class="line">管道编程 306</span><br><span class="line">多核时代的管道 308</span><br><span class="line">xargs——另一种运用核心的方式 309</span><br><span class="line">注意瓶颈 311</span><br><span class="line">阿姆达尔定律 311</span><br><span class="line">多核编译 312</span><br><span class="line">ccache 313</span><br><span class="line">distcc 313</span><br><span class="line">编译性能测试 314</span><br><span class="line">小结 315</span><br><span class="line">6.3 非阻塞I&#x2F;O 316</span><br><span class="line">何为非阻塞I&#x2F;O 316</span><br><span class="line">使用read（2）的方法 317</span><br><span class="line">边沿触发与电平触发 319</span><br><span class="line">使用read（2）+select的方法 319</span><br><span class="line">使用read+O_NONBLOCK标志 321</span><br><span class="line">Ruby的非阻塞I&#x2F;O 322</span><br><span class="line">使用aio_read的方法 323</span><br><span class="line">6.4 node.js 330</span><br><span class="line">减负 330</span><br><span class="line">拖延 331</span><br><span class="line">委派 332</span><br><span class="line">非阻塞编程 333</span><br><span class="line">node.js框架 333</span><br><span class="line">事件驱动编程 334</span><br><span class="line">事件循环的利弊 335</span><br><span class="line">node.js编程 335</span><br><span class="line">node.js网络编程 337</span><br><span class="line">node.js回调风格 339</span><br><span class="line">node.js的优越性 340</span><br><span class="line">EventMachine与Rev 341</span><br><span class="line">6.5 ZeroMQ 342</span><br><span class="line">多CPU的必要性 342</span><br><span class="line">阿姆达尔定律 343</span><br><span class="line">多CPU的运用方法 343</span><br><span class="line">进程间通信 345</span><br><span class="line">管道 345</span><br><span class="line">SysVIPC 346</span><br><span class="line">套接字 347</span><br><span class="line">UNIX套接字 349</span><br><span class="line">ZeroMQ 349</span><br><span class="line">ZeroMQ的连接模型 350</span><br><span class="line">ZeroMQ的安装 352</span><br><span class="line">ZeroMQ示例程序 352</span><br><span class="line">小结 354</span><br><span class="line">版权声明 356</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00D1HUYVE/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00D1HUYVE&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51kDl298FvL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/it%E6%96%87%E5%8C%96/" rel="tag"># it文化</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00D6MT3LG/" rel="prev" title="JavaScript设计模式">
+      <i class="fa fa-chevron-left"></i> JavaScript设计模式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00CY6UD2I/" rel="next" title="Spring实战(第3版)">
+      Spring实战(第3版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

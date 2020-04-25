@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： HTML5与CSS3实战指南作者信息： 作者: 威尔(Estelle Weyl) [ 中文 pdf ] 简单介绍《HTML5与CSS3实战指南》：在我们酷炫的示例网站上查看HTML5和CSS3的魔力，采用SVG和Carwas来为图形提供最大的灵活性，使用地理定位等新API创建卓越的Web应用程序。《HTML5与CSS3实战指南》将向读者展示如何使用前沿的Web开发技术——HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5与CSS3实战指南">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00647RUGK/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： HTML5与CSS3实战指南作者信息： 作者: 威尔(Estelle Weyl) [ 中文 pdf ] 简单介绍《HTML5与CSS3实战指南》：在我们酷炫的示例网站上查看HTML5和CSS3的魔力，采用SVG和Carwas来为图形提供最大的灵活性，使用地理定位等新API创建卓越的Web应用程序。《HTML5与CSS3实战指南》将向读者展示如何使用前沿的Web开发技术——HTML5">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51oc8alcfrL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.795Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51oc8alcfrL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00647RUGK/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>HTML5与CSS3实战指南 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00647RUGK/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HTML5与CSS3实战指南
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： HTML5与CSS3实战指南<br>作者信息： 作者: 威尔(Estelle Weyl) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《HTML5与CSS3实战指南》：在我们酷炫的示例网站上查看HTML5和CSS3的魔力，采用SVG和Carwas来为图形提供最大的灵活性，使用地理定位等新API创建卓越的Web应用程序。《HTML5与CSS3实战指南》将向读者展示如何使用前沿的Web开发技术——HTML5与CSS3来开发动态Web站点。《HTML5与CSS3实战指南》涵盖了零基础开发Web站点的所有知识，通过学习《HTML5与CSS3实战指南》，读者将掌握HTML5中可用的全新语义标记，以及如何在不求助复杂解决方案的情况下使用CSS3来开发Web站点。您将学习如何：通过使用HTML5自身的Video元素来摆脱Flash的束缚，使用@font-face设置完全支持您的信息的类型，构建用户喜欢的具有智能验证功能的Web表单，构建运行在移动环境中的现代Web应用程序，使用SVG和carwas迅速创建动态、高效的图形，使用全新的API添加地理定位和离线Web应用等功能。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">第1章 HTML5和CSS3简介 1</span><br><span class="line">1.1 什么是HTML5 1</span><br><span class="line">1.2 如何发展至今 2</span><br><span class="line">1.3 我们为什么应关注HTML5 4</span><br><span class="line">1.4 什么是CSS3 4</span><br><span class="line">1.5 我们为什么应关注CSS3 5</span><br><span class="line">1.6 在现实中，我们想做的是什么 6</span><br><span class="line">1.6.1 多种浏览器的市场 6</span><br><span class="line">1.6.2 不断发展的移动市场 7</span><br><span class="line">1.7 实际应用 8 </span><br><span class="line"></span><br><span class="line"> 第2章 HTML5样式的标记 11 2.1 The HTML5 Herald简介 11 2.2 基本的HTML5模板 12 2.2.1 Doctype 13 2.2.2 html元素 14 2.2.3 head元素 14 2.2.4 公平竞争 16 2.2.5 剩余部分是历史简介 17 2.3 HTML5常见问题 18 2.3.1 为什么这些变更仍能够在旧版浏览器中工作 18 2.3.2 是否需要关闭所有标签 20 2.3.3 关于其他的基于XHTML的语法使用习惯 20 2.4 定义页面结构 22 2.4.1 header元素 22 2.4.2 section元素 23 2.4.3 article元素 24 2.4.4 nav元素 25 2.4.5 aside元素 26 2.4.6 footer元素 27 2.5 构建The HTML5 Herald 28 2.6 小结 30</span><br><span class="line"></span><br><span class="line"> 第3章 关于HTML5语义的更多内容 31 3.1 关于内容类型的新视角 31 3.2 文档大纲 33 3.3 最新消息 34 3.4 更多新元素 37 3.4.1 figure和figcaption元素 37 3.4.2 mark元素 38 3.4.3 progress和meter元素 38 3.4.4 time元素 39 3.5 对现有功能的更改 41 3.5.1 单词“Deprecated”是被弃用的 41 3.5.2 链接中的block元素 41 3.5.3 黑体文本 41 3.5.4 斜体文本 42 3.5.5 大号和小号文体 43 3.5.6 引起争议的cite元素 43 3.5.7 描述(不是定义)列表 43 3.6 其他新元素及功能 44 3.6.1 details元素 44 3.6.2 自定义的有序列表 45 3.6.3 作用域样式 45 3.6.4 script元素的async属性 45 3.7 验证HTML5文档 46 3.8 小结 48</span><br><span class="line"></span><br><span class="line"> 第4章 HTML5表单 49 4.1 工具箱中的相关工具 49 4.2 HTML5表单属性 51 4.2.1 required属性 51 4.2.2 placeholder属性 55 4.2.3 pattern属性 58 4.2.4 disabled属性 59 4.2.5 readonly属性 59 4.2.6 multiple属性 60 4.2.7 form属性 60 4.2.8 autocomplete属性 61 4.2.9 datalist元素和list属性 61 4.2.10 autofocus属性 62 4.3 HTML5新表单输入类型 62 4.3.1 search 63 4.3.2 Email Addresses 64 4.3.3 URL 65 4.3.4 Telephone Numbers 66 4.3.5 Numbers 66 4.3.6 Ranges 67 4.3.7 Colors 68 4.3.8 Dates和Times 69 4.4 HTML5中的其他新表单控件 71 4.4.1 output元素 72 4.4.2 keygen元素 72 4.5 对现有表单控件及属性的更改 72 4.5.1 form元素 72 4.5.2 optgroup元素 73 4.5.3 textarea元素 73 4.6 小结 73</span><br><span class="line"></span><br><span class="line"> 第5章 HTML5音频和视频 75 5.1 历史简介 75 5.2 目前状况 76 5.2.1 视频容器格式 76 5.2.2 视频编解码器 77 5.2.3 音频编解码器 77 5.2.4 当前浏览器使用哪种组合 77 5.3 标记 78 5.3.1 启用本机控件 78 5.3.2 autoplay属性 79 5.3.3 loop属性 80 5.3.4 preload属性 80 5.3.5 poster属性 81 5.3.6 audio属性 81 5.3.7 添加对多种视频格式的支持 81 5.3.8 资源顺序 82 5.3.9 关于Internet Explorer 6～8 83 5.3.10 MIME类型 85 5.4 用于网络的视频文件解码 86 5.5 创建自定义控件 86 5.5.1 让我们从一些标记和设计开始 87 5.5.2 介绍媒体元素API 88 5.5.3 播放和暂停视频 90 5.5.4 视频音轨的静音与取消静音 93 5.5.5 视频结束播放的响应 94 5.5.6 更新视频播放的时间 94 5.5.7 媒体元素API的其他一些功能 97 5.6 关于音频 99 5.7 可访问的媒体 99 5.8 小结 100</span><br><span class="line"></span><br><span class="line"> 第6章 CSS3简介 101 6.1 改进旧版浏览器 101 6.2 CSS3选择器 102 6.2.1 关系选择器 102 6.2.2 属性选择器 104 6.2.3 伪类 105 6.2.4 结构化伪类 107 6.2.5 伪元素和生成的内容 110 6.3 CSS3颜色 111 6.3.1 RGBA 112 6.3.2 HSL和HSLA 113 6.3.3 不透明度 114 6.4 实际应用 114 6.5 圆角：border-radius 116 6.6 投影 118 6.7 文本阴影 122 6.8 更多阴影 122 6.9 小结 123</span><br><span class="line"></span><br><span class="line"> 第7章 CSS3渐变和多背景 125 7.1 线性渐变 126 7.1.1 W3C语法 127 7.1.2 旧WebKit语法 130 7.1.3 实际应用 131 7.1.4 使用SVG的线性渐变 133 7.1.5 使用Internet Explorer滤镜的线性渐变 135 7.1.6 便捷的工具 136 7.2 径向渐变 136 7.2.1 W3C语法 137 7.2.2 旧WebKit语法 139 7.2.3 实际应用 140 7.3 重复渐变 141 7.4 多背景图像 142 7.5 背景大小 145 7.6 小结 147</span><br><span class="line"></span><br><span class="line"> 第8章 CSS3转换和过渡 149 8.1 转换 149 8.1.1 平移 150 8.1.2 缩放 152 8.1.3 旋转 153 8.1.4 倾斜 154 8.1.5 更改转换的原点 154 8.1.6 对Internet Explorer 8及更早版本的支持 155 8.2 过渡 156 8.2.1 transition-property 157 8.2.2 transition-duration 158 8.2.3 transition-timing-function 159 8.2.4 transition-delay 160 8.2.5 transition简写属性 160 8.2.6 多个过渡 161 8.3 动画 162 8.3.1 关键帧 162 8.3.2 动画属性 164 8.4 小结 167</span><br><span class="line"></span><br><span class="line"> 第9章 嵌入字体和多列布局 169 9.1 Web字体和@font-face 169 9.1.1 实现@font-face 170 9.1.2 声明字体来源 172 9.1.3 字体属性描述符 174 9.1.4 Unicode范围 175 9.1.5 应用字体 176 9.1.6 法律因素 176 9.1.7 创建各种字体文件类型：Font Squirrel 177 9.1.8 其他考虑因素 180 9.2 CSS3多列布局 180 9.2.1 column-count属性 181 9.2.2 column-gap属性 182 9.2.3 column-width属性 182 9.2.4 columns简写属性 184 9.2.5 列和height属性 184 9.2.6 其他列功能 185 9.2.7 其他考虑因素 186 9.2.8 渐进增强 187 9.3 媒体查询 188 9.3.1 什么是媒体查询 188 9.3.2 语法 189 9.3.3 媒体查询的灵活性 190 9.3.4 浏览器支持 190 9.3.5 其他阅读材料 191 9.4 小结 191</span><br><span class="line"></span><br><span class="line"> 第10章 地理定位、离线Web应用和Web存储 193 10.1 地理定位 194 10.1.1 隐私问题 195 10.1.2 地理定位方法 195 10.1.3 使用Modernizr检查支持 196 10.1.4 获取当前位置 196 10.1.5 地理定位的Position对象 197 10.1.6 获取经度和纬度 198 10.1.7 加载地图 199 10.1.8 关于旧式移动设备的结束语 204 10.2 离线Web应用 204 10.2.1 工作原理：HTML5应用程序缓存 205 10.2.2 设置站点离线工作 205 10.2.3 获取离线存储站点的权限 208 10.2.4 离线测试 208 10.2.5 使The HTML5 Herald离线可用 210 10.2.6 离线Web应用存储的限制 211 10.2.7 后备部分 211 10.2.8 刷新缓存 213 10.2.9 我们在线吗 214 10.2.10 其他阅读材料 215 10.3 Web存储 215 10.3.1 两种存储 216 10.3.2 Web存储数据的外观 217 10.3.3 获取和设置数据 218 10.3.4 转换存储的数据 218 10.3.5 快捷方式 219 10.3.6 删除条目和清除数据 219 10.3.7 存储限制 219 10.3.8 安全考虑 220 10.3.9 将Web存储添加到The HTML5 Herald 221 10.3.10 用网页审查工具查看Web存储值 224 10.4 其他HTML5 API 226 10.4.1 网络工作者 226 10.4.2 网络套接字 227 10.4.3 Web SQL和IndexedDB 227 10.5 返回到绘制面板 228</span><br><span class="line"></span><br><span class="line"> 第11章 画布、SVG和拖放 229 11.1 画布 229 11.1.1 关于画布的一些历史 230 11.1.2 创建画布元素 230 11.1.3 在画布上绘制 232 11.1.4 获取背景 232 11.1.5 用颜色填充画笔 233 11.1.6 在画布上绘制矩形 234 11.1.7 画布坐标系统 234 11.1.8 fillStyle的变化 235 11.1.9 通过创建路径绘制其他形状 237 11.1.10 存储画布绘制 240 11.1.11 在画布上绘制图像 241 11.1.12 处理图像 243 11.1.13 将彩色图像转换为黑白图像 244 11.1.14 getImageData的安全性错误 247 11.1.15 用画布测试视频 247 11.1.16 在画布上显示文字 250 11.1.17 关注可访问性 254 11.1.18 其他阅读材料 254 11.2 SVG 254 11.2.1 在SVG上绘制 255 11.2.2 使用Inkscape创建SVG图像 258 11.2.3 SVG过滤器 258 11.2.4 使用Rapha?l库 259 11.2.5 画布与SVG 261 11.3 拖放 262 11.3.1 给WAI-ARIA猫喂食 263 11.3.2 使元素可拖动 264 11.3.3 DataTransfer对象 265 11.3.4 接受可以放下的元素 266 11.3.5 其他阅读材料 269 11.4 结束了，朋友们！ 269 附录A Modernizr 271 附录B WAI-ARIA 277 附录C 微数据 281</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00647RUGK/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00647RUGK&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51oc8alcfrL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/html/" rel="tag"># html</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B006P9B1XA/" rel="prev" title="疯狂Java 突破程序员基本功的16课(修订版)">
+      <i class="fa fa-chevron-left"></i> 疯狂Java 突破程序员基本功的16课(修订版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B005XISP7E/" rel="next" title="研磨Struts2">
+      研磨Struts2 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 响应式Web设计 HTML5和CSS3实战作者信息： 作者: Ben Frain [ 中文 pdf ] 简单介绍《响应式Web设计：HTML5和CSS3实战》作者Ben Frain将当前Web设计中热门的响应式设计技术与HTML和CSS3完美结合，帮助读者全面掌握最新的Web设计技术，一步跨入最前沿；《响应式Web设计：HTML5和CSS3实战》是前端设计人员必备教程。 目录123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式Web设计 HTML5和CSS3实战">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/xiang-ying-shi-webshe-ji-html5he-css3shi-zhan/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 响应式Web设计 HTML5和CSS3实战作者信息： 作者: Ben Frain [ 中文 pdf ] 简单介绍《响应式Web设计：HTML5和CSS3实战》作者Ben Frain将当前Web设计中热门的响应式设计技术与HTML和CSS3完美结合，帮助读者全面掌握最新的Web设计技术，一步跨入最前沿；《响应式Web设计：HTML5和CSS3实战》是前端设计人员必备教程。 目录123">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51olk4jWxVL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.799Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51olk4jWxVL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/xiang-ying-shi-webshe-ji-html5he-css3shi-zhan/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>响应式Web设计 HTML5和CSS3实战 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/xiang-ying-shi-webshe-ji-html5he-css3shi-zhan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          响应式Web设计 HTML5和CSS3实战
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 响应式Web设计 HTML5和CSS3实战<br>作者信息： 作者: Ben Frain [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《响应式Web设计：HTML5和CSS3实战》作者Ben Frain将当前Web设计中热门的响应式设计技术与HTML和CSS3完美结合，帮助读者全面掌握最新的Web设计技术，一步跨入最前沿；《响应式Web设计：HTML5和CSS3实战》是前端设计人员必备教程。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">第1章 　HTML5、CSS3及响应式设计入门　1</span><br><span class="line">1.1 　为什么智能手机很重要（而老版的IE不再重要）　2</span><br><span class="line">1.2 　响应式设计一定是最佳选择吗　3</span><br><span class="line">1.3 　响应式网页设计的定义　3</span><br><span class="line">1.4 　为什么要在响应式设计上停滞不前　4</span><br><span class="line">1.5 　响应式网页设计示例　4</span><br><span class="line">1.5.1 　下载视口调试工具　4</span><br><span class="line">1.5.2 　在线创意源泉　11</span><br><span class="line">1.6 　为什么HTML5很优秀　12</span><br><span class="line">1.6.1 　省时省力　12</span><br><span class="line">1.6.2 　新增了语义化标签元素　13</span><br><span class="line">1.7 　CSS3为响应式设计和更多创新奠定了基础　13</span><br><span class="line">1.7.1 　底线：CSS3不破坏任何东西　14</span><br><span class="line">1.7.2 　CSS3如何解决日常设计问题　14</span><br><span class="line">1.8 　看呐，不用图片　17</span><br><span class="line">1.9 　HTML5和CSS3现在就能用吗　20</span><br><span class="line">1.10 　响应式网页设计不是灵丹妙药　20</span><br><span class="line">1.11 　引导客户：网站不必在所有浏览器中表现一致　21</span><br><span class="line">1.12 　小结　22</span><br><span class="line">第2章 　媒体查询：支持不同的视口　23</span><br><span class="line">2.1 　现在就能使用媒体查询　23</span><br><span class="line">2.2 　为什么响应式设计需要媒体查询　24</span><br><span class="line">2.2.1 　媒体查询语法　24</span><br><span class="line">2.2.2 　 媒体查询能检测那些特性　26</span><br><span class="line">2.2.3 　用媒体查询改造我们的设计　27</span><br><span class="line">2.2.4 　加载媒体查询的最佳方法　27</span><br><span class="line">2.3 　我们的第一个响应式设计　27</span><br><span class="line">2.3.1 　我们的设计是固定宽度的，不要惊讶　28</span><br><span class="line">2.3.2 　响应式设计中要保证图片尽可能精简　32</span><br><span class="line">2.3.3 　小视口下的内容剪切　33</span><br><span class="line">2.4 　阻止移动浏览器自动调整页面大小　34</span><br><span class="line">2.5 　针对不同视口宽度修正设计　37</span><br><span class="line">2.6 　响应式设计中内容始终优先　38</span><br><span class="line">2.7 　媒体查询只是必要条件之一　42</span><br><span class="line">2.8 　小结　42</span><br><span class="line">第3章 　拥抱流式布局　43</span><br><span class="line">3.1 　固定布局经不起未来考验　43</span><br><span class="line">3.2 　为什么响应式设计需要百分比布局　44</span><br><span class="line">3.3 　将网页从固定布局修改为百分比布局　44</span><br><span class="line">3.3.1 　需要牢记的公式　45</span><br><span class="line">3.3.2 　设置百分比元素的上下文　47</span><br><span class="line">3.3.3 　必须时刻牢记上下文　52</span><br><span class="line">3.4 　用em替换px　54</span><br><span class="line">3.5 　弹性图片　56</span><br><span class="line">3.5.1 　让图片随视口缩放　56</span><br><span class="line">3.5.2 　为特定图片指定特定规则　58</span><br><span class="line">3.5.3 　给弹性图片设置阈值　59</span><br><span class="line">3.5.4 　超级全能的max-width属性　61</span><br><span class="line">3.6 　为不同的屏幕尺寸提供不同的图片　61</span><br><span class="line">3.7 　流动网格布局和媒体查询的默契配合　66</span><br><span class="line">3.8 　CSS网格系统　66</span><br><span class="line">3.9 　小结　72</span><br><span class="line">第4章 　响应式设计中的HTML5　73</span><br><span class="line">4.1 　HTML5的哪些部分现在就能用　73</span><br><span class="line">4.1.1 　大多数网站可以用HTML5编写　74</span><br><span class="line">4.1.2 　腻子脚本和Modernizr　74</span><br><span class="line">4.2 　如何编写HTML5网页　75</span><br><span class="line">4.2.1 　HTML5的精简之道　76</span><br><span class="line">4.2.2 　HTML5标签的合理写法　76</span><br><span class="line">4.2.3 　伟大的标签万岁　77 4.2.4 　HTML的废弃零件　77 4.3 　HTML5的全新语义化元素　78 4.3.1 　 　78 4.3.2 　 　79 4.3.3 　 　79 4.3.4 　 　79 4.3.5 　 　79 4.3.6 　 　81 4.3.7 　 　81 4.3.8 　 　81 4.4 　HTML5结构元素的实际用法　81 4.5 　HTML5的文本级语义元素　87 4.5.1 　　88 4.5.2 　　88 4.5.3 　　88 4.5.4 　在页面中应用文本层语义元素　88 4.6 　遵循WAI-ARIA实现无障碍站点　90 4.7 　在HTML5中嵌入媒体　93 4.8 　用HTML5的方法为页面添加视频或音频　93 4.8.1 　提供备用的媒体源文件　95 4.8.2 　针对老版本浏览器的备用方案　95 4.8.3 　和标签的用法基本一致　96 4.9 　响应式视频　96 4.10 　离线Web应用　99 4.10.1 　离线Web应用概述　99 4.10.2 　让网页可离线使用　99 4.10.3 　理解manifest文件　100 4.10.4 　页面被自动加载到离线缓存　101 4.10.5 　版本注释的用途　101 4.10.6 　离线访问网站　101 4.10.7 　离线Web应用的故障诊断　102 4.11 　小结　103 第5章 　CSS3：选择器、字体和颜色模式　104 5.1 　CSS3给前端开发人员带来了什么　104 5.1.1 　Internet Explorer 6到8对CSS3的支持　105 5.1.2 　使用CSS3设计和开发页面　105 5.2 　CSS规则解析　105 5.3 　私有前缀及其用法　106 5.4 　快速而有效的CSS技巧　108 5.4.1 　CSS3多栏布局　108 5.4.2 　文字换行　110 5.5 　CSS3的新增选择器及其用法　111 5.5.1 　CSS3属性选择器　111 5.5.2 　CSS3结构伪类　113 5.5.3 　对伪元素的修正　122 5.6 　自定义网页字体　123 5.6.1 　@font-face规则　124 5.6.2 　使用@font-face嵌入网页字体　124 5.7 　帮帮我，标题模糊怎么办　127 5.8 　新的CSS3颜色格式和透明度　129 5.8.1 　RGB颜色　130 5.8.2 　HSL颜色　131 5.8.3 　针对IE6、IE7和IE8提供备用颜色值　132 5.8.4 　透明通道　132 5.9 　小结　134 第6章 　用CSS3创造令人惊艳的美　135 6.1 　文字阴影　136 6.1.1 　HEX、HSL或RGB颜色都可以　136 6.1.2 　px、em或rem都行　136 6.1.3 　取消文字阴影　138 6.1.4 　制作浮雕文字阴影效果　139 6.1.5 　多重文字阴影　140 6.2 　盒阴影　140 6.2.1 　内阴影　141 6.2.2 　多重阴影　142 6.3 　背景渐变　143 6.3.1 　线性背景渐变　144 6.3.2 　径向背景渐变　147 6.3.3 　重复渐变　149 6.4 　背景渐变图案　151 6.5 　CSS3的响应性　153 6.6 　组合使用CSS3属性　155 6.7 　多重背景图片　159 6.7.1 　背景图片大小　161 6.7.2 　背景图片位置　161 6.7.3 　背景属性的缩写语法　161 6.8 　更多CSS特性　162 6.9 　可缩放图标：响应式设计中的完美选择　162 6.10 　小结　163 第7章 　CSS3过渡、变形和动画　164 7.1 　什么是CSS3过渡以及如何使用它　164 7.1.1 　过渡相关的属性　166 7.1.2 　响应式网站中的有趣过渡　168 7.2 　CSS3的2D变形　169 7.3 　尝试CSS3的3D变形　174 7.3.1 　分析3D变形效果　176 7.3.2 　3D变形尚未成熟　178 7.4 　CSS3动画效果　179 7.5 　小结　185 第8章 　用HTML5和CSS3征服表单　186 8.1 　HTML5表单　186 8.1.1 　理解HTML5表单中的元素　188 8.1.2 　placeholder　189 8.1.3 　required　189 8.1.4 　autofocus　190 8.1.5 　autocomplete　191 8.1.6 　list（及对应的datalist元素）　191 8.1.7 　HTML5的新输入类型　192 8.1.8 　日期和时间输入类型　198 8.2 　如何给不支持新特性的浏览器打补丁　203 8.3 　使用CSS3美化HTML5表单　204 8.4 　小结　210 第9章 　解决跨浏览器问题　211 9.1 　渐进增强与优雅降级　215 9.2 　该不该修复老版本IE　216 9.2.1 　统计数据（再看看世界的变化）　216 9.2.2 　个人选择　216 9.3 　前端的瑞士军刀：Modernizr　217 9.3.1 　使用Modernizr辅助修正样式问题　219 9.3.2 　使用Modernizr让老版本IE支持HTML5元素　221 9.3.3 　给IE6、7、8追加min&#x2F;max媒体查询功能　222 9.3.4 　使用Modernizr按需加载资源　223 9.4 　必要时将导航链接转换为下拉菜单　225 9.5 　高分辨率设备（未来趋势）　228 9.6 　小结　231</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00AH83HUK/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00AH83HUK&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51olk4jWxVL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/html/" rel="tag"># html</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/angularjs-2013-4/" rel="prev" title="用AngularJS开发下一代Web应用（英文）">
+      <i class="fa fa-chevron-left"></i> 用AngularJS开发下一代Web应用（英文）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/the-information-a-history-a-theory-a-flood/" rel="next" title="信息简史（英文版）">
+      信息简史（英文版） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

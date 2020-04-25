@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 社会工程 安全体系中的人性漏洞(英文)作者信息： 作者: Christopher Hadnagy [ 英文 pdf ] 简单介绍著名安全专家解密社会工程手法的权威著作社会工程专家的精彩故事令你瞠目结舌众多专业人士强力推荐，亚马逊读者一致好评 帮助你：学习社会工程人员采用的心理学原则及其运用方法了解社会工程人员所精通的说服技巧看清狡猾的骗子如何利用摄像头、GPS定位设备和来电显示行骗">
+<meta property="og:type" content="article">
+<meta property="og:title" content="社会工程 安全体系中的人性漏洞(英文)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/an-quan-ti-xi-zhong-de-ren-xing-lou-dong/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 社会工程 安全体系中的人性漏洞(英文)作者信息： 作者: Christopher Hadnagy [ 英文 pdf ] 简单介绍著名安全专家解密社会工程手法的权威著作社会工程专家的精彩故事令你瞠目结舌众多专业人士强力推荐，亚马逊读者一致好评 帮助你：学习社会工程人员采用的心理学原则及其运用方法了解社会工程人员所精通的说服技巧看清狡猾的骗子如何利用摄像头、GPS定位设备和来电显示行骗">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41cKXRDWifL._SL500_AA300_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.072Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="信息安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41cKXRDWifL._SL500_AA300_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/an-quan-ti-xi-zhong-de-ren-xing-lou-dong/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>社会工程 安全体系中的人性漏洞(英文) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/an-quan-ti-xi-zhong-de-ren-xing-lou-dong/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          社会工程 安全体系中的人性漏洞(英文)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 社会工程 安全体系中的人性漏洞(英文)<br>作者信息： 作者: Christopher Hadnagy [ 英文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>著名安全专家解密社会工程手法的权威著作<br>社会工程专家的精彩故事令你瞠目结舌<br>众多专业人士强力推荐，亚马逊读者一致好评</p>
+<p>帮助你：<br>学习社会工程人员采用的心理学原则及其运用方法<br>了解社会工程人员所精通的说服技巧<br>看清狡猾的骗子如何利用摄像头、GPS定位设备和来电显示行骗<br>知晓在网络上能够找到海量的信息<br>剖析真实世界的社会工程实例</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">目　录 </span><br><span class="line"></span><br><span class="line"> 第1章　社会工程学初探　1 1.1　为何本书很重要　2 1.1.1　本书框架　3 1.1.2　本书内容　4 1.2　社会工程概述　7 1.2.1　社会工程及其定位　10 1.2.2　社会工程人员的类型　12 1.2.3　社会工程的框架及其使用方法　14 1.3　小结　15</span><br><span class="line"></span><br><span class="line"> 第2章　信息收集　16 2.1　收集信息　18 2.1.1　使用BasKet　18 2.1.2　使用Dradis　20 2.1.3　像社会工程人员一样思考　21 2.2　信息源　25 2.2.1　从网站上收集信息　25 2.2.2　运用观察的力量　29 2.2.3　垃圾堆里找信息　30 2.2.4　运用分析软件　31 2.3　交流模型　32 2.3.1　交流模型及其根源　34 2.3.2　制定交流模型　36 2.4　交流模型的力量　39</span><br><span class="line"></span><br><span class="line"> 第3章　诱导　41 3.1　诱导的含义　42 3.2　诱导的目的　44 3.2.1　铺垫　46 3.2.2　成为成功的诱导者　49 3.2.3　提问的学问　52 3.3　精通诱导　55 3.4　小结　57</span><br><span class="line"></span><br><span class="line"> 第4章　伪装：如何成为任何人　58 4.1　什么是伪装　59 4.2　伪装的原则和计划阶段　60 4.2.1　调查越充分，成功的几率越大　60 4.2.2　植入个人爱好会提高成功率　61 4.2.3　练习方言或者表达方式　63 4.2.4　使用电话不会减少社会工程人员投入的精力　64 4.2.5　伪装越简单，成功率越高　65 4.2.6　伪装必须显得自然　66 4.2.7　为目标提供逻辑结论或下一步安排　67 4.3　成功的伪装　68 4.3.1　案例1：斯坦利·马克·瑞夫金　68 4.3.2　案例2：惠普　70 4.3.3　遵纪守法　72 4.3.4　其他伪装工具　73 4.4　小结　74</span><br><span class="line"></span><br><span class="line"> 第5章　心理战术：社会工程心理学　75 5.1　思维模式　76 5.1.1　感官　77 5.1.2　3种主要的思维模式　77 5.2　微表情　81 5.2.1　愤怒　83 5.2.2　厌恶　85 5.2.3　轻蔑　87 5.2.4　恐惧　89 5.2.5　惊讶　91 5.2.6　悲伤　92 5.2.7　快乐　95 5.2.8　训练自己识别微表情　97 5.2.9　社会工程人员如何运用微表情　99 5.3　神经语言程序学　103 5.3.1　神经语言程序学的历史　104 5.3.2　神经语言程序学的准则　105 5.3.3　社会工程人员如何应用NLP　106 5.4　采访和审讯　109 5.4.1　专业的审讯技巧　110 5.4.2　手势　116 5.4.3　双臂和手的摆放　118 5.4.4　聆听：通往成功之门　119 5.5　即刻达成共识　123 5.5.1　真正地想要了解他人　123 5.5.2　注意自身形象　123 5.5.3　善于聆听　124 5.5.4　留心自己对他人的影响　124 5.5.5　尽量少谈论自己　125 5.5.6　谨记：同情心是达成共识的关键　125 5.5.7　扩大知识领域　126 5.5.8　挖掘你的好奇心　126 5.5.9　设法满足他人的需求　127 5.5.10　使用其他建立共识的技巧　129 5.5.11　测试“共识”　130 5.6　人类思维缓冲区溢出　131 5.6.1　设定最基本的原则　132 5.6.2　人性操作系统的模糊测试　133 5.6.3　嵌入式指令的规则　134 5.7　小结　135</span><br><span class="line"></span><br><span class="line"> 第6章　影响：说服的力量　137 6.1　影响和说服的5项基本原则　138 6.1.1　心中有明确的目标　138 6.1.2　共识、共识、共识　139 6.1.3　保持自身和环境一致　141 6.1.4　不要疯狂，要灵活应变　141 6.1.5　内省　141 6.2　影响战术　142 6.2.1　回报　142 6.2.2　义务　145 6.2.3　让步　147 6.2.4　稀缺　148 6.2.5　权威　151 6.2.6　承诺和一致性　153 6.2.7　喜欢　157 6.2.8　共识或社会认同　159 6.3　改动现实：框架　163 6.3.1　政治活动　163 6.3.2　在日常生活中使用框架　164 6.3.3　框架联盟的4种类型　168 6.3.4　社会工程人员如何利用框架战术　172 6.4　操纵：控制你的目标　177 6.4.1　召回还是不召回　179 6.4.2　焦虑的最终治愈　180 6.4.3　你不能让我买那个　181 6.4.4　令目标积极地响应　184 6.4.5　操纵激励　185 6.5　社会工程中的操纵　189 6.5.1　提高目标的暗示感受性　189 6.5.2　控制目标的环境　190 6.5.3　迫使目标重新评估　190 6.5.4　让目标感到无能为力　191 6.5.5　给予非肉体惩罚　192 6.5.6　威胁目标　192 6.5.7　使用积极的操纵　193 6.6　小结　195</span><br><span class="line"></span><br><span class="line"> 第7章　社会工程工具　197 7.1　物理工具　198 7.1.1　开锁器　198 7.1.2　摄像机和录音设备　204 7.1.3　使用GPS跟踪器　207 7.2　在线信息收集工具　214 7.2.1　Maltego　214 7.2.2　社会工程人员工具包　216 7.2.3　基于电话的工具　221 7.2.4　密码分析工具　224 7.3　小结　228</span><br><span class="line"></span><br><span class="line"> 第8章　案例研究：剖析社会工程人员　229 8.1　米特尼克案例1：攻击DMV　230 8.1.1　目标　230 8.1.2　故事　230 8.1.3　社会工程框架的运用　233 8.2　米特尼克案例2：攻击美国社会保障局　235 8.2.1　目标　235 8.2.2　故事　235 8.2.3　社会工程框架的运用　237 8.3　海德纳吉案例1：自负的CEO　238 8.3.1　目标　238 8.3.2　故事　239 8.3.3　社会工程框架的运用　243 8.4　海德纳吉案例2：主题乐园丑闻　244 8.4.1　目标　244 8.4.2　故事　245 8.4.3　社会工程框架的运用　247 8.5　最高机密案例1：不可能的使命　248 8.5.1　目标　248 8.5.2　故事　249 8.5.3　社会工程框架的运用　253 8.6　最高机密案例2：对黑客的社会工程　254 8.6.1　目标　254 8.6.2　故事　255 8.6.3　社会工程框架的运用　260 8.7　案例学习的重要性　261 8.8　小结　261</span><br><span class="line"></span><br><span class="line"> 第9章　预防和补救　262 9.1　学会识别社会工程攻击　263 9.2　创建具有个人安全意识的文化　264 9.3　充分认识信息的价值　266 9.4　及时更新软件　268 9.5　编制参考指南　269 9.6　学习社会工程审计案例　269 9.6.1　理解什么是社会安全审计　269 9.6.2　设立审计目标　270 9.6.3　审计中的可为与不可为　271 9.6.4　挑选最好的审计人员　272 9.7　总结　273 9.7.1　社会工程并非总是消极的　273 9.7.2　收集与组织信息的重要性　274 9.7.3　谨慎用词　274 9.7.4　巧妙伪装　275 9.7.5　练习解读表情　276 9.7.6　操纵与影响　276 9.7.7　警惕恶意策略　276 9.7.8　利用你的恐惧　277 9.8　小结　278</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00GWP2GG8/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00GWP2GG8&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41cKXRDWifL._SL500_AA300_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" rel="tag"># 信息安全</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00112ZOE8/" rel="prev" title="游戏之旅 我的编程感悟">
+      <i class="fa fa-chevron-left"></i> 游戏之旅 我的编程感悟
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00114GRG0/" rel="next" title="UNIX环境高级编程(第2版)">
+      UNIX环境高级编程(第2版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

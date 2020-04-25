@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Hadoop权威指南(第2版)(修订•升级版)作者信息： 作者: 怀特 (Tom White) [ 中文 pdf ] 简单介绍《Hadoop权威指南(第2版)(修订•升级版)》编辑推荐：Google帝国的基石是什么？MapReduce算法！开源项目Hadoop作为它的一个具体实现，可以轻松用于构建和维护一个可靠性高、伸缩性强的分布式系统。作者Tom White作为Hadoop的项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop权威指南(第2版)(修订•升级版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B0055QFIA6/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Hadoop权威指南(第2版)(修订•升级版)作者信息： 作者: 怀特 (Tom White) [ 中文 pdf ] 简单介绍《Hadoop权威指南(第2版)(修订•升级版)》编辑推荐：Google帝国的基石是什么？MapReduce算法！开源项目Hadoop作为它的一个具体实现，可以轻松用于构建和维护一个可靠性高、伸缩性强的分布式系统。作者Tom White作为Hadoop的项目">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51N3QfgLUUL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:05.101Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51N3QfgLUUL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B0055QFIA6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hadoop权威指南(第2版)(修订•升级版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B0055QFIA6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hadoop权威指南(第2版)(修订•升级版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:05" itemprop="dateModified" datetime="2020-04-20T23:37:05+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Hadoop权威指南(第2版)(修订•升级版)<br>作者信息： 作者: 怀特 (Tom White) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Hadoop权威指南(第2版)(修订•升级版)》编辑推荐：Google帝国的基石是什么？MapReduce算法！开源项目Hadoop作为它的一个具体实现，可以轻松用于构建和维护一个可靠性高、伸缩性强的分布式系统。作者Tom White作为Hadoop的项目负责人，通过自己对Hadoop和Hadoop社区的理解，化繁为简，用浅显易懂的语言介绍了Hadoop能做什么，怎么做才能充分发挥Hadoop的优势，Hadoop能够和哪些开源工具结合使用。《Hadoop权威指南（第2版）》是一本主题丰富、讲解透彻的权威参考书，可帮助程序员了解分析海量数据集的细枝末节，帮助管理员掌握搭建和运行Hadoop集群的具体过程。经过修订和更新的第2版概述了Hadoop的最新动态，例如Hive、sqoop和Avro等。书中还提供了案例分析来帮助读者了解如何用Hadoop来解决具体的问题。如果想充分利用数据，从中挖掘出有价值的见解或者观点，毫无疑问，《Hadoop权威指南(第2版)(修订•升级版)》将是您不可或缺的重要参考。“谁说大象不能跳舞？Hadoop-轻松应对海量数据存储与分析所带来的挑战！”使用Hadoop分布式文件系统（HDFS）来存储大型数据集，然后用MapReduce对这些数据II执行分布式计算。Hadoop的数据和I/O构建块（用于压缩、数据完整性、序列化和持久处理）。探究MapReduce应用开发中常见的陷阱和高级特性。设计，构建和管理Hadoop专用集群或在云上运行Hadoop。使用Pig这种高级的查询语言来进行大规模数据处理。使用Hive（Hadoop的数据仓库系统）来分析数据集。使用HBase（Hadoop的数据库）来处理结构化数据和半结构化数据。深入介绍Zookeeper，一个用于构建分布式系统的协作类型工具箱。Cloudera是一家行业领先的Hadoop软件和服务供应商。Cloudera’s Distribution forHadoop （CDH）是一个基于Apache Hadoop的综合性数据管理平台，Cloudera Enterprise则包括一些工具、平台和支持，供生产环境中使用Hadoop时使用。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">第1章 初识Hadoop</span><br><span class="line">数据！数据！</span><br><span class="line">数据存储与分析</span><br><span class="line">与其他系统相比</span><br><span class="line">关系型数据库管理系统</span><br><span class="line">网格计算</span><br><span class="line">志愿计算</span><br><span class="line">Hadoop 发展简史</span><br><span class="line">Apache Hadoop和Hadoop生态圈 </span><br><span class="line"></span><br><span class="line"> 第2章 关于MapReduce 一个气象数据集 数据的格式 使用Unix工具进行数据分析 使用Hadoop分析数据 map阶段和reduce阶段 横向扩展 合并函数 运行一个分布式的MapReduce作业 Hadoop的Streaming Ruby版本 Python版本 Hadoop Pipes 编译运行</span><br><span class="line"></span><br><span class="line"> 第3章 Hadoop分布式文件系统 HDFS的设计 HDFS的概念 数据块 namenode和datanode 命令行接口 基本文件系统操作 Hadoop文件系统 接口 Java接口 从Hadoop URL中读取数据 通过FileSystem API读取数据 写入数据 目录 查询文件系统 删除数据 数据流 文件读取剖析 文件写入剖析 一致模型 通过 distcp并行拷贝 保持 HDFS 集群的均衡 Hadoop的归档文件 使用Hadoop归档文件 不足</span><br><span class="line"></span><br><span class="line"> 第4章 Hadoop I&#x2F;O 数据完整性 HDFS的数据完整性 LocalFileSystem ChecksumFileSystem 压缩 codec 压缩和输入切分 在MapReduce中使用压缩 序列化 Writable接口 Writable类 实现定制的Writable类型 序列化框架 Avro 依据文件的数据结构 写入SequenceFile MapFile</span><br><span class="line"></span><br><span class="line"> 第5章 MapReduce应用开发 配置API 合并多个源文件 可变的扩展 配置开发环境 配置管理 辅助类GenericOptionsParser，Tool和ToolRunner 编写单元测试 mapper reducer 本地运行测试数据 在本地作业运行器上运行作业 测试驱动程序 在集群上运行 打包 启动作业 MapReduce的Web界面 获取结果 作业调试 使用远程调试器 作业调优 分析任务 MapReduce的工作流 将问题分解成MapReduce作业 运行独立的作业</span><br><span class="line"></span><br><span class="line"> 第6章 MapReduce的工作机制 剖析MapReduce作业运行机制 作业的提交 作业的初始化 任务的分配 任务的执行 进度和状态的更新 作业的完成 失败 任务失败 tasktracker失败 jobtracker失败 作业的调度 Fair Scheduler Capacity Scheduler shuffle和排序 map端 reduce端 配置的调优 任务的执行 推测式执行 重用JVM 跳过坏记录 任务执行环境</span><br><span class="line"></span><br><span class="line"> 第7章 MapReduce的类型与格式 MapReduce的类型 默认的MapReduce作业 输入格式 输入分片与记录 文本输入 二进制输入 多种输入 数据库输入(和输出) 输出格式 文本输出 二进制输出 多个输出 延迟输出 数据库输出</span><br><span class="line"></span><br><span class="line"> 第8章 MapReduce的特性 计数器 内置计数器 用户定义的Java计数器 用户定义的Streaming计数器 排序 准备 部分排序 总排序 二次排序 联接 map端联接 reduce端联接 边数据分布 利用JobConf来配置作业 分布式缓存 MapReduce库类</span><br><span class="line"></span><br><span class="line"> 第9章 构建Hadoop集群 集群规范 网络拓扑 集群的构建和安装 安装Java 创建Hadoop用户 安装Hadoop 测试安装 SSH配置 Hadoop配置 配置管理 环境设置 Hadoop守护进程的关键属性 Hadoop守护进程的地址和端口 Hadoop的其他属性 创建用户帐号 安全性 Kerberos和Hadoop 委托令牌 其他安全性改进 利用基准测试程序测试Hadoop集群 Hadoop基准测试程序 用户的作业 云上的Hadoop Amazon EC2上的Hadoop</span><br><span class="line"></span><br><span class="line"> 第10章 管理Hadoop HDFS 永久性数据结构 安全模式 日志审计 工具 监控 日志 度量 Java管理扩展(JMX) 维护 日常管理过程 委任节点和解除节点 升级</span><br><span class="line"></span><br><span class="line"> 第11章 Pig简介 安装与运行Pig 执行类型 运行Pig程序 Grunt Pig Latin编辑器 示例 生成示例 与数据库比较 PigLatin 结构 语句 表达式 类型 模式 函数 用户自定义函数 过滤UDF 计算UDF 加载UDF 数据处理操作 加载和存储数据 过滤数据 分组与连接数据 对数据进行排序 组合和分割数据 Pig实战 并行处理 参数代换</span><br><span class="line"></span><br><span class="line"> 第12章 Hive 第13章 HBase 第14章 ZooKeeper 第15章 开源工具 第16章 实例分析</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B0055QFIA6/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B0055QFIA6&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51N3QfgLUUL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B005DJHV8C/" rel="prev" title="你早该这么玩Excel">
+      <i class="fa fa-chevron-left"></i> 你早该这么玩Excel
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0051PH5FW/" rel="next" title="Android 3D游戏开发技术详解与典型案例">
+      Android 3D游戏开发技术详解与典型案例 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

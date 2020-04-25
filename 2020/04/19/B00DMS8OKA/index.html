@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C#图解教程(第4版)作者信息： 作者: 索利斯 (Daniel M.Solis) [ 中文 pdf ] 简单介绍大家时间都很宝贵，三分钟就能理解的技术细节，干嘛要花三个小时？！C#图解教程(第4版)被誉为C#入门图书中的“神书”，是高效、深入掌握C#的不二之选！“想通过学习C#为你的编程生涯打下坚实的基础？这本书是我发自内心推荐给你的。”为什么那么多C#学习者对《C#图解教程》有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#图解教程(第4版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00DMS8OKA/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C#图解教程(第4版)作者信息： 作者: 索利斯 (Daniel M.Solis) [ 中文 pdf ] 简单介绍大家时间都很宝贵，三分钟就能理解的技术细节，干嘛要花三个小时？！C#图解教程(第4版)被誉为C#入门图书中的“神书”，是高效、深入掌握C#的不二之选！“想通过学习C#为你的编程生涯打下坚实的基础？这本书是我发自内心推荐给你的。”为什么那么多C#学习者对《C#图解教程》有">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51d0RxPDdrL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.766Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="csharp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51d0RxPDdrL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00DMS8OKA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C#图解教程(第4版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00DMS8OKA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C#图解教程(第4版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C#图解教程(第4版)<br>作者信息： 作者: 索利斯 (Daniel M.Solis) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>大家时间都很宝贵，三分钟就能理解的技术细节，干嘛要花三个小时？！C#图解教程(第4版)被誉为C#入门图书中的“神书”，是高效、深入掌握C#的不二之选！“想通过学习C#为你的编程生涯打下坚实的基础？这本书是我发自内心推荐给你的。”为什么那么多C#学习者对《C#图解教程》有口皆碑，令这本书一版再版，长销不衰？因为作者创造了一种全新的可视化叙述方式。他在书中通过把大量的图、表和代码片段有机结合，把很多同类书需要好几页才能讲清楚的技术细节，形象、直观、一目了然地呈现在读者眼前。不管你信不信，很多技术细节只有通过图示才能讲得这么清晰、透彻！</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br></pre></td><td class="code"><pre><span class="line">第1章 C#和.NET框架 1</span><br><span class="line">1.1 在.NET之前 1</span><br><span class="line">1.1.1 20世纪90年代末的Windows编程 1</span><br><span class="line">1.1.2 下一代平台服务的目标 2</span><br><span class="line">1.2 .NET时代 2</span><br><span class="line">1.2.1 .NET框架的组成 2</span><br><span class="line">1.2.2 大大改进的编程环境 3</span><br><span class="line">1.3 编译成CIL 5</span><br><span class="line">1.4 编译成本机代码并执行 6</span><br><span class="line">1.5 CLR 7</span><br><span class="line">1.6 CLI 8</span><br><span class="line">1.7 各种缩写 9</span><br><span class="line">1.8 C#的演化 9</span><br><span class="line">第2章 C#编程概述 10</span><br><span class="line">2.1 一个简单的C#程序 10</span><br><span class="line">2.2 标识符 12</span><br><span class="line">2.3 关键字 12</span><br><span class="line">2.4 Main：程序的起始点 13</span><br><span class="line">2.5 空白 13</span><br><span class="line">2.6 语句 14</span><br><span class="line">2.7 从程序中输出文本 15</span><br><span class="line">2.7.1 Write 15</span><br><span class="line">2.7.2 WriteLine 15</span><br><span class="line">2.7.3 格式字符串 16</span><br><span class="line">2.7.4 多重标记和值 16</span><br><span class="line">2.7.5 格式化数字字符串 17</span><br><span class="line">2.8 注释：为代码添加注解 20</span><br><span class="line">2.8.1 关于注释的补充 21</span><br><span class="line">2.8.2 文档注释 21</span><br><span class="line">2.8.3 注释类型总结 22</span><br><span class="line">第3章 类型、存储和变量 23</span><br><span class="line">3.1 C#程序是一组类型声明 23</span><br><span class="line">3.2 类型是一种模板 24</span><br><span class="line">3.3 实例化类型 24</span><br><span class="line">3.4 数据成员和函数成员 25</span><br><span class="line">3.5 预定义类型 26</span><br><span class="line">3.6 用户定义类型 27</span><br><span class="line">3.7 栈和堆 28</span><br><span class="line">3.7.1 栈 28</span><br><span class="line">3.7.2 堆 29</span><br><span class="line">3.8 值类型和引用类型 30</span><br><span class="line">3.8.1 存储引用类型对象的成员 31</span><br><span class="line">3.8.2 C#类型的分类 31</span><br><span class="line">3.9 变量 32</span><br><span class="line">3.9.1 变量声明 32</span><br><span class="line">3.9.2 多变量声明 34</span><br><span class="line">3.9.3 使用变量的值 34</span><br><span class="line">3.10 静态类型和dynamic关键字 34</span><br><span class="line">3.11 可空类型 35</span><br><span class="line">第4章 类的基本概念 36</span><br><span class="line">4.1 类的概述 36</span><br><span class="line">4.2 程序和类：一个快速示例 37</span><br><span class="line">4.3 声明类 38</span><br><span class="line">4.4 类成员 38</span><br><span class="line">4.4.1 字段 38</span><br><span class="line">4.4.2 方法 40</span><br><span class="line">4.5 创建变量和类的实例 41</span><br><span class="line">4.6 为数据分配内存 41</span><br><span class="line">4.7 实例成员 42</span><br><span class="line">4.8 访问修饰符 43</span><br><span class="line">4.9 从类的内部访问成员 45</span><br><span class="line">4.10 从类的外部访问成员 46</span><br><span class="line">4.11 综合应用 47</span><br><span class="line">第5章 方法 49</span><br><span class="line">5.1 方法的结构 49</span><br><span class="line">5.2 方法体内部的代码执行 50</span><br><span class="line">5.3 本地变量 51</span><br><span class="line">5.3.1 类型推断和var关键字 52</span><br><span class="line">5.3.2 嵌套块中的本地变量 52</span><br><span class="line">5.4 本地常量 53</span><br><span class="line">5.5 控制流 54</span><br><span class="line">5.6 方法调用 55</span><br><span class="line">5.7 返回值 56</span><br><span class="line">5.8 返回语句和void方法 57</span><br><span class="line">5.9 参数 59</span><br><span class="line">5.9.1 形参 59</span><br><span class="line">5.9.2 实参 59</span><br><span class="line">5.10 值参数 61</span><br><span class="line">5.11 引用参数 63</span><br><span class="line">5.12 引用类型作为值参数和引用参数 65</span><br><span class="line">5.13 输出参数 68</span><br><span class="line">5.14 参数数组 70</span><br><span class="line">5.14.1 方法调用 71</span><br><span class="line">5.14.2 用数组作为实参 73</span><br><span class="line">5.15 参数类型总结 74</span><br><span class="line">5.16 方法重载 74</span><br><span class="line">5.17 命名参数 75</span><br><span class="line">5.18 可选参数 76</span><br><span class="line">5.19 栈帧 79</span><br><span class="line">5.20 递归 81</span><br><span class="line">第6章 深入理解类 83</span><br><span class="line">6.1 类成员 83</span><br><span class="line">6.2 成员修饰符的顺序 84</span><br><span class="line">6.3 实例类成员 85</span><br><span class="line">6.4 静态字段 86</span><br><span class="line">6.5 从类的外部访问静态成员 86</span><br><span class="line">6.5.1 静态字段示例 87</span><br><span class="line">6.5.2 静态成员的生存期 87</span><br><span class="line">6.6 静态函数成员 88</span><br><span class="line">6.7 其他静态类成员类型 89</span><br><span class="line">6.8 成员常量 90</span><br><span class="line">6.9 常量与静态量 90</span><br><span class="line">6.10 属性 91</span><br><span class="line">6.10.1 属性声明和访问器 92</span><br><span class="line">6.10.2 属性示例 93</span><br><span class="line">6.10.3 使用属性 94</span><br><span class="line">6.10.4 属性和关联字段 94</span><br><span class="line">6.10.5 执行其他计算 96</span><br><span class="line">6.10.6 只读和只写属性 96</span><br><span class="line">6.10.7 属性与公共字段 97</span><br><span class="line">6.10.8 计算只读属性示例 97</span><br><span class="line">6.10.9 自动实现属性 98</span><br><span class="line">6.10.10 静态属性 99</span><br><span class="line">6.11 实例构造函数 100</span><br><span class="line">6.11.1 带参数的构造函数 101</span><br><span class="line">6.11.2 默认构造函数 102</span><br><span class="line">6.12 静态构造函数 102</span><br><span class="line">6.13 对象初始化语句 104</span><br><span class="line">6.14 析构函数 105</span><br><span class="line">6.15 readonly修饰符 105</span><br><span class="line">6.16 this关键字 106</span><br><span class="line">6.17 索引器 107</span><br><span class="line">6.17.1 什么是索引器 108</span><br><span class="line">6.17.2 索引器和属性 108</span><br><span class="line">6.17.3 声明索引器 109</span><br><span class="line">6.17.4 索引器的set访问器 110</span><br><span class="line">6.17.5 索引器的get访问器 110</span><br><span class="line">6.17.6 关于索引器的补充 111</span><br><span class="line">6.17.7 为Employee示例声明索引器 111</span><br><span class="line">6.17.8 另一个索引器的示例 112</span><br><span class="line">6.17.9 索引器重载 113</span><br><span class="line">6.18 访问器的访问修饰符 114</span><br><span class="line">6.19 分部类和分部类型 115</span><br><span class="line">6.20 分部方法 116</span><br><span class="line">第7章 类和继承 118</span><br><span class="line">7.1 类继承 118</span><br><span class="line">7.2 访问继承的成员 119</span><br><span class="line">7.3 所有类都派生自object类 120</span><br><span class="line">7.4 屏蔽基类的成员 121</span><br><span class="line">7.5 基类访问 123</span><br><span class="line">7.6 使用基类的引用 124</span><br><span class="line">7.6.1 虚方法和覆写方法 125</span><br><span class="line">7.6.2 覆写标记为override的方法 127</span><br><span class="line">7.6.3 覆盖其他成员类型 130</span><br><span class="line">7.7 构造函数的执行 130</span><br><span class="line">7.7.1 构造函数初始化语句 132</span><br><span class="line">7.7.2 类访问修饰符 134</span><br><span class="line">7.8 程序集间的继承 134</span><br><span class="line">7.9 成员访问修饰符 136</span><br><span class="line">7.9.1 访问成员的区域 137</span><br><span class="line">7.9.2 公有成员的可访问性 138</span><br><span class="line">7.9.3 私有成员的可访问性 138</span><br><span class="line">7.9.4 受保护成员的可访问性 138</span><br><span class="line">7.9.5 内部成员的可访问性 139</span><br><span class="line">7.9.6 受保护内部成员的可访问性 139</span><br><span class="line">7.9.7 成员访问修饰符小结 140</span><br><span class="line">7.10 抽象成员 141</span><br><span class="line">7.11 抽象类 142</span><br><span class="line">7.11.1 抽象类和抽象方法的示例 142</span><br><span class="line">7.11.2 抽象类的另一个例子 143</span><br><span class="line">7.12 密封类 144</span><br><span class="line">7.13 静态类 144</span><br><span class="line">7.14 扩展方法 145</span><br><span class="line">7.15 命名约定 148</span><br><span class="line">第8章 表达式和运算符 150</span><br><span class="line">8.1 表达式 150</span><br><span class="line">8.2 字面量 151</span><br><span class="line">8.2.1 整数字面量 152</span><br><span class="line">8.2.2 实数字面量 153</span><br><span class="line">8.2.3 字符字面量 153</span><br><span class="line">8.2.4 字符串字面量 154</span><br><span class="line">8.3 求值顺序 156</span><br><span class="line">8.3.1 优先级 156</span><br><span class="line">8.3.2 结合性 157</span><br><span class="line">8.4 简单算术运算符 157</span><br><span class="line">8.5 求余运算符 158</span><br><span class="line">8.6 关系比较运算符和相等比较运算符 159</span><br><span class="line">8.7 递增运算符和递减运算符 160</span><br><span class="line">8.8 条件逻辑运算符 162</span><br><span class="line">8.9 逻辑运算符 163</span><br><span class="line">8.10 移位运算符 164</span><br><span class="line">8.11 赋值运算符 165</span><br><span class="line">8.12 条件运算符 167</span><br><span class="line">8.13 一元算术运算符 168</span><br><span class="line">8.14 用户定义的类型转换 169</span><br><span class="line">8.15 运算符重载 172</span><br><span class="line">8.15.1 运算符重载的限制 172</span><br><span class="line">8.15.2 运算符重载的示例 173</span><br><span class="line">8.16 typeof运算符 174</span><br><span class="line">8.17 其他运算符 176</span><br><span class="line">第9章 语句 177</span><br><span class="line">9.1 什么是语句 177</span><br><span class="line">9.2 表达式语句 178</span><br><span class="line">9.3 控制流语句 179</span><br><span class="line">9.4 if语句 179</span><br><span class="line">9.5 if…else语句 180</span><br><span class="line">9.6 while循环 181</span><br><span class="line">9.7 do循环 182</span><br><span class="line">9.8 for循环 183</span><br><span class="line">9.8.1 for语句中变量的作用域 185</span><br><span class="line">9.8.2 初始化和迭代表达式中的多表达式 185</span><br><span class="line">9.9 switch语句 186</span><br><span class="line">9.9.1 分支示例 187</span><br><span class="line">9.9.2 switch语句的补充 188</span><br><span class="line">9.9.3 分支标签 189</span><br><span class="line">9.10 跳转语句 189</span><br><span class="line">9.11 break语句 190</span><br><span class="line">9.12 continue语句 190</span><br><span class="line">9.13 标签语句 191</span><br><span class="line">9.13.1 标签 191</span><br><span class="line">9.13.2 标签语句的作用域 192</span><br><span class="line">9.14 goto语句 192</span><br><span class="line">9.15 using语句 193</span><br><span class="line">9.15.1 资源的包装使用 194</span><br><span class="line">9.15.2 using语句的示例 195</span><br><span class="line">9.15.3 多个资源和嵌套 196</span><br><span class="line">9.15.4 using语句的另一种形式 197</span><br><span class="line">9.16 其他语句 197</span><br><span class="line">第10章 结构 198</span><br><span class="line">10.1 什么是结构 198</span><br><span class="line">10.2 结构是值类型 199</span><br><span class="line">10.3 对结构赋值 200</span><br><span class="line">10.4 构造函数和析构函数 201</span><br><span class="line">10.4.1 实例构造函数 201</span><br><span class="line">10.4.2 静态构造函数 202</span><br><span class="line">10.4.3 构造函数和析构函数小结 203</span><br><span class="line">10.5 字段初始化语句是不允许的 203</span><br><span class="line">10.6 结构是密封的 203</span><br><span class="line">10.7 装箱和拆箱 203</span><br><span class="line">10.8 结构作为返回值和参数 204</span><br><span class="line">10.9 关于结构的其他信息 204</span><br><span class="line">第11章 枚举 205</span><br><span class="line">11.1 枚举 205</span><br><span class="line">11.1.1 设置底层类型和显式值 206</span><br><span class="line">11.1.2 隐式成员编号 207</span><br><span class="line">11.2 位标志 208</span><br><span class="line">11.2.1 Flags特性 210</span><br><span class="line">11.2.2 使用位标志的示例 212</span><br><span class="line">11.3 关于枚举的补充 213</span><br><span class="line">第12章 数组 216</span><br><span class="line">12.1 数组 216</span><br><span class="line">12.1.1 定义 216</span><br><span class="line">12.1.2 重要细节 217</span><br><span class="line">12.2 数组的类型 217</span><br><span class="line">12.3 数组是对象 218</span><br><span class="line">12.4 一维数组和矩形数组 219</span><br><span class="line">12.5 实例化一维数组或矩形数组 220</span><br><span class="line">12.6 访问数组元素 220</span><br><span class="line">12.7 初始化数组 221</span><br><span class="line">12.7.1 显式初始化一维数组 222</span><br><span class="line">12.7.2 显式初始化矩形数组 222</span><br><span class="line">12.7.3 初始化矩形数组的语法点 223</span><br><span class="line">12.7.4 快捷语法 223</span><br><span class="line">12.7.5 隐式类型数组 223</span><br><span class="line">12.7.6 综合内容 224</span><br><span class="line">12.8 交错数组 224</span><br><span class="line">12.8.1 声明交错数组 225</span><br><span class="line">12.8.2 快捷实例化 225</span><br><span class="line">12.8.3 实例化交错数组 226</span><br><span class="line">12.8.4 交错数组中的子数组 227</span><br><span class="line">12.9 比较矩形数组和交错数组 228</span><br><span class="line">12.10 foreach语句 229</span><br><span class="line">12.10.1 迭代变量是只读的 230</span><br><span class="line">12.10.2 foreach语句和多维数组 231</span><br><span class="line">12.11 数组协变 232</span><br><span class="line">12.12 数组继承的有用成员 233</span><br><span class="line">12.13 比较数组类型 236</span><br><span class="line">第13章 委托 237</span><br><span class="line">13.1 什么是委托 237</span><br><span class="line">13.2 委托概述 239</span><br><span class="line">13.3 声明委托类型 240</span><br><span class="line">13.4 创建委托对象 241</span><br><span class="line">13.5 给委托赋值 242</span><br><span class="line">13.6 组合委托 243</span><br><span class="line">13.7 为委托添加方法 243</span><br><span class="line">13.8 从委托移除方法 244</span><br><span class="line">13.9 调用委托 244</span><br><span class="line">13.10 委托的示例 245</span><br><span class="line">13.11 调用带返回值的委托 246</span><br><span class="line">13.12 调用带引用参数的委托 247</span><br><span class="line">13.13 匿名方法 248</span><br><span class="line">13.13.1 使用匿名方法 249</span><br><span class="line">13.13.2 匿名方法的语法 249</span><br><span class="line">13.13.3 变量和参数的作用域 250</span><br><span class="line">13.14 Lambda表达式 252</span><br><span class="line">第14章 事件 255</span><br><span class="line">14.1 发布者和订阅者 255</span><br><span class="line">14.2 源代码组件概览 257</span><br><span class="line">14.3 声明事件 257</span><br><span class="line">14.4 订阅事件 258</span><br><span class="line">14.5 触发事件 259</span><br><span class="line">14.6 标准事件的用法 261</span><br><span class="line">14.6.1 通过扩展EventArgs来传递数据 262</span><br><span class="line">14.6.2 移除事件处理程序 264</span><br><span class="line">14.7 事件访问器 265</span><br><span class="line">第15章 接口 267</span><br><span class="line">15.1 什么是接口 267</span><br><span class="line">15.2 声明接口 272</span><br><span class="line">15.3 实现接口 273</span><br><span class="line">15.4 接口是引用类型 275</span><br><span class="line">15.5 接口和as运算符 276</span><br><span class="line">15.6 实现多个接口 276</span><br><span class="line">15.7 实现具有重复成员的接口 277</span><br><span class="line">15.8 多个接口的引用 279</span><br><span class="line">15.9 派生成员作为实现 280</span><br><span class="line">15.10 显式接口成员实现 281</span><br><span class="line">15.11 接口可以继承接口 283</span><br><span class="line">15.12 不同类实现一个接口的示例 284</span><br><span class="line">第16章 转换 286</span><br><span class="line">16.1 什么是转换 286</span><br><span class="line">16.2 隐式转换 287</span><br><span class="line">16.3 显式转换和强制转换 288</span><br><span class="line">16.4 转换的类型 289</span><br><span class="line">16.5 数字的转换 290</span><br><span class="line">16.5.1 隐式数字转换 290</span><br><span class="line">16.5.2 溢出检测上下文 291</span><br><span class="line">16.5.3 显式数字转换 292</span><br><span class="line">16.6 引用转换 295</span><br><span class="line">16.6.1 隐式引用转换 296</span><br><span class="line">16.6.2 显式引用转换 297</span><br><span class="line">16.6.3 有效显式引用转换 298</span><br><span class="line">16.7 装箱转换 299</span><br><span class="line">16.7.1 装箱是创建副本 300</span><br><span class="line">16.7.2 装箱转换 300</span><br><span class="line">16.8 拆箱转换 301</span><br><span class="line">16.9 用户自定义转换 302</span><br><span class="line">16.9.1 用户自定义转换的约束 302</span><br><span class="line">16.9.2 用户自定义转换的示例 302</span><br><span class="line">16.9.3 评估用户自定义转换 304</span><br><span class="line">16.9.4 多步用户自定义转换的示例 304</span><br><span class="line">16.10 is运算符 305</span><br><span class="line">16.11 as运算符 30</span><br><span class="line">第17章 泛型 308</span><br><span class="line">17.1 什么是泛型 308</span><br><span class="line">17.2 C#中的泛型 310</span><br><span class="line">17.3 泛型类 311</span><br><span class="line">17.4 声明泛型类 312</span><br><span class="line">17.5 创建构造类型 312</span><br><span class="line">17.6 创建变量和实例 313</span><br><span class="line">17.6.1 使用泛型的栈的示例 315</span><br><span class="line">17.6.2 比较泛型和非泛型栈 316</span><br><span class="line">17.7 类型参数的约束 317</span><br><span class="line">17.7.1 Where子句 317</span><br><span class="line">17.7.2 约束类型和次序 318</span><br><span class="line">17.8 泛型方法 319</span><br><span class="line">17.8.1 声明泛型方法 319</span><br><span class="line">17.8.2 调用泛型方法 320</span><br><span class="line">17.8.3 泛型方法的示例 321</span><br><span class="line">17.9 扩展方法和泛型类 322</span><br><span class="line">17.10 泛型结构 323</span><br><span class="line">17.11 泛型委托 323</span><br><span class="line">17.12 泛型接口 325</span><br><span class="line">17.12.1 使用泛型接口的示例 326</span><br><span class="line">17.12.2 泛型接口的实现必须唯一 327</span><br><span class="line">17.13 协变 328</span><br><span class="line">17.14 逆变 330</span><br><span class="line">17.14.1 接口的协变和逆变 332</span><br><span class="line">17.14.2 有关可变性的更多内容 333</span><br><span class="line">第18章 枚举器和迭代器 335</span><br><span class="line">18.1 枚举器和可枚举类型 335</span><br><span class="line">18.2 IEnumerator接口 337</span><br><span class="line">18.3 泛型枚举接口 341</span><br><span class="line">18.4 迭代器 343</span><br><span class="line">18.4.1 迭代器块 343</span><br><span class="line">18.4.2 使用迭代器来创建枚举器 344</span><br><span class="line">18.4.3 使用迭代器来创建可枚举类型 346</span><br><span class="line">18.5 常见迭代器模式 347</span><br><span class="line">18.6 产生多个可枚举类型 348</span><br><span class="line">18.7 将迭代器作为属性 349</span><br><span class="line">18.8 迭代器实质 350</span><br><span class="line">第19章 LINQ 352</span><br><span class="line">19.1 什么是LINQ 352</span><br><span class="line">19.2 LINQ提供程序 353</span><br><span class="line">19.3 方法语法和查询语法 355</span><br><span class="line">19.4 查询变量 356</span><br><span class="line">19.5 查询表达式的结构 357</span><br><span class="line">19.5.1 from子句 358</span><br><span class="line">19.5.2 join子句 359</span><br><span class="line">19.5.3 什么是联结 360</span><br><span class="line">19.5.4 查询主体中的from let where片段 362</span><br><span class="line">19.5.5 orderby子句 365</span><br><span class="line">19.5.6 select group子句 366</span><br><span class="line">19.5.7 查询中的匿名类型 367</span><br><span class="line">19.5.8 group子句 368</span><br><span class="line">19.5.9 查询延续：into子句 369</span><br><span class="line">19.6 标准查询运算符 370</span><br><span class="line">19.6.1 标准查询运算符的签名 373</span><br><span class="line">19.6.2 查询表达式和标准查询运算符 374</span><br><span class="line">19.6.3 将委托作为参数 375</span><br><span class="line">19.6.4 LINQ预定义的委托类型 376</span><br><span class="line">19.6.5 使用委托参数的示例 377</span><br><span class="line">19.6.6 使用Lambda表达式参数的示例 378</span><br><span class="line">19.7 LINQtoXML 379</span><br><span class="line">19.7.1 标记语言 379</span><br><span class="line">19.7.2 XML基础 379</span><br><span class="line">19.7.3 XML类 381</span><br><span class="line">19.7.4 使用XML特性 387</span><br><span class="line">19.7.5 节点的其他类型 389</span><br><span class="line">19.7.6 使用LINQtoXML的LINQ查询 390</span><br><span class="line">第20章 异步编程 393</span><br><span class="line">20.1 什么是异步 393</span><br><span class="line">20.2 async&#x2F;await特性的结构 398</span><br><span class="line">20.3 什么是异步方法 399</span><br><span class="line">20.3.1 异步方法的控制流 402</span><br><span class="line">20.3.2 await表达式 404</span><br><span class="line">20.3.3 取消一个异步操作 407</span><br><span class="line">20.3.4 异常处理和await表达式 409</span><br><span class="line">20.3.5 在调用方法中同步地等待任务 410</span><br><span class="line">20.3.6 在异步方法中异步地等待任务 413</span><br><span class="line">20.3.7 Task.Delay方法 415</span><br><span class="line">20.4 在GUI程序中执行异步操作 416</span><br><span class="line">20.5 使用异步Lambda表达式 420</span><br><span class="line">20.6 完整的GUI程序 421</span><br><span class="line">20.7 BackgroundWorker类 423</span><br><span class="line">20.8 并行循环 428</span><br><span class="line">20.9 其他异步编程模式 430</span><br><span class="line">20.10 Begin Invoke和End Invoke 431</span><br><span class="line">20.10.1 等待—直到结束模式 432</span><br><span class="line">20.10.2 Async Result类 433</span><br><span class="line">20.10.3 轮询模式 434</span><br><span class="line">20.10.4 回调模式 435</span><br><span class="line">20.11 计时器 438</span><br><span class="line">第21章 命名空间和程序集 440</span><br><span class="line">21.1 引用其他程序集 440</span><br><span class="line">21.2 命名空间 444</span><br><span class="line">21.2.1 命名空间名称 447</span><br><span class="line">21.2.2 命名空间的补充 447</span><br><span class="line">21.2.3 命名空间跨文件伸展 448</span><br><span class="line">21.2.4 嵌套命名空间 449</span><br><span class="line">21.3 using指令 450</span><br><span class="line">21.3.1 using命名空间指令 450</span><br><span class="line">21.3.2 using别名指令 451</span><br><span class="line">21.4 程序集的结构 451</span><br><span class="line">21.5 程序集标识符 453</span><br><span class="line">21.6 强命名程序集 453</span><br><span class="line">21.7 程序集的私有方式部署 455</span><br><span class="line">21.8 共享程序集和GAC 455</span><br><span class="line">21.8.1 把程序集安装到GAC 455</span><br><span class="line">21.8.2 GAC内的并肩执行 456</span><br><span class="line">21.9 配置文件 457</span><br><span class="line">21.10 延迟签名 457</span><br><span class="line">第22章 异常 459</span><br><span class="line">22.1 什么是异常 459</span><br><span class="line">22.2 try语句 460</span><br><span class="line">22.3 异常类 461</span><br><span class="line">22.4 catch子句 462</span><br><span class="line">22.5 使用特定catch子句的示例 462</span><br><span class="line">22.6 catch子句段 463</span><br><span class="line">22.7 finally块 464</span><br><span class="line">22.8 为异常寻找处理程序 465</span><br><span class="line">22.9 更进一步搜索 466</span><br><span class="line">22.9.1 一般法则 466</span><br><span class="line">22.9.2 搜索调用栈的示例 467</span><br><span class="line">22.10 抛出异常 469</span><br><span class="line">22.11 不带异常对象的抛出 470</span><br><span class="line">第23章 预处理指令 472</span><br><span class="line">23.1 什么是预处理指令 472</span><br><span class="line">23.2 基本规则 472</span><br><span class="line">23.3 #define和#undef指令 473</span><br><span class="line">23.4 条件编译 474</span><br><span class="line">23.5 条件编译结构 475</span><br><span class="line">23.6 诊断指令 476</span><br><span class="line">23.7 行号指令 477</span><br><span class="line">23.8 区域指令 478</span><br><span class="line">23.9 #pragmawarning指令 479</span><br><span class="line">第24章 反射和特性 480</span><br><span class="line">24.1 元数据和反射 480</span><br><span class="line">24.2 Type类 480</span><br><span class="line">24.3 获取Type对象 482</span><br><span class="line">24.4 什么是特性 484</span><br><span class="line">24.5 应用特性 485</span><br><span class="line">24.6 预定义的保留的特性 485</span><br><span class="line">24.6.1 Obsolete特性 485</span><br><span class="line">24.6.2 Conditional特性 486</span><br><span class="line">24.6.3 调用者信息特性 488</span><br><span class="line">24.6.4 Debugger StepThrough特性 488</span><br><span class="line">24.6.5 其他预定义特性 489</span><br><span class="line">24.7 有关应用特性的更多内容 490</span><br><span class="line">24.7.1 多个特性 490</span><br><span class="line">24.7.2 其他类型的目标 490</span><br><span class="line">24.7.3 全局特性 491</span><br><span class="line">24.8 自定义特性 491</span><br><span class="line">24.8.1 声明自定义特性 492</span><br><span class="line">24.8.2 使用特性的构造函数 492</span><br><span class="line">24.8.3 指定构造函数 492</span><br><span class="line">24.8.4 使用构造函数 493</span><br><span class="line">24.8.5 构造函数中的位置参数和命名参数 493</span><br><span class="line">24.8.6 限制特性的使用 494</span><br><span class="line">24.8.7 自定义特性的最佳实践 495</span><br><span class="line">24.9 访问特性 496</span><br><span class="line">24.9.1 使用Is Defined方法 496</span><br><span class="line">24.9.2 使用Get Custom Attributes方法 497</span><br><span class="line">第25章 其他主题 499</span><br><span class="line">25.1 概述 499</span><br><span class="line">25.2 字符串 499</span><br><span class="line">25.3 使用String Builder类 501</span><br><span class="line">25.4 把字符串解析为数据值 502</span><br><span class="line">25.5 关于可空类型的更多内容 503</span><br><span class="line">25.5.1 为可空类型赋值 505</span><br><span class="line">25.5.2 使用空接合运算符 505</span><br><span class="line">25.5.3 使用可空用户自定义类型 506</span><br><span class="line">25.6 Main方法 508</span><br><span class="line">25.7 文档注释 509</span><br><span class="line">25.7.1 插入文档注释 510</span><br><span class="line">25.7.2 使用其他XML标签 510</span><br><span class="line">25.8 嵌套类型 511</span><br><span class="line">25.8.1 嵌套类的示例 512</span><br><span class="line">25.8.2 可见性和嵌套类型 513</span><br><span class="line">25.9 析构函数和dispose模式 514</span><br><span class="line">25.9.1 标准dispose模式 515</span><br><span class="line">25.9.2 比较构造函数和析构函数 517</span><br><span class="line">25.10 和COM的互操作 518</span><br><span class="line">索引 521</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00DMS8OKA/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00DMS8OKA&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51d0RxPDdrL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/csharp/" rel="tag"># csharp</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00EQWESA6/" rel="prev" title="WPF编程宝典 使用C#2012和.NET 4.5(第4版)">
+      <i class="fa fa-chevron-left"></i> WPF编程宝典 使用C#2012和.NET 4.5(第4版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00D678VHS/" rel="next" title="深入理解C++11 C++11新特性解析与应用">
+      深入理解C++11 C++11新特性解析与应用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

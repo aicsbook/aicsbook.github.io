@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： JavaScript设计模式作者信息： 作者: 奥斯马尼 (Addy Osmani) [ 中文 pdf ] 简单介绍通过阅读奥斯马尼的《JavaScript设计模式》，你将学会如何把经典和现代设计模式应用到JavaScript语言中，来编写优美、结构化和可维护的代码。如果想让代码保持高效、更易于管理，并且能同步最新的最佳实践，那么本书正是为你打造的。    本书介绍了很多流行的设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript设计模式">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00D6MT3LG/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： JavaScript设计模式作者信息： 作者: 奥斯马尼 (Addy Osmani) [ 中文 pdf ] 简单介绍通过阅读奥斯马尼的《JavaScript设计模式》，你将学会如何把经典和现代设计模式应用到JavaScript语言中，来编写优美、结构化和可维护的代码。如果想让代码保持高效、更易于管理，并且能同步最新的最佳实践，那么本书正是为你打造的。    本书介绍了很多流行的设计">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51B7jy4UMOL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.888Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51B7jy4UMOL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00D6MT3LG/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JavaScript设计模式 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00D6MT3LG/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript设计模式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： JavaScript设计模式<br>作者信息： 作者: 奥斯马尼 (Addy Osmani) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>通过阅读奥斯马尼的《JavaScript设计模式》，你将学会如何把经典和现代设计模式应用到JavaScript语言中，来编写优美、结构化和可维护的代码。如果想让代码保持高效、更易于管理，并且能同步最新的最佳实践，那么本书正是为你打造的。    本书介绍了很多流行的设计模式，包括Module(模块)模式、Observer(观察者)模式、：Facade(外观)模式和Mediator(中介者)模式；帮助你从现代Web应用程序开发者的角度来了解MVC、MVP、MVVM等现代架构模式的实用性。本书将带领你了解现代模块格式、有效为代码定义名称空间的方法和其他重要主题。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br></pre></td><td class="code"><pre><span class="line">第1章 介绍 1</span><br><span class="line">第2章 什么是模式 3</span><br><span class="line">我们每天都在使用模式 4</span><br><span class="line">第3章 模式状态测试、Proto模式及三法则 6</span><br><span class="line">第4章 设计模式的结构 8</span><br><span class="line">第5章 编写设计模式 11</span><br><span class="line">第6章 反模式 13</span><br><span class="line">第7章 设计模式类别 15</span><br><span class="line">第8章 设计模式分类 17</span><br><span class="line">有关类（Class）的要点 17</span><br><span class="line">第9章JavaScript设计模式 20</span><br><span class="line">9.1Constructor（构造器）模式 21</span><br><span class="line">9.1.1对象创建 21</span><br><span class="line">9.1.2基本Constructor（构造器） 23</span><br><span class="line">9.1.3带原型的Constructor（构造器） 24</span><br><span class="line">9.2Module（模块）模式 25</span><br><span class="line">9.2.1对象字面量 25</span><br><span class="line">9.2.2Module（模块）模式 27</span><br><span class="line">9.2.3Module模式变化 31</span><br><span class="line">9.3RevealingModule（揭示模块）模式 36</span><br><span class="line">9.3.1优点 38</span><br><span class="line">9.3.2缺点 38</span><br><span class="line">9.4Singleton（单例）模式 38</span><br><span class="line">9.5Observer（观察者）模式 42</span><br><span class="line">9.5.1Observer（观察者）模式和Publish&#x2F;Subscribe（发布／订阅）模式的区别 47</span><br><span class="line">9.5.2优点 49</span><br><span class="line">9.5.3缺点 49</span><br><span class="line">9.5.4Publish&#x2F;Subscribe实现 49</span><br><span class="line">9.6Mediator（中介者）模式 59</span><br><span class="line">9.6.1基本实现 60</span><br><span class="line">9.6.2高级实现 61</span><br><span class="line">9.6.3示例 67</span><br><span class="line">9.6.4优点和缺点 68</span><br><span class="line">9.6.5中介者（Mediator）与观察者（Observer） 69</span><br><span class="line">9.6.6中介者（Mediator）与外观（Facade） 69</span><br><span class="line">9.7Prototype（原型）模式 70</span><br><span class="line">9.8Command（命令）模式 73</span><br><span class="line">9.9Facade（外观）模式 75</span><br><span class="line">有关抽象的要点 78</span><br><span class="line">9.10Factory（工厂）模式 78</span><br><span class="line">9.10.1何时使用Factory模式 81</span><br><span class="line">9.10.2何时不应使用Factory模式 81</span><br><span class="line">9.10.3AbstractFactory（抽象工厂） 81</span><br><span class="line">9.11Mixin模式 82</span><br><span class="line">9.11.1子类化 83</span><br><span class="line">9.11.2Mixin（混入） 84</span><br><span class="line">9.12Decorator（装饰者）模式 88</span><br><span class="line">9.12.1伪经典Decorator（装饰者） 91</span><br><span class="line">9.12.2使用jQuery的装饰者 96</span><br><span class="line">9.12.3优点和缺点 97</span><br><span class="line">9.13Flyweight（享元）模式 98</span><br><span class="line">9.13.1使用Flyweight模式 98</span><br><span class="line">9.13.2Flyweight和共享数据 99</span><br><span class="line">9.13.3实现经典Flyweight（享元） 99</span><br><span class="line">9.13.4转换代码以使用Flyweight（享元）模式 103</span><br><span class="line">9.13.5基本工厂 105</span><br><span class="line">9.13.6管理外部状态 106</span><br><span class="line">9.13.7Flyweight（享元）模式和DOM 107</span><br><span class="line">第10章 JavaScriptMV*模式 112</span><br><span class="line">10.1MVC 112</span><br><span class="line">Smalltalk—80MVC 113</span><br><span class="line">10.2为JavaScript开发人员提供的MVC 114</span><br><span class="line">10.2.1Model（模型） 114</span><br><span class="line">10.2.2View（视图） 116</span><br><span class="line">10.2.3Controller（控制器） 119</span><br><span class="line">10.2.4Spine.js与Backbone.js 120</span><br><span class="line">10.3MVC为我们提供了什么 122</span><br><span class="line">10.4JavaScript中的Smalltalk—80MVC 122</span><br><span class="line">10.4.1深入挖掘 123</span><br><span class="line">10.4.2总结 123</span><br><span class="line">10.5MVP 124</span><br><span class="line">10.5.1Model、View和Presenter 124</span><br><span class="line">10.5.2MVP或MVC？ 125</span><br><span class="line">10.5.3MVC、MVP和Backbone.js 126</span><br><span class="line">10.6MVVM 128</span><br><span class="line">10.6.1历史 129</span><br><span class="line">10.6.2Model 129</span><br><span class="line">10.6.3View 130</span><br><span class="line">10.6.4ViewModel 133</span><br><span class="line">10.6.5小结：View和ViewModel 135</span><br><span class="line">10.6.6小结：ViewModel和Model 135</span><br><span class="line">10.7利与弊 135</span><br><span class="line">10.7.1优点 135</span><br><span class="line">10.7.2缺点 136</span><br><span class="line">10.8使用更松散数据绑定的MVVM 136</span><br><span class="line">10.9MVC、MVP与MVVM 141</span><br><span class="line">10.10Backbone.js与KnockoutJS 142</span><br><span class="line">第11章模块化的JavaScript设计模式 144</span><br><span class="line">11.1脚本加载器要点 145</span><br><span class="line">11.2AMD 145</span><br><span class="line">11.2.1模块入门 146</span><br><span class="line">11.2.2使用Dojo的AMD模块 150</span><br><span class="line">11.2.3AMD模块设计模式（Dojo） 151</span><br><span class="line">11.2.4使用jQuery的AMD模块 152</span><br><span class="line">11.2.5AMD总结 155</span><br><span class="line">11.3CommonJS 155</span><br><span class="line">11.3.1入门指南 156</span><br><span class="line">11.3.2使用多个依赖 157</span><br><span class="line">11.3.3支持CommonJS的加载器和框架 158</span><br><span class="line">11.3.4CommonJS适用于浏览器吗？ 158</span><br><span class="line">11.3.5延伸阅读 159</span><br><span class="line">11.4AMD和CommonJS：互相竞争，标准同效 159</span><br><span class="line">UMD：用于插件的AMD和CommonJS兼容模块 160</span><br><span class="line">11.5ESHarmony 165</span><br><span class="line">11.5.1具有Imports和Exports的模块 166</span><br><span class="line">11.5.2从远程数据源加载的模块 167</span><br><span class="line">11.5.3模块加载器API 167</span><br><span class="line">11.5.4用于服务器的类CommonJS模块 168</span><br><span class="line">11.5.5具有构造函数、getter和setter的类 168</span><br><span class="line">11.5.6ESHarmony总结 169</span><br><span class="line">11.5.7延伸阅读 170</span><br><span class="line">11.6总结 170</span><br><span class="line">第12章jQuery中的设计模式 171</span><br><span class="line">12.1Composite（组合）模式 171</span><br><span class="line">12.2Adapter（适配器）模式 173</span><br><span class="line">12.3Facade（外观）模式 174</span><br><span class="line">12.4Observer（观察者）模式 177</span><br><span class="line">12.5Iterator（迭代器）模式 180</span><br><span class="line">12.6延迟初始化 181</span><br><span class="line">12.7Proxy（代理）模式 183</span><br><span class="line">12.8Builder（生成器）模式 184</span><br><span class="line">第13章jQuery插件设计模式 187</span><br><span class="line">13.1模式 188</span><br><span class="line">13.2LightweightStart模式 189</span><br><span class="line">延伸阅读 191</span><br><span class="line">13.3完整的WidgetFactory模式 191</span><br><span class="line">延伸阅读 194</span><br><span class="line">13.4嵌套命名空间插件模式 194</span><br><span class="line">延伸阅读 196</span><br><span class="line">13.5自定义事件插件模式（使用WidgetFactory） 196</span><br><span class="line">延伸阅读 198</span><br><span class="line">13.6使用DOM—to—ObjectBridge模式的原型继承 198</span><br><span class="line">延伸阅读 200</span><br><span class="line">13.7jQuery UI Widget Factory Bridge模式 200</span><br><span class="line">延伸阅读 203</span><br><span class="line">13.8使用WidgetFactory的jQuery Mobile Widget 203</span><br><span class="line">13.9RequireJS和jQuery UI Widget Factory 206</span><br><span class="line">13.9.1用法 208</span><br><span class="line">13.9.2延伸阅读 209</span><br><span class="line">13.10全局选项和单次调用可重写选项（最佳选项模式） 209</span><br><span class="line">延伸阅读 211</span><br><span class="line">13.11高可配和高可变的插件模式 211</span><br><span class="line">延伸阅读 213</span><br><span class="line">13.12是什么使插件超越模式 213</span><br><span class="line">13.12.1质量 214</span><br><span class="line">13.12.2代码风格 214</span><br><span class="line">13.12.3兼容性 214</span><br><span class="line">13.12.4可靠性 214</span><br><span class="line">13.12.5性能 214</span><br><span class="line">13.12.6文档 215</span><br><span class="line">13.12.7维护的可能性 215</span><br><span class="line">13.13总结 215</span><br><span class="line">13.14命名空间模式 215</span><br><span class="line">13.15命名空间基础 216</span><br><span class="line">13.15.1单一全局变量 216</span><br><span class="line">13.15.2命名空间前缀 217</span><br><span class="line">13.15.3对象字面量表示法 217</span><br><span class="line">13.15.4嵌套命名空间 221</span><br><span class="line">13.15.5立即调用的函数表达式（IIFE） 222</span><br><span class="line">13.15.6命名空间注入 224</span><br><span class="line">13.16高级命名空间模式 226</span><br><span class="line">13.16.1自动嵌套的命名空间 227</span><br><span class="line">13.16.2依赖声明模式 229</span><br><span class="line">13.16.3深度对象扩展 229</span><br><span class="line">13.16.4推荐 232</span><br><span class="line">第14章 总结 233</span><br><span class="line">附录 参考文献 235</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00D6MT3LG/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00D6MT3LG&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51B7jy4UMOL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00D2ID4PK/" rel="prev" title="深入理解Java虚拟机 JVM高级特性与最佳实践(第2版)">
+      <i class="fa fa-chevron-left"></i> 深入理解Java虚拟机 JVM高级特性与最佳实践(第2版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00D1HUYVE/" rel="next" title="图灵程序设计丛书 代码的未来">
+      图灵程序设计丛书 代码的未来 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

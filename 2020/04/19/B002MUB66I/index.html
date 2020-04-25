@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Java软件结构与数据结构(第3版)作者信息： 作者: John Lewis [ 中文 pdf ] 简单介绍《Java软件结构与数据结构(第3版)》的写作方法是建立在一些我们强烈推荐的重要原则之上的。首先，我们以一种连贯叙述的方式介绍在《Java软件结构与数据结构(第3版)》中将要考察的各种集合。其次，我们强调完美软件设计技巧的重要性。第三，我们对《Java软件结构与数据结构(第3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java软件结构与数据结构(第3版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B002MUB66I/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Java软件结构与数据结构(第3版)作者信息： 作者: John Lewis [ 中文 pdf ] 简单介绍《Java软件结构与数据结构(第3版)》的写作方法是建立在一些我们强烈推荐的重要原则之上的。首先，我们以一种连贯叙述的方式介绍在《Java软件结构与数据结构(第3版)》中将要考察的各种集合。其次，我们强调完美软件设计技巧的重要性。第三，我们对《Java软件结构与数据结构(第3">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51yCNEOeomL._SL500_AA300_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.870Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51yCNEOeomL._SL500_AA300_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B002MUB66I/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Java软件结构与数据结构(第3版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B002MUB66I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java软件结构与数据结构(第3版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Java软件结构与数据结构(第3版)<br>作者信息： 作者: John Lewis [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《Java软件结构与数据结构(第3版)》的写作方法是建立在一些我们强烈推荐的重要原则之上的。首先，我们以一种连贯叙述的方式介绍在《Java软件结构与数据结构(第3版)》中将要考察的各种集合。其次，我们强调完美软件设计技巧的重要性。第三，我们对《Java软件结构与数据结构(第3版)》结构加以组织以支持和强化《Java软件结构与数据结构(第3版)》的重要目标：即数据结构与算法的学习。我们将更深入地考察这些原则。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">第1章 概述 1</span><br><span class="line">1.1 软件质量 1</span><br><span class="line">1.1.1 正确性 2</span><br><span class="line">1.1.2 可靠性 2</span><br><span class="line">1.1.3 健壮性 3</span><br><span class="line">1.1.4 可用性 3</span><br><span class="line">1.1.5 可维护性 3</span><br><span class="line">1.1.6 可重用性 4</span><br><span class="line">1.1.7 可移植性 4</span><br><span class="line">1.1.8 运行效率 4</span><br><span class="line">1.1.9 质量问题 5</span><br><span class="line">1.2 数据结构 5</span><br><span class="line">1.2.1 一个物理示例 5</span><br><span class="line">1.2.2 以集装箱作为对象 7</span><br><span class="line">关键概念小结 7</span><br><span class="line">自测题 8</span><br><span class="line">练习题 8</span><br><span class="line">自测题答案 8 </span><br><span class="line"></span><br><span class="line"> 第2章 算法分析 9 2.1 算法效率分析 9 2.2 增长函数与大O记法 10 2.3 增长函数的比较 12 2.4 时间复杂度分析 13 2.4.1 循环运行的复杂度分析 13 2.4.2 嵌套循环的复杂度分析 14 2.4.3 方法调用的复杂度分析 15 关键概念小结 16 自测题 16 练习题 17 自测题答案 17 参考文献 18</span><br><span class="line"></span><br><span class="line"> 第3章 集合 19 3.1 概述 19 3.1.1 抽象数据类型 20 3.1.2 Java集合API 21 3.2 栈集合 22 3.3 主要的面向对象概念 23 3.3.1 继承 24 3.3.2 类层次 25 3.3.3 Object类 26 3.3.4 多态性 27 3.3.5 引用与类层次 28 3.3.6 泛型 29 3.4 栈ADT 30 接口 30 3.5 使用栈计算后缀表达式 32 3.6 异常 38 3.6.1 异常消息 39 3.6.2 try语句 39 3.6.3 异常传播 40 3.7 用数组实现栈 41 管理容量 41 3.8 ArrayStack类 42 3.8.1 构造函数 43 3.8.2 push操作 44 3.8.3 pop操作 45 3.8.4 peek操作 46 3.8.5 其他操作 46 关键概念小结 46 自测题 47 练习题 48 程序设计项目 48 自测题答案 49</span><br><span class="line"></span><br><span class="line"> 第4章 链式结构 51 4.1 链接作为引用 51 4.2 管理链表 53 4.2.1 访问元素 53 4.2.2 插入结点 54 4.2.3 删除结点 55 4.2.4 哑结点 55 4.3 无链接的元素 56 双向链表 56</span><br><span class="line"></span><br><span class="line"> 4.4 用链表实现栈 57 4.4.1 LinkedStack类 57 4.4.2 push操作 60 4.4.3 pop操作 61 4.4.4 其他操作 62 4.5 使用栈来穿越迷宫 62 4.6 java.util.Stack类实现栈 67 4.6.1 独有的操作 68 4.6.2 继承与实现 68 关键概念小结 69 自测题 69 练习题 69 程序设计项目 70 自测题答案 70</span><br><span class="line"></span><br><span class="line"> 第5章 队列 72 5.1 概述 72 5.2 使用队列：代码密钥 75 5.3 使用队列：售票口模拟 77 5.4 用链表实现队列 81 5.4.1 enqueue操作 83 5.4.2 dequeue操作 84 5.4.3 其他操作 85 5.5 用数组实现队列 85 5.5.1 enqueue操作 88 5.5.2 dequeue操作 90 5.5.3 其他操作 90 关键概念小结 90 自测题 91 练习题 91 程序设计项目 92 自测题答案 92</span><br><span class="line"></span><br><span class="line"> 第6章 列表 94 6.1 概述 94 6.1.1 迭代器 96 6.1.2 往列表添加元素 97 6.1.3 接口与多态性 98 6.2 有序列表使用示例：联赛主办者 104 6.3 索引列表使用示例：Josephus问题 109</span><br><span class="line"></span><br><span class="line"> 6.4 使用数组实现列表 111 6.4.1 remove操作 112 6.4.2 contains操作 114 6.4.3 iterator操作 115 6.4.4 有序列表的add操作 117 6.4.5 无序列表的特有操作 118 6.4.6 无序列表的addAfter操作 118 6.5 使用链表实现列表 119 6.5.1 remove操作 119 6.5.2 双向链表 121 6.5.3 iterator操作 124 6.6 Java集合API中的列表 126 6.6.1 Cloneable接口 126 6.6.2 Serializable接口 127 6.6.3 RandomAccess接口 127 6.6.4 java.util.Vector接口 127 6.6.5 java.util.ArrayList接口 129 6.6.6 java.util.LinkedList接口 130 关键概念小结 132 自测题 133 练习题 133 程序设计项目 134 自测题答案 134</span><br><span class="line"></span><br><span class="line"> 第7章 递归 136 7.1 递归地思考 136 7.1.1 无穷递归 137 7.1.2 数学中的递归 138 7.2 递归地编程 138 7.2.1 递归与迭代 140 7.2.2 直接递归与间接递归 140 7.3 使用递归 141 7.3.1 穿越迷宫 141 7.3.2 汉诺塔 145 7.4 递归算法分析 149 关键概念小结 150 自测题 151 练习题 151 程序设计项目 152 自测题答案 153</span><br><span class="line"></span><br><span class="line"> 第8章 排序与查找 154 8.1 查找 154 8.1.1 静态方法 155 8.1.2 泛型方法 155 8.1.3 线性查找法 156 8.1.4 二分查找法 157 8.1.5 查找算法的比较 159 8.2 排序 160 8.2.1 选择排序法 162 8.2.2 插入排序法 164 8.2.3 冒泡排序法 165 8.2.4 快速排序法 167 8.2.5 归并排序法 170 8.3 基数排序法 171 关键概念小结 175 自测题 176 练习题 176 程序设计项目 177 自测题答案 177</span><br><span class="line"></span><br><span class="line"> 第9章 树 178 9.1 概述 178 树的分类 179 9.2 实现树的策略 180 9.2.1 树的数组实现之计算策略 180 9.2.2 树的数组实现之模拟链接策略 181 9.2.3 树的分析 182 9.3 树的遍历 182 9.3.1 前序遍历 183 9.3.2 中序遍历 183 9.3.3 后序遍历 184 9.3.4 层序遍历 184 9.4 二叉树 185 9.5 使用二叉树：表达式树 188 9.6 用链表实现二叉树 197 9.6.1 find方法 199 9.6.2 iteratorInOrder方法 201 9.7 用数组实现二叉树 202 9.7.1 find方法 203 9.7.2 iteratorInOrder方法 204 关键概念小结 205 自测题 205 练习题 206 程序设计项目 206 自测题答案 206</span><br><span class="line"></span><br><span class="line"> 第10章 二叉查找树 208 10.1 概述 208 10.2 用链表实现二叉查找树 211 10.2.1 addElement操作 211 10.2.2 removeElement操作 213 10.2.3 removeAllOccurrences操作 216 10.2.4 removeMin操作 217 10.3 用数组实现二叉查找树 218 10.3.1 addElement操作 219 10.3.2 removeElement操作 221 10.3.3 replace操作 223 10.3.4 removeAllOccurrences操作 227 10.3.5 removeMin操作 227 10.4 用有序列表实现二叉查找树 228 BinarySearchTreeList实现的分析 231 10.5 平衡二叉查找树 232 10.5.1 右旋 233 10.5.2 左旋 233 10.5.3 右左旋 234 10.5.4 左右旋 234 10.6 实现二叉查找树：AVL树 235 10.6.1 AVL树的右旋 235 10.6.2 AVL树的左旋 236 10.6.3 AVL树的右左旋 236 10.6.4 AVL树的左右旋 236 10.7 实现二叉查找树：红黑树 237 10.7.1 红黑树中的元素插入 237 10.7.2 红黑树中的元素删除 239 10.8 实现二叉查找树：Java集合API 241 关键概念小结 243 自测题 244 练习题 245 程序设计项目 245 自测题答案 246 参考文献 247</span><br><span class="line"></span><br><span class="line"> 第11章 优先队列与堆 248 11.1 堆 248 11.1.1 addElement操作 250 11.1.2 removeMin操作 251 11.1.3 findMin操作 252 11.2 使用堆：优先级队列 252 11.3 用链表实现堆 256 11.3.1 addElement操作 257 11.3.2 removeMin操作 259 11.3.3 findMin操作 261 11.4 用数组实现堆 261 11.4.1 addElement操作 262 11.4.2 removeMin操作 263 11.4.3 findMin操作 265 11.5 使用堆：堆排序 265 关键概念小结 266 自测题 267 练习题 267 程序设计项目 268 自测题答案 268</span><br><span class="line"></span><br><span class="line"> 第12章 多路查找树 270 12.1 整合树的概念 270 12.2 2-3树 270 12.2.1 往2-3树中插入元素 271 12.2.2 从2-3树中删除元素 273 12.3 2-4树 275 12.4 B树 276 12.4.1 B*树 277 12.4.2 B+树 277 12.4.3 B树的分析 278 12.5 B树的实现策略 278 关键概念小结 279 自测题 279 练习题 279 程序设计项目 280 自测题答案 280 参考文献 281</span><br><span class="line"></span><br><span class="line"> 第13章 图 282 13.1 无向图 282 13.2 有向图 284 13.3 网络 285 13.4 常用的图算法 286 13.4.1 遍历 286 13.4.2 测试连通性 289 13.4.3 最小生成树 290 13.4.4 判定最短路径 293 13.5 图的实现策略 293 13.5.1 邻接列表 293 13.5.2 邻接矩阵 294 13.6 用邻接矩阵实现无向图 295 13.6.1 addEdge方法 298 13.6.2 addVertex方法 299 13.6.3 expandCapacity方法 300 13.6.4 其他方法 300 关键概念小结 300 自测题 301 练习题 301 程序设计项目 302 自测题答案 302 参考文献 303</span><br><span class="line"></span><br><span class="line"> 第14章 散列 304 14.1 概述 304 14.2 散列函数 305 14.2.1 余数法 306 14.2.2 折叠法 306 14.2.3 平方取中法 307 14.2.4 基数转换法 307 14.2.5 数字分析法 307 14.2.6 长度相关法 307 14.2.7 Java语言中的散列函数 308 14.3 解决冲突 308 14.3.1 链地址法 308 14.3.2 开放地址法 310 14.4 从散列表删除元素 312 14.4.1 从链地址实现中删除 312 14.4.2 从开放地址实现中删除 312 14.5 Java集合API中的散列表 313 14.5.1 Hashtable类 313 14.5.2 HashSet类 314 14.5.3 HashMap类 315 14.5.4 IdentityHashMap类 316 14.5.5 WeakHashMap类 317 14.5.6 LinkedHashSet与LinkedHashMap 318 关键概念小结 319 自测题 319 练习题 320 程序设计项目 320 自测题答案 321</span><br><span class="line"></span><br><span class="line"> 第15章 Set与Map集合 323 15.1 Set集合 323 15.2 使用Set：bingo程序 326 15.3 用数组实现Set 329 15.3.1 add操作 330 15.3.2 addAll操作 332 15.3.3 removeRandom操作 332 15.3.4 remove操作 333 15.3.5 union操作 334 15.3.6 contains操作 335 15.3.7 equals操作 336 15.3.8 其他操作 337 15.3.9 UML描述 337 15.4 用链表实现Set 338 15.4.1 add操作 338 15.4.2 removeRandom操作 339 15.4.3 remove操作 340 15.4.4 其他操作 341 15.5 Map集合与Java集合API 341 关键概念小结 342 自测题 343 练习题 343 程序设计项目 343 自测题答案 344</span><br><span class="line"></span><br><span class="line"> 附录A UML 346 A.1 统一建模语言 346 A.2 UML类图 346 A.3 UML关系 347 关键概念小结 349 自测题 350 练习题 350 自测题答案 350</span><br><span class="line"></span><br><span class="line"> 附录B 面向对象设计 351 B.1 概述 351 B.2 使用对象 351 B.2.1 抽象 352 B.2.2 创建对象 353 B.3 类库与包 354 import声明 355 B.4 状态与行为 355 B.5 类 356 实例数据 359 B.6 封装 359 B.6.1 可见性修饰符 360 B.6.2 局部数据 361 B.7 构造函数 361 B.8 方法重载 362 B.9 再谈引用 363 B.9.1 空引用 363 B.9.2 this引用 364 B.9.3 别名 365 B.9.4 垃圾回收 367 B.9.5 将对象作为参数传递 367 B.10 static修饰符 368 B.10.1 静态变量 368 B.10.2 静态方法 369 B.11 包装类 369 B.12 接口 370 B.12.1 Comparable接口 371 B.12.2 Iterator接口 372 B.13 继承 372 B.13.1 派生类 373 B.13.2 protected修饰符 375 B.13.3 super引用 375 B.13.4 重载方法 376 B.14 类的层次结构 376 B.14.1 Object类 377 B.14.2 抽象类 378 B.14.3 接口的层次结构 379 B.15 多态性 379 B.15.1 引用和类的层次结构 380 B.15.2 基于继承的多态性 381 B.15.3 基于接口的多态性 382 B.16 泛型 384 B.17 异常 385 B.17.1 异常消息 385 B.17.2 try语句 386 B.17.3 异常传播 387 B.17.4 异常类的层次结构 387 关键概念小结 388 自测题 390 练习题 390 程序设计项目 391 自测题答案 392</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B002MUB66I/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B002MUB66I&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51yCNEOeomL._SL500_AA300_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B002VEDBMW/" rel="prev" title="iphone3开发基础教程">
+      <i class="fa fa-chevron-left"></i> iphone3开发基础教程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0012UMVYA/" rel="next" title="JavaScript权威指南(第5版)">
+      JavaScript权威指南(第5版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

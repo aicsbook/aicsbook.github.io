@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Android移动应用开发(第3版)卷1：基础篇作者信息： 作者: 达西 (Lauren Darcey) [ 中文 pdf ] 简单介绍依托Android最新的主流平台为Android 4.0，面向最新的SDK和相关工具，同时还涵盖了老版平台中的一些常用功能，以帮助开发人员适应目前市面上所有的主流设备。《Android移动应用开发(第3版)卷Ⅰ：基础篇》涵盖了作者数年来在移动开发领">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android移动应用开发(第3版)卷1：基础篇">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B009C2XM2K/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Android移动应用开发(第3版)卷1：基础篇作者信息： 作者: 达西 (Lauren Darcey) [ 中文 pdf ] 简单介绍依托Android最新的主流平台为Android 4.0，面向最新的SDK和相关工具，同时还涵盖了老版平台中的一些常用功能，以帮助开发人员适应目前市面上所有的主流设备。《Android移动应用开发(第3版)卷Ⅰ：基础篇》涵盖了作者数年来在移动开发领">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51h6edqPMZL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.606Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51h6edqPMZL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B009C2XM2K/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android移动应用开发(第3版)卷1：基础篇 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B009C2XM2K/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android移动应用开发(第3版)卷1：基础篇
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Android移动应用开发(第3版)卷1：基础篇<br>作者信息： 作者: 达西 (Lauren Darcey) [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>依托Android最新的主流平台为Android 4.0，面向最新的SDK和相关工具，同时还涵盖了老版平台中的一些常用功能，以帮助开发人员适应目前市面上所有的主流设备。《Android移动应用开发(第3版)卷Ⅰ：基础篇》涵盖了作者数年来在移动开发领域所积累的经验，以及成功进行移动项目开发所需的全部概念和实用技术，包括移动开发过程与传统软件开发的区别，还包括帮助你节约宝贵时间和规避隐患的技巧。不管你的项目有多大规模，《Android移动应用开发(第3版)卷Ⅰ：基础篇》都能为你提供帮助。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br></pre></td><td class="code"><pre><span class="line">第一部分 Android平台概览</span><br><span class="line">第1章 Android简介</span><br><span class="line">1.1 移动软件开发简史</span><br><span class="line">1.1.1 遥想当年</span><br><span class="line">1.1.2 “砖头”</span><br><span class="line">1.1.3 无线应用协议（WAP）</span><br><span class="line">1.1.4 专用移动平台</span><br><span class="line">1.2 开放手机联盟（OHA）</span><br><span class="line">1.2.1 无线Google</span><br><span class="line">1.2.2 成立开放手机联盟</span><br><span class="line">1.2.3 制造商：设计Android手机</span><br><span class="line">1.2.4 移动运营商：传播Android体验</span><br><span class="line">1.2.5 应用程序推动的设备销售：开发Android应用程序</span><br><span class="line">1.2.6 充分发挥Android的优势</span><br><span class="line">1.2.7 Android市场：我们的定位</span><br><span class="line">1.3 Android平台的不同之处</span><br><span class="line">1.3.1 Android：下一代平台</span><br><span class="line">1.3.2 免费开放源代码</span><br><span class="line">1.3.3 熟悉和廉价的开发工具</span><br><span class="line">1.3.4 合理的开发人员学习曲线</span><br><span class="line">1.3.5 强大的应用程序开发支持</span><br><span class="line">1.3.6 丰富、安全的应用集成</span><br><span class="line">1.3.7 无障碍发布</span><br><span class="line">1.3.8 为应用程序提供的“自由市场”</span><br><span class="line">1.3.9 新生并逐渐成长的平台</span><br><span class="line">1.4 Android平台</span><br><span class="line">1.4.1 Android的基本体系结构</span><br><span class="line">1.4.2 安全与许可权限</span><br><span class="line">1.4.3 开发Android应用程序</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第2章 搭建你的Android开发环境</span><br><span class="line">2.1 配置你的开发环境</span><br><span class="line">2.1.1 配置操作系统以适应设备调试</span><br><span class="line">2.1.2 配置Android硬件以供调试</span><br><span class="line">2.1.3 升级Android SDK</span><br><span class="line">2.1.4 Android软件开发包的问题</span><br><span class="line">2.2 探索Android SDK</span><br><span class="line">2.2.1 理解Android SDK许可协议</span><br><span class="line">2.2.2 阅读Android SDK文档</span><br><span class="line">2.2.3 探索Android应用程序核心框架</span><br><span class="line">2.2.4 了解Android核心工具</span><br><span class="line">2.2.5 探索Android示例应用程序</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第3章 编写第一个Android应用程序</span><br><span class="line">3.1 测试你的开发环境</span><br><span class="line">3.1.1 在Eclipse工程中导入Snake应用程序</span><br><span class="line">3.1.2 为Snake工程创建Android虚拟设备（AVD）</span><br><span class="line">3.1.3 为Snake工程创建运行配置参数</span><br><span class="line">3.1.4 在Android模拟器中运行Snake应用程序</span><br><span class="line">3.2 构建你的第一个Android应用程序</span><br><span class="line">3.2.1 创建和配置新的Android工程</span><br><span class="line">3.2.2 Android应用程序的核心文件和目录</span><br><span class="line">3.2.3 为新工程创建Android虚拟设备</span><br><span class="line">3.2.4 为工程配置运行参数</span><br><span class="line">3.2.5 在模拟器中运行Android应用程序</span><br><span class="line">3.2.6 在模拟器中调试Android应用程序</span><br><span class="line">3.2.7 为Android应用程序添加日志记录</span><br><span class="line">3.2.8 为应用程序添加媒体支持</span><br><span class="line">3.2.9 为应用程序添加位置服务（LBS）</span><br><span class="line">3.2.10 在硬件上调试应用程序</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第4章 掌握Android开发工具</span><br><span class="line">4.1 使用Android文档</span><br><span class="line">4.2 使用Android模拟器</span><br><span class="line">4.3 使用LogCat查看应用程序日志数据</span><br><span class="line">4.4 使用DDMS调试应用程序</span><br><span class="line">4.5 使用Android调试桥（ADB）</span><br><span class="line">4.6 使用资源编辑器和UI设计器</span><br><span class="line">4.7 使用Android层级浏览器</span><br><span class="line">4.7.1 运行层级浏览器</span><br><span class="line">4.7.2 使用布局浏览模式</span><br><span class="line">4.7.3 优化用户界面</span><br><span class="line">4.7.4 使用精细像素模式</span><br><span class="line">4.8 使用九格拉伸图像</span><br><span class="line">4.9 使用其他Android工具</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第二部分 Android应用程序设计基础</span><br><span class="line">第5章 剖析Android应用程序</span><br><span class="line">5.1 掌握重要的Android术语</span><br><span class="line">5.2 使用应用程序Context</span><br><span class="line">5.2.1 获取应用程序Context</span><br><span class="line">5.2.2 使用应用程序Context</span><br><span class="line">5.2.3 获取应用程序资源</span><br><span class="line">5.2.4 访问应用程序首选项</span><br><span class="line">5.2.5 访问应用程序文件和目录</span><br><span class="line">5.2.6 获取应用程序组件</span><br><span class="line">5.3 使用Activity执行应用程序任务</span><br><span class="line">5.3.1 Android Activity的生命周期</span><br><span class="line">5.3.2 使用Activity回调管理应用程序状态和资源</span><br><span class="line">5.4 使用Fragment组织Activity组件</span><br><span class="line">5.5 使用Intent管理Activity跳转</span><br><span class="line">5.5.1 使用Intent实现Activity之间的跳转</span><br><span class="line">5.5.2 使用Activity和Intent组织应用程序导航</span><br><span class="line">5.6 使用服务</span><br><span class="line">5.7 接收和广播Intent</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第6章 使用Android Manifest文件定义应用程序</span><br><span class="line">6.1 使用Android Manifest文件配置Android应用程序</span><br><span class="line">6.2 管理你的应用程序标识</span><br><span class="line">6.2.1 为你的应用程序指定版本</span><br><span class="line">6.2.2 给你的应用程序加上名称和图标</span><br><span class="line">6.3 强制指定应用程序的系统需求</span><br><span class="line">6.3.1 针对特定SDK版本</span><br><span class="line">6.3.2 强制指定应用程序平台需求</span><br><span class="line">6.3.3 使用外部库</span><br><span class="line">6.3.4 其他应用程序配置及筛选器</span><br><span class="line">6.4 在Android Manifest文件中注册Activity</span><br><span class="line">6.4.1 使用Intent过滤器为应用程序指派主入口点Activity</span><br><span class="line">6.4.2 配置其他Intent过滤器</span><br><span class="line">6.4.3 注册其他应用程序组件</span><br><span class="line">6.5 使用许可权限</span><br><span class="line">6.5.1 注册应用程序所需的许可权限</span><br><span class="line">6.5.2 注册应用程序强制要求的许可权限</span><br><span class="line">6.6 探索Manifest文件的其他设置</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第7章 管理应用程序资源</span><br><span class="line">7.1 什么是资源</span><br><span class="line">7.1.1 存储应用程序资源</span><br><span class="line">7.1.2 资源的类型</span><br><span class="line">7.1.3 使用程序访问资源</span><br><span class="line">7.2 使用Eclipse设置简单资源</span><br><span class="line">7.3 使用不同种类的资源</span><br><span class="line">7.3.1 使用String（字符串）资源</span><br><span class="line">7.3.2 使用格式化的字符串资源</span><br><span class="line">7.3.3 使用字符串数组</span><br><span class="line">7.3.4 使用Boolean（布尔）资源</span><br><span class="line">7.3.5 使用Integer（整型）资源</span><br><span class="line">7.3.6 使用颜色</span><br><span class="line">7.3.7 使用尺寸</span><br><span class="line">7.3.8 使用简单Drawable资源</span><br><span class="line">7.3.9 使用图像</span><br><span class="line">7.3.10 使用动画</span><br><span class="line">7.3.11 使用菜单</span><br><span class="line">7.3.12 使用XML文件</span><br><span class="line">7.3.13 使用原始文件</span><br><span class="line">7.3.14 资源引用</span><br><span class="line">7.3.15 使用布局（Layout）</span><br><span class="line">7.4 引用系统资源</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第三部分 Android用户界面设计精髓</span><br><span class="line">第8章 探索用户界面屏幕元素</span><br><span class="line">8.1 Android视图和布局简介</span><br><span class="line">8.1.1 Android视图简介</span><br><span class="line">8.1.2 Android控件简介</span><br><span class="line">8.1.3 Android布局简介</span><br><span class="line">8.2 使用TextView显示文本</span><br><span class="line">8.2.1 配置布局和尺寸</span><br><span class="line">8.2.2 在文本中创建上下文链接</span><br><span class="line">8.3 使用EditText获取用户数据</span><br><span class="line">8.3.1 使用EditText控件获取用户输入文本</span><br><span class="line">8.3.2 使用输入过滤器约束用户输入</span><br><span class="line">8.4 使用自动补全辅助用户</span><br><span class="line">8.5 使用Spinner控件为用户提供可选输入</span><br><span class="line">8.6 使用按钮、多选框和单选组完成简单的用户选择</span><br><span class="line">8.6.1 使用基本按钮</span><br><span class="line">8.6.2 使用BheckBox和ToggleButton控件</span><br><span class="line">8.6.3 使用RadioGroup和Radio Button</span><br><span class="line">8.7 获取用户输入的日期和时间</span><br><span class="line">8.8 使用指示器向用户显示数据</span><br><span class="line">8.8.1 使用ProgressBar指示进度</span><br><span class="line">8.8.2 使用SeekBar调整进度</span><br><span class="line">8.8.3 使用RatingBar显示评分数据</span><br><span class="line">8.8.4 使用Chronometer显示时间推移</span><br><span class="line">8.8.5 显示时间</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第9章 使用布局设计用户界面</span><br><span class="line">9.1 创建Android用户界面</span><br><span class="line">9.1.1 使用XML资源创建布局</span><br><span class="line">9.1.2 使用代码创建布局</span><br><span class="line">9.2 组织用户界面</span><br><span class="line">9.2.1 为布局设计使用ViewGroup子类</span><br><span class="line">9.2.2 将ViewGroup子类作为视图容器</span><br><span class="line">9.3 使用内建的布局类</span><br><span class="line">9.3.1 使用FrameLayout</span><br><span class="line">9.3.2 使用LinearLayout</span><br><span class="line">9.3.3 使用RelativeLayout</span><br><span class="line">9.3.4 使用TableLayout</span><br><span class="line">9.3.5 使用GridLayout</span><br><span class="line">9.3.6 在屏幕上使用多布局</span><br><span class="line">9.4 使用容器控件类</span><br><span class="line">9.4.1 使用数据驱动容器</span><br><span class="line">9.4.2 使用标签组织视图</span><br><span class="line">9.4.3 添加滚动支持</span><br><span class="line">9.4.4 探索其他视图容器</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第10章 使用Fragment</span><br><span class="line">10.1 理解Fragment</span><br><span class="line">10.1.1 理解Fragment生命周期</span><br><span class="line">10.1.2 使用特化的Fragment</span><br><span class="line">10.1.3 设计基于Fragment的应用程序</span><br><span class="line">10.2 使用Android支持包</span><br><span class="line">10.2.1 为旧版应用程序添加Android Fragment支持</span><br><span class="line">10.2.2 在新应用程序中针对旧版平台使用Fragment</span><br><span class="line">10.2.3 在项目中链接Android支持包</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第11章 使用对话框</span><br><span class="line">11.1 选择一种方式实现对话框</span><br><span class="line">11.2 探索不同类型的对话框</span><br><span class="line">11.3 使用对话框：以前的方法</span><br><span class="line">11.4 使用对话框：Fragment方法</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第四部分 Android应用程序设计精髓</span><br><span class="line">第12章 使用Android首选项</span><br><span class="line">12.1 使用应用程序首选项</span><br><span class="line">12.1.1 正确地使用首选项</span><br><span class="line">12.1.2 存储不同类型的首选项值</span><br><span class="line">12.1.3 创建私有和共享首选项</span><br><span class="line">12.1.4 创建可供多个Activity使用的共享首选项</span><br><span class="line">12.1.5 搜索和读取首选项</span><br><span class="line">12.1.6 新增、修改和删除首选项</span><br><span class="line">12.1.7 处理首选项变更</span><br><span class="line">12.1.8 使用Android文件系统查找首选项数据</span><br><span class="line">12.2 创建可管理的用户首选项</span><br><span class="line">12.2.1 创建首选项资源文件</span><br><span class="line">12.2.2 使用PreferenceActivity类</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第13章 使用文件和目录</span><br><span class="line">13.1 使用设备应用程序数据</span><br><span class="line">13.2 练习良好的文件管理</span><br><span class="line">13.3 理解Android文件许可权限</span><br><span class="line">13.4 使用文件和目录</span><br><span class="line">13.4.1 探索Android应用程序目录</span><br><span class="line">13.4.2 使用Android文件系统操作其他目录和文件</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第14章 使用内容提供器</span><br><span class="line">14.1 探索Android内容提供器</span><br><span class="line">14.1.1 使用MediaStore内容提供器</span><br><span class="line">14.1.2 使用CallLog内容提供器</span><br><span class="line">14.1.3 使用浏览器（Browser）内容提供器</span><br><span class="line">14.1.4 使用CalenderContract内容提供器</span><br><span class="line">14.1.5 使用UserDictionary（用户词典）内容提供器</span><br><span class="line">14.1.6 使用VoicemailContract内容提供器</span><br><span class="line">14.1.7 使用Settings内容提供器</span><br><span class="line">14.1.8 使用联系簿（Contacts）内容提供器</span><br><span class="line">14.2 修改内容提供器的数据</span><br><span class="line">14.2.1 添加记录</span><br><span class="line">14.2.2 修改记录</span><br><span class="line">14.2.3 删除记录</span><br><span class="line">14.3 使用第三方内容提供器</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第15章 设计高兼容性应用程序</span><br><span class="line">15.1 最大化应用程序兼容性</span><br><span class="line">15.2 为兼容性设计用户界面</span><br><span class="line">15.2.1 使用Fragment</span><br><span class="line">15.2.2 使用Android支持包</span><br><span class="line">15.2.3 支持特定屏幕类型</span><br><span class="line">15.2.4 使用九格拉伸图像</span><br><span class="line">15.2.5 使用Working Square原理</span><br><span class="line">15.3 提供应用程序替代资源</span><br><span class="line">15.3.1 理解资源的解析（Resolve）方式</span><br><span class="line">15.3.2 使用替代资源标识符</span><br><span class="line">15.3.3 提供用于不同屏幕方向的资源</span><br><span class="line">15.3.4 在程序中使用替代资源</span><br><span class="line">15.3.5 高效地组织应用程序资源</span><br><span class="line">15.4 面向平板电脑、电视和其他新设备</span><br><span class="line">15.4.1 面向平板设备</span><br><span class="line">15.4.2 面向Google电视设备</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第五部分 对外发布你的Android应用程序</span><br><span class="line">第16章 移动软件开发过程</span><br><span class="line">16.1 移动开发过程概览</span><br><span class="line">16.2 选择一种软件开发方法</span><br><span class="line">16.2.1 理解“瀑布模型”的危险</span><br><span class="line">16.2.2 认识迭代式开发的价值</span><br><span class="line">16.3 整合应用程序需求</span><br><span class="line">16.3.1 确定工程需求</span><br><span class="line">16.3.2 为移动应用程序开发用例</span><br><span class="line">16.3.3 吸纳第三方需求</span><br><span class="line">16.3.4 管理设备数据库</span><br><span class="line">16.4 项目风险评估</span><br><span class="line">16.4.1 确定目标设备</span><br><span class="line">16.4.2 获取目标设备</span><br><span class="line">16.4.3 确定应用程序需求的可行性</span><br><span class="line">16.4.4 理解质量保障的风险</span><br><span class="line">16.5 编写基本项目文档</span><br><span class="line">16.5.1 为质量保障制定测试计划</span><br><span class="line">16.5.2 提供第三方所需的文档</span><br><span class="line">16.5.3 提供维护和移植所需的文档</span><br><span class="line">16.6 使用配置管理系统</span><br><span class="line">16.6.1 选择一个源代码控制系统</span><br><span class="line">16.6.2 实现一个可用的版本管理系统</span><br><span class="line">16.7 设计移动应用程序</span><br><span class="line">16.7.1 认识移动设备的局限</span><br><span class="line">16.7.2 移动应用程序体系结构探索</span><br><span class="line">16.7.3 可扩展和维护设计</span><br><span class="line">16.7.4 应用程序交互设计</span><br><span class="line">16.8 开发移动应用程序</span><br><span class="line">16.9 测试移动应用程序</span><br><span class="line">16.1 发布移动应用程序</span><br><span class="line">16.11 支持和维护移动应用程序</span><br><span class="line">16.11.1 跟踪和定位用户产生的“崩溃”报告</span><br><span class="line">16.11.2 测试固件升级</span><br><span class="line">16.11.3 维护适当的应用程序文档</span><br><span class="line">16.11.4 管理服务器的动态更改</span><br><span class="line">16.11.5 确定低风险移植机会</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第17章 设计和开发“防弹”Android应用程序</span><br><span class="line">17.1 “防弹”移动应用程序设计最佳实践</span><br><span class="line">17.1.1 满足移动用户的需求</span><br><span class="line">17.1.2 为移动设备设计用户界面</span><br><span class="line">17.1.3 设计稳定、灵敏的移动应用程序</span><br><span class="line">17.1.4 设计安全的移动应用程序</span><br><span class="line">17.1.5 在设计移动应用程序时考虑利益的最大化</span><br><span class="line">17.1.6 在Android应用程序设计时使用第三方标准</span><br><span class="line">17.1.7 设计便于维护和升级的移动应用程序</span><br><span class="line">17.1.8 在应用程序设计中使用Andriod工具</span><br><span class="line">17.1.9 避免设计时的愚蠢错误</span><br><span class="line">17.2 “防弹”移动应用程序开发最佳实践</span><br><span class="line">17.2.1 设计有效的移动开发过程</span><br><span class="line">17.2.2 提早和经常地测试应用程序可行性</span><br><span class="line">17.2.3 使用代码标准、代码检查和单元测试以提高代码质量</span><br><span class="line">17.2.4 处理某单一设备的缺陷</span><br><span class="line">17.2.5 在应用程序开发中使用Android工具</span><br><span class="line">17.2.6 避免开发时的愚蠢错误</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第18章 测试Android应用程序</span><br><span class="line">18.1 设计一个应用程序漏洞跟踪系统</span><br><span class="line">18.2 管理测试环境</span><br><span class="line">18.3 尽量全面地进行测试</span><br><span class="line">18.4 在应用程序测试中使用Android工具</span><br><span class="line">18.5 避免测试时的愚蠢错误</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第19章 发布你的Android应用程序</span><br><span class="line">19.1 选择合适的发布模式</span><br><span class="line">19.1.1 保护你的知识产权</span><br><span class="line">19.1.2 向用户收费</span><br><span class="line">19.2 为发布而打包你的应用程序</span><br><span class="line">19.2.1 准备封装你的代码</span><br><span class="line">19.2.2 为你的应用程序打包并签名</span><br><span class="line">19.2.3 测试软件包的发布版本</span><br><span class="line">19.2.4 发布你的应用程序</span><br><span class="line">19.3 在Android Market上发布你的应用程序</span><br><span class="line">19.3.1 在Android Market上注册一个开发人员账号</span><br><span class="line">19.3.2 将你的应用程序上传至Android Market</span><br><span class="line">19.3.3 上传应用程序市场资源</span><br><span class="line">19.3.4 配置应用程序详情页面</span><br><span class="line">19.3.5 配置应用程序发布选项</span><br><span class="line">19.3.6 配置应用程序联系信息和知情通知</span><br><span class="line">19.3.7 将你的应用程序发布至Android Market</span><br><span class="line">19.3.8 在Android Market上管理你的应用程序</span><br><span class="line">19.4 通过其他途径发布应用程序</span><br><span class="line">19.5 通过自主渠道发布应用程序</span><br><span class="line">小结</span><br><span class="line">参考资料和更多信息</span><br><span class="line">第六部分 附录</span><br><span class="line">附录A Android模拟器快速入门</span><br><span class="line">A.1 模拟器的目的：虚拟现实</span><br><span class="line">A.2 使用Android虚拟设备（AVD）</span><br><span class="line">A.2.1 使用Android SDK和AVD管理器</span><br><span class="line">A.2.2 创建AVD</span><br><span class="line">A.3 使用指定AVD启动模拟器</span><br><span class="line">A.3.1 维持模拟器高效运行</span><br><span class="line">A.3.2 配置模拟器启动项</span><br><span class="line">A.3.3 启动模拟器运行应用程序</span><br><span class="line">A.3.4 从Android SDK和AVD管理器中启动模拟器</span><br><span class="line">A.4 配置模拟器的GPS位置信息</span><br><span class="line">A.5 在两个模拟器实例之间拨打电话</span><br><span class="line">A.6 在两个模拟器实例之间发送消息</span><br><span class="line">A.7 通过控制台与模拟器交互</span><br><span class="line">A.7.1 使用控制台模拟来电</span><br><span class="line">A.7.2 使用控制台模拟短消息</span><br><span class="line">A.7.3 使用控制台发送GPS坐标</span><br><span class="line">A.7.4 使用控制台监视网络状态</span><br><span class="line">A.7.5 使用控制台操作电源设置</span><br><span class="line">A.7.6 使用其他控制台命令</span><br><span class="line">A.8 享受模拟器</span><br><span class="line">A.9 认识模拟器的局限</span><br><span class="line">参考资料和更多信息</span><br><span class="line">附录B Android DDMS快速入门</span><br><span class="line">B.1 独立或结合Eclipse使用DDMS</span><br><span class="line">B.2 熟悉DDMS的关键特性</span><br><span class="line">B.3 使用进程、线程和堆</span><br><span class="line">B.3.1 向Android应用程序关联调试器</span><br><span class="line">B.3.2 终止Android进程</span><br><span class="line">B.3.3 监视Android应用程序的线程活动</span><br><span class="line">B.3.4 监视堆活动</span><br><span class="line">B.3.5 触发垃圾回收（GC）</span><br><span class="line">B.3.6 创建和使用HPROF文件</span><br><span class="line">B.4 使用内存分配（allocation）跟踪器</span><br><span class="line">B.5 使用文件浏览器</span><br><span class="line">B.5.1 浏览模拟器或设备上的文件系统</span><br><span class="line">B.5.2 从模拟器或设备上复制文件</span><br><span class="line">B.5.3 向模拟器或设备复制文件</span><br><span class="line">B.5.4 删除模拟器或设备上的文件</span><br><span class="line">B.6 使用模拟器控制</span><br><span class="line">B.6.1 模拟语音来电</span><br><span class="line">B.6.2 模拟短消息接收</span><br><span class="line">B.6.3 发送位置坐标</span><br><span class="line">B.7 在模拟器或目标设备上截屏</span><br><span class="line">B.8 使用应用程序日志</span><br><span class="line">附录C Eclipse技巧和诀窍</span><br><span class="line">C.1 构建你的Eclipse工作空间</span><br><span class="line">C.1.1 集成源代码管理服务</span><br><span class="line">C.1.2 调整视图中的标签面板</span><br><span class="line">C.1.3 最大化窗口</span><br><span class="line">C.1.4 最小化窗口</span><br><span class="line">C.1.5 显示并排窗口</span><br><span class="line">C.1.6 显示同一文件的两个部分</span><br><span class="line">C.1.7 关掉不需要的标签面板</span><br><span class="line">C.1.8 保持对窗口的控制</span><br><span class="line">C.1.9 定制日志过滤器</span><br><span class="line">C.1.10 在项目中搜索</span><br><span class="line">C.1.11 组织Eclipse任务</span><br><span class="line">C.2 编写Java代码</span><br><span class="line">C.2.1 善用自动补全（Autocomplete）</span><br><span class="line">C.2.2 创建类和方法</span><br><span class="line">C.2.3 组织导入</span><br><span class="line">C.2.4 格式化代码</span><br><span class="line">C.2.5 重命名</span><br><span class="line">C.2.6 重构代码</span><br><span class="line">C.2.7 整理代码</span><br><span class="line">C.2.8 使用QuickFix</span><br><span class="line">C.2.9 提供Javadoc风格的文件</span><br><span class="line">C.2.10 解决诡异的构建错误</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B009C2XM2K/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B009C2XM2K&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51h6edqPMZL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B009NKMGTG/" rel="prev" title="Android UI基础教程">
+      <i class="fa fa-chevron-left"></i> Android UI基础教程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B008PLO174/" rel="next" title="Android开发精要">
+      Android开发精要 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

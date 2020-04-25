@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： C专家编程ExpertCProgrammingDeepCSecrets作者信息： 作者: Peter Van Der Linden [ 中文 pdf ] 简单介绍《C专家编程Expert C Programming Deep C Secrets》撷取了几十个实例，细致、深入地讲解了C的历史、语言特性、声明、数组、指针、链接、运行时、内存以及分析了如何进一步学习C++等问题。《C专家">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C专家编程ExpertCProgrammingDeepCSecrets">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B0012NIW9K/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： C专家编程ExpertCProgrammingDeepCSecrets作者信息： 作者: Peter Van Der Linden [ 中文 pdf ] 简单介绍《C专家编程Expert C Programming Deep C Secrets》撷取了几十个实例，细致、深入地讲解了C的历史、语言特性、声明、数组、指针、链接、运行时、内存以及分析了如何进一步学习C++等问题。《C专家">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51qZ6V0I-UL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.671Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51qZ6V0I-UL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B0012NIW9K/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>C专家编程ExpertCProgrammingDeepCSecrets | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B0012NIW9K/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C专家编程ExpertCProgrammingDeepCSecrets
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： C专家编程ExpertCProgrammingDeepCSecrets<br>作者信息： 作者: Peter Van Der Linden [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《C专家编程Expert C Programming Deep C Secrets》撷取了几十个实例，细致、深入地讲解了C的历史、语言特性、声明、数组、指针、链接、运行时、内存以及分析了如何进一步学习C++等问题。《C专家编程Expert C Programming Deep C Secrets》是一本ANSIC编程语言的高级读本。它适用于已经编写过C程序的人，以及那些想迅速获取一些专家观点和技巧的人。专家级的C编程指南展示优秀C程序员的编程技巧。即使你读过AndyKoneig的《C陷阱与缺陷》，你还是应该看看PeterVanDerLinden的书。我想，他们两人的书称都应该千方百计的搞到，如获至宝地捧读。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">第1章 C：穿越时空的迷雾</span><br><span class="line">1.1 C语言的史前阶段</span><br><span class="line">1.2 C语言的早期体验</span><br><span class="line">1.3 标准I&#x2F;O库和C预处理器</span><br><span class="line">1.4 K&amp;R C</span><br><span class="line">1.5 今日之ANSI C</span><br><span class="line">1.6 它很棒，但它符合标准吗</span><br><span class="line">1.7 编译限制</span><br><span class="line">1.8 ANSI C标准的结构</span><br><span class="line">1.9 阅读ANSI C标准，寻找乐趣和裨益</span><br><span class="line">1.10 “安静的改变”究竟有多少安静</span><br><span class="line">1.11 轻松一下——由编译器定义的Pragmas效果 </span><br><span class="line"></span><br><span class="line"> 第2章 这不是Bug，而是语言特性 2.1 这关语言特性何事，在Fortran里这就是Bug呀 2.2 多做之过 2.3 误做之过 2.4 少做之过 2.5 轻松一下——有些特性确实就是Bug 2.6 参考文献</span><br><span class="line"></span><br><span class="line"> 第3章 分析C语言的声明 3.1 只有编译器才会喜欢的语法 3.2 声明是如何形成的 3.3 优先级规则 3.4 通过图表分析C语言的声明 3.5 typedef可以成为你的朋友 3.6 typedef int x[10]和#define x int[10]的区别 3.7 typedef struct foo&#123; … foo; &#125;的含义 3.8 理解所有分析过程的代码段 3.9 轻松一下——驱动物理实体的软件</span><br><span class="line"></span><br><span class="line"> 第4章 令人震惊的事实：数组和指针并不相同 4.1 数组并非指针 4.2 我的代码为什么无法运行 4.3 什么是声明，什么是定义 4.4 使声明与定义相匹配 4.5 数组和指针的其他区别 4.6 轻松一下——回文的乐趣</span><br><span class="line"></span><br><span class="line"> 第5章 对链接的思考 5.1 函数库、链接和载入 5.2 动态链接的优点 5.3 函数库链接的5个特殊秘密 5.4 警惕Interpositioning 5.5 产生链接器报告文件 5.6 轻松一下——看看谁在说话：挑战Turing测验</span><br><span class="line"></span><br><span class="line"> 第6章 运动的诗章：运行时数据结构 6.1 a.out及其传说 6.2 段 6.3 操作系统在a.out文件里干了些什么 6.4 C语言运行时系统在a.out里干了些什么 6.5 当函数被调用时发生了什么：过程活动记录 6.6 auto和static关键字 6.7 控制线程 6.8 setjmp和longjmp 6.9 UNIX中的堆栈段 6.10 MS-DOS中的堆栈段 6.11 有用的C语言工具 6.12 轻松一下——卡耐基-梅隆大学的编程难题 6.13 只适用于高级学员阅读的材料</span><br><span class="line"></span><br><span class="line"> 第7章 对内存的思考 7.1 Intel 80x86系列 7.2 Intel 80x86内存模型以及它的工作原理 7.3 虚拟内存 7.4 Cache存储器 7.5 数据段和堆 7.6 内存泄漏 7.7 总线错误 7.8 轻松一下——“Thing King”和“页面游戏”</span><br><span class="line"></span><br><span class="line"> 第8章 为什么程序员无法分清万圣节和圣诞节 8.1 Portzebie度量衡系统 8.2 根据位模式构筑图形 8.3 在等待时类型发生了变化 8.4 原型之痛 8.5 原型在什么地方会失败 8.6 不需要按回车键就能得到一个字符 8.7 用C语言实现有限状态机 8.8 软件比硬件更困难 8.9 如何进行强制类型转换，为何要进行类型强制转换 8.10 轻松一下——国际C语言混乱代码大赛</span><br><span class="line"></span><br><span class="line"> 第9章 再论数组 9.1 什么时候数组与指针相同 9.2 为什么会发生混淆 9.3 为什么C语言把数组形参当作指针 9.4 数组片段的下标 9.5 数组和指针可交换性的总结 9.6 C语言的多维数组 9.7 轻松一下——软件&#x2F;硬件平衡</span><br><span class="line"></span><br><span class="line"> 第10章 再论指针 10.1 多维数组的内存布局 10.2 指针数组就是Iliffe向量 10.3 在锯齿状数组上使用指针 10.4 向函数传递一个一维数组 10.5 使用指针向函数传递一个多维数组 10.6 使用指针从函数返回一个数组 10.7 使用指针创建和使用动态数组 10.8 轻松一下——程序检验的限制</span><br><span class="line"></span><br><span class="line"> 第11章 你懂得C，所以C++不在话下 11.1 初识OOP 11.2 抽象——取事物的本质特性 11.3 封装——把相关的类型、数据和函数组合在一起 11.4 展示一些类——用户定义类型享有和预定义类型一样的权限 11.5 访问控制 11.6 声明 11.7 如何调用成员函数 11.8 继承——复用已经定义的操作 11.9 多重继承——从两个或更多的基类派生 11.10 重载——作用于不同类型的同一操作具有相同的名字 11.11 C++如何进行操作符重载 11.12 C++的输入&#x2F;输出(I&#x2F;O) 11.13 多态——运行时绑定 11.14 解释 11.15 C++如何表现多态 11.16 新奇玩意——多态 11.17 C++的其他要点 11.18 如果我的目标是那里，我不会从这里起步 11.19 它或许过于复杂，但却是惟一可行的方案 11.20 轻松一下——死亡计算机协会 11.21 更多阅读材料 附录A 程序员工作面试的秘密 附录B 术语表</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B0012NIW9K/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B0012NIW9K&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51qZ6V0I-UL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0012UMPBY/" rel="prev" title="C陷阱与缺陷">
+      <i class="fa fa-chevron-left"></i> C陷阱与缺陷
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B0011AIYWO/" rel="next" title="数据结构C++语言描述:应用标准模板库STL(第2版)">
+      数据结构C++语言描述:应用标准模板库STL(第2版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

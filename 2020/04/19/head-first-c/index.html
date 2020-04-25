@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 嗨翻C语言(英文)作者信息： 作者: David Griffiths [ 英文 pdf ] 简单介绍Ever wished you could learn C from a book? Head First C provides a complete learning experience for C and structured imperative programming. W">
+<meta property="og:type" content="article">
+<meta property="og:title" content="嗨翻C语言(英文)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/head-first-c/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 嗨翻C语言(英文)作者信息： 作者: David Griffiths [ 英文 pdf ] 简单介绍Ever wished you could learn C from a book? Head First C provides a complete learning experience for C and structured imperative programming. W">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51zILwVFM6L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.678Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="c">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51zILwVFM6L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/head-first-c/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>嗨翻C语言(英文) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/head-first-c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          嗨翻C语言(英文)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 嗨翻C语言(英文)<br>作者信息： 作者: David Griffiths [ 英文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>Ever wished you could learn C from a book? Head First C provides a complete learning experience for C and structured imperative programming. With a unique method that goes beyond syntax and how-to manuals, this guide not only teaches you the language, it helps you understand how to be a great programmer. You’ll learn key areas such as language basics, pointers and pointer arithmetic, and dynamic memory management. Advanced topics include multi-threading and network programming - topics typically covered on a college-level course. This book also features labs: in-depth projects intended to stretch your abilities, test your new skills, and build confidence. Head First C mimics the style of college-level C courses, making it ideal as an accessible textbook for students. We think your time is too valuable to waste struggling with new concepts. Using the latest research in cognitive science and learning theory to craft a multi-sensory learning experience, Head First C uses a visually rich format designed for the way your brain works, not a text-heavy approach that puts you to sleep.</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br></pre></td><td class="code"><pre><span class="line">Head First C</span><br><span class="line">Dedication</span><br><span class="line">Advance Praise for Head First C</span><br><span class="line">Praise for other Head First books</span><br><span class="line">Authors of Head First C</span><br><span class="line">How to use this Book: Intro</span><br><span class="line">Who is this book for?</span><br><span class="line">We know what you’re thinking</span><br><span class="line">We know what your brain is thinking</span><br><span class="line">Metacognition: thinking about thinking</span><br><span class="line">Here’s what WE did</span><br><span class="line">Here’s what YOU can do to bend your brain into submission</span><br><span class="line">Read me</span><br><span class="line">The technical review team</span><br><span class="line">Acknowledgments</span><br><span class="line">Safari® Books Online</span><br><span class="line">1. Getting Started with C: Diving in</span><br><span class="line">C is a language for small, fast programs</span><br><span class="line">But what does a complete C program look like?</span><br><span class="line">But how do you run the program?</span><br><span class="line">Two types of command</span><br><span class="line">Here’s the code so far</span><br><span class="line">Card counting? In C?</span><br><span class="line">There’s more to booleans than equals…</span><br><span class="line">What’s the code like now?</span><br><span class="line">Pulling the ol’ switcheroo</span><br><span class="line">Sometimes once is not enough…</span><br><span class="line">Loops often follow the same structure…</span><br><span class="line">You use break to break out…</span><br><span class="line">Your C Toolbox</span><br><span class="line">2. Memory and Pointers: What are you pointing at?</span><br><span class="line">C code includes pointers</span><br><span class="line">Digging into memory</span><br><span class="line">Set sail with pointers</span><br><span class="line">Set sail sou’east, Cap’n</span><br><span class="line">Try passing a pointer to the variable</span><br><span class="line">Using memory pointers</span><br><span class="line">How do you pass a string to a function?</span><br><span class="line">Array variables are like pointers…</span><br><span class="line">What the computer thinks when it runs your code</span><br><span class="line">But array variables aren’t quite pointers</span><br><span class="line">Why arrays really start at 0</span><br><span class="line">Why pointers have types</span><br><span class="line">Using pointers for data entry</span><br><span class="line">Be careful with scanf()</span><br><span class="line">fgets() is an alternative to scanf()</span><br><span class="line">Anyone for three-card monte?</span><br><span class="line">Oops…there’s a memory problem…</span><br><span class="line">String literals can never be updated</span><br><span class="line">If you’re going to change a string, make a copy</span><br><span class="line">Memory memorizer</span><br><span class="line">Your C Toolbox</span><br><span class="line">2.5. Strings: String theory</span><br><span class="line">Desperately seeking Susan Frank</span><br><span class="line">Create an array of arrays</span><br><span class="line">Find strings containing the search text</span><br><span class="line">Using the strstr() function</span><br><span class="line">It’s time for a code review</span><br><span class="line">Array of arrays vs. array of pointers</span><br><span class="line">Your C Toolbox</span><br><span class="line">View Sample</span><br><span class="line">3. Creating Small Tools: Do one thing and do it well</span><br><span class="line">View Sample</span><br><span class="line">Small tools can solve big problems</span><br><span class="line">View Sample</span><br><span class="line">Here’s how the program should work</span><br><span class="line">View Sample</span><br><span class="line">But you’re not using files…</span><br><span class="line">View Sample</span><br><span class="line">You can use redirection</span><br><span class="line">View Sample</span><br><span class="line">You can redirect the Standard Input with &lt;…</span><br><span class="line">View Sample</span><br><span class="line">…and redirect the Standard Output with &gt;</span><br><span class="line">View Sample</span><br><span class="line">But there’s a problem with some of the data…</span><br><span class="line">View Sample</span><br><span class="line">Introducing the Standard Error</span><br><span class="line">View Sample</span><br><span class="line">By default, the Standard Error is sent to the display</span><br><span class="line">View Sample</span><br><span class="line">fprintf() prints to a data stream</span><br><span class="line">View Sample</span><br><span class="line">Let’s update the code to use fprintf()</span><br><span class="line">View Sample</span><br><span class="line">Small tools are flexible</span><br><span class="line">View Sample</span><br><span class="line">Don’t change the geo2json tool</span><br><span class="line">View Sample</span><br><span class="line">A different task needs a different tool</span><br><span class="line">View Sample</span><br><span class="line">Connect your input and output with a pipe</span><br><span class="line">View Sample</span><br><span class="line">The bermuda tool</span><br><span class="line">View Sample</span><br><span class="line">But what if you want to output to more than one file?</span><br><span class="line">View Sample</span><br><span class="line">Roll your own data streams</span><br><span class="line">View Sample</span><br><span class="line">There’s more to main()</span><br><span class="line">View Sample</span><br><span class="line">Overheard at the Head First Pizzeria</span><br><span class="line">View Sample</span><br><span class="line">Let the library do the work for you</span><br><span class="line">View Sample</span><br><span class="line">Your C Toolbox</span><br><span class="line">4. Using Multiple Source Files: Break it down, build it up</span><br><span class="line">Don’t put something big into something small</span><br><span class="line">Use casting to put floats into whole numbers</span><br><span class="line">Oh no…it’s the out-of-work actors…</span><br><span class="line">Let’s see what’s happened to the code</span><br><span class="line">Compilers don’t like surprises</span><br><span class="line">Split the declaration from the definition</span><br><span class="line">Creating your first header file</span><br><span class="line">If you have common features…</span><br><span class="line">You can split the code into separate files</span><br><span class="line">Compilation behind the scenes</span><br><span class="line">The shared code needs its own header file</span><br><span class="line">It’s not rocket science…or is it?</span><br><span class="line">Don’t recompile every file</span><br><span class="line">First, compile the source into object files</span><br><span class="line">It’s hard to keep track of the files</span><br><span class="line">Automate your builds with the make tool</span><br><span class="line">How make works</span><br><span class="line">Tell make about your code with a makefile</span><br><span class="line">Your C Toolbox</span><br><span class="line">C Lab 1: Arduino</span><br><span class="line">5. Structs, Unions, and Bitfields: Roll your own structures</span><br><span class="line">Sometimes you need to hand around a lot of data</span><br><span class="line">Cubicle conversation</span><br><span class="line">Create your own structured data types with a struct</span><br><span class="line">Just give them the fish</span><br><span class="line">Read a struct’s fields with the “.” operator</span><br><span class="line">Can you put one struct inside another?</span><br><span class="line">How do you update a struct?</span><br><span class="line">The code is cloning the turtle</span><br><span class="line">You need a pointer to the struct</span><br><span class="line">(t).age vs. t.age</span><br><span class="line">Sometimes the same type of thing needs different types of data</span><br><span class="line">A union lets you reuse memory space</span><br><span class="line">How do you use a union?</span><br><span class="line">An enum variable stores a symbol</span><br><span class="line">Sometimes you want control at the bit level</span><br><span class="line">Bitfields store a custom number of bits</span><br><span class="line">Your C Toolbox</span><br><span class="line">6. Data Structures and Dynamic Memory: Building bridges</span><br><span class="line">Do you need flexible storage?</span><br><span class="line">Linked lists are like chains of data</span><br><span class="line">Linked lists allow inserts</span><br><span class="line">Create a recursive structure</span><br><span class="line">Create islands in C…</span><br><span class="line">Inserting values into the list</span><br><span class="line">Use the heap for dynamic storage</span><br><span class="line">Give the memory back when you’re done</span><br><span class="line">Ask for memory with malloc()…</span><br><span class="line">Oh, no! It’s the out-of-work actors…</span><br><span class="line">Let’s fix the code using the strdup() function</span><br><span class="line">Free the memory when you’re done</span><br><span class="line">Exhibit A: the source code</span><br><span class="line">An overview of the SPIES system</span><br><span class="line">Software forensics: using valgrind</span><br><span class="line">Use valgrind repeatedly to gather more evidence</span><br><span class="line">Look at the evidence</span><br><span class="line">The fix on trial</span><br><span class="line">Your C Toolbox</span><br><span class="line">7. Advanced Functions: Turn your functions up to 11</span><br><span class="line">Looking for Mr. Right…</span><br><span class="line">Pass code to a function</span><br><span class="line">You need to tell find() the name of a function</span><br><span class="line">Every function name is a pointer to the function…</span><br><span class="line">…but there’s no function data type</span><br><span class="line">How to create function pointers</span><br><span class="line">Get it sorted with the C Standard Library</span><br><span class="line">Use function pointers to set the order</span><br><span class="line">Automating the Dear John letters</span><br><span class="line">Create an array of function pointers</span><br><span class="line">Make your functions streeeeeetchy</span><br><span class="line">Your C Toolbox</span><br><span class="line">8. Static and Dynamic Libraries: Hot-swappable code</span><br><span class="line">Code you can take to the bank</span><br><span class="line">Angle brackets are for standard headers</span><br><span class="line">But what if you want to share code?</span><br><span class="line">Sharing .h header files</span><br><span class="line">Share .o object files by using the full pathname</span><br><span class="line">An archive contains .o files</span><br><span class="line">Create an archive with the ar command…</span><br><span class="line">Finally, compile your other programs</span><br><span class="line">The Head First Gym is going global</span><br><span class="line">Calculating calories</span><br><span class="line">But things are a bit more complex…</span><br><span class="line">Programs are made out of lots of pieces…</span><br><span class="line">Dynamic linking happens at runtime</span><br><span class="line">Can you link .a at runtime?</span><br><span class="line">First, create an object file</span><br><span class="line">What you call your dynamic library depends on your platform</span><br><span class="line">Your C Toolbox</span><br><span class="line">C Lab 2: OpenCV</span><br><span class="line">9. Processes and System Calls: Breaking boundaries</span><br><span class="line">System calls are your hotline to the OS</span><br><span class="line">Then someone busted into the system…</span><br><span class="line">Security’s not the only problem</span><br><span class="line">The exec() functions give you more control</span><br><span class="line">There are many exec() functions</span><br><span class="line">The array functions: execv(), execvp(), execve()</span><br><span class="line">Passing environment variables</span><br><span class="line">Most system calls go wrong in the same way</span><br><span class="line">Read the news with RSS</span><br><span class="line">exec() is the end of the line for your program</span><br><span class="line">Running a child process with fork() + exec()</span><br><span class="line">Your C Toolbox</span><br><span class="line">10. Interprocess Communication: It’s good to talk</span><br><span class="line">Redirecting input and output</span><br><span class="line">A look inside a typical process</span><br><span class="line">Redirection just replaces data streams</span><br><span class="line">fileno() tells you the descriptor</span><br><span class="line">Sometimes you need to wait…</span><br><span class="line">Stay in touch with your child</span><br><span class="line">Connect your processes with pipes</span><br><span class="line">Case study: opening stories in a browser</span><br><span class="line">In the child</span><br><span class="line">In the parent</span><br><span class="line">Opening a web page in a browser</span><br><span class="line">The death of a process</span><br><span class="line">Catching signals and running your own code</span><br><span class="line">sigactions are registered with sigaction()</span><br><span class="line">Rewriting the code to use a signal handler</span><br><span class="line">Use kill to send signals</span><br><span class="line">Sending your code a wake-up call</span><br><span class="line">Your C Toolbox</span><br><span class="line">11. Sockets and Networking: There’s no place like 127.0.0.1</span><br><span class="line">The Internet knock-knock server</span><br><span class="line">Knock-knock server overview</span><br><span class="line">BLAB: how servers talk to the Internet</span><br><span class="line">A socket’s not your typical data stream</span><br><span class="line">Sometimes the server doesn’t start properly</span><br><span class="line">Why your mom always told you to check for errors</span><br><span class="line">Reading from the client</span><br><span class="line">The server can only talk to one person at a time</span><br><span class="line">You can fork() a process for each client</span><br><span class="line">Writing a web client</span><br><span class="line">Clients are in charge</span><br><span class="line">Create a socket for an IP address</span><br><span class="line">getaddrinfo() gets addresses for domains</span><br><span class="line">Your C Toolbox</span><br><span class="line">12. Threads: It’s a parallel world</span><br><span class="line">Tasks are sequential…or not…</span><br><span class="line">…and processes are not always the answer</span><br><span class="line">Simple processes do one thing at a time</span><br><span class="line">Employ extra staff: use threads</span><br><span class="line">How do you create threads?</span><br><span class="line">Create threads with pthread_create</span><br><span class="line">The code is not thread-safe</span><br><span class="line">You need to add traffic signals</span><br><span class="line">Use a mutex as a traffic signal</span><br><span class="line">Your C Toolbox</span><br><span class="line">C Lab 3: Blasteroids</span><br><span class="line">A. Leftovers: The top ten things (we didn’t cover)</span><br><span class="line">1. Operators</span><br><span class="line">2. Preprocessor directives</span><br><span class="line">3. The static keyword</span><br><span class="line">4. How big stuff is</span><br><span class="line">5. Automated testing</span><br><span class="line">6. More on gcc</span><br><span class="line">7. More on make</span><br><span class="line">8. Development tools</span><br><span class="line">9. Creating GUIs</span><br><span class="line">10. Reference material</span><br><span class="line">B. C Topics: Revision roundup</span><br><span class="line">Basics</span><br><span class="line">Pointers and memory</span><br><span class="line">Strings</span><br><span class="line">Data streams</span><br><span class="line">Data types</span><br><span class="line">Multiple files</span><br><span class="line">Structs</span><br><span class="line">Unions and bitfields</span><br><span class="line">Data structures</span><br><span class="line">Dynamic memory</span><br><span class="line">Advanced functions</span><br><span class="line">Static and dynamic libraries</span><br><span class="line">Processes and communication</span><br><span class="line">Sockets and networking</span><br><span class="line">Threads</span><br><span class="line">Index</span><br><span class="line">About the Authors</span><br><span class="line">Copyright</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/1449399916/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=1449399916&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51zILwVFM6L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/jing-tong-android/" rel="prev" title="精通Android">
+      <i class="fa fa-chevron-left"></i> 精通Android
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00HRR3U5G/" rel="next" title="移动开发经典丛书 Android C++高级编程 使用NDK">
+      移动开发经典丛书 Android C++高级编程 使用NDK <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

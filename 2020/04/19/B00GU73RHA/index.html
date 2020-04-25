@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： Android应用UI设计模式作者信息： 作者: 纳德尔曼 (Greg Nudelman) [ 英文 pdf ] 简单介绍58个重要交互设计模式将扁平化设计理念发挥到极致，Android应用设计难题各个击破集各家操作系统（iOS、Windows Phone）之所长，将其绝妙理念融入Android交互设计多个试验模式和反模式帮助探索Android设计的前沿部分，避开设计误区，打破设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android应用UI设计模式">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B00GU73RHA/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： Android应用UI设计模式作者信息： 作者: 纳德尔曼 (Greg Nudelman) [ 英文 pdf ] 简单介绍58个重要交互设计模式将扁平化设计理念发挥到极致，Android应用设计难题各个击破集各家操作系统（iOS、Windows Phone）之所长，将其绝妙理念融入Android交互设计多个试验模式和反模式帮助探索Android设计的前沿部分，避开设计误区，打破设计">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/41fMYcrGNML._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.623Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/41fMYcrGNML._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B00GU73RHA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Android应用UI设计模式 | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B00GU73RHA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android应用UI设计模式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： Android应用UI设计模式<br>作者信息： 作者: 纳德尔曼 (Greg Nudelman) [ 英文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>58个重要交互设计模式将扁平化设计理念发挥到极致，Android应用设计难题各个击破集各家操作系统（iOS、Windows Phone）之所长，将其绝妙理念融入Android交互设计多个试验模式和反模式帮助探索Android设计的前沿部分，避开设计误区，打破设计僵局</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br></pre></td><td class="code"><pre><span class="line">第一部分 用户体验原则和Android特色</span><br><span class="line">第1章 向Android迁移（案例）</span><br><span class="line">1.1 启动图标</span><br><span class="line">1.2 操作栏与信息架构</span><br><span class="line">1.2.1 重新设计前</span><br><span class="line">1.2.2 重新设计后</span><br><span class="line">1.3 选项卡</span><br><span class="line">1.4 专用选择页</span><br><span class="line">1.5 选择控件</span><br><span class="line">1.5.1 重新设计前</span><br><span class="line">1.5.2 重新设计后</span><br><span class="line">1.6 按钮</span><br><span class="line">1.7 搜索结果屏幕</span><br><span class="line">1.7.1 重新设计前</span><br><span class="line">1.7.2 重新设计后</span><br><span class="line">1.8 结果详情屏幕</span><br><span class="line">1.8.1 重新设计前</span><br><span class="line">1.8.2 重新设计后</span><br><span class="line">1.9 最终结果</span><br><span class="line">第2章 Android的特色</span><br><span class="line">2.1 这里是平面国</span><br><span class="line">2.2 轻按任何地方</span><br><span class="line">2.3 适合各种设备</span><br><span class="line">2.4 摆脱空间限制</span><br><span class="line">2.5 大局着眼，小处着手</span><br><span class="line">第3章 Android分散化</span><br><span class="line">3.1 何谓分散化</span><br><span class="line">3.2 花无百日红</span><br><span class="line">3.3 Android设备类型</span><br><span class="line">3.3.1 紧凑型手机</span><br><span class="line">3.3.2 全尺寸移动手机</span><br><span class="line">3.3.3 平板手机</span><br><span class="line">3.3.4 小型平板</span><br><span class="line">3.3.5 大型平板</span><br><span class="line">3.4 为分散化而歌</span><br><span class="line">第4章 移动设计流程</span><br><span class="line">4.1 现场观察用户如何与移动设备交互</span><br><span class="line">4.2 原型设计方法必须考虑尺寸因素</span><br><span class="line">4.3 用户测试必须涵盖运动、声音和多点触控等方面</span><br><span class="line">4.4 触控界面必须既简约又精巧</span><br><span class="line">4.5 愉悦不可或缺</span><br><span class="line">4.6 讲述完整的故事——为跨界而设计</span><br><span class="line">4.7 移动设计案例研究</span><br><span class="line">4.7.1 第1步：范围、概念和规划</span><br><span class="line">4.7.2 第2步：设计研讨会</span><br><span class="line">4.7.3 第3步：使用便利贴做RITE调查</span><br><span class="line">4.7.4 第4步：视觉设计</span><br><span class="line">第二部分 Android 设计模式与反模式</span><br><span class="line">第5章 欢迎体验</span><br><span class="line">5.1 最终用户许可协议（反模式）</span><br><span class="line">5.1.1 出现的时间和场合</span><br><span class="line">5.1.2 示例</span><br><span class="line">5.1.3 为何要避免</span><br><span class="line">5.1.4 其他考虑因素</span><br><span class="line">5.2 联系障碍（反模式）</span><br><span class="line">5.2.1 出现的时间和场合</span><br><span class="line">5.2.2 示例</span><br><span class="line">5.2.3 为何要避免</span><br><span class="line">5.2.4 其他考虑因素</span><br><span class="line">5.3 注册（反模式）</span><br><span class="line">5.3.1 出现的时间和场合</span><br><span class="line">5.3.2 示例</span><br><span class="line">5.3.3 为何要避免</span><br><span class="line">5.3.4 其他考虑因素</span><br><span class="line">5.4 欢迎动画</span><br><span class="line">5.4.1 工作原理</span><br><span class="line">5.4.2 示例</span><br><span class="line">5.4.3 使用的时机和场合</span><br><span class="line">5.4.4 使用的原因</span><br><span class="line">5.4.5 其他用途</span><br><span class="line">5.4.6 Pet Shop应用</span><br><span class="line">5.4.7 平板应用</span><br><span class="line">5.5 使用说明</span><br><span class="line">5.5.1 工作原理</span><br><span class="line">5.5.2 示例</span><br><span class="line">5.5.3 使用的时机和场合</span><br><span class="line">5.5.4 使用的原因</span><br><span class="line">5.5.5 其他用途</span><br><span class="line">5.5.6 Pet Shop应用</span><br><span class="line">5.5.7 平板应用</span><br><span class="line">第6章 主屏幕</span><br><span class="line">6.1 链接列表</span><br><span class="line">6.1.1 工作原理</span><br><span class="line">6.1.2 示例</span><br><span class="line">6.1.3 使用的时机和场合</span><br><span class="line">6.1.4 使用的原因</span><br><span class="line">6.1.5 其他用途</span><br><span class="line">6.1.6 Pet Shop应用</span><br><span class="line">6.1.7 平板应用</span><br><span class="line">6.2 仪表板</span><br><span class="line">6.2.1 工作原理</span><br><span class="line">6.2.2 示例</span><br><span class="line">6.2.3 使用的时机和场合</span><br><span class="line">6.2.4 使用的原因</span><br><span class="line">6.2.5 Pet Shop应用</span><br><span class="line">6.2.6 平板应用</span><br><span class="line">6.3 更新</span><br><span class="line">6.3.1 工作原理</span><br><span class="line">6.3.2 示例</span><br><span class="line">6.3.3 使用的时机和场合</span><br><span class="line">6.3.4 使用的原因</span><br><span class="line">6.3.5 其他用途</span><br><span class="line">6.3.6 Pet Shop应用</span><br><span class="line">6.3.7 平板应用</span><br><span class="line">6.4 浏览</span><br><span class="line">6.4.1 工作原理</span><br><span class="line">6.4.2 示例</span><br><span class="line">6.4.3 使用的时机和场合</span><br><span class="line">6.4.4 使用的原因</span><br><span class="line">6.4.5 其他用途</span><br><span class="line">6.4.6 Pet Shop应用</span><br><span class="line">6.4.7 平板应用</span><br><span class="line">6.5 地图</span><br><span class="line">6.5.1 工作原理</span><br><span class="line">6.5.2 示例</span><br><span class="line">6.5.3 使用的时机和场合</span><br><span class="line">6.5.4 使用的原因</span><br><span class="line">6.5.5 其他用途</span><br><span class="line">6.5.6 Pet Shop应用</span><br><span class="line">6.5.7 平板应用</span><br><span class="line">6.6 历史记录</span><br><span class="line">6.6.1 工作原理</span><br><span class="line">6.6.2 示例</span><br><span class="line">6.6.3 使用的时机和场合</span><br><span class="line">6.6.4 使用的原因</span><br><span class="line">6.6.5 其他用途</span><br><span class="line">6.6.6 Pet Shop应用</span><br><span class="line">6.6.7 平板应用</span><br><span class="line">第7章 搜索</span><br><span class="line">7.1 语音搜索</span><br><span class="line">7.1.1 工作原理</span><br><span class="line">7.1.2 示例</span><br><span class="line">7.1.3 使用的时机和场合</span><br><span class="line">7.1.4 使用的原因</span><br><span class="line">7.1.5 其他用途</span><br><span class="line">7.1.6 Pet Shop应用</span><br><span class="line">7.1.7 平板应用</span><br><span class="line">7.2 自动完成与自动建议</span><br><span class="line">7.2.1 工作原理</span><br><span class="line">7.2.2 示例</span><br><span class="line">7.2.3 使用的时机和场合</span><br><span class="line">7.2.4 使用的原因</span><br><span class="line">7.2.5 其他用途</span><br><span class="line">7.2.6 Pet Shop应用</span><br><span class="line">7.2.7 平板应用</span><br><span class="line">7.3 轻按优先</span><br><span class="line">7.3.1 工作原理</span><br><span class="line">7.3.2 示例</span><br><span class="line">7.3.3 使用的时机和场合</span><br><span class="line">7.3.4 使用的原因</span><br><span class="line">7.3.5 其他用途</span><br><span class="line">7.3.6 Pet Shop应用</span><br><span class="line">7.3.7 平板应用</span><br><span class="line">7.4 拖动刷新</span><br><span class="line">7.4.1 工作原理</span><br><span class="line">7.4.2 示例</span><br><span class="line">7.4.3 使用的时机和场合</span><br><span class="line">7.4.4 使用的原因</span><br><span class="line">7.4.5 其他用途</span><br><span class="line">7.4.6 Pet Shop应用</span><br><span class="line">7.4.7 平板应用</span><br><span class="line">7.5 从菜单搜索</span><br><span class="line">7.5.1 工作原理</span><br><span class="line">7.5.2 示例</span><br><span class="line">7.5.3 使用的时机和场合</span><br><span class="line">7.5.4 使用的原因</span><br><span class="line">7.5.5 其他用途</span><br><span class="line">7.5.6 Pet Shop应用</span><br><span class="line">7.5.7 平板应用</span><br><span class="line">7.6 从操作栏搜索</span><br><span class="line">7.6.1 工作原理</span><br><span class="line">7.6.2 示例</span><br><span class="line">7.6.3 使用的时机和场合</span><br><span class="line">7.6.4 使用的原因</span><br><span class="line">7.6.5 其他用途</span><br><span class="line">7.6.6 Pet Shop应用</span><br><span class="line">7.6.7 平板应用</span><br><span class="line">7.7 专用搜索</span><br><span class="line">7.7.1 工作原理</span><br><span class="line">7.7.2 示例</span><br><span class="line">7.7.3 使用的时机和场合</span><br><span class="line">7.7.4 使用的原因</span><br><span class="line">7.7.5 其他用途</span><br><span class="line">7.7.6 Pet Shop应用</span><br><span class="line">7.7.7 平板应用</span><br><span class="line">7.8 在内容页面中搜索</span><br><span class="line">7.8.1 工作原理</span><br><span class="line">7.8.2 示例</span><br><span class="line">7.8.3 使用的时机和场合</span><br><span class="line">7.8.4 使用的原因</span><br><span class="line">7.8.5 其他用途</span><br><span class="line">7.8.6 Pet Shop应用</span><br><span class="line">7.8.7 平板应用</span><br><span class="line">7.9 搜索与细化分离（反模式）</span><br><span class="line">7.9.1 出现的时间和场合</span><br><span class="line">7.9.2 示例</span><br><span class="line">7.9.3 为何要避免</span><br><span class="line">7.9.4 其他考虑因素</span><br><span class="line">第8章 排序和筛选</span><br><span class="line">8.1 残缺的细化（反模式）</span><br><span class="line">8.1.1 出现的时机和场合</span><br><span class="line">8.1.2 示例</span><br><span class="line">8.1.3 为何要避免</span><br><span class="line">8.2 细化页面</span><br><span class="line">8.2.1 工作原理</span><br><span class="line">8.2.2 示例</span><br><span class="line">8.2.3 使用的时机和场合</span><br><span class="line">8.2.4 使用的原因</span><br><span class="line">8.2.5 其他用途</span><br><span class="line">8.2.6 Pet Shop应用</span><br><span class="line">8.2.7 平板应用</span><br><span class="line">8.3 筛选带</span><br><span class="line">8.3.1 工作原理</span><br><span class="line">8.3.2 示例</span><br><span class="line">8.3.3 使用的时机和场合</span><br><span class="line">8.3.4 使用的原因</span><br><span class="line">8.3.5 其他用途</span><br><span class="line">8.3.6 Pet Shop应用</span><br><span class="line">8.3.7 平板应用</span><br><span class="line">8.4 并行架构</span><br><span class="line">8.4.1 工作原理</span><br><span class="line">8.4.2 示例</span><br><span class="line">8.4.3 使用的时机和场合</span><br><span class="line">8.4.4 使用的原因</span><br><span class="line">8.4.5 其他用途</span><br><span class="line">8.4.6 Pet Shop应用</span><br><span class="line">8.4.7 平板应用</span><br><span class="line">8.5 选项卡</span><br><span class="line">8.5.1 工作原理</span><br><span class="line">8.5.2 示例</span><br><span class="line">8.5.3 使用的时机和场合</span><br><span class="line">8.5.4 使用的原因</span><br><span class="line">8.5.5 其他用途</span><br><span class="line">8.5.6 Pet Shop应用</span><br><span class="line">8.5.7 平板应用</span><br><span class="line">第9章 避免无结果或无关结果</span><br><span class="line">9.1 不指出系统状态（反模式）</span><br><span class="line">9.1.1 出现的时机和场合</span><br><span class="line">9.1.2 示例</span><br><span class="line">9.1.3 为何要避免</span><br><span class="line">9.1.4 其他考虑因素</span><br><span class="line">9.2 低效界面（反模式）</span><br><span class="line">9.2.1 出现的时机和场合</span><br><span class="line">9.2.2 示例</span><br><span class="line">9.2.3 其他考虑因素</span><br><span class="line">9.3 无用控件（反模式）</span><br><span class="line">9.3.1 出现的时机和场合</span><br><span class="line">9.3.2 示例</span><br><span class="line">9.3.3 为何要避免</span><br><span class="line">9.4 你要找的是不是</span><br><span class="line">9.4.1 工作原理</span><br><span class="line">9.4.2 示例</span><br><span class="line">9.4.3 使用的时机和场合</span><br><span class="line">9.4.4 使用的原因</span><br><span class="line">9.4.5 其他用途</span><br><span class="line">9.4.6 Pet Shop应用</span><br><span class="line">9.4.7 平板应用</span><br><span class="line">9.5 部分匹配</span><br><span class="line">9.5.1 工作原理</span><br><span class="line">9.5.2 示例</span><br><span class="line">9.5.3 使用的时机和场合</span><br><span class="line">9.5.4 使用的原因</span><br><span class="line">9.5.5 其他用途</span><br><span class="line">9.5.6 Pet Shop应用</span><br><span class="line">9.5.7 平板应用</span><br><span class="line">9.6 本地结果</span><br><span class="line">9.6.1 工作原理</span><br><span class="line">9.6.2 示例</span><br><span class="line">9.6.3 使用的时机和场合</span><br><span class="line">9.6.4 使用的原因</span><br><span class="line">9.6.5 其他用途</span><br><span class="line">9.6.6 Pet Shop应用</span><br><span class="line">9.6.7 平板应用</span><br><span class="line">第10章 数据输入</span><br><span class="line">10.1 滑块</span><br><span class="line">10.1.1 工作原理</span><br><span class="line">10.1.2 示例</span><br><span class="line">10.1.3 使用的时机和场合</span><br><span class="line">10.1.4 使用的原因</span><br><span class="line">10.1.5 其他用途</span><br><span class="line">10.1.6 Pet Shop应用</span><br><span class="line">10.1.7 平板应用</span><br><span class="line">10.2 步进器</span><br><span class="line">10.2.1 工作原理</span><br><span class="line">10.2.2 示例</span><br><span class="line">10.2.3 使用的时机和场合</span><br><span class="line">10.2.4 使用的原因</span><br><span class="line">10.2.5 其他用途</span><br><span class="line">10.2.6 Pet Shop应用</span><br><span class="line">10.2.7 平板应用</span><br><span class="line">10.3 可滚动的日历</span><br><span class="line">10.3.1 工作原理</span><br><span class="line">10.3.2 示例</span><br><span class="line">10.3.3 使用的时机和场合</span><br><span class="line">10.3.4 使用的原因</span><br><span class="line">10.3.5 其他用途</span><br><span class="line">10.3.6 Pet Shop应用</span><br><span class="line">10.3.7 平板应用</span><br><span class="line">10.4 日期与时间选择器</span><br><span class="line">10.4.1 工作原理</span><br><span class="line">10.4.2 示例</span><br><span class="line">10.4.3 使用的时机和场合</span><br><span class="line">10.4.4 使用的原因</span><br><span class="line">10.4.5 其他用途</span><br><span class="line">10.4.6 Pet Shop应用</span><br><span class="line">10.4.7 平板应用</span><br><span class="line">10.5 下拉列表</span><br><span class="line">10.5.1 工作原理</span><br><span class="line">10.5.2 示例</span><br><span class="line">10.5.3 使用的时机和场合</span><br><span class="line">10.5.4 使用的原因</span><br><span class="line">10.5.5 其他用途</span><br><span class="line">10.5.6 Pet Shop应用</span><br><span class="line">10.5.7 平板应用</span><br><span class="line">10.6 多选</span><br><span class="line">10.6.1 工作原理</span><br><span class="line">10.6.2 示例</span><br><span class="line">10.6.3 使用的时机和场合</span><br><span class="line">10.6.4 使用的原因</span><br><span class="line">10.6.5 其他用途</span><br><span class="line">10.6.6 Pet Shop应用</span><br><span class="line">10.6.7 平板应用</span><br><span class="line">10.7 自由文本输入与提取</span><br><span class="line">10.7.1 工作原理</span><br><span class="line">10.7.2 示例</span><br><span class="line">10.7.3 使用的时机和场合</span><br><span class="line">10.7.4 使用的原因</span><br><span class="line">10.7.5 其他用途</span><br><span class="line">10.7.6 Pet Shop应用</span><br><span class="line">10.7.7 平板应用</span><br><span class="line">10.8 带输入掩码的文本框</span><br><span class="line">10.8.1 工作原理</span><br><span class="line">10.8.2 示例</span><br><span class="line">10.8.3 使用的时机和场合</span><br><span class="line">10.8.4 使用的原因</span><br><span class="line">10.8.5 其他用途</span><br><span class="line">10.8.6 Pet Shop应用</span><br><span class="line">10.8.7 平板应用</span><br><span class="line">10.9 带原子实体的文本框</span><br><span class="line">10.9.1 工作原理</span><br><span class="line">10.9.2 示例</span><br><span class="line">10.9.3 使用的时机和场合</span><br><span class="line">10.9.4 使用的原因</span><br><span class="line">10.9.5 其他用途</span><br><span class="line">10.9.6 Pet Shop应用</span><br><span class="line">10.9.7 平板应用</span><br><span class="line">第11章 表单</span><br><span class="line">11.1 内嵌式错误消息</span><br><span class="line">11.1.1 工作原理</span><br><span class="line">11.1.2 示例</span><br><span class="line">11.1.3 使用的时机和场合</span><br><span class="line">11.1.4 使用的原因</span><br><span class="line">11.1.5 其他用途</span><br><span class="line">11.1.6 Pet Shop应用</span><br><span class="line">11.1.7 平板应用</span><br><span class="line">11.2 提示框</span><br><span class="line">11.2.1 工作原理</span><br><span class="line">11.2.2 示例</span><br><span class="line">11.2.3 使用的时机和场合</span><br><span class="line">11.2.4 使用的原因</span><br><span class="line">11.2.5 其他用途</span><br><span class="line">11.2.6 Pet Shop应用</span><br><span class="line">11.2.7 平板应用</span><br><span class="line">11.3 弹出框</span><br><span class="line">11.3.1 工作原理</span><br><span class="line">11.3.2 示例</span><br><span class="line">11.3.3 使用的时机和场合</span><br><span class="line">11.3.4 使用的原因</span><br><span class="line">11.3.5 其他用途</span><br><span class="line">11.3.6 Pet Shop应用</span><br><span class="line">11.3.7 平板应用</span><br><span class="line">11.4 回调验证</span><br><span class="line">11.4.1 工作原理</span><br><span class="line">11.4.2 示例</span><br><span class="line">11.4.3 使用的时机和场合</span><br><span class="line">11.4.4 使用的原因</span><br><span class="line">11.4.5 其他用途</span><br><span class="line">11.4.6 Pet Shop应用</span><br><span class="line">11.4.7 平板应用</span><br><span class="line">11.5 取消∕确定</span><br><span class="line">11.5.1 工作原理</span><br><span class="line">11.5.2 示例</span><br><span class="line">11.5.3 使用的时机和场合</span><br><span class="line">11.5.4 使用的原因</span><br><span class="line">11.5.5 其他用途</span><br><span class="line">11.5.6 Pet Shop应用</span><br><span class="line">11.5.7 平板应用</span><br><span class="line">11.6 上方标签</span><br><span class="line">11.6.1 工作原理</span><br><span class="line">11.6.2 示例</span><br><span class="line">11.6.3 使用的时机和场合</span><br><span class="line">11.6.4 使用的原因</span><br><span class="line">11.6.5 其他用途</span><br><span class="line">11.6.6 Pet Shop应用</span><br><span class="line">11.6.7 平板应用</span><br><span class="line">11.7 从环境获取输入</span><br><span class="line">11.7.1 工作原理</span><br><span class="line">11.7.2 示例</span><br><span class="line">11.7.3 使用的时机和场合</span><br><span class="line">11.7.4 使用的原因</span><br><span class="line">11.7.5 其他用途</span><br><span class="line">11.7.6 Pet Shop应用</span><br><span class="line">11.7.7 平板应用</span><br><span class="line">11.8 输入加速</span><br><span class="line">11.8.1 工作原理</span><br><span class="line">11.8.2 示例</span><br><span class="line">11.8.3 使用的时机和场合</span><br><span class="line">11.8.4 使用的原因</span><br><span class="line">11.8.5 其他用途</span><br><span class="line">11.8.6 Pet Shop应用</span><br><span class="line">11.8.7 平板应用</span><br><span class="line">第12章 移动银行</span><br><span class="line">12.1 登录加速器</span><br><span class="line">12.1.1 工作原理</span><br><span class="line">12.1.2 示例</span><br><span class="line">12.1.3 使用的时机和场合</span><br><span class="line">12.1.4 使用的原因</span><br><span class="line">12.1.5 其他用途</span><br><span class="line">12.1.6 Pet Shop应用</span><br><span class="line">12.1.7 平板应用</span><br><span class="line">12.2 专用选择页面</span><br><span class="line">12.2.1 工作原理</span><br><span class="line">12.2.2 示例</span><br><span class="line">12.2.3 使用的时机和场合</span><br><span class="line">12.2.4 使用的原因</span><br><span class="line">12.2.5 其他用途</span><br><span class="line">12.2.6 Pet Shop应用</span><br><span class="line">12.2.7 平板应用</span><br><span class="line">12.3 表单至上</span><br><span class="line">12.3.1 工作原理</span><br><span class="line">12.3.2 示例</span><br><span class="line">12.3.3 使用的时机和场合</span><br><span class="line">12.3.4 使用的原因</span><br><span class="line">12.3.5 其他用途</span><br><span class="line">12.3.6 Pet Shop应用</span><br><span class="line">12.3.7 平板应用</span><br><span class="line">12.4 专用页面向导</span><br><span class="line">12.4.1 工作原理</span><br><span class="line">12.4.2 示例</span><br><span class="line">12.4.3 使用的时机和场合</span><br><span class="line">12.4.4 使用的原因</span><br><span class="line">12.4.5 其他用途</span><br><span class="line">12.4.6 Pet Shop应用</span><br><span class="line">12.4.7 平板应用</span><br><span class="line">12.5 以表单结尾的向导</span><br><span class="line">12.5.1 工作原理</span><br><span class="line">12.5.2 示例</span><br><span class="line">12.5.3 使用的时机和场合</span><br><span class="line">12.5.4 使用的原因</span><br><span class="line">12.5.5 其他用途</span><br><span class="line">12.5.6 Pet Shop应用</span><br><span class="line">12.5.7 平板应用</span><br><span class="line">12.6 核对？确认</span><br><span class="line">12.6.1 工作原理</span><br><span class="line">12.6.2 示例</span><br><span class="line">12.6.3 使用的时机和场合</span><br><span class="line">12.6.4 使用的原因</span><br><span class="line">12.6.5 其他用途</span><br><span class="line">12.6.6 Pet Shop应用</span><br><span class="line">12.6.7 平板应用</span><br><span class="line">12.7 近场通信</span><br><span class="line">12.7.1 工作原理</span><br><span class="line">12.7.2 示例</span><br><span class="line">12.7.3 使用的时机和场合</span><br><span class="line">12.7.4 使用的原因</span><br><span class="line">12.7.5 其他用途</span><br><span class="line">12.7.6 Pet Shop应用</span><br><span class="line">12.7.7 平板应用</span><br><span class="line">第13章 导航</span><br><span class="line">13.1 上窜下跳（反模式）</span><br><span class="line">13.1.1 出现的时间和场合</span><br><span class="line">13.1.2 示例</span><br><span class="line">13.1.3 为何要避免</span><br><span class="line">13.1.4 其他考虑因素</span><br><span class="line">13.1.5 出现的时间和场合</span><br><span class="line">13.2 多个推荐区域（反模式）</span><br><span class="line">13.2.1 出现的时间和场合</span><br><span class="line">13.2.2 示例</span><br><span class="line">13.2.3 为何要避免</span><br><span class="line">13.2.4 其他考虑因素</span><br><span class="line">13.3 轮播</span><br><span class="line">13.3.1 工作原理</span><br><span class="line">13.3.2 示例</span><br><span class="line">13.3.3 使用的时机和场合</span><br><span class="line">13.3.4 使用的原因</span><br><span class="line">13.3.5 其他用途</span><br><span class="line">13.3.6 Pet Shop应用</span><br><span class="line">13.3.7 平板应用</span><br><span class="line">13.4 弹出式菜单</span><br><span class="line">13.4.1 工作原理</span><br><span class="line">13.4.2 示例</span><br><span class="line">13.4.3 使用的时机和场合</span><br><span class="line">13.4.4 使用的原因</span><br><span class="line">13.4.5 其他用途</span><br><span class="line">13.4.6 Pet Shop应用</span><br><span class="line">13.4.7 平板应用</span><br><span class="line">13.5 水印</span><br><span class="line">13.5.1 工作原理</span><br><span class="line">13.5.2 示例</span><br><span class="line">13.5.3 使用的时机和场合</span><br><span class="line">13.5.4 使用的原因</span><br><span class="line">13.5.5 其他用途</span><br><span class="line">13.5.6 Pet Shop应用</span><br><span class="line">13.5.7 平板应用</span><br><span class="line">13.6 瑞士军刀导航</span><br><span class="line">13.6.1 工作原理</span><br><span class="line">13.6.2 示例</span><br><span class="line">13.6.3 使用的时机和场合</span><br><span class="line">13.6.4 使用的原因</span><br><span class="line">13.6.5 其他用途</span><br><span class="line">13.6.6 Pet Shop应用</span><br><span class="line">13.6.7 平板应用</span><br><span class="line">13.7 集成</span><br><span class="line">13.7.1 工作原理</span><br><span class="line">13.7.2 示例</span><br><span class="line">13.7.3 使用的时机和场合</span><br><span class="line">13.7.4 使用的原因</span><br><span class="line">13.7.5 其他用途</span><br><span class="line">13.7.6 Pet Shop应用</span><br><span class="line">13.7.7 平板应用</span><br><span class="line">第14章 平板模式</span><br><span class="line">14.1 片段</span><br><span class="line">14.1.1 工作原理</span><br><span class="line">14.1.2 示例</span><br><span class="line">14.1.3 使用的时机和场合</span><br><span class="line">14.1.4 使用的原因</span><br><span class="line">14.1.5 其他用途</span><br><span class="line">14.2 复合视图</span><br><span class="line">14.2.1 工作原理</span><br><span class="line">14.2.2 示例</span><br><span class="line">14.2.3 使用的时机和场合</span><br><span class="line">14.2.4 使用的原因</span><br><span class="line">14.2.5 其他用途</span><br><span class="line">14.3 侧面导航（试验模式）</span><br><span class="line">14.3.1 工作原理</span><br><span class="line">14.3.2 示例</span><br><span class="line">14.3.3 使用的时机和场合</span><br><span class="line">14.3.4 使用的原因</span><br><span class="line">14.3.5 其他用途</span><br><span class="line">14.4 将内容用作导航元素</span><br><span class="line">14.4.1 工作原理</span><br><span class="line">14.4.2 示例</span><br><span class="line">14.4.3 使用的时机和场合</span><br><span class="line">14.4.4 使用的原因</span><br><span class="line">14.4.5 其他用途</span><br><span class="line">14.5 二维更多类似</span><br><span class="line">14.5.1 工作原理</span><br><span class="line">14.5.2 示例</span><br><span class="line">14.5.3 使用的时机和场合</span><br><span class="line">14.5.4 使用的原因</span><br><span class="line">14.5.5 其他用途</span><br><span class="line">14.6 C形轻扫（试验模式）</span><br><span class="line">14.6.1 工作原理</span><br><span class="line">14.6.2 示例</span><br><span class="line">14.6.3 使用的时机和场合</span><br><span class="line">14.6.4 使用的原因</span><br><span class="line">14.6.5 其他用途</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B00GU73RHA/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B00GU73RHA&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/41fMYcrGNML._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/android/" rel="tag"># android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00GYLA7O8/" rel="prev" title="C语言入门经典(第5版)">
+      <i class="fa fa-chevron-left"></i> C语言入门经典(第5版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00EOIDFX8/" rel="next" title="Android开发权威指南(第2版)">
+      Android开发权威指南(第2版) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

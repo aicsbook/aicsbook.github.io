@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aicsbook.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="基本信息名称： 疯狂Java 突破程序员基本功的16课(修订版)作者信息： 作者: 李刚 [ 中文 pdf ] 简单介绍《疯狂Java：突破程序员基本功的16课(修订版)》：疯狂源自梦想，技术成就辉煌。你是否在求职时被鄙视“基本功不扎实”而万分惭愧？《疯狂Java：突破程序员基本功的16课(修订版)》能检验你的基本功，并让你弥补不足。《疯狂Java：突破程序员基本功的16课(修订版)》归纳了Jav">
+<meta property="og:type" content="article">
+<meta property="og:title" content="疯狂Java 突破程序员基本功的16课(修订版)">
+<meta property="og:url" content="https://aicsbook.github.io/2020/04/19/B006P9B1XA/index.html">
+<meta property="og:site_name" content="IT Books">
+<meta property="og:description" content="基本信息名称： 疯狂Java 突破程序员基本功的16课(修订版)作者信息： 作者: 李刚 [ 中文 pdf ] 简单介绍《疯狂Java：突破程序员基本功的16课(修订版)》：疯狂源自梦想，技术成就辉煌。你是否在求职时被鄙视“基本功不扎实”而万分惭愧？《疯狂Java：突破程序员基本功的16课(修订版)》能检验你的基本功，并让你弥补不足。《疯狂Java：突破程序员基本功的16课(修订版)》归纳了Jav">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ec4.images-amazon.com/images/I/51ipsS6k29L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+<meta property="article:published_time" content="2020-04-19T11:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-20T15:37:04.850Z">
+<meta property="article:author" content="ryo">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ec4.images-amazon.com/images/I/51ipsS6k29L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg">
+
+<link rel="canonical" href="https://aicsbook.github.io/2020/04/19/B006P9B1XA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>疯狂Java 突破程序员基本功的16课(修订版) | IT Books</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">IT Books</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">the it books</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aicsbook.github.io/2020/04/19/B006P9B1XA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ryo">
+      <meta itemprop="description" content="收集常见的 it 书籍，供学习之用">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT Books">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          疯狂Java 突破程序员基本功的16课(修订版)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-19 19:44:31" itemprop="dateCreated datePublished" datetime="2020-04-19T19:44:31+08:00">2020-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-20 23:37:04" itemprop="dateModified" datetime="2020-04-20T23:37:04+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>名称： 疯狂Java 突破程序员基本功的16课(修订版)<br>作者信息： 作者: 李刚 [ 中文 pdf ]</p>
+<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><p>《疯狂Java：突破程序员基本功的16课(修订版)》：疯狂源自梦想，技术成就辉煌。你是否在求职时被鄙视“基本功不扎实”而万分惭愧？《疯狂Java：突破程序员基本功的16课(修订版)》能检验你的基本功，并让你弥补不足。《疯狂Java：突破程序员基本功的16课(修订版)》归纳了Java学习者、工作者在学习、工作过程中最欠缺的技术短板，形成内存管理、常见的陷阱、数据结构、程序调试、软件测试等16堂必修课。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">第1课　数组与内存控制　</span><br><span class="line">1.1　数组初始化　</span><br><span class="line">1.1.1　Java数组是静态的　</span><br><span class="line">1.1.2　数组一定要初始化吗　</span><br><span class="line">1.1.3　基本类型数组的初始化　</span><br><span class="line">1.1.4　引用类型数组的初始化　</span><br><span class="line">1.2　使用数组　</span><br><span class="line">1.2.1　数组元素就是变量　</span><br><span class="line">1.2.2　没有多维数组　</span><br><span class="line">1.3　小结　 </span><br><span class="line"></span><br><span class="line"> 第2课　对象与内存控制　 2.1　实例变量和类变量　 2.1.1　实例变量和类变量的属性　 2.1.2　实例变量的初始化时机　 2.1.3　类变量的初始化时机　 2.2　父类构造器　 2.2.1　隐式调用和显式调用　 2.2.2　访问子类对象的实例变量　 2.2.3　调用被子类重写的方法　 2.3　父子实例的内存控制　 2.3.1　继承成员变量和继承方法的区别　 2.3.2　内存中子类实例　 2.3.3　父、子类的类变量　 2.4　final修饰符　 2.4.1　final修饰的变量　 2.4.2　执行“宏替换”的变量　 2.4.3　final方法不能被重写　 2.4.4　内部类中的局部变量　 2.5　小结　</span><br><span class="line"></span><br><span class="line"> 第3课　常见Java集合的实现细节　 3.1　Set和Map　 3.1.1　Set和Map的关系　 3.1.2　HashMap和HashSet　 3.1.3　TreeMap和TreeSet　 3.2　Map和List　 3.2.1　Map的values()方法　 3.2.2　Map和List的关系　 3.3　ArrayList和LinkedList　 3.3.1　Vector和ArrayList的区别　 3.3.2　ArrayList和LinkedList的实现差异　 3.3.3　ArrayList和LinkedList的性能分析和适用场景　 3.4　Iterator迭代器　 迭代时删除指定元素　 3.5　小结　</span><br><span class="line"></span><br><span class="line"> 第4课　Java的内存回收　 4.1　Java引用的种类　 4.1.1　对象在内存中状态　 4.1.2　强引用　 4.1.3　软引用　 4.1.4　弱引用　 4.1.5　虚引用　 4.2　Java的内存泄漏　 4.3　垃圾回收机制　 4.3.1　垃圾回收的基本算法　 4.3.2　堆内存的分代回收　 4.3.3　与垃圾回收的附加选项　 4.3.4　常见垃圾回收器　 4.4　内存管理的小技巧　 4.4.1　尽量使用直接量　 4.4.2　使用StringBuilder和StringBuffer进行字符串连接　 4.4.3　尽早释放无用对象的引用　 4.4.4　尽量少用静态变量　 4.4.5　避免在经常调用的方法、循环中创建Java对象　 4.4.6　缓存经常使用的对象　 4.4.7　尽量不要使用finalize方法　 4.4.8　考虑使用SoftReference　 4.5　小结　</span><br><span class="line"></span><br><span class="line"> 第5课　表达式中的陷阱　 5.1　关于字符串的陷阱　 5.1.1　JVM对字符串的处理　 5.1.2　不可变的字符串　 5.1.3　字符串比较　 5.2　表达式类型的陷阱　 5.2.1　表达式类型的自动提升　 5.2.2　复合赋值运算符的陷阱　 5.3　输入法导致的陷阱　 5.4　注释的字符必须合法　 5.5　转义字符的陷阱　 5.5.1　慎用字符的Unicode转义形式　 5.5.2　中止行注释的转义字符　 5.6　泛型可能引起的错误　 5.6.1　原始类型变量的赋值　 5.6.2　原始类型带来的擦除　 5.6.3　创建泛型数组的陷阱　 5.7　正则表达式的陷阱　 5.8　多线程的陷阱　 5.8.1　不要调用run方法　 5.8.2　静态的同步方法　 5.8.3　静态初始化块启动新线程执行初始化　 5.8.4　注意多线程执行环境　 5.9　小结　</span><br><span class="line"></span><br><span class="line"> 第6课　流程控制的陷阱　 6.1　switch语句陷阱　 6.1.1　default分支永远会执行吗　 6.1.2　break的重要性　 6.1.3　switch表达式的类型　 6.2　标签引起的陷阱　 6.3　if语句的陷阱　 6.3.1　else隐含的条件　 6.3.2　小心空语句　 6.4　循环体的花括号　 6.4.1　什么时候可以省略花括号　 6.4.2　省略花括号的危险　 6.5　for循环的陷阱　 6.5.1　分号惹的祸　 6.5.2　小心循环计数器的值　 6.5.3　浮点数作循环计数器　 6.6　foreach循环的循环计数器　 6.7　小结　</span><br><span class="line"></span><br><span class="line"> 第7课　面向对象的陷阱　 7.1　instanceof运算符的陷阱　 7.2　构造器的陷阱　 7.2.1　构造器之前的void　 7.2.2　构造器创建对象吗　 7.2.3　无限递归的构造器　 7.3　持有当前类的实例　 7.4　到底调用哪个重载的方法　 7.5　方法重写的陷阱　 7.5.1　重写private方法　 7.5.2　重写其他访问权限的方法　 7.6　非静态内部类的陷阱　 7.6.1　非静态内部类的构造器　 7.6.2　非静态内部类不能拥有静态成员　 7.6.3　非静态内部类的子类　 7.7　static关键字　 7.7.1　静态方法属于类　 7.7.2　静态内部类的限制　 7.8　native方法的陷阱　 7.9　小结　</span><br><span class="line"></span><br><span class="line"> 第8课　异常捕捉的陷阱　 8.1　正确关闭资源的方式　 8.2　finally块的陷阱　 8.2.1　finally的执行规则　 8.2.2　finally块和方法返回值　 8.3　catch块的用法　 8.3.1　catch块的顺序　 8.3.2　不要用catch代替流程控制　 8.3.3　只能catch可能抛出的异常　 8.3.4　做点实际的修复　 8.4　继承得到的异常　 8.5　小结　</span><br><span class="line"></span><br><span class="line"> 第9课　线性表　 9.1　线性表概述　 9.1.1　线性表的定义及逻辑结构　 9.1.2　线性表的基本操作　 9.2　顺序存储结构　 9.3　链式存储结构　 9.3.1　单链表上的基本运算　 9.3.2　循环链表　 9.3.3　双向链表　 9.4　线性表的分析　 9.4.1　线性表的实现分析　 9.4.2　线性表的功能　 9.5　小结　</span><br><span class="line"></span><br><span class="line"> 第10课　栈和队列　 10.1　栈　 10.1.1　栈的基本定义　 10.1.2　栈的常用操作　 10.1.3　栈的顺序存储结构及实现　 10.1.4　栈的链式存储结构及实现　 10.1.5　Java集合中的栈　 10.2　队列　 10.2.1　队列的基本定义　 10.2.2　队列的常用操作　 10.2.3　队列的顺序存储结构及实现　 10.2.4　循环队列　 10.2.5　队列的链式存储结构及实现　 10.2.6　Java集合中的队列　 10.3　双向队列　 10.4　小结　</span><br><span class="line"></span><br><span class="line"> 第11课　树和二叉树　 11.1　树的概述　 11.1.1　树的定义和基本术语　 11.1.2　树的基本操作　 11.1.3　父节点表示法　 11.1.4　子节点链表示法　 11.2　二叉树　 11.2.1　二叉树的定义和基本概念　 11.2.2　二叉树的基本操作　 11.2.3　二叉树的顺序存储　 11.2.4　二叉树的二叉链表存储　 11.2.5　二叉树的三叉链表存储　 11.3　遍历二叉树　 11.3.1　先序遍历　 11.3.2　中序遍历　 11.3.3　后序遍历　 11.3.4　广度优先(按层)遍历　 11.4　森林、树和二叉树的转换　 11.4.1　森林、树和二叉树的转换　 11.4.2　树的链表存储　 11.5　哈夫曼树　 11.5.1　哈夫曼树的定义和基本概念　 11.5.2　创建哈夫曼树　 11.5.3　哈夫曼编码　 11.6　排序二叉树　 11.7　红黑树　 11.7.1　插入操作　 11.7.2　删除操作　 11.8　小结　</span><br><span class="line"></span><br><span class="line"> 第12课　常用的内部排序　 12.1　排序的基本概念　 12.1.1　排序概述　 12.1.2　内部排序的分类　 12.2　选择排序法　 12.2.1　直接选择排序　 12.2.2　堆排序　 12.3　交换排序　 12.3.1　冒泡排序　 12.3.2　快速排序　 12.4　插入排序　 12.4.1　直接插入排序　 12.4.2　折半插入排序　 12.4.3　Shell排序　 12.5　归并排序　 12.6　桶式排序　 12.7　基数排序　 12.8　小结　</span><br><span class="line"></span><br><span class="line"> 第13课　程序开发　 13.1　扎实的基本功　 13.1.1　快速的输入能力　 13.1.2　编程实现能力　 13.1.3　快速排错　 13.2　程序开发之前　 13.2.1　分析软件的组件模型　 13.2.2　建立软件的数据模型　 13.3　弄清程序的具体实现　 13.3.1　各组件如何通信　 13.3.2　人机交互的实现　 13.3.3　复杂算法的分析　 13.4　编写开发文档　 13.4.1　绘制建模图、流程图　 13.4.2　提供简要说明　 13.4.3　编写伪码实现　 13.5　编码实现和开发心态　 13.5.1　开发是复杂的　 13.5.2　开发过程是漫长的　 13.6　小结　</span><br><span class="line"></span><br><span class="line"> 第14课　程序调试　 14.1　程序的可调试性　 14.1.1　增加注释　 14.1.2　使用log　 14.2　程序调试的基本方法　 14.2.1　借助编译器的代码审查　 14.2.2　跟踪程序执行流程　 14.2.3　断点调试　 14.2.4　隔离调试　 14.2.5　错误重现　 14.3　记录常见错误　 14.3.1　常见异常可能的错误原因　 14.3.2　常见运行时异常可能的错误原因　 14.4　程序调试的整体思路　 14.4.1　分段调试　 14.4.2　分模块调试　 14.5　调试心态　 14.5.1　谁都会出错　 14.5.2　调试比写程序更费时　 14.6　小结　</span><br><span class="line"></span><br><span class="line"> 第15课　使用IDE工具　 15.1　何时开始利用IDE工具　 15.2　IDE工具概述　 15.2.1　IDE工具的基本功能　 15.2.2　常见的Java IDE工具　 15.3　项目管理　 15.3.1　建立项目　 15.3.2　自动编译　 15.3.3　自动部署、运行　 15.4　代码管理　 15.4.1　向导式的代码生成　 15.4.2　代码生成器　 15.4.3　代码提示　 15.4.4　自动代码补齐　 15.4.5　实时错误提示　 15.5　项目调试　 15.5.1　设置断点　 15.5.2　单步调试　 15.5.3　步入、步出　 15.6　团队协作功能　 作为版本控制工具的客户端　 15.7　小结　</span><br><span class="line"></span><br><span class="line"> 第16课　软件测试　 16.1　软件测试概述　 16.1.1　软件测试的概念和目的　 16.1.2　软件测试的分类　 16.1.3　开发活动和测试活动　 16.1.4　常见的Bug管理工具　 16.2　单元测试　 16.2.1　单元测试概述　 16.2.2　单元测试的逻辑覆盖　 16.2.3　JUnit介绍　 16.2.4　JUnit的用法　 16.3　系统测试和自动化测试　 16.3.1　系统测试概述　 16.3.2　自动化测试　 16.3.3　常见自动化测试工具　 16.4　性能测试　 16.4.1　性能测试概述　 16.4.2　性能测试的相关概念　 16.4.3　常见性能测试工具　 16.5　小结</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="亚马逊链接"><a href="#亚马逊链接" class="headerlink" title="亚马逊链接"></a>亚马逊链接</h1><p><a href="http://www.amazon.cn/gp/product/B006P9B1XA/ref=as_li_ss_tl?ie=UTF8&camp=536&creative=3132&creativeASIN=B006P9B1XA&linkCode=as2&tag=bringmeluck-23" target="_blank" rel="noopener"><img src="http://ec4.images-amazon.com/images/I/51ipsS6k29L._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_AA300_SH20_OU28_.jpg"/></a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B006Q5NH1M/" rel="prev" title="编写高质量代码 改善Java程序的151个建议">
+      <i class="fa fa-chevron-left"></i> 编写高质量代码 改善Java程序的151个建议
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/19/B00647RUGK/" rel="next" title="HTML5与CSS3实战指南">
+      HTML5与CSS3实战指南 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">1.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单介绍"><span class="nav-number">2.</span> <span class="nav-text">简单介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">3.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#亚马逊链接"><span class="nav-number">4.</span> <span class="nav-text">亚马逊链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ryo</p>
+  <div class="site-description" itemprop="description">收集常见的 it 书籍，供学习之用</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">396</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/houbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;houbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/houbinbin.echo@gmail.com" title="E-Mail → houbinbin.echo@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ryo</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
